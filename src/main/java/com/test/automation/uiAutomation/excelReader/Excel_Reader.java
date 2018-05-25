@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  * 
- * @author Bhanu Pratap
+ * @author Arvind
  *
  */
 public class Excel_Reader {
@@ -23,8 +23,7 @@ public class Excel_Reader {
 	public XSSFRow row;
 	public XSSFCell cell;
 
-	//Users/bsingh5/git/POMWithPageFactoryFramework
-	//src/main/java/com/test/automation/uiAutomation/testData.xls;
+	
 	
 	public Excel_Reader(String path) {
 		this.path = path;
