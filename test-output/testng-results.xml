@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="4" failed="0" ignored="0" total="12" passed="8">
+  <reporter-output>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_25_05_2018_05_03_05.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_25_05_2018_05_03_05.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //input[@id='login-username']]]]>
+    </line>
+    <line>
+      <![CDATA[entered password:-Password@123 and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //input[@id='login-password']]]]>
+    </line>
+    <line>
+      <![CDATA[cliked on login button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //div[@class='col-xs-4']/button[2]]]]>
+    </line>
+    <line>
+      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_25_05_2018_05_03_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_25_05_2018_05_03_25.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_25_05_2018_05_03_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_25_05_2018_05_03_35.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Fee Configuration Button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Configuration')][1]]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Fee Standard Button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Configuration')][1]/following::li[1]]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateTofeeStandard_25_05_2018_05_03_39.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateTofeeStandard_25_05_2018_05_03_39.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Fee Group radio Button is already selected [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //label[@class='radio-inline']/child::span[contains(text(),'Fee Group')]/preceding-sibling::input]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectFeeGroupRadioBtn_25_05_2018_05_03_40.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectFeeGroupRadioBtn_25_05_2018_05_03_40.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Concession Process check box is selected and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Concession Process')]]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectConcessionProcess_25_05_2018_05_03_42.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectConcessionProcess_25_05_2018_05_03_42.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Card type check box is selected and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Card Type')]]]]>
+    </line>
+    <line>
+      <![CDATA[entered debit card transaction charge:-10 and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //label[contains(text(),'Debit Card Charges:')]/following-sibling::div/input]]]>
+    </line>
+    <line>
+      <![CDATA[entered credit card transaction charge:-15 and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //label[contains(text(),'Credit Card Charges:')]/following-sibling::div/input]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectCardTypeAndEnterCharges_25_05_2018_05_03_45.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectCardTypeAndEnterCharges_25_05_2018_05_03_45.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[clicked on save button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //button[@id='save-btn']]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickedOnSaveButton_25_05_2018_05_03_53.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickedOnSaveButton_25_05_2018_05_03_53.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Record saved successfully is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //body[@id='style-4']/div[5]/h2]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Ok button of success confirmation and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSuccessMessagevalidationAndConfirmation_25_05_2018_05_03_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSuccessMessagevalidationAndConfirmation_25_05_2018_05_03_57.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[logout is done and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Logout')]]]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="66548" started-at="2018-05-25T11:32:54Z" finished-at="2018-05-25T11:34:01Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="66548" started-at="2018-05-25T11:32:54Z" finished-at="2018-05-25T11:34:01Z">
+      <class name="com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="setUp" is-config="true" duration-ms="10009" started-at="2018-05-25T17:02:54Z" finished-at="2018-05-25T17:03:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2018-05-25T17:03:05Z" finished-at="2018-05-25T17:03:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="loginToappWithrequiredCredentials" duration-ms="20025" started-at="2018-05-25T17:03:05Z" data-provider="vapsloginData" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Rakesh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_25_05_2018_05_03_05.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_25_05_2018_05_03_05.png' height='100' width='100'/> </a>]]>
+            </line>
+            <line>
+              <![CDATA[entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //input[@id='login-username']]]]>
+            </line>
+            <line>
+              <![CDATA[entered password:-Password@123 and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //input[@id='login-password']]]]>
+            </line>
+            <line>
+              <![CDATA[cliked on login button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //div[@class='col-xs-4']/button[2]]]]>
+            </line>
+            <line>
+              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_25_05_2018_05_03_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_25_05_2018_05_03_25.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginToappWithrequiredCredentials -->
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-05-25T17:03:25Z" data-provider="vapsloginData" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Radha]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Radha@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[user marked this record as no run]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(TC_Configuration_Fee_Standard.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToappWithrequiredCredentials -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SUCCESS method=TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_25_05_2018_05_03_05.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_25_05_2018_05_03_05.png' height='100' width='100'/> </a>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="loginToappWithrequiredCredentials" duration-ms="0" started-at="2018-05-25T17:03:25Z" data-provider="vapsloginData" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[arvind]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[VapsTech@121]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[user marked this record as no run]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(TC_Configuration_Fee_Standard.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToappWithrequiredCredentials -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-05-25T17:03:25Z" data-provider="vapsloginData" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Rakesh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Rakesh@321]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[user marked this record as no run]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(TC_Configuration_Fee_Standard.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToappWithrequiredCredentials -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-05-25T17:03:25Z" data-provider="vapsloginData" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[RR]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[user marked this record as no run]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(TC_Configuration_Fee_Standard.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToappWithrequiredCredentials -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Configuration_Fee_Standard.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcHomeButtonValidation()[pri:2, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tcHomeButtonValidation" duration-ms="10339" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:35Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_25_05_2018_05_03_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_25_05_2018_05_03_35.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcHomeButtonValidation -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:25Z" finished-at="2018-05-25T17:03:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.tcHomeButtonValidation()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-05-25T17:03:35Z" finished-at="2018-05-25T17:03:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcHomeButtonValidation status=SUCCESS method=TC_Configuration_Fee_Standard.tcHomeButtonValidation()[pri:2, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:35Z" finished-at="2018-05-25T17:03:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.tcNevigateTofeeStandard()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcNevigateTofeeStandard()[pri:3, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tcNevigateTofeeStandard" duration-ms="4210" started-at="2018-05-25T17:03:35Z" finished-at="2018-05-25T17:03:39Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Fee Configuration Button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Configuration')][1]]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Fee Standard Button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Configuration')][1]/following::li[1]]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateTofeeStandard_25_05_2018_05_03_39.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateTofeeStandard_25_05_2018_05_03_39.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcNevigateTofeeStandard -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:39Z" finished-at="2018-05-25T17:03:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.tcSelectFeeGroupRadioBtn()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:39Z" finished-at="2018-05-25T17:03:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcNevigateTofeeStandard status=SUCCESS method=TC_Configuration_Fee_Standard.tcNevigateTofeeStandard()[pri:3, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcSelectFeeGroupRadioBtn()[pri:4, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tcSelectFeeGroupRadioBtn" duration-ms="1289" started-at="2018-05-25T17:03:39Z" finished-at="2018-05-25T17:03:41Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Fee Group radio Button is already selected [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //label[@class='radio-inline']/child::span[contains(text(),'Fee Group')]/preceding-sibling::input]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectFeeGroupRadioBtn_25_05_2018_05_03_40.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectFeeGroupRadioBtn_25_05_2018_05_03_40.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcSelectFeeGroupRadioBtn -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-05-25T17:03:41Z" finished-at="2018-05-25T17:03:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcSelectFeeGroupRadioBtn status=SUCCESS method=TC_Configuration_Fee_Standard.tcSelectFeeGroupRadioBtn()[pri:4, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=Fee Group radio Button is already selected [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //label[@class='radio-inline']/child::span[contains(text(),'Fee Group')]/preceding-sibling::input]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:41Z" finished-at="2018-05-25T17:03:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.tcSelectConcessionProcess()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcSelectConcessionProcess()[pri:5, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tcSelectConcessionProcess" duration-ms="1367" started-at="2018-05-25T17:03:41Z" finished-at="2018-05-25T17:03:42Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Concession Process check box is selected and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Concession Process')]]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectConcessionProcess_25_05_2018_05_03_42.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectConcessionProcess_25_05_2018_05_03_42.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcSelectConcessionProcess -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:42Z" finished-at="2018-05-25T17:03:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcSelectConcessionProcess status=SUCCESS method=TC_Configuration_Fee_Standard.tcSelectConcessionProcess()[pri:5, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=Concession Process check box is selected and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Concession Process')]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:42Z" finished-at="2018-05-25T17:03:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.tcSelectCardTypeAndEnterCharges()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcSelectCardTypeAndEnterCharges()[pri:6, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tcSelectCardTypeAndEnterCharges" duration-ms="3643" started-at="2018-05-25T17:03:42Z" finished-at="2018-05-25T17:03:46Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Card type check box is selected and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Card Type')]]]]>
+            </line>
+            <line>
+              <![CDATA[entered debit card transaction charge:-10 and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //label[contains(text(),'Debit Card Charges:')]/following-sibling::div/input]]]>
+            </line>
+            <line>
+              <![CDATA[entered credit card transaction charge:-15 and object is [[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //label[contains(text(),'Credit Card Charges:')]/following-sibling::div/input]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectCardTypeAndEnterCharges_25_05_2018_05_03_45.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSelectCardTypeAndEnterCharges_25_05_2018_05_03_45.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcSelectCardTypeAndEnterCharges -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-05-25T17:03:46Z" finished-at="2018-05-25T17:03:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.tcClickedOnSaveButton()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:46Z" finished-at="2018-05-25T17:03:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcSelectCardTypeAndEnterCharges status=SUCCESS method=TC_Configuration_Fee_Standard.tcSelectCardTypeAndEnterCharges()[pri:6, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=Card type check box is selected and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Card Type')]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcClickedOnSaveButton()[pri:7, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tcClickedOnSaveButton" duration-ms="7422" started-at="2018-05-25T17:03:46Z" finished-at="2018-05-25T17:03:53Z">
+          <reporter-output>
+            <line>
+              <![CDATA[clicked on save button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //button[@id='save-btn']]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickedOnSaveButton_25_05_2018_05_03_53.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickedOnSaveButton_25_05_2018_05_03_53.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcClickedOnSaveButton -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-05-25T17:03:53Z" finished-at="2018-05-25T17:03:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard.tcSuccessMessagevalidationAndConfirmation()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-05-25T17:03:53Z" finished-at="2018-05-25T17:03:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcClickedOnSaveButton status=SUCCESS method=TC_Configuration_Fee_Standard.tcClickedOnSaveButton()[pri:7, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=clicked on save button and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //button[@id='save-btn']]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcSuccessMessagevalidationAndConfirmation()[pri:8, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tcSuccessMessagevalidationAndConfirmation" duration-ms="4422" started-at="2018-05-25T17:03:53Z" finished-at="2018-05-25T17:03:58Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Record saved successfully is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //body[@id='style-4']/div[5]/h2]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Ok button of success confirmation and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSuccessMessagevalidationAndConfirmation_25_05_2018_05_03_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSuccessMessagevalidationAndConfirmation_25_05_2018_05_03_57.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcSuccessMessagevalidationAndConfirmation -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-05-25T17:03:58Z" finished-at="2018-05-25T17:03:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcSuccessMessagevalidationAndConfirmation status=SUCCESS method=TC_Configuration_Fee_Standard.tcSuccessMessagevalidationAndConfirmation()[pri:8, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0] output=Record saved successfully is dispalyed and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //body[@id='style-4']/div[5]/h2]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="tearDown" is-config="true" duration-ms="3088" started-at="2018-05-25T17:03:58Z" finished-at="2018-05-25T17:04:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[logout is done and object is:-[[ChromeDriver: chrome on XP (1db9f176ccaa4ffeae4517d94ddc22ea)] -> xpath: //span[contains(text(),'Logout')]]]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard@c8e4bb0]" name="endTest" is-config="true" duration-ms="262" started-at="2018-05-25T17:04:01Z" finished-at="2018-05-25T17:04:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

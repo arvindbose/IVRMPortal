@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression Suite]">
+  <listeners>
+    <listener class-name="com.test.automation.uiAutomation.customListner.RetryListener"/>
+  </listeners>
+  <test name="MasterFeeGroup(failed)">
+    <classes>
+      <class name="com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup">
+        <methods>
+          <include name="tcClickOnCancelButton_activate"/>
+          <include name="tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_ForDeactivate_AfterCancel" invocation-numbers="0 1"/>
+          <include name="beforeMethod"/>
+          <include name="loginToappWithrequiredCredentials" invocation-numbers="1 2 3 4"/>
+          <include name="tcYesDeleteOrDeactivateOrActivateIt_Activate"/>
+          <include name="tcClickOnOkSuccessButton_activateCancel"/>
+          <include name="endTest"/>
+          <include name="tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_ForDeactivate" invocation-numbers="0 1"/>
+          <include name="tcClickOnOkSuccessButton_Edit"/>
+          <include name="setUp"/>
+          <include name="tcClickOnOkSuccessButton_activate"/>
+          <include name="tcFill_FeeGroup_MasterGroupForm_AfterCancel"/>
+          <include name="tcClickOnSaveButton_MasterGroupForm_Edit"/>
+          <include name="tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_AfterCancel" invocation-numbers="0 1"/>
+          <include name="tcClickOnCancelButton_deactivate"/>
+          <include name="tcVerifyMasterFeeGroup_UpdatedInGrid" invocation-numbers="1 1 1 1"/>
+          <include name="afterMethod"/>
+          <include name="tcYesDeleteOrDeactivateOrActivateIt_deactivate"/>
+          <include name="tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_ForActivate" invocation-numbers="0 1"/>
+          <include name="tcDeactivationOfCreated_MasterFeeGroup_AfterCancel" invocation-numbers="0 1"/>
+          <include name="tcDeactivationOfCreated_MasterFeeGroup" invocation-numbers="0 1"/>
+          <include name="tcEdit_MasterFeeGroup" invocation-numbers="0 0 0 0 1 1"/>
+          <include name="tcActivationOfCreatedFeeGroup_MasterGroup_AfterCancel" invocation-numbers="0 1"/>
+          <include name="tcActivationOfCreatedFeeGroup_MasterGroup" invocation-numbers="0 1"/>
+          <include name="tcSearchBy_FeeGroup_MasterFeeGrNameInGrid" invocation-numbers="1 1 1 1"/>
+          <include name="tcFill_FeeGroup_MasterGroupForm"/>
+          <include name="tcClickOnOkSuccessButton_deactivate"/>
+          <include name="tcClickOnOkSuccessButton_deactivateCancel"/>
+        </methods>
+      </class> <!-- com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup -->
+      <class name="com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup">
+        <methods>
+          <include name="setUp"/>
+          <include name="beforeMethod"/>
+          <include name="endTest"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup -->
+    </classes>
+  </test> <!-- MasterFeeGroup(failed) -->
+  <test name="YearlyFeeGroup(failed)">
+    <classes>
+      <class name="com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup">
+        <methods>
+          <include name="setUp"/>
+          <include name="beforeMethod"/>
+          <include name="endTest"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup -->
+      <class name="com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup">
+        <methods>
+          <include name="tcClickOnCancelButton_activate"/>
+          <include name="tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="loginToappWithrequiredCredentials" invocation-numbers="0 0 0 0 1 1 2 2 3 3 4 4"/>
+          <include name="tcClickOnSuccessOkBtn_YearlyGroup_Edit"/>
+          <include name="tcDeactivationOfCreated_YearlyFeeGroup_AfterCancel" invocation-numbers="0"/>
+          <include name="endTest"/>
+          <include name="tcClickOnSuccessOkBtn_YearlyGroup"/>
+          <include name="tcFill_FeeGroup_YearlyGroupForm" invocation-numbers="0 1"/>
+          <include name="tcMaximize_YearlyFeeGroup"/>
+          <include name="tcClickOnSuccessOkBtn_YearlyGroup_deactivateCancel"/>
+          <include name="tcDeactivationOfCreated_YearlyFeeGroup" invocation-numbers="0"/>
+          <include name="tcVerifyYearlyFeeGroup_UpdatedInGrid" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="tcActivationOfCreatedFeeGroup_YearlyGroup" invocation-numbers="0"/>
+          <include name="tcClickOnSuccessOkBtn_YearlyGroup_activate"/>
+          <include name="tcClickOnSuccessOkBtn_YearlyGroup_activateCancel"/>
+          <include name="tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_ForDeactivate" invocation-numbers="0"/>
+          <include name="tcActivationOfCreatedFeeGroup_YearlyGroup_AfterCancel" invocation-numbers="0"/>
+          <include name="tcNavigateToMasters_FeeGroup_YearlyFeeGroup"/>
+          <include name="tcClickOnSaveButton_YearlyGroupForm_Edit"/>
+          <include name="tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_ForActivate" invocation-numbers="0"/>
+          <include name="tcHomeButtonValidation"/>
+          <include name="tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_ForDeactivate_AfterCancel" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="tcYesDeleteOrDeactivateOrActivateIt_deactivate"/>
+          <include name="tcClickOnSaveButton_YearlyGroup"/>
+          <include name="tcEdit_YearlyFeeGroup" invocation-numbers="0"/>
+          <include name="tcNavigateTo_YearlyGroupTab"/>
+          <include name="tcClickOnCancelButton_deactivate"/>
+          <include name="tcMinimize_YearlyFeeGroup"/>
+          <include name="tcMinimize_YearlyGroupFeeGrGridView"/>
+          <include name="tcVerifyFeeGroupPage_YearlyGroup"/>
+          <include name="tcClickOnCancelButton_YearlyFeeGroup"/>
+          <include name="tcFill_FeeGroup_YearlyGroupForm_AfterClearingFilledData" invocation-numbers="0 1"/>
+          <include name="tcClickOnSaveButton_YearlyGroup_ToSubmitBlankForm"/>
+          <include name="tcYesDeleteOrDeactivateOrActivateIt_Activate"/>
+          <include name="tcMaximize_YearlyGroupFeeGrGridView"/>
+          <include name="tcClickOnSuccessOkBtn_YearlyGroup_deactivate"/>
+          <include name="tcSortBy_YearlyFeeGroupName"/>
+          <include name="tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_AfterCancel" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup -->
+    </classes>
+  </test> <!-- YearlyFeeGroup(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->

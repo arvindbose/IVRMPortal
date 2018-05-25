@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard">
+        <methods>
+          <include name="setUp"/>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="loginToappWithrequiredCredentials" invocation-numbers="1 2 3 4"/>
+          <include name="endTest"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- com.test.automation.uiAutomation.Fee.TC_Masters.TC_Configuration_Fee_Standard -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,1661 @@
+<html>
+<head>
+<title>TestNG:  HomePageTest</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>HomePageTest</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>9/1/21</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Apr 20 09:40:42 IST 2018</td>
+</tr>
+<tr><td>Total time:</td><td>126 seconds (126962 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: [TestResult name=tcClickOn_YearlyGroupTab status=FAILURE method=Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab()[pri:5, instance:com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338] output={null}]</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace166536076", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace166536076'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.beforeMethod()'><b>beforeMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.afterMethod()'><b>afterMethod</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab()'><b>tcClickOn_YearlyGroupTab</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 7 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace307411297", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace307411297'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 7 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br>Parameters: Rakesh, Rakesh@123, Y<br/>
+<a href="#Output-1976166251" onClick='toggleBox("Output-1976166251", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1976166251" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1976166251">
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_20_04_2018_09_41_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_20_04_2018_09_41_09.png' height='100' width='100'/> </a><br/>
+entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //input[@id='login-username']]<br/>
+entered password:-Rakesh@123 and object is [[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //input[@id='login-password']]<br/>
+cliked on login button and object is:-[[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //div[@class='col-xs-4']/button]<br/>
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_20_04_2018_09_41_28.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_20_04_2018_09_41_28.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: Rakesh, Rakesh@123, Y<br/>
+<a href="#Output-1394010463" onClick='toggleBox("Output-1394010463", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1394010463" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1394010463">
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_20_04_2018_09_41_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_20_04_2018_09_41_52.png' height='100' width='100'/> </a><br/>
+entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //input[@id='login-username']]<br/>
+entered password:-Rakesh@123 and object is [[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //input[@id='login-password']]<br/>
+cliked on login button and object is:-[[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //div[@class='col-xs-4']/button]<br/>
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_20_04_2018_09_42_12.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_20_04_2018_09_42_12.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcHomeButtonValidation()'><b>tcHomeButtonValidation</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br/>
+<a href="#Output-1628551735" onClick='toggleBox("Output-1628551735", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1628551735" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1628551735">
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_20_04_2018_09_42_12.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_20_04_2018_09_42_12.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcHomeButtonValidation()'><b>tcHomeButtonValidation</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br/>
+<a href="#Output-1527882132" onClick='toggleBox("Output-1527882132", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1527882132" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1527882132">
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_20_04_2018_09_42_13.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_20_04_2018_09_42_13.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcMastersFeeGroupNameAndRemarks()'><b>tcMastersFeeGroupNameAndRemarks</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br>Parameters: Susdiny annual Fee Group, Susdiny admission annual tuition fee, Y<br/>
+<a href="#Output-173738886" onClick='toggleBox("Output-173738886", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-173738886" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-173738886">
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMastersFeeGroupNameAndRemarks_20_04_2018_09_42_43.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMastersFeeGroupNameAndRemarks_20_04_2018_09_42_43.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcNevigateToMastersFeeGroup()'><b>tcNevigateToMastersFeeGroup</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br/>
+<a href="#Output-300604602" onClick='toggleBox("Output-300604602", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-300604602" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-300604602">
+Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //aside[@id='style-4']/section/ul/li[4]]<br/>
+Clicked on Fee Masters Button and object is:-[[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //aside[@id='style-4']/section/ul/li[4]/ul/li[2]]<br/>
+Clicked on Fee Group Button and object is:-[[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateToMastersFeeGroup_20_04_2018_09_42_17.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateToMastersFeeGroup_20_04_2018_09_42_17.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcNevigateToMasters_FeeGroup_YearlyGroup()'><b>tcNevigateToMasters_FeeGroup_YearlyGroup</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br/>
+<a href="#Output-1171255580" onClick='toggleBox("Output-1171255580", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1171255580" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1171255580">
+Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //aside[@id='style-4']/section/ul/li[4]]<br/>
+Clicked on Fee Masters Button and object is:-[[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //aside[@id='style-4']/section/ul/li[4]/ul/li[2]]<br/>
+Clicked on Fee Group Button and object is:-[[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateToMasters_FeeGroup_YearlyGroup_20_04_2018_09_42_22.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNevigateToMasters_FeeGroup_YearlyGroup_20_04_2018_09_42_22.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcVerifyFeeGroupPage()'><b>tcVerifyFeeGroupPage</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br/>
+<a href="#Output-1478995734" onClick='toggleBox("Output-1478995734", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1478995734" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1478995734">
+Fee group page is dispalyed and object is:-[[ChromeDriver: chrome on XP (87d5ba5195e66387b36bbdb16c120e55)] -> xpath: //body[@id='style-4']/ui-view/div[1]/div/section/ol/li]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeGroupPage_20_04_2018_09_42_22.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeGroupPage_20_04_2018_09_42_22.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcVerifyFeeGroupPage_YearlyGroup()'><b>tcVerifyFeeGroupPage_YearlyGroup</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br/>
+<a href="#Output-104261836" onClick='toggleBox("Output-104261836", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-104261836" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-104261836">
+Fee group page is dispalyed and object is:-[[ChromeDriver: chrome on XP (62768a67894ddd8190a0cc51152bf332)] -> xpath: //body[@id='style-4']/ui-view/div[1]/div/section/ol/li]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeGroupPage_YearlyGroup_20_04_2018_09_42_23.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeGroupPage_YearlyGroup_20_04_2018_09_42_23.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br>Parameters: Radha, Radha@123, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1098986569", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1098986569'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br>Parameters: arvind, VapsTech@121, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace276869158", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace276869158'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br>Parameters: Rakesh, Rakesh@321, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace534753234", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace534753234'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br>Parameters: RR, Password@123, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1831882653", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1831882653'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_MasterGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: Radha, Radha@123, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace331596257", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace331596257'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: arvind, VapsTech@121, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace999647352", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace999647352'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: Rakesh, Rakesh@321, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace694069884", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace694069884'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: RR, Password@123, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1692073709", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1692073709'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.loginToappWithrequiredCredentials(Tc_Masters_Fee_Group_YearlyGroup.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcAcademicYearAndGroupsSelection_YearlyGroup()'><b>tcAcademicYearAndGroupsSelection_YearlyGroup</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: 2017-2018, Susdiny Fee Group, N</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1049590050", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1049590050'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcAcademicYearAndGroupsSelection_YearlyGroup()'><b>tcAcademicYearAndGroupsSelection_YearlyGroup</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br>Parameters: 2017-2018, Susdiny annual Fee Group, Y</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1491522744", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1491522744'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcClickOnSaveButton()'><b>tcClickOnSaveButton</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace42820240", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace42820240'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOnSaveButton_YearlyGroup()'><b>tcClickOnSaveButton_YearlyGroup</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace955611965", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace955611965'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcClickOnSuccessOkBtn()'><b>tcClickOnSuccessOkBtn</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2086068243", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2086068243'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOnSuccessOkBtn_YearlyGroup()'><b>tcClickOnSuccessOkBtn_YearlyGroup</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace762509150", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace762509150'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab()'><b>tcClickOn_YearlyGroupTab</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br/>
+<a href="#Output-564817260" onClick='toggleBox("Output-564817260", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-564817260" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-564817260">
+Retrying test tcClickOn_YearlyGroupTab with status FAILURE for the 1 time(s).<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace564817260", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace564817260'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>3</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab()'><b>tcClickOn_YearlyGroupTab</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br/>
+<a href="#Output-2015999862" onClick='toggleBox("Output-2015999862", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2015999862" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2015999862">
+Retrying test tcClickOn_YearlyGroupTab with status FAILURE for the 2 time(s).<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2015999862", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2015999862'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab()'><b>tcClickOn_YearlyGroupTab</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup<br/>
+<a href="#Output-1917082298" onClick='toggleBox("Output-1917082298", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1917082298" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1917082298">
+Retrying test tcClickOn_YearlyGroupTab with status FAILURE for the 3 time(s).<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1917082298", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1917082298'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.getScreenShot(TestBase.java:197)
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcClickOn_YearlyGroupTab(Tc_Masters_Fee_Group_YearlyGroup.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcMastersFeeGroupNameAndRemarks()'><b>tcMastersFeeGroupNameAndRemarks</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup<br>Parameters: Susdiny Fee Group, New admission annual tuition fee, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcMastersFeeGroupNameAndRemarks(Tc_Masters_Fee_Group_MasterGroup.java:118)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace367967231", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace367967231'><pre>org.testng.SkipException: user marked this record as no run
+	at com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcMastersFeeGroupNameAndRemarks(Tc_Masters_Fee_Group_MasterGroup.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcSelectCompulsorycheckbox()'><b>tcSelectCompulsorycheckbox</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1459016715", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1459016715'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup.tcVerifySuccessfulPopUp()'><b>tcVerifySuccessfulPopUp</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1692375649", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1692375649'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup@4206a205</td></tr>
+<tr>
+<td title='com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup.tcVerifySuccessfulPopUp()'><b>tcVerifySuccessfulPopUp</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace742255664", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace742255664'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;DESKTOP-DISLHD4&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir4012_30264}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 62768a67894ddd8190a0cc51152bf332
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.test.automation.uiAutomation.testBase.TestBase.captureScreen(TestBase.java:273)
+	at com.test.automation.uiAutomation.testBase.TestBase.getresult(TestBase.java:302)
+	at com.test.automation.uiAutomation.testBase.TestBase.afterMethod(TestBase.java:311)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup@29ba4338</td></tr>
+</table><p>
+</body>
+</html>
