@@ -126,6 +126,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
+			Thread.sleep(5000);
 			return true;
 
 		} catch (Exception e) {
@@ -155,7 +156,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		if (btnFeeInstallment.isDisplayed()) {
 			btnFeeInstallment.click();
 			log("Clicked on Fee Installment Button and object is:-" + btnFeeInstallment.toString());
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} else {
 			log("Fee Installment Navigation element not present.");
 			Thread.sleep(500);
@@ -250,7 +251,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		if (btn_Save_MasterInstallment.isDisplayed()) {
 			btn_Save_MasterInstallment.click();
 			log("clicked on save button and object is:-" + btn_Save_MasterInstallment.toString());
-			Thread.sleep(2000);
+			Thread.sleep(7000);
 		} else {
 			log("Save Button element is not present");
 			Thread.sleep(500);
@@ -348,7 +349,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	 * @param installmentName
 	 * @throws Exception
 	 */
-	public void edit_MasterFeeGroup(String installmentName) throws Exception {
+	public void edit_MasterFeeInstallment(String installmentName) throws Exception {
 
 		int rows = tblRows.size();
 		System.out.println(rows);
@@ -418,7 +419,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 			btnYesDeleteOrDeactIt.click();
 			log("Clicked on yes deactivate or activate or delete it button and object is:-"
 					+ btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 		} else {
 			log("Yes Activate/Deactivate button element not present.");
 			Thread.sleep(500);
