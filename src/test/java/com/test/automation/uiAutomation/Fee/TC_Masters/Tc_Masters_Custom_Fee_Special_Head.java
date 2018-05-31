@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -45,7 +46,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 
 	@DataProvider(name = "searchBySpecialFeeHeadName")
 	public String[][] getTestDataSplHeadName() {
-		String[][] testRecordsCSplHeadName = getData("FeeModueData.xlsx", "CustomSplFeeHeadNameData");
+		String[][] testRecordsCSplHeadName = getData("FeeModueData.xlsx", "Search_CustomSplFeeHead");
 		return testRecordsCSplHeadName;
 	}
 
@@ -95,17 +96,17 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 	}
 
 	@Test(priority = 3)
-	public void tcNevigateToMasters_Custom_Special_FeeHead() {
+	public void tcNavigateToMasters_Custom_Special_FeeHead() {
 
 		try {
-			log.info("============= Strting tcNevigateToMasters_Custom_Special_FeeHead Test===========");
+			log.info("============= Strting tcNavigateToMasters_Custom_Special_FeeHead Test===========");
 
-			customSplfeeHead.nevigateToMasters_Custom_Special_FeeHead();
+			customSplfeeHead.navigateToMasters_Custom_Special_FeeHead();
 
-			log.info("============= Finished tcNevigateToMasters_Custom_Special_FeeHead Test===========");
-			getScreenShot("tcNevigateToMasters_Custom_Special_FeeHead");
+			log.info("============= Finished tcNavigateToMasters_Custom_Special_FeeHead Test===========");
+			getScreenShot("tcNavigateToMasters_Custom_Special_FeeHead");
 		} catch (Exception e) {
-			getScreenShot("tcNevigateToMasters_Custom_Special_FeeHead");
+			getScreenShot("tcNavigateToMasters_Custom_Special_FeeHead");
 		}
 	}
 
@@ -124,25 +125,150 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 5, dataProvider = "CustomSPlFeeHeadTestData")
-	public void tcEnterSpecialFeeHeadAndSelectFeeHead(String specialFeeHead, String feehead, String runMode) {
+	@Test(priority = 5)
+	public void tcClickOnSaveButton_ToSubmitBlankForm() {
+
+		try {
+			log.info("============= Strting tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+
+			customSplfeeHead.clickOnSaveButton();
+
+			log.info("============= Finished tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		}
+	}
+
+	@Test(priority = 6, dataProvider = "CustomSPlFeeHeadTestData")
+	public void tcFill_CustomSpecialFeeHeadForm(String specialFeeHead, String feehead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcEnterSpecialFeeHeadAndSelectFeeHead Test===========");
+			log.info("============= Strting tcFill_CustomSpecialFeeHeadForm Test===========");
 
-			customSplfeeHead.enterSpecialFeeHeadAndSelectFeeHead(specialFeeHead, feehead);
+			customSplfeeHead.fill_CustomSpecialFeeHeadForm(specialFeeHead, feehead);
 
-			log.info("============= Finished tcEnterSpecialFeeHeadAndSelectFeeHead Test===========");
-			getScreenShot("tcEnterSpecialFeeHeadAndSelectFeeHead");
+			log.info("============= Finished tcFill_CustomSpecialFeeHeadForm Test===========");
+			getScreenShot("tcFill_CustomSpecialFeeHeadForm");
 		} catch (Exception e) {
-			getScreenShot("tcEnterSpecialFeeHeadAndSelectFeeHead");
+			getScreenShot("tcFill_CustomSpecialFeeHeadForm");
 		}
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 7)
+	public void tcMinimize_SpecialFeeHead() {
+
+		try {
+			log.info("============= Strting tcMinimize_SpecialFeeHead Test===========");
+
+			customSplfeeHead.minimizeAndMaximize_SpecialFeeHead();
+
+			log.info("============= Finished tcMinimize_SpecialFeeHead Test===========");
+			getScreenShot("tcMinimize_SpecialFeeHead");
+		} catch (Exception e) {
+			getScreenShot("tcMinimize_SpecialFeeHead");
+		}
+	}
+
+	@Test(priority = 8)
+	public void tcSortByFeeHead() {
+
+		try {
+			log.info("============= Strting tcSortByFeeHead Test===========");
+			getScreenShot("BeforeSorting_tcSortByFeeHead");
+
+			customSplfeeHead.sortByFeeHead();
+
+			log.info("============= Finished tcSortByFeeHead Test===========");
+			getScreenShot("tcSortByFeeHead");
+		} catch (Exception e) {
+			getScreenShot("tcSortByFeeHead");
+		}
+	}
+
+	@Test(priority = 9)
+	public void tcMinimize_SpecialHeadGridView() {
+
+		try {
+			log.info("============= Strting tcMinimize_SpecialHeadGridView Test===========");
+
+			customSplfeeHead.minimizeAndMaximize_SpecialHeadGridView();
+
+			log.info("============= Finished tcMinimize_SpecialHeadGridView Test===========");
+			getScreenShot("tcMinimize_SpecialHeadGridView");
+		} catch (Exception e) {
+			getScreenShot("tcMinimize_SpecialHeadGridView");
+		}
+	}
+
+	@Test(priority = 10)
+	public void tcMaximize_SpecialHeadGridView() {
+
+		try {
+			log.info("============= Strting tcMaximize_SpecialHeadGridView Test===========");
+
+			customSplfeeHead.minimizeAndMaximize_SpecialHeadGridView();
+
+			log.info("============= Finished tcMaximize_SpecialHeadGridView Test===========");
+			getScreenShot("tcMaximize_SpecialHeadGridView");
+		} catch (Exception e) {
+			getScreenShot("tcMaximize_SpecialHeadGridView");
+		}
+	}
+
+	@Test(priority = 11)
+	public void tcMaximize_SpecialFeeHead() {
+
+		try {
+			log.info("============= Strting tcMaximize_SpecialFeeHead Test===========");
+
+			customSplfeeHead.minimizeAndMaximize_SpecialFeeHead();
+
+			log.info("============= Finished tcMaximize_SpecialFeeHead Test===========");
+			getScreenShot("tcMaximize_SpecialFeeHead");
+		} catch (Exception e) {
+			getScreenShot("tcMaximize_SpecialFeeHead");
+		}
+	}
+
+	@Test(priority = 12)
+	public void tcClickOnCancelButton_ClearFilledForm() {
+
+		try {
+			log.info("============= Strting tcClickOnCancelButton_ClearFilledForm Test===========");
+
+			customSplfeeHead.clickOnCancelButton_ClearFilledForm();
+
+			log.info("============= Finished tcClickOnCancelButton_ClearFilledForm Test===========");
+			getScreenShot("tcClickOnCancelButton_ClearFilledForm");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnCancelButton_ClearFilledForm");
+		}
+	}
+
+	@Test(priority = 13, dataProvider = "CustomSPlFeeHeadTestData")
+	public void tcFill_CustomSpecialFeeHeadForm_AfterClearingFilledData(String specialFeeHead, String feehead,
+			String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcFill_CustomSpecialFeeHeadForm_AfterClearingFilledData Test===========");
+
+			customSplfeeHead.fill_CustomSpecialFeeHeadForm(specialFeeHead, feehead);
+
+			log.info("============= Finished tcFill_CustomSpecialFeeHeadForm_AfterClearingFilledData Test===========");
+			getScreenShot("tcFill_CustomSpecialFeeHeadForm_AfterClearingFilledData");
+		} catch (Exception e) {
+			getScreenShot("tcFill_CustomSpecialFeeHeadForm_AfterClearingFilledData");
+		}
+	}
+
+	@Test(priority = 14)
 	public void tcClickOnSaveButton() {
 
 		try {
@@ -157,7 +283,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 15)
 	public void tcVerifySuccessfulPopUp() {
 
 		try {
@@ -173,7 +299,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 16)
 	public void tcClickOnSuccessOkBtn() {
 
 		try {
@@ -195,7 +321,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 	 * @param runMode
 	 */
 
-	@Test(priority = 9, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 17, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcSearchBySpLFeeHeadNameInGrid(String specialfeehead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -203,9 +329,9 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 		try {
 			log.info("============= Strting tcVerifyCustomSPLFeeHeadupdatedInGrid Test =============");
-			
+
 			customSplfeeHead.searchBySpLFeeHeadNameInGrid(specialfeehead);
-			
+
 			log.info("============= tcSearchBySpLFeeHeadNameInGrid =============");
 
 			getScreenShot("tcSearchBySpLFeeHeadNameInGrid");
@@ -214,4 +340,344 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
+	@Test(priority = 18, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcVerifyCustomSPLFeeHeadupdatedInGrid(String specialFeeHead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcVerifyCustomSPLFeeHeadupdatedInGrid Test===========");
+
+			customSplfeeHead.verifyCustomSPLFeeHeadupdatedInGrid(specialFeeHead);
+
+			log.info("============= Finished tcVerifyCustomSPLFeeHeadupdatedInGrid Test===========");
+			getScreenShot("tcVerifyCustomSPLFeeHeadupdatedInGrid");
+		} catch (Exception e) {
+			getScreenShot("tcVerifyCustomSPLFeeHeadupdatedInGrid");
+		}
+	}
+
+	@Test(priority = 19, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcEdit_CustomSpecialFeeHead(String specialFeeHead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcEdit_CustomSpecialFeeHead Test===========");
+
+			customSplfeeHead.edit_CustomSplFeeHead(specialFeeHead);
+			log.info("============= Finished tcEdit_CustomSpecialFeeHead Test===========");
+			getScreenShot("tcEdit_CustomSpecialFeeHead");
+		} catch (Exception e) {
+			getScreenShot("tcEdit_CustomSpecialFeeHead");
+		}
+	}
+
+	@Test(priority = 20)
+	public void tcClickOnSaveButton_CustomSpecialFeeHead_Edit() {
+
+		try {
+			log.info("============= Strting tcClickOnSaveButton_CustomSpecialFeeHead_Edit Test===========");
+
+			customSplfeeHead.clickOnSaveButton();
+
+			log.info("============= Finished tcClickOnSaveButton_CustomSpecialFeeHead_Edit Test===========");
+			getScreenShot("tcClickOnSaveButton_CustomSpecialFeeHead_Edit");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSaveButton_CustomSpecialFeeHead_Edit");
+		}
+	}
+
+	@Test(priority = 21)
+	public void tcClickOnOkSuccessButton_Edit() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_Edit Test===========");
+
+			customSplfeeHead.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_Edit Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_Edit");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_Edit");
+		}
+	}
+
+	//
+
+	@Test(priority = 22, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcSearchBySpLFeeHeadNameInGrid_ForDeactivate(String specialfeehead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchBySpLFeeHeadNameInGrid_ForDeactivate Test===========");
+
+			customSplfeeHead.searchBySpLFeeHeadNameInGrid(specialfeehead);
+
+			log.info("============= Finished tcSearchBySpLFeeHeadNameInGrid_ForDeactivate Test===========");
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_ForDeactivate");
+		} catch (Exception e) {
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_ForDeactivate");
+		}
+	}
+
+	@Test(priority = 23, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcDeactivationOfCreatedCustomSPLFeeHead(String specialFeeHead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcDeactivationOfCreatedCustomSPLFeeHead Test===========");
+
+			customSplfeeHead.deactivationOfCreatedCustomSPLFeeHead(specialFeeHead);
+
+			log.info("============= Finished tcDeactivationOfCreatedCustomSPLFeeHead Test===========");
+			getScreenShot("tcDeactivationOfCreatedCustomSPLFeeHead");
+		} catch (Exception e) {
+			getScreenShot("tcDeactivationOfCreatedCustomSPLFeeHead");
+		}
+	}
+
+	@Test(priority = 24)
+	public void tcClickOnCancelButton_PopUp_deactivate() {
+
+		try {
+			log.info("============= Strting tcClickOnCancelButton_PopUp_deactivate Test===========");
+
+			customSplfeeHead.clickOnCancelButton_PopUp();
+
+			log.info("============= Finished tcClickOnCancelButton_PopUp_deactivate Test===========");
+			getScreenShot("tcClickOnCancelButton_PopUp_deactivate");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnCancelButton_PopUp_deactivate");
+		}
+	}
+
+	@Test(priority = 25)
+	public void tcClickOnOkSuccessButton_deactivateCancel() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_deactivateCancel Test===========");
+
+			customSplfeeHead.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_deactivateCancel Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_deactivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_deactivateCancel");
+		}
+	}
+
+	@Test(priority = 26, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcSearchBySpLFeeHeadNameInGrid_ForDeactivate_AfterCancel(String specialfeehead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchBySpLFeeHeadNameInGrid_ForDeactivate_AfterCancel Test===========");
+
+			customSplfeeHead.searchBySpLFeeHeadNameInGrid(specialfeehead);
+
+			log.info("============= Finished tcSearchBySpLFeeHeadNameInGrid_ForDeactivate_AfterCancel Test===========");
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_ForDeactivate_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_ForDeactivate_AfterCancel");
+		}
+	}
+
+	@Test(priority = 27, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcDeactivationOfCreatedCustomSPLFeeHead_AfterCancel(String specialFeeHead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcDeactivationOfCreatedCustomSPLFeeHead_AfterCancel Test===========");
+
+			customSplfeeHead.deactivationOfCreatedCustomSPLFeeHead(specialFeeHead);
+
+			log.info("============= Finished tcDeactivationOfCreatedCustomSPLFeeHead_AfterCancel Test===========");
+			getScreenShot("tcDeactivationOfCreatedCustomSPLFeeHead_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcDeactivationOfCreatedCustomSPLFeeHead_AfterCancel");
+		}
+	}
+
+	@Test(priority = 28)
+	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
+
+		try {
+			log.info("============= Strting tcYesDeleteOrDeactivateOrActivateIt Test===========");
+
+			customSplfeeHead.yesDeleteOrDeactivateOrActivateIt();
+
+			log.info("============= Finished tcYesDeleteOrDeactivateOrActivateIt Test===========");
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
+		} catch (Exception e) {
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
+		}
+	}
+
+	@Test(priority = 29)
+	public void tcClickOnOkSuccessButton_deactivate() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_deactivate Test===========");
+
+			customSplfeeHead.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_deactivate Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_deactivate");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_deactivate");
+		}
+	}
+
+	@Test(priority = 30, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcSearchBySpLFeeHeadNameInGrid_ForActivate(String specialfeehead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchBySpLFeeHeadNameInGrid_ForActivate Test===========");
+
+			customSplfeeHead.searchBySpLFeeHeadNameInGrid(specialfeehead);
+
+			log.info("============= Finished tcSearchBySpLFeeHeadNameInGrid_ForActivate Test===========");
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_ForActivate");
+		} catch (Exception e) {
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_ForActivate");
+		}
+	}
+
+	@Test(priority = 31, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcActivationOfCreatedCustomSPLFeeHead(String specialFeeHead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcActivationOfCreatedCustomSPLFeeHead Test===========");
+
+			customSplfeeHead.activationOfCreatedCustomSPLFeeHead(specialFeeHead);
+
+			log.info("============= Finished tcActivationOfCreatedCustomSPLFeeHead Test===========");
+			getScreenShot("tcActivationOfCreatedCustomSPLFeeHead");
+		} catch (Exception e) {
+			getScreenShot("tcActivationOfCreatedCustomSPLFeeHead");
+		}
+	}
+
+	@Test(priority = 32)
+	public void tcClickOnCancelButton_PopUp_activate() {
+
+		try {
+			log.info("============= Strting tcClickOnCancelButton_PopUp_activate Test===========");
+
+			customSplfeeHead.clickOnCancelButton_PopUp();
+
+			log.info("============= Finished tcClickOnCancelButton_PopUp_activate Test===========");
+			getScreenShot("tcClickOnCancelButton_PopUp_activate");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnCancelButton_PopUp_activate");
+		}
+	}
+
+	@Test(priority = 33)
+	public void tcClickOnOkSuccessButton_activateCancel() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_activateCancel Test===========");
+
+			customSplfeeHead.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_activateCancel Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_activateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_activateCancel");
+		}
+	}
+
+	@Test(priority = 34, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcSearchBySpLFeeHeadNameInGrid_AfterCancel(String specialfeehead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchBySpLFeeHeadNameInGrid_AfterCancel Test===========");
+
+			customSplfeeHead.searchBySpLFeeHeadNameInGrid(specialfeehead);
+
+			log.info("============= Finished tcSearchBySpLFeeHeadNameInGrid_AfterCancel Test===========");
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcSearchBySpLFeeHeadNameInGrid_AfterCancel");
+		}
+	}
+
+	@Test(priority = 35, dataProvider = "searchBySpecialFeeHeadName")
+	public void tcActivationOfCreatedCustomSPLFeeHead_AfterCancel(String specialFeeHead, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcActivationOfCreatedCustomSPLFeeHead_AfterCancel Test===========");
+
+			customSplfeeHead.activationOfCreatedCustomSPLFeeHead(specialFeeHead);
+			log.info("============= Finished tcActivationOfCreatedCustomSPLFeeHead_AfterCancel Test===========");
+			getScreenShot("tcActivationOfCreatedCustomSPLFeeHead_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcActivationOfCreatedCustomSPLFeeHead_AfterCancel");
+		}
+	}
+
+	@Test(priority = 36)
+	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
+
+		try {
+			log.info("============= Strting tcYesDeleteOrDeactivateOrActivateIt_Activate Test===========");
+
+			customSplfeeHead.yesDeleteOrDeactivateOrActivateIt();
+
+			log.info("============= Finished tcYesDeleteOrDeactivateOrActivateIt_Activate Test===========");
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
+		} catch (Exception e) {
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
+		}
+	}
+
+	@Test(priority = 37)
+	public void tcClickOnOkSuccessButton_activate() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_activate Test===========");
+
+			customSplfeeHead.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_activate Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_activate");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_activate");
+		}
+	}
+
+	@AfterClass
+	public void tearDown() {
+		try {
+			ivrmportallogin.logOutFromApplication();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		driver.quit();
+	}
 }

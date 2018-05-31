@@ -80,7 +80,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	WebElement btnOkonSuccess;
 
 	@FindBy(xpath = "(//div[@class='input-group']/span/following-sibling::input)[1]")
-	WebElement input_Search_MasterGr;
+	WebElement input_Search_MasterInstallment;
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[2]/tbody/tr")
 	List<WebElement> tblRows;
@@ -302,11 +302,11 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	 */
 
 	public void searchBy_InstallmentName_InFeeMasterInstallmentGridView(String installmentName) throws Exception {
-		if (input_Search_MasterGr.isDisplayed()) {
-			input_Search_MasterGr.clear();
-			input_Search_MasterGr.sendKeys(installmentName);
+		if (input_Search_MasterInstallment.isDisplayed()) {
+			input_Search_MasterInstallment.clear();
+			input_Search_MasterInstallment.sendKeys(installmentName);
 			log("Entered Master Fee Installment Name:" + installmentName + " and object is:-"
-					+ input_Search_MasterGr.toString());
+					+ input_Search_MasterInstallment.toString());
 			Thread.sleep(1000);
 		} else {
 			log("Search Element not present");
@@ -455,6 +455,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 			System.out.println("Created Fee Installment Master " + feeinstallment);
 			Thread.sleep(2000);
 			try {
+				Assert.assertEquals(feeinstallment, installmentName);
 				WebElement activeLink = driver
 						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]/span"));
 				String activatext = activeLink.getText().trim();
