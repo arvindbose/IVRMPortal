@@ -22,8 +22,8 @@ import com.test.automation.uiAutomation.testBase.TestBase;
  * @author vaps
  *
  */
-public class Masters_Student_Fee_GroupMap extends TestBase{
-	
+public class Masters_Student_Fee_GroupMap extends TestBase {
+
 	public static final Logger log = Logger.getLogger(Masters_Student_Fee_GroupMap.class.getName());
 
 	WebDriver driver;
@@ -31,68 +31,124 @@ public class Masters_Student_Fee_GroupMap extends TestBase{
 	Actions oAction;
 	Robot robot;
 	WebElement option;
-	
+
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
 	WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
-	
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[2]")
+
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[2]")
 	WebElement btnStudentFGrMap;
-	
+
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtStudentFeeGrmap;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'All')]/preceding-sibling::input")
-	WebElement btnRadioAll;
-	
-	@FindBy(xpath = "(//select[@id='sel1'])[6]")
-	WebElement selSearch;
-	
-	@FindBy(xpath = "(//div[@class='col-sm-3']/input)[1]")
-	WebElement txtSearch;
-	
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[1]/tbody/tr")
-	List<WebElement> tblRows;
-	
-	@FindBy(xpath = "(//body[@id='style-4']//div/button[1])[4]")
-	WebElement btnSearch;
-	
-	@FindBy(xpath = "(//span[contains(text(),'Susdiny Fee Group')]/preceding-sibling::*)[1]")
-	WebElement btnPlusSusdinyFGr;
-	
-	@FindBy(xpath = "(//span[contains(text(),'Tuition annual Fee')]/preceding-sibling::*)[1]")
-	WebElement btnPlusTuitionAnnualFee;
-	
-	@FindBy(xpath = "(//span[contains(text(),'Test Installment I')]/preceding-sibling::*)[1]")
-	WebElement chkInstallmentI;
-	
-	@FindBy(xpath = "(//span[contains(text(),'suresh fee group1')]/preceding-sibling::*)[1]")
-	WebElement btnPlusSureshFGr1;
-	
-	@FindBy(xpath = "(//span[contains(text(),'suresh fee head1')]/preceding-sibling::*)[1]")
-	WebElement btnPlusSureshFeeHead1;
-	
-	@FindBy(xpath = "(//span[contains(text(),'suresh 1 installment')]/preceding-sibling::*)[1]")
-	WebElement chkSureshInstallmentI;
-	
-	
-	@FindBy(xpath = "//button[@id='save-btn']")
-	WebElement btnSave;
+	WebElement rdBtn_All;
 
-	@FindBy(xpath = "(//div[@class='text-center']/button)[3]")
-	WebElement btnCancel;
+	@FindBy(xpath = "//span[contains(text(),'Fee Class Category')]/preceding-sibling::input")
+	WebElement rdBtn_FeeClassCategory;
 
-	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
+	@FindBy(xpath = "//span[contains(text(),'Admission Category')]/preceding-sibling::input")
+	WebElement rdBtn_AdmissionClassCategory;
+
+	@FindBy(xpath = "//span[contains(text(),'Regular Student')]/preceding-sibling::input")
+	WebElement rdBtn_RegularStudent;
+
+	@FindBy(xpath = "//span[contains(text(),'New Student')]/preceding-sibling::input")
+	WebElement rdBtn_NewStudent;
+
+	@FindBy(xpath = "//span[contains(text(),'Class Wise')]/preceding-sibling::input")
+	WebElement chk_ClassWise;
+
+	@FindBy(xpath = "//label[contains(text(),'Academic Year:')]/following-sibling::div/select")
+	WebElement sel_AcademicYear;
+
+	@FindBy(xpath = "//label[contains(text(),'Class:')]/following-sibling::div/select")
+	WebElement sel_Class;
+
+	@FindBy(xpath = "//label[contains(text(),'Section:')]/following-sibling::div/select")
+	WebElement sel_Section;
+
+	@FindBy(xpath = "//label[contains(text(),'Fee Class Category:')]/following-sibling::div/select")
+	WebElement sel_FeeClassCategory;
+
+	@FindBy(xpath = "//label[contains(text(),'Admission Class Category:')]/following-sibling::div/select")
+	WebElement sel_AdmClassCategory;
+
+	@FindBy(xpath = "(//select[@id='sel1' and @name='search_for'])[1]")
+	WebElement sel_Search_StuList;
+
+	@FindBy(xpath = "//span[text()='Baldwin CoEducation School Fee']//preceding-sibling::input[@name='selcolchbx']")
+	WebElement chk_GroupList;
+
+	@FindBy(xpath = "//input[@name='searchstu_text' and @ng-model='searchtxtstud']")
+	WebElement input_Search_StuList;
+
+	@FindBy(xpath = "(//span[contains(text(),'Search')]/parent::button)[1]")
+	WebElement btn_Search_StuList;
+
+	@FindBy(xpath = "(//span[contains(text(),'Cancel')]/parent::button)[1]")
+	WebElement btn_CancelSearch_StuList;
+
+	@FindBy(xpath = "(//span[contains(text(),'Save')]//parent::button)[1]")
+	WebElement btn_Save;
+
+	@FindBy(xpath = "(//span[contains(text(),'Cancel')]//parent::button)[1]")
+	WebElement btn_Cancel;
+
+	@FindBy(xpath = "(//select[@id='sel1' and @name='search_for'])[4]")
+	WebElement sel_Search_OutputGrid;
+
+	@FindBy(xpath = "//input[@name='search_text' and @ng-model='searchtxt']")
+	WebElement input_Search_OutputGrid;
+
+	@FindBy(xpath = "(//span[contains(text(),'Search')]/parent::button)[4]")
+	WebElement btn_Search_OutputGrid;
+
+	@FindBy(xpath = "(//span[contains(text(),'Cancel')]/parent::button)[7]")
+	WebElement btn_CancelSearch_OutputGrid;
+
+	// @FindBy(xpath = "(//body[@id='style-4']//div/table)[1]/tbody/tr")
+	// List<WebElement> tblRows_StuList;
+
+	@FindBy(xpath = "//table//tbody//tr[1]//td[6]//label//input")
+	WebElement chk_toSelectStuForGroupMap;
+
+	@FindBy(xpath = "//table//tbody//tr[1]//td[6]//a")
+	WebElement icon_Edit_StuList;
+
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[4]/tbody/tr")
+	List<WebElement> tblRows_OutputGrid;
+
+	@FindBy(xpath = "//button[contains(text(),'OK')]")
 	WebElement btnOkonSuccess;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
 	WebElement successfulMessage;
-	
+
+	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
+	WebElement btnYesDeleteOrDeactIt;
+
+	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
+	WebElement btnPopUpCancel;
+
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
+	WebElement btnMin_MaxStudentFeeGrMapping;
+
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
+	WebElement btnMin_MaxStudentAndGroupList;
+
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
+	WebElement btnMin_MaxStudentFeeGroupList;
+
+	@FindBy(xpath = "(//div[@class='box-body']/child::table)[1]/thead/tr/th[2]/a")
+	WebElement btnSortByFeeHead;
+
 	public Masters_Student_Fee_GroupMap(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -102,7 +158,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			return true;
 
 		} catch (Exception e) {
@@ -112,30 +168,27 @@ public class Masters_Student_Fee_GroupMap extends TestBase{
 	}
 
 	public void nevigateToMasters_StudentFeegroupMap() throws Exception {
-		if(btnFee.isDisplayed()){
-		btnFee.click();
-		log("Clicked on Fee Button and object is:-" + btnFee.toString());
-		Thread.sleep(1000);
-		}
-		else{
+		if (btnFee.isDisplayed()) {
+			btnFee.click();
+			log("Clicked on Fee Button and object is:-" + btnFee.toString());
+			Thread.sleep(1000);
+		} else {
 			log("Fee Button element not present.");
 			Thread.sleep(500);
 		}
-		if(feeMasters.isDisplayed()){
-		feeMasters.click();
-		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-		Thread.sleep(1000);
-	}
-	else{
-		log("Fee masters Button element not present.");
-		Thread.sleep(500);
-	}
-		if(btnStudentFGrMap.isDisplayed()){
-		btnStudentFGrMap.click();
-		log("Clicked on student Fee Group map Button and object is:-" + btnStudentFGrMap.toString());
-		Thread.sleep(5000);
+		if (feeMasters.isDisplayed()) {
+			feeMasters.click();
+			log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Fee masters Button element not present.");
+			Thread.sleep(500);
 		}
-		else{
+		if (btnStudentFGrMap.isDisplayed()) {
+			btnStudentFGrMap.click();
+			log("Clicked on student Fee Group map Button and object is:-" + btnStudentFGrMap.toString());
+			Thread.sleep(5000);
+		} else {
 			log("Student Fee Group map Button element not present.");
 			Thread.sleep(500);
 		}
@@ -153,87 +206,529 @@ public class Masters_Student_Fee_GroupMap extends TestBase{
 			return false;
 		}
 	}
-	public void selectByStudentName(String byStudentName, String StdName) throws Exception {
-		if(!btnRadioAll.isSelected()){
-		btnRadioAll.click();
-		log("All radio button is selected and object is:-"+btnRadioAll.toString());
-		Thread.sleep(10000);
-		}
-		else{
-			log("All radio button is already selected and object is:-"+btnRadioAll.toString());
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnAll(String academicYr) throws Exception {
+
+		if (!rdBtn_All.isSelected()) {
+			rdBtn_All.click();
+			log("Radio button ALL is selected and object is:-" + rdBtn_All.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button ALL is already selected.");
 			Thread.sleep(500);
 		}
-		
-		if(selSearch.isDisplayed()){
-		select = new Select(selSearch);
-		select.selectByVisibleText(byStudentName);
-		log("selected Student name for search:-" + byStudentName + " and object is " + selSearch.toString());
-		
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), byStudentName);
-		Thread.sleep(1000);
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+
+	}
+
+	public void mapStudentWithGroup(String bystudentName, String studentName) throws Exception {
+		if (sel_Search_StuList.isDisplayed()) {
+			select = new Select(sel_Search_StuList);
+			select.selectByVisibleText(bystudentName);
+			log("Selected serach for:-" + bystudentName + " and object is " + sel_Search_StuList.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), bystudentName);
+			Thread.sleep(1000);
+		} else {
+			log("Select serach for element is not present");
+			Thread.sleep(500);
+		}
+		if (input_Search_StuList.isDisplayed()) {
+			input_Search_StuList.clear();
+			input_Search_StuList.sendKeys(studentName);
+			log("Entered Student name for search " + studentName + " and object is " + input_Search_StuList.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Search Input field element not present.");
+			Thread.sleep(500);
+		}
+		if (btn_Search_StuList.isDisplayed()) {
+			btn_Search_StuList.click();
+			log("Search button for student list is clicked and object is " + btn_Search_StuList.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Search button element for student list is not present.");
+			Thread.sleep(500);
+		}
+		// if(chk_toSelectStuForGroupMap.isDisplayed()){
+		// if(!chk_toSelectStuForGroupMap.isSelected()){
+		// chk_toSelectStuForGroupMap.click();
+		// log("Student is selected form student list for group mapping and
+		// object is "+chk_toSelectStuForGroupMap.toString());
+		// Thread.sleep(1000);
+		// }else{
+		// log("Student is already selected for group mapping.");
+		// Thread.sleep(500);
+		// }
+		// }else{
+		// log("Check box element is not present in student list.");
+		// Thread.sleep(500);
+		// }
+		//
+		if ((chk_toSelectStuForGroupMap.isDisplayed()) && (!chk_toSelectStuForGroupMap.isSelected())) {
+
+			chk_toSelectStuForGroupMap.click();
+			log("Student is selected from student list for group mapping and object is "
+					+ chk_toSelectStuForGroupMap.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Student is already selected for group mapping or check box is not present.");
+			Thread.sleep(500);
+
+		}
+		if ((chk_GroupList.isDisplayed()) && (!chk_GroupList.isSelected())) {
+			chk_GroupList.click();
+			log("Group is selected from group list and object is " + chk_GroupList.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Group is already selected or check box element not present.");
+			Thread.sleep(500);
+		}
+
+	}
+
+	public void editStuentIn_StudentListToMapGroup() throws Exception {
+		if (icon_Edit_StuList.isDisplayed()) {
+			icon_Edit_StuList.click();
+			log("Student is selected form student list for group mapping and object is "
+					+ icon_Edit_StuList.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Student is already selected for group mapping.");
+			Thread.sleep(500);
+		}
+
+	}
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnAll_ClassWise(String academicYr, String classSelection,
+			String section) throws Exception {
+
+		if (!rdBtn_All.isSelected()) {
+			rdBtn_All.click();
+			log("Radio button ALL is selected and object is:-" + rdBtn_All.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button ALL is already selected.");
+			Thread.sleep(500);
+		}
+		if ((chk_ClassWise.isDisplayed()) && (!chk_ClassWise.isSelected())) {
+
+			chk_ClassWise.click();
+			log("Class Wise check box is selected and object is " + chk_ClassWise.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Class Wise check box is already selected or check box element is not present.");
+			Thread.sleep(500);
+		}
+
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_Class.isDisplayed()) {
+			select = new Select(sel_Class);
+			select.selectByVisibleText(classSelection);
+			log("Selected Class:-" + classSelection + " and object is " + sel_Class.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), classSelection);
+			Thread.sleep(1000);
+		} else {
+			log("Select Class element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_Section.isDisplayed()) {
+			select = new Select(sel_Section);
+			select.selectByVisibleText(section);
+			log("Selected Section:-" + section + " and object is " + sel_Section.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), section);
+			Thread.sleep(1000);
+		} else {
+			log("Select Section element is not present");
+			Thread.sleep(500);
+		}
+	}
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnFeeClassCategory(String academicYr, String feeclassCategory)
+			throws Exception {
+
+		if (!rdBtn_FeeClassCategory.isSelected()) {
+			rdBtn_FeeClassCategory.click();
+			log("Radio button Fee Class Category is selected and object is:-" + rdBtn_FeeClassCategory.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button Fee Class Category is already selected.");
+			Thread.sleep(500);
+		}
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_FeeClassCategory.isDisplayed()) {
+			select = new Select(sel_FeeClassCategory);
+			select.selectByVisibleText(feeclassCategory);
+			log("Selected Fee Class Category:-" + feeclassCategory + " and object is "
+					+ sel_FeeClassCategory.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), feeclassCategory);
+			Thread.sleep(1000);
+		} else {
+			log("Fee Class Category dropdown element is not present");
+			Thread.sleep(500);
+		}
+
+	}
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnAdmissionClassCategory(String academicYr,
+			String admissionclassCategory) throws Exception {
+
+		if (!rdBtn_AdmissionClassCategory.isSelected()) {
+			rdBtn_AdmissionClassCategory.click();
+			log("Radio button Admission Class Category is selected and object is:-"
+					+ rdBtn_AdmissionClassCategory.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button Admission Class Category is already selected.");
+			Thread.sleep(500);
+		}
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_AdmClassCategory.isDisplayed()) {
+			select = new Select(sel_AdmClassCategory);
+			select.selectByVisibleText(admissionclassCategory);
+			log("Selected Admission Class Category:-" + admissionclassCategory + " and object is "
+					+ sel_AdmClassCategory.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), admissionclassCategory);
+			Thread.sleep(1000);
+		} else {
+			log("Admission Class Category dropdown element is not present");
+			Thread.sleep(500);
+		}
+
+	}
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnRegularStudent_WithoutClassWise(String academicYr)
+			throws Exception {
+
+		if (!rdBtn_RegularStudent.isSelected()) {
+			rdBtn_RegularStudent.click();
+			log("Radio button Regular Student is selected and object is:-" + rdBtn_RegularStudent.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button Regular Student is already selected.");
+			Thread.sleep(500);
+		}
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+
+	}
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnRegularStudent_WithClassWise(String academicYr,
+			String classSelection, String section) throws Exception {
+
+		if (!rdBtn_RegularStudent.isSelected()) {
+			rdBtn_RegularStudent.click();
+			log("Radio button Regular Student is selected and object is:-" + rdBtn_RegularStudent.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button Regular Student is already selected.");
+			Thread.sleep(500);
+		}
+		if ((chk_ClassWise.isDisplayed()) && (!chk_ClassWise.isSelected())) {
+
+			chk_ClassWise.click();
+			log("Class Wise check box is selected and object is " + chk_ClassWise.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Class Wise check box is already selected or check box element is not present.");
+			Thread.sleep(500);
+		}
+
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_Class.isDisplayed()) {
+			select = new Select(sel_Class);
+			select.selectByVisibleText(classSelection);
+			log("Selected Class:-" + classSelection + " and object is " + sel_Class.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), classSelection);
+			Thread.sleep(1000);
+		} else {
+			log("Select Class element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_Section.isDisplayed()) {
+			select = new Select(sel_Section);
+			select.selectByVisibleText(section);
+			log("Selected Section:-" + section + " and object is " + sel_Section.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), section);
+			Thread.sleep(1000);
+		} else {
+			log("Select Section element is not present");
+			Thread.sleep(500);
+		}
+	}
+	
+	
+	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithoutClassWise(String academicYr)
+			throws Exception {
+
+		if (!rdBtn_NewStudent.isSelected()) {
+			rdBtn_NewStudent.click();
+			log("Radio button New Student is selected and object is:-" + rdBtn_NewStudent.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button New Student is already selected.");
+			Thread.sleep(500);
+		}
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+
+	}
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithClassWise(String academicYr,
+			String classSelection, String section) throws Exception {
+
+		if (!rdBtn_NewStudent.isSelected()) {
+			rdBtn_NewStudent.click();
+			log("Radio button New Student is selected and object is:-" + rdBtn_NewStudent.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Radio button New Student is already selected.");
+			Thread.sleep(500);
+		}
+		if ((chk_ClassWise.isDisplayed()) && (!chk_ClassWise.isSelected())) {
+
+			chk_ClassWise.click();
+			log("Class Wise check box is selected and object is " + chk_ClassWise.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Class Wise check box is already selected or check box element is not present.");
+			Thread.sleep(500);
+		}
+
+		if (sel_AcademicYear.isDisplayed()) {
+			select = new Select(sel_AcademicYear);
+			select.selectByVisibleText(academicYr);
+			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYr);
+			Thread.sleep(1000);
+		} else {
+			log("Select Academic Year element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_Class.isDisplayed()) {
+			select = new Select(sel_Class);
+			select.selectByVisibleText(classSelection);
+			log("Selected Class:-" + classSelection + " and object is " + sel_Class.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), classSelection);
+			Thread.sleep(1000);
+		} else {
+			log("Select Class element is not present");
+			Thread.sleep(500);
+		}
+		if (sel_Section.isDisplayed()) {
+			select = new Select(sel_Section);
+			select.selectByVisibleText(section);
+			log("Selected Section:-" + section + " and object is " + sel_Section.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), section);
+			Thread.sleep(1000);
+		} else {
+			log("Select Section element is not present");
+			Thread.sleep(500);
+		}
+	}
+	
+	public void clickOnSaveButton() throws Exception {
+		if (btn_Save.isDisplayed()) {
+			btn_Save.click();
+			log("clicked on save button and object is:-" + btn_Save.toString());
+			Thread.sleep(10000);
+		} else {
+			log("Save Button element not present.");
+			Thread.sleep(500);
+		}
+	}
+	public void clickOnCancelButton() throws Exception {
+		if (btn_Cancel.isDisplayed()) {
+			btn_Cancel.click();
+			log("clicked on Cancel button and object is:-" + btn_Cancel.toString());
+			Thread.sleep(7000);
+		} else {
+			log("Cancel Button element not present.");
+			Thread.sleep(500);
+		}
+	}
+	
+	
+	
+	
+	
+	
+
+	public void selectByStudentName(String byStudentName, String StdName) throws Exception {
+		if (!btnRadioAll.isSelected()) {
+			btnRadioAll.click();
+			log("All radio button is selected and object is:-" + btnRadioAll.toString());
+			Thread.sleep(10000);
+		} else {
+			log("All radio button is already selected and object is:-" + btnRadioAll.toString());
+			Thread.sleep(500);
+		}
+
+		if (selSearch.isDisplayed()) {
+			select = new Select(selSearch);
+			select.selectByVisibleText(byStudentName);
+			log("selected Student name for search:-" + byStudentName + " and object is " + selSearch.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), byStudentName);
+			Thread.sleep(1000);
 		} else {
 			log("Select search element is not present");
 			Thread.sleep(500);
 		}
-		if(txtSearch.isDisplayed()){
-		txtSearch.clear();
-		txtSearch.sendKeys(StdName);
-		log("entered Student name:-" + StdName + " and object is " + txtSearch.toString());
-		Thread.sleep(1000);
-		}
-		else{
+		if (txtSearch.isDisplayed()) {
+			txtSearch.clear();
+			txtSearch.sendKeys(StdName);
+			log("entered Student name:-" + StdName + " and object is " + txtSearch.toString());
+			Thread.sleep(1000);
+		} else {
 			log("Search box element is not present.");
 			Thread.sleep(500);
 		}
 
 	}
-	public void clickOnSearchButton() throws Exception{
-		if(btnSearch.isDisplayed()){
-		btnSearch.click();
-		log("clicked on search button and object is:-"+btnSearch.toString());
-		Thread.sleep(2000);
-		}
-		else{
+
+	public void clickOnSearchButton() throws Exception {
+		if (btnSearch.isDisplayed()) {
+			btnSearch.click();
+			log("clicked on search button and object is:-" + btnSearch.toString());
+			Thread.sleep(2000);
+		} else {
 			log("Search button element is not present.");
 			Thread.sleep(500);
 		}
 	}
-	public void selectTheCheckBoxForCorresponingStudent(String StudentName) throws Exception{
-		
+
+	public void selectTheCheckBoxForCorresponingStudent(String StudentName) throws Exception {
+
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for(int i=1; i<=rows;i++){
-		String stuName = driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr["+i+"]/td[4]")).getText();
-		System.out.println(stuName);
-		Thread.sleep(2000);
-		if(stuName.equals(StudentName)){
-			driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr["+i+"]/td[6]/label")).click();
-			log("Select the check box corresponding to student with Name:"+StudentName);
+		for (int i = 1; i <= rows; i++) {
+			String stuName = driver
+					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]")).getText();
+			System.out.println(stuName);
 			Thread.sleep(2000);
+			if (stuName.equals(StudentName)) {
+				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[6]/label"))
+						.click();
+				log("Select the check box corresponding to student with Name:" + StudentName);
+				Thread.sleep(2000);
+			}
 		}
-		}
-	}
-	public void mapStudentWithGroup() throws Exception{
-		btnPlusSureshFGr1.click();
-		log("clicked on Plus(+) followed by Suresh fee group 1 and object is:-"+btnPlusSureshFGr1.toString());
-		Thread.sleep(1000);
-		
-		btnPlusSureshFeeHead1.click();
-		log("clicked on Plus(+) followed by Suresh fee head 1 and object is:-"+btnPlusSureshFeeHead1.toString());
-		Thread.sleep(1000);
-		
-		chkSureshInstallmentI.click();
-		log("clicked on Suresh Installment I check box and object is:-"+chkSureshInstallmentI.toString());
-		Thread.sleep(1000);
-	}
-	public void clickOnSaveButton() throws Exception {
-		btnSave.click();
-		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(2000);
 	}
 
+	// public void mapStudentWithGroup() throws Exception{
+	// btnPlusSureshFGr1.click();
+	// log("clicked on Plus(+) followed by Suresh fee group 1 and object
+	// is:-"+btnPlusSureshFGr1.toString());
+	// Thread.sleep(1000);
+	//
+	// btnPlusSureshFeeHead1.click();
+	// log("clicked on Plus(+) followed by Suresh fee head 1 and object
+	// is:-"+btnPlusSureshFeeHead1.toString());
+	// Thread.sleep(1000);
+	//
+	// chkSureshInstallmentI.click();
+	// log("clicked on Suresh Installment I check box and object
+	// is:-"+chkSureshInstallmentI.toString());
+	// Thread.sleep(1000);
+	// }
+	
 	public boolean verifySuccessfulPopUp() {
 		try {
 			System.out.println(successfulMessage.getText());
