@@ -642,11 +642,6 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 	
-	
-	
-	
-	
-	
 
 	public void selectByStudentName(String byStudentName, String StdName) throws Exception {
 		if (!btnRadioAll.isSelected()) {
