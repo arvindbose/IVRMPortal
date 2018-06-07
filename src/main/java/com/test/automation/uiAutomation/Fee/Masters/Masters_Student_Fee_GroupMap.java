@@ -7,7 +7,7 @@ import java.awt.Robot;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -98,7 +98,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	@FindBy(xpath = "(//span[contains(text(),'Save')]//parent::button)[1]")
 	WebElement btn_Save;
 
-	@FindBy(xpath = "(//span[contains(text(),'Cancel')]//parent::button)[1]")
+	@FindBy(xpath = "(//span[contains(text(),'Cancel')]//parent::button)[2]")
 	WebElement btn_Cancel;
 
 	@FindBy(xpath = "(//select[@id='sel1' and @name='search_for'])[4]")
@@ -143,11 +143,14 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxStudentAndGroupList;
 
-	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
-	WebElement btnMin_MaxStudentFeeGroupList;
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[3]")
+	WebElement btnMin_MaxStudentFeeGroupMappingList;
 
 	@FindBy(xpath = "(//div[@class='box-body']/child::table)[1]/thead/tr/th[2]/a")
-	WebElement btnSortByFeeHead;
+	WebElement btnSortByStudentName;
+
+	@FindBy(xpath = "//table//tbody//tr[1]//td[7]/a")
+	WebElement icon_delete_OutputGrid;
 
 	public Masters_Student_Fee_GroupMap(WebDriver driver) {
 		this.driver = driver;
@@ -167,7 +170,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	}
 
-	public void nevigateToMasters_StudentFeegroupMap() throws Exception {
+	public void navigateToMasters_StudentFeegroupMap() throws Exception {
 		if (btnFee.isDisplayed()) {
 			btnFee.click();
 			log("Clicked on Fee Button and object is:-" + btnFee.toString());
@@ -410,16 +413,16 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	}
 
-	public void fill_StudentFeeGroupMappingForm_rdBtnAdmissionClassCategory(String academicYr,
+	public void fill_StudentFeeGroupMappingForm_rdBtnAdmissionCategory(String academicYr,
 			String admissionclassCategory) throws Exception {
 
 		if (!rdBtn_AdmissionClassCategory.isSelected()) {
 			rdBtn_AdmissionClassCategory.click();
-			log("Radio button Admission Class Category is selected and object is:-"
+			log("Radio button Admission Category is selected and object is:-"
 					+ rdBtn_AdmissionClassCategory.toString());
 			Thread.sleep(1000);
 		} else {
-			log("Radio button Admission Class Category is already selected.");
+			log("Radio button Admission Category is already selected.");
 			Thread.sleep(500);
 		}
 		if (sel_AcademicYear.isDisplayed()) {
@@ -534,10 +537,8 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			Thread.sleep(500);
 		}
 	}
-	
-	
-	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithoutClassWise(String academicYr)
-			throws Exception {
+
+	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithoutClassWise(String academicYr) throws Exception {
 
 		if (!rdBtn_NewStudent.isSelected()) {
 			rdBtn_NewStudent.click();
@@ -562,8 +563,8 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	}
 
-	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithClassWise(String academicYr,
-			String classSelection, String section) throws Exception {
+	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithClassWise(String academicYr, String classSelection,
+			String section) throws Exception {
 
 		if (!rdBtn_NewStudent.isSelected()) {
 			rdBtn_NewStudent.click();
@@ -620,17 +621,32 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			Thread.sleep(500);
 		}
 	}
-	
+
 	public void clickOnSaveButton() throws Exception {
 		if (btn_Save.isDisplayed()) {
 			btn_Save.click();
 			log("clicked on save button and object is:-" + btn_Save.toString());
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 		} else {
 			log("Save Button element not present.");
 			Thread.sleep(500);
 		}
 	}
+
+	public void clickOnSaveButton_ToSubmitBlankForm() throws Exception {
+		if (btn_Save.isDisplayed()) {
+			btn_Save.click();
+			log("clicked on save button to submit blank form and object is:-" + btn_Save.toString());
+			Thread.sleep(5000);
+
+		} else {
+			log("Save Button element not present.");
+			Thread.sleep(500);
+		}
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
+	}
+
 	public void clickOnCancelButton() throws Exception {
 		if (btn_Cancel.isDisplayed()) {
 			btn_Cancel.click();
@@ -641,89 +657,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			Thread.sleep(500);
 		}
 	}
-	
 
-	public void selectByStudentName(String byStudentName, String StdName) throws Exception {
-		if (!btnRadioAll.isSelected()) {
-			btnRadioAll.click();
-			log("All radio button is selected and object is:-" + btnRadioAll.toString());
-			Thread.sleep(10000);
-		} else {
-			log("All radio button is already selected and object is:-" + btnRadioAll.toString());
-			Thread.sleep(500);
-		}
-
-		if (selSearch.isDisplayed()) {
-			select = new Select(selSearch);
-			select.selectByVisibleText(byStudentName);
-			log("selected Student name for search:-" + byStudentName + " and object is " + selSearch.toString());
-
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), byStudentName);
-			Thread.sleep(1000);
-		} else {
-			log("Select search element is not present");
-			Thread.sleep(500);
-		}
-		if (txtSearch.isDisplayed()) {
-			txtSearch.clear();
-			txtSearch.sendKeys(StdName);
-			log("entered Student name:-" + StdName + " and object is " + txtSearch.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search box element is not present.");
-			Thread.sleep(500);
-		}
-
-	}
-
-	public void clickOnSearchButton() throws Exception {
-		if (btnSearch.isDisplayed()) {
-			btnSearch.click();
-			log("clicked on search button and object is:-" + btnSearch.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Search button element is not present.");
-			Thread.sleep(500);
-		}
-	}
-
-	public void selectTheCheckBoxForCorresponingStudent(String StudentName) throws Exception {
-
-		int rows = tblRows.size();
-		System.out.println(rows);
-		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String stuName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]")).getText();
-			System.out.println(stuName);
-			Thread.sleep(2000);
-			if (stuName.equals(StudentName)) {
-				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[6]/label"))
-						.click();
-				log("Select the check box corresponding to student with Name:" + StudentName);
-				Thread.sleep(2000);
-			}
-		}
-	}
-
-	// public void mapStudentWithGroup() throws Exception{
-	// btnPlusSureshFGr1.click();
-	// log("clicked on Plus(+) followed by Suresh fee group 1 and object
-	// is:-"+btnPlusSureshFGr1.toString());
-	// Thread.sleep(1000);
-	//
-	// btnPlusSureshFeeHead1.click();
-	// log("clicked on Plus(+) followed by Suresh fee head 1 and object
-	// is:-"+btnPlusSureshFeeHead1.toString());
-	// Thread.sleep(1000);
-	//
-	// chkSureshInstallmentI.click();
-	// log("clicked on Suresh Installment I check box and object
-	// is:-"+chkSureshInstallmentI.toString());
-	// Thread.sleep(1000);
-	// }
-	
 	public boolean verifySuccessfulPopUp() {
 		try {
 			System.out.println(successfulMessage.getText());
@@ -738,8 +672,137 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		btnOkonSuccess.click();
-		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		if (btnOkonSuccess.isDisplayed()) {
+			btnOkonSuccess.click();
+			log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Ok Button element is not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	/**
+	 * Search with the Mapped Student
+	 * 
+	 * @param bystudentName
+	 * @param studentName
+	 * @throws Exception
+	 */
+
+	public void searchBy_StudentName_NameInOutputGrid(String bystudentName, String studentName) throws Exception {
+		if (sel_Search_OutputGrid.isDisplayed()) {
+			select = new Select(sel_Search_OutputGrid);
+			select.selectByVisibleText(bystudentName);
+			log("Selected serach for:-" + bystudentName + " and object is " + sel_Search_OutputGrid.toString());
+
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), bystudentName);
+			Thread.sleep(1000);
+		} else {
+			log("Select serach for element is not present");
+			Thread.sleep(500);
+		}
+		if (input_Search_OutputGrid.isDisplayed()) {
+			input_Search_OutputGrid.clear();
+			input_Search_OutputGrid.sendKeys(studentName);
+			log("Entered Student name for search " + studentName + " and object is "
+					+ input_Search_OutputGrid.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Search Input field element not present.");
+			Thread.sleep(500);
+		}
+		if (btn_Search_OutputGrid.isDisplayed()) {
+			btn_Search_OutputGrid.click();
+			log("Search button for Output grid is clicked and object is " + btn_Search_OutputGrid.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Search button element for Output grid is not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void deleteUpdatedRecordFrom_OutputGrid() throws Exception {
+
+		if (icon_delete_OutputGrid.isDisplayed()) {
+			icon_delete_OutputGrid.click();
+			log("Click on delete button to delete record and object is:-" + icon_delete_OutputGrid.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Delete element is not present in the output grid.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
+		if (btnYesDeleteOrDeactIt.isDisplayed()) {
+			btnYesDeleteOrDeactIt.click();
+			log("Clicked on yes delete it button and object is:-" + btnYesDeleteOrDeactIt.toString());
+			Thread.sleep(10000);
+		} else {
+			log("Yes Delete it button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnCancelButton_PopUp() throws Exception {
+		if (btnPopUpCancel.isDisplayed()) {
+			btnPopUpCancel.click();
+			log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
+			Thread.sleep(3000);
+		} else {
+			log("Cancel button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void minimizeAndMaximize_StudentFeeGroupMapping() throws Exception {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
+		if (btnMin_MaxStudentFeeGrMapping.isDisplayed()) {
+			btnMin_MaxStudentFeeGrMapping.click();
+			log("clicked on Student FeeGroup Mapping minimize Or maximize button and object is:-"
+					+ btnMin_MaxStudentFeeGrMapping.toString());
+			Thread.sleep(1000);
+		} else {
+			log("MinMax Student FeeGroup Mapping button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void minimizeAndMaximize_StudentAndGroupList() throws Exception {
+		if (btnMin_MaxStudentAndGroupList.isDisplayed()) {
+			btnMin_MaxStudentAndGroupList.click();
+			log("clicked on Student and Group list minimize Or maximize and object is:-"
+					+ btnMin_MaxStudentAndGroupList.toString());
+			Thread.sleep(1000);
+		} else {
+			log("MinMax Student and Group list button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void minimizeAndMaximize_StudentFeeGroupMappingList() throws Exception {
+		if (btnMin_MaxStudentFeeGroupMappingList.isDisplayed()) {
+			btnMin_MaxStudentFeeGroupMappingList.click();
+			log("clicked on Student Fee Group mapping list minimize Or maximize and object is:-"
+					+ btnMin_MaxStudentFeeGroupMappingList.toString());
+			Thread.sleep(1000);
+		} else {
+			log("MinMax Student Fee Group mapping list button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void sortByStudentName() throws Exception {
+		if (btnSortByStudentName.isDisplayed()) {
+			btnSortByStudentName.click();
+			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sort element not present.");
+			Thread.sleep(500);
+		}
 	}
 }
