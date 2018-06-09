@@ -143,10 +143,10 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxStudentAndGroupList;
 
-	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[3]")
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[5]")
 	WebElement btnMin_MaxStudentFeeGroupMappingList;
 
-	@FindBy(xpath = "(//div[@class='box-body']/child::table)[1]/thead/tr/th[2]/a")
+	@FindBy(xpath = "(//div[@class='box-body']/table)[1]//thead//tr//th[2]/a")
 	WebElement btnSortByStudentName;
 
 	@FindBy(xpath = "//table//tbody//tr[1]//td[7]/a")
@@ -260,7 +260,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 		if (btn_Search_StuList.isDisplayed()) {
 			btn_Search_StuList.click();
 			log("Search button for student list is clicked and object is " + btn_Search_StuList.toString());
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 		} else {
 			log("Search button element for student list is not present.");
 			Thread.sleep(500);
@@ -280,23 +280,23 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 		// Thread.sleep(500);
 		// }
 		//
-		if ((chk_toSelectStuForGroupMap.isDisplayed()) && (!chk_toSelectStuForGroupMap.isSelected())) {
+		if (!chk_toSelectStuForGroupMap.isSelected()) {
 
 			chk_toSelectStuForGroupMap.click();
 			log("Student is selected from student list for group mapping and object is "
 					+ chk_toSelectStuForGroupMap.toString());
 			Thread.sleep(1000);
 		} else {
-			log("Student is already selected for group mapping or check box is not present.");
+			log("Student is already selected for group mapping.");
 			Thread.sleep(500);
 
 		}
-		if ((chk_GroupList.isDisplayed()) && (!chk_GroupList.isSelected())) {
+		if (!chk_GroupList.isSelected()) {
 			chk_GroupList.click();
 			log("Group is selected from group list and object is " + chk_GroupList.toString());
 			Thread.sleep(1000);
 		} else {
-			log("Group is already selected or check box element not present.");
+			log("Group is already selected.");
 			Thread.sleep(500);
 		}
 
@@ -326,13 +326,13 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button ALL is already selected.");
 			Thread.sleep(500);
 		}
-		if ((chk_ClassWise.isDisplayed()) && (!chk_ClassWise.isSelected())) {
+		if (!chk_ClassWise.isSelected()) {
 
 			chk_ClassWise.click();
 			log("Class Wise check box is selected and object is " + chk_ClassWise.toString());
 			Thread.sleep(1000);
 		} else {
-			log("Class Wise check box is already selected or check box element is not present.");
+			log("Class Wise check box is already selected.");
 			Thread.sleep(500);
 		}
 
@@ -376,7 +376,9 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnFeeClassCategory(String academicYr, String feeclassCategory)
 			throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
+		
 		if (!rdBtn_FeeClassCategory.isSelected()) {
 			rdBtn_FeeClassCategory.click();
 			log("Radio button Fee Class Category is selected and object is:-" + rdBtn_FeeClassCategory.toString());
@@ -413,9 +415,10 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	}
 
-	public void fill_StudentFeeGroupMappingForm_rdBtnAdmissionCategory(String academicYr,
-			String admissionclassCategory) throws Exception {
-
+	public void fill_StudentFeeGroupMappingForm_rdBtnAdmissionCategory(String academicYr, String admissionclassCategory)
+			throws Exception {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
 		if (!rdBtn_AdmissionClassCategory.isSelected()) {
 			rdBtn_AdmissionClassCategory.click();
 			log("Radio button Admission Category is selected and object is:-"
@@ -455,7 +458,8 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnRegularStudent_WithoutClassWise(String academicYr)
 			throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
 		if (!rdBtn_RegularStudent.isSelected()) {
 			rdBtn_RegularStudent.click();
 			log("Radio button Regular Student is selected and object is:-" + rdBtn_RegularStudent.toString());
@@ -481,7 +485,8 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnRegularStudent_WithClassWise(String academicYr,
 			String classSelection, String section) throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
 		if (!rdBtn_RegularStudent.isSelected()) {
 			rdBtn_RegularStudent.click();
 			log("Radio button Regular Student is selected and object is:-" + rdBtn_RegularStudent.toString());
@@ -490,7 +495,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button Regular Student is already selected.");
 			Thread.sleep(500);
 		}
-		if ((chk_ClassWise.isDisplayed()) && (!chk_ClassWise.isSelected())) {
+		if (!chk_ClassWise.isSelected()) {
 
 			chk_ClassWise.click();
 			log("Class Wise check box is selected and object is " + chk_ClassWise.toString());
@@ -539,7 +544,8 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithoutClassWise(String academicYr) throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
 		if (!rdBtn_NewStudent.isSelected()) {
 			rdBtn_NewStudent.click();
 			log("Radio button New Student is selected and object is:-" + rdBtn_NewStudent.toString());
@@ -565,7 +571,8 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithClassWise(String academicYr, String classSelection,
 			String section) throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
+		Thread.sleep(1000);
 		if (!rdBtn_NewStudent.isSelected()) {
 			rdBtn_NewStudent.click();
 			log("Radio button New Student is selected and object is:-" + rdBtn_NewStudent.toString());
@@ -574,7 +581,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button New Student is already selected.");
 			Thread.sleep(500);
 		}
-		if ((chk_ClassWise.isDisplayed()) && (!chk_ClassWise.isSelected())) {
+		if (!chk_ClassWise.isSelected()) {
 
 			chk_ClassWise.click();
 			log("Class Wise check box is selected and object is " + chk_ClassWise.toString());
@@ -797,6 +804,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	public void sortByStudentName() throws Exception {
 		if (btnSortByStudentName.isDisplayed()) {
+			btnSortByStudentName.click();
 			btnSortByStudentName.click();
 			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
 			Thread.sleep(2000);

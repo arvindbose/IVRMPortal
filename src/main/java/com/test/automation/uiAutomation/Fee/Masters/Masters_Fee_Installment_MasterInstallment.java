@@ -134,7 +134,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	public void nevigateToFeeInstallment_MasterInstallment() throws Exception {
+	public void navigateToFeeInstallment_MasterInstallment() throws Exception {
 		if (btnFee.isDisplayed()) {
 			btnFee.click();
 			log("Clicked on Fee Button and object is:-" + btnFee.toString());

@@ -96,17 +96,17 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 	}
 
 	@Test(priority = 3)
-	public void tcNevigateToFeeInstallment_MasterInstallment() {
+	public void tcNavigateToFeeInstallment_MasterInstallment() {
 
 		try {
-			log.info("============= Strting tcNevigateToFeeInstallment_MasterInstallment Test===========");
+			log.info("============= Strting tcNavigateToFeeInstallment_MasterInstallment Test===========");
 
-			feeMasterInstallment.nevigateToFeeInstallment_MasterInstallment();
+			feeMasterInstallment.navigateToFeeInstallment_MasterInstallment();
 
-			log.info("============= Finished tcNevigateToFeeInstallment_MasterInstallment Test===========");
-			getScreenShot("tcNevigateToFeeInstallment_MasterInstallment");
+			log.info("============= Finished tcNavigateToFeeInstallment_MasterInstallment Test===========");
+			getScreenShot("tcNavigateToFeeInstallment_MasterInstallment");
 		} catch (Exception e) {
-			getScreenShot("tcNevigateToFeeInstallment_MasterInstallment");
+			getScreenShot("tcNavigateToFeeInstallment_MasterInstallment");
 		}
 	}
 

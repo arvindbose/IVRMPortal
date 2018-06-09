@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.test.automation.uiAutomation.Fee.TC_Masters;
+package com.test.automation.uiAutomation.Fee.TC_Transaction;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.test.automation.uiAutomation.Fee.Masters.Transaction_Fee_Transaction;
+import com.test.automation.uiAutomation.Fee.Transaction.Transaction_Fee_Transaction;
 import com.test.automation.uiAutomation.testBase.TestBase;
 import com.test.automation.uiAutomation.uiActions.IvrmPortalLogin;
 

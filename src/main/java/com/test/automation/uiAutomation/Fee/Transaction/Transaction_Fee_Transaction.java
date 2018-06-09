@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.test.automation.uiAutomation.Fee.Masters;
+package com.test.automation.uiAutomation.Fee.Transaction;
 
 import java.util.List;
 

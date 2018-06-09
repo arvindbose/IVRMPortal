@@ -39,31 +39,65 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		String[][] testRecordsWithoutClassWise = getData("FeeModueData.xlsx", "StudentFeeGrMap_wOutCLassWise");
 		return testRecordsWithoutClassWise;
 	}
-	@DataProvider(name = "Search_StudentFeeGroupData_WithoutClassWise")
-	public String[][] getTestDataStuFeeMapWithoutClassWise_Search() {
-		String[][] testRecordsWithoutClassWise_Search = getData("FeeModueData.xlsx", "Search_SFGMap_wOutCLassWise");
-		return testRecordsWithoutClassWise_Search;
+
+	@DataProvider(name = "Search_StudentFeeGroupData_WithoutClassWise_All")
+	public String[][] getTestDataStuFeeMapWithoutClassWise_Search_All() {
+		String[][] testRecordsWithoutClassWise_Search_All = getData("FeeModueData.xlsx", "SFGMap_wOutCLassWiseAll");
+		return testRecordsWithoutClassWise_Search_All;
 	}
-	
+	@DataProvider(name = "Search_StudentFeeGroupData_WithoutClassWise_RegStudent")
+	public String[][] getTestDataStuFeeMapWithoutClassWise_Search_RegStudent() {
+		String[][] testRecordsWithoutClassWise_Search_RegStudent = getData("FeeModueData.xlsx", "SFGMap_RegStudent_woutClassWise");
+		return testRecordsWithoutClassWise_Search_RegStudent;
+	}
+	@DataProvider(name = "Search_StudentFeeGroupData_WithoutClassWise_NewStudent")
+	public String[][] getTestDataStuFeeMapWithoutClassWise_Search_NewStudent() {
+		String[][] testRecordsWithoutClassWise_Search_NewStudent = getData("FeeModueData.xlsx", "SFGMap_NewStudent_woutClassWise");
+		return testRecordsWithoutClassWise_Search_NewStudent;
+	}
 	@DataProvider(name = "StudentFeeGroupData_WithClassWise")
 	public String[][] getTestDataStuFeeMapWithClassWise() {
 		String[][] testRecordsWithClassWise = getData("FeeModueData.xlsx", "StudentFeeGrMap_withCLassWise");
 		return testRecordsWithClassWise;
 	}
-	@DataProvider(name = "Search_StudentFeeGroupData_WithClassWise")
+
+	@DataProvider(name = "Search_StudentFeeGroupData_WithClassWise_All")
 	public String[][] getTestDataStuFeeMapWithClassWise_Search() {
-		String[][] testRecordsWithClassWise_Search = getData("FeeModueData.xlsx", "Search_SFGMap_withCLassWise");
+		String[][] testRecordsWithClassWise_Search = getData("FeeModueData.xlsx", "SFGMap_withCLassWise_All");
 		return testRecordsWithClassWise_Search;
+	}
+	@DataProvider(name = "Search_StudentFeeGroupData_WithClassWise_RegStudent")
+	public String[][] getTestDataStuFeeMapWithClassWise_Search_RegStudent() {
+		String[][] testRecordsWithClassWise_Search_RegStudent = getData("FeeModueData.xlsx", "SFGMap_RegStudent_withClassWise");
+		return testRecordsWithClassWise_Search_RegStudent;
+	}
+	@DataProvider(name = "Search_StudentFeeGroupData_WithClassWise_NewStudent")
+	public String[][] getTestDataStuFeeMapWithClassWise_Search_NewStudent() {
+		String[][] testRecordsWithClassWise_Search_NewStudent = getData("FeeModueData.xlsx", "SFGMap_NewStudent_withClassWise");
+		return testRecordsWithClassWise_Search_NewStudent;
 	}
 	@DataProvider(name = "StudentFeeGroupData_FeeClassCategory")
 	public String[][] getTestDataStuFeeMapFeeClassCategory() {
 		String[][] testRecordsFeeClassCategory = getData("FeeModueData.xlsx", "StudentFeeGrMap_FCCategory");
 		return testRecordsFeeClassCategory;
 	}
+
+	@DataProvider(name = "Search_StudentFeeGroupData_FeeClassCategory")
+	public String[][] getTestDataStuFeeMapFeeClassCategory_Search() {
+		String[][] testRecordsFeeClassCategory_Search = getData("FeeModueData.xlsx", "Search_SFGMap_FCCategory");
+		return testRecordsFeeClassCategory_Search;
+	}
+
 	@DataProvider(name = "StudentFeeGroupData_AdmissionCategory")
 	public String[][] getTestDataStuFeeMapAdmissionCategory() {
 		String[][] testRecordsAdmissionCategory = getData("FeeModueData.xlsx", "StudentFeeGrMap_AdmCategory");
 		return testRecordsAdmissionCategory;
+	}
+
+	@DataProvider(name = "Search_StudentFeeGroupData_AdmissionCategory")
+	public String[][] getTestDataStuFeeMapAdmissionCategory_Search() {
+		String[][] testRecordsAdmissionCategory_Search = getData("FeeModueData.xlsx", "Search_SFGMap_AdmCategory");
+		return testRecordsAdmissionCategory_Search;
 	}
 
 	@BeforeClass
@@ -159,7 +193,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	/*
 	 * Perform action for all radio button and cancel
 	 */
-	@Test(priority = 6, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 6, dataProvider = "StudentFeeGroupData_WithoutClassWise")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnAll(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -176,20 +210,20 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 7, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnAll(String bystudentName, String studentName, String runMode) {
+	@Test(priority = 7, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_All")
+	public void tcMapStudentWithGroup_rdBtnAll(String bystudentName, String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnAll Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnAll Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
-			log.info("============= Finished tMapStudentWithGroup_rdBtnAll Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnAll");
+			log.info("============= Finished tcMapStudentWithGroup_rdBtnAll Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAll");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnAll");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAll");
 		}
 	}
 
@@ -317,7 +351,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for all radio button and Save
 	 */
 
-	@Test(priority = 16, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 16, dataProvider = "StudentFeeGroupData_WithoutClassWise")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnAll_AfterCancel(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -334,20 +368,20 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnAll_AfterCancel(String bystudentName, String studentName, String runMode) {
+	@Test(priority = 17, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_All")
+	public void tcMapStudentWithGroup_rdBtnAll_AfterCancel(String bystudentName, String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnAll_AfterCancel Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnAll_AfterCancel Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
-			log.info("============= Finished tMapStudentWithGroup_rdBtnAll_AfterCancel Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnAll_AfterCancel");
+			log.info("============= Finished tcMapStudentWithGroup_rdBtnAll_AfterCancel Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAll_AfterCancel");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnAll_AfterCancel");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAll_AfterCancel");
 		}
 	}
 
@@ -365,8 +399,22 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnAll");
 		}
 	}
+	@Test(priority = 19)
+	public void tcVerifySuccessfulPopUp_rdBtnAll() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnAll Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnAll Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnAll");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnAll");
+		}
+	}
+
+	@Test(priority = 20)
 	public void tcClickOnSuccessOkBtn_rdBtnAll() {
 
 		try {
@@ -384,7 +432,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for all radio button and class wise check box
 	 */
 
-	@Test(priority = 19, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 21, dataProvider = "StudentFeeGroupData_WithClassWise")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnAll_ClassWise(String academicYr, String classSelection,
 			String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -402,24 +450,24 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 20, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnAll_ClassWise(String bystudentName, String studentName, String runMode) {
+	@Test(priority = 22, dataProvider = "Search_StudentFeeGroupData_WithClassWise_All")
+	public void tcMapStudentWithGroup_rdBtnAll_ClassWise(String bystudentName, String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnAll_ClassWise Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnAll_ClassWise Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
-			log.info("============= Finished tMapStudentWithGroup_rdBtnAll_ClassWise Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnAll_ClassWise");
+			log.info("============= Finished tcMapStudentWithGroup_rdBtnAll_ClassWise Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAll_ClassWise");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnAll_ClassWise");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAll_ClassWise");
 		}
 	}
 
-	@Test(priority = 21)
+	@Test(priority = 23)
 	public void tcClickOnSaveButton_rdBtnAll_ClassWise() {
 
 		try {
@@ -433,8 +481,22 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnAll_ClassWise");
 		}
 	}
+	@Test(priority = 24)
+	public void tcVerifySuccessfulPopUp_rdBtnAll_ClassWise() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnAll_ClassWise Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnAll_ClassWise Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnAll_ClassWise");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnAll_ClassWise");
+		}
+	}
+
+	@Test(priority = 25)
 	public void tcClickOnSuccessOkBtn_rdBtnAll_ClassWise() {
 
 		try {
@@ -452,7 +514,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for Fee Class Category radio button
 	 */
 
-	@Test(priority = 22, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 26, dataProvider = "StudentFeeGroupData_FeeClassCategory")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnFeeClassCategory(String academicYr, String feeclassCategory,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -470,24 +532,24 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 23, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnFeeClassCategory(String bystudentName, String studentName, String runMode) {
+	@Test(priority = 27, dataProvider = "Search_StudentFeeGroupData_FeeClassCategory")
+	public void tcMapStudentWithGroup_rdBtnFeeClassCategory(String bystudentName, String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnFeeClassCategory Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnFeeClassCategory Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
-			log.info("============= Finished tMapStudentWithGroup_rdBtnFeeClassCategory Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnFeeClassCategory");
+			log.info("============= Finished tcMapStudentWithGroup_rdBtnFeeClassCategory Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnFeeClassCategory");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnFeeClassCategory");
+			getScreenShot("tcMapStudentWithGroup_rdBtnFeeClassCategory");
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 28)
 	public void tcClickOnSaveButton_rdBtnFeeClassCategory() {
 
 		try {
@@ -501,8 +563,21 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnFeeClassCategory");
 		}
 	}
+	@Test(priority = 29)
+	public void tcVerifySuccessfulPopUp_rdBtnFeeClassCategory() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnFeeClassCategory Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnFeeClassCategory Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnFeeClassCategory");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnFeeClassCategory");
+		}
+	}
+	@Test(priority = 30)
 	public void tcClickOnSuccessOkBtn_rdBtnFeeClassCategory() {
 
 		try {
@@ -520,7 +595,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for Fee Admission Category radio button
 	 */
 
-	@Test(priority = 25, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 31, dataProvider = "StudentFeeGroupData_AdmissionCategory")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnAdmissionCategory(String academicYr,
 			String admissionclassCategory, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -539,24 +614,24 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnAdmissionCategory(String bystudentName, String studentName, String runMode) {
+	@Test(priority = 32, dataProvider = "Search_StudentFeeGroupData_AdmissionCategory")
+	public void tcMapStudentWithGroup_rdBtnAdmissionCategory(String bystudentName, String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnAdmissionCategory Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnAdmissionCategory Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
-			log.info("============= Finished tMapStudentWithGroup_rdBtnAdmissionCategory Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnAdmissionCategory");
+			log.info("============= Finished tcMapStudentWithGroup_rdBtnAdmissionCategory Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAdmissionCategory");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnAdmissionCategory");
+			getScreenShot("tcMapStudentWithGroup_rdBtnAdmissionCategory");
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 33)
 	public void tcClickOnSaveButton_rdBtnAdmissionCategory() {
 
 		try {
@@ -570,8 +645,21 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnAdmissionCategory");
 		}
 	}
+	@Test(priority = 34)
+	public void tcVerifySuccessfulPopUp_rdBtnAdmissionCategory() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnAdmissionCategory Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnAdmissionCategory Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnAdmissionCategory");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnAdmissionCategory");
+		}
+	}
+	@Test(priority = 35)
 	public void tcClickOnSuccessOkBtn_rdBtnAdmissionCategory() {
 
 		try {
@@ -589,7 +677,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for Regular Student without class wise
 	 */
 
-	@Test(priority = 28, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 36, dataProvider = "StudentFeeGroupData_WithoutClassWise")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnRegularStudent_WithoutClassWise(String academicYr,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -609,26 +697,26 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise(String bystudentName, String studentName,
+	@Test(priority = 37, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_RegStudent")
+	public void tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise(String bystudentName, String studentName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
 			log.info(
-					"============= Finished tMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise");
+					"============= Finished tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise");
+			getScreenShot("tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise");
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 38)
 	public void tcClickOnSaveButton_rdBtnRegularStudent_WithoutClassWise() {
 
 		try {
@@ -642,8 +730,22 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnRegularStudent_WithoutClassWise");
 		}
 	}
+	@Test(priority = 39)
+	public void tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithoutClassWise() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithoutClassWise Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithoutClassWise Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithoutClassWise");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithoutClassWise");
+		}
+	}
+
+	@Test(priority = 40)
 	public void tcClickOnSuccessOkBtn_rdBtnRegularStudent_WithoutClassWise() {
 
 		try {
@@ -663,7 +765,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for Regular Student with class wise
 	 */
 
-	@Test(priority = 31, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 41, dataProvider = "StudentFeeGroupData_WithClassWise")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnRegularStudent_WithClassWise(String academicYr,
 			String classSelection, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -684,25 +786,25 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnRegularStudent_WithClassWise(String bystudentName, String studentName,
+	@Test(priority = 42, dataProvider = "Search_StudentFeeGroupData_WithClassWise_RegStudent")
+	public void tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise(String bystudentName, String studentName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnRegularStudent_WithClassWise Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
-			log.info("============= Finished tMapStudentWithGroup_rdBtnRegularStudent_WithClassWise Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnRegularStudent_WithClassWise");
+			log.info("============= Finished tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnRegularStudent_WithClassWise");
+			getScreenShot("tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise");
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 43)
 	public void tcClickOnSaveButton_rdBtnRegularStudent_WithClassWise() {
 
 		try {
@@ -716,8 +818,21 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnRegularStudent_WithClassWise");
 		}
 	}
+	@Test(priority = 44)
+	public void tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithClassWise() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithClassWise Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithClassWise Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithClassWise");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnRegularStudent_WithClassWise");
+		}
+	}
+	@Test(priority = 45)
 	public void tcClickOnSuccessOkBtn_rdBtnRegularStudent_WithClassWise() {
 
 		try {
@@ -735,7 +850,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for New Student without class wise
 	 */
 
-	@Test(priority = 34, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 46, dataProvider = "StudentFeeGroupData_WithoutClassWise")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithoutClassWise(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -754,25 +869,25 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "stuta")
-	public void tMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise(String bystudentName, String studentName,
+	@Test(priority = 47, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_NewStudent")
+	public void tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise(String bystudentName, String studentName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise Test===========");
+			log.info("============= Strting tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise Test===========");
 
 			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
 
-			log.info("============= Finished tMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise Test===========");
-			getScreenShot("tMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise");
+			log.info("============= Finished tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise Test===========");
+			getScreenShot("tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise");
 		} catch (Exception e) {
-			getScreenShot("tMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise");
+			getScreenShot("tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise");
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 48)
 	public void tcClickOnSaveButton_rdBtnNewStudent_WithoutClassWise() {
 
 		try {
@@ -786,8 +901,21 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnNewStudent_WithoutClassWise");
 		}
 	}
+	@Test(priority = 49)
+	public void tcVerifySuccessfulPopUp_rdBtnNewStudent_WithoutClassWise() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnNewStudent_WithoutClassWise Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnNewStudent_WithoutClassWise Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnNewStudent_WithoutClassWise");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnNewStudent_WithoutClassWise");
+		}
+	}
+	@Test(priority = 50)
 	public void tcClickOnSuccessOkBtn_rdBtnNewStudent_WithoutClassWise() {
 
 		try {
@@ -805,7 +933,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	 * Perform action for New Student with class wise
 	 */
 
-	@Test(priority = 37, dataProvider = "stuFeeGroupTestData")
+	@Test(priority = 51, dataProvider = "StudentFeeGroupData_WithClassWise")
 	public void tcFill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithClassWise(String academicYr,
 			String classSelection, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -826,7 +954,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "stuta")
+	@Test(priority = 52, dataProvider = "Search_StudentFeeGroupData_WithClassWise_NewStudent")
 	public void tcMapStudentWithGroup_rdBtnNewStudent_WithClassWise(String bystudentName, String studentName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -844,7 +972,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 53)
 	public void tcClickOnSaveButton_rdBtnNewStudent_WithClassWise() {
 
 		try {
@@ -858,8 +986,21 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnSaveButton_rdBtnNewStudent_WithClassWise");
 		}
 	}
+	@Test(priority = 54)
+	public void tcVerifySuccessfulPopUp_rdBtnNewStudent_WithClassWise() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_rdBtnNewStudent_WithClassWise Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_rdBtnNewStudent_WithClassWise Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnNewStudent_WithClassWise");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_rdBtnNewStudent_WithClassWise");
+		}
+	}
+	@Test(priority = 55)
 	public void tcClickOnSuccessOkBtn_rdBtnNewStudent_WithClassWise() {
 
 		try {
@@ -877,7 +1018,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	/*
 	 * Output Grid data validation and deletion
 	 */
-	@Test(priority = 38, dataProvider = "stuta")
+	@Test(priority = 56, dataProvider = "Search_StudentFeeGroupData_WithClassWise_NewStudent")
 	public void tcSearchBy_StudentName_NameInOutputGrid(String bystudentName, String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -894,7 +1035,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 57)
 	public void tcDeleteUpdatedRecordFrom_OutputGrid() {
 
 		try {
@@ -909,7 +1050,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 58)
 	public void tcClickOnCancelButton_PopUp_Delete() {
 
 		try {
@@ -923,8 +1064,21 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcClickOnCancelButton_PopUp_Delete");
 		}
 	}
+	@Test(priority = 59)
+	public void tcVerifySuccessfulPopUp_PopUp_Delete_Cancel() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_PopUp_Delete_Cancel Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_PopUp_Delete_Cancel Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_PopUp_Delete_Cancel");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_PopUp_Delete_Cancel");
+		}
+	}
+	@Test(priority = 60)
 	public void tcClickOnSuccessOkBtn_DeleteCancel() {
 
 		try {
@@ -939,7 +1093,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 61)
 	public void tcDeleteUpdatedRecordFrom_OutputGrid_AfterCancel() {
 
 		try {
@@ -954,7 +1108,7 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 62)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -968,8 +1122,21 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 63)
+	public void tcVerifySuccessfulPopUp_PopUp_Delete_Yes() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcVerifySuccessfulPopUp_PopUp_Delete_Cancel Test===========");
+
+			studentFeegroupMap.verifySuccessfulPopUp();
+
+			log.info("============= Finished tcVerifySuccessfulPopUp_PopUp_Delete_Cancel Test===========");
+			getScreenShot("tcVerifySuccessfulPopUp_PopUp_Delete_Cancel");
+		} catch (Exception e) {
+			getScreenShot("tcVerifySuccessfulPopUp_PopUp_Delete_Cancel");
+		}
+	}
+	@Test(priority = 64)
 	public void tcClickOnSuccessOkBtn_Delete() {
 
 		try {
