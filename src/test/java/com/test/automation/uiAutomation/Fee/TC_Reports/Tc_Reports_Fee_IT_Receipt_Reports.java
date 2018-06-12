@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.test.automation.uiAutomation.tcFeeReports;
+package com.test.automation.uiAutomation.Fee.TC_Reports;
 
 import java.io.IOException;
 
@@ -12,8 +12,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.test.automation.uiAutomation.Fee.Reports.Reports_Fee_IT_Receipt_Reports;
 import com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Head;
-import com.test.automation.uiAutomation.FeeReports.Reports_Fee_IT_Receipt_Reports;
 import com.test.automation.uiAutomation.testBase.TestBase;
 import com.test.automation.uiAutomation.uiActions.IvrmPortalLogin;
 

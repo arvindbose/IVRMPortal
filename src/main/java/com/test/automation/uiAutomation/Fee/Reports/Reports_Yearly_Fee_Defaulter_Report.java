@@ -1,12 +1,14 @@
 /**
  * 
  */
-package com.test.automation.uiAutomation.FeeReports;
+package com.test.automation.uiAutomation.Fee.Reports;
 
 import java.awt.Robot;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -73,8 +75,11 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Bus Route :')]/following::div[1]//select")
 	WebElement sel_BusRoute;
 
-	@FindBy(xpath = "//div[@class='multiselect']/label//input")
-	List<WebElement> Chk_CustomGrAndFeeGroup;
+	@FindBy(xpath = "//div[@class='multiselect']//label//input[@name='fee_ct1']")
+	List<WebElement> Chk_CustomGroup;
+
+	@FindBy(xpath = "//div[@class='multiselect']//label//input[@name='fee_gp1']")
+	List<WebElement> Chk_FeeGroup;
 
 	@FindBy(xpath = "//span[contains(text(),'Class :')]/preceding-sibling::input")
 	WebElement chk_Class;
@@ -117,25 +122,28 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 
 	@FindBy(xpath = "//div[@id='table2']/table//thead//tr//th[3]/a")
 	WebElement btnSortByGroupName;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'SMS')]//parent::button")
 	WebElement btn_SMS;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Email')]//parent::button")
 	WebElement btn_Email;
-	
+
 	@FindBy(xpath = "//span[text()='Due Date']/preceding-sibling::input")
 	WebElement rdBtn_DueDate;
 
 	@FindBy(xpath = "//span[text()='Till Due Date']/preceding-sibling::input")
 	WebElement rdBtn_TillDueDate;
-	
+
 	@FindBy(xpath = "(//label[text()=' Date:']//following-sibling::div//child::button)[1]")
 	WebElement btn_Calander;
-	
-	
-	
-	
+
+	@FindBy(xpath = "//button[text()='OK']")
+	WebElement btnOKSuccess;
+
+	@FindBy(xpath = "//div[@id='table2']//table//tbody//tr//td[1]//input")
+	List<WebElement> Chk_FeeDefaulterReportGrid;
+
 	public Reports_Yearly_Fee_Defaulter_Report(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -193,7 +201,7 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 	 * 
 	 * @return
 	 */
-	public boolean verifyAdmissionReports_YearlyFeeDefaulterReport_Page() {
+	public boolean verifyFeeReports_YearlyFeeDefaulterReport_Page() {
 		try {
 			System.out.println(txt_YearlyFeeDefaulterReport.getText().trim());
 			txt_YearlyFeeDefaulterReport.isDisplayed();
@@ -255,17 +263,30 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
 		if (!rdBtn_Active.isSelected()) {
 			rdBtn_Active.click();
 			log("Active Student radio button is selected and object is:- " + rdBtn_Active.toString());
@@ -313,14 +334,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -371,14 +404,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -462,14 +507,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -553,14 +610,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee Group name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -611,14 +680,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -669,14 +750,27 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -760,14 +854,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -813,9 +919,10 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
-	 * Generate report for Yearly Wise, Class Wise without selecting class
-	 * and section
+	 * Generate report for Yearly Wise, Class Wise without selecting class and
+	 * section
 	 * 
 	 * For Active Student
 	 */
@@ -850,14 +957,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -872,8 +991,8 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	/*
-	 * Generate report for Yearly Wise, Class Wise without selecting class
-	 * and section
+	 * Generate report for Yearly Wise, Class Wise without selecting class and
+	 * section
 	 * 
 	 * For Left Student
 	 */
@@ -908,14 +1027,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -930,13 +1061,12 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	/*
-	 * Generate report for Yearly Wise, Class Wise, selecting class and
-	 * section
+	 * Generate report for Yearly Wise, Class Wise, selecting class and section
 	 * 
 	 * For Active Student
 	 */
-	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForActiveStudent_SelectClass(
-			String academicYear, String select_class, String section) throws Exception {
+	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForActiveStudent_SelectClass(String academicYear,
+			String select_class, String section) throws Exception {
 
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
@@ -966,14 +1096,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -1021,13 +1163,12 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	/*
-	 * Generate report for Yearly Wise, Class Wise, selecting class and
-	 * section
+	 * Generate report for Yearly Wise, Class Wise, selecting class and section
 	 * 
 	 * For Left Student
 	 */
-	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForLeftStudent_SelectClass(
-			String academicYear, String select_class, String section) throws Exception {
+	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForLeftStudent_SelectClass(String academicYear,
+			String select_class, String section) throws Exception {
 
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
@@ -1057,14 +1198,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -1110,9 +1263,10 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
-	 * Generate report for Yearly Wise, Student Wise without selecting class
-	 * and section
+	 * Generate report for Yearly Wise, Student Wise without selecting class and
+	 * section
 	 * 
 	 * For Active Student
 	 */
@@ -1147,14 +1301,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -1169,8 +1335,8 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	/*
-	 * Generate report for Yearly Wise, Student Wise without selecting class
-	 * and section
+	 * Generate report for Yearly Wise, Student Wise without selecting class and
+	 * section
 	 * 
 	 * For Left Student
 	 */
@@ -1205,14 +1371,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -1263,14 +1441,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -1323,8 +1513,8 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 	 * 
 	 * For Left Student
 	 */
-	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForLeftStudent_SelectClass(
-			String academicYear, String select_class, String section) throws Exception {
+	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForLeftStudent_SelectClass(String academicYear,
+			String select_class, String section) throws Exception {
 
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
@@ -1354,14 +1544,26 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		int no_Of_CustomAndFeeGroup = Chk_CustomGrAndFeeGroup.size();
-		for (int i = 0; i < no_Of_CustomAndFeeGroup; i++) {
-			if (!Chk_CustomGrAndFeeGroup.get(i).isSelected()) {
-				Chk_CustomGrAndFeeGroup.get(i).click();
-				log(i + " Custom and fee Group Name check box is checked.");
+		int no_Of_CustomGroup = Chk_CustomGroup.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!Chk_CustomGroup.get(i).isSelected()) {
+				Chk_CustomGroup.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom and fee  name checked box is already checked.");
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+
+		int no_Of_FeeGroup = Chk_FeeGroup.size();
+		for (int i = 0; i < no_Of_FeeGroup; i++) {
+			if (!Chk_FeeGroup.get(i).isSelected()) {
+				Chk_FeeGroup.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Group name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}
@@ -1408,4 +1610,170 @@ public class Reports_Yearly_Fee_Defaulter_Report extends TestBase {
 		}
 	}
 
+	public void clickReport_ToGenerate_YearlyFeeDefaulterReport() throws Exception {
+		if (btn_Report.isDisplayed()) {
+			btn_Report.click();
+			log("Yearly Fee Defaulter Report is generated and object is:-" + btn_Report.toString());
+			Thread.sleep(5000);
+		} else {
+			log("Report button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickCancelButton_ToClearFilledForm() throws Exception {
+		if (btn_Cancel.isDisplayed()) {
+			btn_Cancel.click();
+			log("Yearly Fee Defaulter report filled form data is cleared and object is:-" + btn_Cancel.toString());
+			Thread.sleep(7000);
+		} else {
+			log("Cancel button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
+		if (btn_ExportToExcel.isDisplayed()) {
+			btn_ExportToExcel.click();
+			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
+			Thread.sleep(5000);
+		} else {
+			log("Export to Excel button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnPrint_ForPrintPreview() throws Exception {
+
+		String parentWin = driver.getWindowHandle();
+
+		if (btn_Print.isDisplayed()) {
+			btn_Print.click();
+			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
+			Thread.sleep(5000);
+
+		} else {
+			log("Print button element is not present.");
+			Thread.sleep(500);
+		}
+
+		Set<String> allWin = driver.getWindowHandles();
+
+		System.out.println("Page title before Switching : " + driver.getTitle());
+		System.out.println("Total Windows : " + allWin.size());
+
+		for (String windows : allWin) {
+			// if(!windows.equals(parentWin)){
+			driver.switchTo().window(windows);
+
+			if (driver.getTitle().toLowerCase().contains("Print")) {
+				Thread.sleep(2000);
+				Actions action = new Actions(driver);
+				action.sendKeys(Keys.TAB).sendKeys(Keys.ENTER);
+				Thread.sleep(5000);
+
+				break;
+			}
+		}
+
+		System.out.println("Page title after Switching for print: " + driver.getTitle());
+		Thread.sleep(500);
+
+		driver.close();
+		driver.switchTo().window(parentWin);
+		Thread.sleep(2000);
+	}
+
+	public void clickOnSMSButton_StudentWiseReport() throws Exception {
+		if (btn_SMS.isDisplayed()) {
+			btn_SMS.click();
+			log("SMS is sent for selected student and object is:-" + btn_SMS.toString());
+			Thread.sleep(2000);
+		} else {
+			log("SMS button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnEmailButton_StudentWiseReport() throws Exception {
+		if (btn_Email.isDisplayed()) {
+			btn_Email.click();
+			log("Email is sent for selected student and object is:-" + btn_Email.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Email button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnOkSuccessButton() throws Exception {
+		if (btnOKSuccess.isDisplayed()) {
+			btnOKSuccess.click();
+			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+			Thread.sleep(3000);
+		} else {
+			log("OK button element is not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void min_Max_FeeDefaulterReport_Form() throws Exception {
+		if (btnMin_MaxFeeDefaulterReport.isDisplayed()) {
+			btnMin_MaxFeeDefaulterReport.click();
+			log("Fee Defaulter Report page minimized or maximized and object is:-"
+					+ btnMin_MaxFeeDefaulterReport.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Fee Defaulter Report Minimized Element not present.");
+		}
+	}
+
+	public void min_Max_FeeDefaulterReport_Grid() throws Exception {
+		if (btnMin_MaxFeeDefaulterReportGrid.isDisplayed()) {
+			btnMin_MaxFeeDefaulterReportGrid.click();
+			log("Fee Defaulter Report Grid page minimized or maximized and object is:-"
+					+ btnMin_MaxFeeDefaulterReportGrid.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Fee Defaulter Report Grid Minimized Element not present.");
+		}
+	}
+
+	public void searchWithGroupName_InYearlyFeeDefaulterReportGrid(String groupName) throws Exception {
+		if (input_Search.isDisplayed()) {
+			input_Search.clear();
+			input_Search.sendKeys(groupName);
+			log("Entered Group Name to search: " + groupName + " and object is:-" + input_Search.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Search Element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void sortRecordsByGroupName() throws Exception {
+		if (btnSortByGroupName.isDisplayed()) {
+			btnSortByGroupName.click();
+			// btnSortByGroupName.click();
+			log("Sorted the record with Group name and object is:-" + btnSortByGroupName.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sort element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void selectRecordToGenerateReport() throws Exception {
+		int no_Of_Record = Chk_FeeDefaulterReportGrid.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_FeeDefaulterReportGrid.get(i).isSelected()) {
+				Chk_FeeDefaulterReportGrid.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+	}
 }

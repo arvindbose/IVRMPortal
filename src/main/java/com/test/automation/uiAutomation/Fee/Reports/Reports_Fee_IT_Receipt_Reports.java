@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.test.automation.uiAutomation.FeeReports;
+package com.test.automation.uiAutomation.Fee.Reports;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

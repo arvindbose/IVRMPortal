@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.test.automation.uiAutomation.FeeReports;
+package com.test.automation.uiAutomation.Fee.Reports;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
