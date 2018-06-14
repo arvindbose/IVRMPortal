@@ -906,7 +906,7 @@ public class Total_Strength extends TestBase {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
 			log("Total Strength Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
+			Thread.sleep(7000);
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);
@@ -917,7 +917,7 @@ public class Total_Strength extends TestBase {
 		if (btn_Cancel.isDisplayed()) {
 			btn_Cancel.click();
 			log("Total Strength Report filled form data is cleared and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
+			Thread.sleep(10000);
 		} else {
 			log("Cancel button element not present.");
 			Thread.sleep(500);
