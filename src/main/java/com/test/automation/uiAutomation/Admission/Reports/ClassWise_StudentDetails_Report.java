@@ -112,7 +112,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxClasswiseDetailsReportGrid;
 	
-	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
+	@FindBy(xpath = "//button[text()='OK']")
 	WebElement btnOKSuccess;
 
 	public ClassWise_StudentDetails_Report(WebDriver driver) {
@@ -203,6 +203,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 
 		if (sel_AcademicYear.isDisplayed()) {
 			select = new Select(sel_AcademicYear);
+			Thread.sleep(1000);
 			select.selectByVisibleText(academicYear);
 
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());

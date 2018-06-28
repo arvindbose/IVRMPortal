@@ -20,12 +20,12 @@ import org.testng.Assert;
 import com.test.automation.uiAutomation.testBase.TestBase;
 
 /**
- * @author vaps
+ * @author Arvind
  *
  */
-public class Reports_Fee_Student_Concession_Report extends TestBase{
+public class Fee_Student_Concession_Report extends TestBase{
 
-	public static final Logger log = Logger.getLogger(Reports_Fee_Student_Concession_Report.class.getName());
+	public static final Logger log = Logger.getLogger(Fee_Student_Concession_Report.class.getName());
 
 	WebDriver driver;
 	Select select;
@@ -102,7 +102,7 @@ public class Reports_Fee_Student_Concession_Report extends TestBase{
 	@FindBy(xpath = "//table[@id='Table'][2]//tbody//tr//td[1]//input")
 	List<WebElement> Chk_FeeDefaulterReportGrid;
 
-	public Reports_Fee_Student_Concession_Report(WebDriver driver) {
+	public Fee_Student_Concession_Report(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -159,7 +159,7 @@ public class Reports_Fee_Student_Concession_Report extends TestBase{
 	 * 
 	 * @return
 	 */
-	public boolean verifyFeeReports_YearlyFeeDefaulterReport_Page() {
+	public boolean verifyFeeReports_FeeStudentConcessionReport_Page() {
 		try {
 			System.out.println(txt_FeeStudentConcessionReport.getText().trim());
 			txt_FeeStudentConcessionReport.isDisplayed();
@@ -337,10 +337,10 @@ public class Reports_Fee_Student_Concession_Report extends TestBase{
 			}
 		}
 	}
-	public void clickReport_ToGenerate_YearlyFeeDefaulterReport() throws Exception {
+	public void clickReport_ToGenerate_FeeStudentConcessionReport() throws Exception {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
-			log("Yearly Fee Defaulter Report is generated and object is:-" + btn_Report.toString());
+			log("Fee Student Concession Report is generated and object is:-" + btn_Report.toString());
 			Thread.sleep(5000);
 		} else {
 			log("Report button element not present.");
@@ -409,5 +409,75 @@ public class Reports_Fee_Student_Concession_Report extends TestBase{
 		driver.close();
 		driver.switchTo().window(parentWin);
 		Thread.sleep(2000);
+	}
+	public void clickOnOkSuccessButton() throws Exception {
+		if (btnOKSuccess.isDisplayed()) {
+			btnOKSuccess.click();
+			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+			Thread.sleep(3000);
+		} else {
+			log("OK button element is not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void min_Max_FeeStudentConcessionReport_Form() throws Exception {
+		if (btnMin_MaxStudentConcessionReport.isDisplayed()) {
+			btnMin_MaxStudentConcessionReport.click();
+			log("Fee Student Concession Report page minimized or maximized and object is:-"
+					+ btnMin_MaxStudentConcessionReport.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Fee Student Concession Report Minimized Element not present.");
+		}
+	}
+
+	public void min_Max_ReportGridView_Grid() throws Exception {
+		if (btnMin_MaxReportGridView.isDisplayed()) {
+			btnMin_MaxReportGridView.click();
+			log("Report Grid View page minimized or maximized and object is:-"
+					+ btnMin_MaxReportGridView.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Report Grid View Minimized Element not present.");
+		}
+	}
+
+	public void searchWithStudentName_InFeeStudentConcessionReportGridView(String studentName) throws Exception {
+		if (input_Search.isDisplayed()) {
+			input_Search.clear();
+			input_Search.sendKeys(studentName);
+			log("Entered Student Name to search: " + studentName + " and object is:-" + input_Search.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Search Element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void sortRecordsByStudentName() throws Exception {
+		if (btnSortByStudentName.isDisplayed()) {
+			btnSortByStudentName.click();
+			// btnSortByGroupName.click();
+			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sort element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void selectRecordToGenerateReport() throws Exception {
+		int no_Of_Record = Chk_FeeDefaulterReportGrid.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_FeeDefaulterReportGrid.get(i).isSelected()) {
+				Chk_FeeDefaulterReportGrid.get(i).click();
+				log(i + " Custom Group Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Custom Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
 	}
 }

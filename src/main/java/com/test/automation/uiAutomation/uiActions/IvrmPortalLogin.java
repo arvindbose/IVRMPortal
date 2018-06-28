@@ -28,7 +28,7 @@ public static final Logger log = Logger.getLogger(IvrmPortalLogin.class.getName(
 	@FindBy(xpath="//input[@id='login-password']")
 	WebElement passWord;
 	
-	@FindBy(xpath="//div[@class='col-xs-4']/button[2]")
+	@FindBy(xpath="//div[@class='col-xs-4']/button[1]")
 	WebElement loginButton;
 	
 	@FindBy(xpath="//span[contains(text(),'Logout')]")
