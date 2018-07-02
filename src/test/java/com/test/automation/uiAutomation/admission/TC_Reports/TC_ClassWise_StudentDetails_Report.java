@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,8 +21,8 @@ import com.test.automation.uiAutomation.uiActions.IvrmPortalLogin;
  * @author vaps
  *
  */
-public class TC_ClassWise_StudentDetails_Report extends TestBase{
-	
+public class TC_ClassWise_StudentDetails_Report extends TestBase {
+
 	public static final Logger log = Logger.getLogger(TC_ClassWise_StudentDetails_Report.class.getName());
 
 	ClassWise_StudentDetails_Report classwisestudentdetails;
@@ -38,45 +39,48 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 		String[][] testRecords = getData("AdmissionReports.xlsx", "ClassWiseStudentDetails_Data");
 		return testRecords;
 	}
+
 	@DataProvider(name = "Search_ClassWiseStudentDetails")
 	public String[][] getSearchData() {
 		String[][] testRecordsSearch = getData("AdmissionReports.xlsx", "Search_CWSD_AdmNo");
 		return testRecordsSearch;
 	}
-	
+
 	@DataProvider(name = "Reports_ClassWiseStudentDetails_Promoted")
 	public String[][] getTestPromotedData() {
 		String[][] testRecordsPromoted = getData("AdmissionReports.xlsx", "ClassWiseDetails_Promoted");
 		return testRecordsPromoted;
 	}
+
 	@DataProvider(name = "Search_ClassWiseStudentDetails_Promoted")
 	public String[][] getSearchTotalData() {
 		String[][] testRecordsPromotedSearch = getData("AdmissionReports.xlsx", "Search_CWSD_AdmNo_Promoted");
 		return testRecordsPromotedSearch;
 	}
+
 	@DataProvider(name = "Reports_ClassWiseStudentDetails_YearLoss")
 	public String[][] getTestYearLossData() {
 		String[][] testRecordsYearLoss = getData("AdmissionReports.xlsx", "ClassWiseDetails_YearLoss");
 		return testRecordsYearLoss;
 	}
+
 	@DataProvider(name = "Search_ClassWiseStudentDetails_YearLoss")
 	public String[][] getSearchYearLossData() {
 		String[][] testRecordsYearLossSearch = getData("AdmissionReports.xlsx", "Search_CWSD_AdmNo_YearLoss");
 		return testRecordsYearLossSearch;
 	}
+
 	@DataProvider(name = "Reports_ClassWiseStudentDetails_Deactivated")
 	public String[][] getTestDeactivatedData() {
 		String[][] testRecordsDeactivated = getData("AdmissionReports.xlsx", "ClassWiseDetails_Deactivated");
 		return testRecordsDeactivated;
 	}
+
 	@DataProvider(name = "Search_ClassWiseStudentDetails_Deactivated")
 	public String[][] getSearchDeactivatedData() {
-		String[][] testRecordsDeactivatedSearch = getData("AdmissionReports.xlsx", " b yg");
+		String[][] testRecordsDeactivatedSearch = getData("AdmissionReports.xlsx", "Search_CWSD_AdmNo_Deactivated");
 		return testRecordsDeactivatedSearch;
 	}
-	
-	
-	
 
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -167,9 +171,10 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcSubmitBlank_ClassWiseDetailsReportForm");
 		}
 	}
-	
-	@Test(priority =6, dataProvider = "Reports_ClassWiseStudentDetails")
-	public void tcFillClassWiseDetailsReport_Form_ForNewAdmission(String academicYear, String Class_CWD, String Section, String runMode) {
+
+	@Test(priority = 6, dataProvider = "Reports_ClassWiseStudentDetails")
+	public void tcFillClassWiseDetailsReport_Form_ForNewAdmission(String academicYear, String Class_CWD, String Section,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
@@ -199,6 +204,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport");
 		}
 	}
+
 	@Test(priority = 8)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport() {
 
@@ -213,6 +219,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport");
 		}
 	}
+
 	@Test(priority = 9)
 	public void tcClickOnOkButton_ToHandleExportToExcelPopUp() {
 
@@ -227,6 +234,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnOkButton_ToHandleExportToExcelPopUp");
 		}
 	}
+
 	@Test(priority = 10)
 	public void tcClickOnPrint_ForPrintPreview_WithoutSelectingRecord() {
 
@@ -241,6 +249,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_WithoutSelectingRecord");
 		}
 	}
+
 	@Test(priority = 11)
 	public void tcClickOnOkButton_ToHandlePrintPreviewPopUp() {
 
@@ -255,23 +264,26 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnOkButton_ToHandlePrintPreviewPopUp");
 		}
 	}
+
 	@Test(priority = 12, dataProvider = "Search_ClassWiseStudentDetails")
 	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid Test===========");
+			log.info(
+					"============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid Test===========");
 
 			classwisestudentdetails.searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(admissionNum);
 
-			log.info("============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid Test===========");
+			log.info(
+					"============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid Test===========");
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid");
 		} catch (Exception e) {
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid");
 		}
 	}
-	
+
 	@Test(priority = 13, dataProvider = "Search_ClassWiseStudentDetails")
 	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -288,6 +300,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid");
 		}
 	}
+
 	@Test(priority = 14, dataProvider = "Search_ClassWiseStudentDetails")
 	public void tcSelectStudentForClassWiseStudentDetailsReport(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -379,17 +392,21 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickCancelButton_ToClearFilledForm");
 		}
 	}
+
 	@Test(priority = 20, dataProvider = "Reports_ClassWiseStudentDetails")
-	public void tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel(String academicYear, String Class_CWD, String Section, String runMode) {
+	public void tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel(String academicYear, String Class_CWD,
+			String Section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel Test===========");
+			log.info(
+					"============= Strting tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel Test===========");
 
 			classwisestudentdetails.fillClassWiseDetailsReport_Form_ForNewAdmission(academicYear, Class_CWD, Section);
 
-			log.info("============= Finished tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel Test===========");
+			log.info(
+					"============= Finished tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel Test===========");
 			getScreenShot("tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel");
 		} catch (Exception e) {
 			getScreenShot("tcFillClassWiseDetailsReport_Form_ForNewAdmission_AfterCancel");
@@ -400,66 +417,78 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 	public void tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_AfterCancel() {
 
 		try {
-			log.info("============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_AfterCancel Test===========");
+			log.info(
+					"============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_AfterCancel Test===========");
 
 			classwisestudentdetails.clickReport_ToGenerate_ClassWiseStudentDetailsReport();
 
-			log.info("============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_AfterCancel Test===========");
+			log.info(
+					"============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_AfterCancel Test===========");
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_AfterCancel");
 		} catch (Exception e) {
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_AfterCancel");
 		}
 	}
+
 	@Test(priority = 22, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission(String admissionNum, String runMode) {
+	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission(String admissionNum,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission Test===========");
+			log.info(
+					"============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission Test===========");
 
 			classwisestudentdetails.searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(admissionNum);
 
-			log.info("============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission Test===========");
+			log.info(
+					"============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission Test===========");
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission");
 		} catch (Exception e) {
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_NewAdmission");
 		}
 	}
-	
+
 	@Test(priority = 23, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission(String admissionNum, String runMode) {
+	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission(String admissionNum,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission Test===========");
+			log.info(
+					"============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission Test===========");
 
 			classwisestudentdetails.verifyStudent_ForClassWiseStudentDetailsReportInGrid(admissionNum);
 
-			log.info("============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission Test===========");
+			log.info(
+					"============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission Test===========");
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission");
 		} catch (Exception e) {
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_NewAdmission");
 		}
 	}
+
 	@Test(priority = 24, dataProvider = "Search_ClassWiseStudentDetails")
 	public void tcSelectStudentForClassWiseStudentDetailsReport_NewAdmission(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSelectStudentForClassWiseStudentDetailsReport_NewAdmission Test===========");
+			log.info(
+					"============= Strting tcSelectStudentForClassWiseStudentDetailsReport_NewAdmission Test===========");
 
 			classwisestudentdetails.selectStudentForClassWiseStudentDetailsReport(admissionNum);
 
-			log.info("============= Finished tcSelectStudentForClassWiseStudentDetailsReport_NewAdmission Test===========");
+			log.info(
+					"============= Finished tcSelectStudentForClassWiseStudentDetailsReport_NewAdmission Test===========");
 			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_NewAdmission");
 		} catch (Exception e) {
 			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_NewAdmission");
 		}
 	}
-	
+
 	@Test(priority = 25)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_NewAdmission() {
 
@@ -468,12 +497,14 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 
 			classwisestudentdetails.clickOnExportToExcel_ToDownLoadExcelReport();
 
-			log.info("============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_NewAdmission Test===========");
+			log.info(
+					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_NewAdmission Test===========");
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_NewAdmission");
 		} catch (Exception e) {
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_NewAdmission");
 		}
 	}
+
 	@Test(priority = 26)
 	public void tcClickOnPrint_ForPrintPreview_NewAdmission() {
 
@@ -488,22 +519,27 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_NewAdmission");
 		}
 	}
+
 	@Test(priority = 27)
 	public void tcClickCancelButton_ToClearFilledForm_ForTotalStudentAction() {
 
 		try {
-			log.info("============= Strting tcClickCancelButton_ToClearFilledForm_ForTotalStudentAction Test===========");
+			log.info(
+					"============= Strting tcClickCancelButton_ToClearFilledForm_ForTotalStudentAction Test===========");
 
 			classwisestudentdetails.clickCancelButton_ToClearFilledForm();
 
-			log.info("============= Finished tcClickCancelButton_ToClearFilledForm_ForTotalStudentAction Test===========");
+			log.info(
+					"============= Finished tcClickCancelButton_ToClearFilledForm_ForTotalStudentAction Test===========");
 			getScreenShot("tcClickCancelButton_ToClearFilledForm_ForTotalStudentAction");
 		} catch (Exception e) {
 			getScreenShot("tcClickCancelButton_ToClearFilledForm_ForTotalStudentAction");
 		}
 	}
+
 	@Test(priority = 28, dataProvider = "Reports_ClassWiseStudentDetails")
-	public void tcFillClassWiseDetailsReport_Form_ForTotalStudents(String academicYear, String Class_CWD, String Section, String runMode) {
+	public void tcFillClassWiseDetailsReport_Form_ForTotalStudents(String academicYear, String Class_CWD,
+			String Section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
@@ -523,80 +559,95 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 	public void tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_TotalStudents() {
 
 		try {
-			log.info("============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_TotalStudents Test===========");
+			log.info(
+					"============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_TotalStudents Test===========");
 
 			classwisestudentdetails.clickReport_ToGenerate_ClassWiseStudentDetailsReport();
 
-			log.info("============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_TotalStudents Test===========");
+			log.info(
+					"============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_TotalStudents Test===========");
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_TotalStudents");
 		} catch (Exception e) {
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_TotalStudents");
 		}
 	}
+
 	@Test(priority = 30, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents(String admissionNum, String runMode) {
+	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents(String admissionNum,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents Test===========");
+			log.info(
+					"============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents Test===========");
 
 			classwisestudentdetails.searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(admissionNum);
 
-			log.info("============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents Test===========");
+			log.info(
+					"============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents Test===========");
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents");
 		} catch (Exception e) {
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_TotalStudents");
 		}
 	}
-	
+
 	@Test(priority = 31, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents(String admissionNum, String runMode) {
+	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents(String admissionNum,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents Test===========");
+			log.info(
+					"============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents Test===========");
 
 			classwisestudentdetails.verifyStudent_ForClassWiseStudentDetailsReportInGrid(admissionNum);
 
-			log.info("============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents Test===========");
+			log.info(
+					"============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents Test===========");
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents");
 		} catch (Exception e) {
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_TotalStudents");
 		}
 	}
+
 	@Test(priority = 32, dataProvider = "Search_ClassWiseStudentDetails")
 	public void tcSelectStudentForClassWiseStudentDetailsReport_TotalStudents(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSelectStudentForClassWiseStudentDetailsReport_TotalStudents Test===========");
+			log.info(
+					"============= Strting tcSelectStudentForClassWiseStudentDetailsReport_TotalStudents Test===========");
 
 			classwisestudentdetails.selectStudentForClassWiseStudentDetailsReport(admissionNum);
 
-			log.info("============= Finished tcSelectStudentForClassWiseStudentDetailsReport_TotalStudents Test===========");
+			log.info(
+					"============= Finished tcSelectStudentForClassWiseStudentDetailsReport_TotalStudents Test===========");
 			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_TotalStudents");
 		} catch (Exception e) {
 			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_TotalStudents");
 		}
 	}
-	
+
 	@Test(priority = 33)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_TotalStudents() {
 
 		try {
-			log.info("============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_TotalStudents Test===========");
+			log.info(
+					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_TotalStudents Test===========");
 
 			classwisestudentdetails.clickOnExportToExcel_ToDownLoadExcelReport();
 
-			log.info("============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_TotalStudents Test===========");
+			log.info(
+					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_TotalStudents Test===========");
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_TotalStudents");
 		} catch (Exception e) {
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_TotalStudents");
 		}
 	}
+
 	@Test(priority = 34)
 	public void tcClickOnPrint_ForPrintPreview_TotalStudents() {
 
@@ -611,130 +662,169 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_TotalStudents");
 		}
 	}
-	@Test(priority = 35)
-	public void tcClickCancelButton_ToClearFilledForm_ForPromotedAction() {
+	// @Test(priority = 35)
+	// public void tcClickCancelButton_ToClearFilledForm_ForPromotedAction() {
+	//
+	// try {
+	// log.info("============= Strting
+	// tcClickCancelButton_ToClearFilledForm_ForPromotedAction
+	// Test===========");
+	//
+	// classwisestudentdetails.clickCancelButton_ToClearFilledForm();
+	//
+	// log.info("============= Finished
+	// tcClickCancelButton_ToClearFilledForm_ForPromotedAction
+	// Test===========");
+	// getScreenShot("tcClickCancelButton_ToClearFilledForm_ForPromotedAction");
+	// } catch (Exception e) {
+	// getScreenShot("tcClickCancelButton_ToClearFilledForm_ForPromotedAction");
+	// }
+	// }
+	// @Test(priority = 36, dataProvider =
+	// "Reports_ClassWiseStudentDetails_Promoted")
+	// public void tcFillClassWiseDetailsReport_Form_ForPromoted(String
+	// academicYear, String Class_CWD, String Section, String runMode) {
+	// if (runMode.equalsIgnoreCase("n")) {
+	// throw new SkipException("user marked this record as no run");
+	// }
+	// try {
+	// log.info("============= Strting
+	// tcFillClassWiseDetailsReport_Form_ForPromoted Test===========");
+	//
+	// classwisestudentdetails.fillClassWiseDetailsReport_Form_ForPromoted(academicYear,
+	// Class_CWD, Section);
+	//
+	// log.info("============= Finished
+	// tcFillClassWiseDetailsReport_Form_ForPromoted Test===========");
+	// getScreenShot("tcFillClassWiseDetailsReport_Form_ForPromoted");
+	// } catch (Exception e) {
+	// getScreenShot("tcFillClassWiseDetailsReport_Form_ForPromoted");
+	// }
+	// }
+	//
+	// @Test(priority = 37)
+	// public void
+	// tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted() {
+	//
+	// try {
+	// log.info("============= Strting
+	// tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted
+	// Test===========");
+	//
+	// classwisestudentdetails.clickReport_ToGenerate_ClassWiseStudentDetailsReport();
+	//
+	// log.info("============= Finished
+	// tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted
+	// Test===========");
+	// getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted");
+	// } catch (Exception e) {
+	// getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted");
+	// }
+	// }
+	// @Test(priority = 38, dataProvider =
+	// "Search_ClassWiseStudentDetails_Promoted")
+	// public void
+	// tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted(String
+	// admissionNum, String runMode) {
+	// if (runMode.equalsIgnoreCase("n")) {
+	// throw new SkipException("user marked this record as no run");
+	// }
+	// try {
+	// log.info("============= Strting
+	// tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted
+	// Test===========");
+	//
+	// classwisestudentdetails.searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(admissionNum);
+	//
+	// log.info("============= Finished
+	// tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted
+	// Test===========");
+	// getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted");
+	// } catch (Exception e) {
+	// getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted");
+	// }
+	// }
+	//
+	// @Test(priority = 39, dataProvider =
+	// "Search_ClassWiseStudentDetails_Promoted")
+	// public void
+	// tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted(String
+	// admissionNum, String runMode) {
+	// if (runMode.equalsIgnoreCase("n")) {
+	// throw new SkipException("user marked this record as no run");
+	// }
+	// try {
+	// log.info("============= Strting
+	// tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted
+	// Test===========");
+	//
+	// classwisestudentdetails.verifyStudent_ForClassWiseStudentDetailsReportInGrid(admissionNum);
+	//
+	// log.info("============= Finished
+	// tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted
+	// Test===========");
+	// getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted");
+	// } catch (Exception e) {
+	// getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted");
+	// }
+	// }
+	// @Test(priority = 40, dataProvider =
+	// "Search_ClassWiseStudentDetails_Promoted")
+	// public void
+	// tcSelectStudentForClassWiseStudentDetailsReport_Promoted(String
+	// admissionNum, String runMode) {
+	// if (runMode.equalsIgnoreCase("n")) {
+	// throw new SkipException("user marked this record as no run");
+	// }
+	// try {
+	// log.info("============= Strting
+	// tcSelectStudentForClassWiseStudentDetailsReport_Promoted
+	// Test===========");
+	//
+	// classwisestudentdetails.selectStudentForClassWiseStudentDetailsReport(admissionNum);
+	//
+	// log.info("============= Finished
+	// tcSelectStudentForClassWiseStudentDetailsReport_Promoted
+	// Test===========");
+	// getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_Promoted");
+	// } catch (Exception e) {
+	// getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_Promoted");
+	// }
+	// }
+	//
+	// @Test(priority = 41)
+	// public void tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted() {
+	//
+	// try {
+	// log.info("============= Strting
+	// tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted Test===========");
+	//
+	// classwisestudentdetails.clickOnExportToExcel_ToDownLoadExcelReport();
+	//
+	// log.info("============= Finished
+	// tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted Test===========");
+	// getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted");
+	// } catch (Exception e) {
+	// getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted");
+	// }
+	// }
+	// @Test(priority = 42)
+	// public void tcClickOnPrint_ForPrintPreview_Promoted() {
+	//
+	// try {
+	// log.info("============= Strting tcClickOnPrint_ForPrintPreview_Promoted
+	// Test===========");
+	//
+	// classwisestudentdetails.clickOnPrint_ForPrintPreview();
+	//
+	// log.info("============= Finished tcClickOnPrint_ForPrintPreview_Promoted
+	// Test===========");
+	// getScreenShot("tcClickOnPrint_ForPrintPreview_Promoted");
+	// } catch (Exception e) {
+	// getScreenShot("tcClickOnPrint_ForPrintPreview_Promoted");
+	// }
+	// }
 
-		try {
-			log.info("============= Strting tcClickCancelButton_ToClearFilledForm_ForPromotedAction Test===========");
-
-			classwisestudentdetails.clickCancelButton_ToClearFilledForm();
-
-			log.info("============= Finished tcClickCancelButton_ToClearFilledForm_ForPromotedAction Test===========");
-			getScreenShot("tcClickCancelButton_ToClearFilledForm_ForPromotedAction");
-		} catch (Exception e) {
-			getScreenShot("tcClickCancelButton_ToClearFilledForm_ForPromotedAction");
-		}
-	}
-	@Test(priority = 36, dataProvider = "Reports_ClassWiseStudentDetails")
-	public void tcFillClassWiseDetailsReport_Form_ForPromoted(String academicYear, String Class_CWD, String Section, String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcFillClassWiseDetailsReport_Form_ForPromoted Test===========");
-
-			classwisestudentdetails.fillClassWiseDetailsReport_Form_ForPromoted(academicYear, Class_CWD, Section);
-
-			log.info("============= Finished tcFillClassWiseDetailsReport_Form_ForPromoted Test===========");
-			getScreenShot("tcFillClassWiseDetailsReport_Form_ForPromoted");
-		} catch (Exception e) {
-			getScreenShot("tcFillClassWiseDetailsReport_Form_ForPromoted");
-		}
-	}
-
-	@Test(priority = 37)
-	public void tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted() {
-
-		try {
-			log.info("============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted Test===========");
-
-			classwisestudentdetails.clickReport_ToGenerate_ClassWiseStudentDetailsReport();
-
-			log.info("============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted Test===========");
-			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted");
-		} catch (Exception e) {
-			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Promoted");
-		}
-	}
-	@Test(priority = 38, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted(String admissionNum, String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted Test===========");
-
-			classwisestudentdetails.searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(admissionNum);
-
-			log.info("============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted Test===========");
-			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted");
-		} catch (Exception e) {
-			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Promoted");
-		}
-	}
-	
-	@Test(priority = 39, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted(String admissionNum, String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted Test===========");
-
-			classwisestudentdetails.verifyStudent_ForClassWiseStudentDetailsReportInGrid(admissionNum);
-
-			log.info("============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted Test===========");
-			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted");
-		} catch (Exception e) {
-			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Promoted");
-		}
-	}
-	@Test(priority = 40, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcSelectStudentForClassWiseStudentDetailsReport_Promoted(String admissionNum, String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcSelectStudentForClassWiseStudentDetailsReport_Promoted Test===========");
-
-			classwisestudentdetails.selectStudentForClassWiseStudentDetailsReport(admissionNum);
-
-			log.info("============= Finished tcSelectStudentForClassWiseStudentDetailsReport_Promoted Test===========");
-			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_Promoted");
-		} catch (Exception e) {
-			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_Promoted");
-		}
-	}
-	
-	@Test(priority = 41)
-	public void tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted() {
-
-		try {
-			log.info("============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted Test===========");
-
-			classwisestudentdetails.clickOnExportToExcel_ToDownLoadExcelReport();
-
-			log.info("============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted Test===========");
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_Promoted");
-		}
-	}
-	@Test(priority = 42)
-	public void tcClickOnPrint_ForPrintPreview_Promoted() {
-
-		try {
-			log.info("============= Strting tcClickOnPrint_ForPrintPreview_Promoted Test===========");
-
-			classwisestudentdetails.clickOnPrint_ForPrintPreview();
-
-			log.info("============= Finished tcClickOnPrint_ForPrintPreview_Promoted Test===========");
-			getScreenShot("tcClickOnPrint_ForPrintPreview_Promoted");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnPrint_ForPrintPreview_Promoted");
-		}
-	}
-	
 	@Test(priority = 43)
 	public void tcClickCancelButton_ToClearFilledForm_ForYearLossAction() {
 
@@ -749,8 +839,10 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickCancelButton_ToClearFilledForm_ForYearLossAction");
 		}
 	}
-	@Test(priority = 44, dataProvider = "Reports_ClassWiseStudentDetails")
-	public void tcFillClassWiseDetailsReport_Form_YearLoss(String academicYear, String Class_CWD, String Section, String runMode) {
+
+	@Test(priority = 44, dataProvider = "Reports_ClassWiseStudentDetails_YearLoss")
+	public void tcFillClassWiseDetailsReport_Form_YearLoss(String academicYear, String Class_CWD, String Section,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
@@ -770,50 +862,59 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 	public void tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_YearLoss() {
 
 		try {
-			log.info("============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_YearLoss Test===========");
+			log.info(
+					"============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_YearLoss Test===========");
 
 			classwisestudentdetails.clickReport_ToGenerate_ClassWiseStudentDetailsReport();
 
-			log.info("============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_YearLoss Test===========");
+			log.info(
+					"============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_YearLoss Test===========");
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_YearLoss");
 		} catch (Exception e) {
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_YearLoss");
 		}
 	}
-	@Test(priority = 46, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss(String admissionNum, String runMode) {
+
+	@Test(priority = 46, dataProvider = "Search_ClassWiseStudentDetails_YearLoss")
+	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss(String admissionNum,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss Test===========");
+			log.info(
+					"============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss Test===========");
 
 			classwisestudentdetails.searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(admissionNum);
 
-			log.info("============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss Test===========");
+			log.info(
+					"============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss Test===========");
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss");
 		} catch (Exception e) {
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_YearLoss");
 		}
 	}
-	
-	@Test(priority = 47, dataProvider = "Search_ClassWiseStudentDetails")
+
+	@Test(priority = 47, dataProvider = "Search_ClassWiseStudentDetails_YearLoss")
 	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_YearLoss(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_YearLoss Test===========");
+			log.info(
+					"============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_YearLoss Test===========");
 
 			classwisestudentdetails.verifyStudent_ForClassWiseStudentDetailsReportInGrid(admissionNum);
 
-			log.info("============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_YearLoss Test===========");
+			log.info(
+					"============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_YearLoss Test===========");
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_YearLoss");
 		} catch (Exception e) {
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_YearLoss");
 		}
 	}
-	@Test(priority = 48, dataProvider = "Search_ClassWiseStudentDetails")
+
+	@Test(priority = 48, dataProvider = "Search_ClassWiseStudentDetails_YearLoss")
 	public void tcSelectStudentForClassWiseStudentDetailsReport_YearLoss(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -829,7 +930,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_YearLoss");
 		}
 	}
-	
+
 	@Test(priority = 49)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearLoss() {
 
@@ -844,6 +945,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearLoss");
 		}
 	}
+
 	@Test(priority = 50)
 	public void tcClickOnPrint_ForPrintPreview_YearLoss() {
 
@@ -858,22 +960,27 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearLoss");
 		}
 	}
+
 	@Test(priority = 51)
 	public void tcClickCancelButton_ToClearFilledForm_ForDeactivatedAction() {
 
 		try {
-			log.info("============= Strting tcClickCancelButton_ToClearFilledForm_ForDeactivatedAction Test===========");
+			log.info(
+					"============= Strting tcClickCancelButton_ToClearFilledForm_ForDeactivatedAction Test===========");
 
 			classwisestudentdetails.clickCancelButton_ToClearFilledForm();
 
-			log.info("============= Finished tcClickCancelButton_ToClearFilledForm_ForDeactivatedAction Test===========");
+			log.info(
+					"============= Finished tcClickCancelButton_ToClearFilledForm_ForDeactivatedAction Test===========");
 			getScreenShot("tcClickCancelButton_ToClearFilledForm_ForDeactivatedAction");
 		} catch (Exception e) {
 			getScreenShot("tcClickCancelButton_ToClearFilledForm_ForDeactivatedAction");
 		}
 	}
-	@Test(priority = 52, dataProvider = "Reports_ClassWiseStudentDetails")
-	public void tcFillClassWiseDetailsReport_Form_Deactivated(String academicYear, String Class_CWD, String Section, String runMode) {
+
+	@Test(priority = 52, dataProvider = "Reports_ClassWiseStudentDetails_Deactivated")
+	public void tcFillClassWiseDetailsReport_Form_Deactivated(String academicYear, String Class_CWD, String Section,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
@@ -893,66 +1000,78 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 	public void tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Deactivated() {
 
 		try {
-			log.info("============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Deactivated Test===========");
+			log.info(
+					"============= Strting tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Deactivated Test===========");
 
 			classwisestudentdetails.clickReport_ToGenerate_ClassWiseStudentDetailsReport();
 
-			log.info("============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Deactivated Test===========");
+			log.info(
+					"============= Finished tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Deactivated Test===========");
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Deactivated");
 		} catch (Exception e) {
 			getScreenShot("tcClickReport_ToGenerate_ClassWiseStudentDetailsReport_Deactivated");
 		}
 	}
-	@Test(priority = 54, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated(String admissionNum, String runMode) {
+
+	@Test(priority = 54, dataProvider = "Search_ClassWiseStudentDetails_Deactivated")
+	public void tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated(String admissionNum,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated Test===========");
+			log.info(
+					"============= Strting tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated Test===========");
 
 			classwisestudentdetails.searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(admissionNum);
 
-			log.info("============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated Test===========");
+			log.info(
+					"============= Finished tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated Test===========");
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated");
 		} catch (Exception e) {
 			getScreenShot("tcSearchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid_Deactivated");
 		}
 	}
-	
-	@Test(priority = 55, dataProvider = "Search_ClassWiseStudentDetails")
-	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated(String admissionNum, String runMode) {
+
+	@Test(priority = 55, dataProvider = "Search_ClassWiseStudentDetails_Deactivated")
+	public void tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated(String admissionNum,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated Test===========");
+			log.info(
+					"============= Strting tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated Test===========");
 
 			classwisestudentdetails.verifyStudent_ForClassWiseStudentDetailsReportInGrid(admissionNum);
 
-			log.info("============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated Test===========");
+			log.info(
+					"============= Finished tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated Test===========");
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated");
 		} catch (Exception e) {
 			getScreenShot("tcVerifyStudent_ForClassWiseStudentDetailsReportInGrid_Deactivated");
 		}
 	}
-	@Test(priority = 56, dataProvider = "Search_ClassWiseStudentDetails")
+
+	@Test(priority = 56, dataProvider = "Search_ClassWiseStudentDetails_Deactivated")
 	public void tcSelectStudentForClassWiseStudentDetailsReport_Deactivated(String admissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSelectStudentForClassWiseStudentDetailsReport_Deactivated Test===========");
+			log.info(
+					"============= Strting tcSelectStudentForClassWiseStudentDetailsReport_Deactivated Test===========");
 
 			classwisestudentdetails.selectStudentForClassWiseStudentDetailsReport(admissionNum);
 
-			log.info("============= Finished tcSelectStudentForClassWiseStudentDetailsReport_Deactivated Test===========");
+			log.info(
+					"============= Finished tcSelectStudentForClassWiseStudentDetailsReport_Deactivated Test===========");
 			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_Deactivated");
 		} catch (Exception e) {
 			getScreenShot("tcSelectStudentForClassWiseStudentDetailsReport_Deactivated");
 		}
 	}
-	
+
 	@Test(priority = 57)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_Deactivated() {
 
@@ -967,6 +1086,7 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_Deactivated");
 		}
 	}
+
 	@Test(priority = 58)
 	public void tcClickOnPrint_ForPrintPreview_Deactivated() {
 
@@ -980,5 +1100,16 @@ public class TC_ClassWise_StudentDetails_Report extends TestBase{
 		} catch (Exception e) {
 			getScreenShot("tcClickOnPrint_ForPrintPreview_Deactivated");
 		}
+	}
+
+	@AfterClass
+	public void tearDown() {
+		try {
+			ivrmportallogin.logOutFromApplication();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		driver.quit();
 	}
 }

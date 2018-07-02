@@ -67,58 +67,58 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 	private WebElement rdBtn_CategoryWise;
 
 	@FindBy(xpath = "//label[contains(text(),'Academic Year:')]/following-sibling::div/select")
-	WebElement sel_AcademicYear;
+	private WebElement sel_AcademicYear;
 
 	@FindBy(xpath = "//input[@name='fee_ct1']")
-	List<WebElement> Chk_CustomGroup;
+	private List<WebElement> Chk_CustomGroup;
 
 	@FindBy(xpath = "//input[@name='fee_gp1']")
-	List<WebElement> Chk_FeeGroup;
+	private List<WebElement> Chk_FeeGroup;
 
 	@FindBy(xpath = "//span[contains(text(),'Active')]/preceding-sibling::input")
-	WebElement chk_Active;
+	private WebElement chk_Active;
 
 	@FindBy(xpath = "//span[contains(text(),'Deactive')]/preceding-sibling::input")
-	WebElement chk_De_Active;
+	private WebElement chk_De_Active;
 
 	@FindBy(xpath = "//span[contains(text(),'Left')]/preceding-sibling::input")
-	WebElement chk_Left;
+	private WebElement chk_Left;
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
-	WebElement btn_Report;
+	private WebElement btn_Report;
 
 	@FindBy(xpath = "//span[contains(text(),'Print')]/parent::button")
-	WebElement btn_Print;
+	private WebElement btn_Print;
 
 	@FindBy(xpath = "//span[contains(text(),'Clear')]/parent::button")
-	WebElement btn_Clear;
+	private WebElement btn_Clear;
 
 	@FindBy(xpath = "//span[contains(text(),'Export to Excel')]/parent::button")
-	WebElement btn_ExportToExcel;
+	private WebElement btn_ExportToExcel;
 
 	@FindBy(xpath = "//span[contains(text(),'Display')]/parent::button")
-	WebElement btn_Display;
+	private WebElement btn_Display;
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
-	WebElement btnMin_MaxYearlyFeeCollectionReport;
+	private WebElement btnMin_MaxYearlyFeeCollectionReport;
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
-	WebElement btnMin_MaxYearlyFeeCollectionReportGrid;
+	private WebElement btnMin_MaxYearlyFeeCollectionReportGrid;
 
 	@FindBy(xpath = "//table[@id='table1'][2]/thead/tr/th[3]/a")
-	WebElement btnSortByGroupName;
+	private WebElement btnSortByGroupName;
 
 	@FindBy(xpath = "//button[text()='OK']")
-	WebElement btnOKSuccess;
+	private WebElement btnOKSuccess;
 
 	@FindBy(xpath = "//table[@id='table1'][2]/tbody/tr/td[1]/label/input")
-	List<WebElement> Chk_Records_YrlyFeeCollectionReportGrid;
+	private List<WebElement> Chk_Records_YrlyFeeCollectionReportGrid;
 
 	@FindBy(xpath = "//span[contains(text(),'Waived Off')]/preceding-sibling::input")
-	WebElement chk_WaivedOff_Display;
+	private WebElement chk_WaivedOff_Display;
 
 	@FindBy(xpath = "(//button[@class='btn btn-default' and text()='Close'])[1]")
-	WebElement btn_Close_Display;
+	private WebElement btn_Close_Display;
 
 	public Yearly_Fee_Collection_Report(WebDriver driver) {
 		this.driver = driver;
@@ -129,7 +129,7 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			return true;
 
 		} catch (Exception e) {

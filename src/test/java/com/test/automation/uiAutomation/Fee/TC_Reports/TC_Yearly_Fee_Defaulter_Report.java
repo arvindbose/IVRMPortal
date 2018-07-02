@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -2498,6 +2499,16 @@ public class TC_Yearly_Fee_Defaulter_Report extends TestBase {
 		} catch (Exception e) {
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left_ClassSelection");
 		}
+	}
+	@AfterClass
+	public void tearDown() {
+		try {
+			ivrmportallogin.logOutFromApplication();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		driver.quit();
 	}
 
 }

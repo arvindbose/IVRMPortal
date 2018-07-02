@@ -130,7 +130,7 @@ public class TC_Fee_MonthEnd_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "Reports_FeeDueDatesData")
+	@Test(priority = 6, dataProvider = "Reports_FeeMonthEndData")
 	public void tcFill_FeeMonthEndReportForm(String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -236,9 +236,8 @@ public class TC_Fee_MonthEnd_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "Reports_FeeDueDatesData")
-	public void tcFill_FeeMonthEndReportForm_AfterClearingFilledData(String academicYear, String classCategory,
-			String runMode) {
+	@Test(priority = 13, dataProvider = "Reports_FeeMonthEndData")
+	public void tcFill_FeeMonthEndReportForm_AfterClearingFilledData(String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}

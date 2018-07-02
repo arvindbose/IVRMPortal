@@ -48,7 +48,7 @@ public class Fee_MonthEnd_Report extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'Academic Year:')]/following-sibling::div/select")
 	private WebElement sel_AcademicYear;
 
-	@FindBy(xpath = "//label[contains(text(),'From Date:')]/following-sibling::div//child::button/md-icon")
+	@FindBy(xpath = "(//label[contains(text(),'From Date:')]/following-sibling::div//child::button)[1]")
 	private WebElement btn_FromCalender;
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
@@ -57,7 +57,7 @@ public class Fee_MonthEnd_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date_From;
 
-	@FindBy(xpath = "//label[contains(text(),'To Date:')]/following-sibling::div//child::button/md-icon")
+	@FindBy(xpath = "(//label[contains(text(),'To Date:')]/following-sibling::div//child::button)[1]")
 	private WebElement btn_ToCalender;
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
@@ -164,7 +164,7 @@ public class Fee_MonthEnd_Report extends TestBase {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
 			log("Submit blank Fee Month End Report form and object is:-" + btn_Report.toString());
-			Thread.sleep(7000);
+			Thread.sleep(5000);
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);
@@ -239,8 +239,8 @@ public class Fee_MonthEnd_Report extends TestBase {
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthEndReport);
-		Thread.sleep(1000);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthEndReport);
+//		Thread.sleep(1000);
 
 		if (btn_ExportToExcel.isDisplayed()) {
 			btn_ExportToExcel.click();
