@@ -11,8 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.test.automation.uiAutomation.testBase.TestBase;
-import com.test.automation.uiAutomation.uiActions.IvrmPortalLogin;
+import com.vapsTechnosoft.IVRM.testBase.TestBase;
+import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author vaps
