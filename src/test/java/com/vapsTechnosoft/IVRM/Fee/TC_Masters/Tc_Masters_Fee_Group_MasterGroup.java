@@ -34,7 +34,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "FeeGroupMasterTestData")
+	@DataProvider(name = "FeeGroupMasterTestData_Form")
 	public String[][] getTestDataFeeGroup() {
 		String[][] testRecordsFeegroup = getData("FeeModueData.xlsx", "FeeGroupMasterData");
 		return testRecordsFeegroup;
@@ -133,7 +133,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "FeeGroupMasterTestData")
+	@Test(priority = 6, dataProvider = "FeeGroupMasterTestData_Form")
 	public void tcFill_FeeGroup_MasterGroupForm(String feeGroupName, String feeGrType, String feeGroupRemarks,
 			String runMode) {
 
@@ -242,7 +242,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "FeeGroupMasterTestData")
+	@Test(priority = 13, dataProvider = "FeeGroupMasterTestData_Form")
 	public void tcFill_FeeGroup_MasterGroupForm_AfterCancel(String feeGroupName, String feeGrType,
 			String feeGroupRemarks, String runMode) {
 

@@ -306,7 +306,7 @@ public class Transaction_Fee_ChequeBounce extends TestBase {
 			log("clicked on Cancel button to clear filled data cheque bounce and object is:-" + btn_Cancel.toString());
 			Thread.sleep(3000);
 		} else {
-			log("Save Element not present");
+			log("Cancel Element not present");
 			Thread.sleep(500);
 		}
 	}

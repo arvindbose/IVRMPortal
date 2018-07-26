@@ -91,7 +91,7 @@ public class Masters_Fee_Group_MasterGroup extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -122,7 +122,7 @@ public class Masters_Fee_Group_MasterGroup extends TestBase {
 		if (btnFeeGroup.isDisplayed()) {
 			btnFeeGroup.click();
 			log("Clicked on Fee Group Button and object is:-" + btnFeeGroup.toString());
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 		} else {
 			log("Fee Group Navigation element not present.");
 			Thread.sleep(500);
@@ -160,6 +160,7 @@ public class Masters_Fee_Group_MasterGroup extends TestBase {
 			select.selectByVisibleText(feeGrType);
 
 			log("selected Fee Group Type: " + feeGrType + " and object is:- " + sel_FeeGrType.toString());
+			Thread.sleep(1000);
 			option = select.getFirstSelectedOption();
 			Assert.assertEquals(option.getText().trim(), feeGrType);
 			Thread.sleep(2000);
@@ -182,7 +183,7 @@ public class Masters_Fee_Group_MasterGroup extends TestBase {
 		if (btn_Save_MasterGr.isDisplayed()) {
 			btn_Save_MasterGr.click();
 			log("clicked on save button and object is:-" + btn_Save_MasterGr.toString());
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 		} else {
 			log("Save Button element not present.");
 			Thread.sleep(500);
@@ -193,7 +194,7 @@ public class Masters_Fee_Group_MasterGroup extends TestBase {
 		if (btn_Cancel_MasterGr.isDisplayed()) {
 			btn_Cancel_MasterGr.click();
 			log("clicked on Cancel button and object is:-" + btn_Cancel_MasterGr.toString());
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 		} else {
 			log("Cancel Button element not present.");
 			Thread.sleep(500);
@@ -331,7 +332,7 @@ public class Masters_Fee_Group_MasterGroup extends TestBase {
 			btnYesDeleteOrDeactIt.click();
 			log("Clicked on yes deactivate or activate or delete it button and object is:-"
 					+ btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 		} else {
 			log("Yes Activate/Deactivate button element not present.");
 			Thread.sleep(500);

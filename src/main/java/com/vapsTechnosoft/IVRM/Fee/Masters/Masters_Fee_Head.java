@@ -7,8 +7,10 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -199,7 +201,7 @@ public class Masters_Fee_Head extends TestBase {
 		if(!chk_PdaExpences.isSelected()){
 			chk_PdaExpences.click();
 		log("PDA Expense check box is checked and object is:-" + chk_PdaExpences.toString());
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		}
 		else{
 			log("PDA Expense check box already selected.");
@@ -220,9 +222,15 @@ public class Masters_Fee_Head extends TestBase {
 	}
 	public void clickOnSaveButton_FeeHead() throws Exception {
 		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+			//btn_Save.click();
+//			JavascriptExecutor executor = (JavascriptExecutor)driver;
+//			executor.executeScript("arguments[0].click();", btn_Save);
+			Actions builder = new Actions(driver);
+			builder.moveToElement(btn_Save).click(btn_Save);
+			builder.perform();
+			
 			log("clicked on save button and object is:-" + btn_Save.toString());
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 		} else {
 			log("Save Button element not present.");
 			Thread.sleep(500);
