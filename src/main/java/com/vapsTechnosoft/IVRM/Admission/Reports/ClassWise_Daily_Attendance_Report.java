@@ -59,10 +59,10 @@ public class ClassWise_Daily_Attendance_Report extends TestBase{
 	@FindBy(xpath = "(//label[contains(text(),'Date:')]/following::button[1])[1]")
 	WebElement btnCalendar_Date;
 	
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear;
-	
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]/following::td[25]/span")
+
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date;
 	
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
@@ -96,7 +96,7 @@ public class ClassWise_Daily_Attendance_Report extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			return true;
 
 		} catch (Exception e) {
@@ -345,11 +345,11 @@ public class ClassWise_Daily_Attendance_Report extends TestBase{
 				Assert.assertEquals(admNumber, AdmissionNum);
 				log("Admission Number matched with the grid admission number");
 				Thread.sleep(500);
-				String attendanceStatus = driver.findElement(By.xpath("//div[@class='box-body']/table[2]/tbody/tr[\" + i + \"]/td[6]")).getText().trim();
+				String attendanceStatus = driver.findElement(By.xpath("//div[@class='box-body']/table[2]/tbody/tr[" + i + "]/td[8]")).getText().trim();
 				Assert.assertEquals(attendanceStatus, attendance_Status);
 				log("Student attendance status is validated in the Classwise attendance grid.");
 				Thread.sleep(500);
-				driver.findElement(By.xpath("//div[@class='box-body']/table[2]/tbody/tr[\" + i + \"]/td[1]/label/input")).click();
+				driver.findElement(By.xpath("//div[@class='box-body']/table[2]/tbody/tr[" + i + "]/td[1]/label/input")).click();
 				log("Selected student check box for export to excel report.");
 			} catch (Exception e) {
 				e.printStackTrace();

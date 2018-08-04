@@ -82,30 +82,43 @@ public class Student_Attendance_Report extends TestBase {
 
 	@FindBy(xpath = "//label[contains(text(),'From Date:')]/following::button[1]")
 	WebElement btnCalendars_FromDate;
-
-	@FindBy(xpath = "//span[contains(text(),'Jan 2018')]")
+	
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear_FromDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Jan 2018')]/following::td[6]")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date_FromDate;
+
+//	@FindBy(xpath = "//span[contains(text(),'Jan 2018')]")
+//	WebElement btn_MonthYear_FromDate;
+//
+//	@FindBy(xpath = "//span[contains(text(),'Jan 2018')]/following::td[6]")
+//	WebElement btn_Date_FromDate;
 
 	@FindBy(xpath = "//label[contains(text(),'To Date:')]/following::button[1]")
 	WebElement btnCalendars_ToDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]")
 	WebElement btn_MonthYear_ToDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]//following::td[26]")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]//following::td[2]")
 	WebElement btn_Date_ToDate;
 
 	@FindBy(xpath = "//label[contains(text(),'Daily:')]/following::button[1]")
 	WebElement btnCalendars_Daily;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear_Daily;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]//following::td[25]")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date_Daily;
+	
+	
+//	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+//	WebElement btn_MonthYear_Daily;
+//
+//	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]//following::td[25]")
+//	WebElement btn_Date_Daily;
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
 	WebElement btn_Report;

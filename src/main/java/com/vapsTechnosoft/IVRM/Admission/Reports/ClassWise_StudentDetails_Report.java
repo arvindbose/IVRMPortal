@@ -82,7 +82,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Adm. No.')]/preceding-sibling::input")
 	WebElement chk_AdmNo;
 
-	@FindBy(xpath = "//span[contains(text(),'Class')]/preceding-sibling::input")
+	@FindBy(xpath = "//span[text()='Class']/preceding-sibling::input")
 	WebElement chk_Class;
 
 	@FindBy(xpath = "//span[contains(text(),'Section')]/preceding-sibling::input")
@@ -813,7 +813,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]"))
+			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]/span"))
 					.getText().trim();
 			System.out.println("Admission Number: " + admNumber);
 			// Thread.sleep(2000);
@@ -833,7 +833,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]"))
+			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]/span"))
 					.getText().trim();
 			System.out.println("Admission Number: " + admNumber);
 			// Thread.sleep(2000);

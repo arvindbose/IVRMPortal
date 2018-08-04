@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -21,7 +23,7 @@ public static final Logger log = Logger.getLogger(IvrmPortalLogin.class.getName(
 	
 	
 	WebDriver driver;
-	
+	WebDriverWait wait;
 	@FindBy(xpath="//input[@id='login-username']")
 	WebElement userName;
 	
@@ -43,6 +45,9 @@ public static final Logger log = Logger.getLogger(IvrmPortalLogin.class.getName(
 	}
 	
 	public void loginToApplication(String username, String password) throws InterruptedException{
+		waitForElement(driver, 30, userName);
+//		wait = new WebDriverWait(driver, 40);
+//		wait.until(ExpectedConditions.visibilityOf(userName));
 		if(userName.isDisplayed()){
 		userName.sendKeys(username);
 		log("entered user name:-"+username+" and object is "+userName.toString());

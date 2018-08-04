@@ -21,8 +21,7 @@ import org.testng.Assert;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
 /**
- * @author vaps 
- * This Script will work for staff login credentials
+ * @author vaps This Script will work for staff login credentials
  *         Username:Priya, Password: password@123
  * 
  */
@@ -42,7 +41,7 @@ public class CategoryWise_Attendance_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btnAdmission_Reports;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[6]")
+	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
 	WebElement btnReports_CategoryWise_AttendanceReport;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -54,10 +53,10 @@ public class CategoryWise_Attendance_Report extends TestBase {
 	@FindBy(xpath = "(//label[contains(text(),'Date:')]/following::button[1])[1]")
 	WebElement btnCalendar_Date;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]/following::td[25]/span")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date;
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
@@ -86,6 +85,15 @@ public class CategoryWise_Attendance_Report extends TestBase {
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
+
+	@FindBy(xpath = "//table[@id='table1']/tbody/tr[1]/td[9]")
+	WebElement total_PresentStudent;
+
+	@FindBy(xpath = "//table[@id='table1']/tbody/tr[1]/td[12]")
+	WebElement total_AbsentStudent;
+
+	@FindBy(xpath = "//table[@id='table1']/tbody/tr[1]/td[6]")
+	WebElement total_Student;
 
 	public CategoryWise_Attendance_Report(WebDriver driver) {
 		this.driver = driver;
@@ -215,7 +223,7 @@ public class CategoryWise_Attendance_Report extends TestBase {
 			btn_Report.click();
 			log("To Get the records for report generation click on Report Button and object is:-"
 					+ btn_Report.toString());
-			Thread.sleep(7000);
+			Thread.sleep(15000);
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);
@@ -395,5 +403,21 @@ public class CategoryWise_Attendance_Report extends TestBase {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public void validateTotalStudentInACategory() throws Exception {
+		String numberPresentStudent = total_PresentStudent.getText();
+		int presentStudent = Integer.parseInt(numberPresentStudent);
+		System.out.println("Present Student: "+presentStudent);
+		String numberAbsentStudent = total_AbsentStudent.getText();
+		int absentStudent = Integer.parseInt(numberAbsentStudent);
+		System.out.println("Absent Student: "+absentStudent);
+		String numberStudent = total_Student.getText();
+		int students = Integer.parseInt(numberStudent);
+		System.out.println((presentStudent + absentStudent));
+		Assert.assertEquals((presentStudent + absentStudent), students);
+		log("Sum of Boys and Girls in a category is equal to number of students in that category.");
+		Thread.sleep(2000);
+
 	}
 }

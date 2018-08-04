@@ -87,7 +87,7 @@ public class Total_Strength extends TestBase {
 	@FindBy(xpath = "//div[@class='box-body']/div/table/tbody/tr")
 	List<WebElement> tblRows;
 
-	@FindBy(xpath = "//div[@class='input-group']/input")
+	@FindBy(xpath = "(//div[@class='input-group']/input)[1]")
 	WebElement input_Search;
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
@@ -95,6 +95,19 @@ public class Total_Strength extends TestBase {
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxTotalStrengthReportGrid;
+	
+	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[1]/b")
+	WebElement col_FinalTotal;
+	
+	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[2]/b")
+	WebElement total_Boys;
+	
+	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[3]/b")
+	WebElement total_Girls;
+	
+	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[4]/b")
+	WebElement total_TotalStudent;
+	
 
 	public Total_Strength(WebDriver driver) {
 		this.driver = driver;
@@ -957,7 +970,7 @@ public class Total_Strength extends TestBase {
 		}
 	}
 
-	public void searchWithClassName_InTotalStrengthReportGrid(String Class_Name) throws Exception {
+	public void searchWithClassName_InTotalStrengthReportGrid(String Class_Name, String finalTotal) throws Exception {
 		if (input_Search.isDisplayed()) {
 			input_Search.clear();
 			input_Search.sendKeys(Class_Name);
@@ -967,5 +980,30 @@ public class Total_Strength extends TestBase {
 			log("Search Element not present.");
 			Thread.sleep(500);
 		}
+	}
+	public void searchWithFinalTotal_InTotalStrengthReportGrid(String Class_Name, String finalTotal) throws Exception {
+		if (input_Search.isDisplayed()) {
+			input_Search.clear();
+			input_Search.sendKeys(finalTotal);
+			log("Entered Final Total to search: " + finalTotal + " and object is:-" + input_Search.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Search Element not present.");
+			Thread.sleep(500);
+		}
+	}
+	public void validateTotalStength_WithNumberOfBoysAndGirls() throws Exception{
+		String numberBoys = total_Boys.getText();
+		int boys = Integer.parseInt(numberBoys);
+		System.out.println("Total Boys: "+boys);
+		String numberGirls = total_Girls.getText();
+		int girls = Integer.parseInt(numberGirls);
+		System.out.println("Total Girls: "+girls);
+		String numberStudent = total_TotalStudent.getText();
+		int students = Integer.parseInt(numberStudent);
+		System.out.println("Total Student: "+(boys + girls));
+		Assert.assertEquals((boys + girls), students);
+		log("Sum of Boys and Girls in a category is equal to total number of students.");
+		Thread.sleep(2000);
 	}
 }

@@ -285,14 +285,14 @@ public class TC_Total_Strength extends TestBase {
 	}
 
 	@Test(priority = 15, dataProvider = "Search_TotalStrengthReport")
-	public void tcSearchWithClassName_InTotalStrengthReportGrid(String Class_Name, String runMode) {
+	public void tcSearchWithClassName_InTotalStrengthReportGrid(String Class_Name,String finalTotal,String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcSearchWithClassName_InTotalStrengthReportGrid Test===========");
 
-			totalstrengthreport.searchWithClassName_InTotalStrengthReportGrid(Class_Name);
+			totalstrengthreport.searchWithClassName_InTotalStrengthReportGrid(Class_Name, finalTotal);
 
 			log.info("============= Finished tcSearchWithClassName_InTotalStrengthReportGrid Test===========");
 			getScreenShot("tcSearchWithClassName_InTotalStrengthReportGrid");
@@ -1211,6 +1211,38 @@ public class TC_Total_Strength extends TestBase {
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_Individual_OverAllTotal");
 		} catch (Exception e) {
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_Individual_OverAllTotal");
+		}
+	}
+	@Test(priority = 69, dataProvider = "Search_TotalStrengthReport")
+	public void tcSearchWithFinalTotal_InTotalStrengthReportGrid(String Class_Name,String finalTotal,String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchWithFinalTotal_InTotalStrengthReportGrid Test===========");
+
+			totalstrengthreport.searchWithFinalTotal_InTotalStrengthReportGrid(Class_Name, finalTotal);
+
+			log.info("============= Finished tcSearchWithFinalTotal_InTotalStrengthReportGrid Test===========");
+			getScreenShot("tcSearchWithFinalTotal_InTotalStrengthReportGrid");
+		} catch (Exception e) {
+			getScreenShot("tcSearchWithFinalTotal_InTotalStrengthReportGrid");
+		}
+	}
+	@Test(priority = 70)
+	public void tcValidateTotalStength_WithNumberOfBoysAndGirls() {
+
+		try {
+			log.info(
+					"============= Strting tcValidateTotalStength_WithNumberOfBoysAndGirls Test===========");
+
+			totalstrengthreport.validateTotalStength_WithNumberOfBoysAndGirls();
+
+			log.info(
+					"============= Finished tcValidateTotalStength_WithNumberOfBoysAndGirls Test===========");
+			getScreenShot("tcValidateTotalStength_WithNumberOfBoysAndGirls");
+		} catch (Exception e) {
+			getScreenShot("tcValidateTotalStength_WithNumberOfBoysAndGirls");
 		}
 	}
 

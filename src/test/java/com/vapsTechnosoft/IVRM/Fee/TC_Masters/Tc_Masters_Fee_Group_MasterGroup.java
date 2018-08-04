@@ -34,10 +34,10 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "FeeGroupMasterTestData_Form")
-	public String[][] getTestDataFeeGroup() {
-		String[][] testRecordsFeegroup = getData("FeeModueData.xlsx", "FeeGroupMasterData");
-		return testRecordsFeegroup;
+	@DataProvider(name = "FeeGroup_MasterGroup_FormData")
+	public String[][] getTestDataMasterGroup() {
+		String[][] testRecordsMasterGroup = getData("FeeModueData.xlsx", "MasterFeeGroupData");
+		return testRecordsMasterGroup;
 	}
 
 	@DataProvider(name = "Search_FeeGroup_MasterGroup")
@@ -133,12 +133,12 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "FeeGroupMasterTestData_Form")
+	@Test(priority = 6, dataProvider = "FeeGroup_MasterGroup_FormData")
 	public void tcFill_FeeGroup_MasterGroupForm(String feeGroupName, String feeGrType, String feeGroupRemarks,
 			String runMode) {
-
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
+
 		}
 		try {
 			log.info("============= Strting tcFill_FeeGroup_MasterGroupForm Test===========");
@@ -242,7 +242,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "FeeGroupMasterTestData_Form")
+	@Test(priority = 13, dataProvider = "FeeGroup_MasterGroup_FormData")
 	public void tcFill_FeeGroup_MasterGroupForm_AfterCancel(String feeGroupName, String feeGrType,
 			String feeGroupRemarks, String runMode) {
 

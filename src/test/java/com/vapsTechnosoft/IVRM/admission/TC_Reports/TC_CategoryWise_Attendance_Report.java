@@ -440,8 +440,24 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 			getScreenShot("tcSelectCategoryFor_CategoryWiseAttendanceReport_AfterCancel");
 		}
 	}
-
+	
 	@Test(priority = 24)
+	public void tcValidateTotalStudentInACategory() {
+
+		try {
+			log.info("============= Strting tcValidateTotalStudentInACategory Test===========");
+
+			categorywise_attendancereport.validateTotalStudentInACategory();
+
+			log.info("============= Finished tcValidateTotalStudentInACategory Test===========");
+			getScreenShot("tcValidateTotalStudentInACategory");
+		} catch (Exception e) {
+			getScreenShot("tcValidateTotalStudentInACategory");
+		}
+	}
+
+
+	@Test(priority = 25)
 	public void tcExportReport_ToDownloadExcelReport() {
 
 		try {
@@ -456,7 +472,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcClickOnPrint_CategoryWiseReport() {
 
 		try {

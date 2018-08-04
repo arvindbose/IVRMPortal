@@ -50,10 +50,10 @@ public class Overall_Daily_AttendanceReport extends TestBase {
 	@FindBy(xpath = "(//label[contains(text(),'Date:')]/following::div//button)[1]")
 	WebElement btnCalendar_Date;
 
-	@FindBy(xpath = "//span[contains(text(),'Apr 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear;
 
-	@FindBy(xpath = "//span[contains(text(),'Apr 2018')]/following::td[2]/span")
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date;
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
