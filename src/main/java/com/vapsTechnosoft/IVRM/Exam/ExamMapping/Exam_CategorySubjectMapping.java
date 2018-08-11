@@ -16,7 +16,7 @@ import org.testng.Assert;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
 /**
- * @author vaps
+ * @author Arvind
  *
  */
 public class Exam_CategorySubjectMapping extends TestBase {
