@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>20/0/4</td>
+<td>Tests passed/Failed/Skipped:</td><td>27/2/4</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 03 17:53:56 IST 2018</td>
+<td>Started on:</td><td>Fri Aug 17 18:42:08 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>119 seconds (119122 ms)</td>
+<tr><td>Total time:</td><td>89 seconds (89682 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,162 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow()'><b>tcActivateRecords_ViewWindow</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping</td>
+<td><div><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1189)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1847431070", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1847431070'><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1189)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow_AfterCancel()'><b>tcActivateRecords_ViewWindow_AfterCancel</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping</td>
+<td><div><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow_AfterCancel(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1234)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace842331982", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace842331982'><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow_AfterCancel(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1234)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,280 +231,362 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: Rakesh, Password@123, Y<br/>
-<a href="#Output-1547398254" onClick='toggleBox("Output-1547398254", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: Rakesh, Password@123, Y<br/>
+<a href="#Output-314364096" onClick='toggleBox("Output-314364096", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1547398254" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1547398254">
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png' height='100' width='100'/> </a><br/>
-entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //input[@id='login-username']]<br/>
-entered password:-Password@123 and object is [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //input[@id='login-password']]<br/>
-cliked on login button and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //button[@ng-show='prereg']]<br/>
-Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_03_07_2018_05_54_26.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_03_07_2018_05_54_26.png' height='100' width='100'/> </a><br/>
+<a href="#Output-314364096" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-314364096">
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_17_08_2018_06_42_18.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_17_08_2018_06_42_18.png' height='100' width='100'/> </a><br/>
+entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //input[@id='login-username']]<br/>
+entered password:-Password@123 and object is [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //input[@id='login-password']]<br/>
+cliked on login button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[@ng-show='prereg']]<br/>
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_17_08_2018_06_42_38.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_17_08_2018_06_42_38.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>20</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickCancelButton_ToClearFilledForm()'><b>tcClickCancelButton_ToClearFilledForm</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-105966264" onClick='toggleBox("Output-105966264", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcCancel_ActivatePopUp_viewWindow()'><b>tcCancel_ActivatePopUp_viewWindow</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1824322115" onClick='toggleBox("Output-1824322115", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-105966264" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-105966264">
-Fee Installment report filled form data is cleared and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Cancel')]/parent::button]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickCancelButton_ToClearFilledForm_03_07_2018_05_55_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickCancelButton_ToClearFilledForm_03_07_2018_05_55_09.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1824322115" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1824322115">
+Cancel button is not present in Activation and deactivation pop up.<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_ActivatePopUp_viewWindow_17_08_2018_06_43_20.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_ActivatePopUp_viewWindow_17_08_2018_06_43_20.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>7</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise()'><b>tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcCancel_DeactivatePopUp()'><b>tcCancel_DeactivatePopUp</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1527007086" onClick='toggleBox("Output-1527007086", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1527007086" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1527007086">
+Clicked on Cancel button for Cancelation of Activation or Deactivation of record and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[@class='cancel' and text()='Cancel']]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_DeactivatePopUp_17_08_2018_06_43_08.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_DeactivatePopUp_17_08_2018_06_43_08.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClearFilledDataForFilter_AcademicYear()'><b>tcClearFilledDataForFilter_AcademicYear</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1028145537" onClick='toggleBox("Output-1028145537", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1028145537" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1028145537">
+Cleared filter data in Grid View.<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_AcademicYear_17_08_2018_06_42_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_AcademicYear_17_08_2018_06_42_52.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClearFilledDataForFilter_ClassName()'><b>tcClearFilledDataForFilter_ClassName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-821405322" onClick='toggleBox("Output-821405322", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-821405322" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-821405322">
+Cleared filter data in Grid View.<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_ClassName_17_08_2018_06_42_59.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_ClassName_17_08_2018_06_42_59.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClearFilledDataForFilter_EmployeeName()'><b>tcClearFilledDataForFilter_EmployeeName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1699578227" onClick='toggleBox("Output-1699578227", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1699578227" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1699578227">
+Cleared filter data in Grid View.<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_EmployeeName_17_08_2018_06_42_56.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_EmployeeName_17_08_2018_06_42_56.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnEditIcon_ToUpdateCategoryClassMapping()'><b>tcClickOnEditIcon_ToUpdateCategoryClassMapping</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-2029754983" onClick='toggleBox("Output-2029754983", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2029754983" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2029754983">
+Clicked on Edit Icon to update Category Class Mapping and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Actions'])[2]//following::div[15]/a[2]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnEditIcon_ToUpdateCategoryClassMapping_17_08_2018_06_43_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnEditIcon_ToUpdateCategoryClassMapping_17_08_2018_06_43_25.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit()'><b>tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-194415222" onClick='toggleBox("Output-194415222", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-194415222" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-194415222">
+Save Category Class Mapping form and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//button[@id='save-btn'])[2]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit_17_08_2018_06_43_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit_17_08_2018_06_43_31.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_Activate()'><b>tcClickOnSuccessOkBtn_Activate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-2117642238" onClick='toggleBox("Output-2117642238", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2117642238" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2117642238">
+OK button Element not present<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Activate_17_08_2018_06_43_22.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Activate_17_08_2018_06_43_22.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_CancelActivate()'><b>tcClickOnSuccessOkBtn_CancelActivate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-865858182" onClick='toggleBox("Output-865858182", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-865858182" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-865858182">
+OK button Element not present<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelActivate_17_08_2018_06_43_20.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelActivate_17_08_2018_06_43_20.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_CancelDeactivate()'><b>tcClickOnSuccessOkBtn_CancelDeactivate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1977618945" onClick='toggleBox("Output-1977618945", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1977618945" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1977618945">
+clicked on OK button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[text()='OK']]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelDeactivate_17_08_2018_06_43_11.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelDeactivate_17_08_2018_06_43_11.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_Deactivate()'><b>tcClickOnSuccessOkBtn_Deactivate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
 <a href="#Output-36531985" onClick='toggleBox("Output-36531985", this, "Show output", "Hide output");'>Show output</a>
 
 <a href="#Output-36531985" onClick="toggleAllBoxes();">Show all outputs</a>
 <div class='log' id="Output-36531985">
-To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise_03_07_2018_05_55_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise_03_07_2018_05_55_25.png' height='100' width='100'/> </a><br/>
+clicked on OK button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[text()='OK']]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Deactivate_17_08_2018_06_43_18.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Deactivate_17_08_2018_06_43_18.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>3</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise()'><b>tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1533330615" onClick='toggleBox("Output-1533330615", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid()'><b>tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1800967368" onClick='toggleBox("Output-1800967368", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1533330615" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1533330615">
-To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise_03_07_2018_05_55_46.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise_03_07_2018_05_55_46.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1800967368" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1800967368">
+clicked on OK button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[text()='OK']]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid_17_08_2018_06_43_34.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid_17_08_2018_06_43_34.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>3</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise()'><b>tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1430199669" onClick='toggleBox("Output-1430199669", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation()'><b>tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1398260359" onClick='toggleBox("Output-1398260359", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1430199669" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1430199669">
-To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise_03_07_2018_05_55_30.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise_03_07_2018_05_55_30.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1398260359" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1398260359">
+Clicked on View Icon to launch pop up windows to see created Category Class Mapping and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Actions'])[2]//following::div[15]/a[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation_17_08_2018_06_43_04.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation_17_08_2018_06_43_04.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>2</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise()'><b>tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1639765351" onClick='toggleBox("Output-1639765351", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcCloseViewWindow_CategoryClassMapping()'><b>tcCloseViewWindow_CategoryClassMapping</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-837246227" onClick='toggleBox("Output-837246227", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1639765351" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1639765351">
-To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise_03_07_2018_05_55_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise_03_07_2018_05_55_52.png' height='100' width='100'/> </a><br/>
+<a href="#Output-837246227" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-837246227">
+View window close button is clicked and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//button[text()='Close'])[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCloseViewWindow_CategoryClassMapping_17_08_2018_06_43_24.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCloseViewWindow_CategoryClassMapping_17_08_2018_06_43_24.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport()'><b>tcClickReport_ToGenerate_FeeInstallmentReport</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-453398853" onClick='toggleBox("Output-453398853", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcDeactivateRecords_ViewWindow()'><b>tcDeactivateRecords_ViewWindow</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-628392976" onClick='toggleBox("Output-628392976", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-453398853" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-453398853">
-Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_03_07_2018_05_54_54.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_03_07_2018_05_54_54.png' height='100' width='100'/> </a><br/>
+<a href="#Output-628392976" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-628392976">
+Clicked on Deacivate Icon to Deactivate Category Class Mapping view popup window and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div[@class='modal-body']/table/tbody/tr[1]/td[4]/div/a]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_17_08_2018_06_43_06.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_17_08_2018_06_43_06.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData()'><b>tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1269773610" onClick='toggleBox("Output-1269773610", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1269773610" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1269773610">
-Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData_03_07_2018_05_55_19.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData_03_07_2018_05_55_19.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
-<tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise()'><b>tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1061448687" onClick='toggleBox("Output-1061448687", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1061448687" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1061448687">
-Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise_03_07_2018_05_55_41.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise_03_07_2018_05_55_41.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
-<tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForCategoryWise()'><b>tcFill_FeeInstallmentReportForm_ForCategoryWise</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: 2018-2019, Nursery, Y<br/>
-<a href="#Output-1197498159" onClick='toggleBox("Output-1197498159", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1197498159" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1197498159">
-Category Wise Radio button already selected.<br/>
-selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]<br/>
-Selected Category: Nursery and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Category')]/following-sibling::div/select]<br/>
-Installment check box is checked and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[text()='Yearly']/preceding-sibling::input]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_03_07_2018_05_54_49.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_03_07_2018_05_54_49.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>4</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
-<tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData()'><b>tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: 2018-2019, Nursery, Y<br/>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcDeactivateRecords_ViewWindow_AfterCancel()'><b>tcDeactivateRecords_ViewWindow_AfterCancel</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
 <a href="#Output-1244880808" onClick='toggleBox("Output-1244880808", this, "Show output", "Hide output");'>Show output</a>
 
 <a href="#Output-1244880808" onClick="toggleAllBoxes();">Show all outputs</a>
 <div class='log' id="Output-1244880808">
-Category Wise Radio button already selected.<br/>
-selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]<br/>
-Selected Category: Nursery and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Category')]/following-sibling::div/select]<br/>
-Installment check box is checked and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[text()='Yearly']/preceding-sibling::input]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData_03_07_2018_05_55_14.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData_03_07_2018_05_55_14.png' height='100' width='100'/> </a><br/>
+Clicked on Deacivate Icon to Deactivate Category Class Mapping view popup window and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div[@class='modal-body']/table/tbody/tr[1]/td[4]/div/a]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_AfterCancel_17_08_2018_06_43_13.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_AfterCancel_17_08_2018_06_43_13.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>4</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForClassWise()'><b>tcFill_FeeInstallmentReportForm_ForClassWise</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: 2018-2019, LKG, A, Y<br/>
-<a href="#Output-1411543296" onClick='toggleBox("Output-1411543296", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_AcademicYear()'><b>tcFilterRecordsBasedOn_AcademicYear</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
+<a href="#Output-785271142" onClick='toggleBox("Output-785271142", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1411543296" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1411543296">
-Class Wise radio button is selected and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Class Wise')]/preceding-sibling::input]<br/>
-selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]<br/>
-Selected Class: LKG and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Class:')]/following-sibling::div/select]<br/>
-Selected Section: A and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Section:')]/following-sibling::div/select]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForClassWise_03_07_2018_05_55_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForClassWise_03_07_2018_05_55_35.png' height='100' width='100'/> </a><br/>
+<a href="#Output-785271142" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-785271142">
+Entered academic year 2018-2019 to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Academic Year')]/following::div[2]/div/input]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_AcademicYear_17_08_2018_06_42_51.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_AcademicYear_17_08_2018_06_42_51.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>4</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcHomeButtonValidation()'><b>tcHomeButtonValidation</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-2054757222" onClick='toggleBox("Output-2054757222", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_CategoryName()'><b>tcFilterRecordsBasedOn_CategoryName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
+<a href="#Output-1275009283" onClick='toggleBox("Output-1275009283", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2054757222" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2054757222">
-Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_03_07_2018_05_54_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_03_07_2018_05_54_31.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
-<tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMaximize_FeeInstallmentReport_Form()'><b>tcMaximize_FeeInstallmentReport_Form</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-515273883" onClick='toggleBox("Output-515273883", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-515273883" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-515273883">
-Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Form_03_07_2018_05_55_02.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Form_03_07_2018_05_55_02.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1275009283" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1275009283">
+Entered Category Name New Pre Nursery-1 to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Category Name'])[2]/following::div[2]/div/input]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_EmployeeName_17_08_2018_06_42_55.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_EmployeeName_17_08_2018_06_42_55.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>2</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMaximize_FeeInstallmentReport_Grid()'><b>tcMaximize_FeeInstallmentReport_Grid</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-597364637" onClick='toggleBox("Output-597364637", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_CategoryName_ViewRecords()'><b>tcFilterRecordsBasedOn_CategoryName_ViewRecords</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
+<a href="#Output-979550238" onClick='toggleBox("Output-979550238", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-597364637" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-597364637">
-Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Grid_03_07_2018_05_55_00.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Grid_03_07_2018_05_55_00.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
-<tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMinimize_FeeInstallmentReport_Form()'><b>tcMinimize_FeeInstallmentReport_Form</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1478995734" onClick='toggleBox("Output-1478995734", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1478995734" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1478995734">
-Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Form_03_07_2018_05_54_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Form_03_07_2018_05_54_57.png' height='100' width='100'/> </a><br/>
+<a href="#Output-979550238" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-979550238">
+Entered Category Name New Pre Nursery-1 to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Category Name'])[2]/following::div[2]/div/input]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_CategoryName_ViewRecords_17_08_2018_06_43_02.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_CategoryName_ViewRecords_17_08_2018_06_43_02.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>2</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMinimize_FeeInstallmentReport_Grid()'><b>tcMinimize_FeeInstallmentReport_Grid</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-104261836" onClick='toggleBox("Output-104261836", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_ClassName()'><b>tcFilterRecordsBasedOn_ClassName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
+<a href="#Output-1535026957" onClick='toggleBox("Output-1535026957", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-104261836" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-104261836">
-Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Grid_03_07_2018_05_54_58.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Grid_03_07_2018_05_54_58.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1535026957" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1535026957">
+Entered Class Name LKG to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Class Name')]/following::div[2]/div/input]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_ClassName_17_08_2018_06_42_58.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_ClassName_17_08_2018_06_42_58.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>1</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcNavigateToFee_Reports_FeeInstallmentReport()'><b>tcNavigateToFee_Reports_FeeInstallmentReport</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1493988307" onClick='toggleBox("Output-1493988307", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcHomeButtonValidation()'><b>tcHomeButtonValidation</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-24039137" onClick='toggleBox("Output-24039137", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1493988307" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1493988307">
-Clicked on Fee Button in Navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]<br/>
-Clicked on Fee reports in navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]]<br/>
-Clicked on Fee Installment Report Button in navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[4]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNavigateToFee_Reports_FeeInstallmentReport_03_07_2018_05_54_36.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNavigateToFee_Reports_FeeInstallmentReport_03_07_2018_05_54_36.png' height='100' width='100'/> </a><br/>
+<a href="#Output-24039137" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-24039137">
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_17_08_2018_06_42_41.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_17_08_2018_06_42_41.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcNavigateToCategoryClassMapping()'><b>tcNavigateToCategoryClassMapping</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-95685867" onClick='toggleBox("Output-95685867", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-95685867" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-95685867">
+Page Swich from Master Category to Category Class mapping and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Category Class Mapping')]//parent::md-tab-item]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToCategoryClassMapping_17_08_2018_06_42_49.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToCategoryClassMapping_17_08_2018_06_42_49.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcNavigateToExamMasters_ExamMasterCategory()'><b>tcNavigateToExamMasters_ExamMasterCategory</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1244867001" onClick='toggleBox("Output-1244867001", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1244867001" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1244867001">
+Clicked on Exam Button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Exam')]/preceding-sibling::button]<br/>
+Clicked on Exam Masters Button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]]<br/>
+Clicked on Exam Master Category Button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]/following::li[3]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToExamMasters_ExamMasterCategory_17_08_2018_06_42_45.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToExamMasters_ExamMasterCategory_17_08_2018_06_42_45.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>4</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcSubmitBlank_FeeInstallmentReportForm()'><b>tcSubmitBlank_FeeInstallmentReportForm</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-1273958371" onClick='toggleBox("Output-1273958371", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcVerifyExamMasterCategory_Page()'><b>tcVerifyExamMasterCategory_Page</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1057307776" onClick='toggleBox("Output-1057307776", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1273958371" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1273958371">
-Submit blank Fee Installment form and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSubmitBlank_FeeInstallmentReportForm_03_07_2018_05_54_44.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSubmitBlank_FeeInstallmentReportForm_03_07_2018_05_54_44.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>7</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
-<tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcVerifyFeeReports_FeeInstallmentReport_Page()'><b>tcVerifyFeeReports_FeeInstallmentReport_Page</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br/>
-<a href="#Output-2044337856" onClick='toggleBox("Output-2044337856", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-2044337856" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2044337856">
-Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //div//section//ol//li]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeReports_FeeInstallmentReport_Page_03_07_2018_05_54_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeReports_FeeInstallmentReport_Page_03_07_2018_05_54_37.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1057307776" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1057307776">
+Exam Master Category  page is dispalyed and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div//section//ol//li]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyExamMasterCategory_Page_17_08_2018_06_42_47.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyExamMasterCategory_Page_17_08_2018_06_42_47.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>1</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcYesActivateCategoryClassMappingRecord()'><b>tcYesActivateCategoryClassMappingRecord</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1088491512" onClick='toggleBox("Output-1088491512", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1088491512" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1088491512">
+Yes Deactivate or Activate it button is not present.<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesActivateCategoryClassMappingRecord_17_08_2018_06_43_21.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesActivateCategoryClassMappingRecord_17_08_2018_06_43_21.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcYesDeactivateCategoryClassMappingRecord()'><b>tcYesDeactivateCategoryClassMappingRecord</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
+<a href="#Output-1269773610" onClick='toggleBox("Output-1269773610", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1269773610" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1269773610">
+Clicked on Yes Deactivate Or Activate button for deactivation or Activation of record and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div[@class='sa-confirm-button-container']/button]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesDeactivateCategoryClassMappingRecord_17_08_2018_06_43_15.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesDeactivateCategoryClassMappingRecord_17_08_2018_06_43_15.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -358,9 +596,9 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: Radha, Radha@123, N</td>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: Radha, Radha@123, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -386,9 +624,9 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1531182070", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1531182070'><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1338368149", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1338368149'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -416,11 +654,11 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: arvind, VapsTech@121, N</td>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: arvind, VapsTech@121, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -446,9 +684,9 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1527214863", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1527214863'><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2044337856", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2044337856'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -476,11 +714,11 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: Rakesh, Rakesh@321, N</td>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: Rakesh, Rakesh@321, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -506,9 +744,9 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace231725600", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace231725600'><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1273958371", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1273958371'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -536,11 +774,11 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 <tr>
-<td title='com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report<br>Parameters: RR, Password@123, N</td>
+<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: RR, Password@123, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -566,9 +804,9 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1552400354", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1552400354'><pre>org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1433208870", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1433208870'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -596,7 +834,7 @@ Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chr
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3</td></tr>
+<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
 </table><p>
 </body>
 </html>

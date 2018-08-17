@@ -134,7 +134,7 @@ public class TestBase {
 				
 				
 				driver = new ChromeDriver(cap);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				// driver = new EventFiringWebDriver(dr);
 				// eventListener = new WebEventListener();
 				// driver.register(eventListener);
