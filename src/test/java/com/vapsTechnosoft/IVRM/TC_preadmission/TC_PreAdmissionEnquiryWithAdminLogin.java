@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.vapsTechnosoft.IVRM.preadmission;
+package com.vapsTechnosoft.IVRM.TC_preadmission;
 
 import java.io.IOException;
 

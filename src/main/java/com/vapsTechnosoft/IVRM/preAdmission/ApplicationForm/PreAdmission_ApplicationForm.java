@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.vapsTechnosoft.IVRM.BGHS_PreAdmission;
+package com.vapsTechnosoft.IVRM.preAdmission.ApplicationForm;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -25,117 +25,118 @@ import com.vapsTechnosoft.IVRM.testBase.TestBase;
  * @author vaps
  *
  */
-public class Admission_Form_BGHS_ApplicationForm extends TestBase {
+public class PreAdmission_ApplicationForm extends TestBase {
 
-	public static final Logger log = Logger.getLogger(Admission_Form_BGHS_ApplicationForm.class.getName());
+	public static final Logger log = Logger.getLogger(PreAdmission_ApplicationForm.class.getName());
 
 	WebDriver driver;
 	Select select;
+	WebElement option;
 	ArrayList<String> tabs2;
 
 	/**
 	 * Admission from Student section locators
 	 */
 	@FindBy(xpath = "(//aside[@id='style-4']/section/ul/li)[1]")
-	WebElement btnHome;
+	private WebElement btnHome;
 
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding::button[1]")
-	WebElement btnPre_Admission;
+	private WebElement btn_PreAdmission;
 
-	@FindBy(xpath = "//span[contains(text(),'Student Admission')]")
-	WebElement btnStudent_Admission;
+	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Application Form')][1]")
+	private WebElement btn_PreAdmissionApplication;
 
-	@FindBy(xpath = "//span[contains(text(),'Student Admission')]/following::li[1]")
-	WebElement btnAdmForm_BGHS;
+	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Application Form')][1]/following::li[2]")
+	private WebElement btn_ApplicationForm;
 
-	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
-	WebElement txtAdmForm_BGHSMsgDispaly;
+	@FindBy(xpath = "//div//section//ol//li")
+	private WebElement txt_ApplicationFormDispaly;
 
-	@FindBy(xpath = "(//input[@id='usr'])[1]")
-	WebElement firstName;
+	@FindBy(xpath = "//label[text()='Name of the Child:']/following-sibling::div/input")
+	private WebElement input_FirstName;
 
-	@FindBy(xpath = "(//input[@id='usr'])[2]")
-	WebElement middleName;
+	@FindBy(xpath = "//input[@id='usr' and @name='hmname']")
+	private WebElement input_MiddleName;
 
-	@FindBy(xpath = "(//input[@id='usr'])[3]")
-	WebElement surName;
+	@FindBy(xpath = "//input[@id='usr' and @name='hlname']")
+	private WebElement input_SurName;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[4]")
-	WebElement mobileNumber;
+	@FindBy(xpath = "//label[text()='Mobile Number:']/following-sibling::div/input[@name='hpno']")
+	private WebElement input_MobileNumberChild;
 
-	@FindBy(xpath = "(//input[@id='usr'])[4]")
-	WebElement placeOfbirth;
+	@FindBy(xpath = "//label[text()='Place of Birth:']/following-sibling::div/input")
+	private WebElement input_PlaceOfbirth;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[1]")
-	WebElement selectReligion;
+	@FindBy(xpath = "//label[text()='Religion:']/following-sibling::div/select[@name='hreligion']")
+	private WebElement sel_ReligionStudent;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[2]")
-	WebElement selectCaste;
+	@FindBy(xpath = "//label[text()='Caste:']/following-sibling::div/select[@name='casteere']")
+	private WebElement sel_CasteChild;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[3]")
-	WebElement selgender;
+	@FindBy(xpath = "//label[text()='Gender:']/following-sibling::div/select")
+	private WebElement sel_GenderChild;
 
 	@FindBy(xpath = "(//div[@class='md-datepicker-input-container']/input)[1]")
-	WebElement inputcalendar;
+	private WebElement inputcalendar;//wrong
 
-	@FindBy(xpath = "(//select[@id='sel1'])[4]")
-	WebElement selectClass;
+	@FindBy(xpath = "//label[text()='Applying For:']/following-sibling::div/select")
+	private WebElement sel_ApplingForClass;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[7]")
-	WebElement emailID;
+	@FindBy(xpath = "//label[text()='Email -Id:']/following-sibling::div/input")
+	private WebElement input_EmailIDChild;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[5]")
-	WebElement selDisableacademicYear;
+	@FindBy(xpath = "//label[text()='Academic Year:']/following-sibling::div/select")
+	private WebElement sel_DisableacademicYear;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[6]")
-	WebElement selnationality;
+	@FindBy(xpath = "//label[text()='Nationality:']/following-sibling::div/select[@name='hnationality']")
+	private WebElement sel_NationalityChild;
 
-	@FindBy(xpath = "(//input[@id='usr'])[5]")
-	WebElement input_LangAtHome;
+	@FindBy(xpath = "//label[text()='Mother Tongue:']/following-sibling::div/input")
+	private WebElement input_MotherTongue;
 
-	@FindBy(xpath = "(//input[@id='usr'])[6]")
-	WebElement input_ChurchAddr;
+	@FindBy(xpath = "//label[text()='Last School Syllabus:']/following-sibling::div/select")
+	private WebElement sel_LastSchoolSyllabus;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/div[2]/div[1]/div[3]/label)[1]")
-	WebElement uploadStudentPhoto;
+	@FindBy(xpath = "//input[@name='file1']/parent::label")
+	private WebElement upload_StudentPhoto;
 
 	/**
 	 * Other details locators
 	 */
 
 	@FindBy(xpath = "(//input[@id='usr'])[7]")
-	WebElement inputAadharCard;
+	private WebElement inputAadharCard;
 
 	@FindBy(xpath = "(//input[@id='usr'])[8]")
-	WebElement inputPlayGroup;
+	private WebElement inputPlayGroup;
 
 	@FindBy(xpath = "(//input[@id='usr'])[9]")
-	WebElement inputParticipationInECA;
+	private WebElement inputParticipationInECA;
 
 	/**
 	 * Residential details locators
 	 */
 
 	@FindBy(xpath = "(//input[@id='usr'])[10]")
-	WebElement inputStreet;
+	private WebElement inputStreet;
 
 	@FindBy(xpath = "(//input[@id='usr'])[11]")
-	WebElement inputArea;
+	private WebElement inputArea;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[7]")
-	WebElement selCountry;
+	private WebElement selCountry;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[8]")
-	WebElement selState;
+	private WebElement selState;
 
 	@FindBy(xpath = "(//input[@id='cityId'])[1]")
-	WebElement inputCity;
+	private WebElement inputCity;
 
 	@FindBy(xpath = "(//input[@id='usr'])[12]")
-	WebElement inputPinCodeZip;
+	private WebElement inputPinCodeZip;
 
 	@FindBy(xpath = "//body[@id='style-4']//div/div[2]/div[4]/div[1]/div[8]/label/input")
-	WebElement chk_permaddsameAsResAdd;
+	private WebElement chk_permaddsameAsResAdd;
 
 	/**
 	 * Father details
@@ -144,34 +145,34 @@ public class Admission_Form_BGHS_ApplicationForm extends TestBase {
 	 */
 
 	@FindBy(xpath = "(//input[@id='usr'])[16]")
-	WebElement inputfatherName;
+	private WebElement inputfatherName;
 
 	@FindBy(xpath = "(//input[@id='usr'])[17]")
-	WebElement inputfathersurname;
+	private WebElement inputfathersurname;
 
 	@FindBy(xpath = "(//input[@id='usr'])[18]")
-	WebElement inputfatherQualification;
+	private WebElement inputfatherQualification;
 
 	@FindBy(xpath = "(//input[@id='usr'])[19]")
-	WebElement inputfatherService;
+	private WebElement inputfatherService;
 
 	@FindBy(xpath = "(//input[@id='usr'])[20]")
-	WebElement inputfatherDesignation;
+	private WebElement inputfatherDesignation;
 
 	@FindBy(xpath = "(//select[@id='sel1'])[10]")
-	WebElement sel_fathersNationality;
+	private WebElement sel_fathersNationality;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[20]")
-	WebElement inputfathers_OfficeAddress;
+	private WebElement inputfathers_OfficeAddress;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[21]")
-	WebElement inputfathers_PhOffice;
+	private WebElement inputfathers_PhOffice;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[22]")
-	WebElement inputfathers_PhResidence;
+	private WebElement inputfathers_PhResidence;
 
 	@FindBy(xpath = "(//div[@class='input-group-addon'])[3]/following-sibling::input")
-	WebElement input_fatherMobile;
+	private WebElement input_fatherMobile;
 
 	/**
 	 * Mother's details
@@ -180,58 +181,58 @@ public class Admission_Form_BGHS_ApplicationForm extends TestBase {
 	 */
 
 	@FindBy(xpath = "(//input[@id='usr'])[24]")
-	WebElement inputmotherName;
+	private WebElement inputmotherName;
 
 	@FindBy(xpath = "(//input[@id='usr'])[25]")
-	WebElement inputmothersurname;
+	private WebElement inputmothersurname;
 
 	@FindBy(xpath = "(//input[@id='usr'])[26]")
-	WebElement inputmotherQualification;
+	private WebElement inputmotherQualification;
 
 	@FindBy(xpath = "(//input[@id='usr'])[27]")
-	WebElement inputmotherService;
+	private WebElement inputmotherService;
 
 	@FindBy(xpath = "(//input[@id='usr'])[28]")
-	WebElement inputmotherDesignation;
+	private WebElement inputmotherDesignation;
 
 	@FindBy(xpath = "(//select[@id='sel1'])[11]")
-	WebElement sel_mothersNationality;
+	private WebElement sel_mothersNationality;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[28]")
-	WebElement inputmothers_OfficeAddress;
+	private WebElement inputmothers_OfficeAddress;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[29]")
-	WebElement inputmothers_PhOffice;
+	private WebElement inputmothers_PhOffice;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[30]")
-	WebElement inputmothers_PhResidence;
+	private WebElement inputmothers_PhResidence;
 
 	@FindBy(xpath = "(//div[@class='input-group-addon'])[4]/following-sibling::input")
-	WebElement input_motherMobile;
+	private WebElement input_motherMobile;
 
 	/**
 	 * Monthly income
 	 */
 	@FindBy(xpath = "(//input[@id='usr'])[32]")
-	WebElement input_fatherIncome;
+	private WebElement input_fatherIncome;
 
 	@FindBy(xpath = "(//input[@id='usr'])[33]")
-	WebElement input_motherIncome;
+	private WebElement input_motherIncome;
 
 	@FindBy(xpath = "(//input[@id='usr'])[34]")
-	WebElement input_alternateContact;
+	private WebElement input_alternateContact;
 
 	@FindBy(xpath = "(//div[@class='input-group-addon'])[5]/following-sibling::input")
-	WebElement input_alternateEmail;
+	private WebElement input_alternateEmail;
 	/**
 	 * Year of Passing of Mother/Father if they are Old Baldwinians
 	 * 
 	 */
 	@FindBy(xpath = "(//input[@id='usr'])[35]")
-	WebElement input_FatherYrOfPassing;
+	private WebElement input_FatherYrOfPassing;
 
 	@FindBy(xpath = "(//input[@id='usr'])[36]")
-	WebElement input_MotherYrOfPassing;
+	private WebElement input_MotherYrOfPassing;
 
 	/**
 	 * Guardian's details
@@ -240,44 +241,44 @@ public class Admission_Form_BGHS_ApplicationForm extends TestBase {
 	 */
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[36]")
-	WebElement input_GuardianName;
+	private WebElement input_GuardianName;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[37]")
-	WebElement input_GurRelationshipToStudent;
+	private WebElement input_GurRelationshipToStudent;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[38]")
-	WebElement input_Gur_Address;
+	private WebElement input_Gur_Address;
 
 	@FindBy(xpath = "(//div[@class='input-group-addon'])[6]/following-sibling::input")
-	WebElement input_GurEmail;
+	private WebElement input_GurEmail;
 
 	@FindBy(xpath = "(//div[@class='input-group-addon'])[7]/following-sibling::input")
-	WebElement input_GurPhone;
+	private WebElement input_GurPhone;
 	/**
 	 * sibling details
 	 * 
 	 * @param driver
 	 */
 	@FindBy(xpath = "(//input[@id='usr'])[37]")
-	WebElement inputsibName;
+	private WebElement inputsibName;
 
 	@FindBy(xpath = "(//input[@id='usr'])[38]")
-	WebElement inputsibclass;
+	private WebElement inputsibclass;
 
 	@FindBy(xpath = "(//input[@id='usr'])[39]")
-	WebElement inputsibAdmNo;
+	private WebElement inputsibAdmNo;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table/tbody/tr/td[5])[1]")
-	WebElement clickSibPlus;
+	private WebElement clickSibPlus;
 
 	@FindBy(xpath = "(//input[@id='usr'])[40]")
-	WebElement input2ndsibName;
+	private WebElement input2ndsibName;
 
 	@FindBy(xpath = "(//input[@id='usr'])[41]")
-	WebElement input2ndsibclass;
+	private WebElement input2ndsibclass;
 
 	@FindBy(xpath = "(//input[@id='usr'])[42]")
-	WebElement input2ndsibAdmNo;
+	private WebElement input2ndsibAdmNo;
 
 	/**
 	 * Previous school details
@@ -285,19 +286,19 @@ public class Admission_Form_BGHS_ApplicationForm extends TestBase {
 	 * @param driver
 	 */
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[2]/input")
-	WebElement inputSchoolName;
+	private WebElement inputSchoolName;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[3]/input")
-	WebElement inputClass;
+	private WebElement inputClass;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[4]/input")
-	WebElement inputGrade;
+	private WebElement inputGrade;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[5]/input")
-	WebElement inputPassedYr;
+	private WebElement inputPassedYr;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[6]/input")
-	WebElement inputAddress;
+	private WebElement inputAddress;
 
 	/**
 	 * Required documents upload for BGHS pre admission form
@@ -308,49 +309,49 @@ public class Admission_Form_BGHS_ApplicationForm extends TestBase {
 	List<WebElement> tblRows;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[3]/label")
-	WebElement uploadDOBCert;
+	private WebElement uploadDOBCert;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[4]/span")
-	WebElement viewUploadDOBCert;
+	private WebElement viewUploadDOBCert;
 
 	@FindBy(xpath = "//div[@id='myModal']/div/div/div[2]/button")
-	WebElement btnPopUpClose;
+	private WebElement btnPopUpClose;
 
 	/**
 	 * Undertaking text and radio button
 	 */
 	@FindBy(xpath = "//body[@id='style-4']//div/div[2]/div[10]/p")
-	WebElement undertakingText;
+	private WebElement undertakingText;
 
 	@FindBy(xpath = "//body[@id='style-4']//div/div[2]/div[10]/div/label[1]/span/preceding-sibling::input")
-	WebElement rdBtnundertakingYes;
+	private WebElement rdBtnundertakingYes;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]//div/div[2]/div[11]/span/button")
-	WebElement btnSubmit;
+	private WebElement btnSubmit;
 
 	/**
 	 * Pop Up message and action validation
 	 */
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
-	WebElement btnsubmitCancel;
+	private WebElement btnsubmitCancel;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
-	WebElement btnsubmitYes;
+	private WebElement btnsubmitYes;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
-	WebElement btnOkonsuccess;
+	private WebElement btnOkonsuccess;
 
 	/**
 	 * table data validation
 	 */
 
 	@FindBy(xpath = "//body[@id='style-4']//div/div[3]/div/div/input")
-	WebElement inputSearch;
+	private WebElement inputSearch;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[4]/tbody/tr")
 	List<WebElement> tblRowStuList;
 
-	public Admission_Form_BGHS_ApplicationForm(WebDriver driver) {
+	public PreAdmission_ApplicationForm(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -369,34 +370,47 @@ public class Admission_Form_BGHS_ApplicationForm extends TestBase {
 	}
 
 	/**
-	 * Navigate to Admission form BGHS
+	 * Navigate to Application Form(PreAdmission>PreAdmission Application>Application Form)
 	 * 
 	 * @throws Exception
 	 */
-	public void navigateToAdmission_ApplicationForm_BGHS() throws Exception {
-		btnPre_Admission.click();
-		log("Clicked on Pre admission Button and object is:-" + btnPre_Admission.toString());
-		waitForElement(driver, 10, btnStudent_Admission);
-
-		btnStudent_Admission.click();
-		log("Clicked on Student Admission Button and object is:-" + btnStudent_Admission.toString());
-		waitForElement(driver, 10, btnAdmForm_BGHS);
-
-		btnAdmForm_BGHS.click();
-		log("Clicked on admission form BGHS Button and object is:-" + btnAdmForm_BGHS.toString());
-		waitForElement(driver, 10, txtAdmForm_BGHSMsgDispaly);
+	public void navigateToPreAdmission_ApplicationForm() throws Exception {
+	if(btn_PreAdmission.isDisplayed()){	
+		btn_PreAdmission.click();
+		log("Clicked on Pre admission Button and object is:-" + btn_PreAdmission.toString());
+		Thread.sleep(1000);
+	}else{
+		log("PreAdmission Module element not present in navigation menu and object is:-"+btn_PreAdmission.toString());
+		Thread.sleep(500);
+	}
+	if(btn_PreAdmissionApplication.isDisplayed()){	
+		btn_PreAdmissionApplication.click();
+		log("Clicked on PreAdmission Application link Button and object is:-" + btn_PreAdmissionApplication.toString());
+		Thread.sleep(1000);
+	}else{
+		log("PreAdmission Application link element not present in navigation menu and object is:-"+btn_PreAdmissionApplication.toString());
+		Thread.sleep(500);
+	}
+	if(btn_ApplicationForm.isDisplayed()){	
+		btn_ApplicationForm.click();
+		log("Clicked on Application form pre admission Button and object is:-" + btn_ApplicationForm.toString());
+		Thread.sleep(1000);
+	}else{
+		log("Application Form link element not present in navigation menu and object is:-"+btn_ApplicationForm.toString());
+		Thread.sleep(500);
+	}
 	}
 
 	/**
-	 * Validation of Admission form BGHS screen message
+	 * Validation of Application form page path message
 	 * 
 	 * @return
 	 */
-	public boolean verifyAdmission_ApplicationForm_BGHSPage() {
+	public boolean verifyPreAdmission_ApplicationForm_PagePath() {
 		try {
-			System.out.println(txtAdmForm_BGHSMsgDispaly.getText());
-			txtAdmForm_BGHSMsgDispaly.isDisplayed();
-			log("Admission form BGHS page is dispalyed and object is:-" + txtAdmForm_BGHSMsgDispaly.toString());
+			System.out.println(txt_ApplicationFormDispaly.getText());
+			txt_ApplicationFormDispaly.isDisplayed();
+			log("Application form pre admission page is dispalyed and object is:-" + txt_ApplicationFormDispaly.toString());
 			Thread.sleep(1000);
 			return true;
 
@@ -425,40 +439,68 @@ public class Admission_Form_BGHS_ApplicationForm extends TestBase {
 	 * @throws Exception
 	 */
 
-	public void enterStudentInformationFor_BGHSPreAdmApplicationForm(String fName, String mName, String sName,
+	public void enterStudentInformationFor_ApplicationForm(String fName, String mName, String sName,
 			String mNumber, String birthPlace, String religion, String caste, String gender, String email,
 			String nationality, String languageAtHome, String churchName, String dateOfBirth, String selClass)
 			throws Exception {
 
-		firstName.sendKeys(fName);
-		log("entered first name:-" + fName + " and object is " + firstName.toString());
-		Thread.sleep(1000);
+		if(input_FirstName.isDisplayed()){	
+			input_FirstName.clear();
+			input_FirstName.sendKeys(fName);
+			log("Entered first name:-" + fName + " and object is " + input_FirstName.toString());
+			Thread.sleep(1000);
+		}else{
+			log("First Name(Child) element not present and object is:-"+input_FirstName.toString());
+			Thread.sleep(500);
+		}
+		if(input_MiddleName.isDisplayed()){	
+			input_MiddleName.clear();
+			input_MiddleName.sendKeys(mName);
+			log("Entered Middle name:-" + mName + " and object is " + input_MiddleName.toString());
+			Thread.sleep(1000);
+		}else{
+			log("Middle Name(Child) element not present and object is:-"+input_MiddleName.toString());
+			Thread.sleep(500);
+		}
+		if(input_SurName.isDisplayed()){	
+			input_SurName.clear();
+			input_SurName.sendKeys(sName);
+			log("Entered Surname name:-" + sName + " and object is " + input_SurName.toString());
+			Thread.sleep(1000);
+		}else{
+			log("Surname Name(Child) element not present and object is:-"+input_SurName.toString());
+			Thread.sleep(500);
+		}
+		if(input_MobileNumberChild.isDisplayed()){	
+			input_MobileNumberChild.clear();
+			input_MobileNumberChild.sendKeys(mNumber);
+			log("Entered Mobile Number(Child):-" + mNumber + " and object is " + input_MobileNumberChild.toString());
+			Thread.sleep(1000);
+		}else{
+			log("Mobile Number(Child) element not present and object is:-"+input_MobileNumberChild.toString());
+			Thread.sleep(500);
+		}
+		if(input_PlaceOfbirth.isDisplayed()){	
+			input_PlaceOfbirth.clear();
+			input_PlaceOfbirth.sendKeys(birthPlace);
+			log("Entered Place of Birth(Child):-" + birthPlace + " and object is " + input_PlaceOfbirth.toString());
+			Thread.sleep(1000);
+		}else{
+			log("Place of Birth(Child) element not present and object is:-"+input_PlaceOfbirth.toString());
+			Thread.sleep(500);
+		}
+		if (sel_ReligionStudent.isDisplayed()) {
+			select = new Select(sel_ReligionStudent);
+			select.selectByVisibleText(religion);
 
-//		middleName.sendKeys(mName);
-//		log("entered middle name:-" + mName + " and object is " + middleName.toString());
-//		Thread.sleep(1000);
-//
-//		surName.sendKeys(sName);
-//		log("entered surname:-" + sName + " and object is " + surName.toString());
-//		Thread.sleep(1000);
-
-		mobileNumber.sendKeys(mNumber);
-		log("entered mobile number:-" + mNumber + " and object is " + mobileNumber.toString());
-		Thread.sleep(1000);
-
-		placeOfbirth.sendKeys(birthPlace);
-		log("entered student place of birth:-" + birthPlace + " and object is " + birthPlace.toString());
-		Thread.sleep(1000);
-
-		select = new Select(selectReligion);
-		select.selectByVisibleText(religion);
-		log("selected religion:-" + religion + " and object is " + selectReligion.toString());
-		Thread.sleep(1000);
-
-		// WebElement option = select.getFirstSelectedOption();
-		// System.out.println("Religion:"+option.getText());
-		// Assert.assertEquals(option.getText(), religion);
-		// Thread.sleep(1000);
+			log("Selected Religion of Student: " + religion + " and object is:- " + sel_ReligionStudent.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), religion);
+			Thread.sleep(1000);
+		} else {
+			log("Religion of Student element is not present and object is:- " + sel_ReligionStudent.toString());
+			Thread.sleep(500);
+		}
 
 		select = new Select(selectCaste);
 		select.selectByVisibleText(caste);

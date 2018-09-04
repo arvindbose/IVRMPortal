@@ -869,7 +869,7 @@ public class Exam_Subject_Wizard extends TestBase {
 					+ btn_Save.toString());
 			Thread.sleep(3000);
 		} else {
-			log("Save Element not present");
+			log("Save button Element not present");
 			Thread.sleep(500);
 		}
 	}

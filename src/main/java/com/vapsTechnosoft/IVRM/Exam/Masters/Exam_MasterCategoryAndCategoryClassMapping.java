@@ -15,7 +15,7 @@ import org.testng.Assert;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
 /**
- * @author vaps
+ * @author Arvind
  *
  */
 public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
@@ -59,11 +59,14 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	@FindBy(xpath = "(//div[@class='ng-scope']/input)[1]")
 	private WebElement input_Filter_CategoryName_MasterCategory;
 
-	@FindBy(xpath = "//span[text()='Actions']//following::div[11]/a")
+	@FindBy(xpath = "//span[text()='Actions']//following::div[11]/a[1]")
 	private WebElement icon_Edit_MasterCategory;
 
-	@FindBy(xpath = "//span[text()='Actions']//following::div[11]/span/a")
-	private WebElement icon_DeactivateOrActivate_MasterCategory;
+	@FindBy(xpath = "//span[text()='Actions']//following::div[11]//span//a")
+	private WebElement icon_Deactivate_MasterCategory;
+		
+	@FindBy(xpath = "//span[text()='Actions']//following::div[11]/a[2]")
+	private WebElement icon_Activate_MasterCategory;
 
 	@FindBy(xpath = "//button[text()='OK']")
 	private WebElement btnOKSuccess;
@@ -350,17 +353,17 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 
 	public void deactivateRecords_MasterCategoryGrid() throws Exception {
 
-		if (icon_DeactivateOrActivate_MasterCategory.isDisplayed()) {
+		if (icon_Deactivate_MasterCategory.isDisplayed()) {
 
-			String DeactivateText = icon_DeactivateOrActivate_MasterCategory.getAttribute("aria-label");
+			String DeactivateText = icon_Deactivate_MasterCategory.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + DeactivateText);
 
 			// Compare toll tip text
 			Assert.assertEquals(DeactivateText, "Deactivate Now");
 
-			icon_DeactivateOrActivate_MasterCategory.click();
+			icon_Deactivate_MasterCategory.click();
 			log("Clicked on Deacivate Icon to Deactivate Master Category record and object is:-"
-					+ icon_DeactivateOrActivate_MasterCategory.toString());
+					+ icon_Deactivate_MasterCategory.toString());
 			Thread.sleep(1000);
 		} else {
 			log("Deactivate Icon Master Category element is not present.");
@@ -370,17 +373,17 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 
 	public void activateRecords_MasterCategoryGrid() throws Exception {
 
-		if (icon_DeactivateOrActivate_MasterCategory.isDisplayed()) {
+		if (icon_Activate_MasterCategory.isDisplayed()) {
 
-			String ActivateText = icon_DeactivateOrActivate_MasterCategory.getAttribute("aria-label");
+			String ActivateText = icon_Activate_MasterCategory.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + ActivateText);
 
 			// Compare toll tip text
 			Assert.assertEquals(ActivateText, "Activate Now");
 
-			icon_DeactivateOrActivate_MasterCategory.click();
+			icon_Activate_MasterCategory.click();
 			log("Clicked on Acivate Icon to Activate Master Category record and object is:-"
-					+ icon_DeactivateOrActivate_MasterCategory.toString());
+					+ icon_Activate_MasterCategory.toString());
 			Thread.sleep(1000);
 		} else {
 			log("Activate Icon Master Category Grid element is not present.");
@@ -817,7 +820,7 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			log("View window close button is clicked and object is:- "+btn_View_ClosePopUp.toString());
 			Thread.sleep(1000);
 		}else{
-			log("View button element is not present.");
+			log("View Close button element is not present.");
 			Thread.sleep(500);
 		}
 	}

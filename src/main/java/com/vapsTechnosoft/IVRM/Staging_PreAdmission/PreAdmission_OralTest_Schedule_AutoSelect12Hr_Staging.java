@@ -38,7 +38,7 @@ public class PreAdmission_OralTest_Schedule_AutoSelect12Hr_Staging extends TestB
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding::button[1]/following::ul[1]/li[1]")
 	WebElement btnInterview_Schedule;
 
-	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]/following::li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]/following::li[1]")
 	WebElement btnOral_Test;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
