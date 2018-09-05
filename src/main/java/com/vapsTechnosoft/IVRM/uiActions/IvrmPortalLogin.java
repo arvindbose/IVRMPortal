@@ -30,11 +30,11 @@ public static final Logger log = Logger.getLogger(IvrmPortalLogin.class.getName(
 	@FindBy(xpath="//input[@id='login-password']")
 	WebElement passWord;
 	
-	@FindBy(xpath="//button[@ng-hide='prereg' and @type='submit']")
+	@FindBy(xpath="//b[text()='Sign in ']/parent::button")
 	WebElement loginButton1;
 	
-	@FindBy(xpath="//button[@ng-show='prereg']")
-	WebElement loginButton2;
+//	@FindBy(xpath="//button[@ng-show='prereg']")
+//	WebElement loginButton2;
 	
 	@FindBy(xpath="//span[contains(text(),'Logout')]")
 	WebElement logoutButton;
@@ -65,9 +65,9 @@ public static final Logger log = Logger.getLogger(IvrmPortalLogin.class.getName(
 		}else{
 			log("Password element not present");
 		}
-		if(loginButton2.isDisplayed()){
-		loginButton2.click();
-		log("cliked on login button and object is:-"+loginButton2.toString());
+		if(loginButton1.isDisplayed()){
+			loginButton1.click();
+		log("cliked on login button and object is:-"+loginButton1.toString());
 		Thread.sleep(7000);
 	}else{
 		log("Login button element not present");

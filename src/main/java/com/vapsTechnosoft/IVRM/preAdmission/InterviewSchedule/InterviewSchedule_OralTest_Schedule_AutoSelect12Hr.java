@@ -146,7 +146,7 @@ public class InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestBase
 	@FindBy(xpath = "//button[text()='OK']")
 	private WebElement btnOKSuccess;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/div[3]/div/div/input)[3]")
+	@FindBy(xpath = "//input[@ng-model='searchValue']")
 	private WebElement inputSearch_SchList;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
@@ -158,7 +158,7 @@ public class InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestBase
 	@FindBy(xpath = "(//div[@class='box box-primary']//table)[6]/thead/tr/th[2]/a")
 	private WebElement btnSortSchName;
 
-	@FindBy(xpath = "(//table/tbody)[5]/tr[1]/td[9]/input")
+	@FindBy(xpath = "(//table/tbody)[5]/tr[1]/td[7]/input")
 	private WebElement chk_StudentList;
 
 	@FindBy(xpath = "(//table/tbody)[5]/tr[1]/td[2]")
@@ -547,7 +547,7 @@ public class InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestBase
 					driver.findElement(
 							By.xpath("(//div[@class='box box-primary']//table)[6]/tbody/tr[" + i + "]/td[6]/span/a"))
 							.click();
-					log("Clicked on the delete link in the student list grid");
+					log("Clicked on the delete link in the schedule list grid");
 					Thread.sleep(3000);
 
 				} catch (Exception e) {

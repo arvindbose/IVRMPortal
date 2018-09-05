@@ -35,15 +35,21 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "ExamMasterCategory_Form")
-	public String[][] getTestData() {
-		String[][] testRecordsCategory = getData("ExamMasters.xlsx", "ExamMasterCategory_FormData");
-		return testRecordsCategory;
+	@DataProvider(name = "ExamMasterSubjectGroup_WithoutElective")
+	public String[][] getTestDataWoElective() {
+		String[][] testRecordsWoElective = getData("ExamMasters.xlsx", "ExamMasterSubGr_WOutElect");
+		return testRecordsWoElective;
 	}
-
-	@DataProvider(name = "ExamCategoryClassMapping_FormData")
+	@DataProvider(name = "ExamMasterSubjectGroup_WithElective")
+	public String[][] getTestData() {
+		String[][] testRecordsWithElective = getData("ExamMasters.xlsx", "ExamMasterSubGr_WithElect");
+		return testRecordsWithElective;
+	}
+	
+	
+	@DataProvider(name = "search_SubjectInSubjectList")
 	public String[][] getTestDataCategoryClass() {
-		String[][] testRecordsCategoryClassMap = getData("ExamMasters.xlsx", "CategoryClassMapping_FormDat");
+		String[][] testRecordsCategoryClassMap = getData("ExamMasters.xlsx", "search_SubjectInSubjectList");
 		return testRecordsCategoryClassMap;
 	}
 
@@ -143,7 +149,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "WithoutElective")
+	@Test(priority = 6, dataProvider = "ExamMasterSubjectGroup_WithoutElective")
 	public void tcFill_Exam_MasterSubjectGroup_Form_WithoutElective(String groupName, String maxSubject,
 			String maxApplSubject, String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -177,7 +183,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 8, dataProvider = "Search")
+	@Test(priority = 8, dataProvider = "search_SubjectInSubjectList")
 	public void tcSearchWithSubjectName(String subjectName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -269,7 +275,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "WithoutElective")
+	@Test(priority = 13, dataProvider = "ExamMasterSubjectGroup_WithoutElective")
 	public void tcFill_Exam_MasterSubjectGroup_Form_WithoutElective_AfetrCancel(String groupName, String maxSubject,
 			String maxApplSubject, String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -341,7 +347,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "WithElective")
+	@Test(priority = 17, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFill_Exam_MasterSubjectGroup_Form_WithElective(String groupName, String maxSubject,
 			String maxApplSubject, String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -484,7 +490,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "filter")
+	@Test(priority = 26, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_GroupName(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -519,7 +525,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "filter")
+	@Test(priority = 28, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_TotalSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -553,7 +559,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "filter")
+	@Test(priority = 30, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_MaxApplicableSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -587,7 +593,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "filter")
+	@Test(priority = 32, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_MinApplicableSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -621,7 +627,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "filter")
+	@Test(priority = 34, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_BestOfSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {

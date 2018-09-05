@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.preAdmission.TransferStudent;
 
+import static org.testng.Assert.assertEquals;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -59,6 +61,10 @@ public class TransferFromPreAdmissionToAdmission extends TestBase {
 
 	@FindBy(xpath = "//input[@ng-model='search']")
 	private WebElement input_search;
+	
+	@FindBy(xpath = "//table/tbody/tr[1]/td[3]")
+	private WebElement search_Validate;
+	
 
 	@FindBy(xpath = "//table/thead/tr/th[4]/a")
 	private WebElement sort_StudentName;
@@ -86,7 +92,7 @@ public class TransferFromPreAdmissionToAdmission extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -228,6 +234,12 @@ public class TransferFromPreAdmissionToAdmission extends TestBase {
 			log("Search element in List Of Students not present and object is:-" + input_search.toString());
 			Thread.sleep(500);
 		}
+		if(search_Validate.isDisplayed()){
+			String regName = search_Validate.getText().trim();
+			assertEquals(regNumber, regName);
+			log("First Registration Number and searched with Registration Number is same and object is:-"+search_Validate.toString());
+			Thread.sleep(1000);		
+		}
 	}
 	// Search only working for first name not for full name which is appear in
 	// the grid
@@ -235,6 +247,8 @@ public class TransferFromPreAdmissionToAdmission extends TestBase {
 	public void sortWithStudentNameInStatusDetails() throws Exception {
 
 		if (sort_StudentName.isDisplayed()) {
+			sort_StudentName.click();
+			Thread.sleep(1000);
 			sort_StudentName.click();
 			log("Sort by Student Name in List Of Students and object is:- " + sort_StudentName.toString());
 			Thread.sleep(1000);

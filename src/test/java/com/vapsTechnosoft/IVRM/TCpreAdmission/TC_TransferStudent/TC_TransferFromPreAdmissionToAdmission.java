@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -19,8 +20,8 @@ import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
  * @author Arvind
  *
  */
-public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
-	
+public class TC_TransferFromPreAdmissionToAdmission extends TestBase {
+
 	public static final Logger log = Logger.getLogger(TC_TransferFromPreAdmissionToAdmission.class.getName());
 
 	TransferFromPreAdmissionToAdmission preAdmToAdmission;
@@ -32,22 +33,16 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "ExamMasterCategory_Form")
+	@DataProvider(name = "TransferPreAdmToAdmData_Form")
 	public String[][] getTestData() {
-		String[][] testRecordsCategory = getData("ExamMasters.xlsx", "ExamMasterCategory_FormData");
-		return testRecordsCategory;
+		String[][] testRecordsPreAdmToAdm = getData("BGHS_PreAdmissionData.xlsx", "TransferPreAdmToAdmData");
+		return testRecordsPreAdmToAdm;
 	}
 
-	@DataProvider(name = "ExamCategoryClassMapping_FormData")
-	public String[][] getTestDataCategoryClass() {
-		String[][] testRecordsCategoryClassMap = getData("ExamMasters.xlsx", "CategoryClassMapping_FormDat");
-		return testRecordsCategoryClassMap;
-	}
-
-	@DataProvider(name = "CategoryClassMapping_2ndData_ClassSection")
+	@DataProvider(name = "search_registrationNumberTransfer")
 	public String[][] getTestSearchData() {
-		String[][] testRecords2ndData = getData("ExamMasters.xlsx", "CategoryClassMapping_2ndData");
-		return testRecords2ndData;
+		String[][] testRecordsSearch = getData("BGHS_PreAdmissionData.xlsx", "search_transferStudent");
+		return testRecordsSearch;
 	}
 
 	@BeforeClass
@@ -140,22 +135,23 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "WithoutElective")
-	public void tcFill_TransferpreAdmissionToAdmissionForm(String academicYear, String class_status, String status, String runMode) {
+	@Test(priority = 6, dataProvider = "TransferPreAdmToAdmData_Form")
+	public void tcFill_TransferPreAdmissionToAdmissionForm(String academicYear, String class_status, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcFill_TransferpreAdmissionToAdmissionForm Test===========");
+			log.info("============= Strting tcFill_TransferPreAdmissionToAdmissionForm Test===========");
 
 			preAdmToAdmission.fill_TransferpreAdmissionToAdmissionForm(academicYear, class_status);
 
-			log.info("============= Finished tcFill_TransferpreAdmissionToAdmissionForm Test===========");
-			getScreenShot("tcFill_TransferpreAdmissionToAdmissionForm");
+			log.info("============= Finished tcFill_TransferPreAdmissionToAdmissionForm Test===========");
+			getScreenShot("tcFill_TransferPreAdmissionToAdmissionForm");
 		} catch (Exception e) {
-			getScreenShot("tcFill_TransferpreAdmissionToAdmissionForm");
+			getScreenShot("tcFill_TransferPreAdmissionToAdmissionForm");
 		}
 	}
+
 	@Test(priority = 7)
 	public void tcClickOnSearchTo_GetRecords() {
 
@@ -170,8 +166,23 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcClickOnSearchTo_GetRecords");
 		}
 	}
-	
+
 	@Test(priority = 8)
+	public void tcClickOnSuccessOkBtn_RecordSearchConfirm() {
+
+		try {
+			log.info("============= Strting tcClickOnSuccessOkBtn_RecordSearchConfirm Test===========");
+
+			preAdmToAdmission.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnSuccessOkBtn_RecordSearchConfirm Test===========");
+			getScreenShot("tcClickOnSuccessOkBtn_RecordSearchConfirm");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSuccessOkBtn_RecordSearchConfirm");
+		}
+	}
+
+	@Test(priority = 9)
 	public void tcClickOnExportToAdmission_WithoutStudentSelection() {
 
 		try {
@@ -185,7 +196,8 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcClickOnExportToAdmission_WithoutStudentSelection");
 		}
 	}
-	@Test(priority = 9)
+
+	@Test(priority = 10)
 	public void tcClickOnSuccessOkBtn_WithoutStudentSelection() {
 
 		try {
@@ -199,7 +211,8 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcClickOnSuccessOkBtn_WithoutStudentSelection");
 		}
 	}
-	@Test(priority = 10)
+
+	@Test(priority = 11)
 	public void tcMinimize_TransferPreAdmToAdmForm() {
 
 		try {
@@ -214,7 +227,37 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 		}
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
+	public void tcSortWithStudentNameInStatusDetails() {
+
+		try {
+			log.info("============= Strting tcSortWithStudentNameInStatusDetails Test===========");
+			getScreenShot("BeforeSorting_tcSortWithStudentNameInStatusDetails");
+			preAdmToAdmission.sortWithStudentNameInStatusDetails();
+
+			log.info("============= Finished tcSortWithStudentNameInStatusDetails Test===========");
+			getScreenShot("tcSortWithStudentNameInStatusDetails");
+		} catch (Exception e) {
+			getScreenShot("tcSortWithStudentNameInStatusDetails");
+		}
+	}
+
+	@Test(priority = 13)
+	public void tcSortWithRegistrationNumberInStatusDetails() {
+
+		try {
+			log.info("============= Strting tcSortWithRegistrationNumberInStatusDetails Test===========");
+			getScreenShot("BeforeSorting_tcSortWithRegistrationNumberInStatusDetails");
+			preAdmToAdmission.sortWithRegistrationNumberInStatusDetails();
+
+			log.info("============= Finished tcSortWithRegistrationNumberInStatusDetails Test===========");
+			getScreenShot("tcSortWithRegistrationNumberInStatusDetails");
+		} catch (Exception e) {
+			getScreenShot("tcSortWithRegistrationNumberInStatusDetails");
+		}
+	}
+
+	@Test(priority = 14)
 	public void tcMinimize_ListOfStudents() {
 
 		try {
@@ -228,7 +271,7 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 		}
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 15)
 	public void tcMaximize_ListOfStudents() {
 
 		try {
@@ -243,7 +286,7 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 		}
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 16)
 	public void tcMaximize_TransferPreAdmToAdmForm() {
 
 		try {
@@ -257,50 +300,27 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcMaximize_TransferPreAdmToAdmForm");
 		}
 	}
-	@Test(priority = 14)
-	public void tcSortWithStudentNameInStatusDetails() {
 
-		try {
-			log.info("============= Strting tcSortWithStudentNameInStatusDetails Test===========");
-			getScreenShot("BeforeSorting_tcSortWithStudentNameInStatusDetails");
-			preAdmToAdmission.sortWithStudentNameInStatusDetails();
-
-			log.info("============= Finished tcSortWithStudentNameInStatusDetails Test===========");
-			getScreenShot("tcSortWithStudentNameInStatusDetails");
-		} catch (Exception e) {
-			getScreenShot("tcSortWithStudentNameInStatusDetails");
-		}
-	}
-	@Test(priority = 15)
-	public void tcSortWithRegistrationNumberInStatusDetails() {
-
-		try {
-			log.info("============= Strting tcSortWithRegistrationNumberInStatusDetails Test===========");
-			getScreenShot("BeforeSorting_tcSortWithRegistrationNumberInStatusDetails");
-			preAdmToAdmission.sortWithRegistrationNumberInStatusDetails();
-
-			log.info("============= Finished tcSortWithRegistrationNumberInStatusDetails Test===========");
-			getScreenShot("tcSortWithRegistrationNumberInStatusDetails");
-		} catch (Exception e) {
-			getScreenShot("tcSortWithRegistrationNumberInStatusDetails");
-		}
-	}
-	@Test(priority = 16)
+	@Test(priority = 17)
 	public void tcClickOnCancelTo_ClearFilledData_TransferpreAdmissionToAdmission() {
 
 		try {
-			log.info("============= Strting tcClickOnCancelTo_ClearFilledData_TransferpreAdmissionToAdmission Test===========");
-			
+			log.info(
+					"============= Strting tcClickOnCancelTo_ClearFilledData_TransferpreAdmissionToAdmission Test===========");
+
 			preAdmToAdmission.clickOnCancelTo_ClearFilledData_Status();
 
-			log.info("============= Finished tcClickOnCancelTo_ClearFilledData_TransferpreAdmissionToAdmission Test===========");
+			log.info(
+					"============= Finished tcClickOnCancelTo_ClearFilledData_TransferpreAdmissionToAdmission Test===========");
 			getScreenShot("tcClickOnCancelTo_ClearFilledData_TransferpreAdmissionToAdmission");
 		} catch (Exception e) {
 			getScreenShot("tcClickOnCancelTo_ClearFilledData_TransferpreAdmissionToAdmission");
 		}
 	}
-	@Test(priority = 17, dataProvider = "WithoutElective")
-	public void tcFill_TransferpreAdmissionToAdmissionForm_AfterCancel(String academicYear, String class_status, String status, String runMode) {
+
+	@Test(priority = 18, dataProvider = "TransferPreAdmToAdmData_Form")
+	public void tcFill_TransferpreAdmissionToAdmissionForm_AfterCancel(String academicYear, String class_status,
+			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
@@ -315,7 +335,8 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcFill_TransferpreAdmissionToAdmissionForm_AfterCancel");
 		}
 	}
-	@Test(priority = 18)
+
+	@Test(priority = 19)
 	public void tcClickOnSearchTo_GetRecords_AfterCancel() {
 
 		try {
@@ -329,7 +350,23 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcClickOnSearchTo_GetRecords_AfterCancel");
 		}
 	}
-	@Test(priority = 19, dataProvider = "WithoutElective")
+
+	@Test(priority = 20)
+	public void tcClickOnSuccessOkBtn_RecordSearchConfirm_AfterCancel() {
+
+		try {
+			log.info("============= Strting tcClickOnSuccessOkBtn_RecordSearchConfirm_AfterCancel Test===========");
+
+			preAdmToAdmission.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnSuccessOkBtn_RecordSearchConfirm_AfterCancel Test===========");
+			getScreenShot("tcClickOnSuccessOkBtn_RecordSearchConfirm_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSuccessOkBtn_RecordSearchConfirm_AfterCancel");
+		}
+	}
+
+	@Test(priority = 21, dataProvider = "search_registrationNumberTransfer")
 	public void tcSearchForStudent_InListOfStudents(String regNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -345,7 +382,8 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcSearchForStudent_InListOfStudents");
 		}
 	}
-	@Test(priority = 20)
+
+	@Test(priority = 22)
 	public void tcSelectSpecificStudent_InListOfStudentToTransfer() {
 
 		try {
@@ -359,7 +397,8 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcSelectSpecificStudent_InListOfStudentToTransfer");
 		}
 	}
-	@Test(priority = 21)
+
+	@Test(priority = 23)
 	public void tcClickOnExportToAdmission_ToTranferSelectedStudent() {
 
 		try {
@@ -373,7 +412,8 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 			getScreenShot("tcClickOnExportToAdmission_ToTranferSelectedStudent");
 		}
 	}
-	@Test(priority = 22)
+
+	@Test(priority = 24)
 	public void tcClickOnSuccessOkBtn_TranferSelectedStudent() {
 
 		try {
@@ -386,5 +426,16 @@ public class TC_TransferFromPreAdmissionToAdmission extends TestBase{
 		} catch (Exception e) {
 			getScreenShot("tcClickOnSuccessOkBtn_TranferSelectedStudent");
 		}
+	}
+
+	@AfterClass
+	public void tearDown() {
+		try {
+			ivrmportallogin.logOutFromApplication();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		driver.quit();
 	}
 }
