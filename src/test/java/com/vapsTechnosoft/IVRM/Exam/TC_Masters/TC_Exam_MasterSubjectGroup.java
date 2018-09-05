@@ -259,7 +259,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void tcClickOnCancelButton_ToClearMasterSubjectGroupFilledData() {
 
 		try {
@@ -275,7 +275,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "ExamMasterSubjectGroup_WithoutElective")
+	@Test(priority = 14, dataProvider = "ExamMasterSubjectGroup_WithoutElective")
 	public void tcFill_Exam_MasterSubjectGroup_Form_WithoutElective_AfetrCancel(String groupName, String maxSubject,
 			String maxApplSubject, String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -296,7 +296,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 15)
 	public void tcSelectSubjectForGrouping_WithoutElectiveSubject_AfetrCancel() {
 
 		try {
@@ -313,7 +313,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 15)
+	@Test(priority = 16)
 	public void tcClickOnSaveButton_ToCreateMasterSubjectGroup_WithoutElective() {
 
 		try {
@@ -330,7 +330,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 17)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_WithoutElective_MasterSubjectGroup() {
 
 		try {
@@ -347,7 +347,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 18, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFill_Exam_MasterSubjectGroup_Form_WithElective(String groupName, String maxSubject,
 			String maxApplSubject, String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -366,7 +366,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void tcSelectSubjectForGrouping_WithElectiveSubject() {
 
 		try {
@@ -381,7 +381,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcClickOnSaveButton_ToCreateMasterSubjectGroup_WithElective() {
 
 		try {
@@ -398,7 +398,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_WithElective_MasterSubjectGroup() {
 
 		try {
@@ -415,7 +415,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 21)
+	@Test(priority = 22)
 	public void tcSortWithGroupNameInGridView() {
 
 		try {
@@ -430,7 +430,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void tcSortWithTotalSubjectsInGridView() {
 
 		try {
@@ -445,7 +445,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 24)
 	public void tcSortWithMaxApplicableSubjectInGridView() {
 
 		try {
@@ -460,7 +460,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void tcSortWithMinApplicableSubjectInGridView() {
 
 		try {
@@ -475,7 +475,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcSortWithBestOfSubjectInGridView() {
 
 		try {
@@ -490,7 +490,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 27, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_GroupName(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -510,7 +510,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 28)
 	public void tcClearFilledDataForFilter_GroupName() {
 
 		try {
@@ -525,7 +525,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 29, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_TotalSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -544,7 +544,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcClearFilledDataForFilter_TotalSubjects() {
 
 		try {
@@ -559,7 +559,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 31, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_MaxApplicableSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -578,7 +578,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcClearFilledDataForFilter_MaxApplicableSubjects() {
 
 		try {
@@ -593,7 +593,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 33, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_MinApplicableSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -612,7 +612,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 34)
 	public void tcClearFilledDataForFilter_MinApplicableSubjects() {
 
 		try {
@@ -627,7 +627,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 35, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_BestOfSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -646,7 +646,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 36)
 	public void tcClearFilledDataForFilter_BestOfSubjects() {
 
 		try {
@@ -661,7 +661,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 37)
 	public void tcClickOnViewIcon_ToSeeMasterSubjectGroup() {
 
 		try {
@@ -675,7 +675,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 38)
 	public void tcCloseViewWindow_MasterSubjectGroup() {
 
 		try {
@@ -689,7 +689,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 39)
 	public void tcClickOnEditIcon_ToUpdateMasterSubjectGroup() {
 
 		try {
@@ -703,7 +703,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 40)
 	public void tcClickOnSaveButton_ToCreateMasterSubjectGroup_Edit() {
 
 		try {
@@ -719,7 +719,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 41)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_Edit_MasterSubjectGroup() {
 
 		try {
@@ -736,7 +736,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 41, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 42, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_GroupName_FilterDeactivate(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -755,7 +755,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 42)
+	@Test(priority = 43)
 	public void tcDeactivateRecords_MasterSubjectGroupGrid() {
 
 		try {
@@ -770,7 +770,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 43)
+	@Test(priority = 44)
 	public void tcCancel_DeactivatePopUp() {
 
 		try {
@@ -785,7 +785,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 44)
+	@Test(priority = 45)
 	public void tcClickOnSuccessOkBtn_CancelDeactivate() {
 
 		try {
@@ -800,7 +800,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 45)
+	@Test(priority = 46)
 	public void tcDeactivateRecords_MasterSubjectGroupGrid_AfterCancel() {
 
 		try {
@@ -815,7 +815,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 46)
+	@Test(priority = 47)
 	public void tcYesDeactivateMasterSubjectGroupRecord() {
 
 		try {
@@ -830,7 +830,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 47)
+	@Test(priority = 48)
 	public void tcClickOnSuccessOkBtn_Deactivate() {
 
 		try {
@@ -844,8 +844,25 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcClickOnSuccessOkBtn_Deactivate");
 		}
 	}
+	@Test(priority = 49, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	public void tcFilterRecordsBasedOn_GroupName_FilterActivate(String groupName, String maxSubject, String maxApplSubject,
+			String minApplSubject, String bestOfSubject, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcFilterRecordsBasedOn_GroupName_FilterDeactivate Test===========");
 
-	@Test(priority = 48)
+			mastersubjectgroup.filterRecordsBasedOn_GroupName(groupName, maxSubject, maxApplSubject, minApplSubject,
+					bestOfSubject);
+
+			log.info("============= Finished tcFilterRecordsBasedOn_GroupName_FilterDeactivate Test===========");
+			getScreenShot("tcFilterRecordsBasedOn_GroupName_FilterDeactivate");
+		} catch (Exception e) {
+			getScreenShot("tcFilterRecordsBasedOn_GroupName_FilterDeactivate");
+		}
+	}
+	@Test(priority = 50)
 	public void tcActivateRecords_MasterSubjectGroupGrid() {
 
 		try {
@@ -860,7 +877,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 49)
+	@Test(priority = 51)
 	public void tcCancel_ActivatePopUp_viewWindow() {
 
 		try {
@@ -875,7 +892,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 50)
+	@Test(priority = 52)
 	public void tcClickOnSuccessOkBtn_CancelActivate() {
 
 		try {
@@ -890,7 +907,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 51)
+	@Test(priority = 53)
 	public void tcActivateRecords_MasterSubjectGroupGrid_AfterCancel() {
 
 		try {
@@ -905,7 +922,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 52)
+	@Test(priority = 54)
 	public void tcYesActivateMasterSubjectGroupRecord() {
 
 		try {
@@ -920,7 +937,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 53)
+	@Test(priority = 55)
 	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {

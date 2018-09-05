@@ -254,8 +254,8 @@ public class Exam_MasterSubjectGroup extends TestBase {
 		}
 		if (input_BestOfSubjects.isDisplayed()) {
 			input_BestOfSubjects.clear();
-			input_BestOfSubjects.sendKeys(groupName);
-			log("Entered Best of Subjects:- " + groupName + " and object is: " + input_BestOfSubjects.toString());
+			input_BestOfSubjects.sendKeys(bestOfSubject);
+			log("Entered Best of Subjects:- " + bestOfSubject + " and object is: " + input_BestOfSubjects.toString());
 			Thread.sleep(1000);
 		} else {
 			log("Best of Subjects element is not present.");
