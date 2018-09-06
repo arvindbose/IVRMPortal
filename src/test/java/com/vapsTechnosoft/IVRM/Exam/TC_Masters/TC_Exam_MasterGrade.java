@@ -34,23 +34,43 @@ public class TC_Exam_MasterGrade extends TestBase {
 		String[][] testRecordsLogin = getData("TestData.xlsx", "VapsIVRMlogindata");
 		return testRecordsLogin;
 	}
-
-	@DataProvider(name = "ExamMasterCategory_Form")
-	public String[][] getTestData() {
-		String[][] testRecordsCategory = getData("ExamMasters.xlsx", "ExamMasterCategory_FormData");
-		return testRecordsCategory;
+	@DataProvider(name = "ExamMasterGrade_Form_Percentage")
+	public String[][] getTestDataPercentage() {
+		String[][] testRecordsPercentage = getData("ExamMasters.xlsx", "ExamMasterGardeData_PerCentage");
+		return testRecordsPercentage;
+	}
+	@DataProvider(name = "ExamMasterGrade_Form_Marks")
+	public String[][] getTestDataMarks() {
+		String[][] testRecordsMarks = getData("ExamMasters.xlsx", "ExamMasterGardeData_Marks");
+		return testRecordsMarks;
 	}
 
-	@DataProvider(name = "ExamCategoryClassMapping_FormData")
-	public String[][] getTestDataCategoryClass() {
-		String[][] testRecordsCategoryClassMap = getData("ExamMasters.xlsx", "CategoryClassMapping_FormDat");
-		return testRecordsCategoryClassMap;
+	@DataProvider(name = "MasterGradeDetails_GradeA")
+	public String[][] getTestDataGradeA() {
+		String[][] testRecordsGradeA = getData("ExamMasters.xlsx", "MasterGradeDetailsGradeA");
+		return testRecordsGradeA;
+	}
+	
+	@DataProvider(name = "MasterGradeDetails_GradeB")
+	public String[][] getTestDataGradeB() {
+		String[][] testRecordsGradeB = getData("ExamMasters.xlsx", "MasterGradeDetailsGradeB");
+		return testRecordsGradeB;
+	}
+	@DataProvider(name = "MasterGradeDetails_GradeC")
+	public String[][] getTestDataGradeC() {
+		String[][] testRecordsGradeC = getData("ExamMasters.xlsx", "MasterGradeDetailsGradeC");
+		return testRecordsGradeC;
+	}
+	@DataProvider(name = "MasterGradeDetails_GradeD")
+	public String[][] getTestDataGradeD() {
+		String[][] testRecordsGradeD = getData("ExamMasters.xlsx", "MasterGradeDetailsGradeD");
+		return testRecordsGradeD;
 	}
 
-	@DataProvider(name = "CategoryClassMapping_2ndData_ClassSection")
+	@DataProvider(name = "filter_MasterGrade_Percentage")
 	public String[][] getTestSearchData() {
-		String[][] testRecords2ndData = getData("ExamMasters.xlsx", "CategoryClassMapping_2ndData");
-		return testRecords2ndData;
+		String[][] testRecordsFilter = getData("ExamMasters.xlsx", "filter_GradeMarksPercentage");
+		return testRecordsFilter;
 	}
 
 	@BeforeClass
@@ -128,7 +148,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 5, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 5, dataProvider = "ExamMasterGrade_Form_Percentage")
 	public void tcFill_Exam_MasterGrade_Form_Percentage(String gradeName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -160,7 +180,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 7, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 7, dataProvider = "MasterGradeDetails_GradeA")
 	public void tcFill_MasterGradeDetails_Grade_A_Percentage(String from_A, String to_A, String grade_A,
 			String gradePoint_A, String remarks_A, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -195,7 +215,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 9, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 9, dataProvider = "MasterGradeDetails_GradeB")
 	public void tcFill_MasterGradeDetails_Grade_B_Percentage(String from_B, String to_B, String grade_B,
 			String gradePoint_B, String remarks_B, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -230,7 +250,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 11, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 11, dataProvider = "MasterGradeDetails_GradeC")
 	public void tcFill_MasterGradeDetails_Grade_C_Percentage(String from_C, String to_C, String grade_C,
 			String gradePoint_C, String remarks_C, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -265,7 +285,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 13, dataProvider = "MasterGradeDetails_GradeD")
 	public void tcFill_MasterGradeDetails_Grade_D_Percentage(String from_D, String to_D, String grade_D,
 			String gradePoint_D, String remarks_D, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -404,7 +424,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 22, dataProvider = "ExamMasterGrade_Form_Percentage")
 	public void tcFill_Exam_MasterGrade_Form_Percentage_AfterCancel(String gradeName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -421,7 +441,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 23, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 23, dataProvider = "MasterGradeDetails_GradeA")
 	public void tcFill_MasterGradeDetails_Grade_A_Percentage_AfterCancel(String from_A, String to_A, String grade_A,
 			String gradePoint_A, String remarks_A, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -456,7 +476,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 25, dataProvider = "MasterGradeDetails_GradeB")
 	public void tcFill_MasterGradeDetails_Grade_B_Percentage_AfterCancel(String from_B, String to_B, String grade_B,
 			String gradePoint_B, String remarks_B, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -491,7 +511,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 27, dataProvider = "MasterGradeDetails_GradeC")
 	public void tcFill_MasterGradeDetails_Grade_C_Percentage_AfterCancel(String from_C, String to_C, String grade_C,
 			String gradePoint_C, String remarks_C, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -526,7 +546,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 29, dataProvider = "MasterGradeDetails_GradeD")
 	public void tcFill_MasterGradeDetails_Grade_D_Percentage_AfterCancel(String from_D, String to_D, String grade_D,
 			String gradePoint_D, String remarks_D, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -593,7 +613,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 	}
 	// Marks
 
-	@Test(priority = 33, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 33, dataProvider = "ExamMasterGrade_Form_Marks")
 	public void tcFill_Exam_MasterGrade_Form_Marks(String gradeName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -610,7 +630,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 34, dataProvider = "MasterGradeDetails_GradeA")
 	public void tcFill_MasterGradeDetails_Grade_A_Marks(String from_A, String to_A, String grade_A, String gradePoint_A,
 			String remarks_A, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -644,7 +664,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 36, dataProvider = "MasterGradeDetails_GradeB")
 	public void tcFill_MasterGradeDetails_Grade_B_Marks(String from_B, String to_B, String grade_B, String gradePoint_B,
 			String remarks_B, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -678,7 +698,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 38, dataProvider = "MasterGradeDetails_GradeC")
 	public void tcFill_MasterGradeDetails_Grade_C_Marks(String from_C, String to_C, String grade_C, String gradePoint_C,
 			String remarks_C, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -712,7 +732,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 40, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 40, dataProvider = "MasterGradeDetails_GradeD")
 	public void tcFill_MasterGradeDetails_Grade_D_Marks(String from_D, String to_D, String grade_D, String gradePoint_D,
 			String remarks_D, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -805,7 +825,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 46, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 46, dataProvider = "filter_MasterGrade_Percentage")
 	public void tcFilterRecordsBasedOn_GradeName(String gradeName, String marksOrPercentage, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -837,7 +857,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 48, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 48, dataProvider = "filter_MasterGrade_Percentage")
 	public void tcFilterRecordsBasedOn_MarksOrPercentage(String gradeName, String marksOrPercentage, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -942,21 +962,21 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 55, dataProvider = "ExamCategoryClassMapping_FormData")
-	public void tcFilterRecordsBasedOn_GradeName_ForActivateDeactivate(String gradeName, String marksOrPercentage,
+	@Test(priority = 55, dataProvider = "filter_MasterGrade_Percentage")
+	public void tcFilterRecordsBasedOn_GradeName_ForDeactivate(String gradeName, String marksOrPercentage,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcFilterRecordsBasedOn_GradeName_ForActivateDeactivate Test===========");
+			log.info("============= Strting tcFilterRecordsBasedOn_GradeName_ForDeactivate Test===========");
 
 			mastergrade.filterRecordsBasedOn_GradeName(gradeName, marksOrPercentage);
 
-			log.info("============= Finished tcFilterRecordsBasedOn_GradeName_ForActivateDeactivate Test===========");
-			getScreenShot("tcFilterRecordsBasedOn_GradeName_ForActivateDeactivate");
+			log.info("============= Finished tcFilterRecordsBasedOn_GradeName_ForDeactivate Test===========");
+			getScreenShot("tcFilterRecordsBasedOn_GradeName_ForDeactivate");
 		} catch (Exception e) {
-			getScreenShot("tcFilterRecordsBasedOn_GradeName_ForActivateDeactivate");
+			getScreenShot("tcFilterRecordsBasedOn_GradeName_ForDeactivate");
 		}
 	}
 
@@ -1049,8 +1069,25 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcClickOnSuccessOkBtn_Deactivate");
 		}
 	}
+	@Test(priority = 62, dataProvider = "filter_MasterGrade_Percentage")
+	public void tcFilterRecordsBasedOn_GradeName_ForActivate(String gradeName, String marksOrPercentage,
+			String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcFilterRecordsBasedOn_GradeName_ForActivate Test===========");
 
-	@Test(priority = 62)
+			mastergrade.filterRecordsBasedOn_GradeName(gradeName, marksOrPercentage);
+
+			log.info("============= Finished tcFilterRecordsBasedOn_GradeName_ForActivate Test===========");
+			getScreenShot("tcFilterRecordsBasedOn_GradeName_ForActivate");
+		} catch (Exception e) {
+			getScreenShot("tcFilterRecordsBasedOn_GradeName_ForActivate");
+		}
+	}
+
+	@Test(priority = 63)
 	public void tcActivateRecords_MasterGradeGrid() {
 
 		try {
@@ -1065,7 +1102,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 63)
+	@Test(priority = 64)
 	public void tcCancel_ActivatePopUp_viewWindow() {
 
 		try {
@@ -1080,7 +1117,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 64)
+	@Test(priority = 65)
 	public void tcClickOnSuccessOkBtn_CancelActivate() {
 
 		try {
@@ -1095,7 +1132,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 65)
+	@Test(priority = 66)
 	public void tcActivateRecords_MasterGradeGrid_AfterCancel() {
 
 		try {
@@ -1110,7 +1147,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 66)
+	@Test(priority = 67)
 	public void tcYesActivateMasterGradeRecord() {
 
 		try {
@@ -1125,7 +1162,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 67)
+	@Test(priority = 68)
 	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {

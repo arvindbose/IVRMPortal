@@ -512,7 +512,7 @@ public class PreAdmission_Status extends TestBase {
 		}
 		if (input_remarks.isDisplayed()) {
 			input_remarks.clear();
-			input_search.sendKeys(remarks);
+			input_remarks.sendKeys(remarks);
 			log("Entered Remarks:-" + remarks + " and object is " + input_remarks.toString());
 			Thread.sleep(1000);
 		} else {
@@ -581,8 +581,8 @@ public class PreAdmission_Status extends TestBase {
 
 		if (input_smsContent.isDisplayed()) {
 			input_smsContent.clear();
-			input_smsContent.sendKeys(emailFooter);
-			log("Entered sms content:-" + emailFooter + " and object is " + input_smsContent.toString());
+			input_smsContent.sendKeys(smsContent);
+			log("Entered sms content:-" + smsContent + " and object is " + input_smsContent.toString());
 			Thread.sleep(1000);
 		} else {
 			log("sms content element in not present and object is:-" + input_smsContent.toString());
@@ -595,7 +595,7 @@ public class PreAdmission_Status extends TestBase {
 			btn_UpdateStatus.click();
 			log("Click on Update Status button to submit change in status and send Email & SMS and object is:-"
 					+ btn_UpdateStatus.toString());
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} else {
 			log("Update Status button element is not present and object is:-" + btn_UpdateStatus.toString());
 			Thread.sleep(500);
@@ -619,7 +619,7 @@ public class PreAdmission_Status extends TestBase {
 			btnPopUp_Yes_UpdateStatus.click();
 			log("Confirm Update Status Yes button pop up window to submit change in status and send Email & SMS and object is:-"
 					+ btnPopUp_Yes_UpdateStatus.toString());
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 		} else {
 			log("Update Status Yes button pop up window element is not present and object is:-" + btnPopUp_Yes_UpdateStatus.toString());
 			Thread.sleep(500);

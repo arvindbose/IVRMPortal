@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -32,24 +33,48 @@ public class TC_PreAdmission_Status extends TestBase{
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "ExamMasterCategory_Form")
-	public String[][] getTestData() {
-		String[][] testRecordsCategory = getData("ExamMasters.xlsx", "ExamMasterCategory_FormData");
-		return testRecordsCategory;
+	@DataProvider(name = "PreAdmissionStatus_Application")
+	public String[][] getTestDataApp() {
+		String[][] testRecordsApp = getData("BGHS_PreAdmissionData.xlsx", "Application_StatusData");
+		return testRecordsApp;
 	}
 
-	@DataProvider(name = "ExamCategoryClassMapping_FormData")
-	public String[][] getTestDataCategoryClass() {
-		String[][] testRecordsCategoryClassMap = getData("ExamMasters.xlsx", "CategoryClassMapping_FormDat");
-		return testRecordsCategoryClassMap;
+	@DataProvider(name = "PreAdmissionStatus_Admission")
+	public String[][] getTestDataAdm() {
+		String[][] testRecordsAdm = getData("BGHS_PreAdmissionData.xlsx", "Admission_StatusData");
+		return testRecordsAdm;
 	}
 
-	@DataProvider(name = "CategoryClassMapping_2ndData_ClassSection")
+	
+	@DataProvider(name = "Application_UpdateStatusAll")
+	public String[][] getTestDataStatusAll() {
+		String[][] testRecordsStatusAll = getData("BGHS_PreAdmissionData.xlsx", "UpdateStatusAll");
+		return testRecordsStatusAll;
+	}
+
+	@DataProvider(name = "Search_StudentName_ApplicationStatus")
 	public String[][] getTestSearchData() {
-		String[][] testRecords2ndData = getData("ExamMasters.xlsx", "CategoryClassMapping_2ndData");
-		return testRecords2ndData;
+		String[][] testRecordsSearch = getData("BGHS_PreAdmissionData.xlsx", "Search_Student_Application");
+		return testRecordsSearch;
 	}
-
+	@DataProvider(name = "Search_StudentName_AdmissionStatus")
+	public String[][] getTestSearchDataAdm() {
+		String[][] testRecordsSearchAdm = getData("BGHS_PreAdmissionData.xlsx", "Search_Student_Admission");
+		return testRecordsSearchAdm;
+	}
+	@DataProvider(name = "Remarks_forStatus")
+	public String[][] getTestRemarksData() {
+		String[][] testRecordsRemarks = getData("BGHS_PreAdmissionData.xlsx", "StatusRemarks_appStatus");
+		return testRecordsRemarks;
+	}
+	@DataProvider(name = "Email_And_SMS_Datils")
+	public String[][] getTestEamilSmS() {
+		String[][] testRecordsRemarks = getData("BGHS_PreAdmissionData.xlsx", "Status_EmailSmSDetails");
+		return testRecordsRemarks;
+	}
+	
+	
+	
 	@BeforeClass
 	public void setUp() throws IOException {
 		init();
@@ -140,7 +165,7 @@ public class TC_PreAdmission_Status extends TestBase{
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "WithoutElective")
+	@Test(priority = 6, dataProvider = "PreAdmissionStatus_Application")
 	public void tcFillPreAdmissionStatusForm_ApplicationStatus(String academicYear, String class_status, String status, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -226,7 +251,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcClickOnSuccessOkBtn_ApplicationStatus_ExportToExcel_WithoutRecord");
 		}
 	}
-	@Test(priority = 12, dataProvider = "status_All")
+	@Test(priority = 12, dataProvider = "Application_UpdateStatusAll")
 	public void tcUpdate_StatusforAllStudent_ApplicationStatus(String status_All, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -314,7 +339,7 @@ public class TC_PreAdmission_Status extends TestBase{
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "WithoutElective")
+	@Test(priority = 18, dataProvider = "PreAdmissionStatus_Application")
 	public void tcFillPreAdmissionStatusForm_ApplicationStatus_AfterCancel(String academicYear, String class_status, String status, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -344,7 +369,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcClickOnSearchTo_GetRecords_ApplicationStatus_AfterCancel");
 		}
 	}
-	@Test(priority = 20, dataProvider = "WithoutElective")
+	@Test(priority = 20, dataProvider = "Search_StudentName_ApplicationStatus")
 	public void tcSearchForStudent_InStatusDetails(String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -360,7 +385,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcSearchForStudent_InStatusDetails");
 		}
 	}
-	@Test(priority = 21, dataProvider = "WithoutElective")
+	@Test(priority = 21, dataProvider = "Remarks_forStatus")
 	public void tcSelectSpecificStudentStatusReport_InStatusDetails(String remarks, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -418,7 +443,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcCheckEmailAndSms_ApplicationStatus");
 		}
 	}
-	@Test(priority = 25, dataProvider = "WithoutElective")
+	@Test(priority = 25, dataProvider = "Email_And_SMS_Datils")
 	public void tcFillEmailAndSmsDetails_ApplicationStatus(String emailSubject, String emailHeader, String emailMessage, String emailFooter,
 			String smsContent, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -478,7 +503,7 @@ public class TC_PreAdmission_Status extends TestBase{
 		}
 	}
 	
-	@Test(priority = 26)
+	@Test(priority = 29)
 	public void tcUpdateStatusSend_EmailAndSms_ApplicationStatus_AfterCancelPopUp() {
 
 		try {
@@ -492,7 +517,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcUpdateStatusSend_EmailAndSms_ApplicationStatus_AfterCancelPopUp");
 		}
 	}
-	@Test(priority = 27)
+	@Test(priority = 30)
 	public void tcConfirm_UpdateStatusSend_EmailAndSms_ApplicationStatus_AfterCancelPopUp() {
 
 		try {
@@ -506,7 +531,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcConfirm_UpdateStatusSend_EmailAndSms_ApplicationStatus_AfterCancelPopUp");
 		}
 	}
-	@Test(priority = 28)
+	@Test(priority = 31)
 	public void tcConfirm_UpdateStatus_Yes_ApplicationStatus() {
 
 		try {
@@ -520,7 +545,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcConfirm_UpdateStatus_Yes_ApplicationStatus");
 		}
 	}	
-	@Test(priority = 29)
+	@Test(priority = 32)
 	public void tcClickOnSuccessOkBtn_ApplicationStatus_UpdateStatus() {
 
 		try {
@@ -540,7 +565,7 @@ public class TC_PreAdmission_Status extends TestBase{
 	 * ADMISSION STATUS
 	 * 
 	 */
-	@Test(priority = 30, dataProvider = "WithoutElective")
+	@Test(priority = 33, dataProvider = "PreAdmissionStatus_Admission")
 	public void tcFillPreAdmissionStatusForm_AdmissionStatus(String academicYear, String class_status, String status, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -556,7 +581,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcFillPreAdmissionStatusForm_AdmissionStatus");
 		}
 	}
-	@Test(priority = 31)
+	@Test(priority = 34)
 	public void tcClickOnSearchTo_GetRecords_AdmissionStatus() {
 
 		try {
@@ -570,7 +595,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcClickOnSearchTo_GetRecords_AdmissionStatus");
 		}
 	}
-	@Test(priority = 32, dataProvider = "WithoutElective")
+	@Test(priority = 35, dataProvider = "Search_StudentName_AdmissionStatus")
 	public void tcSearchForStudent_InStatusDetails_AdmissionStatus(String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -586,7 +611,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcSearchForStudent_InStatusDetails_AdmissionStatus");
 		}
 	}
-	@Test(priority = 33, dataProvider = "WithoutElective")
+	@Test(priority = 36, dataProvider = "Remarks_forStatus")
 	public void tcSelectSpecificStudentStatusReport_InStatusDetails_AdmissionStatus(String remarks, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -602,7 +627,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcSelectSpecificStudentStatusReport_InStatusDetails_AdmissionStatus");
 		}
 	}
-	@Test(priority = 34)
+	@Test(priority = 37)
 	public void tcClickOnExportToExcel_AdmissionStatus() {
 
 		try {
@@ -616,7 +641,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcClickOnExportToExcel_AdmissionStatus");
 		}
 	}
-	@Test(priority = 35)
+	@Test(priority = 38)
 	public void tcClickOnPrint_AdmissionStatus() {
 
 		try {
@@ -630,7 +655,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcClickOnPrint_AdmissionStatus");
 		}
 	}
-	@Test(priority = 36)
+	@Test(priority = 39)
 	public void tcCheckEmailAndSms_AdmissionStatus() {
 
 		try {
@@ -644,7 +669,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcCheckEmailAndSms_AdmissionStatus");
 		}
 	}
-	@Test(priority = 37, dataProvider = "WithoutElective")
+	@Test(priority = 40, dataProvider = "Email_And_SMS_Datils")
 	public void tcFillEmailAndSmsDetails_AdmissionStatus(String emailSubject, String emailHeader, String emailMessage, String emailFooter,
 			String smsContent, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -661,7 +686,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcFillEmailAndSmsDetails_AdmissionStatus");
 		}
 	}
-	@Test(priority = 38)
+	@Test(priority = 41)
 	public void tcUpdateStatusSend_EmailAndSms_AdmissionStatus() {
 
 		try {
@@ -675,7 +700,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcUpdateStatusSend_EmailAndSms_AdmissionStatus");
 		}
 	}
-	@Test(priority = 39)
+	@Test(priority = 42)
 	public void tcConfirm_UpdateStatusSend_EmailAndSms_AdmissionStatus() {
 
 		try {
@@ -689,7 +714,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcConfirm_UpdateStatusSend_EmailAndSms_AdmissionStatus");
 		}
 	}
-	@Test(priority = 40)
+	@Test(priority = 43)
 	public void tcConfirm_UpdateStatus_Cancel_AdmissionStatus() {
 
 		try {
@@ -704,7 +729,7 @@ public class TC_PreAdmission_Status extends TestBase{
 		}
 	}
 	
-	@Test(priority = 41)
+	@Test(priority = 44)
 	public void tcUpdateStatusSend_EmailAndSms_AdmissionStatus_AfterCancelPopUp() {
 
 		try {
@@ -718,7 +743,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcUpdateStatusSend_EmailAndSms_AdmissionStatus_AfterCancelPopUp");
 		}
 	}
-	@Test(priority = 42)
+	@Test(priority = 45)
 	public void tcConfirm_UpdateStatusSend_EmailAndSms_AdmissionStatus_AfterCancelPopUp() {
 
 		try {
@@ -732,7 +757,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcConfirm_UpdateStatusSend_EmailAndSms_AdmissionStatus_AfterCancelPopUp");
 		}
 	}
-	@Test(priority = 43)
+	@Test(priority = 46)
 	public void tcConfirm_UpdateStatus_Yes_AdmissionStatus() {
 
 		try {
@@ -746,7 +771,7 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcConfirm_UpdateStatus_Yes_AdmissionStatus");
 		}
 	}	
-	@Test(priority = 44)
+	@Test(priority = 47)
 	public void tcClickOnSuccessOkBtn_AdmissionStatus_UpdateStatus() {
 
 		try {
@@ -760,5 +785,15 @@ public class TC_PreAdmission_Status extends TestBase{
 			getScreenShot("tcClickOnSuccessOkBtn_AdmissionStatus_UpdateStatus");
 		}
 	}
-	
+
+	@AfterClass
+	public void tearDown() {
+		try {
+			ivrmportallogin.logOutFromApplication();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		driver.quit();
+	}
 }
