@@ -124,17 +124,9 @@ public class TestBase {
 			       cap.setCapability(ChromeOptions.CAPABILITY, options);
 			       
 			       //cap.setCapability("pageLoadStrategy", "none");
-				
-				
-				//
-				
-				
-				
-				
-				
-				
+			
 				driver = new ChromeDriver(cap);
-				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				// driver = new EventFiringWebDriver(dr);
 				// eventListener = new WebEventListener();
 				// driver.register(eventListener);
@@ -142,7 +134,7 @@ public class TestBase {
 				System.out.println(System.getProperty("user.dir"));
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				// driver = new EventFiringWebDriver(dr);
 				eventListener = new WebEventListener();
 				// driver.register(eventListener);
@@ -153,7 +145,7 @@ public class TestBase {
 				System.out.println(System.getProperty("user.dir"));
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 				driver = new ChromeDriver();
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				// driver = new EventFiringWebDriver(dr);
 				// eventListener = new WebEventListener();
 				// driver.register(eventListener);
@@ -161,7 +153,7 @@ public class TestBase {
 				System.out.println(System.getProperty("user.dir"));
 				System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "/drivers/geckodriver");
 				driver = new FirefoxDriver();
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				// driver = new EventFiringWebDriver(dr);
 				eventListener = new WebEventListener();
 				// driver.register(eventListener);

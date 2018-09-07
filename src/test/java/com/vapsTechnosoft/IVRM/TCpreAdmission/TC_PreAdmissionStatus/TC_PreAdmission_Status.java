@@ -288,6 +288,7 @@ public class TC_PreAdmission_Status extends TestBase{
 		try {
 			log.info("============= Strting tcSortWithStudentNameInStatusDetails Test===========");
 			getScreenShot("BeforeSorting_tcSortWithStudentNameInStatusDetails");
+		
 			statusPreAdm.sortWithStudentNameInStatusDetails();
 
 			log.info("============= Finished tcSortWithStudentNameInStatusDetails Test===========");

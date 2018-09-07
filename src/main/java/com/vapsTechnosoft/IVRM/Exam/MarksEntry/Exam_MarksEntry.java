@@ -114,7 +114,7 @@ public class Exam_MarksEntry extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -244,11 +244,11 @@ public class Exam_MarksEntry extends TestBase {
 		if (sel_Subject.isDisplayed()) {
 
 			select = new Select(sel_Subject);
-			select.selectByVisibleText(section);
+			select.selectByVisibleText(subject);
 
-			log("Selected Subject: " + section + " and object is:- " + sel_Subject.toString());
+			log("Selected Subject: " + subject + " and object is:- " + sel_Subject.toString());
 			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
+			Assert.assertEquals(option.getText().trim(), subject);
 			Thread.sleep(2000);
 		} else {
 			log("Subject element is not present and object is:- " + sel_Subject.toString());
@@ -323,7 +323,8 @@ public class Exam_MarksEntry extends TestBase {
 	public void sort_ByRollNumber() throws Exception {
 		if (btnHdr_sort_RollNo.isDisplayed()) {
 			btnHdr_sort_RollNo.click();
-
+			Thread.sleep(1000);
+			btnHdr_sort_RollNo.click();
 			log("Clicked on Roll Number tab to sort student in order and object is:- "
 					+ btnHdr_sort_RollNo.toString());
 			Thread.sleep(1000);
@@ -337,7 +338,8 @@ public class Exam_MarksEntry extends TestBase {
 	public void sort_ByMarksObtain() throws Exception {
 		if (btnHdr_sort_ObtainMarks.isDisplayed()) {
 			btnHdr_sort_ObtainMarks.click();
-
+			Thread.sleep(1000);
+			btnHdr_sort_ObtainMarks.click();
 			log("Clicked on Marks Obtain tab to sort student in order and object is:- " + btnHdr_sort_ObtainMarks.toString());
 			Thread.sleep(1000);
 		} else {
@@ -380,8 +382,8 @@ public class Exam_MarksEntry extends TestBase {
 			throws Exception {
 		if (filter_RollNumber.isDisplayed()) {
 			filter_RollNumber.clear();
-			filter_RollNumber.sendKeys(admNumber);
-			log("Entered Roll Number: " + admNumber + " to filter records and object is:- "
+			filter_RollNumber.sendKeys(rollNumber);
+			log("Entered Roll Number: " + rollNumber + " to filter records and object is:- "
 					+ filter_RollNumber.toString());
 			Thread.sleep(1000);
 		} else {

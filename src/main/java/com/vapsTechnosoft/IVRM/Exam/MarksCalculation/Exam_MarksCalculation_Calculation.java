@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Exam.MarksCalculation;
 
+import static org.testng.Assert.assertEquals;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -202,8 +204,9 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 	public void submit_MarksCalculation_CalculationForm() throws Exception {
 		if (btn_CalculationSubmit.isDisplayed()) {
 			btn_CalculationSubmit.click();
+			waitForElement(driver, btnOKSuccess, 30);
 			log("Submit Calculation form and object is:-" + btn_CalculationSubmit.toString());
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		} else {
 			log("Calculation button element not present and object is:-" + btn_CalculationSubmit.toString());
 			Thread.sleep(500);
@@ -217,6 +220,7 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
 		if (btnOKSuccess.isDisplayed()) {
+			assertEquals("OK", btnOKSuccess.getText().trim());
 			btnOKSuccess.click();
 			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
 			Thread.sleep(3000);
