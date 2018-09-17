@@ -63,19 +63,19 @@ public class Exam_Subject_Wizard extends TestBase {
 	@FindBy(xpath = "(//label[contains(text(),'Attendance From :')]/following-sibling::div//child::button)[1]")
 	private WebElement btn_FromCalender;
 
-	@FindBy(xpath = "//span[contains(text(),'May 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
 	private WebElement btn_MonthYear_From;
 
-	@FindBy(xpath = "//span[contains(text(),'May 2018')]/following::td[3]")
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]/following::td[1]")
 	private WebElement btn_Date_From;
 
 	@FindBy(xpath = "(//label[contains(text(),'Attendance To :')]/following-sibling::div//child::button)[1]")
 	private WebElement btn_ToCalender;
 
-	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
 	private WebElement btn_MonthYear_To;
 
-	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]/following::td[20]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[19]")
 	private WebElement btn_Date_To;
 
 	@FindBy(xpath = "//input[@name='fhcbx']")
@@ -229,7 +229,10 @@ public class Exam_Subject_Wizard extends TestBase {
 	private WebElement btn_Edit;
 
 	@FindBy(xpath = "//div[@class='ui-grid-canvas']/div[1]//div[10]/div/span/a")
-	private WebElement btn_DeactivateOrActivate;
+	private WebElement btn_Deactivate;
+
+	@FindBy(xpath = "//div[@class='ui-grid-canvas']/div[1]//div[10]/div/a[3]")
+	private WebElement btn_Activate;
 
 	@FindBy(xpath = "(//button[text()='Close'])[6]")
 	private WebElement btn_View_ClosePopUp;
@@ -361,18 +364,17 @@ public class Exam_Subject_Wizard extends TestBase {
 	private WebElement btn_Close_SubSubjectWindow;
 	//
 
-//	@FindBy(xpath = "//button[@class='confirm' and text()='OK']")
-//	private WebElement btn_SucsessOkHandle;
+	// @FindBy(xpath = "//button[@class='confirm' and text()='OK']")
+	// private WebElement btn_SucsessOkHandle;
 
 	@FindBy(xpath = "//button[text()='No, Change Selection!']")
 	private WebElement btn_ChangeSelection;
 
 	@FindBy(xpath = "//button[text()='Yes, Delete Selection!']")
 	private WebElement btn_DeleteSelection;
-	
+
 	@FindBy(xpath = "//button[text()=' cat, Change Selection!']")
 	private WebElement btn_ChangeSelection_subSubject;
-	
 
 	public Exam_Subject_Wizard(WebDriver driver) {
 		this.driver = driver;
@@ -457,8 +459,10 @@ public class Exam_Subject_Wizard extends TestBase {
 	 * @throws Exception
 	 */
 	public void fill_ExamSubjectWizard_Form(String academicYear, String grade, String category) throws Exception {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-		Thread.sleep(500);
+		// ((JavascriptExecutor)
+		// driver).executeScript("arguments[0].scrollIntoView(true);",
+		// btn_MonthYear_From);
+		// Thread.sleep(500);
 		if (sel_AcademicYear.isDisplayed()) {
 
 			select = new Select(sel_AcademicYear);
@@ -513,9 +517,9 @@ public class Exam_Subject_Wizard extends TestBase {
 
 		if (btn_FromCalender.isDisplayed()) {
 			btn_FromCalender.click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-			Thread.sleep(500);
+			Thread.sleep(2000);
 			btn_Date_From.click();
 			log("From date is selected from calender.");
 			Thread.sleep(1000);
@@ -526,9 +530,9 @@ public class Exam_Subject_Wizard extends TestBase {
 
 		if (btn_ToCalender.isDisplayed()) {
 			btn_ToCalender.click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
-			Thread.sleep(500);
+			Thread.sleep(2000);
 			btn_Date_To.click();
 			log("To date is selected from calender.");
 			Thread.sleep(1000);
@@ -735,8 +739,7 @@ public class Exam_Subject_Wizard extends TestBase {
 	}
 
 	/**
-	 * Fill Exam Subject Wizard Form,selecting sub-Exam and sub-Subject
-	 * applicable
+	 * Fill Exam Subject Wizard Form,selecting sub-Exam and sub-Subject applicable
 	 * 
 	 * @param academicYear
 	 * @param grade
@@ -887,8 +890,8 @@ public class Exam_Subject_Wizard extends TestBase {
 	}
 
 	/**
-	 * click on OK button after Saving, Cancel Pop Up, Activation and
-	 * De-activation of the record
+	 * click on OK button after Saving, Cancel Pop Up, Activation and De-activation
+	 * of the record
 	 * 
 	 * @throws Exception
 	 */
@@ -991,6 +994,7 @@ public class Exam_Subject_Wizard extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	public void filterRecordsBasedOn_ExamName(String academicYear, String categoryName, String gradeName,
 			String examName) throws Exception {
 		if (input_ExamName.isDisplayed()) {
@@ -1034,7 +1038,7 @@ public class Exam_Subject_Wizard extends TestBase {
 		if (btn_Edit.isDisplayed()) {
 			btn_Edit.click();
 			log("Clicked on Edit Icon to update Exam subject wizard and object is:-" + btn_Edit.toString());
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} else {
 			log("Edit Icon element is not present.");
 			Thread.sleep(500);
@@ -1043,40 +1047,39 @@ public class Exam_Subject_Wizard extends TestBase {
 
 	public void clickOnDeActivationIcon_ToDeactivateExamSubjectWizard() throws Exception {
 
-		if (btn_DeactivateOrActivate.isDisplayed()) {
+		if (btn_Deactivate.isDisplayed()) {
 
-			String DeactivateText = btn_DeactivateOrActivate.getAttribute("aria-label");
+			String DeactivateText = btn_Deactivate.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + DeactivateText);
 
 			// Compare toll tip text
 			Assert.assertEquals(DeactivateText, "Deactivate Now");
 
-			btn_DeactivateOrActivate.click();
+			btn_Deactivate.click();
 			log("Clicked on Deacivate Icon to Deactivate Exam Subject Wizard and object is:-"
-					+ btn_DeactivateOrActivate.toString());
+					+ btn_Deactivate.toString());
 			Thread.sleep(1000);
 		} else {
-			log("Deactivate Icon element is not present.");
+			log("Deactivate Icon element is not present and object is:-"+ btn_Deactivate.toString());
 			Thread.sleep(500);
 		}
 	}
 
 	public void clickOnActivationIcon_ToActivateExamSubjectWizard() throws Exception {
 
-		if (btn_DeactivateOrActivate.isDisplayed()) {
+		if (btn_Activate.isDisplayed()) {
 
-			String ActivateText = btn_DeactivateOrActivate.getAttribute("aria-label");
+			String ActivateText = btn_Activate.getAttribute("aria-label");
 			System.out.println("Tool tip text present(Activate) :- " + ActivateText);
 
 			// Compare tool tip text
 			Assert.assertEquals(ActivateText, "Activate Now");
 
-			btn_DeactivateOrActivate.click();
-			log("Clicked on Activate Icon to Activate Exam Subject Wizard and object is:-"
-					+ btn_DeactivateOrActivate.toString());
+			btn_Activate.click();
+			log("Clicked on Activate Icon to Activate Exam Subject Wizard and object is:-"+ btn_Activate.toString());
 			Thread.sleep(1000);
 		} else {
-			log("Activate Icon element is not present.");
+			log("Activate Icon element is not present and object is:-"+ btn_Activate.toString());
 			Thread.sleep(500);
 		}
 	}
@@ -1857,24 +1860,25 @@ public class Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-//	public void clickOnOkForSuccessPopUpHandle() throws Exception {
-//	//	btn_SucsessOkHandle.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
-//		if (btn_SucsessOkHandle.isDisplayed()) {
-//			//btn_SucsessOkHandle.click();
-//			JavascriptExecutor executor = (JavascriptExecutor) driver;
-//			executor.executeScript("arguments[0].click();", btn_SucsessOkHandle);
-//			log("Clicked on Ok button to success message handle and object is:- " + btn_SucsessOkHandle.toString());
-//			Thread.sleep(2000);
-//		} else {
-//			log("Sucsess Ok button element not present.");
-//			Thread.sleep(500);
-//		}
-//	}
+	// public void clickOnOkForSuccessPopUpHandle() throws Exception {
+	// // btn_SucsessOkHandle.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
+	// if (btn_SucsessOkHandle.isDisplayed()) {
+	// //btn_SucsessOkHandle.click();
+	// JavascriptExecutor executor = (JavascriptExecutor) driver;
+	// executor.executeScript("arguments[0].click();", btn_SucsessOkHandle);
+	// log("Clicked on Ok button to success message handle and object is:- " +
+	// btn_SucsessOkHandle.toString());
+	// Thread.sleep(2000);
+	// } else {
+	// log("Sucsess Ok button element not present.");
+	// Thread.sleep(500);
+	// }
+	// }
 
 	public void clickOnChangeSelection_ToChangeSubExamMappedSubject() throws Exception {
 
 		if (btn_ChangeSelection.isDisplayed()) {
-			//btn_ChangeSelection.click();
+			// btn_ChangeSelection.click();
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", btn_ChangeSelection);
 			log("Clicked on NO CHANGE SELECTION button to launch sub exam subject mapping window and object is:- "
@@ -1889,10 +1893,10 @@ public class Exam_Subject_Wizard extends TestBase {
 	public void clickOnDeleteSelection_ToDeleteSubExamMappedSubject() throws Exception {
 
 		if (btn_DeleteSelection.isDisplayed()) {
-			//btn_DeleteSelection.click();
+			// btn_DeleteSelection.click();
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", btn_DeleteSelection);
-		
+
 			log("Clicked on YES DELETE SELECTION button to delete mapped subject for sub exam and object is:- "
 					+ btn_DeleteSelection.toString());
 			Thread.sleep(500);
@@ -1901,260 +1905,260 @@ public class Exam_Subject_Wizard extends TestBase {
 			Thread.sleep(500);
 		}
 	}
-	
+
 	//
 	// Sub Subject Check box operation
 
-		public void launchSubSubject_SubjectMappingwindow_Sub1() throws Exception {
-			if (!chk_subSubject_Sub1.isSelected()) {
-				chk_subSubject_Sub1.click();
-				log("Sub Subject check box is checked for subject 1 & Sub-Subject subject mapping window appered and object is:- "
-						+ chk_subSubject_Sub1.toString());
-				Thread.sleep(2000);
-			} else {
-				log("Sub Subject check box is already checked for subject 1");
-				Thread.sleep(500);
-			}
+	public void launchSubSubject_SubjectMappingwindow_Sub1() throws Exception {
+		if (!chk_subSubject_Sub1.isSelected()) {
+			chk_subSubject_Sub1.click();
+			log("Sub Subject check box is checked for subject 1 & Sub-Subject subject mapping window appered and object is:- "
+					+ chk_subSubject_Sub1.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sub Subject check box is already checked for subject 1");
+			Thread.sleep(500);
 		}
+	}
 
-		public void changeInSelectionAndDeleteSubSubjectMapped_Sub1() throws Exception {
-			if (chk_subSubject_Sub1.isSelected()) {
-				chk_subSubject_Sub1.click();
-				log("Clicked on checked check box for Delete and Change in Selection for sub-subject subject 1 mapping and object is:- "
-						+ chk_subSubject_Sub1.toString());
-				Thread.sleep(2000);
-			} else {
-				log("Sub Subject check box is not checked for subject 1");
-				Thread.sleep(500);
-			}
+	public void changeInSelectionAndDeleteSubSubjectMapped_Sub1() throws Exception {
+		if (chk_subSubject_Sub1.isSelected()) {
+			chk_subSubject_Sub1.click();
+			log("Clicked on checked check box for Delete and Change in Selection for sub-subject subject 1 mapping and object is:- "
+					+ chk_subSubject_Sub1.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sub Subject check box is not checked for subject 1");
+			Thread.sleep(500);
 		}
+	}
 
-		public void launchSubSubject_SubjectMappingwindow_Sub2() throws Exception {
-			if (!chk_subSubject_Sub2.isSelected()) {
-				chk_subSubject_Sub2.click();
-				log("Sub Subject check box is checked for subject 2 & Sub Subject subject mapping window appered and object is:- "
-						+ chk_subSubject_Sub2.toString());
-				Thread.sleep(2000);
-			} else {
-				log("Sub Subject check box is already checked for subject 2");
-				Thread.sleep(500);
-			}
+	public void launchSubSubject_SubjectMappingwindow_Sub2() throws Exception {
+		if (!chk_subSubject_Sub2.isSelected()) {
+			chk_subSubject_Sub2.click();
+			log("Sub Subject check box is checked for subject 2 & Sub Subject subject mapping window appered and object is:- "
+					+ chk_subSubject_Sub2.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sub Subject check box is already checked for subject 2");
+			Thread.sleep(500);
 		}
+	}
 
-		public void changeInSelectionAndDeleteSubSubjectMapped_Sub2() throws Exception {
-			if (chk_subSubject_Sub2.isSelected()) {
-				chk_subSubject_Sub2.click();
-				log("Clicked on checked check box for Delete and Change in Selection for sub-Subject subject 2 mapping and object is:- "
-						+ chk_subSubject_Sub2.toString());
-				Thread.sleep(2000);
-			} else {
-				log("Sub Subject check box is not checked for subject 2");
-				Thread.sleep(500);
-			}
+	public void changeInSelectionAndDeleteSubSubjectMapped_Sub2() throws Exception {
+		if (chk_subSubject_Sub2.isSelected()) {
+			chk_subSubject_Sub2.click();
+			log("Clicked on checked check box for Delete and Change in Selection for sub-Subject subject 2 mapping and object is:- "
+					+ chk_subSubject_Sub2.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sub Subject check box is not checked for subject 2");
+			Thread.sleep(500);
 		}
+	}
 
-		public void launchSubSubject_SubjectMappingwindow_Sub3() throws Exception {
-			if (!chk_subSubject_Sub3.isSelected()) {
-				chk_subSubject_Sub3.click();
-				log("Sub Subject check box is checked for subject 3 & Sub-Subject subject mapping window appered and object is:- "
-						+ chk_subSubject_Sub3.toString());
-				Thread.sleep(2000);
-			} else {
-				log("Sub Subject check box is already checked for subject 3");
-				Thread.sleep(500);
-			}
+	public void launchSubSubject_SubjectMappingwindow_Sub3() throws Exception {
+		if (!chk_subSubject_Sub3.isSelected()) {
+			chk_subSubject_Sub3.click();
+			log("Sub Subject check box is checked for subject 3 & Sub-Subject subject mapping window appered and object is:- "
+					+ chk_subSubject_Sub3.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sub Subject check box is already checked for subject 3");
+			Thread.sleep(500);
 		}
+	}
 
-		public void changeInSelectionAndDeleteSubSubjectMapped_Sub3() throws Exception {
-			if (chk_subSubject_Sub3.isSelected()) {
-				chk_subSubject_Sub3.click();
-				log("Clicked on checked check box for Delete and Change in Selection for sub-Subject subject 3 mapping and object is:- "
-						+ chk_subSubject_Sub3.toString());
-				Thread.sleep(2000);
-			} else {
-				log("Sub Subject check box is not checked for subject 3");
-				Thread.sleep(500);
-			}
+	public void changeInSelectionAndDeleteSubSubjectMapped_Sub3() throws Exception {
+		if (chk_subSubject_Sub3.isSelected()) {
+			chk_subSubject_Sub3.click();
+			log("Clicked on checked check box for Delete and Change in Selection for sub-Subject subject 3 mapping and object is:- "
+					+ chk_subSubject_Sub3.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Sub Subject check box is not checked for subject 3");
+			Thread.sleep(500);
 		}
+	}
 
-		public void enterDataForSubSubjectMapping_Sub1(String maxMarks_subSubjectSub1, String minMarks_subSubjectSub1,
-				String grade_subSubjectSub1, String exemptedPercentage_subSubjectSub1) throws Exception {
-			if (!chk_subSubjectMapPopUpWin_Sub1.isSelected()) {
-				chk_subSubjectMapPopUpWin_Sub1.click();
-				log("Subject 1 is slected for sub-Subject mapping and object is:- " + chk_subSubjectMapPopUpWin_Sub1.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Subject 1 is already selected for sub Subject mapping");
-				Thread.sleep(500);
-			}
-			if (input_maxMarksSubSubjectPopUpWin_Sub1.isDisplayed()) {
-				input_maxMarksSubSubjectPopUpWin_Sub1.clear();
-				input_maxMarksSubSubjectPopUpWin_Sub1.sendKeys(maxMarks_subSubjectSub1);
-				log("Entered maximum marks for sub-Subject subject 1: " + exemptedPercentage_subSubjectSub1 + " and object is:- "
-						+ input_maxMarksSubSubjectPopUpWin_Sub1.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Sub Subject max marks subject 1 field element not present.");
-				Thread.sleep(500);
-			}
-			if (input_minMarksSubSubjectPopUpWin_Sub1.isDisplayed()) {
-				input_minMarksSubSubjectPopUpWin_Sub1.clear();
-				input_minMarksSubSubjectPopUpWin_Sub1.sendKeys(minMarks_subSubjectSub1);
-				log("Entered minimum marks for sub-Subject subject 1: " + exemptedPercentage_subSubjectSub1 + " and object is:- "
-						+ input_minMarksSubSubjectPopUpWin_Sub1.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Sub Subject min marks field subject 1 element not present.");
-				Thread.sleep(500);
-			}
-			if (sel_gradeSubSubjectPopUpWin_Sub1.isDisplayed()) {
-
-				select = new Select(sel_gradeSubSubjectPopUpWin_Sub1);
-				select.selectByVisibleText(grade_subSubjectSub1);
-
-				log("Selected Garde: " + grade_subSubjectSub1 + " and object is:- "
-						+ sel_gradeSubSubjectPopUpWin_Sub1.toString());
-				option = select.getFirstSelectedOption();
-				Assert.assertEquals(option.getText().trim(), grade_subSubjectSub1);
-				Thread.sleep(1000);
-			} else {
-				log("Grade element sub-Subject subject 1  is not present");
-				Thread.sleep(500);
-			}
-			if (!chk_ExemptedFlagsubSubjectPopUpWin_Sub1.isSelected()) {
-				chk_ExemptedFlagsubSubjectPopUpWin_Sub1.click();
-				log("Subject 1 Exempted flag is slected for sub Subject mapping and object is:- "
-						+ chk_ExemptedFlagsubSubjectPopUpWin_Sub1.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Subject 1 Exempted flag is already selected for sub Subject mapping");
-				Thread.sleep(500);
-			}
-			if (input_ExemptedPercentagesubSubjectPopUpWin_Sub1.isDisplayed()) {
-				input_ExemptedPercentagesubSubjectPopUpWin_Sub1.clear();
-				input_ExemptedPercentagesubSubjectPopUpWin_Sub1.sendKeys(exemptedPercentage_subSubjectSub1);
-				log("Entered Exempted percentage for sub-Subject subject 1 " + exemptedPercentage_subSubjectSub1
-						+ " and object is:- " + input_ExemptedPercentagesubSubjectPopUpWin_Sub1.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Sub Subject Exempted percentage field subject 1 element not present.");
-				Thread.sleep(500);
-			}
+	public void enterDataForSubSubjectMapping_Sub1(String maxMarks_subSubjectSub1, String minMarks_subSubjectSub1,
+			String grade_subSubjectSub1, String exemptedPercentage_subSubjectSub1) throws Exception {
+		if (!chk_subSubjectMapPopUpWin_Sub1.isSelected()) {
+			chk_subSubjectMapPopUpWin_Sub1.click();
+			log("Subject 1 is slected for sub-Subject mapping and object is:- "
+					+ chk_subSubjectMapPopUpWin_Sub1.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Subject 1 is already selected for sub Subject mapping");
+			Thread.sleep(500);
 		}
-
-	
-
-		public void clickOnAddAndClose_ToSubmitSubSubjectMapping() throws Exception {
-			if (btn_AddAndClose_SubSubjectWindow.isDisplayed()) {
-				btn_AddAndClose_SubSubjectWindow.click();
-				log("Clicked on Add&Close and sub Subject mapping window is closed and object is:- "
-						+ btn_AddAndClose_SubSubjectWindow.toString());
-				Thread.sleep(3000);
-			} else {
-				log("Add&Close button sub Subject is not present.");
-				Thread.sleep(500);
-			}
+		if (input_maxMarksSubSubjectPopUpWin_Sub1.isDisplayed()) {
+			input_maxMarksSubSubjectPopUpWin_Sub1.clear();
+			input_maxMarksSubSubjectPopUpWin_Sub1.sendKeys(maxMarks_subSubjectSub1);
+			log("Entered maximum marks for sub-Subject subject 1: " + exemptedPercentage_subSubjectSub1
+					+ " and object is:- " + input_maxMarksSubSubjectPopUpWin_Sub1.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Sub Subject max marks subject 1 field element not present.");
+			Thread.sleep(500);
 		}
-
-		public void clickOnCancel_ToClearFilled_SubSubjectData() throws Exception {
-			if (btn_Cancel_SubSubjectWindow.isDisplayed()) {
-				btn_Cancel_SubSubjectWindow.click();
-				log("Clicked on Cancel to clear filled data and object is:- " + btn_Cancel_SubSubjectWindow.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Cancel button sub Subject window is not present.");
-				Thread.sleep(500);
-			}
+		if (input_minMarksSubSubjectPopUpWin_Sub1.isDisplayed()) {
+			input_minMarksSubSubjectPopUpWin_Sub1.clear();
+			input_minMarksSubSubjectPopUpWin_Sub1.sendKeys(minMarks_subSubjectSub1);
+			log("Entered minimum marks for sub-Subject subject 1: " + exemptedPercentage_subSubjectSub1
+					+ " and object is:- " + input_minMarksSubSubjectPopUpWin_Sub1.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Sub Subject min marks field subject 1 element not present.");
+			Thread.sleep(500);
 		}
+		if (sel_gradeSubSubjectPopUpWin_Sub1.isDisplayed()) {
 
-		public void clickOnClose_TocloseWindow_SubSubjectData() throws Exception {
-			if (btn_Close_SubSubjectWindow.isDisplayed()) {
-				btn_Close_SubSubjectWindow.click();
-				log("Clicked on Close to close sub Subject window and object is:- " + btn_Close_SubSubjectWindow.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Close button sub Subject window is not present.");
-				Thread.sleep(500);
-			}
+			select = new Select(sel_gradeSubSubjectPopUpWin_Sub1);
+			select.selectByVisibleText(grade_subSubjectSub1);
+
+			log("Selected Garde: " + grade_subSubjectSub1 + " and object is:- "
+					+ sel_gradeSubSubjectPopUpWin_Sub1.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), grade_subSubjectSub1);
+			Thread.sleep(1000);
+		} else {
+			log("Grade element sub-Subject subject 1  is not present");
+			Thread.sleep(500);
 		}
-
-		// Set Order sub Exam
-
-		public void clickOnSetorder_subSubjectMapping() throws Exception {
-			if (btn_SetOrder_SubSubjectWindow.isDisplayed()) {
-				btn_SetOrder_SubSubjectWindow.click();
-				log("Sub Subject mapping set order window apper and object is:- " + btn_SetOrder_SubSubjectWindow.toString());
-				Thread.sleep(2000);
-			} else {
-				log("Set order sub Subject window not present.");
-				Thread.sleep(500);
-			}
+		if (!chk_ExemptedFlagsubSubjectPopUpWin_Sub1.isSelected()) {
+			chk_ExemptedFlagsubSubjectPopUpWin_Sub1.click();
+			log("Subject 1 Exempted flag is slected for sub Subject mapping and object is:- "
+					+ chk_ExemptedFlagsubSubjectPopUpWin_Sub1.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Subject 1 Exempted flag is already selected for sub Subject mapping");
+			Thread.sleep(500);
 		}
-
-		public void setOrderForSubSubjectMapping_dragAndDrop() {
-
-			builder = new Actions(driver);
-
-			dragAndDrop = builder.clickAndHold(btn_SetOrder_Source).moveToElement(btn_SetOrder_Destination)
-					.release(btn_SetOrder_Destination).build();
-			dragAndDrop.perform();
-			log("Drag and drop to set order sub Subject.");
-
+		if (input_ExemptedPercentagesubSubjectPopUpWin_Sub1.isDisplayed()) {
+			input_ExemptedPercentagesubSubjectPopUpWin_Sub1.clear();
+			input_ExemptedPercentagesubSubjectPopUpWin_Sub1.sendKeys(exemptedPercentage_subSubjectSub1);
+			log("Entered Exempted percentage for sub-Subject subject 1 " + exemptedPercentage_subSubjectSub1
+					+ " and object is:- " + input_ExemptedPercentagesubSubjectPopUpWin_Sub1.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Sub Subject Exempted percentage field subject 1 element not present.");
+			Thread.sleep(500);
 		}
+	}
 
-		public void clickOnSetOrder_Save_TosetOrder_SubSubject() throws Exception {
-			if (btn_SetOrder_Save_subExam.isDisplayed()) {
-				btn_SetOrder_Save_subExam.click();
-				log("Clicked on save sub Subject set order window to set order and object is:- "
-						+ btn_SetOrder_Save_subExam.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Save button set order sub Subject window is not present.");
-				Thread.sleep(500);
-			}
+	public void clickOnAddAndClose_ToSubmitSubSubjectMapping() throws Exception {
+		if (btn_AddAndClose_SubSubjectWindow.isDisplayed()) {
+			btn_AddAndClose_SubSubjectWindow.click();
+			log("Clicked on Add&Close and sub Subject mapping window is closed and object is:- "
+					+ btn_AddAndClose_SubSubjectWindow.toString());
+			Thread.sleep(3000);
+		} else {
+			log("Add&Close button sub Subject is not present.");
+			Thread.sleep(500);
 		}
+	}
 
-		public void clickOnClose_TocloseSetOrder_SubSubjectWindows() throws Exception {
-			if (btn_SetOrder_Close_subExam.isDisplayed()) {
-				btn_SetOrder_Close_subExam.click();
-				log("Clicked on Close to close set order sub-Subject window and object is:- "
-						+ btn_SetOrder_Close_subExam.toString());
-				Thread.sleep(1000);
-			} else {
-				log("Close button set order sub Subject window is not present.");
-				Thread.sleep(500);
-			}
+	public void clickOnCancel_ToClearFilled_SubSubjectData() throws Exception {
+		if (btn_Cancel_SubSubjectWindow.isDisplayed()) {
+			btn_Cancel_SubSubjectWindow.click();
+			log("Clicked on Cancel to clear filled data and object is:- " + btn_Cancel_SubSubjectWindow.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Cancel button sub Subject window is not present.");
+			Thread.sleep(500);
 		}
+	}
 
-
-		public void clickOnChangeSelection_ToChangeSubSubjectMappedSubject() throws Exception {
-
-			if (btn_ChangeSelection_subSubject.isDisplayed()) {
-				//btn_ChangeSelection.click();
-				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				executor.executeScript("arguments[0].click();", btn_ChangeSelection_subSubject);
-				log("Clicked on NO CHANGE SELECTION button to launch sub-Subject subject mapping window and object is:- "
-						+ btn_ChangeSelection_subSubject.toString());
-				Thread.sleep(500);
-			} else {
-				log("NO CHANGE SELECTION button element not present.");
-				Thread.sleep(500);
-			}
+	public void clickOnClose_TocloseWindow_SubSubjectData() throws Exception {
+		if (btn_Close_SubSubjectWindow.isDisplayed()) {
+			btn_Close_SubSubjectWindow.click();
+			log("Clicked on Close to close sub Subject window and object is:- "
+					+ btn_Close_SubSubjectWindow.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Close button sub Subject window is not present.");
+			Thread.sleep(500);
 		}
+	}
 
-		public void clickOnDeleteSelection_ToDeleteSubSubjectMappedSubject() throws Exception {
+	// Set Order sub Exam
 
-			if (btn_DeleteSelection.isDisplayed()) {
-				//btn_DeleteSelection.click();
-				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				executor.executeScript("arguments[0].click();", btn_DeleteSelection);
-			
-				log("Clicked on YES DELETE SELECTION button to delete mapped subject for sub Subject and object is:- "
-						+ btn_DeleteSelection.toString());
-				Thread.sleep(500);
-			} else {
-				log("YES DELETE SELECTION button element not present.");
-				Thread.sleep(500);
-			}
+	public void clickOnSetorder_subSubjectMapping() throws Exception {
+		if (btn_SetOrder_SubSubjectWindow.isDisplayed()) {
+			btn_SetOrder_SubSubjectWindow.click();
+			log("Sub Subject mapping set order window apper and object is:- "
+					+ btn_SetOrder_SubSubjectWindow.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Set order sub Subject window not present.");
+			Thread.sleep(500);
 		}
+	}
+
+	public void setOrderForSubSubjectMapping_dragAndDrop() {
+
+		builder = new Actions(driver);
+
+		dragAndDrop = builder.clickAndHold(btn_SetOrder_Source).moveToElement(btn_SetOrder_Destination)
+				.release(btn_SetOrder_Destination).build();
+		dragAndDrop.perform();
+		log("Drag and drop to set order sub Subject.");
+
+	}
+
+	public void clickOnSetOrder_Save_TosetOrder_SubSubject() throws Exception {
+		if (btn_SetOrder_Save_subExam.isDisplayed()) {
+			btn_SetOrder_Save_subExam.click();
+			log("Clicked on save sub Subject set order window to set order and object is:- "
+					+ btn_SetOrder_Save_subExam.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Save button set order sub Subject window is not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnClose_TocloseSetOrder_SubSubjectWindows() throws Exception {
+		if (btn_SetOrder_Close_subExam.isDisplayed()) {
+			btn_SetOrder_Close_subExam.click();
+			log("Clicked on Close to close set order sub-Subject window and object is:- "
+					+ btn_SetOrder_Close_subExam.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Close button set order sub Subject window is not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnChangeSelection_ToChangeSubSubjectMappedSubject() throws Exception {
+
+		if (btn_ChangeSelection_subSubject.isDisplayed()) {
+			// btn_ChangeSelection.click();
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", btn_ChangeSelection_subSubject);
+			log("Clicked on NO CHANGE SELECTION button to launch sub-Subject subject mapping window and object is:- "
+					+ btn_ChangeSelection_subSubject.toString());
+			Thread.sleep(2000);
+		} else {
+			log("NO CHANGE SELECTION button element not present.");
+			Thread.sleep(500);
+		}
+	}
+
+	public void clickOnDeleteSelection_ToDeleteSubSubjectMappedSubject() throws Exception {
+
+		if (btn_DeleteSelection.isDisplayed()) {
+			// btn_DeleteSelection.click();
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", btn_DeleteSelection);
+
+			log("Clicked on YES DELETE SELECTION button to delete mapped subject for sub Subject and object is:- "
+					+ btn_DeleteSelection.toString());
+			Thread.sleep(2000);
+		} else {
+			log("YES DELETE SELECTION button element not present.");
+			Thread.sleep(500);
+		}
+	}
 }

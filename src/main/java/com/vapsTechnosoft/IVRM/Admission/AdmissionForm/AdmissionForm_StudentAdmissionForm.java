@@ -82,19 +82,19 @@ public class AdmissionForm_StudentAdmissionForm extends TestBase {
 	@FindBy(xpath = "//div[@class='box-tools pull-right']/label/input")
 	WebElement chk_ReAdmit;
 
-	@FindBy(xpath = "(//label[@class='custom-file-input file-blue'])[1]")
+	@FindBy(xpath = "//input[@name='stufile']/parent::label")
 	WebElement btn_BrowseImg;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[1]")
+	@FindBy(xpath = "//label[text()='Student Name:']/following-sibling::div/input")
 	WebElement input_FirstName;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[2]")
+	@FindBy(xpath = "//input[@id='usr' and @name='middlenam']")
 	WebElement input_MiddleName;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[3]")
+	@FindBy(xpath = "(//input[@id='usr' and @name='lname']")
 	WebElement input_LastName;
 
-	@FindBy(xpath = "(//label[contains(text(),'Admission No:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Admission No:')]/following-sibling::div/input")
 	WebElement input_AdmNumber;
 
 	@FindBy(xpath = "(//label[contains(text(),'Academic Year:')]/following-sibling::div/select)[1]")
@@ -106,46 +106,46 @@ public class AdmissionForm_StudentAdmissionForm extends TestBase {
 	@FindBy(xpath = "(//div[@class='md-datepicker-input-container'])[1]")
 	WebElement input_DateOfAdm;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[6]")
+	@FindBy(xpath = "(//body[@id='style-4']//div/input)[7]")
 	WebElement input_DateOfBirth;
 
-	@FindBy(xpath = "(//label[contains(text(),'DOB in Words:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//label[contains(text(),'DOB in Words:')]/following-sibling::div/input")
 	WebElement input_DateOfBirth_InWord;
 
-	@FindBy(xpath = "(//label[contains(text(),'Caste Category:')]/following-sibling::div/select)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Caste Category:')]/following-sibling::div/select")
 	WebElement sel_CasteCategory;
 
-	@FindBy(xpath = "(//label[contains(text(),'Caste:')]/following-sibling::div/select)[1]")
+	@FindBy(xpath = "//label[text()='Class:']/following-sibling::div/select")
 	WebElement sel_Caste;
 
-	@FindBy(xpath = "(//label[contains(text(),'Sub Caste:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//input[@id='sub' and @name='subcaste']")
 	WebElement input_SubCaste;
 
-	@FindBy(xpath = "(//label[contains(text(),'Bank IFSC Code:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//input[@id='usr' and @name='stubifsc']")
 	WebElement input_Bank_IFSCCode;
 
-	@FindBy(xpath = "(//label[contains(text(),'Student Birth Place:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//input[@id='usr' and @name='stubplace']")
 	WebElement input_Student_BirthPlace;
 
-	@FindBy(xpath = "(//label[contains(text(),'Birth Certificate No.:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Birth Certificate No.:')]/following-sibling::div/input")
 	WebElement input_BirthCertNumber;
 
-	@FindBy(xpath = "(//label[contains(text(),'Caste Certificate No.:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Caste Certificate No.:')]/following-sibling::div/input")
 	WebElement input_Caste_CertNumber;
 
 	@FindBy(xpath = "(//label[contains(text(),'Age:')]/following-sibling::div/input)[1]")
 	WebElement input_Age;
 
-	@FindBy(xpath = "(//label[contains(text(),'Gender:')]/following-sibling::div/select)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Gender:')]/following-sibling::div/select")
 	WebElement sel_Gender;
 
-	@FindBy(xpath = "(//label[contains(text(),'Mother Tongue:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Mother Tongue:')]/following-sibling::div/input")
 	WebElement input_MotherTongue;
 
 	@FindBy(xpath = "(//label[contains(text(),'Religion:')]/following-sibling::div/select)[1]")
 	WebElement sel_Religion;
 
-	@FindBy(xpath = "(//label[contains(text(),'Nationality:')]/following-sibling::div/select)[1]")
+	@FindBy(xpath = "//select[@id='sel1' and @name='stunat']")
 	WebElement sel_Nationality;
 
 	@FindBy(xpath = "(//label[contains(text(),'Mobile Number:')]/following-sibling::div/input)[1]")
@@ -169,13 +169,13 @@ public class AdmissionForm_StudentAdmissionForm extends TestBase {
 	@FindBy(xpath = "//div[@class='form-group']/label/input")
 	WebElement chk_BPLCardNo;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[19]")
+	@FindBy(xpath = "//input[@id='usr' and @name='bplcard']")
 	WebElement input_BPLCardNo;
 
-	@FindBy(xpath = "(//label[contains(text(),'Fee Concession Type:')]/following-sibling::div/select)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Fee Concession Type:')]/following-sibling::div/select")
 	WebElement sel_FeeConcessionType;
 
-	@FindBy(xpath = "(//label[contains(text(),'Student TPIN:')]/following-sibling::div/input)[1]")
+	@FindBy(xpath = "//label[contains(text(),'Student TPIN:')]/following-sibling::div/input")
 	WebElement input_Student_TPIN;
 
 	@FindBy(xpath = "//select[@id='sel1223']")

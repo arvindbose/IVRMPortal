@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -185,7 +186,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 		try {
 			log.info("============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info("============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise Test===========");
 			getScreenShot("tcSelectRecordToGenerateReport_YearlyGroupWise");
@@ -367,7 +368,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_AfterClearingFilledData Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_AfterClearingFilledData Test===========");
@@ -454,7 +455,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_ForDeactiveStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_ForDeactiveStudent Test===========");
@@ -541,7 +542,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_ForLeftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_ForLeftStudent Test===========");
@@ -633,7 +634,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_ForActive_Deactive_leftStudent Test===========");
@@ -729,7 +730,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -822,7 +823,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 		try {
 			log.info("============= Strting tcSelectRecordToGenerateReport_YearlyFeeHeadWise_Active Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info("============= Finished tcSelectRecordToGenerateReport_YearlyFeeHeadWise_Active Test===========");
 			getScreenShot("tcSelectRecordToGenerateReport_YearlyFeeHeadWise_Active");
@@ -908,7 +909,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyHeadWise_ForDeactiveStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyHeadWise_ForDeactiveStudent Test===========");
@@ -995,7 +996,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyHeadWise_ForLeftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyHeadWise_ForLeftStudent Test===========");
@@ -1085,7 +1086,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyHeadWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyHeadWise_ForActive_Deactive_leftStudent Test===========");
@@ -1179,7 +1180,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyHeadWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyHeadWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -1271,7 +1272,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 		try {
 			log.info("============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_Active Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info("============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_Active Test===========");
 			getScreenShot("tcSelectRecordToGenerateReport_YearlyClassWise_Active");
@@ -1357,7 +1358,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_ForDeactiveStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_ForDeactiveStudent Test===========");
@@ -1444,7 +1445,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_ForLeftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_ForLeftStudent Test===========");
@@ -1534,7 +1535,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_ForActive_Deactive_leftStudent Test===========");
@@ -1628,7 +1629,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -1677,452 +1678,452 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 	 * Student Wise(Yearly Wise)
 	 */
 	
-	@Test(priority = 92, dataProvider = "Reports_YearlyFeeCollectionReportData")
-	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent(String academicYear,
-			String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info(
-					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent Test===========");
-
-			yarlyfeecollectionreport
-					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent(academicYear);
-
-			log.info(
-					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent Test===========");
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent");
-		} catch (Exception e) {
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent");
-		}
-	}
-
-	@Test(priority = 93)
-	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active() {
-
-		try {
-			log.info(
-					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active Test===========");
-
-			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
-
-			log.info(
-					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active Test===========");
-			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active");
-		} catch (Exception e) {
-			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active");
-		}
-	}
-
-	@Test(priority = 94)
-	public void tcSelectRecordToGenerateReport_YearlyStudentWise_Active() {
-
-		try {
-			log.info("============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_Active Test===========");
-
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
-
-			log.info("============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_Active Test===========");
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_Active");
-		} catch (Exception e) {
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_Active");
-		}
-	}
-
-	@Test(priority = 95)
-	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active Test===========");
-
-			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
-
-			log.info(
-					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active Test===========");
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active");
-		}
-	}
-
-	@Test(priority = 96)
-	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active() {
-
-		try {
-			log.info("============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active Test===========");
-
-			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
-
-			log.info("============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active Test===========");
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active");
-		}
-	}
-
-	@Test(priority = 97, dataProvider = "Reports_YearlyFeeCollectionReportData")
-	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent(String academicYear,
-			String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info(
-					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent Test===========");
-
-			yarlyfeecollectionreport
-					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent(academicYear);
-
-			log.info(
-					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent Test===========");
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent");
-		} catch (Exception e) {
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent");
-		}
-	}
-
-	@Test(priority = 98)
-	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent Test===========");
-
-			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
-
-			log.info(
-					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent Test===========");
-			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent");
-		} catch (Exception e) {
-			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent");
-		}
-	}
-
-	@Test(priority = 99)
-	public void tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent Test===========");
-
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
-
-			log.info(
-					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent Test===========");
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent");
-		} catch (Exception e) {
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent");
-		}
-	}
-
-	@Test(priority = 100)
-	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive Test===========");
-
-			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
-
-			log.info(
-					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive Test===========");
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive");
-		}
-	}
-
-	@Test(priority = 101)
-	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive() {
-
-		try {
-			log.info("============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive Test===========");
-
-			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
-
-			log.info("============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive Test===========");
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive");
-		}
-	}
-
-	@Test(priority = 102, dataProvider = "Reports_YearlyFeeCollectionReportData")
-	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent(String academicYear,
-			String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info(
-					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent Test===========");
-
-			yarlyfeecollectionreport
-					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent(academicYear);
-
-			log.info(
-					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent Test===========");
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent");
-		} catch (Exception e) {
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent");
-		}
-	}
-
-	@Test(priority = 103)
-	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent Test===========");
-
-			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
-
-			log.info(
-					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent Test===========");
-			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent");
-		} catch (Exception e) {
-			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent");
-		}
-	}
-
-	@Test(priority = 104)
-	public void tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent Test===========");
-
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
-
-			log.info(
-					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent Test===========");
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent");
-		} catch (Exception e) {
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent");
-		}
-	}
-
-	@Test(priority = 105)
-	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left Test===========");
-
-			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
-
-			log.info(
-					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left Test===========");
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left");
-		}
-	}
-
-	@Test(priority = 106)
-	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left() {
-
-		try {
-			log.info("============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left Test===========");
-
-			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
-
-			log.info("============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left Test===========");
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left");
-		}
-	}
-
-	@Test(priority = 107, dataProvider = "Reports_YearlyFeeCollectionReportData")
-	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent(
-			String academicYear, String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info(
-					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent Test===========");
-
-			yarlyfeecollectionreport
-					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent(
-							academicYear);
-
-			log.info(
-					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent Test===========");
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent");
-		} catch (Exception e) {
-			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent");
-		}
-	}
-
-	@Test(priority = 108)
-	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-
-			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
-
-			log.info(
-					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-			getScreenShot(
-					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		} catch (Exception e) {
-			getScreenShot(
-					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		}
-	}
-
-	@Test(priority = 109)
-	public void tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
-
-			log.info(
-					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		} catch (Exception e) {
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		}
-	}
-
-	@Test(priority = 110)
-	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-
-			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
-
-			log.info(
-					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		}
-	}
-
-	@Test(priority = 111)
-	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-
-			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
-
-			log.info(
-					"============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent");
-		}
-	}
-
-	@Test(priority = 112, dataProvider = "Reports_YearlyFeeCollectionReportData")
-	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student(
-			String academicYear, String runMode) {
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info(
-					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student Test===========");
-
-			yarlyfeecollectionreport
-					.fill_YearlyFeeCollectionReportForm_YearlyWise_ClassWise_WithoutActive_Deactive_Left_Student(
-							academicYear);
-
-			log.info(
-					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student Test===========");
-			getScreenShot(
-					"tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student");
-		} catch (Exception e) {
-			getScreenShot(
-					"tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student");
-		}
-	}
-
-	@Test(priority = 113)
-	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
-
-		try {
-			log.info(
-					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-
-			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
-
-			log.info(
-					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-			getScreenShot(
-					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		} catch (Exception e) {
-			getScreenShot(
-					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		}
-	}
-
-	@Test(priority = 114)
-	public void tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
-
-		try {
-			log.info(
-					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
-
-			log.info(
-					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		} catch (Exception e) {
-			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		}
-	}
-
-	@Test(priority = 115)
-	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-
-			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
-
-			log.info(
-					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-			getScreenShot(
-					"tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		} catch (Exception e) {
-			getScreenShot(
-					"tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		}
-	}
-
-	@Test(priority = 116)
-	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-
-			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
-
-			log.info(
-					"============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
-		}
-	}
+//	@Test(priority = 92, dataProvider = "Reports_YearlyFeeCollectionReportData")
+//	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent(String academicYear,
+//			String runMode) {
+//		if (runMode.equalsIgnoreCase("n")) {
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info(
+//					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent Test===========");
+//
+//			yarlyfeecollectionreport
+//					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent(academicYear);
+//
+//			log.info(
+//					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent Test===========");
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActiveStudent");
+//		}
+//	}
+//
+//	@Test(priority = 93)
+//	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active Test===========");
+//
+//			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
+//
+//			log.info(
+//					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active Test===========");
+//			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_Active");
+//		}
+//	}
+//
+//	@Test(priority = 94)
+//	public void tcSelectRecordToGenerateReport_YearlyStudentWise_Active() {
+//
+//		try {
+//			log.info("============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_Active Test===========");
+//
+//			yarlyfeecollectionreport.selectRecordToGenerateReport_StudentWise();;
+//
+//			log.info("============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_Active Test===========");
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_Active");
+//		} catch (Exception e) {
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_Active");
+//		}
+//	}
+//
+//	@Test(priority = 95)
+//	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active Test===========");
+//
+//			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
+//
+//			log.info(
+//					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active Test===========");
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active");
+//		}
+//	}
+//
+//	@Test(priority = 96)
+//	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active Test===========");
+//
+//			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
+//
+//			log.info("============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active Test===========");
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active");
+//		}
+//	}
+//
+//	@Test(priority = 97, dataProvider = "Reports_YearlyFeeCollectionReportData")
+//	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent(String academicYear,
+//			String runMode) {
+//		if (runMode.equalsIgnoreCase("n")) {
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info(
+//					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent Test===========");
+//
+//			yarlyfeecollectionreport
+//					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent(academicYear);
+//
+//			log.info(
+//					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent Test===========");
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForDeactiveStudent");
+//		}
+//	}
+//
+//	@Test(priority = 98)
+//	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent Test===========");
+//
+//			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
+//
+//			log.info(
+//					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent Test===========");
+//			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForDeactiveStudent");
+//		}
+//	}
+//
+//	@Test(priority = 99)
+//	public void tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent Test===========");
+//
+//			yarlyfeecollectionreport.selectRecordToGenerateReport_StudentWise();
+//
+//			log.info(
+//					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent Test===========");
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForDeactiveStudent");
+//		}
+//	}
+//
+//	@Test(priority = 100)
+//	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive Test===========");
+//
+//			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
+//
+//			log.info(
+//					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive Test===========");
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive");
+//		}
+//	}
+//
+//	@Test(priority = 101)
+//	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive Test===========");
+//
+//			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
+//
+//			log.info("============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive Test===========");
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive");
+//		}
+//	}
+//
+//	@Test(priority = 102, dataProvider = "Reports_YearlyFeeCollectionReportData")
+//	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent(String academicYear,
+//			String runMode) {
+//		if (runMode.equalsIgnoreCase("n")) {
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info(
+//					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent Test===========");
+//
+//			yarlyfeecollectionreport
+//					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent(academicYear);
+//
+//			log.info(
+//					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent Test===========");
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForLeftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 103)
+//	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent Test===========");
+//
+//			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
+//
+//			log.info(
+//					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent Test===========");
+//			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForLeftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 104)
+//	public void tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent Test===========");
+//
+//			yarlyfeecollectionreport.selectRecordToGenerateReport_StudentWise();
+//
+//			log.info(
+//					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent Test===========");
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForLeftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 105)
+//	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left Test===========");
+//
+//			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
+//
+//			log.info(
+//					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left Test===========");
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left");
+//		}
+//	}
+//
+//	@Test(priority = 106)
+//	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left Test===========");
+//
+//			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
+//
+//			log.info("============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left Test===========");
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left");
+//		}
+//	}
+//
+//	@Test(priority = 107, dataProvider = "Reports_YearlyFeeCollectionReportData")
+//	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent(
+//			String academicYear, String runMode) {
+//		if (runMode.equalsIgnoreCase("n")) {
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info(
+//					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent Test===========");
+//
+//			yarlyfeecollectionreport
+//					.fill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent(
+//							academicYear);
+//
+//			log.info(
+//					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent Test===========");
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 108)
+//	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//
+//			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
+//
+//			log.info(
+//					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//			getScreenShot(
+//					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		} catch (Exception e) {
+//			getScreenShot(
+//					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 109)
+//	public void tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//
+//			yarlyfeecollectionreport.selectRecordToGenerateReport_StudentWise();
+//
+//			log.info(
+//					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 110)
+//	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//
+//			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
+//
+//			log.info(
+//					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 111)
+//	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//
+//			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
+//
+//			log.info(
+//					"============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent");
+//		}
+//	}
+//
+//	@Test(priority = 112, dataProvider = "Reports_YearlyFeeCollectionReportData")
+//	public void tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student(
+//			String academicYear, String runMode) {
+//		if (runMode.equalsIgnoreCase("n")) {
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info(
+//					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//
+//			yarlyfeecollectionreport
+//					.fill_YearlyFeeCollectionReportForm_YearlyWise_ClassWise_WithoutActive_Deactive_Left_Student(
+//							academicYear);
+//
+//			log.info(
+//					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//			getScreenShot(
+//					"tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student");
+//		} catch (Exception e) {
+//			getScreenShot(
+//					"tcFill_YearlyFeeCollectionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student");
+//		}
+//	}
+//
+//	@Test(priority = 113)
+//	public void tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//
+//			yarlyfeecollectionreport.clickReport_ToGenerate_YearlyFeeCollectionReport();
+//
+//			log.info(
+//					"============= Finished tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//			getScreenShot(
+//					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		} catch (Exception e) {
+//			getScreenShot(
+//					"tcClickReport_ToGenerate_YearlyFeeCollectionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		}
+//	}
+//
+//	@Test(priority = 114)
+//	public void tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//
+//			yarlyfeecollectionreport.selectRecordToGenerateReport_StudentWise();
+//
+//			log.info(
+//					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		} catch (Exception e) {
+//			getScreenShot("tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		}
+//	}
+//
+//	@Test(priority = 115)
+//	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//
+//			yarlyfeecollectionreport.clickOnExportToExcel_ToDownLoadExcelReport();
+//
+//			log.info(
+//					"============= Finished tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//			getScreenShot(
+//					"tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		} catch (Exception e) {
+//			getScreenShot(
+//					"tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		}
+//	}
+//
+//	@Test(priority = 116)
+//	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//
+//			yarlyfeecollectionreport.clickOnPrint_ForPrintPreview();
+//
+//			log.info(
+//					"============= Finished tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
+//		}
+//	}
 	/*
 	 * Category wise(Yearly wise)
 	 */
@@ -2170,7 +2171,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 		try {
 			log.info("============= Strting tcSelectRecordToGenerateReport_YearlyCategoryWise_Active Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_CategoryWise();
 
 			log.info("============= Finished tcSelectRecordToGenerateReport_YearlyCategoryWise_Active Test===========");
 			getScreenShot("tcSelectRecordToGenerateReport_YearlyCategoryWise_Active");
@@ -2256,7 +2257,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyCategoryWise_ForDeactiveStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_CategoryWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyCategoryWise_ForDeactiveStudent Test===========");
@@ -2343,7 +2344,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyCategoryWise_ForLeftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_CategoryWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyCategoryWise_ForLeftStudent Test===========");
@@ -2433,7 +2434,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyCategoryWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_CategoryWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyCategoryWise_ForActive_Deactive_leftStudent Test===========");
@@ -2488,8 +2489,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 					"============= Strting tcFill_YearlyFeeCollectionReportForm_YearlyWise_CategoryWise_WithoutActive_Deactive_Left_Student Test===========");
 
 			yarlyfeecollectionreport
-					.fill_YearlyFeeCollectionReportForm_YearlyWise_ClassWise_WithoutActive_Deactive_Left_Student(
-							academicYear);
+					.fill_YearlyFeeCollectionReportForm_YearlyWise_CategoryWise_WithoutActive_Deactive_Left_Student(academicYear);
 
 			log.info(
 					"============= Finished tcFill_YearlyFeeCollectionReportForm_YearlyWise_CategoryWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -2527,7 +2527,7 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyCategoryWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeecollectionreport.selectRecordToGenerateReport();
+			yarlyfeecollectionreport.selectRecordToGenerateReport_CategoryWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyCategoryWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -2571,5 +2571,15 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 		} catch (Exception e) {
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyCategoryWise_WithoutActive_Deactive_Left_Student");
 		}
+	}
+	@AfterClass
+	public void tearDown() {
+		try {
+			ivrmportallogin.logOutFromApplication();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		driver.quit();
 	}
 }

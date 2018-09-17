@@ -472,8 +472,8 @@ public class TestBase {
 		Thread.sleep(2000);
 		log("cliked on documents link to upload jpg/jpeg format document:-and object is " + imgElement.toString());
 		ClipboardOwner owner = null;
-		String imagepath = System.getProperty("user.dir")
-				+ "\\src\\main\\java\\com\\test\\automation\\uiAutomation\\data\\"+imageName;
+		String imagepath = System.getProperty("user.dir")+"\\src\\main\\java\\com\\vapsTechnosoft\\IVRM\\data\\"+imageName;
+		System.out.println(System.getProperty("user.dir"));
 		Robot robot = new Robot();
 		StringSelection attachmentpath = new StringSelection(imagepath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(attachmentpath, owner);

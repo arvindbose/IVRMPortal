@@ -114,6 +114,9 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	
 	@FindBy(xpath = "//button[text()='OK']")
 	WebElement btnOKSuccess;
+	
+	
+	
 
 	public ClassWise_StudentDetails_Report(WebDriver driver) {
 		this.driver = driver;

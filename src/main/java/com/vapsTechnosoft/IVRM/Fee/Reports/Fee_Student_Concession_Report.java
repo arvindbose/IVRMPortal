@@ -42,7 +42,7 @@ public class Fee_Student_Concession_Report extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[7]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[9]")
 	WebElement btn_FeeStudentConcessionReport;
 
 	@FindBy(xpath = "//div//section//ol//li")

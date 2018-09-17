@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -45,11 +46,6 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		return testRecordsSearchDetails;
 	}
 
-	@DataProvider(name = "ValidationData_ClassWiseAttendanceReportData")
-	public String[][] getTestValidationData() {
-		String[][] testRecordsValidationDetails = getData("FeeReportsData.xlsx", "ValidationData_ClassWiseAttend");
-		return testRecordsValidationDetails;
-	}
 
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -185,7 +181,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		try {
 			log.info("============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info("============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise Test===========");
 			getScreenShot("tcSelectRecordToGenerateReport_YearlyGroupWise");
@@ -355,7 +351,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_AfterClearingFilledData Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_AfterClearingFilledData Test===========");
@@ -396,12 +392,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyGroupWise_Active");
 		}
 	}
+	@Test(priority = 21)
+	public void tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActiveStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActiveStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActiveStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActiveStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActiveStudent");
+		}
+	}
 
 	/*Yearly Wise > Head wise > Active Student
 	 * 
 	 * Fee Head Wise
 	 */
-	@Test(priority = 21, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 22, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForActiveStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -411,8 +421,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			log.info(
 					"============= Strting tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForActiveStudent Test===========");
 
-			yarlyfeeconcessionreport
-					.fill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForActiveStudent(academicYear);
+			yarlyfeeconcessionreport.fill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForActiveStudent(academicYear);
 
 			log.info(
 					"============= Finished tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForActiveStudent Test===========");
@@ -424,7 +433,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeHeadWise_Active() {
 
 		try {
@@ -443,14 +452,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 24)
 	public void tcSelectRecordToGenerateReport_YearlyHeadWise_Active() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyHeadWise_Active Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyHeadWise_Active Test===========");
@@ -460,7 +469,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyHeadWise_Active() {
 
 		try {
@@ -477,7 +486,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcClickOnPrint_ForPrintPreview_YearlyHeadWise_Active() {
 
 		try {
@@ -491,11 +500,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyHeadWise_Active");
 		}
 	}
+	@Test(priority = 27)
+	public void tcClickClearButton_ToClearFilledForm_ClassWise_ForActiveStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_ClassWise_ForActiveStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_ClassWise_ForActiveStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForActiveStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForActiveStudent");
+		}
+	}
 	/*Yearly Wise > Class wise > Active Student
 	 * 
 	 * Fee Class Wise
 	 */
-	@Test(priority = 26, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 28, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_ClassWise_ForActiveStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -518,7 +541,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyClassWise_Active() {
 
 		try {
@@ -537,14 +560,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcSelectRecordToGenerateReport_YearlyClassWise_Active() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_Active Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_Active Test===========");
@@ -554,7 +577,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 31)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyClassWise_Active() {
 
 		try {
@@ -571,7 +594,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 32)
 	public void tcClickOnPrint_ForPrintPreview_YearlyClassWise_Active() {
 
 		try {
@@ -585,11 +608,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyClassWise_Active");
 		}
 	}
+	@Test(priority = 33)
+	public void tcClickClearButton_ToClearFilledForm_StudentWise_ForActiveStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_StudentWise_ForActiveStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_StudentWise_ForActiveStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForActiveStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForActiveStudent");
+		}
+	}
 	/*Yearly Wise > Student wise > Active Student
 	 * 
 	 * Fee Student Wise
 	 */
-	@Test(priority = 31, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 34, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_StudentWise_ForActiveStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -612,7 +649,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 35)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyStudentWise_Active() {
 
 		try {
@@ -631,14 +668,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 36)
 	public void tcSelectRecordToGenerateReport_YearlyStudentWise_Active() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_Active Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_StudentWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_Active Test===========");
@@ -648,7 +685,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 37)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Active() {
 
 		try {
@@ -665,7 +702,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 38)
 	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active() {
 
 		try {
@@ -679,11 +716,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Active");
 		}
 	}
+	@Test(priority = 39)
+	public void tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForDeactiveStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForDeactiveStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForDeactiveStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForDeactiveStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForDeactiveStudent");
+		}
+	}
 	/*Yearly Wise > Group wise > DeActive Student
 	 * 
 	 * Fee Group Wise
 	 */
-	@Test(priority = 36, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 40, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeGroupWise_ForDeactiveStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -706,7 +757,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 41)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeGroupWise_DeActive() {
 
 		try {
@@ -725,14 +776,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 42)
 	public void tcSelectRecordToGenerateReport_YearlyGroupWise_DeActive() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_DeActive Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_DeActive Test===========");
@@ -742,7 +793,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 43)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyGroupWise_DeActive() {
 
 		try {
@@ -759,7 +810,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 44)
 	public void tcClickOnPrint_ForPrintPreview_YearlyGroupWise_DeActive() {
 
 		try {
@@ -773,12 +824,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyGroupWise_DeActive");
 		}
 	}
+	@Test(priority = 45)
+	public void tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForDeactiveStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForDeactiveStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForDeactiveStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForDeactiveStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForDeactiveStudent");
+		}
+	}
 
 	/*Yearly Wise > Head wise > DeActive Student
 	 * 
 	 * Fee Head Wise
 	 */
-	@Test(priority = 41, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 46, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForDeActiveStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -801,7 +866,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 42)
+	@Test(priority = 47)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeHeadWise_DeActive() {
 
 		try {
@@ -820,14 +885,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 43)
+	@Test(priority = 48)
 	public void tcSelectRecordToGenerateReport_YearlyHeadWise_DeActive() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyHeadWise_DeActive Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyHeadWise_DeActive Test===========");
@@ -837,7 +902,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 44)
+	@Test(priority = 49)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyHeadWise_DeActive() {
 
 		try {
@@ -854,7 +919,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 45)
+	@Test(priority = 50)
 	public void tcClickOnPrint_ForPrintPreview_YearlyHeadWise_DeActive() {
 
 		try {
@@ -868,11 +933,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyHeadWise_DeActive");
 		}
 	}
+	@Test(priority = 51)
+	public void tcClickClearButton_ToClearFilledForm_ClassWise_ForDeactiveStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_ClassWise_ForDeactiveStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_ClassWise_ForDeactiveStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForDeactiveStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForDeactiveStudent");
+		}
+	}
 	/*Yearly Wise > Class wise > DeActive Student
 	 * 
 	 * Fee Class Wise
 	 */
-	@Test(priority = 46, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 52, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_ClassWise_ForDeActiveStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -895,7 +974,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 47)
+	@Test(priority = 53)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyClassWise_DeActive() {
 
 		try {
@@ -914,14 +993,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 48)
+	@Test(priority = 54)
 	public void tcSelectRecordToGenerateReport_YearlyClassWise_DeActive() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_DeActive Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_DeActive Test===========");
@@ -931,7 +1010,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 49)
+	@Test(priority = 55)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyClassWise_DeActive() {
 
 		try {
@@ -948,7 +1027,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 50)
+	@Test(priority = 56)
 	public void tcClickOnPrint_ForPrintPreview_YearlyClassWise_DeActive() {
 
 		try {
@@ -962,11 +1041,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyClassWise_DeActive");
 		}
 	}
+	@Test(priority = 57)
+	public void tcClickClearButton_ToClearFilledForm_StudentWise_ForDeactiveStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_StudentWise_ForDeactiveStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_StudentWise_ForDeactiveStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForDeactiveStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForDeactiveStudent");
+		}
+	}
 	/*Yearly Wise > Student wise > DeActive Student
 	 * 
 	 * Fee Student Wise
 	 */
-	@Test(priority = 51, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 58, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_StudentWise_ForDeActiveStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -989,7 +1082,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 52)
+	@Test(priority = 59)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyStudentWise_DeActive() {
 
 		try {
@@ -1008,14 +1101,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 53)
+	@Test(priority = 60)
 	public void tcSelectRecordToGenerateReport_YearlyStudentWise_DeActive() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_DeActive Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_StudentWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_DeActive Test===========");
@@ -1025,7 +1118,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 54)
+	@Test(priority = 61)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_DeActive() {
 
 		try {
@@ -1042,7 +1135,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 55)
+	@Test(priority = 62)
 	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive() {
 
 		try {
@@ -1056,12 +1149,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_DeActive");
 		}
 	}
+	@Test(priority = 63)
+	public void tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForLeftStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForLeftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForLeftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForLeftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForLeftStudent");
+		}
+	}
 	
 	/*Yearly Wise > Group wise > Left Student
 	 * 
 	 * Fee Group Wise
 	 */
-	@Test(priority = 56, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 64, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeGroupWise_ForLeftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1084,7 +1191,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 57)
+	@Test(priority = 65)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeGroupWise_Left() {
 
 		try {
@@ -1103,14 +1210,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 58)
+	@Test(priority = 66)
 	public void tcSelectRecordToGenerateReport_YearlyGroupWise_Left() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyGroupWise_Left Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyGroupWise_Left Test===========");
@@ -1120,7 +1227,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 59)
+	@Test(priority = 67)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyGroupWise_Left() {
 
 		try {
@@ -1137,7 +1244,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 60)
+	@Test(priority = 68)
 	public void tcClickOnPrint_ForPrintPreview_YearlyGroupWise_Left() {
 
 		try {
@@ -1151,12 +1258,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyGroupWise_Left");
 		}
 	}
+	@Test(priority = 69)
+	public void tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForLeftStudent() {
 
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForLeftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForLeftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForLeftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForLeftStudent");
+		}
+	}
 	/*Yearly Wise > Head wise > Left Student
 	 * 
 	 * Fee Head Wise
 	 */
-	@Test(priority = 61, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 70, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForLeftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1179,7 +1299,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 62)
+	@Test(priority = 71)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeHeadWise_Left() {
 
 		try {
@@ -1198,14 +1318,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 63)
+	@Test(priority = 72)
 	public void tcSelectRecordToGenerateReport_YearlyHeadWise_Left() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyHeadWise_Left Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyHeadWise_Left Test===========");
@@ -1215,7 +1335,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 64)
+	@Test(priority = 73)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyHeadWise_Left() {
 
 		try {
@@ -1232,7 +1352,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 65)
+	@Test(priority = 74)
 	public void tcClickOnPrint_ForPrintPreview_YearlyHeadWise_Left() {
 
 		try {
@@ -1246,11 +1366,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyHeadWise_Left");
 		}
 	}
+	@Test(priority = 75)
+	public void tcClickClearButton_ToClearFilledForm_ClassWise_ForLeftStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_ClassWise_ForLeftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_ClassWise_ForLeftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForLeftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForLeftStudent");
+		}
+	}
 	/*Yearly Wise > Class wise > Left Student
 	 * 
 	 * Fee Class Wise
 	 */
-	@Test(priority = 66, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 76, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_ClassWise_ForLeftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1273,7 +1407,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 67)
+	@Test(priority = 77)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyClassWise_Left() {
 
 		try {
@@ -1292,14 +1426,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 68)
+	@Test(priority = 78)
 	public void tcSelectRecordToGenerateReport_YearlyClassWise_Left() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_Left Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_Left Test===========");
@@ -1309,7 +1443,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 69)
+	@Test(priority = 79)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyClassWise_Left() {
 
 		try {
@@ -1326,7 +1460,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 70)
+	@Test(priority = 80)
 	public void tcClickOnPrint_ForPrintPreview_YearlyClassWise_Left() {
 
 		try {
@@ -1340,11 +1474,25 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyClassWise_Left");
 		}
 	}
+	@Test(priority = 81)
+	public void tcClickClearButton_ToClearFilledForm_StudentWise_ForLeftStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_StudentWise_ForLeftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_StudentWise_ForLeftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForLeftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForLeftStudent");
+		}
+	}
 	/*Yearly Wise > Student wise > Left Student
 	 * 
 	 * Fee Student Wise
 	 */
-	@Test(priority = 71, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 82, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_StudentWise_ForLeftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1367,7 +1515,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 72)
+	@Test(priority = 83)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyStudentWise_Left() {
 
 		try {
@@ -1386,14 +1534,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 73)
+	@Test(priority = 84)
 	public void tcSelectRecordToGenerateReport_YearlyStudentWise_Left() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_Left Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_StudentWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_Left Test===========");
@@ -1403,7 +1551,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 74)
+	@Test(priority = 85)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_Left() {
 
 		try {
@@ -1420,7 +1568,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 75)
+	@Test(priority = 86)
 	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left() {
 
 		try {
@@ -1434,12 +1582,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_Left");
 		}
 	}
+	@Test(priority = 87)
+	public void tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForActive_Deactive_leftStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForActive_Deactive_leftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForActive_Deactive_leftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForActive_Deactive_leftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_ForActive_Deactive_leftStudent");
+		}
+	}
 	/*
 	 * Yearly Wise > Group Wise > All Active, Deactive and Left Selected
 	 * 
 	 * For Fee Group Wise
 	 */
-	@Test(priority = 76, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 88, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeGroupWise_ForActive_Deactive_leftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1462,7 +1624,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 77)
+	@Test(priority = 89)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeGroupWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1481,14 +1643,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 78)
+	@Test(priority = 90)
 	public void tcSelectRecordToGenerateReport_YearlyFeeGroupWise_ForActive_Deactive_leftStudent() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyFeeGroupWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeGroupWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyFeeGroupWise_ForActive_Deactive_leftStudent Test===========");
@@ -1498,7 +1660,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 79)
+	@Test(priority = 91)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyFeeGroupWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1515,7 +1677,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 80)
+	@Test(priority = 92)
 	public void tcClickOnPrint_ForPrintPreview_YearlyFeeGroupWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1529,13 +1691,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyFeeGroupWise_ForActive_Deactive_leftStudent");
 		}
 	}
-	
+	@Test(priority = 93)
+	public void tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActive_Deactive_leftStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActive_Deactive_leftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActive_Deactive_leftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActive_Deactive_leftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_ForActive_Deactive_leftStudent");
+		}
+	}
 	/*
 	 * Yearly Wise > Head Wise > All Active, Deactive and Left Selected
 	 * 
 	 * For Fee Head Wise
 	 */
-	@Test(priority = 81, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 94, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_ForActive_Deactive_leftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1558,7 +1733,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 82)
+	@Test(priority = 95)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeHeadWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1577,14 +1752,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 83)
+	@Test(priority = 96)
 	public void tcSelectRecordToGenerateReport_YearlyFeeHeadWise_ForActive_Deactive_leftStudent() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyFeeHeadWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyFeeHeadWise_ForActive_Deactive_leftStudent Test===========");
@@ -1594,7 +1769,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 84)
+	@Test(priority = 97)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyFeeHeadWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1611,7 +1786,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 85)
+	@Test(priority = 98)
 	public void tcClickOnPrint_ForPrintPreview_YearlyFeeHeadWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1625,13 +1800,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyFeeHeadWise_ForActive_Deactive_leftStudent");
 		}
 	}
-	
+	@Test(priority = 99)
+	public void tcClickClearButton_ToClearFilledForm_ClassWise_ForActive_Deactive_leftStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_ClassWise_ForActive_Deactive_leftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_ClassWise_ForActive_Deactive_leftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForActive_Deactive_leftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_ForActive_Deactive_leftStudent");
+		}
+	}
 	/*
 	 * Yearly Wise > Class Wise > All Active, Deactive and Left Selected
 	 * 
 	 * For Class Wise
 	 */
-	@Test(priority = 86, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 100, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_ClassWise_ForActive_Deactive_leftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1654,7 +1842,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 87)
+	@Test(priority = 101)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyClassWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1673,14 +1861,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 88)
+	@Test(priority = 102)
 	public void tcSelectRecordToGenerateReport_YearlyClassWise_ForActive_Deactive_leftStudent() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_ForActive_Deactive_leftStudent Test===========");
@@ -1690,7 +1878,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 89)
+	@Test(priority = 103)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyClassWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1707,7 +1895,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 90)
+	@Test(priority = 104)
 	public void tcClickOnPrint_ForPrintPreview_YearlyClassWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1721,12 +1909,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyClassWise_ForActive_Deactive_leftStudent");
 		}
 	}
+	@Test(priority = 105)
+	public void tcClickClearButton_ToClearFilledForm_StudentWise_ForActive_Deactive_leftStudent() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_StudentWise_ForActive_Deactive_leftStudent Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_StudentWise_ForActive_Deactive_leftStudent Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForActive_Deactive_leftStudent");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_ForActive_Deactive_leftStudent");
+		}
+	}
 	/*
 	 * Yearly Wise > Student Wise > All Active, Deactive and Left Selected
 	 * 
 	 * For Student Wise
 	 */
-	@Test(priority = 91, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 106, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_StudentWise_ForActive_Deactive_leftStudent(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1749,7 +1951,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 92)
+	@Test(priority = 107)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1768,14 +1970,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 93)
+	@Test(priority = 108)
 	public void tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_StudentWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_ForActive_Deactive_leftStudent Test===========");
@@ -1785,7 +1987,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 94)
+	@Test(priority = 109)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1802,7 +2004,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 95)
+	@Test(priority = 110)
 	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent() {
 
 		try {
@@ -1816,12 +2018,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_ForActive_Deactive_leftStudent");
 		}
 	}
+	@Test(priority = 111)
+	public void tcClickClearButton_ToClearFilledForm_FeeGroupWise_WithoutActive_Deactive_Left_Student() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeGroupWise_WithoutActive_Deactive_Left_Student Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeGroupWise_WithoutActive_Deactive_Left_Student Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_WithoutActive_Deactive_Left_Student");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeGroupWise_WithoutActive_Deactive_Left_Student");
+		}
+	}
 	/*
 	 * Yearly Wise > Group Wise > Without Selecting Active, Deactive and Left
 	 * 
 	 * For Fee Group Wise
 	 */
-	@Test(priority = 96, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 112, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeGroupWise_WithoutActive_Deactive_Left_Student(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1844,7 +2060,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 97)
+	@Test(priority = 113)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -1863,15 +2079,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 98)
+	@Test(priority = 114)
 	public void tcSelectRecordToGenerateReport_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
-
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeGroupWise();
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student Test===========");
 			getScreenShot("tcSelectRecordToGenerateReport_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student");
@@ -1880,7 +2095,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 99)
+	@Test(priority = 115)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -1897,7 +2112,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 100)
+	@Test(priority = 116)
 	public void tcClickOnPrint_ForPrintPreview_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -1911,13 +2126,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyFeeGroupWise_WithoutActive_Deactive_Left_Student");
 		}
 	}
-	
+	@Test(priority = 117)
+	public void tcClickClearButton_ToClearFilledForm_FeeHeadWise_WithoutActive_Deactive_Left_Student() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_FeeHeadWise_WithoutActive_Deactive_Left_Student Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_FeeHeadWise_WithoutActive_Deactive_Left_Student Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_WithoutActive_Deactive_Left_Student");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_FeeHeadWise_WithoutActive_Deactive_Left_Student");
+		}
+	}
 	/*
 	 * Yearly Wise > Head Wise > Without Selecting Active, Deactive and Left
 	 * 
 	 * For Fee Head Wise
 	 */
-	@Test(priority = 101, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 118, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_FeeHeadWise_WithoutActive_Deactive_Left_Student(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1940,7 +2168,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 102)
+	@Test(priority = 119)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyFeeHeadWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -1959,14 +2187,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 103)
+	@Test(priority = 120)
 	public void tcSelectRecordToGenerateReport_YearlyFeeHeadWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyFeeHeadWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_FeeHeadWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyFeeHeadWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -1976,7 +2204,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 104)
+	@Test(priority = 121)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyFeeHeadWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -1993,7 +2221,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 105)
+	@Test(priority = 122)
 	public void tcClickOnPrint_ForPrintPreview_YearlyFeeHeadWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -2007,13 +2235,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyFeeHeadWise_WithoutActive_Deactive_Left_Student");
 		}
 	}
-	
+	@Test(priority = 123)
+	public void tcClickClearButton_ToClearFilledForm_ClassWise_WithoutActive_Deactive_Left_Student() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_ClassWise_WithoutActive_Deactive_Left_Student Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_ClassWise_WithoutActive_Deactive_Left_Student Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_WithoutActive_Deactive_Left_Student");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_ClassWise_WithoutActive_Deactive_Left_Student");
+		}
+	}
 	/*
 	 * Yearly Wise > Class Wise > Without Selecting Active, Deactive and Left
 	 * 
 	 * For Class Wise
 	 */
-	@Test(priority = 106, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 124, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_ClassWise_WithoutActive_Deactive_Left_Student(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -2036,7 +2277,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 107)
+	@Test(priority = 125)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyClassWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -2055,14 +2296,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 108)
+	@Test(priority = 126)
 	public void tcSelectRecordToGenerateReport_YearlyClassWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyClassWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_ClassWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyClassWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -2072,7 +2313,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 109)
+	@Test(priority = 127)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyClassWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -2089,7 +2330,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 110)
+	@Test(priority = 128)
 	public void tcClickOnPrint_ForPrintPreview_YearlyClassWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -2103,12 +2344,26 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyClassWise_WithoutActive_Deactive_Left_Student");
 		}
 	}
+	@Test(priority = 129)
+	public void tcClickClearButton_ToClearFilledForm_StudentWise_WithoutActive_Deactive_Left_Student() {
+
+		try {
+			log.info("============= Strting tcClickClearButton_ToClearFilledForm_StudentWise_WithoutActive_Deactive_Left_Student Test===========");
+
+			yarlyfeeconcessionreport.clickClearButton_ToClearFilledForm();
+
+			log.info("============= Finished tcClickClearButton_ToClearFilledForm_StudentWise_WithoutActive_Deactive_Left_Student Test===========");
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_WithoutActive_Deactive_Left_Student");
+		} catch (Exception e) {
+			getScreenShot("tcClickClearButton_ToClearFilledForm_StudentWise_WithoutActive_Deactive_Left_Student");
+		}
+	}
 	/*
 	 * Yearly Wise > Student Wise > Without Selecting Active, Deactive and Left
 	 * 
 	 * For Student Wise
 	 */
-	@Test(priority = 111, dataProvider = "Reports_YearlyFeeConcessionReportData")
+	@Test(priority = 130, dataProvider = "Reports_YearlyFeeConcessionReportData")
 	public void tcFill_YearlyFeeConcessionReportForm_YearlyWise_StudentWise_WithoutActive_Deactive_Left_Student(
 			String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -2131,7 +2386,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 112)
+	@Test(priority = 131)
 	public void tcClickReport_ToGenerate_YearlyFeeConcessionReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -2150,14 +2405,14 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 113)
+	@Test(priority = 132)
 	public void tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
 			log.info(
 					"============= Strting tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
 
-			yarlyfeeconcessionreport.selectRecordToGenerateReport();
+			yarlyfeeconcessionreport.selectRecordToGenerateReport_StudentWise();
 
 			log.info(
 					"============= Finished tcSelectRecordToGenerateReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student Test===========");
@@ -2167,7 +2422,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 114)
+	@Test(priority = 133)
 	public void tcClickOnExportToExcel_ToDownLoadExcelReport_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -2184,7 +2439,7 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 		}
 	}
 
-	@Test(priority = 115)
+	@Test(priority = 134)
 	public void tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student() {
 
 		try {
@@ -2198,4 +2453,16 @@ public class TC_Yearly_Fee_Concession_Report extends TestBase{
 			getScreenShot("tcClickOnPrint_ForPrintPreview_YearlyStudentWise_WithoutActive_Deactive_Left_Student");
 		}
 	}
+
+	@AfterClass
+	public void tearDown() {
+		try {
+			ivrmportallogin.logOutFromApplication();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		driver.quit();
+	}
+
 }

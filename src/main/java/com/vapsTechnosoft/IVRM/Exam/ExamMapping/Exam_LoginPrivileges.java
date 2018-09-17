@@ -245,7 +245,7 @@ public class Exam_LoginPrivileges extends TestBase {
 			log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 			option = select.getFirstSelectedOption();
 			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} else {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
@@ -258,7 +258,7 @@ public class Exam_LoginPrivileges extends TestBase {
 			log("Selected User Name: " + userName + " and object is:- " + sel_UserName.toString());
 			option = select.getFirstSelectedOption();
 			Assert.assertEquals(option.getText().trim(), userName);
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} else {
 			log("User Name element is not present");
 			Thread.sleep(500);
@@ -269,20 +269,20 @@ public class Exam_LoginPrivileges extends TestBase {
 			select.selectByVisibleText(employeeName);
 
 			log("Selected Employee: " + employeeName + " and object is:- " + sel_EmployeeName.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), employeeName);
-			Thread.sleep(1000);
+//			option = select.getFirstSelectedOption();
+//			Assert.assertEquals(option.getText().trim(), employeeName);
+			Thread.sleep(3000);
 		} else {
 			log("Employee element is not present");
 			Thread.sleep(500);
 		}
-
+System.out.println("Employee selected for exam............");
 		if (input_SearchSubject.isDisplayed()) {
 			input_SearchSubject.clear();
 			input_SearchSubject.sendKeys(subject);
 			log("Search subject from list for selection:- " + subject + " and object is:-"
 					+ input_SearchSubject.toString());
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} else {
 			log("Seach subject element is not present.");
 			Thread.sleep(500);

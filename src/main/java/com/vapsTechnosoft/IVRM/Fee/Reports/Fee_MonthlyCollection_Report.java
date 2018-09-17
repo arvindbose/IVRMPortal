@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Reports;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -106,6 +108,10 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 
 	@FindBy(xpath = "//a[contains(text(),'Export to PDF')]")
 	private WebElement btn_ExportToPDF;
+	
+	@FindBy(xpath = "//div[@ng-show='lower_grid']/div/h3")
+	WebElement grid_HeaderName;
+	
 
 	public Fee_MonthlyCollection_Report(WebDriver driver) {
 		this.driver = driver;
@@ -777,7 +783,8 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
 			log("Fee Monthly Collection Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
+			assertEquals(grid_HeaderName.getText().trim(), "GRID VIEW");
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);

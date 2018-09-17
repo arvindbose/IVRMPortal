@@ -38,7 +38,7 @@ public class Masters_Section_Allotment extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[16]")
+	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[15]")
 	WebElement btnMasters_SectionAllotment;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/h1/strong")

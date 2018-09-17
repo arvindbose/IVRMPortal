@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Reports;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 import java.util.Set;
 
@@ -40,7 +42,7 @@ public class Fee_DueDates_Report extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	private WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[12]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[13]")
 	private WebElement btn_FeeDueDatesReport;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -81,6 +83,9 @@ public class Fee_DueDates_Report extends TestBase{
 
 	@FindBy(xpath = "//table[@id='Table']/tbody/tr/td[1]/label/input")
 	private List<WebElement> Chk_Records_FeeDueDatesReportGrid;
+	
+	@FindBy(xpath = "//div[@ng-show='grid_flag']/div/h3")
+	WebElement grid_HeaderName;
 	
 	public Fee_DueDates_Report(WebDriver driver) {
 		this.driver = driver;
@@ -202,7 +207,8 @@ public class Fee_DueDates_Report extends TestBase{
 		if (btn_ShowReport.isDisplayed()) {
 			btn_ShowReport.click();
 			log("Fee Due Dates Report is generated and object is:-" + btn_ShowReport.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
+			assertEquals(grid_HeaderName.getText().trim(), "FEE DUE DATES REPORT");
 		} else {
 			log("Show Report button element not present.");
 			Thread.sleep(500);

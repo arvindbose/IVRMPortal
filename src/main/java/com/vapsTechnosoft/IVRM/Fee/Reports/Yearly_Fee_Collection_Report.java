@@ -3,10 +3,13 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Reports;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -111,14 +114,27 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 	@FindBy(xpath = "//button[text()='OK']")
 	private WebElement btnOKSuccess;
 
+	@FindBy(xpath = "//table[@id='table1'][1]/tbody/tr/td[1]/label/input")
+	private List<WebElement> Chk_Records_YrlyFeeCollectionReportGrid_FeeGrWise;
+	
 	@FindBy(xpath = "//table[@id='table1'][2]/tbody/tr/td[1]/label/input")
-	private List<WebElement> Chk_Records_YrlyFeeCollectionReportGrid;
+	private List<WebElement> Chk_Records_YrlyFeeCollectionReportGrid_FeeHeadWise;
+	
+	@FindBy(xpath = "//table[@id='table1'][3]/tbody/tr/td[1]/label/input")
+	private List<WebElement> Chk_Records_YrlyFeeCollectionReportGrid_ClassWise;
+	
+	@FindBy(xpath = "//table[@id='table1'][4]/tbody/tr/td[1]/label/input")
+	private List<WebElement> Chk_Records_YrlyFeeCollectionReportGrid_CategoryWise;
+	
 
 	@FindBy(xpath = "//span[contains(text(),'Waived Off')]/preceding-sibling::input")
 	private WebElement chk_WaivedOff_Display;
 
 	@FindBy(xpath = "(//button[@class='btn btn-default' and text()='Close'])[1]")
 	private WebElement btn_Close_Display;
+	
+	@FindBy(xpath = "//div[@ng-show='Grid_view']/div/h3")
+	WebElement grid_HeaderName;
 
 	public Yearly_Fee_Collection_Report(WebDriver driver) {
 		this.driver = driver;
@@ -1976,7 +1992,8 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
 			log("Yearly Fee Collection Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
+			assertEquals(grid_HeaderName.getText().trim(), "YEARLY FEE COLLECTION REPORT");
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);
@@ -1987,7 +2004,7 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 		if (btn_Clear.isDisplayed()) {
 			btn_Clear.click();
 			log("Yearly Fee Collection report filled form data is cleared and object is:-" + btn_Clear.toString());
-			Thread.sleep(7000);
+			Thread.sleep(2000);
 		} else {
 			log("Clear button element not present.");
 			Thread.sleep(500);
@@ -1998,7 +2015,7 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 		if (btn_ExportToExcel.isDisplayed()) {
 			btn_ExportToExcel.click();
 			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} else {
 			log("Export to Excel button element not present.");
 			Thread.sleep(500);
@@ -2012,7 +2029,7 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 		if (btn_Print.isDisplayed()) {
 			btn_Print.click();
 			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 
 		} else {
 			log("Print button element is not present.");
@@ -2032,7 +2049,7 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 				Thread.sleep(1000);
 				Actions action = new Actions(driver);
 				action.sendKeys(Keys.TAB).sendKeys(Keys.ENTER);
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 
 				break;
 			}
@@ -2050,7 +2067,7 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 		if (btnOKSuccess.isDisplayed()) {
 			btnOKSuccess.click();
 			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} else {
 			log("OK button element is not present.");
 			Thread.sleep(500);
@@ -2058,6 +2075,8 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 	}
 
 	public void min_Max_YearlyFeeCollectionReport_Form() throws Exception {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_YearlyFeeCollectionReport);
+		Thread.sleep(1000);
 		if (btnMin_MaxYearlyFeeCollectionReport.isDisplayed()) {
 			btnMin_MaxYearlyFeeCollectionReport.click();
 			log("Yearly Fee Collection Report page minimized or maximized and object is:-"
@@ -2091,15 +2110,67 @@ public class Yearly_Fee_Collection_Report extends TestBase {
 		}
 	}
 
-	public void selectRecordToGenerateReport() throws Exception {
-		int no_Of_Record = Chk_Records_YrlyFeeCollectionReportGrid.size();
+	public void selectRecordToGenerateReport_FeeGroupWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeCollectionReportGrid_FeeGrWise.size();
 		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_Records_YrlyFeeCollectionReportGrid.get(i).isSelected()) {
-				Chk_Records_YrlyFeeCollectionReportGrid.get(i).click();
-				log(i + " records check box is checked.");
+			if (!Chk_Records_YrlyFeeCollectionReportGrid_FeeGrWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeCollectionReportGrid_FeeGrWise.get(i).click();
+				log(i + " records check box is checked for Fee Group Wise.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " records checked box is already checked.");
+				log(i + " records checked box is already checked for Fee Group Wise.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_FeeHeadWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeCollectionReportGrid_FeeHeadWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_Records_YrlyFeeCollectionReportGrid_FeeHeadWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeCollectionReportGrid_FeeHeadWise.get(i).click();
+				log(i + " records check box is checked for Fee Head Wise.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " records checked box is already checked for Fee Head Wise.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_ClassWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeCollectionReportGrid_ClassWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_Records_YrlyFeeCollectionReportGrid_ClassWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeCollectionReportGrid_ClassWise.get(i).click();
+				log(i + " records check box is checked for Class Wise.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " records checked box is already checked for Class Wise.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_CategoryWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeCollectionReportGrid_CategoryWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_Records_YrlyFeeCollectionReportGrid_CategoryWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeCollectionReportGrid_CategoryWise.get(i).click();
+				log(i + " records check box is checked for Category Wise.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " records checked box is already checked for Category Wise.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_StudentWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeCollectionReportGrid_CategoryWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_Records_YrlyFeeCollectionReportGrid_CategoryWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeCollectionReportGrid_CategoryWise.get(i).click();
+				log(i + " records check box is checked for Category Wise.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " records checked box is already checked for Category Wise.");
 				Thread.sleep(500);
 			}
 		}

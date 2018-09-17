@@ -36,19 +36,19 @@ public class TC_Fee_Student_Concession_Report extends TestBase {
 
 	@DataProvider(name = "Reports_FeeStudentConcession_All_Data")
 	public String[][] getTestWrittenData() {
-		String[][] testRecordsClassWiseAttendance = getData("AdmissionReports.xlsx", "FeeStuConcession_AllData");
+		String[][] testRecordsClassWiseAttendance = getData("FeeReportsData.xlsx", "FeeStuConcession_AllData");
 		return testRecordsClassWiseAttendance;
 	}
 
 	@DataProvider(name = "Reports_FeeStudentConcession_Individual_Data")
 	public String[][] getTestSearchData() {
-		String[][] testRecordsSearchDetails = getData("AdmissionReports.xlsx", "FeeStuConcession_IndividualData");
+		String[][] testRecordsSearchDetails = getData("FeeReportsData.xlsx", "FeeStuConcession_IndividualData");
 		return testRecordsSearchDetails;
 	}
 
 	@DataProvider(name = "Search_FeeStuConcessionRecord")
 	public String[][] getTestValidationData() {
-		String[][] testRecordsValidationDetails = getData("AdmissionReports.xlsx", "Search_FeeStuConcession");
+		String[][] testRecordsValidationDetails = getData("FeeReportsData.xlsx", "Search_FeeStuConcession");
 		return testRecordsValidationDetails;
 	}
 

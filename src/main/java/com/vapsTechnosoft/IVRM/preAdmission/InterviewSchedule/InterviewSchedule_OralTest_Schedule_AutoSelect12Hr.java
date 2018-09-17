@@ -33,7 +33,7 @@ public class InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestBase
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding::button[1]")
 	private WebElement btnPre_Admission;
 
-	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding::button[1]/following::ul[1]/li[1]")
+	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]")
 	private WebElement btnInterview_Schedule;
 
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]/following::li[1]")

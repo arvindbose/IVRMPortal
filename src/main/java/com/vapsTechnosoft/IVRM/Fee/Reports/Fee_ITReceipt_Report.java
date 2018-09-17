@@ -226,7 +226,7 @@ public class Fee_ITReceipt_Report extends TestBase {
 		if (btn_Show.isDisplayed()) {
 			btn_Show.click();
 			log("Fee IT Receipt Report is generated and object is:-" + btn_Show.toString());
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} else {
 			log("Show button element not present.");
 			Thread.sleep(500);

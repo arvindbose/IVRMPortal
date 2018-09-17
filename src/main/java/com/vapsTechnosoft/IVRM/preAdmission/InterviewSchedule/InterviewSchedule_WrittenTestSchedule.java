@@ -31,7 +31,7 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding::button[1]")
 	private WebElement btn_PreAdmission;
 
-	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding::button[1]/following::ul[1]/li[1]")
+	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]")
 	private WebElement btn_InterviewSchedule;
 
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]/following::li[2]")

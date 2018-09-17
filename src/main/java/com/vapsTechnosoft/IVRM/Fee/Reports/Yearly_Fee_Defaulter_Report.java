@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Reports;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 import java.util.Set;
@@ -146,7 +148,22 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	WebElement btnOKSuccess;
 
 	@FindBy(xpath = "//div[@id='table2']//table//tbody//tr//td[1]//input")
-	List<WebElement> Chk_FeeDefaulterReportGrid;
+	List<WebElement> Chk_FeeDefaulterReportGrid_FeeGrWise;
+	
+	@FindBy(xpath = "//div[@id='table3']//table//tbody//tr//td[1]//input")
+	List<WebElement> Chk_FeeDefaulterReportGrid_FeeHeadWise;
+	
+	@FindBy(xpath = "//div[@id='table4']//table//tbody//tr//td[1]//input")
+	List<WebElement> Chk_FeeDefaulterReportGrid_ClassWise;
+	
+	@FindBy(xpath = "//div[@id='table1']//table//tbody//tr//td[1]//input")
+	List<WebElement> Chk_FeeDefaulterReportGrid_StudentWise;
+	
+	@FindBy(xpath = "//div[@ng-show='Grid_view']/div/h3")
+	WebElement grid_HeaderName;
+	
+	
+	
 
 	public Yearly_Fee_Defaulter_Report(WebDriver driver) {
 		this.driver = driver;
@@ -389,12 +406,12 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (!rdBtn_FeeGroupWise.isSelected()) {
-			rdBtn_FeeGroupWise.click();
-			log("Fee Group Wise radio button is selected and object is:- " + rdBtn_FeeGroupWise.toString());
+		if (!rdBtn_FeeHeadWise.isSelected()) {
+			rdBtn_FeeHeadWise.click();
+			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
 			Thread.sleep(1000);
 		} else {
-			log("Fee Group Wise Radio button already selected.");
+			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
 		if (sel_AcademicYear.isDisplayed()) {
@@ -2310,7 +2327,8 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
 			log("Yearly Fee Defaulter Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
+			assertEquals(grid_HeaderName.getText().trim(), "FEE DEFAULTER REPORT");
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);
@@ -2329,7 +2347,9 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
+	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_YearlyFeeDefaulterReport);
+	Thread.sleep(1000);
+	if (btn_ExportToExcel.isDisplayed()) {
 			String excel = btn_ExportToExcel.getText().trim();
 			System.out.println(excel);
 			Assert.assertEquals(excel,"EXPORT TO EXCEL");
@@ -2468,15 +2488,54 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 		}
 	}
 
-	public void selectRecordToGenerateReport() throws Exception {
-		int no_Of_Record = Chk_FeeDefaulterReportGrid.size();
+	public void selectRecordToGenerateReport_FeeGroupWise() throws Exception {
+		int no_Of_Record = Chk_FeeDefaulterReportGrid_FeeGrWise.size();
 		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_FeeDefaulterReportGrid.get(i).isSelected()) {
-				Chk_FeeDefaulterReportGrid.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
+			if (!Chk_FeeDefaulterReportGrid_FeeGrWise.get(i).isSelected()) {
+				Chk_FeeDefaulterReportGrid_FeeGrWise.get(i).click();
+				log(i + " Fee Group Name check box is checked.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " Custom Group name checked box is already checked.");
+				log(i + " Fee Group name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_FeeHeadWise() throws Exception {
+		int no_Of_Record = Chk_FeeDefaulterReportGrid_FeeHeadWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_FeeDefaulterReportGrid_FeeHeadWise.get(i).isSelected()) {
+				Chk_FeeDefaulterReportGrid_FeeHeadWise.get(i).click();
+				log(i + " Fee Head Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Fee Head name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_ClassWise() throws Exception {
+		int no_Of_Record = Chk_FeeDefaulterReportGrid_ClassWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_FeeDefaulterReportGrid_ClassWise.get(i).isSelected()) {
+				Chk_FeeDefaulterReportGrid_ClassWise.get(i).click();
+				log(i + " Class Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Class name checked box is already checked.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_StudentWise() throws Exception {
+		int no_Of_Record = Chk_FeeDefaulterReportGrid_StudentWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_FeeDefaulterReportGrid_StudentWise.get(i).isSelected()) {
+				Chk_FeeDefaulterReportGrid_StudentWise.get(i).click();
+				log(i + " Student Name check box is checked.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " Student name checked box is already checked.");
 				Thread.sleep(500);
 			}
 		}

@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Reports;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 import java.util.Set;
 
@@ -110,7 +112,21 @@ public class Yearly_Fee_Concession_Report extends TestBase {
 	WebElement btnOKSuccess;
 
 	@FindBy(xpath = "//table[@id='table1'][2]/tbody/tr/td[1]/label/input")
-	List<WebElement> Chk_Records_YrlyFeeConcessionReportGrid;
+	List<WebElement> Chk_Records_YrlyFeeConcessionReportGrid_FeeGrWise;
+	
+
+	@FindBy(xpath = "//table[@id='table1'][3]/tbody/tr/td[1]/label/input")
+	List<WebElement> Chk_Records_YrlyFeeConcessionReportGrid_FeeHeadWise;
+	
+	@FindBy(xpath = "//table[@id='table1'][4]/tbody/tr/td[1]/label/input")
+	List<WebElement> Chk_Records_YrlyFeeConcessionReportGrid_ClassWise;
+	
+	@FindBy(xpath = "//table[@id='table1'][1]/tbody/tr/td[1]/label/input")
+	List<WebElement> Chk_Records_YrlyFeeConcessionReportGrid_StudentWise;
+	
+	@FindBy(xpath = "//div[@ng-show='Grid_view']/div/h3")
+	WebElement grid_HeaderName;
+	
 
 	public Yearly_Fee_Concession_Report(WebDriver driver) {
 		this.driver = driver;
@@ -121,7 +137,7 @@ public class Yearly_Fee_Concession_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -564,6 +580,7 @@ public class Yearly_Fee_Concession_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		
 		if (!rdBtn_FeeHeadWise.isSelected()) {
 			rdBtn_FeeHeadWise.click();
 			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
@@ -572,6 +589,7 @@ public class Yearly_Fee_Concession_Report extends TestBase {
 			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		
 		if (sel_AcademicYear.isDisplayed()) {
 			select = new Select(sel_AcademicYear);
 			select.selectByVisibleText(academicYear);
@@ -1614,7 +1632,8 @@ public class Yearly_Fee_Concession_Report extends TestBase {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
 			log("Yearly Fee Concession Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
+			assertEquals(grid_HeaderName.getText().trim(), "YEARLY FEE CONCESSION REPORT");
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);
@@ -1709,6 +1728,7 @@ public class Yearly_Fee_Concession_Report extends TestBase {
 	}
 
 	public void min_Max_YearlyFeeConcessionReport_Grid() throws Exception {
+		
 		if (btnMin_MaxYearlyFeeConcessionReportGrid.isDisplayed()) {
 			btnMin_MaxYearlyFeeConcessionReportGrid.click();
 			log("Yearly Fee Concession Report Grid page minimized or maximized and object is:-"
@@ -1731,15 +1751,54 @@ public class Yearly_Fee_Concession_Report extends TestBase {
 		}
 	}
 
-	public void selectRecordToGenerateReport() throws Exception {
-		int no_Of_Record = Chk_Records_YrlyFeeConcessionReportGrid.size();
+	public void selectRecordToGenerateReport_FeeGroupWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeConcessionReportGrid_FeeGrWise.size();
 		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_Records_YrlyFeeConcessionReportGrid.get(i).isSelected()) {
-				Chk_Records_YrlyFeeConcessionReportGrid.get(i).click();
-				log(i + " records check box is checked.");
+			if (!Chk_Records_YrlyFeeConcessionReportGrid_FeeGrWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeConcessionReportGrid_FeeGrWise.get(i).click();
+				log(i + " records check box is checked for Fee Group Wise.");
 				Thread.sleep(1000);
 			} else {
-				log(i + " records checked box is already checked.");
+				log(i + " records checked box is already checked for Fee Group Wise.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_FeeHeadWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeConcessionReportGrid_FeeHeadWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_Records_YrlyFeeConcessionReportGrid_FeeHeadWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeConcessionReportGrid_FeeHeadWise.get(i).click();
+				log(i + " records check box is checked for Fee Head Wise.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " records checked box is already checked for Fee Head Wise.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_ClassWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeConcessionReportGrid_ClassWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_Records_YrlyFeeConcessionReportGrid_ClassWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeConcessionReportGrid_ClassWise.get(i).click();
+				log(i + " records check box is checked for Class Wise.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " records checked box is already checked for Class Wise.");
+				Thread.sleep(500);
+			}
+		}
+	}
+	public void selectRecordToGenerateReport_StudentWise() throws Exception {
+		int no_Of_Record = Chk_Records_YrlyFeeConcessionReportGrid_StudentWise.size();
+		for (int i = 0; i < no_Of_Record; i++) {
+			if (!Chk_Records_YrlyFeeConcessionReportGrid_StudentWise.get(i).isSelected()) {
+				Chk_Records_YrlyFeeConcessionReportGrid_StudentWise.get(i).click();
+				log(i + " records check box is checked for Student Wise.");
+				Thread.sleep(1000);
+			} else {
+				log(i + " records checked box is already checked for Student Wise.");
 				Thread.sleep(500);
 			}
 		}

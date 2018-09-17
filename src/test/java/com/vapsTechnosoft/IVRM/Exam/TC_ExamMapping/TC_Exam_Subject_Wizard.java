@@ -33,7 +33,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "ExamSubjectWizard_FormData_GardeDisplay ")
+	@DataProvider(name = "ExamSubjectWizard_FormData_GardeDisplay")
 	public String[][] getTestData_GardeDisplay() {
 		String[][] testRecordsExamSubForm_GardeDisplay = getData("ExamMapping.xlsx", "ExamSubjectWizard_GradeDisplay");
 		return testRecordsExamSubForm_GardeDisplay;
@@ -172,7 +172,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "ExamSubjectWizard_FormData_MarksDispaly")
+	@Test(priority = 6, dataProvider = "ExamSubjectWizard_FormData_GardeDisplay")
 	public void tcFill_ExamSubjectWizard_Form(String academicYear, String grade, String category, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -261,7 +261,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 11, dataProvider = "ExamSubjectWizard_FormData_MarksDispaly")
+	@Test(priority = 11, dataProvider = "ExamSubjectWizard_FormData_GardeDisplay")
 	public void tcFill_ExamSubjectWizard_Form_AfterCancel(String academicYear, String grade, String category,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -342,7 +342,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 15)
+/*	@Test(priority = 15)
 	public void tcClickOnSetOrder() {
 
 		try {
@@ -400,37 +400,37 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		} catch (Exception e) {
 			getScreenShot("tcClickOnClose_ToCloseSetOrderwindow");
 		}
-	}
+	}*/
 
-	@Test(priority = 19)
-	public void tcClickOnSaveButton_ToSubmitExamSubjectWizardForm() {
+//	@Test(priority = 19)
+//	public void tcClickOnSaveButton_ToSubmitExamSubjectWizardForm() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSaveButton_ToSubmitExamSubjectWizardForm Test===========");
+//
+//			examsubwizard.clickOnSaveButton_ToSubmitExamSubjectWizardForm();
+//
+//			log.info("============= Finished tcClickOnSaveButton_ToSubmitExamSubjectWizardForm Test===========");
+//			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm");
+//		}
+//	}
 
-		try {
-			log.info("============= Strting tcClickOnSaveButton_ToSubmitExamSubjectWizardForm Test===========");
-
-			examsubwizard.clickOnSaveButton_ToSubmitExamSubjectWizardForm();
-
-			log.info("============= Finished tcClickOnSaveButton_ToSubmitExamSubjectWizardForm Test===========");
-			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm");
-		}
-	}
-
-	@Test(priority = 20)
-	public void tcClickOnSuccessOkBtn_ToSaveMarksDisplay() {
-
-		try {
-			log.info("============= Strting tcClickOnSuccessOkBtn_ToSaveMarksDisplay Test===========");
-
-			examsubwizard.clickOnSuccessOkBtn();
-
-			log.info("============= Finished tcClickOnSuccessOkBtn_ToSaveMarksDisplay Test===========");
-			getScreenShot("tcClickOnSuccessOkBtn_ToSaveMarksDisplay");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSuccessOkBtn_ToSaveMarksDisplay");
-		}
-	}
+//	@Test(priority = 20)
+//	public void tcClickOnSuccessOkBtn_ToSaveMarksDisplay() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSuccessOkBtn_ToSaveMarksDisplay Test===========");
+//
+//			examsubwizard.clickOnSuccessOkBtn();
+//
+//			log.info("============= Finished tcClickOnSuccessOkBtn_ToSaveMarksDisplay Test===========");
+//			getScreenShot("tcClickOnSuccessOkBtn_ToSaveMarksDisplay");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSuccessOkBtn_ToSaveMarksDisplay");
+//		}
+//	}
 
 	//
 
@@ -1378,37 +1378,37 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 76)
-	public void tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping Test===========");
-
-			examsubwizard.clickOnSaveButton_ToSubmitExamSubjectWizardForm();
-
-			log.info(
-					"============= Finished tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping Test===========");
-			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping");
-		}
-	}
-
-	@Test(priority = 77)
-	public void tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject() {
-
-		try {
-			log.info("============= Strting tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject Test===========");
-
-			examsubwizard.clickOnSuccessOkBtn();
-
-			log.info("============= Finished tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject Test===========");
-			getScreenShot("tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject");
-		}
-	}
+//	@Test(priority = 76)
+//	public void tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping Test===========");
+//
+//			examsubwizard.clickOnSaveButton_ToSubmitExamSubjectWizardForm();
+//
+//			log.info(
+//					"============= Finished tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping Test===========");
+//			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_SubExamSubSubjectMapping");
+//		}
+//	}
+//
+//	@Test(priority = 77)
+//	public void tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject Test===========");
+//
+//			examsubwizard.clickOnSuccessOkBtn();
+//
+//			log.info("============= Finished tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject Test===========");
+//			getScreenShot("tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSuccessOkBtn_ToSaveSubExamAndSubject");
+//		}
+//	}
 
 	// Grade display selection
 
@@ -1487,37 +1487,37 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 82)
-	public void tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay() {
-
-		try {
-			log.info(
-					"============= Strting tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay	 Test===========");
-
-			examsubwizard.clickOnSaveButton_ToSubmitExamSubjectWizardForm();
-
-			log.info(
-					"============= Finished tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay Test===========");
-			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay");
-		}
-	}
-
-	@Test(priority = 83)
-	public void tcClickOnSuccessOkBtn_ToSaveGradeDisplay() {
-
-		try {
-			log.info("============= Strting tcClickOnSuccessOkBtn_ToSaveGradeDisplay Test===========");
-
-			examsubwizard.clickOnSuccessOkBtn();
-
-			log.info("============= Finished tcClickOnSuccessOkBtn_ToSaveGradeDisplay Test===========");
-			getScreenShot("tcClickOnSuccessOkBtn_ToSaveGradeDisplay");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSuccessOkBtn_ToSaveGradeDisplay");
-		}
-	}
+//	@Test(priority = 82)
+//	public void tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay() {
+//
+//		try {
+//			log.info(
+//					"============= Strting tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay	 Test===========");
+//
+//			examsubwizard.clickOnSaveButton_ToSubmitExamSubjectWizardForm();
+//
+//			log.info(
+//					"============= Finished tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay Test===========");
+//			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSaveButton_ToSubmitExamSubjectWizardForm_GradeDisplay");
+//		}
+//	}
+//
+//	@Test(priority = 83)
+//	public void tcClickOnSuccessOkBtn_ToSaveGradeDisplay() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSuccessOkBtn_ToSaveGradeDisplay Test===========");
+//
+//			examsubwizard.clickOnSuccessOkBtn();
+//
+//			log.info("============= Finished tcClickOnSuccessOkBtn_ToSaveGradeDisplay Test===========");
+//			getScreenShot("tcClickOnSuccessOkBtn_ToSaveGradeDisplay");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSuccessOkBtn_ToSaveGradeDisplay");
+//		}
+//	}
 
 	@Test(priority = 84)
 	public void tcMinimize_ExamSubjectWizard_Form() {
@@ -1833,7 +1833,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 104, dataProvider = "Filter")
+	@Test(priority = 104, dataProvider = "FilterRecords_ExamSubjectWizardOutputGrid")
 	public void tcFilterRecordsBasedOn_GradeName_ToDeactivateRecords_AfterCancel(String academicYear,
 			String categoryName, String gradeName, String examName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1843,7 +1843,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 			log.info(
 					"============= Strting tcFilterRecordsBasedOn_GradeName_ToDeactivateRecords_AfterCancel Test===========");
 
-			examsubwizard.filterRecordsBasedOn_GradeName(academicYear, categoryName, gradeName, examName);
+			examsubwizard.filterRecordsBasedOn_CategoryName(academicYear, categoryName, gradeName, examName);
 
 			log.info(
 					"============= Finished tcFilterRecordsBasedOn_GradeName_ToDeactivateRecords_AfterCancel Test===========");
@@ -1900,7 +1900,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 108, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 108, dataProvider = "FilterRecords_ExamSubjectWizardOutputGrid")
 	public void tcFilterRecordsBasedOn_GradeName_ToActivateRecords(String academicYear, String categoryName,
 			String gradeName, String examName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1909,7 +1909,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		try {
 			log.info("============= Strting tcFilterRecordsBasedOn_GradeName_ToActivateRecords Test===========");
 
-			examsubwizard.filterRecordsBasedOn_GradeName(academicYear, categoryName, gradeName, examName);
+			examsubwizard.filterRecordsBasedOn_CategoryName(academicYear, categoryName, gradeName, examName);
 
 			log.info("============= Finished tcFilterRecordsBasedOn_GradeName_ToActivateRecords Test===========");
 			getScreenShot("tcFilterRecordsBasedOn_GradeName_ToActivateRecords");
@@ -1963,7 +1963,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 112, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 112, dataProvider = "FilterRecords_ExamSubjectWizardOutputGrid")
 	public void tcFilterRecordsBasedOn_GradeName_ToActivateRecords_AfterCancel(String academicYear, String categoryName,
 			String gradeName, String examName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1973,7 +1973,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 			log.info(
 					"============= Strting tcFilterRecordsBasedOn_GradeName_ToActivateRecords_AfterCancel Test===========");
 
-			examsubwizard.filterRecordsBasedOn_GradeName(academicYear, categoryName, gradeName, examName);
+			examsubwizard.filterRecordsBasedOn_CategoryName(academicYear, categoryName, gradeName, examName);
 
 			log.info(
 					"============= Finished tcFilterRecordsBasedOn_GradeName_ToActivateRecords_AfterCancel Test===========");
@@ -2045,7 +2045,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 117, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 117, dataProvider = "FilterRecords_ExamSubjectWizardOutputGrid")
 	public void tcFilterRecordsBasedOn_GradeName_ToEditRecords(String academicYear, String categoryName,
 			String gradeName, String examName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -2054,7 +2054,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		try {
 			log.info("============= Strting tcFilterRecordsBasedOn_GradeName_ToEditRecords Test===========");
 
-			examsubwizard.filterRecordsBasedOn_GradeName(academicYear, categoryName, gradeName, examName);
+			examsubwizard.filterRecordsBasedOn_CategoryName(academicYear, categoryName, gradeName, examName);
 
 			log.info("============= Finished tcFilterRecordsBasedOn_GradeName_ToEditRecords Test===========");
 			getScreenShot("tcFilterRecordsBasedOn_GradeName_ToEditRecords");

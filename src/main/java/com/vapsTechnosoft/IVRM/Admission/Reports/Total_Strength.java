@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Reports;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -107,6 +109,9 @@ public class Total_Strength extends TestBase {
 	
 	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[4]/b")
 	WebElement total_TotalStudent;
+	
+	@FindBy(xpath = "//div[contains(@ng-show,'totstr') and @class='box box-primary']/div/h3")
+	WebElement grid_HeaderName;
 	
 
 	public Total_Strength(WebDriver driver) {
@@ -919,7 +924,9 @@ public class Total_Strength extends TestBase {
 		if (btn_Report.isDisplayed()) {
 			btn_Report.click();
 			log("Total Strength Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(7000);
+			Thread.sleep(2000);
+			
+			assertEquals(grid_HeaderName.getText().trim(), "TOTAL STRENGTH REPORT");					
 		} else {
 			log("Report button element not present.");
 			Thread.sleep(500);

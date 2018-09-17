@@ -36,7 +36,7 @@ public static final Logger log = Logger.getLogger(IvrmPortalLogin.class.getName(
 //	@FindBy(xpath="//button[@ng-show='prereg']")
 //	WebElement loginButton2;
 	
-	@FindBy(xpath="//span[contains(text(),'Logout')]")
+	@FindBy(xpath="//span[contains(text(),'Logout')]/preceding-sibling::button")
 	WebElement logoutButton;
 	
 	@FindBy(xpath="//*[@id='style-4']/section/ul/li[1]/a/span")
