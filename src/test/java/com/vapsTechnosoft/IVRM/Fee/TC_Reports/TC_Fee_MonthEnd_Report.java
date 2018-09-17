@@ -131,14 +131,14 @@ public class TC_Fee_MonthEnd_Report extends TestBase {
 	}
 
 	@Test(priority = 6, dataProvider = "Reports_FeeMonthEndData")
-	public void tcFill_FeeMonthEndReportForm(String academicYear, String runMode) {
+	public void tcFill_FeeMonthEndReportForm(String academicYear, String month, String year, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcFill_FeeMonthEndReportForm Test===========");
 
-			feemonthendreport.fill_FeeMonthEndReportForm(academicYear);
+			feemonthendreport.fill_FeeMonthEndReportForm(academicYear, month, year);
 
 			log.info("============= Finished tcFill_FeeMonthEndReportForm Test===========");
 			getScreenShot("tcFill_FeeMonthEndReportForm");
@@ -237,14 +237,14 @@ public class TC_Fee_MonthEnd_Report extends TestBase {
 	}
 
 	@Test(priority = 13, dataProvider = "Reports_FeeMonthEndData")
-	public void tcFill_FeeMonthEndReportForm_AfterClearingFilledData(String academicYear, String runMode) {
+	public void tcFill_FeeMonthEndReportForm_AfterClearingFilledData(String academicYear, String month, String year, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcFill_FeeMonthEndReportForm_AfterClearingFilledData Test===========");
 
-			feemonthendreport.fill_FeeMonthEndReportForm(academicYear);
+			feemonthendreport.fill_FeeMonthEndReportForm(academicYear, month, year);
 
 			log.info("============= Finished tcFill_FeeMonthEndReportForm_AfterClearingFilledData Test===========");
 			getScreenShot("tcFill_FeeMonthEndReportForm_AfterClearingFilledData");
@@ -284,8 +284,40 @@ public class TC_Fee_MonthEnd_Report extends TestBase {
 			getScreenShot("tcClickOnExportToExcel_ToDownLoadExcelReport");
 		}
 	}
+	@Test(priority = 16, dataProvider = "Reports_FeeMonthEndData")
+	public void tcFill_FeeMonthEndReportForm_ForPrint(String academicYear, String month, String year, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcFill_FeeMonthEndReportForm_ForPrint Test===========");
 
-	@Test(priority = 16)
+			feemonthendreport.fill_FeeMonthEndReportForm(academicYear, month, year);
+
+			log.info("============= Finished tcFill_FeeMonthEndReportForm_ForPrint Test===========");
+			getScreenShot("tcFill_FeeMonthEndReportForm_ForPrint");
+		} catch (Exception e) {
+			getScreenShot("tcFill_FeeMonthEndReportForm_ForPrint");
+		}
+	}
+
+	@Test(priority = 17)
+	public void tcClickReport_ToGenerate_FeeMonthEndReport_ForPrint() {
+
+		try {
+			log.info("============= Strting tcClickReport_ToGenerate_FeeMonthEndReport_ForPrint Test===========");
+
+			feemonthendreport.clickReport_ToGenerate_FeeMonthEndReport();
+
+			log.info("============= Finished tcClickReport_ToGenerate_FeeMonthEndReport_ForPrint Test===========");
+			getScreenShot("tcClickReport_ToGenerate_FeeMonthEndReport_ForPrint");
+		} catch (Exception e) {
+			getScreenShot("tcClickReport_ToGenerate_FeeMonthEndReport_ForPrint");
+		}
+	}
+
+
+	@Test(priority = 18)
 	public void tcClickOnPrint_ForPrintPreview() {
 
 		try {

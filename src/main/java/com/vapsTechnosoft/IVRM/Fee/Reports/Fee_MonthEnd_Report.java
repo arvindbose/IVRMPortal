@@ -47,7 +47,14 @@ public class Fee_MonthEnd_Report extends TestBase {
 
 	@FindBy(xpath = "//label[contains(text(),'Academic Year:')]/following-sibling::div/select")
 	private WebElement sel_AcademicYear;
-
+	
+	@FindBy(xpath = "//label[contains(text(),'Month :')]/following-sibling::div/select")
+	private WebElement sel_Month;
+	
+	@FindBy(xpath = "//label[contains(text(),'Year :')]/following-sibling::div/select")
+	private WebElement sel_Year;
+	
+	
 	@FindBy(xpath = "(//label[contains(text(),'From Date:')]/following-sibling::div//child::button)[1]")
 	private WebElement btn_FromCalender;
 
@@ -175,7 +182,7 @@ public class Fee_MonthEnd_Report extends TestBase {
 	 * Generate report for Fee Month End Report
 	 * 
 	 */
-	public void fill_FeeMonthEndReportForm(String academicYear) throws Exception {
+	public void fill_FeeMonthEndReportForm(String academicYear, String month, String year) throws Exception {
 
 		if (sel_AcademicYear.isDisplayed()) {
 			select = new Select(sel_AcademicYear);
@@ -189,29 +196,29 @@ public class Fee_MonthEnd_Report extends TestBase {
 			log("Academic Year element is not present");
 			Thread.sleep(500);
 		}
-		if (btn_FromCalender.isDisplayed()) {
-			btn_FromCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-			Thread.sleep(500);
-			btn_Date_From.click();
-			log("From date is selected from calender.");
+		if (sel_Month.isDisplayed()) {
+			select = new Select(sel_Month);
+			select.selectByVisibleText(month);
+
+			log("selected Month: " + month + " and object is:- " + sel_Month.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), month);
 			Thread.sleep(1000);
 		} else {
-			log("From Date Calendar button element not present.");
+			log("Month element is not present and object is:- " + sel_Month.toString());
 			Thread.sleep(500);
 		}
 
-		if (btn_ToCalender.isDisplayed()) {
-			btn_ToCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
-			Thread.sleep(500);
-			btn_Date_To.click();
-			log("To date is selected from calender.");
+		if (sel_Year.isDisplayed()) {
+			select = new Select(sel_Year);
+			select.selectByVisibleText(year);
+
+			log("selected Year: " + year + " and object is:- " + sel_Year.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), year);
 			Thread.sleep(1000);
 		} else {
-			log("To Date Calendar button element not present.");
+			log("Year element is not present and object is:- " + sel_Year.toString());
 			Thread.sleep(500);
 		}
 	}
