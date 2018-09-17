@@ -172,7 +172,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "ExamSubjectWizard_FormData_GardeDisplay")
+	@Test(priority = 6, dataProvider = "ExamSubjectWizard_FormData_MarksDispaly")
 	public void tcFill_ExamSubjectWizard_Form(String academicYear, String grade, String category, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -261,7 +261,7 @@ public class TC_Exam_Subject_Wizard extends TestBase {
 		}
 	}
 
-	@Test(priority = 11, dataProvider = "ExamSubjectWizard_FormData_GardeDisplay")
+	@Test(priority = 11, dataProvider = "ExamSubjectWizard_FormData_MarksDispaly")
 	public void tcFill_ExamSubjectWizard_Form_AfterCancel(String academicYear, String grade, String category,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
