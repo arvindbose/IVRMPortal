@@ -33,75 +33,75 @@ public class Masters_Fee_Amount_Entry extends TestBase {
 	WebElement option;
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
-	WebElement btnHome;
+	private WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
-	WebElement btnFee;
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
+	private WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
-	WebElement feeMasters;
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
+	private WebElement feeMasters;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[1]")
-	WebElement btnFeeAmtEntry;
-
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[1]")
+	private WebElement btnFeeAmtEntry;
+	
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
-	WebElement txtFeeAmtEntryMsgDispaly;
+	private WebElement txtFeeAmtEntryMsgDispaly;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/div[1]/label[1]/span)[1]")
-	WebElement rdBtn_Student;
+	@FindBy(xpath = "//input[@name='19530' and @value='stud']")
+	private WebElement rdBtn_Student;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/div[1]/label[2]/span)[1]")
-	WebElement rdBtn_Staff;
+	@FindBy(xpath = "//input[@name='19531' and @value='stfoth']")
+	private WebElement rdBtn_Staff;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/div[1]/label[3]/span)[1]")
-	WebElement rdBtn_Others;
+	@FindBy(xpath = "//input[@name='19532' and @value='stfothamt']")
+	private WebElement rdBtn_Others;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[1]")
-	WebElement selAcademicYr;
+	@FindBy(xpath = "//label[text()='Academic Year:']/following-sibling::div/select")
+	private WebElement selAcademicYr;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[2]")
-	WebElement selCategory;
+	@FindBy(xpath = "//label[text()='Category:']/following-sibling::div/select")
+	private WebElement selCategory;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[3]")
-	WebElement selFeeGroup;
+	@FindBy(xpath = "//label[text()='Fee Group:']/following-sibling::div/select")
+	private WebElement selFeeGroup;
 	
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[1]/tbody/tr")
-	List<WebElement> tblRows;
+	private List<WebElement> tblRows;
 	
 	@FindBy(xpath = "(//body[@id='style-4']//div/label/input)[4]")
-	WebElement chkRegular;
+	private WebElement chkRegular;
 	
 	@FindBy(xpath = "(//body[@id='style-4']//div/label/input)[5]")
-	WebElement chkECS;
+	private WebElement chkECS;
 	
 	@FindBy(xpath = "//div[@id='myModal']/div/div/div[3]/button")
-	WebElement btnAddToCart;
+	private WebElement btnAddToCart;
 	
 	@FindBy(xpath = "//div[@id='myModal']//div/table/tbody/tr")
-	List<WebElement> tblFeeSlabRows;
+	private List<WebElement> tblFeeSlabRows;
 	
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
-	WebElement btnOkonSuccess;
+	private WebElement btnOkonSuccess;
 	
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
-	WebElement successfulMessage;
+	private WebElement successfulMessage;
 		
 	//body[@id="style-4"]/div[5]/div[7]/div/button
 
 	@FindBy(xpath = "//button[@id='ee-btn']")
-	WebElement btnSave;
+	private WebElement btnSave;
 
 	@FindBy(xpath = "(//div[@class='text-center']/button)[3]")
-	WebElement btnCancel;
+	private WebElement btnCancel;
 
 	@FindBy(xpath = "//body[@id='style-4']//div/input")
-	WebElement inputSearch;
+	private WebElement inputSearch;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
-	WebElement btnPopUpYesDeleteit;
+	private WebElement btnPopUpYesDeleteit;
 	
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr")
-	List<WebElement> tblAmtGridRows;
+	private List<WebElement> tblAmtGridRows;
 	
 
 	
@@ -109,7 +109,7 @@ public class Masters_Fee_Amount_Entry extends TestBase {
 	
 
 	@FindBy(xpath = "//span[contains(text(),'ECS Flag')]/preceding-sibling::input")
-	WebElement chkECSFlag;
+	private WebElement chkECSFlag;
 
 	public Masters_Fee_Amount_Entry(WebDriver driver) {
 		this.driver = driver;

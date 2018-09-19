@@ -30,13 +30,13 @@ public class Masters_Fee_Class_Category extends TestBase {
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
 	WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[7]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[7]")
 	WebElement btnFeeClassCategory;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")

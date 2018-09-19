@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.vapsTechnosoft.IVRM.TCpreAdmission.TC_TransferStudent;
+package com.vapsTechnosoft.IVRM.PreAdmission.TC_TransferStudent;
 
 import java.io.IOException;
 
@@ -12,9 +12,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.preAdmission.TransferStudent.TransferFromPreAdmissionToAdmission;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author Arvind

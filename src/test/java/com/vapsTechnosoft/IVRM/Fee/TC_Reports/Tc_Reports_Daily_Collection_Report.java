@@ -14,8 +14,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.vapsTechnosoft.IVRM.Fee.Reports.Reports_Daily_Collection_Report;
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author vaps

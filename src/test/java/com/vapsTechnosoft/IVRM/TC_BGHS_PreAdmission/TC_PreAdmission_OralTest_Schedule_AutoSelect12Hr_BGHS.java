@@ -14,8 +14,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.vapsTechnosoft.IVRM.BGHS_PreAdmission.PreAdmission_OralTest_Schedule_AutoSelect12Hr_BGHS;
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author vaps

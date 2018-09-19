@@ -14,8 +14,8 @@ import org.testng.annotations.Test;
 
 import com.vapsTechnosoft.IVRM.Fee.Reports.Reports_Fee_IT_Receipt_Reports;
 import com.vapsTechnosoft.IVRM.Fee.TC_Masters.Tc_Masters_Fee_Head;
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author vaps

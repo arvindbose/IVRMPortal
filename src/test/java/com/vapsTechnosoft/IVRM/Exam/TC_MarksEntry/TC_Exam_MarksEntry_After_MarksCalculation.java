@@ -15,8 +15,8 @@ import org.testng.annotations.Test;
 
 import com.vapsTechnosoft.IVRM.Exam.MarksEntry.Exam_MarksEntry;
 import com.vapsTechnosoft.IVRM.Exam.MarksEntry.Exam_MarksEntry_After_MarksCalculation;
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author Arvind

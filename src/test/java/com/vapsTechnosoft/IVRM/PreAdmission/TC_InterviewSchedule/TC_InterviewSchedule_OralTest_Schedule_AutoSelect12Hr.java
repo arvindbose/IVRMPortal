@@ -13,10 +13,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.Staging_PreAdmission.PreAdmission_OralTest_Schedule_AutoSelect12Hr_Staging;
 import com.vapsTechnosoft.IVRM.preAdmission.InterviewSchedule.InterviewSchedule_OralTest_Schedule_AutoSelect12Hr;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author vaps

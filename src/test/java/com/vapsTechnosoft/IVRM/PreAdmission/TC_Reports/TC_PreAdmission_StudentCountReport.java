@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.vapsTechnosoft.IVRM.TCpreAdmission.TC_Reports;
+package com.vapsTechnosoft.IVRM.PreAdmission.TC_Reports;
 
 import java.io.IOException;
 
@@ -13,9 +13,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.preAdmission.Reports.PreAdmission_StudentCountReport;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author arvind

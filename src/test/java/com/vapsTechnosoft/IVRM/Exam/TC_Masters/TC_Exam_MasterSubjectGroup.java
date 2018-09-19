@@ -15,8 +15,8 @@ import org.testng.annotations.Test;
 
 import com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterGrade;
 import com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterSubjectGroup;
+import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
-import com.vapsTechnosoft.IVRM.uiActions.IvrmPortalLogin;
 
 /**
  * @author Arvind

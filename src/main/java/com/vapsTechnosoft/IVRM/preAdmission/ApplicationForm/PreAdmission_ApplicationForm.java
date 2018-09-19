@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -77,7 +78,7 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	private WebElement sel_GenderChild;
 
 	@FindBy(xpath = "(//div[@class='md-datepicker-input-container']/input)[1]")
-	private WebElement inputcalendar;//wrong
+	private WebElement inputcalendar;// wrong
 
 	@FindBy(xpath = "//label[text()='Applying For:']/following-sibling::div/select")
 	private WebElement sel_ApplingForClass;
@@ -100,42 +101,67 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	@FindBy(xpath = "//input[@name='file1']/parent::label")
 	private WebElement upload_StudentPhoto;
 
+	@FindBy(xpath = "(//label[contains(text(),'Date Of Birth:')]/following-sibling::div//child::button)[1]")
+	private WebElement btn_Calender_DoB;
+
+	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
+	private WebElement btn_MonthYear;
+
+	@FindBy(xpath = "//table//tbody//tr/td[contains(text(),'2014')]")
+	private WebElement btn_Year;
+
+	@FindBy(xpath = "//table//tbody//tr/td[@aria-label='June 2014']/span[contains(text(),Jun)]")
+	private WebElement btn_Month;
+
+	@FindBy(xpath = "//span[contains(text(),'Jun 2014')]/following::td[30]/span")
+	private WebElement btn_Date;
+
+	@FindBy(xpath = "//input[@data-ng-model='reg.PASR_Student_Pic_Path']/parent::label")
+	WebElement btn_BrowseImg_Child;
+
+	@FindBy(xpath = "//input[@data-ng-model='reg.PASR_FatherPhoto']/parent::label")
+	WebElement btn_BrowseImg_Father;
+
+	@FindBy(xpath = "//input[@data-ng-model='reg.PASR_MotherPhoto']/parent::label")
+	WebElement btn_BrowseImg_Mother;
 	/**
 	 * Other details locators
 	 */
+	@FindBy(xpath = "//label[text()='II Language Preffered:']/following-sibling::div/select")
+	private WebElement sel_2ndLanguage;
 
-	@FindBy(xpath = "(//input[@id='usr'])[7]")
-	private WebElement inputAadharCard;
+	@FindBy(xpath = "//label[text()='III Language Preffered:']/following-sibling::div/select")
+	private WebElement sel_3rddLanguage;
 
-	@FindBy(xpath = "(//input[@id='usr'])[8]")
-	private WebElement inputPlayGroup;
+	@FindBy(xpath = "//input[@id='usr' and @name='tribe']")
+	private WebElement input_Tribe;
 
-	@FindBy(xpath = "(//input[@id='usr'])[9]")
-	private WebElement inputParticipationInECA;
+	@FindBy(xpath = "//input[@id='usr' and @name='palygroup']")
+	private WebElement input_PlayGroup;
 
 	/**
 	 * Residential details locators
 	 */
 
-	@FindBy(xpath = "(//input[@id='usr'])[10]")
+	@FindBy(xpath = "//input[@id='usr' and @name='hconstreet']")
 	private WebElement inputStreet;
 
-	@FindBy(xpath = "(//input[@id='usr'])[11]")
+	@FindBy(xpath = "//input[@id='usr' and @name='hconarea']")
 	private WebElement inputArea;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[7]")
+	@FindBy(xpath = "//select[@id='sel1' and @name='hconcountry']")
 	private WebElement selCountry;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[8]")
+	@FindBy(xpath = "//select[@id='sel1' and @name='hconstate']")
 	private WebElement selState;
 
-	@FindBy(xpath = "(//input[@id='cityId'])[1]")
+	@FindBy(xpath = "//input[@id='cityId' and @name='City']")
 	private WebElement inputCity;
 
-	@FindBy(xpath = "(//input[@id='usr'])[12]")
+	@FindBy(xpath = "//input[@id='usr' and @name='pincode']")
 	private WebElement inputPinCodeZip;
 
-	@FindBy(xpath = "//body[@id='style-4']//div/div[2]/div[4]/div[1]/div[8]/label/input")
+	@FindBy(xpath = "//div[@class='form-group']/label/input")
 	private WebElement chk_permaddsameAsResAdd;
 
 	/**
@@ -144,34 +170,40 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param driver
 	 */
 
-	@FindBy(xpath = "(//input[@id='usr'])[16]")
+	@FindBy(xpath = "//input[@id='usr' and @name='hfathername']")
 	private WebElement inputfatherName;
 
-	@FindBy(xpath = "(//input[@id='usr'])[17]")
+	@FindBy(xpath = "//input[@id='usr' and @name='hfathersurname']")
 	private WebElement inputfathersurname;
 
-	@FindBy(xpath = "(//input[@id='usr'])[18]")
+	@FindBy(xpath = "//input[@id='usr' and @name='qual']")
 	private WebElement inputfatherQualification;
 
-	@FindBy(xpath = "(//input[@id='usr'])[19]")
-	private WebElement inputfatherService;
+	@FindBy(xpath = "//input[@id='usr' and @name='serv']")
+	private WebElement inputfatherOccupation;
 
-	@FindBy(xpath = "(//input[@id='usr'])[20]")
-	private WebElement inputfatherDesignation;
+	@FindBy(xpath = "//select[@id='sel1' and @name='hreligionfather']")
+	private WebElement selfatherReligion;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[10]")
+	@FindBy(xpath = "//select[@id='sel1' and @name='casteerefather']")
+	private WebElement selfatherCaste;
+
+	@FindBy(xpath = "//input[@id='usr' and @name='tribefather']")
+	private WebElement inputfatherTribe;
+
+	@FindBy(xpath = "//select[@id='sel1' and @name='adasdfsd']")
 	private WebElement sel_fathersNationality;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[20]")
-	private WebElement inputfathers_OfficeAddress;
+	@FindBy(xpath = "//input[@id='usr' and @name='fatheremail']")
+	private WebElement inputFathersEmailId;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[21]")
+	@FindBy(xpath = "//input[@id='usr' and @name='phoneoffm']")
 	private WebElement inputfathers_PhOffice;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[22]")
+	@FindBy(xpath = "//input[@id='usr' and @name='phoneresm']")
 	private WebElement inputfathers_PhResidence;
 
-	@FindBy(xpath = "(//div[@class='input-group-addon'])[3]/following-sibling::input")
+	@FindBy(xpath = "//input[@name='hfpno']")
 	private WebElement input_fatherMobile;
 
 	/**
@@ -180,59 +212,56 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param driver
 	 */
 
-	@FindBy(xpath = "(//input[@id='usr'])[24]")
+	@FindBy(xpath = "//input[@id='usr' and @name='hmothername']")
 	private WebElement inputmotherName;
 
-	@FindBy(xpath = "(//input[@id='usr'])[25]")
+	@FindBy(xpath = "//input[@id='usr' and @name='hmothernamesurname']")
 	private WebElement inputmothersurname;
 
-	@FindBy(xpath = "(//input[@id='usr'])[26]")
+	@FindBy(xpath = "//input[@id='usr' and @name='motquali']")
 	private WebElement inputmotherQualification;
 
-	@FindBy(xpath = "(//input[@id='usr'])[27]")
-	private WebElement inputmotherService;
+	@FindBy(xpath = "//input[@id='usr' and @name='motserbusi']")
+	private WebElement inputmotherOccupation;
 
-	@FindBy(xpath = "(//input[@id='usr'])[28]")
-	private WebElement inputmotherDesignation;
+	@FindBy(xpath = "//select[@id='sel1' and @name='hreligionmother']")
+	private WebElement selmotherReligion;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[11]")
+	@FindBy(xpath = "//select[@id='sel1' and @name='casteeremother']")
+	private WebElement selmotherCaste;
+
+	@FindBy(xpath = "//input[@id='usr' and @name='tribemother']")
+	private WebElement inputmotherTribe;
+
+	@FindBy(xpath = "//select[@id='sel1' and @name='motnation']")
 	private WebElement sel_mothersNationality;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[28]")
-	private WebElement inputmothers_OfficeAddress;
+	@FindBy(xpath = "//input[@id='usr' and @name='fatheremailmm']")
+	private WebElement inputmothersEmailId;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[29]")
+	@FindBy(xpath = "//input[@id='usr' and @name='phoneoffmmm']")
 	private WebElement inputmothers_PhOffice;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[30]")
+	@FindBy(xpath = "//input[@id='usr' and @name='phoneresmm']")
 	private WebElement inputmothers_PhResidence;
 
-	@FindBy(xpath = "(//div[@class='input-group-addon'])[4]/following-sibling::input")
+	@FindBy(xpath = "//input[@name='hMpno']")
 	private WebElement input_motherMobile;
 
 	/**
 	 * Monthly income
 	 */
-	@FindBy(xpath = "(//input[@id='usr'])[32]")
+	@FindBy(xpath = "//input[@id='usr' and @name='fathmoninco']")
 	private WebElement input_fatherIncome;
 
-	@FindBy(xpath = "(//input[@id='usr'])[33]")
+	@FindBy(xpath = "//input[@id='usr' and @name='mothincome']")
 	private WebElement input_motherIncome;
 
-	@FindBy(xpath = "(//input[@id='usr'])[34]")
+	@FindBy(xpath = "//input[@id='usr' and @name='haltno']")
 	private WebElement input_alternateContact;
 
-	@FindBy(xpath = "(//div[@class='input-group-addon'])[5]/following-sibling::input")
+	@FindBy(xpath = "//input[@id='reservation' and @name='haltemail']")
 	private WebElement input_alternateEmail;
-	/**
-	 * Year of Passing of Mother/Father if they are Old Baldwinians
-	 * 
-	 */
-	@FindBy(xpath = "(//input[@id='usr'])[35]")
-	private WebElement input_FatherYrOfPassing;
-
-	@FindBy(xpath = "(//input[@id='usr'])[36]")
-	private WebElement input_MotherYrOfPassing;
 
 	/**
 	 * Guardian's details
@@ -240,44 +269,44 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param driver
 	 */
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[36]")
+	@FindBy(xpath = "//input[@id='usr' and @name='gname']")
 	private WebElement input_GuardianName;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[37]")
+	@FindBy(xpath = "//input[@id='usr' and @name='grelationship']")
 	private WebElement input_GurRelationshipToStudent;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[38]")
-	private WebElement input_Gur_Address;
+	@FindBy(xpath = "//input[@id='usr' and @data-ng-model='reg.PASRG_Occupation']")
+	private WebElement input_Gur_Occupation;
 
-	@FindBy(xpath = "(//div[@class='input-group-addon'])[6]/following-sibling::input")
-	private WebElement input_GurEmail;
+	@FindBy(xpath = "//input[@id='reservation' and @name='gemail']")
+	private WebElement input_Gur_PhOffice;
 
-	@FindBy(xpath = "(//div[@class='input-group-addon'])[7]/following-sibling::input")
-	private WebElement input_GurPhone;
+	@FindBy(xpath = "//input[@id='reservation' and @name='gmob']")
+	private WebElement input_Gur_PhResidence;
 	/**
 	 * sibling details
 	 * 
 	 * @param driver
 	 */
-	@FindBy(xpath = "(//input[@id='usr'])[37]")
+	@FindBy(xpath = "(//input[@id='usr' and @name='hsname'])[1]")
 	private WebElement inputsibName;
 
-	@FindBy(xpath = "(//input[@id='usr'])[38]")
+	@FindBy(xpath = "(//input[@id='usr' and @data-ng-model='sibling.pasrS_SiblingsClass'])[1]")
 	private WebElement inputsibclass;
 
-	@FindBy(xpath = "(//input[@id='usr'])[39]")
+	@FindBy(xpath = "(//input[@id='usr' and @data-ng-model='sibling.pasrS_SiblingsAdmissionNo'])[1]")
 	private WebElement inputsibAdmNo;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table/tbody/tr/td[5])[1]")
 	private WebElement clickSibPlus;
 
-	@FindBy(xpath = "(//input[@id='usr'])[40]")
+	@FindBy(xpath = "(//input[@id='usr' and @name='hsname'])[2]")
 	private WebElement input2ndsibName;
 
-	@FindBy(xpath = "(//input[@id='usr'])[41]")
+	@FindBy(xpath = "(//input[@id='usr' and @data-ng-model='sibling.pasrS_SiblingsClass'])[2]")
 	private WebElement input2ndsibclass;
 
-	@FindBy(xpath = "(//input[@id='usr'])[42]")
+	@FindBy(xpath = "(//input[@id='usr' and @data-ng-model='sibling.pasrS_SiblingsAdmissionNo'])[2]")
 	private WebElement input2ndsibAdmNo;
 
 	/**
@@ -285,19 +314,19 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * 
 	 * @param driver
 	 */
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[2]/input")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[2]/input")
 	private WebElement inputSchoolName;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[3]/input")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[3]/input")
 	private WebElement inputClass;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[4]/input")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[4]/input")
 	private WebElement inputGrade;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[5]/input")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[5]/input")
 	private WebElement inputPassedYr;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr[1]/td[6]/input")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[6]/input")
 	private WebElement inputAddress;
 
 	/**
@@ -305,13 +334,13 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * 
 	 * @param driver
 	 */
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[4]/tbody/tr")
 	List<WebElement> tblRows;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[3]/label")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[4]/tbody/tr[4]/td[3]/label")
 	private WebElement uploadDOBCert;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[3]/tbody/tr[1]/td[4]/span")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[4]/tbody/tr[4]/td[4]/span")
 	private WebElement viewUploadDOBCert;
 
 	@FindBy(xpath = "//div[@id='myModal']/div/div/div[2]/button")
@@ -348,7 +377,7 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']//div/div[3]/div/div/input")
 	private WebElement inputSearch;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/table)[4]/tbody/tr")
+	@FindBy(xpath = "(//body[@id='style-4']//div/table)[5]/tbody/tr")
 	List<WebElement> tblRowStuList;
 
 	public PreAdmission_ApplicationForm(WebDriver driver) {
@@ -370,35 +399,40 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	}
 
 	/**
-	 * Navigate to Application Form(PreAdmission>PreAdmission Application>Application Form)
+	 * Navigate to Application Form(PreAdmission>PreAdmission
+	 * Application>Application Form)
 	 * 
 	 * @throws Exception
 	 */
 	public void navigateToPreAdmission_ApplicationForm() throws Exception {
-	if(btn_PreAdmission.isDisplayed()){	
-		btn_PreAdmission.click();
-		log("Clicked on Pre admission Button and object is:-" + btn_PreAdmission.toString());
-		Thread.sleep(1000);
-	}else{
-		log("PreAdmission Module element not present in navigation menu and object is:-"+btn_PreAdmission.toString());
-		Thread.sleep(500);
-	}
-	if(btn_PreAdmissionApplication.isDisplayed()){	
-		btn_PreAdmissionApplication.click();
-		log("Clicked on PreAdmission Application link Button and object is:-" + btn_PreAdmissionApplication.toString());
-		Thread.sleep(1000);
-	}else{
-		log("PreAdmission Application link element not present in navigation menu and object is:-"+btn_PreAdmissionApplication.toString());
-		Thread.sleep(500);
-	}
-	if(btn_ApplicationForm.isDisplayed()){	
-		btn_ApplicationForm.click();
-		log("Clicked on Application form pre admission Button and object is:-" + btn_ApplicationForm.toString());
-		Thread.sleep(1000);
-	}else{
-		log("Application Form link element not present in navigation menu and object is:-"+btn_ApplicationForm.toString());
-		Thread.sleep(500);
-	}
+		if (btn_PreAdmission.isDisplayed()) {
+			btn_PreAdmission.click();
+			log("Clicked on Pre admission Button and object is:-" + btn_PreAdmission.toString());
+			Thread.sleep(1000);
+		} else {
+			log("PreAdmission Module element not present in navigation menu and object is:-"
+					+ btn_PreAdmission.toString());
+			Thread.sleep(500);
+		}
+		if (btn_PreAdmissionApplication.isDisplayed()) {
+			btn_PreAdmissionApplication.click();
+			log("Clicked on PreAdmission Application link Button and object is:-"
+					+ btn_PreAdmissionApplication.toString());
+			Thread.sleep(1000);
+		} else {
+			log("PreAdmission Application link element not present in navigation menu and object is:-"
+					+ btn_PreAdmissionApplication.toString());
+			Thread.sleep(500);
+		}
+		if (btn_ApplicationForm.isDisplayed()) {
+			btn_ApplicationForm.click();
+			log("Clicked on Application form pre admission Button and object is:-" + btn_ApplicationForm.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Application Form link element not present in navigation menu and object is:-"
+					+ btn_ApplicationForm.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -410,7 +444,8 @@ public class PreAdmission_ApplicationForm extends TestBase {
 		try {
 			System.out.println(txt_ApplicationFormDispaly.getText());
 			txt_ApplicationFormDispaly.isDisplayed();
-			log("Application form pre admission page is dispalyed and object is:-" + txt_ApplicationFormDispaly.toString());
+			log("Application form pre admission page is dispalyed and object is:-"
+					+ txt_ApplicationFormDispaly.toString());
 			Thread.sleep(1000);
 			return true;
 
@@ -420,7 +455,7 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	}
 
 	/**
-	 * Student information for BGHS Application form
+	 * Student information for Application form
 	 * 
 	 * @param fName
 	 * @param mName
@@ -430,63 +465,62 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param religion
 	 * @param caste
 	 * @param gender
+	 * @param apply_class
 	 * @param email
+	 * @param academicYear
 	 * @param nationality
-	 * @param languageAtHome
-	 * @param churchName
-	 * @param dateOfBirth
-	 * @param selClass
+	 * @param motherTongue
+	 * @param syllabus
 	 * @throws Exception
 	 */
 
-	public void enterStudentInformationFor_ApplicationForm(String fName, String mName, String sName,
-			String mNumber, String birthPlace, String religion, String caste, String gender, String email,
-			String nationality, String languageAtHome, String churchName, String dateOfBirth, String selClass)
-			throws Exception {
+	public void enterStudentInformationFor_ApplicationForm(String fName, String mName, String sName, String mNumber,
+			String birthPlace, String religion, String caste, String gender, String apply_class, String email,
+			String academicYear, String nationality, String motherTongue, String syllabus) throws Exception {
 
-		if(input_FirstName.isDisplayed()){	
+		if (input_FirstName.isDisplayed()) {
 			input_FirstName.clear();
 			input_FirstName.sendKeys(fName);
 			log("Entered first name:-" + fName + " and object is " + input_FirstName.toString());
 			Thread.sleep(1000);
-		}else{
-			log("First Name(Child) element not present and object is:-"+input_FirstName.toString());
+		} else {
+			log("First Name(Child) element not present and object is:-" + input_FirstName.toString());
 			Thread.sleep(500);
 		}
-		if(input_MiddleName.isDisplayed()){	
+		if (input_MiddleName.isDisplayed()) {
 			input_MiddleName.clear();
 			input_MiddleName.sendKeys(mName);
 			log("Entered Middle name:-" + mName + " and object is " + input_MiddleName.toString());
 			Thread.sleep(1000);
-		}else{
-			log("Middle Name(Child) element not present and object is:-"+input_MiddleName.toString());
+		} else {
+			log("Middle Name(Child) element not present and object is:-" + input_MiddleName.toString());
 			Thread.sleep(500);
 		}
-		if(input_SurName.isDisplayed()){	
+		if (input_SurName.isDisplayed()) {
 			input_SurName.clear();
 			input_SurName.sendKeys(sName);
 			log("Entered Surname name:-" + sName + " and object is " + input_SurName.toString());
 			Thread.sleep(1000);
-		}else{
-			log("Surname Name(Child) element not present and object is:-"+input_SurName.toString());
+		} else {
+			log("Surname Name(Child) element not present and object is:-" + input_SurName.toString());
 			Thread.sleep(500);
 		}
-		if(input_MobileNumberChild.isDisplayed()){	
+		if (input_MobileNumberChild.isDisplayed()) {
 			input_MobileNumberChild.clear();
 			input_MobileNumberChild.sendKeys(mNumber);
 			log("Entered Mobile Number(Child):-" + mNumber + " and object is " + input_MobileNumberChild.toString());
 			Thread.sleep(1000);
-		}else{
-			log("Mobile Number(Child) element not present and object is:-"+input_MobileNumberChild.toString());
+		} else {
+			log("Mobile Number(Child) element not present and object is:-" + input_MobileNumberChild.toString());
 			Thread.sleep(500);
 		}
-		if(input_PlaceOfbirth.isDisplayed()){	
+		if (input_PlaceOfbirth.isDisplayed()) {
 			input_PlaceOfbirth.clear();
 			input_PlaceOfbirth.sendKeys(birthPlace);
 			log("Entered Place of Birth(Child):-" + birthPlace + " and object is " + input_PlaceOfbirth.toString());
 			Thread.sleep(1000);
-		}else{
-			log("Place of Birth(Child) element not present and object is:-"+input_PlaceOfbirth.toString());
+		} else {
+			log("Place of Birth(Child) element not present and object is:-" + input_PlaceOfbirth.toString());
 			Thread.sleep(500);
 		}
 		if (sel_ReligionStudent.isDisplayed()) {
@@ -501,99 +535,174 @@ public class PreAdmission_ApplicationForm extends TestBase {
 			log("Religion of Student element is not present and object is:- " + sel_ReligionStudent.toString());
 			Thread.sleep(500);
 		}
+		if (sel_CasteChild.isDisplayed()) {
+			select = new Select(sel_CasteChild);
+			select.selectByVisibleText(caste);
 
-		select = new Select(selectCaste);
-		select.selectByVisibleText(caste);
-		log("selected caste:-" + caste + " and object is " + selectCaste.toString());
-		Thread.sleep(1000);
+			log("Selected Caste of Student: " + caste + " and object is:- " + sel_CasteChild.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), caste);
+			Thread.sleep(1000);
+		} else {
+			log("Caste of Student element is not present and object is:- " + sel_CasteChild.toString());
+			Thread.sleep(500);
+		}
+		if (sel_GenderChild.isDisplayed()) {
+			select = new Select(sel_GenderChild);
+			select.selectByVisibleText(gender);
 
-		WebElement option1 = select.getFirstSelectedOption();
-		Assert.assertEquals(option1.getText(), caste);
-		Thread.sleep(1000);
+			log("Selected Gender of Student: " + gender + " and object is:- " + sel_GenderChild.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), gender);
+			Thread.sleep(1000);
+		} else {
+			log("Gender of Student element is not present and object is:- " + sel_CasteChild.toString());
+			Thread.sleep(500);
+		}
 
-		select = new Select(selgender);
-		select.selectByVisibleText(gender);
-		log("selected gender:-" + gender + " and object is " + selgender.toString());
-		Thread.sleep(1000);
+		if (btn_Calender_DoB.isDisplayed()) {
+			btn_Calender_DoB.click();
+			Thread.sleep(1000);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+			Thread.sleep(1000);
+			btn_MonthYear.click();
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_Year);
+			Thread.sleep(1000);
+			btn_Month.click();
+			btn_Date.click();
+			log("Date of Birth is selected from calender.");
+			Thread.sleep(1000);
+		} else {
+			log("Date of Birth Calendar button element not present and object is:- " + btn_Calender_DoB.toString());
+			Thread.sleep(500);
+		}
+		if (sel_ApplingForClass.isDisplayed()) {
+			select = new Select(sel_ApplingForClass);
+			select.selectByVisibleText(apply_class);
 
-		WebElement option2 = select.getFirstSelectedOption();
-		Assert.assertEquals(option2.getText(), gender);
-		Thread.sleep(1000);
+			log("Selected Class: " + apply_class + " and object is:- " + sel_ApplingForClass.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), apply_class);
+			Thread.sleep(1000);
+		} else {
+			log("Class element is not present and object is:- " + sel_ApplingForClass.toString());
+			Thread.sleep(500);
+		}
+		if (input_EmailIDChild.isDisplayed()) {
+			input_EmailIDChild.clear();
+			input_EmailIDChild.sendKeys(email);
+			log("Entered Eamil id:-" + email + " and object is " + input_EmailIDChild.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Eamil id(Child) element not present and object is:-" + input_EmailIDChild.toString());
+			Thread.sleep(500);
+		}
+		if (sel_DisableacademicYear.isDisplayed()) {
+			select = new Select(sel_DisableacademicYear);
+			// select.selectByVisibleText(apply_class);
+			//
+			// log("Selected Class: " + apply_class + " and object is:- " +
+			// sel_ApplingForClass.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), academicYear);
+			log("Academic year selected is corret and object is:- " + sel_DisableacademicYear.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Academic Year element is not present and object is:- " + sel_DisableacademicYear.toString());
+			Thread.sleep(500);
+		}
 
-		emailID.sendKeys(email);
-		log("entered student emailid:-" + email + " and object is " + emailID.toString());
-		Thread.sleep(1000);
+		if (sel_NationalityChild.isDisplayed()) {
+			select = new Select(sel_NationalityChild);
+			select.selectByVisibleText(nationality);
 
-		select = new Select(selnationality);
-		select.selectByVisibleText(nationality);
-		log("selected nationality:-" + nationality + " and object is " + selnationality.toString());
-		Thread.sleep(1000);
+			log("Selected Nationality child: " + nationality + " and object is:- " + sel_NationalityChild.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), nationality);
+			Thread.sleep(1000);
+		} else {
+			log("Nationality(Child) element is not present and object is:- " + sel_NationalityChild.toString());
+			Thread.sleep(500);
+		}
+		if (input_MotherTongue.isDisplayed()) {
+			input_MotherTongue.clear();
+			input_MotherTongue.sendKeys(motherTongue);
+			log("Entered Mother Tongue:-" + motherTongue + " and object is " + input_MotherTongue.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Mother Tongue element not present and object is:-" + input_MotherTongue.toString());
+			Thread.sleep(500);
+		}
+		if (sel_LastSchoolSyllabus.isDisplayed()) {
+			select = new Select(sel_LastSchoolSyllabus);
+			select.selectByVisibleText(syllabus);
 
-		WebElement option3 = select.getFirstSelectedOption();
-		Assert.assertEquals(option3.getText(), nationality);
-		Thread.sleep(1000);
-
-		input_LangAtHome.sendKeys(languageAtHome);
-		log("entered language spoken at home:-" + languageAtHome + " and object is " + input_LangAtHome.toString());
-		Thread.sleep(1000);
-
-		input_ChurchAddr.sendKeys(churchName);
-		log("entered church name and address:-" + churchName + " and object is " + input_ChurchAddr.toString());
-		Thread.sleep(1000);
-
-		imageAndDocumentUpload(uploadStudentPhoto, "SchoolGirl.jpg");
-		log("Student image uploaded successfully");
-
-		copyToClipbord(dateOfBirth);
-
-		Actions oAction = new Actions(driver);
-		oAction.moveToElement(inputcalendar);
-		oAction.contextClick(inputcalendar).build().perform();
-
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_DOWN);
-		robot.keyRelease(KeyEvent.VK_DOWN);
-		robot.keyPress(KeyEvent.VK_DOWN);
-		robot.keyRelease(KeyEvent.VK_DOWN);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		log("Entered date of Birth " + dateOfBirth + " and object is:-" + inputcalendar.toString());
-		Thread.sleep(2000);
-
-		select = new Select(selectClass);
-		select.selectByVisibleText(selClass);
-		log("selected the class based on date of birth:-" + selClass + " and object is " + selectClass.toString());
-		Thread.sleep(1000);
-
-		WebElement option4 = select.getFirstSelectedOption();
-		Assert.assertEquals(option4.getText(), selClass);
-		Thread.sleep(1000);
-
+			log("Selected last school syllabus: " + syllabus + " and object is:- " + sel_LastSchoolSyllabus.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), syllabus);
+			Thread.sleep(1000);
+		} else {
+			log("Last school syllabus element is not present and object is:- " + sel_LastSchoolSyllabus.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
-	 * Select the others details required for BGHS admission application form
+	 * Select the others details application form
 	 * 
-	 * @param aadharCardNo
+	 * @param secondLang
+	 * @param thirdLang
+	 * @param tribe
 	 * @param playGroup
-	 * @param ECAPrticipation
 	 * @throws Exception
 	 */
-	public void othersDetailsForBGhsAdmApplicationForm(String aadharCardNo, String playGroup, String ECAPrticipation)
-			throws Exception {
+	public void othersDetails_ForPreadmApplicationForm(String secondLang, String thirdLang, String tribe,
+			String playGroup) throws Exception {
 
-		inputAadharCard.sendKeys(aadharCardNo);
-		log("entered Aadhar number:-" + aadharCardNo + " and object is " + inputAadharCard.toString());
-		Thread.sleep(1000);
+		if (sel_2ndLanguage.isDisplayed()) {
+			select = new Select(sel_2ndLanguage);
+			select.selectByVisibleText(secondLang);
 
-		inputPlayGroup.sendKeys(playGroup);
-		log("entered Play Group:-" + playGroup + " and object is " + inputPlayGroup.toString());
-		Thread.sleep(1000);
+			log("Selected 2nd Language: " + secondLang + " and object is:- " + sel_2ndLanguage.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), secondLang);
+			Thread.sleep(1000);
+		} else {
+			log("2nd Language element is not present and object is:- " + sel_2ndLanguage.toString());
+			Thread.sleep(500);
+		}
 
-		inputParticipationInECA.sendKeys(ECAPrticipation);
-		log("entered participation in ECA:-" + ECAPrticipation + " and object is "
-				+ inputParticipationInECA.toString());
-		Thread.sleep(1000);
+		if (sel_3rddLanguage.isDisplayed()) {
+			select = new Select(sel_3rddLanguage);
+			select.selectByVisibleText(thirdLang);
+
+			log("Selected 3nd Language: " + thirdLang + " and object is:- " + sel_3rddLanguage.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), thirdLang);
+			Thread.sleep(1000);
+		} else {
+			log("3nd Language element is not present and object is:- " + sel_3rddLanguage.toString());
+			Thread.sleep(500);
+		}
+		if (input_Tribe.isDisplayed()) {
+			input_Tribe.clear();
+			input_Tribe.sendKeys(tribe);
+			log("Entered Tribe:-" + tribe + " and object is " + input_Tribe.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Tribe element not present and object is:-" + input_Tribe.toString());
+			Thread.sleep(500);
+		}
+
+		if (input_PlayGroup.isDisplayed()) {
+			input_PlayGroup.clear();
+			input_PlayGroup.sendKeys(playGroup);
+			log("Entered Play Group:-" + playGroup + " and object is " + input_PlayGroup.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Play Group element not present and object is:-" + input_PlayGroup.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -607,38 +716,71 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param pinZip
 	 * @throws Exception
 	 */
-	public void residentialAndPermanentAddress(String street, String area, String Country, String state, String city,
-			String pinZip) throws Exception {
+	public void residentialAndPermanentAddress_PreAdmApplicationForm(String street, String area, String Country,
+			String state, String city, String pinZip) throws Exception {
+		if (inputStreet.isDisplayed()) {
+			inputStreet.clear();
+			inputStreet.sendKeys(street);
+			log("Entered street:-" + street + " and object is " + inputStreet.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Street element not present and object is:-" + inputStreet.toString());
+			Thread.sleep(500);
+		}
+		if (inputArea.isDisplayed()) {
+			inputArea.clear();
+			inputArea.sendKeys(area);
+			log("entered area:-" + area + " and object is " + inputArea.toString());
+			Thread.sleep(1000);
+		} else {
+			log("area element not present and object is:-" + inputArea.toString());
+			Thread.sleep(500);
+		}
+		if (selCountry.isDisplayed()) {
+			select = new Select(selCountry);
+			select.selectByVisibleText(Country);
 
-		inputStreet.sendKeys(street);
-		log("entered street:-" + street + " and object is " + inputStreet.toString());
-		Thread.sleep(1000);
+			log("Selected country of address from the list: " + Country + " and object is:- " + selCountry.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), Country);
+			Thread.sleep(1000);
+		} else {
+			log("country element is not present and object is:- " + selCountry.toString());
+			Thread.sleep(500);
+		}
+		if (selState.isDisplayed()) {
+			select = new Select(selState);
+			select.selectByVisibleText(state);
 
-		inputArea.sendKeys(area);
-		log("entered area:-" + area + " and object is " + inputArea.toString());
-		Thread.sleep(1000);
-
-		select = new Select(selCountry);
-		select.selectByVisibleText(Country);
-		log("selected country of address from the list:-" + Country + " and object is " + selCountry.toString());
-		Thread.sleep(2000);
-
-		select = new Select(selState);
-		select.selectByVisibleText(state);
-		log("selected state of address from the list:-" + state + " and object is " + selState.toString());
-		Thread.sleep(2000);
-
-		inputCity.sendKeys(city);
-		log("entered city:-" + city + " and object is " + inputCity.toString());
-		Thread.sleep(1000);
-
-		inputPinCodeZip.sendKeys(pinZip);
-		log("entered pin/zip:-" + pinZip + " and object is " + inputPinCodeZip.toString());
-		Thread.sleep(1000);
-		//
-		inputPinCodeZip.sendKeys(Keys.TAB);
-		Thread.sleep(1000);
-		//
+			log("Selected State of address from the list: " + state + " and object is:- " + selState.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), state);
+			Thread.sleep(1000);
+		} else {
+			log("State element is not present and object is:- " + selState.toString());
+			Thread.sleep(500);
+		}
+		if (inputCity.isDisplayed()) {
+			inputCity.clear();
+			inputCity.sendKeys(city);
+			log("entered city:-" + city + " and object is " + inputCity.toString());
+			Thread.sleep(1000);
+		} else {
+			log("city element not present and object is:-" + inputCity.toString());
+			Thread.sleep(500);
+		}
+		if (inputPinCodeZip.isDisplayed()) {
+			inputPinCodeZip.clear();
+			inputPinCodeZip.sendKeys(pinZip);
+			log("entered pin/zip:-" + pinZip + " and object is " + inputPinCodeZip.toString());
+			Thread.sleep(1000);
+			//
+			inputPinCodeZip.sendKeys(Keys.TAB);
+			Thread.sleep(1000);
+		} else {
+			log("Zip element not present and object is:-" + inputPinCodeZip.toString());
+			Thread.sleep(500);
+		}
 		boolean addressPermanent = chk_permaddsameAsResAdd.isSelected();
 
 		if (addressPermanent) {
@@ -659,76 +801,149 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	}
 
 	/**
-	 * Father's information for BGHS pre admission application form
+	 * Father's information for Pre admission application form
 	 * 
 	 * @param fatherName
 	 * @param fatherSurName
 	 * @param fatherQualification
-	 * @param fatherService
-	 * @param fatherDesignation
+	 * @param fatherOccupation
+	 * @param fatherReligion
+	 * @param fatherCaste
+	 * @param fatherTribe
 	 * @param fatherNationanlity
-	 * @param fatherOfficeAddr
+	 * @param fatherEmail
 	 * @param fatherPhOffice
 	 * @param fatherPhoneRes
 	 * @param fatherMobile
 	 * @throws Exception
 	 */
+	public void fathersDetails_PreAdmission_ApplicationForm(String fatherName, String fatherSurName,
+			String fatherQualification, String fatherOccupation, String fatherReligion, String fatherCaste,
+			String fatherTribe, String fatherNationanlity, String fatherEmail, String fatherPhOffice,
+			String fatherPhoneRes, String fatherMobile) throws Exception {
+		if (inputfatherName.isDisplayed()) {
+			inputfatherName.clear();
+			inputfatherName.sendKeys(fatherName);
+			log("entered father's name:-" + fatherName + " and object is " + inputfatherName.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's name element not present and object is:-" + inputfatherName.toString());
+			Thread.sleep(500);
+		}
+		if (inputfathersurname.isDisplayed()) {
+			inputfathersurname.clear();
+			inputfathersurname.sendKeys(fatherSurName);
+			log("entered father's surname:-" + fatherSurName + " and object is " + inputfathersurname.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's surname element not present and object is:-" + inputfathersurname.toString());
+			Thread.sleep(500);
+		}
+		if (inputfatherQualification.isDisplayed()) {
+			inputfatherQualification.clear();
+			inputfatherQualification.sendKeys(fatherQualification);
+			log("entered father's Qualification:-" + fatherQualification + " and object is "
+					+ inputfatherQualification.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's Qualification element not present and object is:-" + inputfatherQualification.toString());
+			Thread.sleep(500);
+		}
+		if (inputfatherOccupation.isDisplayed()) {
+			inputfatherOccupation.clear();
+			inputfatherOccupation.sendKeys(fatherOccupation);
+			log("entered father's Occupation:-" + fatherOccupation + " and object is "
+					+ inputfatherOccupation.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's Occupation element not present and object is:-" + inputfatherQualification.toString());
+			Thread.sleep(500);
+		}
+		if (selfatherReligion.isDisplayed()) {
+			select = new Select(selfatherReligion);
+			select.selectByVisibleText(fatherReligion);
 
-	public void fathersDetails_BGHSPreAdmission_ApplicationForm(String fatherName, String fatherSurName,
-			String fatherQualification, String fatherService, String fatherDesignation, String fatherNationanlity,
-			String fatherOfficeAddr, String fatherPhOffice, String fatherPhoneRes, String fatherMobile)
-			throws Exception {
+			log("Selected Religion of FAther: " + fatherReligion + " and object is:- " + selfatherReligion.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), fatherReligion);
+			Thread.sleep(1000);
+		} else {
+			log("Religion of FAther element is not present and object is:- " + selfatherReligion.toString());
+			Thread.sleep(500);
+		}
+		if (selfatherCaste.isDisplayed()) {
+			select = new Select(selfatherCaste);
+			select.selectByVisibleText(fatherCaste);
 
-		inputfatherName.sendKeys(fatherName);
-		log("entered father's name:-" + fatherName + " and object is " + inputfatherName.toString());
-		Thread.sleep(1000);
+			log("Selected Caste of Father: " + fatherCaste + " and object is:- " + selfatherCaste.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), fatherCaste);
+			Thread.sleep(1000);
+		} else {
+			log("Caste of Father element is not present and object is:- " + selfatherCaste.toString());
+			Thread.sleep(500);
+		}
+		if (inputfatherTribe.isDisplayed()) {
+			inputfatherTribe.clear();
+			inputfatherTribe.sendKeys(fatherTribe);
+			log("entered father's Tribe:-" + fatherTribe + " and object is " + inputfatherTribe.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's Tribe element not present and object is:-" + inputfatherTribe.toString());
+			Thread.sleep(500);
+		}
 
-		inputfathersurname.sendKeys(fatherSurName);
-		log("entered father's surname:-" + fatherSurName + " and object is " + inputfathersurname.toString());
-		Thread.sleep(1000);
+		if (sel_fathersNationality.isDisplayed()) {
+			select = new Select(sel_fathersNationality);
+			select.selectByVisibleText(fatherNationanlity);
 
-		inputfatherQualification.sendKeys(fatherQualification);
-		log("entered father's Qualification:-" + fatherQualification + " and object is "
-				+ inputfatherQualification.toString());
-		Thread.sleep(1000);
-
-		inputfatherService.sendKeys(fatherService);
-		log("entered father's service/business:-" + fatherService + " and object is " + inputfatherService.toString());
-		Thread.sleep(1000);
-
-		inputfatherDesignation.sendKeys(fatherDesignation);
-		log("entered father's designation:-" + fatherDesignation + " and object is "
-				+ inputfatherDesignation.toString());
-		Thread.sleep(1000);
-
-		select = new Select(sel_fathersNationality);
-		select.selectByVisibleText(fatherNationanlity);
-		log("selected father's nationality:-" + fatherNationanlity + " and object is " + selnationality.toString());
-		Thread.sleep(1000);
-
-		WebElement option5 = select.getFirstSelectedOption();
-		Assert.assertEquals(option5.getText(), fatherNationanlity);
-		Thread.sleep(1000);
-
-		inputfathers_OfficeAddress.sendKeys(fatherOfficeAddr);
-		log("entered father's office address:-" + fatherOfficeAddr + " and object is "
-				+ inputfathers_OfficeAddress.toString());
-		Thread.sleep(1000);
-
-		inputfathers_PhOffice.sendKeys(fatherPhOffice);
-		log("entered father's office phone Num:-" + fatherPhOffice + " and object is "
-				+ inputfathers_PhOffice.toString());
-		Thread.sleep(1000);
-
-		inputfathers_PhResidence.sendKeys(fatherPhoneRes);
-		log("entered father's residence phone Num:-" + fatherPhoneRes + " and object is "
-				+ inputfathers_PhResidence.toString());
-		Thread.sleep(1000);
-
-		input_fatherMobile.sendKeys(fatherMobile);
-		log("entered father's mobile:-" + fatherMobile + " and object is " + input_fatherMobile.toString());
-		Thread.sleep(1000);
-
+			log("Selected Nationality of Father: " + fatherNationanlity + " and object is:- "
+					+ sel_fathersNationality.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), fatherNationanlity);
+			Thread.sleep(1000);
+		} else {
+			log("Nationality of Father element is not present and object is:- " + sel_fathersNationality.toString());
+			Thread.sleep(500);
+		}
+		if (inputFathersEmailId.isDisplayed()) {
+			inputFathersEmailId.clear();
+			inputFathersEmailId.sendKeys(fatherEmail);
+			log("entered father's Email:-" + fatherEmail + " and object is " + inputFathersEmailId.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's Email element not present and object is:-" + inputFathersEmailId.toString());
+			Thread.sleep(500);
+		}
+		if (inputfathers_PhOffice.isDisplayed()) {
+			inputfathers_PhOffice.clear();
+			inputfathers_PhOffice.sendKeys(fatherPhOffice);
+			log("entered father's office phone Num:-" + fatherPhOffice + " and object is "
+					+ inputfathers_PhOffice.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's Phone office element not present and object is:-" + inputfatherTribe.toString());
+			Thread.sleep(500);
+		}
+		if (inputfathers_PhResidence.isDisplayed()) {
+			inputfathers_PhResidence.clear();
+			inputfathers_PhResidence.sendKeys(fatherPhoneRes);
+			log("entered father's residence phone Num:-" + fatherPhoneRes + " and object is "
+					+ inputfathers_PhResidence.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's Phone residence element not present and object is:-" + inputfathers_PhResidence.toString());
+			Thread.sleep(500);
+		}
+		if (input_fatherMobile.isDisplayed()) {
+			input_fatherMobile.clear();
+			input_fatherMobile.sendKeys(fatherMobile);
+			log("entered father's mobile:-" + fatherMobile + " and object is " + input_fatherMobile.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's mobile element not present and object is:-" + input_fatherMobile.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -747,61 +962,136 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @throws Exception
 	 */
 
-	public void mothersDetails_BGHSPreAdmission_ApplicationForm(String motherName, String motherSurName,
-			String motherQualification, String motherService, String motherDesignation, String motherNationanlity,
-			String motherOfficeAddr, String motherPhOffice, String motherPhoneRes, String motherMobile)
-			throws Exception {
+	public void mothersDetails_PreAdmission_ApplicationForm(String motherName, String motherSurName,
+			String motherQualification, String motherOccupation, String motherReligion, String motherCaste,
+			String motherTribe, String motherNationanlity, String motherEmail, String motherPhOffice,
+			String motherPhoneRes, String motherMobile) throws Exception {
+		if (inputmotherName.isDisplayed()) {
+			inputmotherName.clear();
+			inputmotherName.sendKeys(motherName);
+			log("entered mother's name:-" + motherName + " and object is " + inputmotherName.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Mother's name element not present and object is:-" + inputmotherName.toString());
+			Thread.sleep(500);
+		}
+		if (inputmothersurname.isDisplayed()) {
+			inputmothersurname.clear();
+			inputmothersurname.sendKeys(motherSurName);
+			log("entered mother's surname:-" + motherSurName + " and object is " + inputmothersurname.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Mother's surname element not present and object is:-" + inputmothersurname.toString());
+			Thread.sleep(500);
+		}
 
-		inputmotherName.sendKeys(motherName);
-		log("entered mother's name:-" + motherName + " and object is " + inputmotherName.toString());
-		Thread.sleep(1000);
+		if (inputmotherQualification.isDisplayed()) {
+			inputmotherQualification.clear();
+			inputmotherQualification.sendKeys(motherQualification);
+			log("entered mother's Qualification:-" + motherQualification + " and object is "
+					+ inputmotherQualification.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Mother's Qualification element not present and object is:-" + inputmotherQualification.toString());
+			Thread.sleep(500);
+		}
+		if (inputmotherOccupation.isDisplayed()) {
+			inputmotherOccupation.clear();
+			inputmotherOccupation.sendKeys(motherOccupation);
+			log("entered mother's Occupation:-" + motherOccupation + " and object is "
+					+ inputmotherOccupation.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Mother's Occupation element not present and object is:-" + inputmotherOccupation.toString());
+			Thread.sleep(500);
+		}
 
-		inputmothersurname.sendKeys(motherSurName);
-		log("entered mother's surname:-" + motherSurName + " and object is " + inputmothersurname.toString());
-		Thread.sleep(1000);
+		if (selmotherReligion.isDisplayed()) {
+			select = new Select(selmotherReligion);
+			select.selectByVisibleText(motherReligion);
 
-		inputmotherQualification.sendKeys(motherQualification);
-		log("entered mother's Qualification:-" + motherQualification + " and object is "
-				+ inputmotherQualification.toString());
-		Thread.sleep(1000);
+			log("Selected Religion of mother: " + motherReligion + " and object is:- " + selmotherReligion.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), motherReligion);
+			Thread.sleep(1000);
+		} else {
+			log("Religion of mother element is not present and object is:- " + selmotherReligion.toString());
+			Thread.sleep(500);
+		}
+		if (selfatherCaste.isDisplayed()) {
+			select = new Select(selmotherCaste);
+			select.selectByVisibleText(motherCaste);
 
-		inputmotherService.sendKeys(motherService);
-		log("entered mother's service/business:-" + motherService + " and object is " + inputmotherService.toString());
-		Thread.sleep(1000);
+			log("Selected Caste of mother: " + motherCaste + " and object is:- " + selmotherCaste.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), motherCaste);
+			Thread.sleep(1000);
+		} else {
+			log("Caste of mother element is not present and object is:- " + selmotherCaste.toString());
+			Thread.sleep(500);
+		}
+		if (inputmotherTribe.isDisplayed()) {
+			inputmotherTribe.clear();
+			inputmotherTribe.sendKeys(motherTribe);
+			log("entered mother's Tribe:-" + motherTribe + " and object is " + inputmotherTribe.toString());
+			Thread.sleep(1000);
+		} else {
+			log("mother's Tribe element not present and object is:-" + inputmotherTribe.toString());
+			Thread.sleep(500);
+		}
 
-		inputmotherDesignation.sendKeys(motherDesignation);
-		log("entered mother's designation:-" + motherDesignation + " and object is "
-				+ inputmotherDesignation.toString());
-		Thread.sleep(1000);
+		if (sel_mothersNationality.isDisplayed()) {
+			select = new Select(sel_mothersNationality);
+			select.selectByVisibleText(motherNationanlity);
 
-		select = new Select(sel_mothersNationality);
-		select.selectByVisibleText(motherNationanlity);
-		log("selected mother's nationality:-" + motherNationanlity + " and object is "
-				+ sel_mothersNationality.toString());
-		Thread.sleep(1000);
+			log("Selected Nationality of mother: " + motherNationanlity + " and object is:- "
+					+ sel_fathersNationality.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), motherNationanlity);
+			Thread.sleep(1000);
+		} else {
+			log("Nationality of mother element is not present and object is:- " + sel_mothersNationality.toString());
+			Thread.sleep(500);
+		}
+		if (inputmothersEmailId.isDisplayed()) {
+			inputmothersEmailId.clear();
+			inputmothersEmailId.sendKeys(motherEmail);
+			log("entered mother's Email:-" + motherEmail + " and object is " + inputmothersEmailId.toString());
+			Thread.sleep(1000);
+		} else {
+			log("mother's Email element not present and object is:-" + inputmothersEmailId.toString());
+			Thread.sleep(500);
+		}
 
-		WebElement option6 = select.getFirstSelectedOption();
-		Assert.assertEquals(option6.getText(), motherNationanlity);
-		Thread.sleep(1000);
-
-		inputmothers_OfficeAddress.sendKeys(motherOfficeAddr);
-		log("entered mother's office address:-" + motherOfficeAddr + " and object is "
-				+ inputmothers_OfficeAddress.toString());
-		Thread.sleep(1000);
-
-		inputmothers_PhOffice.sendKeys(motherPhOffice);
-		log("entered mother's office phone Num:-" + motherPhOffice + " and object is "
-				+ inputmothers_PhOffice.toString());
-		Thread.sleep(1000);
-
-		inputmothers_PhResidence.sendKeys(motherPhoneRes);
-		log("entered mother's residence phone Num:-" + motherPhoneRes + " and object is "
-				+ inputmothers_PhResidence.toString());
-		Thread.sleep(1000);
-
-		input_motherMobile.sendKeys(motherMobile);
-		log("entered mother's mobile:-" + motherMobile + " and object is " + input_motherMobile.toString());
-		Thread.sleep(1000);
+		if (inputmothers_PhOffice.isDisplayed()) {
+			inputmothers_PhOffice.clear();
+			inputmothers_PhOffice.sendKeys(motherPhOffice);
+			log("entered mother's office phone Num:-" + motherPhOffice + " and object is "
+					+ inputmothers_PhOffice.toString());
+			Thread.sleep(1000);
+		} else {
+			log("mother's Phone office element not present and object is:-" + inputmothers_PhOffice.toString());
+			Thread.sleep(500);
+		}
+		if (inputmothers_PhResidence.isDisplayed()) {
+			inputmothers_PhResidence.clear();
+			inputmothers_PhResidence.sendKeys(motherPhoneRes);
+			log("entered mother's residence phone Num:-" + motherPhoneRes + " and object is "
+					+ inputmothers_PhResidence.toString());
+			Thread.sleep(1000);
+		} else {
+			log("mother's Phone residence element not present and object is:-" + inputfathers_PhResidence.toString());
+			Thread.sleep(500);
+		}
+		if (input_motherMobile.isDisplayed()) {
+			input_motherMobile.clear();
+			input_motherMobile.sendKeys(motherMobile);
+			log("entered mother's mobile:-" + motherMobile + " and object is " + input_motherMobile.toString());
+			Thread.sleep(1000);
+		} else {
+			log("mother's mobile element not present and object is:-" + input_motherMobile.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -813,47 +1103,44 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param altEmail
 	 * @throws Exception
 	 */
-	public void parentMonthlyIncomeDetailsBGHS(String fatherIncome, String motherIncome, String altContact,
-			String altEmail) throws Exception {
-
-		input_fatherIncome.sendKeys(fatherIncome);
-		log("entered father's income:-" + fatherIncome + " and object is " + input_fatherIncome.toString());
-		Thread.sleep(1000);
-
-		input_motherIncome.sendKeys(motherIncome);
-		log("entered mother's income:-" + motherIncome + " and object is " + input_motherIncome.toString());
-		Thread.sleep(1000);
-
-		input_alternateContact.sendKeys(altContact);
-		log("entered alternet contact:-" + altContact + " and object is " + input_alternateContact.toString());
-		Thread.sleep(1000);
-
-		input_alternateEmail.sendKeys(altEmail);
-		log("entered alternet email:-" + altEmail + " and object is " + input_alternateEmail.toString());
-		Thread.sleep(1000);
-
-	}
-
-	/**
-	 * Father and mother Year of passing if Baldwinians
-	 * 
-	 * @param FatherYrOfPass
-	 * @param MotherYrOfPass
-	 * @throws Exception
-	 */
-
-	public void yearOfPassingOfFatherAndMother(String FatherYrOfPass, String MotherYrOfPass) throws Exception {
-
-		input_FatherYrOfPassing.sendKeys(FatherYrOfPass);
-		log("entered father's year of passing:-" + FatherYrOfPass + " and object is "
-				+ input_FatherYrOfPassing.toString());
-		Thread.sleep(1000);
-
-		input_MotherYrOfPassing.sendKeys(MotherYrOfPass);
-		log("entered mother's year of passing:-" + MotherYrOfPass + " and object is "
-				+ input_MotherYrOfPassing.toString());
-		Thread.sleep(1000);
-
+	public void parentMonthlyIncomeDetails_PreAdmissionApplication(String fatherIncome, String motherIncome,
+			String altContact, String altEmail) throws Exception {
+		if (input_fatherIncome.isDisplayed()) {
+			input_fatherIncome.clear();
+			input_fatherIncome.sendKeys(fatherIncome);
+			log("entered father's income:-" + fatherIncome + " and object is " + input_fatherIncome.toString());
+			Thread.sleep(1000);
+		} else {
+			log("father's income element not present and object is:-" + input_fatherIncome.toString());
+			Thread.sleep(500);
+		}
+		if (input_motherIncome.isDisplayed()) {
+			input_motherIncome.clear();
+			input_motherIncome.sendKeys(motherIncome);
+			log("entered mother's income:-" + motherIncome + " and object is " + input_motherIncome.toString());
+			Thread.sleep(1000);
+		} else {
+			log("mother's income element not present and object is:-" + input_motherIncome.toString());
+			Thread.sleep(500);
+		}
+		if (input_alternateContact.isDisplayed()) {
+			input_alternateContact.clear();
+			input_alternateContact.sendKeys(altContact);
+			log("entered alternet contact:-" + altContact + " and object is " + input_alternateContact.toString());
+			Thread.sleep(1000);
+		} else {
+			log("alternet contact element not present and object is:-" + input_alternateContact.toString());
+			Thread.sleep(500);
+		}
+		if (input_alternateEmail.isDisplayed()) {
+			input_alternateEmail.clear();
+			input_alternateEmail.sendKeys(altEmail);
+			log("entered alternet email:-" + altEmail + " and object is " + input_alternateEmail.toString());
+			Thread.sleep(1000);
+		} else {
+			log("alternet email element not present and object is:-" + input_alternateEmail.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -867,30 +1154,50 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @throws Exception
 	 */
 
-	public void gurdianDetailsBGHSPreAdmApplicationForm(String guardianName, String gurdianRelWithStu,
-			String gurdianAddress, String guardianEmail, String guardianPhone) throws Exception {
+	public void gurdianDetails_PreAdmApplicationForm(String guardianName, String gurdianRelWithStu,
+			String gurdianAddress, String guardianPhOffice, String guardianPhResidance) throws Exception {
+		if (input_GuardianName.isDisplayed()) {
+			input_GuardianName.clear();
+			input_GuardianName.sendKeys(guardianName);
+			log("entered guardian name:-" + guardianName + " and object is " + input_GuardianName.toString());
+			Thread.sleep(1000);
+		} else {
+			log("guardian name element not present and object is:-" + input_GuardianName.toString());
+			Thread.sleep(500);
+		}
+		if (input_GurRelationshipToStudent.isDisplayed()) {
+			input_GurRelationshipToStudent.clear();
+			input_GurRelationshipToStudent.sendKeys(gurdianRelWithStu);
+			log("entered guardian relationship to student:-" + gurdianRelWithStu + " and object is "
+					+ input_GurRelationshipToStudent.toString());
+			Thread.sleep(1000);
+		} else {
+			log("guardian relationship element not present and object is:-"
+					+ input_GurRelationshipToStudent.toString());
+			Thread.sleep(500);
+		}
 
-		input_GuardianName.sendKeys(guardianName);
-		log("entered guardian name:-" + guardianName + " and object is " + input_GuardianName.toString());
-		Thread.sleep(1000);
-
-		input_GurRelationshipToStudent.sendKeys(gurdianRelWithStu);
-		log("entered guardian relationship to student:-" + gurdianRelWithStu + " and object is "
-				+ input_GurRelationshipToStudent.toString());
-		Thread.sleep(1000);
-
-		input_Gur_Address.sendKeys(gurdianAddress);
-		log("entered guardian address:-" + gurdianAddress + " and object is " + input_Gur_Address.toString());
-		Thread.sleep(1000);
-
-		input_GurEmail.sendKeys(guardianEmail);
-		log("entered guardian Email Id:-" + guardianEmail + " and object is " + input_GurEmail.toString());
-		Thread.sleep(1000);
-
-		input_GurPhone.sendKeys(guardianPhone);
-		log("entered guardian phone number:-" + guardianPhone + " and object is " + input_GurPhone.toString());
-		Thread.sleep(1000);
-
+		if (input_Gur_PhOffice.isDisplayed()) {
+			input_Gur_PhOffice.clear();
+			input_Gur_PhOffice.sendKeys(guardianPhOffice);
+			log("entered guardian Phone Number office:-" + guardianPhOffice + " and object is "
+					+ input_Gur_PhOffice.toString());
+			Thread.sleep(1000);
+		} else {
+			log("guardian Phone Number office element not present and object is:-" + input_Gur_PhOffice.toString());
+			Thread.sleep(500);
+		}
+		if (input_Gur_PhResidence.isDisplayed()) {
+			input_Gur_PhResidence.clear();
+			input_Gur_PhResidence.sendKeys(guardianPhResidance);
+			log("entered guardian phone number Residance:-" + guardianPhResidance + " and object is "
+					+ input_Gur_PhResidence.toString());
+			Thread.sleep(1000);
+		} else {
+			log("guardian Phone Number Residance element not present and object is:-"
+					+ input_Gur_PhResidence.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -902,40 +1209,76 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @throws Exception
 	 */
 
-	public void siblingDetailsBGHSPune(String siblingName, String siblingClass, String siblingAdmNo) throws Exception {
+	public void siblingDetails_PreAdmApplication(String siblingName, String siblingClass, String siblingAdmNo)
+			throws Exception {
+		if (inputsibName.isDisplayed()) {
+			inputsibName.clear();
+			inputsibName.sendKeys(siblingName);
+			log("entered sibling name:-" + siblingName + " and object is " + inputsibName.toString());
+			Thread.sleep(1000);
+		} else {
+			log("sibling name element not present and object is:-" + inputsibName.toString());
+			Thread.sleep(500);
+		}
+		if (inputsibclass.isDisplayed()) {
+			inputsibclass.clear();
+			inputsibclass.sendKeys(siblingClass);
+			log("entered sibling Class:-" + siblingClass + " and object is " + inputsibclass.toString());
+			Thread.sleep(1000);
+		} else {
+			log("sibling Class element not present and object is:-" + inputsibclass.toString());
+			Thread.sleep(500);
+		}
 
-		inputsibName.sendKeys(siblingName);
-		log("entered sibling name:-" + siblingName + " and object is " + inputsibName.toString());
-		Thread.sleep(1000);
-
-		inputsibclass.sendKeys(siblingClass);
-		log("entered sibling Class:-" + siblingClass + " and object is " + inputsibclass.toString());
-		Thread.sleep(1000);
-
-		inputsibAdmNo.sendKeys(siblingAdmNo);
-		log("entered sibling Admission number:-" + siblingAdmNo + " and object is " + inputsibAdmNo.toString());
-		Thread.sleep(1000);
-
-		clickSibPlus.click();
-		log("cliked on plus sign to add rows:-" + clickSibPlus.toString());
-		Thread.sleep(2000);
-
-		input2ndsibName.sendKeys(siblingName);
-		log("entered 2nd sibling name:-" + siblingName + " and object is " + input2ndsibName.toString());
-		Thread.sleep(1000);
-
-		input2ndsibclass.sendKeys(siblingClass);
-		log("entered 2nd sibling Class:-" + siblingClass + " and object is " + input2ndsibclass.toString());
-		Thread.sleep(1000);
-
-		input2ndsibAdmNo.sendKeys(siblingAdmNo);
-		log("entered 2nd sibling Admission number:-" + siblingAdmNo + " and object is " + input2ndsibAdmNo.toString());
-		Thread.sleep(1000);
+		if (inputsibAdmNo.isDisplayed()) {
+			inputsibAdmNo.clear();
+			inputsibAdmNo.sendKeys(siblingAdmNo);
+			log("entered sibling Admission number:-" + siblingAdmNo + " and object is " + inputsibAdmNo.toString());
+			Thread.sleep(1000);
+		} else {
+			log("sibling Admission number element not present and object is:-" + inputsibAdmNo.toString());
+			Thread.sleep(500);
+		}
+		if (clickSibPlus.isDisplayed()) {
+			clickSibPlus.click();
+			log("cliked on plus sign to add rows:-" + clickSibPlus.toString());
+			Thread.sleep(2000);
+		} else {
+			log("plus sign element not present and object is:-" + clickSibPlus.toString());
+			Thread.sleep(500);
+		}
+		if (input2ndsibName.isDisplayed()) {
+			input2ndsibName.clear();
+			input2ndsibName.sendKeys(siblingName);
+			log("entered 2nd sibling name:-" + siblingName + " and object is " + input2ndsibName.toString());
+			Thread.sleep(1000);
+		} else {
+			log("2nd sibling name element not present and object is:-" + input2ndsibName.toString());
+			Thread.sleep(500);
+		}
+		if (input2ndsibclass.isDisplayed()) {
+			input2ndsibclass.clear();
+			input2ndsibclass.sendKeys(siblingClass);
+			log("entered 2nd sibling Class:-" + siblingClass + " and object is " + input2ndsibclass.toString());
+			Thread.sleep(1000);
+		} else {
+			log("2nd sibling Class element not present and object is:-" + input2ndsibclass.toString());
+			Thread.sleep(500);
+		}
+		if (input2ndsibAdmNo.isDisplayed()) {
+			input2ndsibAdmNo.clear();
+			input2ndsibAdmNo.sendKeys(siblingAdmNo);
+			log("entered 2nd sibling Admission number:-" + siblingAdmNo + " and object is "
+					+ input2ndsibAdmNo.toString());
+			Thread.sleep(1000);
+		} else {
+			log("2nd sibling Admission number element not present and object is:-" + inputsibAdmNo.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
-	 * Enter previous school details for BGHS school pre admission application
-	 * form
+	 * Enter previous school details for pre admission application form
 	 * 
 	 * @param prevSchoolName
 	 * @param prevClass
@@ -945,40 +1288,117 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @throws Exception
 	 */
 
-	public void previousSchoolDetailsBGHS(String prevSchoolName, String prevClass, String prevGrade,
+	public void previousSchoolDetails_PreAdmissionApplication(String prevSchoolName, String prevClass, String prevGrade,
 			String prevPassedYr, String PrevAddress) throws Exception {
-
-		inputSchoolName.sendKeys(prevSchoolName);
-		log("entered previous school name:-" + prevSchoolName + " and object is " + inputSchoolName.toString());
-		Thread.sleep(1000);
-
-		inputClass.sendKeys(prevClass);
-		log("entered previous class:-" + prevClass + " and object is " + inputClass.toString());
-		Thread.sleep(1000);
-
-		inputGrade.sendKeys(prevGrade);
-		log("entered previous grade:-" + prevGrade + " and object is " + inputGrade.toString());
-		Thread.sleep(1000);
-
-		inputPassedYr.sendKeys(prevPassedYr);
-		log("entered previous passed year:-" + prevPassedYr + " and object is " + inputPassedYr.toString());
-		Thread.sleep(1000);
-
-		inputAddress.sendKeys(PrevAddress);
-		log("entered Address:-" + PrevAddress + " and object is " + inputAddress.toString());
-		Thread.sleep(1000);
+		if (inputSchoolName.isDisplayed()) {
+			inputSchoolName.clear();
+			inputSchoolName.sendKeys(prevSchoolName);
+			log("entered previous school name:-" + prevSchoolName + " and object is " + inputSchoolName.toString());
+			Thread.sleep(1000);
+		} else {
+			log("previous school name element not present and object is:-" + inputSchoolName.toString());
+			Thread.sleep(500);
+		}
+		if (inputClass.isDisplayed()) {
+			inputClass.clear();
+			inputClass.sendKeys(prevClass);
+			log("entered previous class:-" + prevClass + " and object is " + inputClass.toString());
+			Thread.sleep(1000);
+		} else {
+			log("previous class element not present and object is:-" + inputClass.toString());
+			Thread.sleep(500);
+		}
+		if (inputGrade.isDisplayed()) {
+			inputGrade.clear();
+			inputGrade.sendKeys(prevGrade);
+			log("entered previous grade:-" + prevGrade + " and object is " + inputGrade.toString());
+			Thread.sleep(1000);
+		} else {
+			log("previous grade element not present and object is:-" + inputClass.toString());
+			Thread.sleep(500);
+		}
+		if (inputPassedYr.isDisplayed()) {
+			inputPassedYr.clear();
+			inputPassedYr.sendKeys(prevPassedYr);
+			log("entered previous passed year:-" + prevPassedYr + " and object is " + inputPassedYr.toString());
+			Thread.sleep(1000);
+		} else {
+			log("previous passed year element not present and object is:-" + inputPassedYr.toString());
+			Thread.sleep(500);
+		}
+		if (inputAddress.isDisplayed()) {
+			inputAddress.clear();
+			inputAddress.sendKeys(PrevAddress);
+			log("entered Address:-" + PrevAddress + " and object is " + inputAddress.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Address element not present and object is:-" + inputAddress.toString());
+			Thread.sleep(500);
+		}
 	}
+	/**
+	 * Upload Student Photo
+	 * 
+	 * @throws Exception
+	 */
+	public void upload_StudentPhoto() throws Exception {
+		if (btn_BrowseImg_Child.isDisplayed()) {
 
+			imageAndDocumentUpload(btn_BrowseImg_Child, "Photo.jpg");
+			log("Student Image uploded");
+			Thread.sleep(2000);
+		} else {
+			log("Student Image element not present and object is:-" + btn_BrowseImg_Child.toString());
+			Thread.sleep(500);
+		}
+	}
+	/**
+	 * Upload Father Photo
+	 * 
+	 * @throws Exception
+	 */
+	public void upload_FatherPhoto() throws Exception {
+		if (btn_BrowseImg_Father.isDisplayed()) {
+
+			imageAndDocumentUpload(btn_BrowseImg_Father, "Father.jpg");
+			log("Father Image uploded");
+			Thread.sleep(2000);
+		} else {
+			log("Father Image element not present and object is:-" + btn_BrowseImg_Father.toString());
+			Thread.sleep(500);
+		}
+	}
+	/**
+	 * Upload Mother Photo
+	 * 
+	 * @throws Exception
+	 */
+	public void upload_MotherPhoto() throws Exception {
+		if (btn_BrowseImg_Mother.isDisplayed()) {
+
+			imageAndDocumentUpload(btn_BrowseImg_Mother, "Father.jpg");
+			log("Mother Image uploded");
+			Thread.sleep(2000);
+		} else {
+			log("Mother Image element not present and object is:-" + btn_BrowseImg_Mother.toString());
+			Thread.sleep(500);
+		}
+	}
 	/**
 	 * Upload date of birth certificate
 	 * 
 	 * @throws Exception
 	 */
 	public void uploadRequiredDocuments() throws Exception {
+		if (uploadDOBCert.isDisplayed()) {
 
-		imageAndDocumentUpload(uploadDOBCert, "TransferCertificate.jpg");
-		log("Date of birth certificate uploded");
-		Thread.sleep(1000);
+			imageAndDocumentUpload(uploadDOBCert, "TransferCertificate.jpg");
+			log("Date of birth certificate uploded");
+			Thread.sleep(2000);
+		} else {
+			log("Date of birth certificate element not present and object is:-" + uploadDOBCert.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -987,21 +1407,31 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @throws InterruptedException
 	 */
 	public void validationOfUploadedDOBCertificate() throws InterruptedException {
-		viewUploadDOBCert.click();
-		log("Date of birth certificate validated");
-		Thread.sleep(3000);
+		if (viewUploadDOBCert.isDisplayed()) {
+			viewUploadDOBCert.click();
+			log("Date of birth certificate validated");
+			Thread.sleep(3000);
+		} else {
+			log("View Uploaded certificate element not present and object is:-" + uploadDOBCert.toString());
+			Thread.sleep(500);
+		}
 
 	}
+
 	/**
 	 * View uploaded documents popup close button
 	 * 
 	 * @throws Exception
 	 */
 	public void clickOnPopupCloseButton() throws Exception {
-
-		btnPopUpClose.click();
-		Thread.sleep(2000);
-		log("Uploaded documents validation done.");
+		if (btnPopUpClose.isDisplayed()) {
+			btnPopUpClose.click();
+			Thread.sleep(2000);
+			log("Uploaded documents validation done and opened window closed.");
+		} else {
+			log("Close button element not present and object is:-" + btnPopUpClose.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	//
@@ -1050,9 +1480,14 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 */
 
 	public void clickOnSubmitButton() throws Exception {
-		btnSubmit.click();
-		log("clicked on Submit button and object is:-" + btnSubmit.toString());
-		Thread.sleep(2000);
+		if (btnSubmit.isDisplayed()) {
+			btnSubmit.click();
+			log("clicked on Submit button and object is:-" + btnSubmit.toString());
+			Thread.sleep(2000);
+		} else {
+			log("Submit button element not present and object is:-" + btnSubmit.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -1095,11 +1530,17 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param FatherName
 	 * @throws Exception
 	 */
-	public void searchByFatherNameInGrid(String FatherName) throws Exception {
+	public void searchByStudentNameInGrid(String studentName) throws Exception {
+		if (inputSearch.isDisplayed()) {
+		
 		inputSearch.clear();
-		inputSearch.sendKeys(FatherName);
-		log("Entered father name:" + FatherName + " and object is:-" + inputSearch.toString());
+		inputSearch.sendKeys(studentName);
+		log("Entered Student name:" + studentName + " and object is:-" + inputSearch.toString());
 		Thread.sleep(2000);
+		} else {
+			log("Search button element not present and object is:-" + inputSearch.toString());
+			Thread.sleep(500);
+		}
 	}
 
 	/**
@@ -1108,19 +1549,19 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @param FatherName
 	 * @throws Exception
 	 */
-	public void verifyFatherNameInStudentListGrid(String FatherName) throws Exception {
+	public void verifyFatherNameInStudentListGrid(String studentName) throws Exception {
 
 		int rows = tblRowStuList.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String FaName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[4]/tbody/tr[" + i + "]/td[4]")).getText();
-			System.out.println("Father Name: " + FaName);
+			String StuName = driver
+					.findElement(By.xpath("(//body[@id='style-4']//div/table)[5]/tbody/tr[" + i + "]/td[2]")).getText();
+			System.out.println("Student Name: " + StuName);
 			Thread.sleep(2000);
-			if (FaName.equalsIgnoreCase(FatherName)) {
+			if (StuName.equalsIgnoreCase(studentName)) {
 				try {
-					Assert.assertEquals(FaName, FatherName);
+					Assert.assertEquals(StuName, studentName);
 					log("Father name matched with the Student list grid");
 					Thread.sleep(3000);
 
@@ -1138,21 +1579,21 @@ public class PreAdmission_ApplicationForm extends TestBase {
 	 * @throws Exception
 	 */
 
-	public void searchWithFatherNameInStudentListGrid_Edit_BGHSApplicationForm(String FatherName) throws Exception {
+	public void searchWithFatherNameInStudentListGrid_Edit_BGHSApplicationForm(String studentName) throws Exception {
 
 		int rows = tblRowStuList.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String FaName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[4]/tbody/tr[" + i + "]/td[4]")).getText();
-			System.out.println("Father Name: " + FaName);
+			String StuName = driver
+					.findElement(By.xpath("(//body[@id='style-4']//div/table)[5]/tbody/tr[" + i + "]/td[2]")).getText();
+			System.out.println("Father Name: " + StuName);
 			Thread.sleep(2000);
-			if (FaName.equalsIgnoreCase(FatherName)) {
+			if (StuName.equalsIgnoreCase(studentName)) {
 				try {
-					Assert.assertEquals(FaName, FatherName);
+					Assert.assertEquals(StuName, studentName);
 
-					driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[4]/tbody/tr[" + i + "]/td[5]/span"))
+					driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[5]/tbody/tr[" + i + "]/td[7]/span"))
 							.click();
 					log("Clicked on the edit link in the student list grid");
 					Thread.sleep(3000);
@@ -1163,7 +1604,5 @@ public class PreAdmission_ApplicationForm extends TestBase {
 			}
 		}
 	}
-
-	
 
 }
