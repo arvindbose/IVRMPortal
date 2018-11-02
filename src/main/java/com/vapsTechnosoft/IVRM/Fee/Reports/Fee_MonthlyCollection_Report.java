@@ -26,7 +26,6 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 
 	private WebDriver driver;
 	private Select select;
-	private WebElement option;
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	private WebElement btnHome;
@@ -37,7 +36,11 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	private WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[10]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[10]")
+	// private WebElement btn_FeeMonthlyCollectionReport;
+
+	@FindBy(xpath = "//a[@href='#/app/MonthlyCollectionReport/206']")
 	private WebElement btn_FeeMonthlyCollectionReport;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -108,10 +111,12 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 
 	@FindBy(xpath = "//a[contains(text(),'Export to PDF')]")
 	private WebElement btn_ExportToPDF;
-	
+
 	@FindBy(xpath = "//div[@ng-show='lower_grid']/div/h3")
 	WebElement grid_HeaderName;
 	
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	WebElement btn_MonthYear;
 
 	public Fee_MonthlyCollection_Report(WebDriver driver) {
 		this.driver = driver;
@@ -137,31 +142,15 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToFee_Reports_FeeMonthlyCollectionReport() throws Exception {
-		if (btn_Fee.isDisplayed()) {
-			btn_Fee.click();
-			log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeReports.isDisplayed()) {
-			btn_FeeReports.click();
-			log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeMonthlyCollectionReport.isDisplayed()) {
-			btn_FeeMonthlyCollectionReport.click();
-			log("Clicked on Fee Monthly Collection Report Button in navigation panel and object is:-"
-					+ btn_FeeMonthlyCollectionReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Monthly Collection Report button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Fee);
+		log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
+
+		clickOnButton(btn_FeeReports);
+		log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
+
+		clickOnButton(btn_FeeMonthlyCollectionReport);
+		log("Clicked on Fee Monthly Collection Report Button in navigation panel and object is:-"
+				+ btn_FeeMonthlyCollectionReport.toString());
 
 	}
 
@@ -186,14 +175,10 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	}
 
 	public void submitBlank_FeeMonthlyCollectionReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Submit blank Fee Monthly Collection form and object is:-" + btn_Report.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Submit blank Fee Monthly Collection form and object is:-" + btn_Report.toString());
+
 	}
 
 	/*
@@ -202,7 +187,7 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	 * For Active Student
 	 */
 	public void fill_FeeMonthlyCollectionReportForm_All_ForActiveStudent() throws Exception {
-
+		isDisplayed(rdBtn_All);
 		if (!rdBtn_All.isSelected()) {
 			rdBtn_All.click();
 			log("All radio button is selected and object is:- " + rdBtn_All.toString());
@@ -211,31 +196,37 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		isDisplayed(rdBtn_Active);
 		if (!rdBtn_Active.isSelected()) {
 			rdBtn_Active.click();
 			log("Active Student radio button is selected and object is:- " + rdBtn_Active.toString());
@@ -244,31 +235,26 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Active Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (btn_FromCalender.isDisplayed()) {
-			btn_FromCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-			Thread.sleep(500);
-			btn_Date_From.click();
-			log("From date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("From Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
 
-		if (btn_ToCalender.isDisplayed()) {
-			btn_ToCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
-			Thread.sleep(500);
-			btn_Date_To.click();
-			log("To date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("To Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_FromCalender);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
+		Thread.sleep(500);
+		btn_Date_From.click();
+		log("From date is selected from calender.");
+
+		clickOnButton(btn_ToCalender);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
+		Thread.sleep(500);
+		btn_Date_To.click();
+		log("To date is selected from calender.");
+		Thread.sleep(1000);
+
 	}
 
 	/*
@@ -277,7 +263,7 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	 * For Left Student
 	 */
 	public void fill_FeeMonthlyCollectionReportForm_All_ForLeftStudent() throws Exception {
-
+		isDisplayed(rdBtn_All);
 		if (!rdBtn_All.isSelected()) {
 			rdBtn_All.click();
 			log("All radio button is selected and object is:- " + rdBtn_All.toString());
@@ -286,31 +272,37 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		isDisplayed(rdBtn_Left);
 		if (!rdBtn_Left.isSelected()) {
 			rdBtn_Left.click();
 			log("Left Student radio button is selected and object is:- " + rdBtn_Left.toString());
@@ -319,31 +311,25 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Left Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (btn_FromCalender.isDisplayed()) {
-			btn_FromCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-			Thread.sleep(500);
-			btn_Date_From.click();
-			log("From date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("From Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
 
-		if (btn_ToCalender.isDisplayed()) {
-			btn_ToCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
-			Thread.sleep(500);
-			btn_Date_To.click();
-			log("To date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("To Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_FromCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
+		Thread.sleep(500);
+		btn_Date_From.click();
+		log("From date is selected from calender.");
+		Thread.sleep(1000);
+
+		clickOnButton(btn_ToCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
+		Thread.sleep(500);
+		btn_Date_To.click();
+		log("To date is selected from calender.");
+		Thread.sleep(1000);
+
 	}
 
 	/*
@@ -353,7 +339,9 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	 */
 	public void fill_FeeMonthlyCollectionReportForm_Individual_AdmNo_ForActiveStudent(String studentName)
 			throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthlyCollectionReport);
+		Thread.sleep(500);
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Individual radio button is selected and object is:- " + rdBtn_Individual.toString());
@@ -362,7 +350,7 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_AdmNo);
 		if (!rdBtn_AdmNo.isSelected()) {
 			rdBtn_AdmNo.click();
 			log("AdmNo radio button is selected and object is:- " + rdBtn_AdmNo.toString());
@@ -371,44 +359,43 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("AdmNo Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
-			select.selectByVisibleText(studentName);
-			log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
-			Thread.sleep(3000);
-//			option = select.getFirstSelectedOption();
-//			Assert.assertEquals(option.getText().trim(), studentName);
-//			log("Selected student name matched with the input name.");
-//			Thread.sleep(3000);
-		} else {
-			log("Student Name element is not present");
-			Thread.sleep(500);
-		}
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(2000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+	//	selectElementFromDropDown(sel_StudentName, studentName);
+		select= new Select(sel_StudentName);
+		select.selectByVisibleText(studentName);
+		log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(2000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(2000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(2000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		isDisplayed(rdBtn_Active);
 		if (!rdBtn_Active.isSelected()) {
 			rdBtn_Active.click();
 			log("Active Student radio button is selected and object is:- " + rdBtn_Active.toString());
@@ -417,31 +404,25 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Active Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (btn_FromCalender.isDisplayed()) {
-			btn_FromCalender.click();
-			Thread.sleep(1000);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-			Thread.sleep(1000);
-			btn_Date_From.click();
-			log("From date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("From Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
 
-		if (btn_ToCalender.isDisplayed()) {
-			btn_ToCalender.click();
-			Thread.sleep(1000);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
-			Thread.sleep(1000);
-			btn_Date_To.click();
-			log("To date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("To Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_FromCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
+		Thread.sleep(1000);
+		btn_Date_From.click();
+		log("From date is selected from calender.");
+		Thread.sleep(1000);
+
+		clickOnButton(btn_ToCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
+		Thread.sleep(1000);
+		btn_Date_To.click();
+		log("To date is selected from calender.");
+		Thread.sleep(1000);
+
 	}
 
 	/*
@@ -451,7 +432,7 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	 */
 	public void fill_FeeMonthlyCollectionReportForm_Individual_AdmNo_ForLeftStudent(String studentName)
 			throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Individual radio button is selected and object is:- " + rdBtn_Individual.toString());
@@ -460,6 +441,7 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_AdmNo);
 		if (!rdBtn_AdmNo.isSelected()) {
 			rdBtn_AdmNo.click();
 			log("AdmNo radio button is selected and object is:- " + rdBtn_AdmNo.toString());
@@ -468,43 +450,42 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("AdmNo Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
-			select.selectByVisibleText(studentName);
 
-			log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
-//			option = select.getFirstSelectedOption();
-//			Assert.assertEquals(option.getText().trim(), studentName);
-//			Thread.sleep(1000);
-		} else {
-			log("Student Name element is not present");
-			Thread.sleep(500);
-		}
-
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		//selectElementFromDropDown(sel_StudentName, studentName);
+		select= new Select(sel_StudentName);
+		select.selectByVisibleText(studentName);
+		log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		isDisplayed(rdBtn_Left);
 		if (!rdBtn_Left.isSelected()) {
 			rdBtn_Left.click();
 			log("Left Student radio button is selected and object is:- " + rdBtn_Left.toString());
@@ -513,31 +494,25 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Left Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (btn_FromCalender.isDisplayed()) {
-			btn_FromCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-			Thread.sleep(500);
-			btn_Date_From.click();
-			log("From date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("From Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
 
-		if (btn_ToCalender.isDisplayed()) {
-			btn_ToCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
-			Thread.sleep(500);
-			btn_Date_To.click();
-			log("To date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("To Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_FromCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
+		Thread.sleep(500);
+		btn_Date_From.click();
+		log("From date is selected from calender.");
+		Thread.sleep(1000);
+
+		clickOnButton(btn_ToCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
+		Thread.sleep(500);
+		btn_Date_To.click();
+		log("To date is selected from calender.");
+		Thread.sleep(1000);
+
 	}
 
 	/*
@@ -547,7 +522,10 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	 */
 	public void fill_FeeMonthlyCollectionReportForm_Individual_Name_ForActiveStudent(String studentName)
 			throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthlyCollectionReport);
+		Thread.sleep(500);
+		
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Individual radio button is selected and object is:- " + rdBtn_Individual.toString());
@@ -556,7 +534,7 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
 			log("Name radio button is selected and object is:- " + rdBtn_Name.toString());
@@ -565,43 +543,44 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Name Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
-			select.selectByVisibleText(studentName);
 
-			log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
-//			option = select.getFirstSelectedOption();
-//			Assert.assertEquals(option.getText().trim(), studentName);
-//			Thread.sleep(1000);
-		} else {
-			log("Student Name element is not present");
-			Thread.sleep(500);
-		}
+		//selectElementFromDropDown(sel_StudentName, studentName);
+		
+		select= new Select(sel_StudentName);
+		select.selectByVisibleText(studentName);
+		log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		isDisplayed(rdBtn_Active);
 		if (!rdBtn_Active.isSelected()) {
 			rdBtn_Active.click();
 			log("Active Student radio button is selected and object is:- " + rdBtn_Active.toString());
@@ -610,31 +589,25 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Active Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (btn_FromCalender.isDisplayed()) {
-			btn_FromCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
-			Thread.sleep(500);
-			btn_Date_From.click();
-			log("From date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("From Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
 
-		if (btn_ToCalender.isDisplayed()) {
-			btn_ToCalender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
-			Thread.sleep(500);
-			btn_Date_To.click();
-			log("To date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("To Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_FromCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
+		Thread.sleep(500);
+		btn_Date_From.click();
+		log("From date is selected from calender.");
+		Thread.sleep(1000);
+
+		clickOnButton(btn_ToCalender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
+		Thread.sleep(500);
+		btn_Date_To.click();
+		log("To date is selected from calender.");
+		Thread.sleep(1000);
+
 	}
 
 	/*
@@ -644,7 +617,9 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 	 */
 	public void fill_FeeMonthlyCollectionReportForm_Individual_Name_ForLeftStudent(String studentName)
 			throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthlyCollectionReport);
+		Thread.sleep(500);
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Individual radio button is selected and object is:- " + rdBtn_Individual.toString());
@@ -653,6 +628,7 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
 			log("Name radio button is selected and object is:- " + rdBtn_Name.toString());
@@ -661,31 +637,28 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Name Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
-			select.selectByVisibleText(studentName);
 
-			log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
-//			option = select.getFirstSelectedOption();
-//			Assert.assertEquals(option.getText().trim(), studentName);
-//			Thread.sleep(1000);
-		} else {
-			log("Student Name element is not present");
-			Thread.sleep(500);
-		}
+		//selectElementFromDropDown(sel_StudentName, studentName);
+		select= new Select(sel_StudentName);
+		select.selectByVisibleText(studentName);
+		log("Selected Student Name: " + studentName + " and object is:- " + sel_StudentName.toString());
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		try{
 		int no_Of_FeeGroup = Chk_FeeGroup.size();
 		for (int i = 0; i < no_Of_FeeGroup; i++) {
 			if (!Chk_FeeGroup.get(i).isSelected()) {
@@ -697,7 +670,10 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 				Thread.sleep(500);
 			}
 		}
-
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		isDisplayed(rdBtn_Left);
 		if (!rdBtn_Left.isSelected()) {
 			rdBtn_Left.click();
 			log("Left Student radio button is selected and object is:- " + rdBtn_Left.toString());
@@ -706,99 +682,75 @@ public class Fee_MonthlyCollection_Report extends TestBase {
 			log("Left Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (btn_FromCalender.isDisplayed()) {
-			btn_FromCalender.click();
+		
+			clickOnButton(btn_FromCalender);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
 			Thread.sleep(500);
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_From);
 			Thread.sleep(500);
 			btn_Date_From.click();
 			log("From date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("From Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
-
-		if (btn_ToCalender.isDisplayed()) {
-			btn_ToCalender.click();
+		
+			clickOnButton(btn_ToCalender);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
 			Thread.sleep(500);
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_To);
 			Thread.sleep(500);
 			btn_Date_To.click();
 			log("To date is selected from calender.");
 			Thread.sleep(1000);
-		} else {
-			log("To Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void min_Max_FeeMonthlyCollectionReport_Form() throws Exception {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthlyCollectionReport);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				txt_FeeMonthlyCollectionReport);
 		Thread.sleep(1000);
-		if (btnMin_MaxFeeMonthlyCollectionReport.isDisplayed()) {
-			btnMin_MaxFeeMonthlyCollectionReport.click();
+	
+			clickOnButton(btnMin_MaxFeeMonthlyCollectionReport);
 			log("Fee Monthly Collection Report page minimized or maximized and object is:-"
 					+ btnMin_MaxFeeMonthlyCollectionReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Monthly Collection Report Minimized Element not present.");
-		}
+			
 	}
 
 	public void min_Max_FeeMonthlyCollectionReport_Grid() throws Exception {
-		if (btnMin_MaxFeeMonthlyCollectionReportGrid.isDisplayed()) {
-			btnMin_MaxFeeMonthlyCollectionReportGrid.click();
+	
+			clickOnButton(btnMin_MaxFeeMonthlyCollectionReportGrid);
 			log("Fee Monthly Collection Report Grid page minimized or maximized and object is:-"
 					+ btnMin_MaxFeeMonthlyCollectionReportGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Monthly Collection Report Grid Minimized Element not present.");
-		}
+		
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
+		
+			clickOnButton(btn_ExportToExcel);
 			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to Excel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(3000);
+		
 	}
 
 	public void clickOnExportToPDF_ToDownLoadPDFReport() throws Exception {
-		if (btn_ExportToPDF.isDisplayed()) {
-			btn_ExportToPDF.click();
+	
+			clickOnButton(btn_ExportToPDF); 
 			log("To Download PDF report click on Export to PDF and object is:-" + btn_ExportToPDF.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to PDF button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(3000);
+		
 	}
 
 	public void clickReport_ToGenerate_FeeMonthlyCollectionReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
+		
+			clickOnButton(btn_Report);
 			log("Fee Monthly Collection Report is generated and object is:-" + btn_Report.toString());
 			Thread.sleep(2000);
 			assertEquals(grid_HeaderName.getText().trim(), "GRID VIEW");
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void clickCancelButton_ToClearFilledForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
+	
+			clickOnButton(btn_Cancel);
 			log("Fee Monthly Collection report filled form data is cleared and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 }

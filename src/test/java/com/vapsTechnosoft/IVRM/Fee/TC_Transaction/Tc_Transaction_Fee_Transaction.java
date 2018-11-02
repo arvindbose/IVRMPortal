@@ -60,8 +60,14 @@ public class Tc_Transaction_Fee_Transaction extends TestBase {
 
 	@DataProvider(name = "searchOutputGridTestData")
 	public String[][] getTestDataStuFeeMap() {
-		String[][] testRecordsSFGM = getData("FeeModueData.xlsx", "studentFeeGroupTestData");
+		String[][] testRecordsSFGM = getData("FeeModueData.xlsx", "Search_FTOutPutGridData");
 		return testRecordsSFGM;
+	}
+
+	@DataProvider(name = "PrintReceipt_StudentNameData")
+	public String[][] getTestDataStuFeeMapData() {
+		String[][] testRecordsSFGMData = getData("FeeModueData.xlsx", "PrintReceipt_StudentName");
+		return testRecordsSFGMData;
 	}
 
 	@BeforeClass
@@ -378,7 +384,7 @@ public class Tc_Transaction_Fee_Transaction extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "FeeTransTestData")
+	@Test(priority = 19, dataProvider = "PrintReceipt_StudentNameData")
 	public void tcPrintReceiptValidation(String studentName, String runMode) {
 		feeTransaction = new Transaction_Fee_Transaction(driver);
 		if (runMode.equalsIgnoreCase("n")) {
@@ -411,8 +417,22 @@ public class Tc_Transaction_Fee_Transaction extends TestBase {
 			getScreenShot("tcClickOnFeeReceiptCloseButton");
 		}
 	}
+	@Test(priority = 21)
+	public void tcClickOnSearch_CancelButton() {
+		feeTransaction = new Transaction_Fee_Transaction(driver);
 
-	@Test(priority = 21, dataProvider = "searchOutputGridTestData")
+		try {
+			log.info("============= Strting tcClickOnSearch_CancelButton Test===========");
+
+			feeTransaction.clickOnSearch_CancelButton();
+
+			log.info("============= Finished tcClickOnSearch_CancelButton Test===========");
+			getScreenShot("tcClickOnSearch_CancelButton");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSearch_CancelButton");
+		}
+	}
+	@Test(priority = 22, dataProvider = "searchOutputGridTestData")
 	public void tcClickOnPrintReceiptButton(String byStudentName,String StdName, String runMode) {
 		feeTransaction = new Transaction_Fee_Transaction(driver);
 		if (runMode.equalsIgnoreCase("n")) {
@@ -430,7 +450,7 @@ public class Tc_Transaction_Fee_Transaction extends TestBase {
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void tcPrintOfFeereceipt() {
 		feeTransaction = new Transaction_Fee_Transaction(driver);
 

@@ -6,7 +6,6 @@ package com.vapsTechnosoft.IVRM.admission.TC_Masters;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
@@ -295,10 +294,23 @@ public class TC_Masters_Master_Section extends TestBase {
 	 getScreenShot("tcClickOnOkSuccessButton");
 	 }
 	 }
+	@Test(priority = 16)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			mastersection.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
 	
 
-	@Test(priority = 16, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 17, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -316,7 +328,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 18, dataProvider = "MasterSectionSearchData")
 	public void tcVerifySectionNameInTheGrid(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -334,7 +346,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 19, dataProvider = "MasterSectionSearchData")
 	public void tcEditMasterSection(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -352,7 +364,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSubmitFilledMasterSectionForm_Edit() {
 
 		try {
@@ -366,8 +378,21 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcSubmitFilledMasterSectionForm_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastersection.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -383,7 +408,7 @@ public class TC_Masters_Master_Section extends TestBase {
 	}
 
 	///
-	@Test(priority = 21, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 23, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid_ForDeactivate(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -401,7 +426,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 24, dataProvider = "MasterSectionSearchData")
 	public void tcDeactivateMasterSection(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -419,7 +444,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -434,7 +459,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -449,7 +474,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 27, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid_ForDeactivate_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -467,7 +492,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 28, dataProvider = "MasterSectionSearchData")
 	public void tcDeactivateMasterSection_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -485,7 +510,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -499,8 +524,22 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopWindowMessage_DeactivatedSuccessfully_Validation() {
 
-	@Test(priority = 28)
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+
+			mastersection.popWindowMessage_DeactivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -515,7 +554,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 32, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid_ForActivate(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -533,7 +572,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 33, dataProvider = "MasterSectionSearchData")
 	public void tcActivateMasterSection(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -551,7 +590,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 34)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -566,7 +605,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 35)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -581,7 +620,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 36, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid_ForActivate_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -599,7 +638,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 37, dataProvider = "MasterSectionSearchData")
 	public void tcActivateMasterSection_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -616,7 +655,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 38)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -630,8 +669,21 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 39)
+	public void tcPopWindowMessage_ActivatedSuccessfully_Validation() {
 
-	@Test(priority = 36)
+		try {
+			log.info("============= Strting tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+
+			mastersection.popWindowMessage_ActivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 40)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {
@@ -646,95 +698,95 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
-	public void tcClickOnSetOrder() {
-
-		try {
-			log.info("============= Strting tcClickOnSetOrder Test===========");
-
-			mastersection.clickOnSetOrder();
-
-			log.info("============= Finished tcClickOnSetOrder Test===========");
-			getScreenShot("tcClickOnSetOrder");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSetOrder");
-		}
-	}
-
-	@Test(priority = 38)
-	public void tcSetSectionOrder() {
-
-		try {
-			log.info("============= Strting tcSetSectionOrder Test===========");
-
-			mastersection.setSectionOrder();
-
-			log.info("============= Finished tcSetSectionOrder Test===========");
-			getScreenShot("tcSetSectionOrder");
-		} catch (Exception e) {
-			getScreenShot("tcSetSectionOrder");
-		}
-	}
-
-	@Test(priority = 39)
-	public void tcCloseSetSectionOrderPopUpWindow() {
-
-		try {
-			log.info("============= Strting tcCloseSetSectionOrderPopUpWindow Test===========");
-
-			mastersection.closeSetSectionOrderPopUpWindow();
-
-			log.info("============= Finished tcCloseSetSectionOrderPopUpWindow Test===========");
-			getScreenShot("tcCloseSetSectionOrderPopUpWindow");
-		} catch (Exception e) {
-			getScreenShot("tcCloseSetSectionOrderPopUpWindow");
-		}
-	}
-
-	@Test(priority = 40)
-	public void tcClickOnSetOrder_AfterClose() {
-
-		try {
-			log.info("============= Strting tcClickOnSetOrder Test===========");
-
-			mastersection.clickOnSetOrder();
-
-			log.info("============= Finished tcClickOnSetOrder Test===========");
-			getScreenShot("tcClickOnSetOrder");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSetOrder");
-		}
-	}
-
-	@Test(priority = 41)
-	public void tcSetSectionOrder_AfterClose() {
-
-		try {
-			log.info("============= Strting tcSetSectionOrder_AfterClose Test===========");
-
-			mastersection.setSectionOrder();
-
-			log.info("============= Finished tcSetSectionOrder_AfterClose Test===========");
-			getScreenShot("tcSetSectionOrder_AfterClose");
-		} catch (Exception e) {
-			getScreenShot("tcSetSectionOrder_AfterClose");
-		}
-	}
-
-	@Test(priority = 42)
-	public void tcSaveSetSectionOrderPopUpWindow() {
-
-		try {
-			log.info("============= Strting tcSaveSetSectionOrderPopUpWindow Test===========");
-
-			mastersection.saveSetSectionOrderPopUpWindow();
-
-			log.info("============= Finished tcSaveSetSectionOrderPopUpWindow Test===========");
-			getScreenShot("tcSaveSetSectionOrderPopUpWindow");
-		} catch (Exception e) {
-			getScreenShot("tcSaveSetSectionOrderPopUpWindow");
-		}
-	}
+//	@Test(priority = 41)
+//	public void tcClickOnSetOrder() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSetOrder Test===========");
+//
+//			mastersection.clickOnSetOrder();
+//
+//			log.info("============= Finished tcClickOnSetOrder Test===========");
+//			getScreenShot("tcClickOnSetOrder");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSetOrder");
+//		}
+//	}
+//
+//	@Test(priority = 42)
+//	public void tcSetSectionOrder() {
+//
+//		try {
+//			log.info("============= Strting tcSetSectionOrder Test===========");
+//
+//			mastersection.setSectionOrder();
+//
+//			log.info("============= Finished tcSetSectionOrder Test===========");
+//			getScreenShot("tcSetSectionOrder");
+//		} catch (Exception e) {
+//			getScreenShot("tcSetSectionOrder");
+//		}
+//	}
+//
+//	@Test(priority = 43)
+//	public void tcCloseSetSectionOrderPopUpWindow() {
+//
+//		try {
+//			log.info("============= Strting tcCloseSetSectionOrderPopUpWindow Test===========");
+//
+//			mastersection.closeSetSectionOrderPopUpWindow();
+//
+//			log.info("============= Finished tcCloseSetSectionOrderPopUpWindow Test===========");
+//			getScreenShot("tcCloseSetSectionOrderPopUpWindow");
+//		} catch (Exception e) {
+//			getScreenShot("tcCloseSetSectionOrderPopUpWindow");
+//		}
+//	}
+//
+//	@Test(priority = 44)
+//	public void tcClickOnSetOrder_AfterClose() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSetOrder Test===========");
+//
+//			mastersection.clickOnSetOrder();
+//
+//			log.info("============= Finished tcClickOnSetOrder Test===========");
+//			getScreenShot("tcClickOnSetOrder");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSetOrder");
+//		}
+//	}
+//
+//	@Test(priority = 45)
+//	public void tcSetSectionOrder_AfterClose() {
+//
+//		try {
+//			log.info("============= Strting tcSetSectionOrder_AfterClose Test===========");
+//
+//			mastersection.setSectionOrder();
+//
+//			log.info("============= Finished tcSetSectionOrder_AfterClose Test===========");
+//			getScreenShot("tcSetSectionOrder_AfterClose");
+//		} catch (Exception e) {
+//			getScreenShot("tcSetSectionOrder_AfterClose");
+//		}
+//	}
+//
+//	@Test(priority = 46)
+//	public void tcSaveSetSectionOrderPopUpWindow() {
+//
+//		try {
+//			log.info("============= Strting tcSaveSetSectionOrderPopUpWindow Test===========");
+//
+//			mastersection.saveSetSectionOrderPopUpWindow();
+//
+//			log.info("============= Finished tcSaveSetSectionOrderPopUpWindow Test===========");
+//			getScreenShot("tcSaveSetSectionOrderPopUpWindow");
+//		} catch (Exception e) {
+//			getScreenShot("tcSaveSetSectionOrderPopUpWindow");
+//		}
+//	}
 
 	@AfterClass
 	public void tearDown() {

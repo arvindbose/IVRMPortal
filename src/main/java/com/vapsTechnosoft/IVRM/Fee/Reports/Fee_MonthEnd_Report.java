@@ -27,8 +27,7 @@ public class Fee_MonthEnd_Report extends TestBase {
 	public static final Logger log = Logger.getLogger(Fee_MonthEnd_Report.class.getName());
 
 	private WebDriver driver;
-	private Select select;
-	private WebElement option;
+	
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	private WebElement btnHome;
@@ -39,7 +38,11 @@ public class Fee_MonthEnd_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	private WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[11]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[11]")
+	// private WebElement btn_FeeMonthEndReport;
+
+	@FindBy(xpath = "//a[@href='#/app/FeeMonthEndReport/141']")
 	private WebElement btn_FeeMonthEndReport;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -47,14 +50,13 @@ public class Fee_MonthEnd_Report extends TestBase {
 
 	@FindBy(xpath = "//label[contains(text(),'Academic Year:')]/following-sibling::div/select")
 	private WebElement sel_AcademicYear;
-	
+
 	@FindBy(xpath = "//label[contains(text(),'Month :')]/following-sibling::div/select")
 	private WebElement sel_Month;
-	
+
 	@FindBy(xpath = "//label[contains(text(),'Year :')]/following-sibling::div/select")
 	private WebElement sel_Year;
-	
-	
+
 	@FindBy(xpath = "(//label[contains(text(),'From Date:')]/following-sibling::div//child::button)[1]")
 	private WebElement btn_FromCalender;
 
@@ -121,31 +123,15 @@ public class Fee_MonthEnd_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToFee_Reports_FeeMonthEndReport() throws Exception {
-		if (btn_Fee.isDisplayed()) {
-			btn_Fee.click();
-			log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeReports.isDisplayed()) {
-			btn_FeeReports.click();
-			log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeMonthEndReport.isDisplayed()) {
-			btn_FeeMonthEndReport.click();
-			log("Clicked on Fee Month End Report Button in navigation panel and object is:-"
-					+ btn_FeeMonthEndReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Month End Report button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Fee);
+		log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
+
+		clickOnButton(btn_FeeReports);
+		log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
+
+		clickOnButton(btn_FeeMonthEndReport);
+		log("Clicked on Fee Month End Report Button in navigation panel and object is:-"
+				+ btn_FeeMonthEndReport.toString());
 
 	}
 
@@ -168,14 +154,10 @@ public class Fee_MonthEnd_Report extends TestBase {
 	}
 
 	public void submitBlank_FeeMonthEndReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
+	
+			clickOnButton(btn_Report);
 			log("Submit blank Fee Month End Report form and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/*
@@ -184,94 +166,53 @@ public class Fee_MonthEnd_Report extends TestBase {
 	 */
 	public void fill_FeeMonthEndReportForm(String academicYear, String month, String year) throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYear, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Month.isDisplayed()) {
-			select = new Select(sel_Month);
-			select.selectByVisibleText(month);
-
+	
+			selectElementFromDropDown(sel_Month, month);
 			log("selected Month: " + month + " and object is:- " + sel_Month.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), month);
-			Thread.sleep(1000);
-		} else {
-			log("Month element is not present and object is:- " + sel_Month.toString());
-			Thread.sleep(500);
-		}
 
-		if (sel_Year.isDisplayed()) {
-			select = new Select(sel_Year);
-			select.selectByVisibleText(year);
-
+			selectElementFromDropDown(sel_Year, year);
 			log("selected Year: " + year + " and object is:- " + sel_Year.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), year);
-			Thread.sleep(1000);
-		} else {
-			log("Year element is not present and object is:- " + sel_Year.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickReport_ToGenerate_FeeMonthEndReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
+	
+			clickOnButton(btn_Report);
 			log("Fee Month End Report is generated and object is:-" + btn_Report.toString());
 			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void clickClearButton_ToClearFilledForm() throws Exception {
-		if (btn_Clear.isDisplayed()) {
-			btn_Clear.click();
+	
+			clickOnButton(btn_Clear);
 			log("Fee Month End report filled form data is cleared and object is:-" + btn_Clear.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthEndReport);
-//		Thread.sleep(1000);
+		// ((JavascriptExecutor)
+		// driver).executeScript("arguments[0].scrollIntoView(true);",
+		// txt_FeeMonthEndReport);
+		// Thread.sleep(1000);
 
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
+			clickOnButton(btn_ExportToExcel);
 			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to Excel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void clickOnPrint_ForPrintPreview() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
+			clickOnButton(btn_Print);
 			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
 
 		Set<String> allWin = driver.getWindowHandles();
 
@@ -301,38 +242,29 @@ public class Fee_MonthEnd_Report extends TestBase {
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
+
+			clickOnButton(btnOKSuccess);
 			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button element is not present.");
-			Thread.sleep(500);
-		}
+			
+		
 	}
 
 	public void min_Max_FeeMonthEndReport_Form() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMonthEndReport);
 		Thread.sleep(1000);
-		if (btnMin_MaxFeeMonthEndReport_Form.isDisplayed()) {
-			btnMin_MaxFeeMonthEndReport_Form.click();
+		
+			clickOnButton(btnMin_MaxFeeMonthEndReport_Form);
 			log("Fee Month End Report page minimized or maximized and object is:-"
 					+ btnMin_MaxFeeMonthEndReport_Form.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Month End Report Minimized Element not present.");
-		}
+			
 	}
 
 	public void min_Max_FeeMonthEndReport_Grid() throws Exception {
-		if (btnMin_MaxFeeMonthEndReport_Grid.isDisplayed()) {
-			btnMin_MaxFeeMonthEndReport_Grid.click();
+
+			clickOnButton(btnMin_MaxFeeMonthEndReport_Grid);
 			log("Fee Month End Report Grid page minimized or maximized and object is:-"
 					+ btnMin_MaxFeeMonthEndReport_Grid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Month End Report Grid Minimized Element not present.");
-		}
+			
 
 	}
 

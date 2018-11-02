@@ -369,6 +369,20 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 	@Test(priority = 21)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_ClassTeacher() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_ClassTeacher Test===========");
+
+			examloginprivilege.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_ClassTeacher Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_ClassTeacher");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_ClassTeacher");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_ClassTeacher() {
 
 		try {
@@ -382,7 +396,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcClickOnSuccessOkBtn_ForConfirmation_ClassTeacher");
 		}
 	}
-	@Test(priority = 22, dataProvider = "ExamLoginPrivilege_SubjectTeacher_Form")
+	@Test(priority = 23, dataProvider = "ExamLoginPrivilege_SubjectTeacher_Form")
 	public void tcFill_ExamLoginPrivilege_Form_ForSubjectTeacher(String academicYear, String userName,String employeeName, String subject,
 			String sub_Subject,String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -399,7 +413,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcFill_ExamLoginPrivilege_Form_ForSubjectTeacher");
 		}
 	}
-	@Test(priority = 23)
+	@Test(priority = 24)
 	public void tcAddToSubmit_ExamLoginPrivilegeForm_SubjectTeacher() {
 
 		try {
@@ -413,7 +427,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcAddToSubmit_ExamLoginPrivilegeForm_SubjectTeacher");
 		}
 	}
-	@Test(priority = 24, dataProvider = "ExamLoginPrivilege_SubjectTeacher_Form")
+	@Test(priority = 25, dataProvider = "ExamLoginPrivilege_SubjectTeacher_Form")
 	public void tcEditRecordsAndUpdateSubSubject_InDetailsSection_SubjectTeacher(String academicYear, String userName,String employeeName, String subject,
 			String sub_Subject,String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -430,7 +444,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcEditRecordsAndUpdateSubSubject_InDetailsSection_SubjectTeacher");
 		}
 	}
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcAddToSubmit_ExamLoginPrivilegeForm_EditDetailsSection_SubjectTeacher() {
 
 		try {
@@ -444,7 +458,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcAddToSubmit_ExamLoginPrivilegeForm_EditDetailsSection_SubjectTeacher");
 		}
 	}
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void tcClickOnSaveButton_ToSubmitExamLoginPrivilegeForm_SubjectTeacher() {
 
 		try {
@@ -458,7 +472,21 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcClickOnSaveButton_ToSubmitExamLoginPrivilegeForm_SubjectTeacher");
 		}
 	}
-	@Test(priority = 27)
+	@Test(priority = 28)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_SubjectTeacher() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_SubjectTeacher Test===========");
+
+			examloginprivilege.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_SubjectTeacher Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_SubjectTeacher");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_SubjectTeacher");
+		}
+	}
+	@Test(priority = 29)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_SubjectTeacher() {
 
 		try {
@@ -473,7 +501,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 	
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcSortWithAcademicYearInGridView() {
 
 		try {
@@ -488,7 +516,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 31)
 	public void tcSortWithEmployeeNameInGridView() {
 
 		try {
@@ -503,7 +531,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 32)
 	public void tcSortWithClassNameInGridView() {
 
 		try {
@@ -518,7 +546,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 33)
 	public void tcSortWithSectionNameInGridView() {
 
 		try {
@@ -533,7 +561,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "Filter_ExamLoginPrivilege_GridView")
+	@Test(priority = 34, dataProvider = "Filter_ExamLoginPrivilege_GridView")
 	public void tcFilterRecordsBasedOn_AcademicYear(String academicYear, String employeeName, String className,
 			String sectionName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -551,7 +579,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 35)
 	public void tcClearFilledDataForFilter_AcademicYear() {
 
 		try {
@@ -566,7 +594,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "Filter_ExamLoginPrivilege_GridView")
+	@Test(priority = 36, dataProvider = "Filter_ExamLoginPrivilege_GridView")
 	public void tcFilterRecordsBasedOn_EmployeeName(String academicYear, String employeeName, String className,
 			String sectionName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -584,7 +612,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 37)
 	public void tcClearFilledDataForFilter_EmployeeName() {
 
 		try {
@@ -599,7 +627,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "Filter_ExamLoginPrivilege_GridView")
+	@Test(priority = 38, dataProvider = "Filter_ExamLoginPrivilege_GridView")
 	public void tcFilterRecordsBasedOn_ClassName(String academicYear, String employeeName, String className,
 			String sectionName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -617,7 +645,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 39)
 	public void tcClearFilledDataForFilter_ClassName() {
 
 		try {
@@ -632,7 +660,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "Filter_ExamLoginPrivilege_GridView")
+	@Test(priority = 40, dataProvider = "Filter_ExamLoginPrivilege_GridView")
 	public void tcFilterRecordsBasedOn_SectionName(String academicYear, String employeeName, String className,
 			String sectionName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -650,7 +678,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 41)
 	public void tcClearFilledDataForFilter_SectionName() {
 
 		try {
@@ -668,7 +696,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 	 * View, Edit and activate/deactivate
 	 * 
 	 */
-	@Test(priority = 40)
+	@Test(priority = 42)
 	public void tcClickOnViewIcon_ToSeeExamLoginPrivilegeDetailsAndActivationOrDeactivation() {
 
 		try {
@@ -684,7 +712,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 
 
 
-	@Test(priority = 41)
+	@Test(priority = 43)
 	public void tcDeactivateRecords_ViewWindow() {
 
 		try {
@@ -699,7 +727,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 42)
+	@Test(priority = 44)
 	public void tcCancel_DeactivatePopUp() {
 
 		try {
@@ -713,8 +741,21 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcCancel_DeactivatePopUp");
 		}
 	}
+	@Test(priority = 45)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 
-	@Test(priority = 43)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			examloginprivilege.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 46)
 	public void tcClickOnSuccessOkBtn_CancelDeactivate() {
 
 		try {
@@ -730,7 +771,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 	}
 
 
-	@Test(priority = 44)
+	@Test(priority = 47)
 	public void tcDeactivateRecords_ViewWindow_AfterCancel() {
 
 		try {
@@ -747,7 +788,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 45)
+	@Test(priority = 48)
 	public void tcYesDeactivateExamLoginPrivilegeRecord() {
 
 		try {
@@ -761,8 +802,21 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcYesDeactivateExamLoginPrivilegeRecord");
 		}
 	}
+	@Test(priority = 49)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
-	@Test(priority = 46)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			examloginprivilege.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 50)
 	public void tcClickOnSuccessOkBtn_Deactivate() {
 
 		try {
@@ -777,7 +831,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 47)
+	@Test(priority = 51)
 	public void tcActivateRecords_ViewWindow() {
 
 		try {
@@ -792,7 +846,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 48)
+	@Test(priority = 52)
 	public void tcCancel_ActivatePopUp() {
 
 		try {
@@ -806,8 +860,21 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcCancel_ActivatePopUp");
 		}
 	}
+	@Test(priority = 53)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 49)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			examloginprivilege.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 54)
 	public void tcClickOnSuccessOkBtn_CancelActivate() {
 
 		try {
@@ -822,7 +889,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 50)
+	@Test(priority = 55)
 	public void tcActivateRecords_ViewWindow_AfterCancel() {
 
 		try {
@@ -839,7 +906,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 51)
+	@Test(priority = 56)
 	public void tcYesActivateExamLoginPrivilegeRecord() {
 
 		try {
@@ -853,8 +920,21 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcYesActivateExamLoginPrivilegeRecord");
 		}
 	}
+	@Test(priority = 57)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
 
-	@Test(priority = 52)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+			examloginprivilege.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 58)
 	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {
@@ -868,7 +948,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcClickOnSuccessOkBtn_Activate");
 		}
 	}
-	@Test(priority = 53)
+	@Test(priority = 59)
 	public void tcCloseViewWindow_LoginPrvilege() {
 
 		try {
@@ -882,7 +962,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 	
-	@Test(priority = 54)
+	@Test(priority = 60)
 	public void tcClickOnEditIcon_ToUpdateExamLoginPrivilege() {
 
 		try {
@@ -896,7 +976,7 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 		}
 	}
 
-	@Test(priority = 55)
+	@Test(priority = 61)
 	public void tcClickOnSaveButton_ToSubmitExamLoginPrivilegeForm_Edit() {
 
 		try {
@@ -911,8 +991,21 @@ public class TC_Exam_LoginPrivileges extends TestBase{
 			getScreenShot("tcClickOnSaveButton_ToSubmitExamLoginPrivilegeForm_Edit");
 		}
 	}
+	@Test(priority = 62)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 56)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			examloginprivilege.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 63)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_Edit() {
 
 		try {

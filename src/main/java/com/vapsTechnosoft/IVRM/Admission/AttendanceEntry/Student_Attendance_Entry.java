@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.AttendanceEntry;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -41,7 +43,12 @@ public class Student_Attendance_Entry extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Attendance Entry')]")
 	WebElement btnAdmission_AttendanceEntry;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Attendance Entry')]/following::li[1]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Attendance
+	// Entry')]/following::li[1]")
+	// WebElement btnAdmission_AttendanceEntry_StudentAttendanceEntry;
+
+	@FindBy(xpath = "//a[@href='#/app/attendanceentry/54']")
 	WebElement btnAdmission_AttendanceEntry_StudentAttendanceEntry;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -59,10 +66,10 @@ public class Student_Attendance_Entry extends TestBase {
 	@FindBy(xpath = "(//label[contains(text(),'DOE:')]/following::div//button)[1]")
 	WebElement btnCalendar_DateOfEntry;
 
-	@FindBy(xpath = "//span[contains(text(),'Apr 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
 	WebElement btn_MonthYear;
 
-	@FindBy(xpath = "//span[contains(text(),'Apr 2018')]/following::td[2]/span")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[20]/span")
 	WebElement btn_Date;
 
 	@FindBy(xpath = "//span[@class='input-group-addon']/following-sibling::input")
@@ -89,6 +96,14 @@ public class Student_Attendance_Entry extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
+	@FindBy(xpath = "//label[contains(text(),' Attendance Entry Type Is Absent')]")
+	WebElement msg_Validation_FilledForm;
+
+	// h3[contains(text(),'Daily Once')]
+
 	public Student_Attendance_Entry(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -98,7 +113,7 @@ public class Student_Attendance_Entry extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -113,32 +128,15 @@ public class Student_Attendance_Entry extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_AttendanceEntry_StudentAttendanceEntry_BGHS() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_AttendanceEntry.isDisplayed()) {
-			btnAdmission_AttendanceEntry.click();
-			log("Clicked on Attendance entry and object is:-" + btnAdmission_AttendanceEntry.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance entry button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_AttendanceEntry_StudentAttendanceEntry.isDisplayed()) {
-			btnAdmission_AttendanceEntry_StudentAttendanceEntry.click();
-			log("Clicked on Student Attendance entry Button and object is:-"
-					+ btnAdmission_AttendanceEntry_StudentAttendanceEntry.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student Attendance entry button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
 
+		clickOnButton(btnAdmission_AttendanceEntry);
+		log("Clicked on Attendance entry and object is:-" + btnAdmission_AttendanceEntry.toString());
+
+		clickOnButton(btnAdmission_AttendanceEntry_StudentAttendanceEntry);
+		log("Clicked on Student Attendance entry Button and object is:-"
+				+ btnAdmission_AttendanceEntry_StudentAttendanceEntry.toString());
 	}
 
 	/**
@@ -162,185 +160,123 @@ public class Student_Attendance_Entry extends TestBase {
 
 	public void fillWith_AttendanceEntry_Data(String academicYr, String class_Entry, String section) throws Exception {
 
-		if (sel_AcademicYr.isDisplayed()) {
-			Select dropdown = new Select(sel_AcademicYr);
-			WebElement dropdownOption = dropdown.getFirstSelectedOption();
-			String SelectedContent = dropdownOption.getText().trim();
-			System.out.println("selected Value " + SelectedContent);
-			Assert.assertEquals(SelectedContent, academicYr);
-			log("Selected academic year: " + SelectedContent + " and object is:- " + sel_AcademicYr.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Academic year element is not present");
-			Thread.sleep(500);
-		}
-
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Entry);
-			log("selected Class for Entry: " + class_Entry + " and object is:- " + sel_Class.toString());
-			Thread.sleep(1000);
-
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Entry);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present.");
-			Thread.sleep(500);
-		}
+		selectedDropdownItemValidation(sel_AcademicYr, academicYr);
+		log("Selected academic year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
+		Thread.sleep(1000);
+		selectElementFromDropDown(sel_Class, class_Entry);
+		log("selected Class for Entry: " + class_Entry + " and object is:- " + sel_Class.toString());
 
 	}
 
 	public void fillwith_DailyOnce_EntryData(String academicYr, String class_Entry, String section) throws Exception {
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-			log("selected Section for Entry: " + section + " and object is:- " + sel_Section.toString());
-			Thread.sleep(1000);
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present.");
-			Thread.sleep(500);
-		}
-		if (btnCalendar_DateOfEntry.isDisplayed()) {
-			btnCalendar_DateOfEntry.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
-			Thread.sleep(500);
-			btn_Date.click();
-			log("Date Of Entry(DOE) is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("Date Of Entry(DOE) Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("selected Section for Entry: " + section + " and object is:- " + sel_Section.toString());
+
+		clickOnButton(btnCalendar_DateOfEntry);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		btn_Date.click();
+		log("Date Of Entry(DOE) is selected from calender.");
+
 	}
 
 	public void saveFilled_StudentAttendanceEntryForm() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("Submit Student Attendance entry form and object is:-" + btn_Save.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		Thread.sleep(2000);
+		Assert.assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Submit Student Attendance entry form and object is:-" + btn_Save.toString());
+
 	}
 
 	public void cancelFilled_StudentAttendanceEntryForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("Clicked on cancel button to clear filled student attendance entry form and object is:-"
-					+ btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("Clicked on cancel button to clear filled student attendance entry form and object is:-"
+				+ btn_Cancel.toString());
+
 	}
 
 	public void minimizeAttendanceEntry() throws Exception {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtAdmission_StudentAttendanceEntryMsgDispaly);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtAdmission_StudentAttendanceEntryMsgDispaly);
 		Thread.sleep(2000);
-		if (btnMin_MaxAttendanceEntry.isDisplayed()) {
-			btnMin_MaxAttendanceEntry.click();
-			log("Attendance Entry page minimized and object is:-" + btnMin_MaxAttendanceEntry.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance Entry Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxAttendanceEntry);
+		log("Attendance Entry page minimized and object is:-" + btnMin_MaxAttendanceEntry.toString());
+
 	}
 
 	public void maximizeAttendanceEntry() throws Exception {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtAdmission_StudentAttendanceEntryMsgDispaly);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtAdmission_StudentAttendanceEntryMsgDispaly);
 		Thread.sleep(2000);
-		if (btnMin_MaxAttendanceEntry.isDisplayed()) {
-			btnMin_MaxAttendanceEntry.click();
-			log("Attendance Entry page maximized and object is:-" + btnMin_MaxAttendanceEntry.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance Entry Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxAttendanceEntry);
+		log("Attendance Entry page maximized and object is:-" + btnMin_MaxAttendanceEntry.toString());
+
 	}
 
 	public void minimize_DailyOnce() throws Exception {
-		if (btnMin_MaxDailyOnce.isDisplayed()) {
-			btnMin_MaxDailyOnce.click();
-			log("clicked on Daily once page minimize button and object is:-" + btnMin_MaxDailyOnce.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Daily once page Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxDailyOnce);
+		log("clicked on Daily once page minimize button and object is:-" + btnMin_MaxDailyOnce.toString());
+
 	}
 
 	public void maximize_DailyOnce() throws Exception {
-		if (btnMin_MaxDailyOnce.isDisplayed()) {
-			btnMin_MaxDailyOnce.click();
-			log("clicked on Daily once page maximize button and object is:-" + btnMin_MaxDailyOnce.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Daily once page Maximize Element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnMin_MaxDailyOnce);
+		log("clicked on Daily once page maximize button and object is:-" + btnMin_MaxDailyOnce.toString());
+
 	}
 
 	public void minimize_StudentDetails() throws Exception {
-		if (btnMin_MaxStudentDetails.isDisplayed()) {
-			btnMin_MaxStudentDetails.click();
-			log("clicked on Student Details page minimize button and object is:-"
-					+ btnMin_MaxStudentDetails.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student Details page Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxStudentDetails);
+		log("clicked on Student Details page minimize button and object is:-" + btnMin_MaxStudentDetails.toString());
+
 	}
 
 	public void maximize_StudentDetails() throws Exception {
-		if (btnMin_MaxStudentDetails.isDisplayed()) {
-			btnMin_MaxStudentDetails.click();
-			log("clicked on Student Details page maximize button and object is:-"
-					+ btnMin_MaxStudentDetails.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student Details page Maximize Element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnMin_MaxStudentDetails);
+		log("clicked on Student Details page maximize button and object is:-" + btnMin_MaxStudentDetails.toString());
+
 	}
 
 	public void searchWithRegistrationNumberInThe_StudentDetailsListGrid(String registrationNum) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(registrationNum);
-			log("Entered Registration Number to search: " + registrationNum + " and object is:-"
-					+ input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, registrationNum);
+		log("Entered Registration Number to search: " + registrationNum + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void verifyStudentIn_StudentAttendanceEntry_StudentDetailsListGrid(String registrationNum) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String registration_Numb = driver
-					.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Registration Number: " + registration_Numb);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(registration_Numb, registrationNum);
-				log("Student with specific registration Number available in the student details list.");
+				String registration_Numb = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Registration Number: " + registration_Numb);
+				// Thread.sleep(2000);
 
-			} catch (Exception e) {
-				e.printStackTrace();
+				Thread.sleep(1000);
+				if (registration_Numb.equals(registrationNum)) {
+					Assert.assertEquals(registration_Numb, registrationNum);
+					log("Student with specific registration Number available in the student details list.");
+					break;
+				}
+				
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -348,14 +284,17 @@ public class Student_Attendance_Entry extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
-			String registration_Numb = driver
-					.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Registration Number: " + registration_Numb);
-			// Thread.sleep(2000);
-			try {
+			
+				String registration_Numb = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Registration Number: " + registration_Numb);
+				// Thread.sleep(2000);
 
+				Thread.sleep(1000);
+				if(registration_Numb.equals(registrationNum)){
 				Assert.assertEquals(registration_Numb, registrationNum);
 				log("Student with specific registration Number available in the student details list.");
 				Thread.sleep(1000);
@@ -363,22 +302,22 @@ public class Student_Attendance_Entry extends TestBase {
 						.click();
 				log("Student is selected for attendance corresponding to specific registration in the student details list.");
 				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+				}
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+		Thread.sleep(3000);
+
 	}
+
 	/**
 	 * Daily Twice attendance entry
 	 * 
@@ -387,64 +326,50 @@ public class Student_Attendance_Entry extends TestBase {
 	 * @param section
 	 * @throws Exception
 	 */
-	public void fillwith_DailyTwice_AttendanceEntryData(String academicYr, String class_Entry, String section) throws Exception {
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-			log("selected Section for Entry: " + section + " and object is:- " + sel_Section.toString());
-			Thread.sleep(1000);
+	public void fillwith_DailyTwice_AttendanceEntryData(String academicYr, String class_Entry, String section)
+			throws Exception {
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present.");
-			Thread.sleep(500);
-		}
-		if (btnCalendar_DateOfEntry.isDisplayed()) {
-			btnCalendar_DateOfEntry.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
-			Thread.sleep(500);
-			btn_Date.click();
-			log("Date Of Entry(DOE) is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("Date Of Entry(DOE) Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("selected Section for Entry: " + section + " and object is:- " + sel_Section.toString());
+
+		clickOnButton(btnCalendar_DateOfEntry);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		btn_Date.click();
+		log("Date Of Entry(DOE) is selected from calender.");
+
 	}
-	public void searchWithRegistrationNumberInThe_StudentDetailsListGrid_DailyTwice(String registrationNum) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(registrationNum);
-			log("Entered Registration Number to search: " + registrationNum + " and object is:-"
-					+ input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+
+	public void searchWithRegistrationNumberInThe_StudentDetailsListGrid_DailyTwice(String registrationNum)
+			throws Exception {
+
+		inputTextIntoInputField(input_Search, registrationNum);
+		log("Entered Registration Number to search: " + registrationNum + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void verifyStudentIn_StudentAttendanceEntry_StudentDetailsListGrid_DailyTwice(String registrationNum) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
-			String registration_Numb = driver
-					.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Registration Number: " + registration_Numb);
-			// Thread.sleep(2000);
-			try {
-
+		
+				String registration_Numb = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Registration Number: " + registration_Numb);
+				// Thread.sleep(2000);
+				if(registration_Numb.equals(registrationNum)){
 				Assert.assertEquals(registration_Numb, registrationNum);
-				log("Student with specific registration Number available in the student details list.");
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				log("Student with specific registration Number "+registrationNum+ "available in the student details list.");
+				break;
+				}
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -452,14 +377,15 @@ public class Student_Attendance_Entry extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
-			String registration_Numb = driver
-					.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Registration Number: " + registration_Numb);
-			// Thread.sleep(2000);
-			try {
-
+		
+				String registration_Numb = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Registration Number: " + registration_Numb);
+				// Thread.sleep(2000);
+				if(registration_Numb.equals(registrationNum)){
 				Assert.assertEquals(registration_Numb, registrationNum);
 				log("Student with specific registration Number available in the student details list.");
 				Thread.sleep(1000);
@@ -468,13 +394,41 @@ public class Student_Attendance_Entry extends TestBase {
 				log("Ckeck box is checked for 1st half");
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[8]/input"))
-				.click();
+						.click();
 				log("Ckeck box is checked for 2nd half");
 				Thread.sleep(1000);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+				}
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void validation_MessageForMarksEntry() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String validation = msg_Validation_FilledForm.getText().trim();
+			assertEquals(validation, "Attendance Entry Type Is Absent");
+			log("Validation message not present on attendance entry page and object is:-"
+					+ msg_Validation_FilledForm.toString());
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully!");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

@@ -41,7 +41,12 @@ public class Student_TC extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Student TC')]")
 	WebElement btnAdmission_StudentTC;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Student TC')]/following::li[1]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Student
+	// TC')]/following::li[1]")
+	// WebElement btnStudentTC_Student_TC;
+
+	@FindBy(xpath = "//a[@href='#/app/studenttc/71']")
 	WebElement btnStudentTC_Student_TC;
 
 	@FindBy(xpath = "//section[@class='content-header']/ol/li")
@@ -103,10 +108,10 @@ public class Student_TC extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'Date Of Promotion:')]/following::button[1]")
 	WebElement btn_DateOfPromotion;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
 	WebElement btn_MonthYear;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]/following::td[2]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[20]")
 	WebElement btn_Date;
 
 	@FindBy(xpath = "//label[contains(text(),'Last Class Studied:')]/following-sibling::div/label")
@@ -115,19 +120,19 @@ public class Student_TC extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'SC or ST:')]/following-sibling::div/label")
 	WebElement sel_SC_ST;
 
-	@FindBy(xpath = "//label[contains(text(),'Medium Of Instruction:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@id='usr' and @name='med_instr']")
 	WebElement input_Medium_Of_Instruction;
 
-	@FindBy(xpath = "//label[contains(text(),'Languages Studied:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@id='usr' and @name='lan_stud']")
 	WebElement input_Languages_Studied;
 
-	@FindBy(xpath = "//label[contains(text(),'Elective Studied:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@id='usr' and @name='elect']")
 	WebElement input_Elective_Studied;
 
-	@FindBy(xpath = "//label[contains(text(),'Scholarship:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@id='usr' and @name='scholar']")
 	WebElement input_Scholarship;
 
-	@FindBy(xpath = "//label[contains(text(),'Medically Examined ?:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@id='usr' and @name='med_exa']")
 	WebElement input_Medically_Examined;
 
 	@FindBy(xpath = "(//span[contains(text(),'Cancel')]/parent::button)[1]")
@@ -155,13 +160,13 @@ public class Student_TC extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'TC No.:')]/following-sibling::div/input")
 	WebElement input_TC_Number;
 
-	@FindBy(xpath = "//label[contains(text(),'Leaving Reason:')]/following-sibling::div/textarea")
+	@FindBy(xpath = "//textarea[@id='comment' and @name='leav_reas']")
 	WebElement input_LeavingReason;
 
-	@FindBy(xpath = "//label[contains(text(),'No. Of School Days:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@id='usr' and @name='number_school_days']")
 	WebElement input_NumberOfSchoolDays;
 
-	@FindBy(xpath = "//label[contains(text(),'No. Of Attended Days:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@id='usr' and @name='attended_days']")
 	WebElement input_NumberOfAttendedDays;
 
 	@FindBy(xpath = "(//span[contains(text(),'Cancel')]/parent::button)[2]")
@@ -182,28 +187,28 @@ public class Student_TC extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'TC Application Date:')]/following::button[1]")
 	WebElement btn_DateOfTCApplication;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
 	WebElement btn_MonthYear_TcApplication;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]/following::td[6]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[6]")
 	WebElement btn_DateTcAppl;
 
 	@FindBy(xpath = "//label[contains(text(),'TC Date:')]/following::button[1]")
 	WebElement btn_TCDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
 	WebElement btn_MonthYear_TcDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]/following::td[8]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[16]")
 	WebElement btn_DateOfTc;
 
 	@FindBy(xpath = "//label[contains(text(),'Last Date Of Attendance:')]/following::button[1]")
 	WebElement btn_lastDateOFAttendance;
 
-	@FindBy(xpath = "//span[contains(text(),'Feb 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
 	WebElement btn_MonthYear_DateAttendance;
 
-	@FindBy(xpath = "//span[contains(text(),'Feb 2018')]/following::td[29]")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[14]")
 	WebElement btn_DateOflastAttendance;
 
 	/**
@@ -386,7 +391,7 @@ public class Student_TC extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -401,20 +406,15 @@ public class Student_TC extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToStudentTC_BGHS() throws Exception {
-		btn_Admission.click();
+
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		Thread.sleep(1000);
-		// waitForElement(driver, 10, btnAdmission_StudentTC);
 
-		btnAdmission_StudentTC.click();
+		clickOnButton(btnAdmission_StudentTC);
 		log("Clicked on Student Tc Button and object is:-" + btnAdmission_StudentTC.toString());
-		Thread.sleep(1000);
-		// waitForElement(driver, 10, btnStudentTC_Student_TC);
 
-		btnStudentTC_Student_TC.click();
+		clickOnButton(btnStudentTC_Student_TC);
 		log("Clicked on Student Tc form link and object is:-" + btnStudentTC_Student_TC.toString());
-		Thread.sleep(1000);
-		// waitForElement(driver, 10, rdbtn_Individual);
 
 	}
 
@@ -438,7 +438,7 @@ public class Student_TC extends TestBase {
 
 	public void fillStudentTcForm_Individual(String academicYr, String class_TC, String section, String stuName)
 			throws Exception {
-
+		isDisplayed(rdbtn_Individual);
 		if (!rdbtn_Individual.isSelected()) {
 			rdbtn_Individual.click();
 			log("Indvidual radio button is selected and object is:-" + rdbtn_Individual.toString());
@@ -447,7 +447,7 @@ public class Student_TC extends TestBase {
 			log("Individual radio button is already selected and object is:-" + rdbtn_Individual.toString());
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdbtn_StuSelection_Active);
 		if (!rdbtn_StuSelection_Active.isSelected()) {
 			rdbtn_StuSelection_Active.click();
 			log("Student selection active radio button is selected and object is:-"
@@ -458,7 +458,7 @@ public class Student_TC extends TestBase {
 					+ rdbtn_StuSelection_Active.toString());
 			Thread.sleep(500);
 		}
-
+		isDisplayed(chk_Temporary_TC);
 		if (!chk_Temporary_TC.isSelected()) {
 			chk_Temporary_TC.click();
 			log("Student selection temporary tc check box is selected and object is:-" + chk_Temporary_TC.toString());
@@ -468,6 +468,7 @@ public class Student_TC extends TestBase {
 					+ chk_Temporary_TC.toString());
 			Thread.sleep(500);
 		}
+		isDisplayed(rdbtn_Name_Adm_No);
 		if (!rdbtn_Name_Adm_No.isSelected()) {
 			rdbtn_Name_Adm_No.click();
 			log("Student selection Name And Admission Number radio button is selected and object is:-"
@@ -479,52 +480,28 @@ public class Student_TC extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+		selectElementFromDropDown(sel_AcademicYear, academicYr);
+		log("selected academic year: " + academicYr + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected academic year: " + academicYr + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_TC);
+		selectElementFromDropDown(sel_Class, class_TC);
+		log("selected class: " + class_TC + " and object is:- " + sel_Class.toString());
 
-			log("selected class: " + class_TC + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_TC);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Section, section);
+		log("selected class: " + section + " and object is:- " + sel_Section.toString());
+		try {
+			if (input_StudentName.isDisplayed()) {
+				copyToClipbord(stuName);
+				input_StudentName.click();
+				Thread.sleep(500);
+				input_StudentNameText.sendKeys(Keys.chord(Keys.CONTROL, "v"), "");
+				Thread.sleep(2000);
+				input_StudentNameText.sendKeys(Keys.TAB);
+				log("Entered Student name: " + stuName + " and object is:-" + stuName.toString());
+				Thread.sleep(500);
+			}
 
-			log("selected class: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (input_StudentName.isDisplayed()) {
-			copyToClipbord(stuName);
-			input_StudentName.click();
-			Thread.sleep(500);
-			input_StudentNameText.sendKeys(Keys.chord(Keys.CONTROL, "v"), "");
-			Thread.sleep(2000);
-			input_StudentNameText.sendKeys(Keys.TAB);
-			log("Entered Student name: " + stuName + " and object is:-" + stuName.toString());
-			Thread.sleep(500);
-		} else {
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student name element not present.");
 			Thread.sleep(500);
 		}
@@ -533,284 +510,247 @@ public class Student_TC extends TestBase {
 	public void fill_StudentDetails_ForStudentTc(String dateOfAdm, String lastClassStudied, String caste,
 			String InstrMedium, String languageStudied, String electiveStudied, String scholarship, String medicalExam)
 			throws Exception {
-		if (sel_DateOfAdmission.isDisplayed()) {
-			String DOAdm = sel_DateOfAdmission.getText().trim();
-			Assert.assertEquals(DOAdm, dateOfAdm);
-			log("Date of admission from admission form is same in student tc and object is:-"
-					+ sel_DateOfAdmission.toString());
-			Thread.sleep(2000);
-		} else {
+		try {
+			if (sel_DateOfAdmission.isDisplayed()) {
+				String DOAdm = sel_DateOfAdmission.getText().trim();
+				Assert.assertEquals(DOAdm, dateOfAdm);
+				log("Date of admission from admission form is same in student tc and object is:-"
+						+ sel_DateOfAdmission.toString());
+				Thread.sleep(2000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Date of admission not matched or element not present.");
 			Thread.sleep(500);
 		}
-
-		if (btn_DateOfPromotion.isDisplayed()) {
-			btn_DateOfPromotion.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
-			Thread.sleep(500);
-			btn_Date.click();
-			Thread.sleep(500);
+		try {
+			if (btn_DateOfPromotion.isDisplayed()) {
+				btn_DateOfPromotion.click();
+				Thread.sleep(500);
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+				Thread.sleep(500);
+				btn_Date.click();
+				Thread.sleep(500);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		if (sel_LastClassStudied.isDisplayed()) {
-			String lastClass = sel_LastClassStudied.getText().trim();
-			Assert.assertEquals(lastClass, lastClassStudied);
-			log("Last Class Studied from admission form is same in student tc and object is:-"
-					+ sel_LastClassStudied.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (sel_LastClassStudied.isDisplayed()) {
+				String lastClass = sel_LastClassStudied.getText().trim();
+				Assert.assertEquals(lastClass, lastClassStudied);
+				log("Last Class Studied from admission form is same in student tc and object is:-"
+						+ sel_LastClassStudied.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Last Class Studied not matched or element not present.");
 			Thread.sleep(500);
 		}
 		// Label name not proper in the application
-
-		if (sel_SC_ST.isDisplayed()) {
-			String casteTC = sel_SC_ST.getText().trim();
-			Assert.assertEquals(casteTC, caste);
-			log("Caste from admission form is same in student tc and object is:-" + sel_SC_ST.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (sel_SC_ST.isDisplayed()) {
+				String casteTC = sel_SC_ST.getText().trim();
+				Assert.assertEquals(casteTC, caste);
+				log("Caste from admission form is same in student tc and object is:-" + sel_SC_ST.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Caste not matched or element not present.");
 			Thread.sleep(500);
 		}
-		if (input_Medium_Of_Instruction.isDisplayed()) {
-			input_Medium_Of_Instruction.clear();
-			input_Medium_Of_Instruction.sendKeys(InstrMedium);
-			log("Entered medium of instruction: " + InstrMedium + " and object is:-"
-					+ input_Medium_Of_Instruction.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Medium of instruction element not present.");
-			Thread.sleep(500);
-		}
 
-		if (input_Languages_Studied.isDisplayed()) {
-			input_Languages_Studied.clear();
-			input_Languages_Studied.sendKeys(languageStudied);
-			log("Entered language studied: " + languageStudied + " and object is:-"
-					+ input_Languages_Studied.toString());
-			Thread.sleep(1000);
-		} else {
-			log("language studied element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Elective_Studied.isDisplayed()) {
-			input_Elective_Studied.clear();
-			input_Elective_Studied.sendKeys(electiveStudied);
-			log("Entered Elective studied: " + electiveStudied + " and object is:-"
-					+ input_Elective_Studied.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Elective studied element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Scholarship.isDisplayed()) {
-			input_Scholarship.clear();
-			input_Scholarship.sendKeys(scholarship);
-			log("Entered scholarship: " + scholarship + " and object is:-" + input_Scholarship.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Scholarship element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Medically_Examined.isDisplayed()) {
-			input_Medically_Examined.clear();
-			input_Medically_Examined.sendKeys(medicalExam);
-			log("Entered medically examined: " + medicalExam + " and object is:-"
-					+ input_Medically_Examined.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Medically examined element not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_Medium_Of_Instruction, InstrMedium);
+		log("Entered medium of instruction: " + InstrMedium + " and object is:-"
+				+ input_Medium_Of_Instruction.toString());
+
+		inputTextIntoInputField(input_Languages_Studied, languageStudied);
+		log("Entered language studied: " + languageStudied + " and object is:-" + input_Languages_Studied.toString());
+
+		inputTextIntoInputField(input_Elective_Studied, electiveStudied);
+		log("Entered Elective studied: " + electiveStudied + " and object is:-" + input_Elective_Studied.toString());
+
+		inputTextIntoInputField(input_Scholarship, scholarship);
+		log("Entered scholarship: " + scholarship + " and object is:-" + input_Scholarship.toString());
+
+		inputTextIntoInputField(input_Medically_Examined, medicalExam);
+		log("Entered medically examined: " + medicalExam + " and object is:-" + input_Medically_Examined.toString());
+
 	}
 
 	public void clickOn_StudentDetails_NextButton() throws Exception {
-		if (btn_Next_StudentDetails.isDisplayed()) {
-			btn_Next_StudentDetails.click();
-			log("Clicked on student details next button and page moved to tc details and object is:-"
-					+ btn_Next_StudentDetails.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Student details next button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Next_StudentDetails);
+		log("Clicked on student details next button and page moved to tc details and object is:-"
+				+ btn_Next_StudentDetails.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void fillStudent_TCDetailsForm(String tcNumber, String reasonForLeaving, String schoolDays,
 			String attendanceDays) throws Exception {
-		if (input_TC_Number.isDisplayed()) {
-			input_TC_Number.clear();
-			input_TC_Number.sendKeys(tcNumber);
-			log("Entered tc number:" + tcNumber + " and object is:-" + input_TC_Number.toString());
-			Thread.sleep(2000);
-		} else {
-			log("TC Number element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_DateOfTCApplication.isDisplayed()) {
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_DateOfTCApplication);
-			Thread.sleep(2000);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
-					btn_MonthYear_TcApplication);
-			Thread.sleep(500);
-			btn_DateTcAppl.click();
-			log("Date of TC application is entered and object is:-" + btn_DateOfTCApplication.toString());
-			Thread.sleep(500);
-		} else {
+
+		inputTextIntoInputField(input_TC_Number, tcNumber);
+		log("Entered tc number:" + tcNumber + " and object is:-" + input_TC_Number.toString());
+		try {
+			if (btn_DateOfTCApplication.isDisplayed()) {
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_DateOfTCApplication);
+				Thread.sleep(2000);
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+						btn_MonthYear_TcApplication);
+				Thread.sleep(500);
+				btn_DateTcAppl.click();
+				log("Date of TC application is entered and object is:-" + btn_DateOfTCApplication.toString());
+				Thread.sleep(500);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Date of TC application is not entered (OR) Date of application button element not present.");
 			Thread.sleep(500);
 		}
-		if (input_LeavingReason.isDisplayed()) {
-			input_LeavingReason.clear();
-			input_LeavingReason.sendKeys(reasonForLeaving);
-			log("Entered Leaving reason:" + reasonForLeaving + " and object is:-" + input_LeavingReason.toString());
-			Thread.sleep(500);
-		} else {
-			log("Leaving reason element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_TCDate.isDisplayed()) {
-			btn_TCDate.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_TcDate);
-			Thread.sleep(500);
-			btn_DateOfTc.click();
-			log("TC date entered and object is:-" + btn_TCDate.toString());
-			Thread.sleep(1000);
-		} else {
-			log("TC date not entered (OR) Tc date button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_lastDateOFAttendance.isDisplayed()) {
-			btn_lastDateOFAttendance.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
-					btn_MonthYear_DateAttendance);
-			Thread.sleep(500);
-			btn_DateOflastAttendance.click();
-			log("Last Date of attendance entered and object is:-" + btn_lastDateOFAttendance.toString());
-			Thread.sleep(500);
-		} else {
-			log("Last Date of attendance not entered (OR) Last Date of attendance button element not present.");
-			Thread.sleep(500);
-		}
-		if (input_NumberOfSchoolDays.isDisplayed()) {
-			input_NumberOfSchoolDays.clear();
-			input_NumberOfSchoolDays.sendKeys(schoolDays);
-			log("Entered number of school days:" + schoolDays + " and object is:-"
-					+ input_NumberOfSchoolDays.toString());
-			Thread.sleep(500);
-		} else {
-			log("Number of school days element not present.");
-			Thread.sleep(500);
-		}
-		if (input_NumberOfAttendedDays.isDisplayed()) {
-			input_NumberOfAttendedDays.clear();
-			input_NumberOfAttendedDays.sendKeys(attendanceDays);
-			log("Entered number of attendance days:" + attendanceDays + " and object is:-"
-					+ input_NumberOfAttendedDays.toString());
-			Thread.sleep(500);
-		} else {
-			log("Number of attendance days element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_LeavingReason, reasonForLeaving);
+		log("Entered Leaving reason:" + reasonForLeaving + " and object is:-" + input_LeavingReason.toString());
+
+		// Enter TC Date
+		clickOnButton(btn_TCDate);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_TcDate);
+		Thread.sleep(500);
+		btn_DateOfTc.click();
+		log("TC date entered and object is:-" + btn_TCDate.toString());
+
+		clickOnButton(btn_lastDateOFAttendance);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_DateAttendance);
+		Thread.sleep(500);
+		btn_DateOflastAttendance.click();
+		log("Last Date of attendance entered and object is:-" + btn_lastDateOFAttendance.toString());
+
+		inputTextIntoInputField(input_NumberOfSchoolDays, schoolDays);
+		log("Entered number of school days:" + schoolDays + " and object is:-" + input_NumberOfSchoolDays.toString());
+
+		inputTextIntoInputField(input_NumberOfAttendedDays, attendanceDays);
+		log("Entered number of attendance days:" + attendanceDays + " and object is:-"
+				+ input_NumberOfAttendedDays.toString());
+
 	}
 
 	public void clickOnTC_Details_NextButton() throws Exception {
-		if (btn_Next_TCDetails.isDisplayed()) {
-			btn_Next_TCDetails.click();
-			log("Clicked on TC details next button and page moved to Student personal details and object is:-"
-					+ btn_Next_TCDetails.toString());
-			Thread.sleep(3000);
-		} else {
-			log("TC details next button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Next_TCDetails);
+		log("Clicked on TC details next button and page moved to Student personal details and object is:-"
+				+ btn_Next_TCDetails.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void validateStudentPersonaldetails_FromStudentAdmissionFrom_LeftPart(String dateOfBirth, String dobInWords,
 			String stuIFSCCode, String birthPlace, String birthCertNumber, String casteCertNumber, String age,
 			String gender) throws Exception {
-
-		if (labelValue_DOB.isDisplayed()) {
-			String dob = labelValue_DOB.getText().trim();
-			Assert.assertEquals(dob, dateOfBirth);
-			log("Date of birth from admission form is match with student tc personal details and object is:-"
-					+ labelValue_DOB.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_DOB.isDisplayed()) {
+				String dob = labelValue_DOB.getText().trim();
+				Assert.assertEquals(dob, dateOfBirth);
+				log("Date of birth from admission form is match with student tc personal details and object is:-"
+						+ labelValue_DOB.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Date of birth from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
+
 		}
-		if (labelValue_DOB_InWords.isDisplayed()) {
-			String dob_words = labelValue_DOB_InWords.getText().trim();
-			Assert.assertEquals(dob_words, dobInWords);
-			log("Date of birth in words from admission form is match with student tc personal details and object is:-"
-					+ labelValue_DOB_InWords.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_DOB_InWords.isDisplayed()) {
+				String dob_words = labelValue_DOB_InWords.getText().trim();
+				Assert.assertEquals(dob_words, dobInWords);
+				log("Date of birth in words from admission form is match with student tc personal details and object is:-"
+						+ labelValue_DOB_InWords.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Date of birth in words from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_StuBankIFSC.isDisplayed()) {
-			String bank_ifsc = labelValue_StuBankIFSC.getText().trim();
-			Assert.assertEquals(bank_ifsc, stuIFSCCode);
-			log("Student IFSC number from admission form is match with student tc personal details and object is:-"
-					+ labelValue_StuBankIFSC.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_StuBankIFSC.isDisplayed()) {
+				String bank_ifsc = labelValue_StuBankIFSC.getText().trim();
+				Assert.assertEquals(bank_ifsc, stuIFSCCode);
+				log("Student IFSC number from admission form is match with student tc personal details and object is:-"
+						+ labelValue_StuBankIFSC.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student IFSC number from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_BirthPlace.isDisplayed()) {
-			String birth_place = labelValue_BirthPlace.getText().trim();
-			Assert.assertEquals(birth_place, birthPlace);
-			log("Student Birth Palce from admission form is match with student tc personal details and object is:-"
-					+ labelValue_BirthPlace.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_BirthPlace.isDisplayed()) {
+				String birth_place = labelValue_BirthPlace.getText().trim();
+				Assert.assertEquals(birth_place, birthPlace);
+				log("Student Birth Palce from admission form is match with student tc personal details and object is:-"
+						+ labelValue_BirthPlace.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student Birth Palce from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_BirthCertNumber.isDisplayed()) {
-			String birth_certificate = labelValue_BirthCertNumber.getText().trim();
-			Assert.assertEquals(birth_certificate, birthCertNumber);
-			log("Student Birth certificate number from admission form is match with student tc personal details and object is:-"
-					+ labelValue_BirthCertNumber.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_BirthCertNumber.isDisplayed()) {
+				String birth_certificate = labelValue_BirthCertNumber.getText().trim();
+				Assert.assertEquals(birth_certificate, birthCertNumber);
+				log("Student Birth certificate number from admission form is match with student tc personal details and object is:-"
+						+ labelValue_BirthCertNumber.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student Birth certificate number from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_CasteCertNumber.isDisplayed()) {
-			String caste_certificate = labelValue_CasteCertNumber.getText().trim();
-			Assert.assertEquals(caste_certificate, casteCertNumber);
-			log("Caste number from admission form is match with student tc personal details and object is:-"
-					+ labelValue_CasteCertNumber.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_CasteCertNumber.isDisplayed()) {
+				String caste_certificate = labelValue_CasteCertNumber.getText().trim();
+				Assert.assertEquals(caste_certificate, casteCertNumber);
+				log("Caste number from admission form is match with student tc personal details and object is:-"
+						+ labelValue_CasteCertNumber.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Caste certificate number from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_Age.isDisplayed()) {
-			String student_Age = labelValue_Age.getText().trim();
-			Assert.assertEquals(student_Age, age);
-			log("Student age from admission form is match with student tc personal details and object is:-"
-					+ labelValue_Age.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_Age.isDisplayed()) {
+				String student_Age = labelValue_Age.getText().trim();
+				Assert.assertEquals(student_Age, age);
+				log("Student age from admission form is match with student tc personal details and object is:-"
+						+ labelValue_Age.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student age from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_Gender.isDisplayed()) {
-			String student_gender = labelValue_Gender.getText().trim();
-			Assert.assertEquals(student_gender, gender);
-			log("Student gender from admission form is match with student tc personal details and object is:-"
-					+ labelValue_Gender.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_Gender.isDisplayed()) {
+				String student_gender = labelValue_Gender.getText().trim();
+				Assert.assertEquals(student_gender, gender);
+				log("Student gender from admission form is match with student tc personal details and object is:-"
+						+ labelValue_Gender.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student gender from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
@@ -819,102 +759,123 @@ public class Student_TC extends TestBase {
 	public void validateStudentPersonaldetails_FromStudentAdmissionFrom_RightPart(String motherTongue,
 			String nationality, String mobileNo, String emailId, String aadharNumber, String bloodGroup,
 			String studentAccountNo, String bplCardNo) throws Exception {
-		if (labelValue_MotherTongue.isDisplayed()) {
-			String mother_tongue = labelValue_MotherTongue.getText().trim();
-			Assert.assertEquals(mother_tongue, motherTongue);
-			log("Mother tongue from admission form is match with student tc personal details and object is:-"
-					+ labelValue_MotherTongue.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_MotherTongue.isDisplayed()) {
+				String mother_tongue = labelValue_MotherTongue.getText().trim();
+				Assert.assertEquals(mother_tongue, motherTongue);
+				log("Mother tongue from admission form is match with student tc personal details and object is:-"
+						+ labelValue_MotherTongue.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Mother tongue from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_Nationality.isDisplayed()) {
-			String student_nationality = labelValue_Nationality.getText().trim();
-			Assert.assertEquals(student_nationality, nationality);
-			log("Student nationality in words from admission form is match with student tc personal details and object is:-"
-					+ labelValue_Nationality.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_Nationality.isDisplayed()) {
+				String student_nationality = labelValue_Nationality.getText().trim();
+				Assert.assertEquals(student_nationality, nationality);
+				log("Student nationality in words from admission form is match with student tc personal details and object is:-"
+						+ labelValue_Nationality.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student nationality in words from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_MobileNumber.isDisplayed()) {
-			String mobile_number = labelValue_MobileNumber.getText().trim();
-			Assert.assertEquals(mobile_number, mobileNo);
-			log("Student mobile number from admission form is match with student tc personal details and object is:-"
-					+ labelValue_MobileNumber.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_MobileNumber.isDisplayed()) {
+				String mobile_number = labelValue_MobileNumber.getText().trim();
+				Assert.assertEquals(mobile_number, mobileNo);
+				log("Student mobile number from admission form is match with student tc personal details and object is:-"
+						+ labelValue_MobileNumber.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student mobile number from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_EmailId.isDisplayed()) {
-			String email_id = labelValue_EmailId.getText().trim();
-			Assert.assertEquals(email_id, emailId);
-			log("Student Email Id from admission form is match with student tc personal details and object is:-"
-					+ labelValue_EmailId.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_EmailId.isDisplayed()) {
+				String email_id = labelValue_EmailId.getText().trim();
+				Assert.assertEquals(email_id, emailId);
+				log("Student Email Id from admission form is match with student tc personal details and object is:-"
+						+ labelValue_EmailId.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student Email Id from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_AadharNumber.isDisplayed()) {
-			String aadhar_number = labelValue_AadharNumber.getText().trim();
-			Assert.assertEquals(aadhar_number, aadharNumber);
-			log("Student aadhar number from admission form is match with student tc personal details and object is:-"
-					+ labelValue_AadharNumber.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_AadharNumber.isDisplayed()) {
+				String aadhar_number = labelValue_AadharNumber.getText().trim();
+				Assert.assertEquals(aadhar_number, aadharNumber);
+				log("Student aadhar number from admission form is match with student tc personal details and object is:-"
+						+ labelValue_AadharNumber.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student aadhar number from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_BloodGroup.isDisplayed()) {
-			String blood_group = labelValue_BloodGroup.getText().trim();
-			Assert.assertEquals(blood_group, bloodGroup);
-			log("Student blood group from admission form is match with student tc personal details and object is:-"
-					+ labelValue_BloodGroup.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_BloodGroup.isDisplayed()) {
+				String blood_group = labelValue_BloodGroup.getText().trim();
+				Assert.assertEquals(blood_group, bloodGroup);
+				log("Student blood group from admission form is match with student tc personal details and object is:-"
+						+ labelValue_BloodGroup.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student blood group from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_StuAccountNo.isDisplayed()) {
-			String bank_account = labelValue_StuAccountNo.getText().trim();
-			Assert.assertEquals(bank_account, studentAccountNo);
-			log("Student bank account number from admission form is match with student tc personal details and object is:-"
-					+ labelValue_StuAccountNo.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_StuAccountNo.isDisplayed()) {
+				String bank_account = labelValue_StuAccountNo.getText().trim();
+				Assert.assertEquals(bank_account, studentAccountNo);
+				log("Student bank account number from admission form is match with student tc personal details and object is:-"
+						+ labelValue_StuAccountNo.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student bank account number from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
-		if (labelValue_BPLCardNo.isDisplayed()) {
-			String bank_account = labelValue_BPLCardNo.getText().trim();
-			Assert.assertEquals(bank_account, studentAccountNo);
-			log("Student BPL card number from admission form is match with student tc personal details and object is:-"
-					+ labelValue_BPLCardNo.toString());
-			Thread.sleep(1000);
-		} else {
+		try {
+			if (labelValue_BPLCardNo.isDisplayed()) {
+				String bank_account = labelValue_BPLCardNo.getText().trim();
+				Assert.assertEquals(bank_account, studentAccountNo);
+				log("Student BPL card number from admission form is match with student tc personal details and object is:-"
+						+ labelValue_BPLCardNo.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 			log("Student BPL card number from admission form is not matched (OR) element not present.");
 			Thread.sleep(500);
 		}
 	}
 
 	public void clickOn_StudentPersonal_Details_NextButton() throws Exception {
-		if (btn_Next_StuPersonalDetails.isDisplayed()) {
-			btn_Next_StuPersonalDetails.click();
+		
+			clickOnButton(btn_Next_StuPersonalDetails);
 			log("Clicked on student personal details next button and page moved to other details and object is:-"
 					+ btn_Next_StuPersonalDetails.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Student personal details next button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void fill_OtherDetails_FroStudentTCForm(String feesPaid, String feeConcession, String lastExam,
-			String results, String wheaterFailed, String qualifiedForPromotion, String qualifiedForWhichClass,
+			String results, String wheatherFailed, String qualifiedForPromotion, String qualifiedForWhichClass,
 			String nccCadet, String extraCurricular, String conduct, String remarks) throws Exception {
 		// if (labelValue_StuPaidFees.isDisplayed()) {
 		// String fees_paid = labelValue_StuPaidFees.getText().trim();
@@ -927,157 +888,80 @@ public class Student_TC extends TestBase {
 		// log("Student fees paid element not present.");
 		// Thread.sleep(500);
 		// }
-		if (input_FeesConcession.isDisplayed()) {
-			input_FeesConcession.clear();
-			input_FeesConcession.sendKeys(feeConcession);
+	
+			inputTextIntoInputField(input_FeesConcession, feeConcession);
 			log("Entered Fee Concession nature and period:" + feeConcession + " and object is:-"
 					+ input_FeesConcession.toString());
-			Thread.sleep(500);
-		} else {
-			log("Fee Concession element not present.");
-			Thread.sleep(500);
-		}
-		if (input_LastExam.isDisplayed()) {
-			input_LastExam.clear();
-			input_LastExam.sendKeys(lastExam);
+
+			inputTextIntoInputField(input_LastExam, lastExam);
 			log("Entered last exam details:" + lastExam + " and object is:-" + input_LastExam.toString());
-			Thread.sleep(500);
-		} else {
-			log("Last exam details element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Results.isDisplayed()) {
-			input_Results.clear();
-			input_Results.sendKeys(results);
+	
+			inputTextIntoInputField(input_Results, results);
 			log("Entered last exam results:" + results + " and object is:-" + input_Results.toString());
-			Thread.sleep(500);
-		} else {
-			log("Results element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Failed.isDisplayed()) {
-			input_Failed.clear();
-			input_Failed.sendKeys(wheaterFailed);
-			log("Entered whether failed:" + wheaterFailed + " and object is:-" + input_Failed.toString());
-			Thread.sleep(500);
-		} else {
-			log("whether failed element not present.");
-			Thread.sleep(500);
-		}
-		if (input_QualifiedForPromotion.isDisplayed()) {
-			input_QualifiedForPromotion.clear();
-			input_QualifiedForPromotion.sendKeys(qualifiedForPromotion);
+	
+			inputTextIntoInputField(input_Failed, wheatherFailed);
+			log("Entered whether failed:" + wheatherFailed + " and object is:-" + input_Failed.toString());
+
+			inputTextIntoInputField(input_QualifiedForPromotion, qualifiedForPromotion);
 			log("Entered whether Qualified For Promotion:" + qualifiedForPromotion + " and object is:-"
 					+ input_QualifiedForPromotion.toString());
-			Thread.sleep(500);
-		} else {
-			log("whether Qualified For Promotion element not present.");
-			Thread.sleep(500);
-		}
-		if (sel_QualifiedForClass.isDisplayed()) {
-			select = new Select(sel_QualifiedForClass);
-			select.selectByVisibleText(qualifiedForWhichClass);
-
+	
+			selectElementFromDropDown(sel_QualifiedForClass, qualifiedForWhichClass);
 			log("Qualified for which class: " + qualifiedForWhichClass + " and object is:- "
 					+ sel_QualifiedForClass.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), qualifiedForWhichClass);
-			Thread.sleep(1000);
-		} else {
-			log("Qualified for which class element is not present");
-			Thread.sleep(500);
-		}
-		if (input_NCC_Cadet.isDisplayed()) {
-			input_NCC_Cadet.clear();
-			input_NCC_Cadet.sendKeys(nccCadet);
+		
+			inputTextIntoInputField(input_NCC_Cadet, nccCadet);
 			log("Entered whether NCC Cadet:" + nccCadet + " and object is:-" + input_NCC_Cadet.toString());
-			Thread.sleep(500);
-		} else {
-			log("whether NCC Cadet element not present.");
-			Thread.sleep(500);
-		}
-		if (input_ECA.isDisplayed()) {
-			input_ECA.clear();
-			input_ECA.sendKeys(extraCurricular);
+	
+			inputTextIntoInputField(input_ECA, extraCurricular);
 			log("Entered Extra curricular activities:" + extraCurricular + " and object is:-" + input_ECA.toString());
-			Thread.sleep(500);
-		} else {
-			log("Extra curricular activities element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Conduct.isDisplayed()) {
-			input_Conduct.clear();
-			input_Conduct.sendKeys(conduct);
+		
+			inputTextIntoInputField(input_Conduct, conduct);
 			log("Entered Conduct:" + conduct + " and object is:-" + input_Conduct.toString());
-			Thread.sleep(500);
-		} else {
-			log("Conduct element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Remarks.isDisplayed()) {
-			input_Remarks.clear();
-			input_Remarks.sendKeys(remarks);
+	
+			inputTextIntoInputField(input_Remarks, remarks);
 			log("Entered Remarks:" + remarks + " and object is:-" + input_Remarks.toString());
-			Thread.sleep(500);
-		} else {
-			log("Remarks element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOn_Other_Details_NextButton() throws Exception {
-		if (btn_Next_TC_OtherDetails.isDisplayed()) {
-			btn_Next_TC_OtherDetails.click();
+	
+			clickOnButton(btn_Next_TC_OtherDetails);
 			log("Clicked on student Other details next button and page moved to due details and object is:-"
 					+ btn_Next_TC_OtherDetails.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Student Other details next button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void saveStudentTC() throws InterruptedException {
-		if (btn_Save_TC_DueDetails.isDisplayed()) {
-			btn_Save_TC_DueDetails.click();
+		
+			clickOnButton(btn_Save_TC_DueDetails);
 			log("Clicked on save button to save student tc and object is:-" + btn_Save_TC_DueDetails.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 
 	public void cancel_SavingOfStudentTC() throws Exception {
-		if (btnPopUpCancel.isDisplayed()) {
-			btnPopUpCancel.click();
+		
+			clickOnButton(btnPopUpCancel);
 			log("Clicked on cancel button not to save student tc and object is:-" + btnPopUpCancel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 
 	public void yesSubmitIt_SavingOfStudentTC() throws InterruptedException {
-		if (btnPopUpYesSubmit.isDisplayed()) {
-			btnPopUpYesSubmit.click();
+		
+			clickOnButton(btnPopUpYesSubmit);
 			log("Clicked on Yes Submit it button to save student tc and object is:-" + btnPopUpYesSubmit.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Yes Submit it button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 
 	public void clickOnOkButton() throws Exception {
-		if (btnPopUpOKSuccess.isDisplayed()) {
-			btnPopUpOKSuccess.click();
+		
+			clickOnButton(btnPopUpOKSuccess);
 			log("Clicked on OK button and object is:-" + btnPopUpOKSuccess.toString());
-			Thread.sleep(5000);
-		} else {
-			log("OK button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 }

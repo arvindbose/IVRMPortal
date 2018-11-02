@@ -40,7 +40,11 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btnAdmission_Reports;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[19]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[19]")
+	// WebElement btnReports_ClassWiseDetails;
+
+	@FindBy(xpath = "//a[@href='#/app/classwisestudentdetails/169']")
 	WebElement btnReports_ClassWiseDetails;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -111,12 +115,9 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxClasswiseDetailsReportGrid;
-	
+
 	@FindBy(xpath = "//button[text()='OK']")
 	WebElement btnOKSuccess;
-	
-	
-	
 
 	public ClassWise_StudentDetails_Report(WebDriver driver) {
 		this.driver = driver;
@@ -127,7 +128,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -142,31 +143,14 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Reports_ClassWiseDetailsReport() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_Reports.isDisplayed()) {
-			btnAdmission_Reports.click();
-			log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnReports_ClassWiseDetails.isDisplayed()) {
-			btnReports_ClassWiseDetails.click();
-			log("Clicked on Class Wise Details reports Button and object is:-"
-					+ btnReports_ClassWiseDetails.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Class Wise Details button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
+
+		clickOnButton(btnAdmission_Reports);
+		log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
+
+		clickOnButton(btnReports_ClassWiseDetails);
+		log("Clicked on Class Wise Details reports Button and object is:-" + btnReports_ClassWiseDetails.toString());
 
 	}
 
@@ -191,57 +175,25 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	}
 
 	public void submitBlank_ClassWiseDetailsReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Submit blank ClassWise Details Report form and object is:-" + btn_Report.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Submit blank ClassWise Details Report form and object is:-" + btn_Report.toString());
+
 	}
 
 	public void fillClassWiseDetailsReport_Form_ForNewAdmission(String academicYear, String Class_CWD, String Section)
 			throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			Thread.sleep(1000);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(Class_CWD);
+		selectElementFromDropDown(sel_Class, Class_CWD);
+		log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
 
-			log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Class_CWD);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(Section);
+		selectElementFromDropDown(sel_Section, Section);
+		log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
 
-			log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-
+		isDisplayed(rdBtn_NewAdmission);
 		if (!rdBtn_NewAdmission.isSelected()) {
 			rdBtn_NewAdmission.click();
 			log("New Admission radio button is selected and object is:- " + rdBtn_NewAdmission.toString());
@@ -250,6 +202,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("New Admission Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentName);
 		if (!chk_StudentName.isSelected()) {
 			chk_StudentName.click();
 			log("Student Name check box is checked and object is:- " + chk_StudentName.toString());
@@ -258,6 +211,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Student Name check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Gender);
 		if (!chk_Gender.isSelected()) {
 			chk_Gender.click();
 			log("Gender check box is checked and object is:- " + chk_Gender.toString());
@@ -266,6 +220,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Gender check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_AdmNo);
 		if (!chk_AdmNo.isSelected()) {
 			chk_AdmNo.click();
 			log("Admission Number check box is checked and object is:- " + chk_AdmNo.toString());
@@ -274,6 +229,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Admission Number check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -282,6 +238,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Class check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section check box is checked and object is:- " + chk_Section.toString());
@@ -290,6 +247,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Section check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentPhoto);
 		if (!chk_StudentPhoto.isSelected()) {
 			chk_StudentPhoto.click();
 			log("Student Photo check box is checked and object is:- " + chk_StudentPhoto.toString());
@@ -303,43 +261,16 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	public void fillClassWiseDetailsReport_Form_ForTotalStudent(String academicYear, String Class_CWD, String Section)
 			throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(Class_CWD);
+		selectElementFromDropDown(sel_Class, Class_CWD);
+		log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
 
-			log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Class_CWD);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(Section);
+		selectElementFromDropDown(sel_Section, Section);
+		log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
 
-			log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-
+		isDisplayed(rdBtn_TotalStudents);
 		if (!rdBtn_TotalStudents.isSelected()) {
 			rdBtn_TotalStudents.click();
 			log("Total Student radio button is selected and object is:- " + rdBtn_TotalStudents.toString());
@@ -348,6 +279,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Total Student Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentName);
 		if (!chk_StudentName.isSelected()) {
 			chk_StudentName.click();
 			log("Student Name check box is checked and object is:- " + chk_StudentName.toString());
@@ -356,6 +288,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Student Name check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Gender);
 		if (!chk_Gender.isSelected()) {
 			chk_Gender.click();
 			log("Gender check box is checked and object is:- " + chk_Gender.toString());
@@ -364,6 +297,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Gender check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_AdmNo);
 		if (!chk_AdmNo.isSelected()) {
 			chk_AdmNo.click();
 			log("Admission Number check box is checked and object is:- " + chk_AdmNo.toString());
@@ -372,6 +306,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Admission Number check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -380,6 +315,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Class check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section check box is checked and object is:- " + chk_Section.toString());
@@ -388,6 +324,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Section check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentPhoto);
 		if (!chk_StudentPhoto.isSelected()) {
 			chk_StudentPhoto.click();
 			log("Student Photo check box is checked and object is:- " + chk_StudentPhoto.toString());
@@ -401,43 +338,16 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	public void fillClassWiseDetailsReport_Form_ForPromoted(String academicYear, String Class_CWD, String Section)
 			throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(Class_CWD);
+		selectElementFromDropDown(sel_Class, Class_CWD);
+		log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
 
-			log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Class_CWD);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(Section);
+		selectElementFromDropDown(sel_Section, Section);
+		log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
 
-			log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-
+		isDisplayed(rdBtn_Promoted);
 		if (!rdBtn_Promoted.isSelected()) {
 			rdBtn_Promoted.click();
 			log("Promoted radio button is selected and object is:- " + rdBtn_Promoted.toString());
@@ -446,6 +356,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Promoted Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentName);
 		if (!chk_StudentName.isSelected()) {
 			chk_StudentName.click();
 			log("Student Name check box is checked and object is:- " + chk_StudentName.toString());
@@ -454,6 +365,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Student Name check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Gender);
 		if (!chk_Gender.isSelected()) {
 			chk_Gender.click();
 			log("Gender check box is checked and object is:- " + chk_Gender.toString());
@@ -462,6 +374,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Gender check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_AdmNo);
 		if (!chk_AdmNo.isSelected()) {
 			chk_AdmNo.click();
 			log("Admission Number check box is checked and object is:- " + chk_AdmNo.toString());
@@ -470,6 +383,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Admission Number check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -478,6 +392,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Class check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section check box is checked and object is:- " + chk_Section.toString());
@@ -486,6 +401,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Section check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentPhoto);
 		if (!chk_StudentPhoto.isSelected()) {
 			chk_StudentPhoto.click();
 			log("Student Photo check box is checked and object is:- " + chk_StudentPhoto.toString());
@@ -499,43 +415,16 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	public void fillClassWiseDetailsReport_Form_ForYearLoss(String academicYear, String Class_CWD, String Section)
 			throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(Class_CWD);
+		selectElementFromDropDown(sel_Class, Class_CWD);
+		log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
 
-			log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Class_CWD);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(Section);
+		selectElementFromDropDown(sel_Section, Section);
+		log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
 
-			log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-
+		isDisplayed(rdBtn_YearLoss);
 		if (!rdBtn_YearLoss.isSelected()) {
 			rdBtn_YearLoss.click();
 			log("Year Loss radio button is selected and object is:- " + rdBtn_YearLoss.toString());
@@ -544,6 +433,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Year Loss Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentName);
 		if (!chk_StudentName.isSelected()) {
 			chk_StudentName.click();
 			log("Student Name check box is checked and object is:- " + chk_StudentName.toString());
@@ -552,6 +442,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Student Name check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Gender);
 		if (!chk_Gender.isSelected()) {
 			chk_Gender.click();
 			log("Gender check box is checked and object is:- " + chk_Gender.toString());
@@ -560,6 +451,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Gender check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_AdmNo);
 		if (!chk_AdmNo.isSelected()) {
 			chk_AdmNo.click();
 			log("Admission Number check box is checked and object is:- " + chk_AdmNo.toString());
@@ -568,6 +460,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Admission Number check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -576,6 +469,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Class check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section check box is checked and object is:- " + chk_Section.toString());
@@ -584,6 +478,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Section check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentPhoto);
 		if (!chk_StudentPhoto.isSelected()) {
 			chk_StudentPhoto.click();
 			log("Student Photo check box is checked and object is:- " + chk_StudentPhoto.toString());
@@ -597,43 +492,16 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	public void fillClassWiseDetailsReport_Form_ForDeactivated(String academicYear, String Class_CWD, String Section)
 			throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(Class_CWD);
+		selectElementFromDropDown(sel_Class, Class_CWD);
+		log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
 
-			log("selected Class: " + Class_CWD + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Class_CWD);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(Section);
+		selectElementFromDropDown(sel_Section, Section);
+		log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
 
-			log("selected Section: " + Section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-
+		isDisplayed(rdBtn_Deactivated);
 		if (!rdBtn_Deactivated.isSelected()) {
 			rdBtn_Deactivated.click();
 			log("Deactivated radio button is selected and object is:- " + rdBtn_Deactivated.toString());
@@ -642,6 +510,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Deactivated Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentName);
 		if (!chk_StudentName.isSelected()) {
 			chk_StudentName.click();
 			log("Student Name check box is checked and object is:- " + chk_StudentName.toString());
@@ -650,6 +519,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Student Name check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Gender);
 		if (!chk_Gender.isSelected()) {
 			chk_Gender.click();
 			log("Gender check box is checked and object is:- " + chk_Gender.toString());
@@ -658,6 +528,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Gender check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_AdmNo);
 		if (!chk_AdmNo.isSelected()) {
 			chk_AdmNo.click();
 			log("Admission Number check box is checked and object is:- " + chk_AdmNo.toString());
@@ -666,6 +537,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Admission Number check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -674,6 +546,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Class check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section check box is checked and object is:- " + chk_Section.toString());
@@ -682,6 +555,7 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 			log("Section check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_StudentPhoto);
 		if (!chk_StudentPhoto.isSelected()) {
 			chk_StudentPhoto.click();
 			log("Student Photo check box is checked and object is:- " + chk_StudentPhoto.toString());
@@ -693,64 +567,39 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	}
 
 	public void clickReport_ToGenerate_ClassWiseStudentDetailsReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("ClassWise Student Details Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Report);
+		log("ClassWise Student Details Report is generated and object is:-" + btn_Report.toString());
+		Thread.sleep(1000);
 	}
 
 	public void clickCancelButton_ToClearFilledForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("ClassWise Student Details Report filled form data is cleared and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("ClassWise Student Details Report filled form data is cleared and object is:-" + btn_Cancel.toString());
+
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
-			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to Excel button element not present.");
-			Thread.sleep(500);
-		}
-	}
-	
-	public void clickOnPrintButton() throws Exception{
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
-			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
 
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_ExportToExcel);
+		log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
+
 	}
-	
+
+	public void clickOnPrintButton() throws Exception {
+
+		clickOnButton(btn_Print);
+		log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
+
+	}
+
 	public void clickOnPrint_ForPrintPreview() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
-			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
-
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
-
+		clickOnButton(btn_Print);
+		log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
+		Thread.sleep(1000);
 		Set<String> allWin = driver.getWindowHandles();
 
 		System.out.println("Page title before Switching : " + driver.getTitle());
@@ -779,52 +628,43 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 	}
 
 	public void min_Max_ClassWiseStudentDetailsReport_Form() throws Exception {
-		if (btnMin_MaxClasswiseDetailsReportForm.isDisplayed()) {
-			btnMin_MaxClasswiseDetailsReportForm.click();
-			log("ClassWise Student Details Report page minimized or maximized and object is:-"
-					+ btnMin_MaxClasswiseDetailsReportForm.toString());
-			Thread.sleep(1000);
-		} else {
-			log("ClassWise Student Details Report Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxClasswiseDetailsReportForm);
+		log("ClassWise Student Details Report page minimized or maximized and object is:-"
+				+ btnMin_MaxClasswiseDetailsReportForm.toString());
+
 	}
 
 	public void min_Max_ClassWiseStudentDetailsReport_Grid() throws Exception {
-		if (btnMin_MaxClasswiseDetailsReportGrid.isDisplayed()) {
-			btnMin_MaxClasswiseDetailsReportGrid.click();
-			log("ClassWise Student Details Report page minimized or maximized and object is:-"
-					+ btnMin_MaxClasswiseDetailsReportGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("ClassWise Student Details Report grid Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxClasswiseDetailsReportGrid);
+		log("ClassWise Student Details Report page minimized or maximized and object is:-"
+				+ btnMin_MaxClasswiseDetailsReportGrid.toString());
+
 	}
 
 	public void searchWithAdmissionNumber_InClassWiseStudentDetailsReportGrid(String admissionNum) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(admissionNum);
-			log("Entered Admission number to search: " + admissionNum + " and object is:-" + input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, admissionNum);
+		log("Entered Admission number to search: " + admissionNum + " and object is:-" + input_Search.toString());
+
 	}
+
 	public void verifyStudent_ForClassWiseStudentDetailsReportInGrid(String admissionNum) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]/span"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
 			try {
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]/span"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
 
 				Assert.assertEquals(admNumber, admissionNum);
 				log("Student available for Classwise Student details Report.");
-
+				break;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -836,29 +676,29 @@ public class ClassWise_StudentDetails_Report extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]/span"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
 			try {
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[6]/span"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
+
 				Assert.assertEquals(admNumber, admissionNum);
 				driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[1]/label/input"))
 						.click();
 				log("Corresponding student check box is checked for ClassWise Student Details Report.");
 				Thread.sleep(1000);
+				break;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
+
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+
 	}
 }

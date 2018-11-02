@@ -280,8 +280,21 @@ public class TC_Masters_Master_Category extends TestBase{
 			getScreenShot("tcSubmitFilledMasterCategoryForm");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			mastercategory.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -299,7 +312,7 @@ public class TC_Masters_Master_Category extends TestBase{
 	
 	
 
-	@Test(priority = 16, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 17, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -317,7 +330,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 18, dataProvider = "MasterCategorySearchData")
 	public void tcVerifyCategoryNameInTheGrid(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -335,7 +348,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 19, dataProvider = "MasterCategorySearchData")
 	public void tcEditMasterCategory(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -352,7 +365,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSubmitFilledMasterCategoryForm_Edit() {
 
 		try {
@@ -366,8 +379,21 @@ public class TC_Masters_Master_Category extends TestBase{
 			getScreenShot("tcSubmitFilledMasterCategoryForm_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastercategory.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -384,7 +410,7 @@ public class TC_Masters_Master_Category extends TestBase{
 	
 	//
 	
-	@Test(priority = 21, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 23, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid_ForDeactivate(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -402,7 +428,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 24, dataProvider = "MasterCategorySearchData")
 	public void tcDeactivateMasterCategory(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -420,7 +446,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -435,7 +461,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -450,7 +476,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 27, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid_ForDeactivate_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -468,7 +494,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 28, dataProvider = "MasterCategorySearchData")
 	public void tcDeactivateMasterCategory_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -486,7 +512,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -501,7 +527,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -516,7 +542,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 	
-	@Test(priority = 29, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 31, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid_ForActivate(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -534,7 +560,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 32, dataProvider = "MasterCategorySearchData")
 	public void tcActivateMasterCategory(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -552,7 +578,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 33)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -567,7 +593,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 34)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -582,7 +608,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 35, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid_ForActivate_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -600,7 +626,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 36, dataProvider = "MasterCategorySearchData")
 	public void tcActivateMasterCategory_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -617,7 +643,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 37)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -632,7 +658,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 38)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {

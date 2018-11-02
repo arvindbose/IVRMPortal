@@ -15,7 +15,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -23,7 +22,7 @@ import com.vapsTechnosoft.IVRM.testBase.TestBase;
  * @author Arvind
  *
  */
-public class Fee_Student_Concession_Report extends TestBase{
+public class Fee_Student_Concession_Report extends TestBase {
 
 	public static final Logger log = Logger.getLogger(Fee_Student_Concession_Report.class.getName());
 
@@ -42,7 +41,11 @@ public class Fee_Student_Concession_Report extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[9]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[9]")
+	// WebElement btn_FeeStudentConcessionReport;
+
+	@FindBy(xpath = "//a[@href='#/app/FeeStudentConcession/115']")
 	WebElement btn_FeeStudentConcessionReport;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -65,7 +68,7 @@ public class Fee_Student_Concession_Report extends TestBase{
 
 	@FindBy(xpath = "//label[contains(text(),'Section:')]//following::div[1]//select")
 	WebElement sel_Section;
-	
+
 	@FindBy(xpath = "//div[@class='multiselect']//label//input[@name='fee_ct1']")
 	List<WebElement> Chk_CustomGroup;
 
@@ -111,7 +114,7 @@ public class Fee_Student_Concession_Report extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -126,36 +129,21 @@ public class Fee_Student_Concession_Report extends TestBase{
 	 * @throws Exception
 	 */
 	public void navigateToFee_Reports_FeeStudentConcessionReport() throws Exception {
-		if (btn_Fee.isDisplayed()) {
-			btn_Fee.click();
-			log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeReports.isDisplayed()) {
-			btn_FeeReports.click();
-			log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeStudentConcessionReport.isDisplayed()) {
-			btn_FeeStudentConcessionReport.click();
-			log("Clicked on Fee Student Concession Report Button in navigation panel and object is:-"
-					+ btn_FeeStudentConcessionReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Student Concession Report button element not present.");
-			Thread.sleep(500);
-		}
 
+		clickOnButton(btn_Fee);
+		log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
+
+		clickOnButton(btn_FeeReports);
+		log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
+
+		clickOnButton(btn_FeeStudentConcessionReport);
+		log("Clicked on Fee Student Concession Report Button in navigation panel and object is:-"
+				+ btn_FeeStudentConcessionReport.toString());
 	}
 
 	/**
-	 * Validation of Fee > Reports > Fee Student Concession Report screen message
+	 * Validation of Fee > Reports > Fee Student Concession Report screen
+	 * message
 	 * 
 	 * @return
 	 */
@@ -174,23 +162,20 @@ public class Fee_Student_Concession_Report extends TestBase{
 	}
 
 	public void submitBlank_FeeStudentConcessionReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Submit blank Fee Student Concession Report form and object is:-" + btn_Report.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Submit blank Fee Student Concession Report form and object is:-" + btn_Report.toString());
+		Thread.sleep(1000);
+
 	}
 
 	/*
-	 * Generate report for Fee Student Concession, All 
+	 * Generate report for Fee Student Concession, All
 	 * 
 	 */
 	public void fill_FeeStudentConcessionReportForm_rdBtnAll(String academicYear, String concession_Type)
 			throws Exception {
-
+		isDisplayed(rdBtn_All);
 		if (!rdBtn_All.isSelected()) {
 			rdBtn_All.click();
 			log("All radio button is selected and object is:- " + rdBtn_All.toString());
@@ -199,62 +184,53 @@ public class Fee_Student_Concession_Report extends TestBase{
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-		
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (Sel_ConcessionType.isDisplayed()) {
-			select = new Select(Sel_ConcessionType);
-			select.selectByVisibleText(concession_Type);
+		// selectElementFromDropDown(sel_AcademicYear, academicYear);
+		select = new Select(sel_AcademicYear);
+		select.selectByVisibleText(academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected Concession type: " + concession_Type + " and object is:- " + Sel_ConcessionType.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), concession_Type);
-			Thread.sleep(1000);
-		} else {
-			log("Concession type element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(Sel_ConcessionType, concession_Type);
+		log("selected Concession type: " + concession_Type + " and object is:- " + Sel_ConcessionType.toString());
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	/*
-	 * Generate report for Fee Student Concession, Individual 
+	 * Generate report for Fee Student Concession, Individual
 	 * 
 	 */
-	public void fill_FeeStudentConcessionReportForm_rdBtnIndividual(String academicYear, String concession_Type, String select_class, String section)
-			throws Exception {
-
+	public void fill_FeeStudentConcessionReportForm_rdBtnIndividual(String academicYear, String concession_Type,
+			String select_class, String section) throws Exception {
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Individual radio button is selected and object is:- " + rdBtn_Individual.toString());
@@ -263,126 +239,83 @@ public class Fee_Student_Concession_Report extends TestBase{
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-		
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (Sel_ConcessionType.isDisplayed()) {
-			select = new Select(Sel_ConcessionType);
-			select.selectByVisibleText(concession_Type);
+		// selectElementFromDropDown(sel_AcademicYear, academicYear);
+		Select select = new Select(sel_AcademicYear);
+		select.selectByVisibleText(academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("selected Concession type: " + concession_Type + " and object is:- " + Sel_ConcessionType.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), concession_Type);
-			Thread.sleep(1000);
-		} else {
-			log("Concession type element is not present");
-			Thread.sleep(500);
-		}
-		
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
+		selectElementFromDropDown(Sel_ConcessionType, concession_Type);
+		log("selected Concession type: " + concession_Type + " and object is:- " + Sel_ConcessionType.toString());
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
 	}
+
 	public void clickReport_ToGenerate_FeeStudentConcessionReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Fee Student Concession Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Fee Student Concession Report is generated and object is:-" + btn_Report.toString());
+		Thread.sleep(2000);
+
 	}
 
 	public void clickCancelButton_ToClearFilledForm() throws Exception {
-		if (btn_Clear.isDisplayed()) {
-			btn_Clear.click();
-			log("Yearly Fee Defaulter report filled form data is cleared and object is:-" + btn_Clear.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Clear);
+		log("Yearly Fee Defaulter report filled form data is cleared and object is:-" + btn_Clear.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
-			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to Excel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_ExportToExcel);
+		log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnPrint_ForPrintPreview() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
-			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
-
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Print);
+		log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
 
 		Set<String> allWin = driver.getWindowHandles();
 
@@ -397,7 +330,7 @@ public class Fee_Student_Concession_Report extends TestBase{
 				Thread.sleep(2000);
 				Actions action = new Actions(driver);
 				action.sendKeys(Keys.TAB).sendKeys(Keys.ENTER);
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 
 				break;
 			}
@@ -410,74 +343,59 @@ public class Fee_Student_Concession_Report extends TestBase{
 		driver.switchTo().window(parentWin);
 		Thread.sleep(2000);
 	}
+
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void min_Max_FeeStudentConcessionReport_Form() throws Exception {
-		if (btnMin_MaxStudentConcessionReport.isDisplayed()) {
-			btnMin_MaxStudentConcessionReport.click();
-			log("Fee Student Concession Report page minimized or maximized and object is:-"
-					+ btnMin_MaxStudentConcessionReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Student Concession Report Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxStudentConcessionReport);
+		log("Fee Student Concession Report page minimized or maximized and object is:-"
+				+ btnMin_MaxStudentConcessionReport.toString());
+
 	}
 
 	public void min_Max_ReportGridView_Grid() throws Exception {
-		if (btnMin_MaxReportGridView.isDisplayed()) {
-			btnMin_MaxReportGridView.click();
-			log("Report Grid View page minimized or maximized and object is:-"
-					+ btnMin_MaxReportGridView.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Report Grid View Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxReportGridView);
+		log("Report Grid View page minimized or maximized and object is:-" + btnMin_MaxReportGridView.toString());
+
 	}
 
 	public void searchWithStudentName_InFeeStudentConcessionReportGridView(String studentName) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(studentName);
-			log("Entered Student Name to search: " + studentName + " and object is:-" + input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, studentName);
+		log("Entered Student Name to search: " + studentName + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void sortRecordsByStudentName() throws Exception {
-		if (btnSortByStudentName.isDisplayed()) {
-			btnSortByStudentName.click();
-			// btnSortByGroupName.click();
-			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Sort element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnSortByStudentName);
+		log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
+
 	}
 
-	public void selectRecordToGenerateReport() throws Exception {
-		int no_Of_Record = Chk_FeeDefaulterReportGrid.size();
-		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_FeeDefaulterReportGrid.get(i).isSelected()) {
-				Chk_FeeDefaulterReportGrid.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+	public void selectRecordToGenerateReport() {
+		try {
+			int no_Of_Record = Chk_FeeDefaulterReportGrid.size();
+			for (int i = 0; i < no_Of_Record; i++) {
+				if (!Chk_FeeDefaulterReportGrid.get(i).isSelected()) {
+					Chk_FeeDefaulterReportGrid.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

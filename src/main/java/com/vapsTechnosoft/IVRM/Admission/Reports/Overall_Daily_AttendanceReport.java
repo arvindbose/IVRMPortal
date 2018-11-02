@@ -38,7 +38,11 @@ public class Overall_Daily_AttendanceReport extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btnAdmission_Reports;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// WebElement btnReports_OverallDailyAttendance;
+
+	@FindBy(xpath = "//a[@href='#/app/OverallDailyAttendanceReport/167']")
 	WebElement btnReports_OverallDailyAttendance;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -52,6 +56,9 @@ public class Overall_Daily_AttendanceReport extends TestBase {
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear;
+
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	WebElement btn_MonthYear2;
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date;
@@ -79,19 +86,18 @@ public class Overall_Daily_AttendanceReport extends TestBase {
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
-	
+
 	@FindBy(xpath = "//div[@id='content_id1']/div[2]/div/input")
 	WebElement input_Search_PopUp;
-	
+
 	@FindBy(xpath = "(//table[@id='table1']/tbody)[2]/tr")
 	List<WebElement> tblRows_PopUp;
-	
+
 	@FindBy(xpath = "(//span[contains(text(),'Export')]/parent::button)[2]")
 	WebElement btn_Export_PopUp;
-	
+
 	@FindBy(xpath = "(//span[contains(text(),'Close')]/parent::button)[1]")
 	WebElement btn_Close_PopUp;
-	
 
 	public Overall_Daily_AttendanceReport(WebDriver driver) {
 		this.driver = driver;
@@ -117,32 +123,15 @@ public class Overall_Daily_AttendanceReport extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Reports_OverallDailyAttendanceReport_BGHS() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_Reports.isDisplayed()) {
-			btnAdmission_Reports.click();
-			log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnReports_OverallDailyAttendance.isDisplayed()) {
-			btnReports_OverallDailyAttendance.click();
-			log("Clicked on Overall Daily Attendance reports Button and object is:-"
-					+ btnReports_OverallDailyAttendance.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Overall Daily Attendance reports button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
 
+		clickOnButton(btnAdmission_Reports);
+		log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
+
+		clickOnButton(btnReports_OverallDailyAttendance);
+		log("Clicked on Overall Daily Attendance reports Button and object is:-"
+				+ btnReports_OverallDailyAttendance.toString());
 	}
 
 	/**
@@ -166,287 +155,246 @@ public class Overall_Daily_AttendanceReport extends TestBase {
 	}
 
 	public void exportReport_WithoutSelectingRecords() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
-			log("Without selecting records click on Export Button and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Export button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_ExportToExcel);
+		log("Without selecting records click on Export Button and object is:-" + btn_ExportToExcel.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void fillOverallDailyAttendanceReportForm(String academicYear) throws Exception {
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-			log("selected academic yaer: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			Thread.sleep(1000);
+		selectElementFromDropDown(sel_AcademicYr, academicYear);
+		log("selected academic yaer: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present.");
-			Thread.sleep(500);
-		}
-		if (btnCalendar_Date.isDisplayed()) {
-			btnCalendar_Date.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
-			Thread.sleep(500);
-			btn_Date.click();
-			log("Date Of Attendance is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btnCalendar_Date);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear2);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		btn_Date.click();
+		log("Date Of Attendance is selected from calender.");
+
 	}
 
 	public void clickOn_ReportButton_ToGenerateReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Report button is clicked to generate report and object is:-" + btn_Report.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Report button is clicked to generate report and object is:-" + btn_Report.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOn_CancelButton_ToClearFilledData() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("Cancel button is clicked to Clear filled data and object is:-" + btn_Cancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("Cancel button is clicked to Clear filled data and object is:-" + btn_Cancel.toString());
+
 	}
 
 	public void clickOn_ExportButton_ToGenerateExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
-			log("Export button is clicked to generate/download excel report and object is:-"
-					+ btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_ExportToExcel);
+		log("Export button is clicked to generate/download excel report and object is:-"
+				+ btn_ExportToExcel.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void minimize_OverAllDailyAttendanceReport() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
 				txtReports_OverallDailyAttendanceReportMsgDispaly);
 		Thread.sleep(2000);
-		if (btnMin_MaxOverAllDailyAttendanceReport.isDisplayed()) {
-			btnMin_MaxOverAllDailyAttendanceReport.click();
-			log("OverAll Daily attendance Report page minimized and object is:-"
-					+ btnMin_MaxOverAllDailyAttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("OverAll Daily attendance Report Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxOverAllDailyAttendanceReport);
+		log("OverAll Daily attendance Report page minimized and object is:-"
+				+ btnMin_MaxOverAllDailyAttendanceReport.toString());
+
 	}
 
 	public void maximize_OverAllDailyAttendanceReport() throws Exception {
-		if (btnMin_MaxOverAllDailyAttendanceReport.isDisplayed()) {
-			btnMin_MaxOverAllDailyAttendanceReport.click();
-			log("OverAll Daily attendance Report page maximized and object is:-"
-					+ btnMin_MaxOverAllDailyAttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("OverAll Daily attendance Report Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxOverAllDailyAttendanceReport);
+		log("OverAll Daily attendance Report page maximized and object is:-"
+				+ btnMin_MaxOverAllDailyAttendanceReport.toString());
+
 	}
 
 	public void minimize_OverAllDailyAttendanceReportStudentList() throws Exception {
-		if (btnMin_MaxOverAllDailyAttendanceReportStudentList.isDisplayed()) {
-			btnMin_MaxOverAllDailyAttendanceReportStudentList.click();
-			log("OverAll Daily attendance Report Student List page minimized and object is:-"
-					+ btnMin_MaxOverAllDailyAttendanceReportStudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("OverAll Daily attendance Report Student List Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxOverAllDailyAttendanceReportStudentList);
+		log("OverAll Daily attendance Report Student List page minimized and object is:-"
+				+ btnMin_MaxOverAllDailyAttendanceReportStudentList.toString());
+
 	}
 
 	public void maximize_OverAllDailyAttendanceReportStudentList() throws Exception {
-		if (btnMin_MaxOverAllDailyAttendanceReportStudentList.isDisplayed()) {
-			btnMin_MaxOverAllDailyAttendanceReportStudentList.click();
-			log("OverAll Daily attendance Report Student List page maximized and object is:-"
-					+ btnMin_MaxOverAllDailyAttendanceReportStudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("OverAll Daily attendance Report Student List Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxOverAllDailyAttendanceReportStudentList);
+		log("OverAll Daily attendance Report Student List page maximized and object is:-"
+				+ btnMin_MaxOverAllDailyAttendanceReportStudentList.toString());
+
 	}
+
 	public void search_ClassSectionToGenerateOverAllDailyAttendanceReport(String class_section) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(class_section);
-			log("Entered class-section to search: " + class_section + " and object is:-"
-					+ input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, class_section);
+		log("Entered class-section to search: " + class_section + " and object is:-" + input_Search.toString());
+
 	}
+
 	public void verifySearchedRecords_OverallDialyAttendanceReportGrid(String class_section) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classection = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
-					.trim();
-			System.out.println("Class Section: " + classection);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(classection, class_section);
-				log("Searched class-section is available in overall daily attendance report grid.");
-
-			} catch (Exception e) {
-				e.printStackTrace();
+				String classection = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
+						.trim();
+				System.out.println("Class Section: " + classection);
+				// Thread.sleep(2000);
+				if (classection.equals(class_section)) {
+					// Assert.assertEquals(classection, class_section);
+					log("Searched class-section is available in overall daily attendance report grid.");
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 	public void selectRecord_AndClickToview_ToGetAbsenteesAndTeacherDetails(String class_section) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + classname);
-			// Thread.sleep(2000);
-			try {
-				Assert.assertEquals(classname, class_section);
-				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[9]/a"))
-						.click();
-				log("Corresponding class click to view details link is clicked.");
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
+
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String classname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
+						.trim();
+				System.out.println("Class Name: " + classname);
+				// Thread.sleep(2000);
+				if (classname.equals(class_section)) {
+					Assert.assertEquals(classname, class_section);
+					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[9]/a")).click();
+					log("Corresponding class click to view details link is clicked.");
+					Thread.sleep(1000);
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 	public void selectRecord_ToGenerateSelected_ClassReport(String class_section) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + classname);
-			// Thread.sleep(2000);
-			try {
-				Assert.assertEquals(classname, class_section);
-				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[1]/label/input"))
-						.click();
-				log("Corresponding class is checked to generate report.");
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String classname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + classname);
+				// Thread.sleep(2000);
+				if (classname.equals(class_section)) {
+					Assert.assertEquals(classname, class_section);
+					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[1]/label/input"))
+							.click();
+					log("Corresponding class is checked to generate report.");
+					Thread.sleep(1000);
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	public void search_Absentees_ToGenerateOverAllDailyAttendanceReport(String absentees_Name) throws Exception {
-		if (input_Search_PopUp.isDisplayed()) {
-			input_Search_PopUp.clear();
-			input_Search_PopUp.sendKeys(absentees_Name);
-			log("Entered Ansentees to search: " + absentees_Name + " and object is:-"
-					+ input_Search_PopUp.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search_PopUp, absentees_Name);
+		log("Entered Ansentees to search: " + absentees_Name + " and object is:-" + input_Search_PopUp.toString());
+		Thread.sleep(1000);
+
 	}
+
 	public void verifySearchedRecords_OverallDialyAttendanceReportGrid_PopUp(String absentees_Name) {
 		int rows = tblRows_PopUp.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String absenteesname = driver
-					.findElement(By.xpath("(//table[@id='table1']/tbody)[2]/tr[" + i + "]/td[3]")).getText()
-					.trim();
-			System.out.println("Absentees Name: " + absenteesname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(absenteesname, absentees_Name);
-				log("Searched absentees is available in overall daily attendance report grid.");
-
-			} catch (Exception e) {
-				e.printStackTrace();
+				String absenteesname = driver
+						.findElement(By.xpath("(//table[@id='table1']/tbody)[2]/tr[" + i + "]/td[3]")).getText().trim();
+				System.out.println("Absentees Name: " + absenteesname);
+				// Thread.sleep(2000);
+				if (absenteesname.equals(absentees_Name)) {
+					Assert.assertEquals(absenteesname, absentees_Name);
+					log("Searched absentees is available in overall daily attendance report grid.");
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 	public void selectRecord_Absentees_ToExportAsExcelReport(String absentees_Name) {
 		int rows = tblRows_PopUp.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String absenteesname = driver
-					.findElement(By.xpath("(//table[@id='table1']/tbody)[2]/tr[" + i + "]/td[3]")).getText()
-					.trim();
-			System.out.println("Absentees Name: " + absenteesname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(absenteesname, absentees_Name);
-				log("Searched absentees is available in overall daily attendance report grid.");
+				String absenteesname = driver
+						.findElement(By.xpath("(//table[@id='table1']/tbody)[2]/tr[" + i + "]/td[3]")).getText().trim();
+				System.out.println("Absentees Name: " + absenteesname);
+				// Thread.sleep(2000);
+				if (absenteesname.equals(absentees_Name)) {
+					Assert.assertEquals(absenteesname, absentees_Name);
+					log("Searched absentees is available in overall daily attendance report grid.");
 
-				driver.findElement(By.xpath("(//table[@id='table1']/tbody)[2]/tr[" + i + "]/td[1]/label/input"))
-						.click();
-				log("Corresponding absentees check box is checked.");
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
+					driver.findElement(By.xpath("(//table[@id='table1']/tbody)[2]/tr[" + i + "]/td[1]/label/input"))
+							.click();
+					log("Corresponding absentees check box is checked.");
+					Thread.sleep(1000);
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	public void exportReport_BySelectingAbsenteesName() throws Exception {
-		if (btn_Export_PopUp.isDisplayed()) {
-			btn_Export_PopUp.click();
-			log("click on Export Button to get absentees report and object is:-" + btn_Export_PopUp.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Export popup button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Export_PopUp);
+		log("click on Export Button to get absentees report and object is:-" + btn_Export_PopUp.toString());
+
 	}
+
 	public void clickOnCloseButton_ToCloseAbsenteesPopUp() throws Exception {
-		if (btn_Close_PopUp.isDisplayed()) {
-			btn_Close_PopUp.click();
-			log("click on Close Button to close popup and object is:-" + btn_Close_PopUp.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Close popup button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Close_PopUp);
+		log("click on Close Button to close popup and object is:-" + btn_Close_PopUp.toString());
+
 	}
 }

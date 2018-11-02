@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Exam.ExamMapping;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -11,8 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -25,8 +25,7 @@ public class Exam_StudentMapping extends TestBase {
 	public static final Logger log = Logger.getLogger(Exam_StudentMapping.class.getName());
 
 	private WebDriver driver;
-	private Select select;
-	private WebElement option;
+
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	private WebElement btnHome;
@@ -37,7 +36,12 @@ public class Exam_StudentMapping extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Exam Mapping')][1]")
 	private WebElement btn_ExamMapping;
 
-	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Exam Mapping')][1]/following::li[1]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Exam
+	// Mapping')][1]/following::li[1]")
+	// private WebElement btn_StudentMapping;
+
+	@FindBy(xpath = "//a[@href='#/app/StudentMapping/249']")
 	private WebElement btn_StudentMapping;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -93,9 +97,12 @@ public class Exam_StudentMapping extends TestBase {
 
 	@FindBy(xpath = "//div[@class='text-center']/table/thead/tr/th[5]/a")
 	private WebElement tab_Sort_RollNo;
-	
+
 	@FindBy(xpath = "//button[text()='OK']")
 	private WebElement btnOKSuccess;
+
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
 
 	public Exam_StudentMapping(WebDriver driver) {
 		this.driver = driver;
@@ -106,7 +113,7 @@ public class Exam_StudentMapping extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -122,33 +129,15 @@ public class Exam_StudentMapping extends TestBase {
 	 */
 	public void navigateToExamMapping_ExamStudentMapping() throws Exception {
 
-		if (btn_Exam.isDisplayed()) {
-			btn_Exam.click();
-			log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
-			// waitForElement(driver, 10, btnFee);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_ExamMapping.isDisplayed()) {
-			btn_ExamMapping.click();
-			log("Clicked on Exam Mapping Button and object is:-" + btn_ExamMapping.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Mapping Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_StudentMapping.isDisplayed()) {
-			btn_StudentMapping.click();
-			log("Clicked on Student Mapping Button and object is:-" + btn_StudentMapping.toString());
-			// waitForElement(driver, 10, btnCustomFeeGr);
-			Thread.sleep(1000);
-		} else {
-			log("Student Mapping Navigation element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Exam);
+		log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
+
+		clickOnButton(btn_ExamMapping);
+		log("Clicked on Exam Mapping Button and object is:-" + btn_ExamMapping.toString());
+
+		clickOnButton(btn_StudentMapping);
+		log("Clicked on Student Mapping Button and object is:-" + btn_StudentMapping.toString());
+
 	}
 
 	/**
@@ -182,199 +171,117 @@ public class Exam_StudentMapping extends TestBase {
 	public void fill_StudentMapping_Form(String academicYear, String examCategory, String subjecGroup, String class_sm,
 			String section_sm) throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_ExamCategory, examCategory);
+		log("Selected Exam Category: " + examCategory + " and object is:- " + sel_ExamCategory.toString());
 
-			log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_ExamCategory.isDisplayed()) {
+		selectElementFromDropDown(sel_SubjectGroup, subjecGroup);
+		log("Selected Subject Group: " + subjecGroup + " and object is:- " + sel_SubjectGroup.toString());
 
-			select = new Select(sel_ExamCategory);
-			select.selectByVisibleText(examCategory);
+		selectElementFromDropDown(sel_Class, class_sm);
+		log("Selected Class: " + class_sm + " and object is:- " + sel_Class.toString());
 
-			log("Selected Exam Category: " + examCategory + " and object is:- " + sel_ExamCategory.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), examCategory);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Category element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_SubjectGroup.isDisplayed()) {
+		selectElementFromDropDown(sel_Section, section_sm);
+		log("Selected Section: " + section_sm + " and object is:- " + sel_Section.toString());
 
-			select = new Select(sel_SubjectGroup);
-			select.selectByVisibleText(subjecGroup);
-
-			log("Selected Subject Group: " + subjecGroup + " and object is:- " + sel_SubjectGroup.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), subjecGroup);
-			Thread.sleep(1000);
-		} else {
-			log("Subject Group element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_sm);
-
-			log("Selected Class: " + class_sm + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_sm);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section_sm);
-
-			log("Selected Section: " + section_sm + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_sm);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
 	}
 
 	public void clickOnSearchButton_ToGetStudentSubjectList() throws Exception {
-		if (btn_Search.isDisplayed()) {
-			btn_Search.click();
-			log("Clicked on Search button to get list of student and subject and object is:- " + btn_Search.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Search button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Search);
+		log("Clicked on Search button to get list of student and subject and object is:- " + btn_Search.toString());
+
 	}
 
 	public void clickOnCancelButton_ToClearSelectedRecords() throws Exception {
-		if (btn_CancelFinal.isDisplayed()) {
-			btn_CancelFinal.click();
-			log("Clicked on Cancel button to clear selected and filled data and object is:- "
-					+ btn_CancelFinal.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Cancel button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_CancelFinal);
+		log("Clicked on Cancel button to clear selected and filled data and object is:- " + btn_CancelFinal.toString());
+
 	}
 
 	public void clickOnSaveButton_ToSubmitSelectedRecords() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("Clicked on Save button to Submit selected and filled data and object is:- " + btn_Save.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Save button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		log("Clicked on Save button to Submit selected and filled data and object is:- " + btn_Save.toString());
+		Thread.sleep(2000);
 	}
+
 	public void clickOnSearchButton_ToSubmitBlankForm() throws Exception {
-		if (btn_Search.isDisplayed()) {
-			btn_Search.click();
-			log("Clicked on Search button to Submit blank form and object is:- " + btn_Search.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Search button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Search);
+		log("Clicked on Search button to Submit blank form and object is:- " + btn_Search.toString());
+
 	}
+
 	public void clickOnSaveButton_WithoutSelecting() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("Clicked on Save button to Submit selected and filled data and object is:- " + btn_Save.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Save button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		log("Clicked on Save button to Submit selected and filled data and object is:- " + btn_Save.toString());
+		Thread.sleep(2000);
+
 	}
+
 	public void sort_StudentList() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_StudentMapping);
 		Thread.sleep(1000);
-		if (tab_Sort_Studentlist.isDisplayed()) {
-			tab_Sort_Studentlist.click();
-			Thread.sleep(1000);
-			tab_Sort_Studentlist.click();
-			log("Clicked on student list tab to sort student in order and object is:- "
-					+ tab_Sort_Studentlist.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student list tab button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(tab_Sort_Studentlist);
+		clickOnButton(tab_Sort_Studentlist);
+		log("Clicked on student list tab to sort student in order and object is:- " + tab_Sort_Studentlist.toString());
+
 	}
 
 	public void sort_AdmissionNumber() throws Exception {
-		if (tab_Sort_AdmNo.isDisplayed()) {
-			tab_Sort_AdmNo.click();
 
-			log("Clicked on Admission Number tab to sort student in order and object is:- "
-					+ tab_Sort_AdmNo.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission Number tab button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_Sort_AdmNo);
+		log("Clicked on Admission Number tab to sort student in order and object is:- " + tab_Sort_AdmNo.toString());
+
 	}
 
 	public void sort_RollNumber() throws Exception {
-		if (tab_Sort_RollNo.isDisplayed()) {
-			tab_Sort_RollNo.click();
 
-			log("Clicked on Roll Number tab to sort student in order and object is:- " + tab_Sort_RollNo.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Roll Number tab button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_Sort_RollNo);
+		log("Clicked on Roll Number tab to sort student in order and object is:- " + tab_Sort_RollNo.toString());
+
 	}
 
 	public void Search_ToFilterStudentFromList(String studentName) throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_StudentMapping);
 		Thread.sleep(1000);
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(studentName);
-			log("Search with student name: " + studentName + " to filter records and object is:- "
-					+ input_Search.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Search field element is not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, studentName);
+		log("Search with student name: " + studentName + " to filter records and object is:- "
+				+ input_Search.toString());
+
 	}
 
 	public void selectStudentForMapping() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_StudentMapping);
 		Thread.sleep(1000);
 		// int no_Of_Student = Chk_StudentSelection.size();
-		for (int i = 0; i < 3; i++) {
-			if (!Chk_StudentSelection.get(i).isSelected()) {
-				Chk_StudentSelection.get(i).click();
-				log(i + " Student check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Student check box is already checked.");
-				Thread.sleep(500);
+		try {
+			for (int i = 0; i < 3; i++) {
+
+				if (!Chk_StudentSelection.get(i).isSelected()) {
+					Chk_StudentSelection.get(i).click();
+					log(i + " Student check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Student check box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	public void deSelectStudentForMapping() throws Exception {
-		 int no_Of_Student = Chk_StudentSelection.size();
+		try {
+		int no_Of_Student = Chk_StudentSelection.size();
 		for (int i = 0; i < no_Of_Student; i++) {
 			if (Chk_StudentSelection.get(i).isSelected()) {
 				Chk_StudentSelection.get(i).click();
@@ -385,9 +292,13 @@ public class Exam_StudentMapping extends TestBase {
 				Thread.sleep(500);
 			}
 		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void selectSubjectForMapping_Sub1() throws Exception {
+		try {
 		// int no_Of_Sub1 = Chk_Sub1.size();
 		for (int i = 0; i < 3; i++) {
 			if (!Chk_Sub1.get(i).isSelected()) {
@@ -399,9 +310,13 @@ public class Exam_StudentMapping extends TestBase {
 				Thread.sleep(500);
 			}
 		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 	}
 
 	public void selectSubjectForMapping_Sub2() throws Exception {
+		try {
 		// int no_Of_Sub1 = Chk_Sub2.size();
 		for (int i = 0; i < 3; i++) {
 			if (!Chk_Sub2.get(i).isSelected()) {
@@ -413,9 +328,13 @@ public class Exam_StudentMapping extends TestBase {
 				Thread.sleep(500);
 			}
 		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void selectSubjectForMapping_Sub3() throws Exception {
+		try {
 		// int no_Of_Sub1 = Chk_Sub3.size();
 		for (int i = 0; i < 3; i++) {
 			if (!Chk_Sub3.get(i).isSelected()) {
@@ -427,21 +346,44 @@ public class Exam_StudentMapping extends TestBase {
 				Thread.sleep(500);
 			}
 		}
+	} catch (Exception e) {
+		e.printStackTrace();
 	}
+	}
+
 	/**
 	 * click on OK button after Saving
 	 * 
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
+	
+			clickOnButton(btnOKSuccess);
 			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button Element not present");
-			Thread.sleep(500);
+			Thread.sleep(2000);
+	}
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record saved successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
-
+	
+	public void popWindowMessage_SubmitWithoutSelectingStudent() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Select Atleast One Student");
+			log("Select Atleast One Student message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

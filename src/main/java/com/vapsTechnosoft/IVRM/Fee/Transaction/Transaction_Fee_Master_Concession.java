@@ -14,7 +14,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -41,7 +40,11 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]")
 	WebElement feeTransaction;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]/following::li[2]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]/following::li[2]")
+	// WebElement btnFeeMasterConcession;
+
+	@FindBy(xpath = "//a[@href='#/app/FeeConcession/190']")
 	WebElement btnFeeMasterConcession;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -137,7 +140,7 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -147,30 +150,17 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 	}
 
 	public void navigateToTransaction_FeeMasterConcession() throws Exception {
-		if (btnFee.isDisplayed()) {
-			btnFee.click();
-			log("Clicked on Fee Button and object is:-" + btnFee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Button element not present.");
-			Thread.sleep(500);
-		}
-		if (feeTransaction.isDisplayed()) {
-			feeTransaction.click();
-			log("Clicked on Fee Transaction Button and object is:-" + feeTransaction.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Transaction Button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnFeeMasterConcession.isDisplayed()) {
-			btnFeeMasterConcession.click();
-			log("Clicked on Fee Master Concession Button and object is:-" + btnFeeMasterConcession.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Fee Master Concession Button element not present.");
-			Thread.sleep(500);
-		}
+	
+		clickOnButton(btnFee);
+		log("Clicked on Fee Button and object is:-" + btnFee.toString());
+
+		clickOnButton(feeTransaction);
+		log("Clicked on Transaction Button and object is:-" + feeTransaction.toString());
+
+
+		clickOnButton(btnFeeMasterConcession);
+		log("Clicked on Fee Master Concession Button and object is:-" + btnFeeMasterConcession.toString());
+
 	}
 
 	public boolean verifyFeeMasterConcessionPage() {
@@ -178,7 +168,7 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 			System.out.println(txt_FeeMasterConcession.getText());
 			txt_FeeMasterConcession.isDisplayed();
 			log("Fee Master Concession page is dispalyed and object is:-" + txt_FeeMasterConcession.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -214,7 +204,7 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 
 	public void fill_FeeMasterConcessionForm_rdBtnClassWise(String academicYr, String class_ClassWise)
 			throws Exception {
-
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Radio button Class Wise is selected and object is:-" + rdBtn_ClassWise.toString());
@@ -223,45 +213,29 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 			log("Radio button Class Wise is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
-			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_ClassWise);
-			log("Selected Class:-" + class_ClassWise + " and object is " + sel_Class.toString());
+		selectElementFromDropDown(sel_AcademicYear, academicYr);
+		log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_ClassWise);
-			Thread.sleep(1000);
-		} else {
-			log("Select Class element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_Group = Chk_GroupName.size();
-		for (int i = 0; i < no_Of_Group; i++) {
-			if (!Chk_GroupName.get(i).isSelected()) {
-				Chk_GroupName.get(i).click();
-				log(i + " Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + "Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_Class, class_ClassWise);
+		log("Selected Class:-" + class_ClassWise + " and object is " + sel_Class.toString());
+
+		try {
+			int no_Of_Group = Chk_GroupName.size();
+			for (int i = 0; i < no_Of_Group; i++) {
+				if (!Chk_GroupName.get(i).isSelected()) {
+					Chk_GroupName.get(i).click();
+					log(i + " Group Name check box is checked.");
+					Thread.sleep(1000);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void fill_FeeMasterConcessionForm_rdBtnCategoryWise(String category, String academicYr) throws Exception {
-
+		isDisplayed(rdBtn_CategoryWise);
 		if (!rdBtn_CategoryWise.isSelected()) {
 			rdBtn_CategoryWise.click();
 			log("Radio button Category Wise is selected and object is:-" + rdBtn_CategoryWise.toString());
@@ -270,58 +244,38 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 			log("Radio button Category Wise is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_Category.isDisplayed()) {
-			select = new Select(sel_Category);
-			select.selectByVisibleText(category);
-			log("Selected Category:-" + category + " and object is " + sel_Category.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), category);
-			Thread.sleep(1000);
-		} else {
-			log("Select Category element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
-			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
+		selectElementFromDropDown(sel_Category, category);
+		log("Selected Category:-" + category + " and object is " + sel_Category.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_AcademicYear, academicYr);
+		log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-		int no_Of_Group = Chk_GroupName.size();
-		for (int i = 0; i < no_Of_Group; i++) {
-			if (!Chk_GroupName.get(i).isSelected()) {
-				Chk_GroupName.get(i).click();
-				log(i + " Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + "Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_Group = Chk_GroupName.size();
+			for (int i = 0; i < no_Of_Group; i++) {
+				if (!Chk_GroupName.get(i).isSelected()) {
+					Chk_GroupName.get(i).click();
+					log(i + " Group Name check box is checked.");
+					Thread.sleep(1000);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+
 	}
 
 	public void searchStudentFromStudentList(String studentName) throws Exception {
-		if (input_Search_StudentList.isDisplayed()) {
-			input_Search_StudentList.clear();
-			input_Search_StudentList.sendKeys(studentName);
+		
+			inputTextIntoInputField(input_Search_StudentList, studentName);
 			log("Entered student for search is: " + studentName + " and object is:-"
 					+ input_Search_StudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Student list element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void selectStudentForFeeConcession_FromStudentList() throws Exception {
+		isDisplayed(chk_StudentList);
 		if (!chk_StudentList.isSelected()) {
 			chk_StudentList.click();
 			log("Student is selected for fee concession and object is:-" + chk_StudentList.toString());
@@ -334,7 +288,7 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 
 	public void selectFeeHeadTypeAnd_EnterConcessionAmount(String concessionType, String amount, String remarks)
 			throws Exception {
-
+		isDisplayed(chk_FeeHeadList);
 		if (!chk_FeeHeadList.isSelected()) {
 			chk_FeeHeadList.click();
 			log("Fee Head is selected for fee concession and object is:-" + chk_FeeHeadList.toString());
@@ -343,59 +297,33 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 			log("Fee Head is already selected for fee concession.");
 			Thread.sleep(500);
 		}
-		if (sel_Type_FeeHeadList.isDisplayed()) {
-			select = new Select(sel_Type_FeeHeadList);
-			select.selectByVisibleText(concessionType);
+	
+			selectElementFromDropDown(sel_Type_FeeHeadList, concessionType);
 			log("Selected Concession type:-" + concessionType + " and object is " + sel_Type_FeeHeadList.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), concessionType);
-			Thread.sleep(1000);
-		} else {
-			log("Concession type element is not present");
-			Thread.sleep(500);
-		}
-		if (input_ConcessionAmount_FeeHeadList.isDisplayed()) {
-			input_ConcessionAmount_FeeHeadList.clear();
-			input_ConcessionAmount_FeeHeadList.sendKeys(amount);
+			inputTextIntoInputField(input_ConcessionAmount_FeeHeadList, amount);
 			log("Entered Concession amount" + amount + " and object is "
 					+ input_ConcessionAmount_FeeHeadList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Concession amount Input field element not present.");
-			Thread.sleep(500);
-		}
-		if (input_Remarks_FeeHeadList.isDisplayed()) {
-			input_Remarks_FeeHeadList.clear();
-			input_Remarks_FeeHeadList.sendKeys(remarks);
+		
+			inputTextIntoInputField(input_Remarks_FeeHeadList, remarks);
 			log("Entered Concession Remarks" + remarks + " and object is " + input_Remarks_FeeHeadList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Concession Remarks Input field element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnSaveButton() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+	
+			clickOnButton(btn_Save);
 			log("clicked on save button and object is:-" + btn_Save.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Save Button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(3000);
+		
 	}
 
 	public void clickOnCancelButton() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
+
+			clickOnButton(btn_Cancel);
 			log("clicked on Cancel button and object is:-" + btn_Cancel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Cancel Button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(3000);
+		
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -412,121 +340,85 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOkonSuccess.isDisplayed()) {
-			btnOkonSuccess.click();
+	
+			clickOnButton(btnOkonSuccess);
 			log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Ok Button element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void searchStudentFrom_StudentFeeConcessionGrid(String studentName) throws Exception {
-		if (input_Search_OutputGrid.isDisplayed()) {
-			input_Search_OutputGrid.clear();
-			input_Search_OutputGrid.sendKeys(studentName);
+	
+			inputTextIntoInputField(input_Search_OutputGrid, studentName);
 			log("Entered student for search in Student Fee Concession Grid: " + studentName + " and object is:-"
 					+ input_Search_OutputGrid.toString());
 			Thread.sleep(1000);
-		} else {
-			log("Search Student Fee Concession element is not present.");
-			Thread.sleep(500);
-		}
 	}
 
 	public void deleteStudentFrom_StudentFeeConcessionGrid() throws InterruptedException {
 
-		if (icon_DeleteRecord_OutputGrid.isDisplayed()) {
-			icon_DeleteRecord_OutputGrid.click();
+			clickOnButton(icon_DeleteRecord_OutputGrid);
 			log("Delete icon is clicked for deletion of record and object is:-"
 					+ icon_DeleteRecord_OutputGrid.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Delete icon not present in the output grid.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		if (btnYesDeleteOrDeactIt.isDisplayed()) {
-			btnYesDeleteOrDeactIt.click();
+	
+			clickOnButton(btnYesDeleteOrDeactIt);
 			log("Clicked on yes delete it button and object is:-" + btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Yes Delete it button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(5000);
+		
 	}
 
 	public void clickOnCancelButton_PopUp() throws Exception {
-		if (btnPopUpCancel.isDisplayed()) {
-			btnPopUpCancel.click();
+	
+			clickOnButton(btnPopUpCancel);
 			log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void minimizeAndMaximize_FeeConcession() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMasterConcession);
 		Thread.sleep(1000);
-		if (btnMin_MaxFeeConcession.isDisplayed()) {
-			btnMin_MaxFeeConcession.click();
+	
+			clickOnButton(btnMin_MaxFeeConcession);
 			log("clicked on Fee Concession minimize Or maximize button and object is:-"
 					+ btnMin_MaxFeeConcession.toString());
-			Thread.sleep(1000);
-		} else {
-			log("MinMax Fee Concession button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void minimizeAndMaximize_StudentList() throws Exception {
-		if (btnMin_MaxStudentList.isDisplayed()) {
-			btnMin_MaxStudentList.click();
+	
+			clickOnButton(btnMin_MaxStudentList);
 			log("clicked on Student list minimize Or maximize and object is:-" + btnMin_MaxStudentList.toString());
 			Thread.sleep(1000);
-		} else {
-			log("MinMax Student list button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void minimizeAndMaximize_FeeHeadList() throws Exception {
-		if (btnMin_MaxFeeHeadList.isDisplayed()) {
-			btnMin_MaxFeeHeadList.click();
+	
+			clickOnButton(btnMin_MaxFeeHeadList);
 			log("clicked on Fee Head list minimize Or maximize and object is:-" + btnMin_MaxFeeHeadList.toString());
 			Thread.sleep(1000);
-		} else {
-			log("MinMax Fee Head list button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void minimizeAndMaximize_StudentFeeConcessionGridOutput() throws Exception {
-		if (btnMin_MaxStudentFeeConcessionGridOutput.isDisplayed()) {
-			btnMin_MaxStudentFeeConcessionGridOutput.click();
+	
+			clickOnButton(btnMin_MaxStudentFeeConcessionGridOutput);
 			log("clicked on Student Fee Concession Grid Output minimize Or maximize and object is:-"
 					+ btnMin_MaxStudentFeeConcessionGridOutput.toString());
 			Thread.sleep(1000);
-		} else {
-			log("MinMax Student Fee Concession Grid Output button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void sortByStudentName() throws Exception {
-		if (btnSortByStudentName.isDisplayed()) {
-			btnSortByStudentName.click();
-			btnSortByStudentName.click();
+		
+			clickOnButton(btnSortByStudentName);
+			clickOnButton(btnSortByStudentName);
 			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Sort element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 }

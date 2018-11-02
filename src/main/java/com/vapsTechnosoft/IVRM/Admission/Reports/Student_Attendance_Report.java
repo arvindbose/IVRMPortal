@@ -44,7 +44,11 @@ public class Student_Attendance_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btnAdmission_Reports;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[2]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[2]")
+	// WebElement btnReports_StuAttendanceReport;
+
+	@FindBy(xpath = "//a[@href='#/app/StudentAttendanceReport/164']")
 	WebElement btnReports_StuAttendanceReport;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -82,18 +86,21 @@ public class Student_Attendance_Report extends TestBase {
 
 	@FindBy(xpath = "//label[contains(text(),'From Date:')]/following::button[1]")
 	WebElement btnCalendars_FromDate;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear_FromDate;
+	
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	WebElement btn_MonthYear_FromDate2;
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date_FromDate;
 
-//	@FindBy(xpath = "//span[contains(text(),'Jan 2018')]")
-//	WebElement btn_MonthYear_FromDate;
-//
-//	@FindBy(xpath = "//span[contains(text(),'Jan 2018')]/following::td[6]")
-//	WebElement btn_Date_FromDate;
+	// @FindBy(xpath = "//span[contains(text(),'Jan 2018')]")
+	// WebElement btn_MonthYear_FromDate;
+	//
+	// @FindBy(xpath = "//span[contains(text(),'Jan 2018')]/following::td[6]")
+	// WebElement btn_Date_FromDate;
 
 	@FindBy(xpath = "//label[contains(text(),'To Date:')]/following::button[1]")
 	WebElement btnCalendars_ToDate;
@@ -109,16 +116,18 @@ public class Student_Attendance_Report extends TestBase {
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear_Daily;
+	
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	WebElement btn_MonthYear_Daily2;
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date_Daily;
-	
-	
-//	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
-//	WebElement btn_MonthYear_Daily;
-//
-//	@FindBy(xpath = "//span[contains(text(),'Mar 2018')]//following::td[25]")
-//	WebElement btn_Date_Daily;
+
+	// @FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
+	// WebElement btn_MonthYear_Daily;
+	//
+	// @FindBy(xpath = "//span[contains(text(),'Mar 2018')]//following::td[25]")
+	// WebElement btn_Date_Daily;
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
 	WebElement btn_Report;
@@ -168,7 +177,7 @@ public class Student_Attendance_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -183,32 +192,14 @@ public class Student_Attendance_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Reports_StudentAttendanceReport_BGHS() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_Reports.isDisplayed()) {
-			btnAdmission_Reports.click();
-			log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnReports_StuAttendanceReport.isDisplayed()) {
-			btnReports_StuAttendanceReport.click();
-			log("Clicked on Student attendance reports Button and object is:-"
-					+ btnReports_StuAttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student attendance reports button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
 
+		clickOnButton(btnAdmission_Reports);
+		log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
+
+		clickOnButton(btnReports_StuAttendanceReport);
+		log("Clicked on Student attendance reports Button and object is:-" + btnReports_StuAttendanceReport.toString());
 	}
 
 	/**
@@ -232,18 +223,16 @@ public class Student_Attendance_Report extends TestBase {
 	}
 
 	public void submitBlank_StudentAttendanceReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Submit blank Student attendance Report form and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Submit blank Student attendance Report form and object is:-" + btn_Report.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void fillWithStudentAttendanceReportDetailsFor_All_Monthly(String academicYr, String rep_class,
 			String section, String month) throws Exception {
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("All radio button is selected and object is:-" + rdBtn_ALL.toString());
@@ -252,7 +241,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Monthly);
 		if (!rdBtn_Monthly.isSelected()) {
 			rdBtn_Monthly.click();
 			log("Monthly radio button is selected and object is:-" + rdBtn_Monthly.toString());
@@ -261,58 +250,24 @@ public class Student_Attendance_Report extends TestBase {
 			log("Monthly radio button is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYr);
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(rep_class);
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
 
-			log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), rep_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
 
-			log("selected section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Month.isDisplayed()) {
-			select = new Select(sel_Month);
-			select.selectByVisibleText(month);
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
 
-			log("selected Month: " + month + " and object is:- " + sel_Month.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), month);
-			Thread.sleep(1000);
-		} else {
-			log("Month element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Month, month);
+		log("selected Month: " + month + " and object is:- " + sel_Month.toString());
+
 	}
 
 	public void select_MonthDateWise_CheckBox() throws Exception {
-		if ((chk_MonthDayWise.isDisplayed()) && (!chk_MonthDayWise.isSelected())) {
+		isDisplayed(chk_MonthDayWise);
+		if (!chk_MonthDayWise.isSelected()) {
 			chk_MonthDayWise.click();
 			log("Month DayWise check box is checked and object is:-" + chk_MonthDayWise.toString());
 			Thread.sleep(1000);
@@ -323,45 +278,41 @@ public class Student_Attendance_Report extends TestBase {
 	}
 
 	public void clickOnReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Click on report button to get student data and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Click on report button to get student data and object is:-" + btn_Report.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void searchStudentToGenerateReport(String admissionNum) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(admissionNum);
-			log("Entered Admission Number to search: " + admissionNum + " and object is:-" + input_Search.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Search input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, admissionNum);
+		log("Entered Admission Number to search: " + admissionNum + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void verifyStudent_ForStudentAttendanceReportInGrid(String admissionNum) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(admNumber, admissionNum);
-				log("Student available for Student attendance Report.");
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
+				if (admNumber.equals(admissionNum)) {
+					Assert.assertEquals(admNumber, admissionNum);
+					log("Student available for Student attendance Report.");
+					break;
+				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -369,54 +320,57 @@ public class Student_Attendance_Report extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
-			try {
-				Assert.assertEquals(admNumber, admissionNum);
-				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[1]/label/input"))
-						.click();
-				log("Corresponding student check box is checked for student attendance Report.");
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
+				if (admNumber.equals(admissionNum)) {
+					Assert.assertEquals(admNumber, admissionNum);
+					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[1]/label/input"))
+							.click();
+					log("Corresponding student check box is checked for student attendance Report.");
+					Thread.sleep(1000);
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void searchStudentToGenerateReport_MonthDayWise(String admissionNum) throws Exception {
-		if (input_Search_MonthDayWise.isDisplayed()) {
-			input_Search_MonthDayWise.clear();
-			input_Search_MonthDayWise.sendKeys(admissionNum);
-			log("Entered Admission Number to search: " + admissionNum + " and object is:-"
-					+ input_Search_MonthDayWise.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Search input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search_MonthDayWise, admissionNum);
+		log("Entered Admission Number to search: " + admissionNum + " and object is:-"
+				+ input_Search_MonthDayWise.toString());
+
 	}
 
 	public void verifyStudent_ForStudentAttendanceReportInGrid_MonthDayWise(String admissionNum) {
 		int rows = tblRows_MonthDayWise.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver
-					.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(admNumber, admissionNum);
-				log("Student available for Student attendance Report.");
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
+				if (admNumber.equals(admissionNum)) {
+					Assert.assertEquals(admNumber, admissionNum);
+					log("Student available for Student attendance Report.");
+					break;
+				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -424,105 +378,81 @@ public class Student_Attendance_Report extends TestBase {
 		int rows = tblRows_MonthDayWise.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver
-					.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
-			try {
-				Assert.assertEquals(admNumber, admissionNum);
-				driver.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[1]/label/input"))
-						.click();
-				log("Corresponding student check box is checked for student attendance Report.");
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
+				if (admNumber.equals(admissionNum)) {
+					Assert.assertEquals(admNumber, admissionNum);
+					driver.findElement(
+							By.xpath("//div[@class='box-body']/div/table/tbody/tr[" + i + "]/td[1]/label/input"))
+							.click();
+					log("Corresponding student check box is checked for student attendance Report.");
+					Thread.sleep(1000);
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void minimizeStudentAttendanceReport() throws Exception {
-		if (btnMin_MaxStudentAttendanceReport.isDisplayed()) {
-			btnMin_MaxStudentAttendanceReport.click();
-			log("Student attendance Report page minimized and object is:-"
-					+ btnMin_MaxStudentAttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student attendance Report Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxStudentAttendanceReport);
+		log("Student attendance Report page minimized and object is:-" + btnMin_MaxStudentAttendanceReport.toString());
+
 	}
 
 	public void maximizeStudentAttendanceReport() throws Exception {
-		if (btnMin_MaxStudentAttendanceReport.isDisplayed()) {
-			btnMin_MaxStudentAttendanceReport.click();
-			log("Student attendance Report page maximized and object is:-"
-					+ btnMin_MaxStudentAttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student attendance Report Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxStudentAttendanceReport);
+		log("Student attendance Report page maximized and object is:-" + btnMin_MaxStudentAttendanceReport.toString());
+
 	}
 
 	public void minimizeStudentAttendanceReportStudentList() throws Exception {
-		if (btnMin_MaxStudentAttendanceReportStudentList.isDisplayed()) {
-			btnMin_MaxStudentAttendanceReportStudentList.click();
-			log("Student attendance Report Student List page minimized and object is:-"
-					+ btnMin_MaxStudentAttendanceReportStudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student attendance Report Student List Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxStudentAttendanceReportStudentList);
+		log("Student attendance Report Student List page minimized and object is:-"
+				+ btnMin_MaxStudentAttendanceReportStudentList.toString());
+
 	}
 
 	public void maximizeStudentAttendanceReportStudentList() throws Exception {
-		if (btnMin_MaxStudentAttendanceReportStudentList.isDisplayed()) {
-			btnMin_MaxStudentAttendanceReportStudentList.click();
-			log("Student attendance Report Student List page maximized and object is:-"
-					+ btnMin_MaxStudentAttendanceReportStudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student attendance Report Student List Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxStudentAttendanceReportStudentList);
+		log("Student attendance Report Student List page maximized and object is:-"
+				+ btnMin_MaxStudentAttendanceReportStudentList.toString());
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("Click on Cancel button and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("Click on Cancel button and object is:-" + btn_Cancel.toString());
+
 	}
 
 	public void clickOnExportToExcel() throws Exception {
 
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
-			log("Export To Excel Report button is clicked to generate report and object is:-"
-					+ btn_ExportToExcel.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Export To Excel button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_ExportToExcel);
+		log("Export To Excel Report button is clicked to generate report and object is:-"
+				+ btn_ExportToExcel.toString());
+
 	}
 
 	public void clickOnPrint() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
-			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
-
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Print);
+		log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
+		Thread.sleep(2000);
 
 		Set<String> allWin = driver.getWindowHandles();
 
@@ -553,7 +483,8 @@ public class Student_Attendance_Report extends TestBase {
 
 	public void fillWithStudentAttendanceReportDetailsFor_All_BetweenDate(String academicYr, String rep_class,
 			String section) throws Exception {
-		if ((rdBtn_ALL.isDisplayed()) && (!rdBtn_ALL.isSelected())) {
+		isDisplayed(rdBtn_ALL);
+		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("All radio button is selected and object is:-" + rdBtn_ALL.toString());
 			Thread.sleep(1000);
@@ -561,7 +492,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_BetweenDate);
 		if (!rdBtn_BetweenDate.isSelected()) {
 			rdBtn_BetweenDate.click();
 			log("Between Date radio button is selected and object is:-" + rdBtn_BetweenDate.toString());
@@ -570,71 +501,42 @@ public class Student_Attendance_Report extends TestBase {
 			log("Between Date radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYr);
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(rep_class);
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
 
-			log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), rep_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
 
-			log("selected section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (btnCalendars_FromDate.isDisplayed()) {
-			btnCalendars_FromDate.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate);
-			Thread.sleep(500);
-			btn_Date_FromDate.click();
-			log("From Date selected to generate student attendance report.");
-			Thread.sleep(500);
-		} else {
-			log("From Date calendar button not present");
-			Thread.sleep(500);
-		}
-		if (btnCalendars_ToDate.isDisplayed()) {
-			btnCalendars_ToDate.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_ToDate);
-			Thread.sleep(500);
-			btn_Date_ToDate.click();
-			log("To Date selected to generate student attendance report.");
-			Thread.sleep(500);
-		} else {
-			log("To Date calendar button not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
+
+		clickOnButton(btnCalendars_FromDate);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate2);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate);
+		Thread.sleep(500);
+		btn_Date_FromDate.click();
+		log("From Date selected to generate student attendance report.");
+
+		clickOnButton(btnCalendars_ToDate);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_ToDate);
+		Thread.sleep(500);
+		btn_Date_ToDate.click();
+		log("To Date selected to generate student attendance report.");
+
 	}
 
 	public void fillWithStudentAttendanceReportDetailsFor_All_Daily(String academicYr, String rep_class, String section)
 			throws Exception {
-		if ((rdBtn_ALL.isDisplayed()) && (!rdBtn_ALL.isSelected())) {
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_StuAttendanceReportMsgDispaly);
+		Thread.sleep(1000);
+		
+		isDisplayed(rdBtn_ALL);
+		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("All radio button is selected and object is:-" + rdBtn_ALL.toString());
 			Thread.sleep(1000);
@@ -642,7 +544,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Daily);
 		if (!rdBtn_Daily.isSelected()) {
 			rdBtn_Daily.click();
 			log("Daily Date radio button is selected and object is:-" + rdBtn_Daily.toString());
@@ -651,59 +553,33 @@ public class Student_Attendance_Report extends TestBase {
 			log("Daily Date radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYr);
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(rep_class);
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
 
-			log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), rep_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
 
-			log("selected section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (btnCalendars_Daily.isDisplayed()) {
-			btnCalendars_Daily.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily);
-			Thread.sleep(500);
-			btn_Date_Daily.click();
-			log("Daily Date selected to generate student attendance report.");
-			Thread.sleep(500);
-		} else {
-			log("Daily Date calendar button not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
+
+		clickOnButton(btnCalendars_Daily);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily2);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily);
+		Thread.sleep(500);
+		btn_Date_Daily.click();
+		log("Daily Date selected to generate student attendance report.");
 
 	}
 
 	public void fillWithStudentAttendanceReportDetailsFor_Individual_Monthly(String academicYr, String rep_class,
 			String section, String studentName, String month) throws Exception {
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_StuAttendanceReportMsgDispaly);
+		Thread.sleep(1000);
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("All radio button is selected and object is:-" + rdBtn_Individual.toString());
@@ -712,6 +588,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
 			log("Name radio button is selected and object is:-" + rdBtn_Name.toString());
@@ -720,7 +597,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("Name radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Monthly);
 		if (!rdBtn_Monthly.isSelected()) {
 			rdBtn_Monthly.click();
 			log("Monthly radio button is selected and object is:-" + rdBtn_Monthly.toString());
@@ -729,71 +606,30 @@ public class Student_Attendance_Report extends TestBase {
 			log("Monthly radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYr);
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(rep_class);
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
 
-			log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), rep_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
 
-			log("selected section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
-			select.selectByVisibleText(studentName);
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
 
-			log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), studentName);
-			Thread.sleep(1000);
-		} else {
-			log("Student name element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_StudentName, studentName);
+		log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
 
-		if (sel_Month.isDisplayed()) {
-			select = new Select(sel_Month);
-			select.selectByVisibleText(month);
+		selectElementFromDropDown(sel_Month, month);
+		log("selected Month: " + month + " and object is:- " + sel_Month.toString());
 
-			log("selected Month: " + month + " and object is:- " + sel_Month.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), month);
-			Thread.sleep(1000);
-		} else {
-			log("Month element is not present");
-			Thread.sleep(500);
-		}
 	}
-	
+
 	public void fillWithStudentAttendanceReportDetailsFor_Individual_BetweenDate(String academicYr, String rep_class,
 			String section, String studentName) throws Exception {
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_StuAttendanceReportMsgDispaly);
+		Thread.sleep(1000);
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("All radio button is selected and object is:-" + rdBtn_Individual.toString());
@@ -802,6 +638,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
 			log("Name radio button is selected and object is:-" + rdBtn_Name.toString());
@@ -810,7 +647,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("Name radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_BetweenDate);
 		if (!rdBtn_BetweenDate.isSelected()) {
 			rdBtn_BetweenDate.click();
 			log("Between Date radio button is selected and object is:-" + rdBtn_BetweenDate.toString());
@@ -819,82 +656,43 @@ public class Student_Attendance_Report extends TestBase {
 			log("Between Date radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYr);
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(rep_class);
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
 
-			log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), rep_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
 
-			log("selected section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
-			select.selectByVisibleText(studentName);
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
 
-			log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), studentName);
-			Thread.sleep(1000);
-		} else {
-			log("Student name element is not present");
-			Thread.sleep(500);
-		}
-		if (btnCalendars_FromDate.isDisplayed()) {
-			btnCalendars_FromDate.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate);
-			Thread.sleep(500);
-			btn_Date_FromDate.click();
-			log("From Date selected to generate student attendance report.");
-			Thread.sleep(500);
-		} else {
-			log("From Date calendar button not present");
-			Thread.sleep(500);
-		}
-		if (btnCalendars_ToDate.isDisplayed()) {
-			btnCalendars_ToDate.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_ToDate);
-			Thread.sleep(500);
-			btn_Date_ToDate.click();
-			log("To Date selected to generate student attendance report.");
-			Thread.sleep(500);
-		} else {
-			log("To Date calendar button not present");
-			Thread.sleep(500);
-		}
-		
+		selectElementFromDropDown(sel_StudentName, studentName);
+		log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
+
+		clickOnButton(btnCalendars_FromDate);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate2);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate);
+		Thread.sleep(500);
+		btn_Date_FromDate.click();
+		log("From Date selected to generate student attendance report.");
+
+		clickOnButton(btnCalendars_ToDate);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_ToDate);
+		Thread.sleep(500);
+		btn_Date_ToDate.click();
+		log("To Date selected to generate student attendance report.");
+
 	}
+
 	public void fillWithStudentAttendanceReportDetailsFor_Individual_Daily(String academicYr, String rep_class,
 			String section, String studentName) throws Exception {
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_StuAttendanceReportMsgDispaly);
+		Thread.sleep(1000);
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("All radio button is selected and object is:-" + rdBtn_Individual.toString());
@@ -903,6 +701,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
 			log("Name radio button is selected and object is:-" + rdBtn_Name.toString());
@@ -911,7 +710,7 @@ public class Student_Attendance_Report extends TestBase {
 			log("Name radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Daily);
 		if (!rdBtn_Daily.isSelected()) {
 			rdBtn_Daily.click();
 			log("Daily radio button is selected and object is:-" + rdBtn_Daily.toString());
@@ -920,68 +719,28 @@ public class Student_Attendance_Report extends TestBase {
 			log("Daily radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYr);
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(rep_class);
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
 
-			log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), rep_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
 
-			log("selected section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
-			select.selectByVisibleText(studentName);
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
 
-			log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), studentName);
-			Thread.sleep(1000);
-		} else {
-			log("Student name element is not present");
-			Thread.sleep(500);
-		}
-		if (btnCalendars_Daily.isDisplayed()) {
-			btnCalendars_Daily.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily);
-			Thread.sleep(500);
-			btn_Date_Daily.click();
-			log("Daily selected to generate student attendance report.");
-			Thread.sleep(500);
-		} else {
-			log("Daily calendar button not present");
-			Thread.sleep(500);
-		}
-		
-		
+		selectElementFromDropDown(sel_StudentName, studentName);
+		log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
+
+		clickOnButton(btnCalendars_Daily);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily2);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily);
+		Thread.sleep(500);
+		btn_Date_Daily.click();
+		log("Daily selected to generate student attendance report.");
+
 	}
-	
+
 }

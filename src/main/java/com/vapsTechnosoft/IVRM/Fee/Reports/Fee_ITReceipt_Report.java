@@ -14,7 +14,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -27,8 +26,7 @@ public class Fee_ITReceipt_Report extends TestBase {
 	public static final Logger log = Logger.getLogger(Fee_ITReceipt_Report.class.getName());
 
 	private WebDriver driver;
-	private Select select;
-	private WebElement option;
+
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	private WebElement btnHome;
@@ -39,7 +37,11 @@ public class Fee_ITReceipt_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	private WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[7]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[7]")
+	// private WebElement btn_FeeITReceiptReport;
+
+	@FindBy(xpath = "//a[@href='#/app/FeeITreport/293']")
 	private WebElement btn_FeeITReceiptReport;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -57,7 +59,7 @@ public class Fee_ITReceipt_Report extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'Student Name:')]/following-sibling::div/select")
 	private WebElement sel_StudentName;
 
-	@FindBy(xpath = "//label[contains(text(),'Receipt No:')]/following-sibling::div/select")
+	@FindBy(xpath = "//select[@name='rcpt_no']")
 	private WebElement sel_ReceiptNo;
 
 	@FindBy(xpath = "//span[contains(text(),'Show')]/parent::button")
@@ -81,7 +83,7 @@ public class Fee_ITReceipt_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -96,32 +98,15 @@ public class Fee_ITReceipt_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToFee_Reports_FeeITReceiptReport() throws Exception {
-		if (btn_Fee.isDisplayed()) {
-			btn_Fee.click();
-			log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeReports.isDisplayed()) {
-			btn_FeeReports.click();
-			log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeITReceiptReport.isDisplayed()) {
-			btn_FeeITReceiptReport.click();
-			log("Clicked on Fee IT Receipt Report Button in navigation panel and object is:-"
-					+ btn_FeeITReceiptReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee IT Receipt Report button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Fee);
+		log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
 
+		clickOnButton(btn_FeeReports);
+		log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
+
+		clickOnButton(btn_FeeITReceiptReport);
+		log("Clicked on Fee IT Receipt Report Button in navigation panel and object is:-"
+				+ btn_FeeITReceiptReport.toString());
 	}
 
 	/**
@@ -143,14 +128,11 @@ public class Fee_ITReceipt_Report extends TestBase {
 	}
 
 	public void submitBlank_FeeITReceiptReportForm() throws Exception {
-		if (btn_Show.isDisplayed()) {
-			btn_Show.click();
+	
+			clickOnButton(btn_Show);
 			log("Submit blank Fee IT Receipt Report form and object is:-" + btn_Show.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Show button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	/*
@@ -160,103 +142,49 @@ public class Fee_ITReceipt_Report extends TestBase {
 	public void fill_FeeITReceiptReportForm(String academicYear, String class_It, String section_it,
 			String student_Name, String receipt_No) throws Exception {
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYear, academicYear);
 			log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_It);
-
+		
+			selectElementFromDropDown(sel_Class, class_It);
 			log("Selected Class: " + class_It + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_It);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section_it);
-
+	
+			selectElementFromDropDown(sel_Section, section_it);
 			log("Selected Section: " + section_it + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_it);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_StudentName.isDisplayed()) {
-			select = new Select(sel_StudentName);
+		
+		//	selectElementFromDropDown(sel_StudentName, student_Name);
+			Select select= new Select(sel_StudentName);
 			select.selectByVisibleText(student_Name);
-
 			log("Selected Student Name: " + student_Name + " and object is:- " + sel_StudentName.toString());
-//			option = select.getFirstSelectedOption();
-//			Assert.assertEquals(option.getText().trim(), student_Name);
-			Thread.sleep(1000);
-		} else {
-			log("Student Name element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_ReceiptNo.isDisplayed()) {
-			select = new Select(sel_ReceiptNo);
-			select.selectByVisibleText(receipt_No);
-
+		
+			selectElementFromDropDown(sel_ReceiptNo, receipt_No);
 			log("Selected Receipt No.: " + receipt_No + " and object is:- " + sel_ReceiptNo.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), receipt_No);
-			Thread.sleep(1000);
-		} else {
-			log("Receipt No. element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickReport_ToGenerate_FeeITReceiptReport() throws Exception {
-		if (btn_Show.isDisplayed()) {
-			btn_Show.click();
+
+			clickOnButton(btn_Show);
 			log("Fee IT Receipt Report is generated and object is:-" + btn_Show.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Show button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 
 	public void clickClearButton_ToClearFilledForm() throws Exception {
-		if (btn_Clear.isDisplayed()) {
-			btn_Clear.click();
+		
+			clickOnButton(btn_Clear);
 			log("Fee IT Receipt report filled form data is cleared and object is:-" + btn_Clear.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 
 	public void clickOnPrint_ForPrintPreview() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
+			clickOnButton(btn_Print);
 			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
 
 		Set<String> allWin = driver.getWindowHandles();
 
@@ -288,14 +216,11 @@ public class Fee_ITReceipt_Report extends TestBase {
 	public void min_Max_FeeITReceiptReport_Form() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeITReceiptReport);
 		Thread.sleep(1000);
-		if (btnMin_MaxITReceiptReport_Form.isDisplayed()) {
-			btnMin_MaxITReceiptReport_Form.click();
+		
+			clickOnButton(btnMin_MaxITReceiptReport_Form);
 			log("Fee IT Receipt Report page minimized or maximized and object is:-"
 					+ btnMin_MaxITReceiptReport_Form.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee IT Receipt Report Minimized Element not present.");
-		}
+			
 	}
 
 }

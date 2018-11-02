@@ -3,8 +3,6 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Reports;
 
-import static org.testng.Assert.assertEquals;
-
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -38,7 +36,11 @@ public class Total_Strength extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btnAdmission_Reports;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// WebElement btnReports_TotalStrength;
+
+	@FindBy(xpath = "//a[@href='#/app/totalstrength/104']")
 	WebElement btnReports_TotalStrength;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -97,22 +99,21 @@ public class Total_Strength extends TestBase {
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxTotalStrengthReportGrid;
-	
+
 	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[1]/b")
 	WebElement col_FinalTotal;
-	
+
 	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[2]/b")
 	WebElement total_Boys;
-	
+
 	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[3]/b")
 	WebElement total_Girls;
-	
+
 	@FindBy(xpath = "//table[@id='Table']//tfoot/tr/td[4]/b")
 	WebElement total_TotalStudent;
-	
+
 	@FindBy(xpath = "//div[contains(@ng-show,'totstr') and @class='box box-primary']/div/h3")
 	WebElement grid_HeaderName;
-	
 
 	public Total_Strength(WebDriver driver) {
 		this.driver = driver;
@@ -123,7 +124,7 @@ public class Total_Strength extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -138,30 +139,14 @@ public class Total_Strength extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Reports_TotalStrength() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_Reports.isDisplayed()) {
-			btnAdmission_Reports.click();
-			log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnReports_TotalStrength.isDisplayed()) {
-			btnReports_TotalStrength.click();
-			log("Clicked on Total Strength reports Button and object is:-" + btnReports_TotalStrength.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Total Strength reports button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
+
+		clickOnButton(btnAdmission_Reports);
+		log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
+
+		clickOnButton(btnReports_TotalStrength);
+		log("Clicked on Total Strength reports Button and object is:-" + btnReports_TotalStrength.toString());
 
 	}
 
@@ -185,18 +170,15 @@ public class Total_Strength extends TestBase {
 	}
 
 	public void submitBlank_TotalStrengthReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
+	
+			clickOnButton(btn_Report);
 			log("Submit blank Total Strength Report form and object is:-" + btn_Report.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void fillTotalStrengthReport_Form_ForALL_Present(String academicYear) throws Exception {
-
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("Selected All radio button and object is:- " + rdBtn_ALL.toString());
@@ -205,7 +187,7 @@ public class Total_Strength extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -215,22 +197,13 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForALL_Present_WithTC(String academicYear) throws Exception {
-
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("Selected All radio button and object is:- " + rdBtn_ALL.toString());
@@ -239,7 +212,7 @@ public class Total_Strength extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -248,6 +221,7 @@ public class Total_Strength extends TestBase {
 			log("Present Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_WithTC);
 		if (!chk_WithTC.isSelected()) {
 			chk_WithTC.click();
 			log("Selected WithTC check box and object is:- " + chk_WithTC.toString());
@@ -257,22 +231,13 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForALL_Present_WithDeactive(String academicYear) throws Exception {
-
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("Selected All radio button and object is:- " + rdBtn_ALL.toString());
@@ -281,7 +246,7 @@ public class Total_Strength extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -290,7 +255,7 @@ public class Total_Strength extends TestBase {
 			log("Present Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(chk_WithDeactive);
 		if (!chk_WithDeactive.isSelected()) {
 			chk_WithDeactive.click();
 			log("Selected With Deactive check box and object is:- " + chk_WithDeactive.toString());
@@ -300,22 +265,13 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForALL_Present_WithTCAndDeactive(String academicYear) throws Exception {
-
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("Selected All radio button and object is:- " + rdBtn_ALL.toString());
@@ -324,7 +280,7 @@ public class Total_Strength extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -333,6 +289,7 @@ public class Total_Strength extends TestBase {
 			log("Present Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_WithTC);
 		if (!chk_WithTC.isSelected()) {
 			chk_WithTC.click();
 			log("Selected WithTC check box and object is:- " + chk_WithTC.toString());
@@ -341,6 +298,7 @@ public class Total_Strength extends TestBase {
 			log("with Tc check box already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_WithDeactive);
 		if (!chk_WithDeactive.isSelected()) {
 			chk_WithDeactive.click();
 			log("Selected With Deactive check box and object is:- " + chk_WithDeactive.toString());
@@ -350,22 +308,13 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForALL_Left(String academicYear) throws Exception {
-
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("Selected All radio button and object is:- " + rdBtn_ALL.toString());
@@ -374,7 +323,7 @@ public class Total_Strength extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Left);
 		if (!rdBtn_Left.isSelected()) {
 			rdBtn_Left.click();
 			log("Selected Left radio button and object is:- " + rdBtn_Left.toString());
@@ -384,22 +333,13 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForALL_Deactive(String academicYear) throws Exception {
-
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("Selected All radio button and object is:- " + rdBtn_ALL.toString());
@@ -408,7 +348,7 @@ public class Total_Strength extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_DeActive);
 		if (!rdBtn_DeActive.isSelected()) {
 			rdBtn_DeActive.click();
 			log("Selected Deactive radio button and object is:- " + rdBtn_DeActive.toString());
@@ -418,22 +358,13 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForALL_OverAllTotal(String academicYear) throws Exception {
-
+		isDisplayed(rdBtn_ALL);
 		if (!rdBtn_ALL.isSelected()) {
 			rdBtn_ALL.click();
 			log("Selected All radio button and object is:- " + rdBtn_ALL.toString());
@@ -442,7 +373,7 @@ public class Total_Strength extends TestBase {
 			log("All Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_overAllTotal);
 		if (!rdBtn_overAllTotal.isSelected()) {
 			rdBtn_overAllTotal.click();
 			log("Selected overall Total radio button and object is:- " + rdBtn_overAllTotal.toString());
@@ -452,23 +383,14 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForIndividual_Present(String academicYear, String class_Ts, String section)
 			throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Selected Individual radio button and object is:- " + rdBtn_Individual.toString());
@@ -477,7 +399,7 @@ public class Total_Strength extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -487,48 +409,20 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Ts);
 
+			selectElementFromDropDown(sel_Class, class_Ts);
 			log("selected class: " + class_Ts + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Ts);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
 
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
+			selectElementFromDropDown(sel_Section, section);
 			log("selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForIndividual_Present_WithTC(String academicYear, String class_Ts,
 			String section) throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Selected Individual radio button and object is:- " + rdBtn_Individual.toString());
@@ -537,7 +431,7 @@ public class Total_Strength extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -546,6 +440,7 @@ public class Total_Strength extends TestBase {
 			log("Present Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_WithTC);
 		if (!chk_WithTC.isSelected()) {
 			chk_WithTC.click();
 			log("Selected WithTC check box and object is:- " + chk_WithTC.toString());
@@ -555,48 +450,20 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Ts);
-
+	
+			selectElementFromDropDown(sel_Class, class_Ts);
 			log("selected class: " + class_Ts + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Ts);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
+		
+			selectElementFromDropDown(sel_Section, section);
 			log("selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void fillTotalStrengthReport_Form_ForIndividual_Present_WithDeactive(String academicYear, String class_Ts,
 			String section) throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Selected Individual radio button and object is:- " + rdBtn_Individual.toString());
@@ -605,7 +472,7 @@ public class Total_Strength extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -614,7 +481,7 @@ public class Total_Strength extends TestBase {
 			log("Present Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(chk_WithDeactive);
 		if (!chk_WithDeactive.isSelected()) {
 			chk_WithDeactive.click();
 			log("Selected with deactive check box and object is:- " + chk_WithDeactive.toString());
@@ -624,48 +491,20 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Ts);
-
+	
+			selectElementFromDropDown(sel_Class, class_Ts);
 			log("selected class: " + class_Ts + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Ts);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
+	
+			selectElementFromDropDown(sel_Section, section);
 			log("selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForIndividual_Present_WithTC_AND_Deactive(String academicYear,
 			String class_Ts, String section) throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Selected Individual radio button and object is:- " + rdBtn_Individual.toString());
@@ -674,7 +513,7 @@ public class Total_Strength extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Present);
 		if (!rdBtn_Present.isSelected()) {
 			rdBtn_Present.click();
 			log("Selected present radio button and object is:- " + rdBtn_Present.toString());
@@ -683,6 +522,7 @@ public class Total_Strength extends TestBase {
 			log("Present Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_WithTC);
 		if (!chk_WithTC.isSelected()) {
 			chk_WithTC.click();
 			log("Selected WithTC check box and object is:- " + chk_WithTC.toString());
@@ -691,7 +531,7 @@ public class Total_Strength extends TestBase {
 			log("with Tc check box already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(chk_WithDeactive);
 		if (!chk_WithDeactive.isSelected()) {
 			chk_WithDeactive.click();
 			log("Selected with deactive check box and object is:- " + chk_WithDeactive.toString());
@@ -701,48 +541,20 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Ts);
 
+			selectElementFromDropDown(sel_Class, class_Ts);
 			log("selected class: " + class_Ts + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Ts);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
+	
+			selectElementFromDropDown(sel_Section, section);
 			log("selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForIndividual_Left(String academicYear, String class_Ts, String section)
 			throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Selected Individual radio button and object is:- " + rdBtn_Individual.toString());
@@ -751,7 +563,7 @@ public class Total_Strength extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_Left);
 		if (!rdBtn_Left.isSelected()) {
 			rdBtn_Left.click();
 			log("Selected Left radio button and object is:- " + rdBtn_Left.toString());
@@ -761,48 +573,20 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Ts);
 
+			selectElementFromDropDown(sel_Class, class_Ts);
 			log("selected class: " + class_Ts + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Ts);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
 
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
+			selectElementFromDropDown(sel_Section, section);
 			log("selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForIndividual_Deactive(String academicYear, String class_Ts,
 			String section) throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Selected Individual radio button and object is:- " + rdBtn_Individual.toString());
@@ -811,7 +595,7 @@ public class Total_Strength extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_DeActive);
 		if (!rdBtn_DeActive.isSelected()) {
 			rdBtn_DeActive.click();
 			log("Selected deactive radio button and object is:- " + rdBtn_DeActive.toString());
@@ -821,48 +605,20 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Ts);
-
+		
+			selectElementFromDropDown(sel_Class, class_Ts);
 			log("selected class: " + class_Ts + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Ts);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
+	
+			selectElementFromDropDown(sel_Section, section);
 			log("selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fillTotalStrengthReport_Form_ForIndividual_OverAllTotal(String academicYear, String class_Ts,
 			String section) throws Exception {
-
+		isDisplayed(rdBtn_Individual);
 		if (!rdBtn_Individual.isSelected()) {
 			rdBtn_Individual.click();
 			log("Selected Individual radio button and object is:- " + rdBtn_Individual.toString());
@@ -871,7 +627,7 @@ public class Total_Strength extends TestBase {
 			log("Individual Radio button already selected.");
 			Thread.sleep(500);
 		}
-
+		isDisplayed(rdBtn_overAllTotal);
 		if (!rdBtn_overAllTotal.isSelected()) {
 			rdBtn_overAllTotal.click();
 			log("Selected overall total radio button and object is:- " + rdBtn_overAllTotal.toString());
@@ -881,134 +637,83 @@ public class Total_Strength extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Ts);
 
+			selectElementFromDropDown(sel_Class, class_Ts);
 			log("selected class: " + class_Ts + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Ts);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
+	
+			selectElementFromDropDown(sel_Section, section);
 			log("selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void clickReport_ToGenerate_TotalStrengthReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
+		
+			clickOnButton(btn_Report);
 			log("Total Strength Report is generated and object is:-" + btn_Report.toString());
 			Thread.sleep(2000);
-			
-			assertEquals(grid_HeaderName.getText().trim(), "TOTAL STRENGTH REPORT");					
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
 	}
 
 	public void clickCancelButton_ToClearFilledForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
+	
+			clickOnButton(btn_Cancel);
 			log("Total Strength Report filled form data is cleared and object is:-" + btn_Cancel.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
+	
+			clickOnButton(btn_ExportToExcel);
 			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to Excel button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void min_Max_TotalStrenghtReport_Form() throws Exception {
-		if (btnMin_MaxTotalStrengthReportForm.isDisplayed()) {
-			btnMin_MaxTotalStrengthReportForm.click();
+	
+			clickOnButton(btnMin_MaxTotalStrengthReportForm);
 			log("Total Strength Report page minimized or maximized and object is:-"
 					+ btnMin_MaxTotalStrengthReportForm.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Total Strength Report Minimized Element not present.");
-		}
+			
 	}
 
 	public void min_Max_TotalStrenghtReport_Grid() throws Exception {
-		if (btnMin_MaxTotalStrengthReportGrid.isDisplayed()) {
-			btnMin_MaxTotalStrengthReportGrid.click();
+		
+			clickOnButton(btnMin_MaxTotalStrengthReportGrid);
 			log("Total Strength Report page minimized or maximized and object is:-"
 					+ btnMin_MaxTotalStrengthReportGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Total Strength Report grid Minimized Element not present.");
-		}
+		
 	}
 
 	public void searchWithClassName_InTotalStrengthReportGrid(String Class_Name, String finalTotal) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(Class_Name);
+	
+			inputTextIntoInputField(input_Search, Class_Name);
 			log("Entered Class name to search: " + Class_Name + " and object is:-" + input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
+
 	public void searchWithFinalTotal_InTotalStrengthReportGrid(String Class_Name, String finalTotal) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(finalTotal);
+		
+			inputTextIntoInputField(input_Search, finalTotal);
 			log("Entered Final Total to search: " + finalTotal + " and object is:-" + input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
-	public void validateTotalStength_WithNumberOfBoysAndGirls() throws Exception{
+
+	public void validateTotalStength_WithNumberOfBoysAndGirls() throws Exception {
+	isDisplayed(total_Boys);
 		String numberBoys = total_Boys.getText();
 		int boys = Integer.parseInt(numberBoys);
-		System.out.println("Total Boys: "+boys);
+		System.out.println("Total Boys: " + boys);
+		isDisplayed(total_Girls);
 		String numberGirls = total_Girls.getText();
 		int girls = Integer.parseInt(numberGirls);
-		System.out.println("Total Girls: "+girls);
+		System.out.println("Total Girls: " + girls);
+		isDisplayed(total_TotalStudent);
 		String numberStudent = total_TotalStudent.getText();
 		int students = Integer.parseInt(numberStudent);
-		System.out.println("Total Student: "+(boys + girls));
+		System.out.println("Total Student: " + (boys + girls));
 		Assert.assertEquals((boys + girls), students);
 		log("Sum of Boys and Girls in a category is equal to total number of students.");
 		Thread.sleep(2000);

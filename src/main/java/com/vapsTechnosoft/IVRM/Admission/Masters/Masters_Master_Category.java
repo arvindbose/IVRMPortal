@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 import org.apache.log4j.Logger;
@@ -40,7 +42,11 @@ public class Masters_Master_Category extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[12]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[12]")
+	// WebElement btnMasters_masterCategory;
+
+	@FindBy(xpath = "//a[@href='#/app/category/29']")
 	WebElement btnMasters_masterCategory;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -97,6 +103,9 @@ public class Masters_Master_Category extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
 	WebElement btnPopUpCancel;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Master_Category(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -106,7 +115,7 @@ public class Masters_Master_Category extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -121,17 +130,15 @@ public class Masters_Master_Category extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterCategory_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_masterCategory);
 
-		btnMasters_masterCategory.click();
+		clickOnButton(btnMasters_masterCategory);
 		log("Clicked on master category Button and object is:-" + btnMasters_masterCategory.toString());
-		waitForElement(driver, 10, btnSave);
+
 	}
 
 	/**
@@ -154,7 +161,7 @@ public class Masters_Master_Category extends TestBase {
 
 	public void submitBlankMasterCategoryForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Save blank master Category form and object is:-" + btnSave.toString());
 		Thread.sleep(2000);
 	}
@@ -162,73 +169,56 @@ public class Masters_Master_Category extends TestBase {
 	public void enterMasterCategoryFormData(String categoryName, String selectInstitution, String addressLine1,
 			String addressLine2, String addressLine3, String addressLine4, String selectType) throws Exception {
 
-		input_CategoryName.clear();
-		input_CategoryName.sendKeys(categoryName);
+		inputTextIntoInputField(input_CategoryName, categoryName);
 		log("Entered category name: " + categoryName + " and object is:-" + input_CategoryName.toString());
 
-		select = new Select(sel_Institution);
-		select.selectByVisibleText(selectInstitution);
+		selectElementFromDropDown(sel_Institution, selectInstitution);
 		log("selected institution " + selectInstitution + " and object is:- " + sel_Institution.toString());
-		Thread.sleep(1000);
 
-		/*
-		 * option = select.getFirstSelectedOption();
-		 * Assert.assertEquals(option.getText(), selectInstitution);
-		 * Thread.sleep(1000);
-		 */
-
-		input_AddressLine1.clear();
-		input_AddressLine1.sendKeys(addressLine1);
+		inputTextIntoInputField(input_AddressLine1, addressLine1);
 		log("Entered address line 1 : " + addressLine1 + " and object is:-" + input_AddressLine1.toString());
 
-		input_AddressLine2.clear();
-		input_AddressLine2.sendKeys(addressLine2);
+		inputTextIntoInputField(input_AddressLine2, addressLine2);
 		log("Entered address line 2 : " + addressLine2 + " and object is:-" + input_AddressLine2.toString());
 
-		input_AddressLine3.clear();
-		input_AddressLine3.sendKeys(addressLine3);
+		inputTextIntoInputField(input_AddressLine3, addressLine3);
 		log("Entered address line 3 : " + addressLine3 + " and object is:-" + input_AddressLine3.toString());
 
-		input_AddressLine4.clear();
-		input_AddressLine4.sendKeys(addressLine4);
+		inputTextIntoInputField(input_AddressLine4, addressLine4);
 		log("Entered address line 4 : " + addressLine4 + " and object is:-" + input_AddressLine4.toString());
 
-		select = new Select(sel_Type);
-		select.selectByVisibleText(selectType);
+		selectElementFromDropDown(sel_Type, selectType);
 		log("selected type " + selectType + " and object is:- " + sel_Type.toString());
-		Thread.sleep(1000);
-
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), selectType);
-		Thread.sleep(1000);
-
 	}
 
 	public void clearCategoryInfoData() throws Exception {
-		btnCancel.click();
+
+		clickOnButton(btnCancel);
 		log("Clicked on cancel button to clear filled master category and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void submitFilledMasterCategoryForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Save filled master category form and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void sortByCategoryName() throws Exception {
 
-		btnSortByCategoryName.click();
+		clickOnButton(btnSortByCategoryName);
 		log("Sorted the record with Category name and object is:-" + btnSortByCategoryName.toString());
-		Thread.sleep(3000);
+
 	}
 
-	public void searchWithCategoryNameInTheGrid(String categoryName) {
+	public void searchWithCategoryNameInTheGrid(String categoryName) throws Exception {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(categoryName);
+		inputTextIntoInputField(inputSearch, categoryName);
 		log("Entered category name to search: " + categoryName + " and object is:-" + inputSearch.toString());
+
 	}
 
 	public void verifyCategoryNameInTheGrid(String categoryName) {
@@ -236,48 +226,54 @@ public class Masters_Master_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String categoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Category Name: " + categoryname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(categoryname, categoryName);
-				log("Category name created is updated in the record grid.");
+				String categoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Category Name: " + categoryname);
+				// Thread.sleep(2000);
 
-			} catch (Exception e) {
-				e.printStackTrace();
+				Thread.sleep(1000);
+				if (categoryname.equals(categoryName)) {
+					// Assert.assertEquals(categoryname, categoryName);
+					log("Category name created is updated in the record grid.");
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void minimizeMasterCategory() throws Exception {
-		btnMin_MaxMasterCategory.click();
+
+		clickOnButton(btnMin_MaxMasterCategory);
 		log("clicked on master Category minimize button and object is:-" + btnMin_MaxMasterCategory.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterCategory() throws Exception {
-		btnMin_MaxMasterCategory.click();
+
+		clickOnButton(btnMin_MaxMasterCategory);
 		log("clicked on master Category maximize button and object is:-" + btnMin_MaxMasterCategory.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeMasterCategoryList() throws Exception {
 
-		btnMin_MaxMasterCategoryList.click();
+		clickOnButton(btnMin_MaxMasterCategoryList);
 		log("Master Category list table data minimize and object is:-" + btnMin_MaxMasterCategoryList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterCategoryList() throws Exception {
 
-		btnMin_MaxMasterCategoryList.click();
+		clickOnButton(btnMin_MaxMasterCategoryList);
 		log("Master Category list table table data maximized and object is:-"
 				+ btnMin_MaxMasterCategoryList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void editMasterCategory(String categoryName) {
@@ -285,28 +281,28 @@ public class Masters_Master_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String categoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Category Name: " + categoryname);
-			// Thread.sleep(2000);
-			try {
-				if (categoryname.equalsIgnoreCase(categoryName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String categoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Category Name: " + categoryname);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
+				if (categoryname.equals(categoryName)) {
+					// Assert.assertEquals(categoryname, categoryName);
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[5]/a")).click();
 					Thread.sleep(5000);
 					log("Clicked on the edit link in the master category list grid to edit record");
 
 					break;
-				} else {
-					log("Category Name not matched with the master category list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -315,32 +311,32 @@ public class Masters_Master_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String categoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Category Name: " + categoryname);
-			// Thread.sleep(2000);
-			try {
-				if (categoryname.equalsIgnoreCase(categoryName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String categoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Category Name: " + categoryname);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
+				if (categoryname.equals(categoryName)) {
+					Assert.assertEquals(categoryname, categoryName);
 					WebElement deactiveLink = driver
 							.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[5]/span"));
-					String deactivetext = deactiveLink.getText();
+					String deactivetext = deactiveLink.getText().trim();
 					Assert.assertEquals(deactivetext, "Deactivate");
 
 					deactiveLink.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the deactivate link in the master category list grid");
 
 					break;
-				} else {
-					log("Category Name not matched with the master category list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -349,55 +345,81 @@ public class Masters_Master_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String categoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Category Name: " + categoryname);
-			// Thread.sleep(2000);
-			try {
-				if (categoryname.equalsIgnoreCase(categoryName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String categoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Category Name: " + categoryname);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
+				if (categoryname.equals(categoryName)) {
+					Assert.assertEquals(categoryname, categoryName);
 					WebElement activeLink = driver
 							.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[5]/span"));
-					String activetext = activeLink.getText();
+					String activetext = activeLink.getText().trim();
 					Assert.assertEquals(activetext, "Activate");
 
 					activeLink.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the activate link in the master category list grid");
 
 					break;
-				} else {
-					log("Category Name not matched with the master category list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		Thread.sleep(2000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnPopUpCancel.click();
+		clickOnButton(btnPopUpCancel);
 		log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

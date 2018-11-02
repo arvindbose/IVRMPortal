@@ -292,8 +292,23 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitMasterCategory");
 		}
 	}
-
+	
 	@Test(priority = 16)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_MasterCategory_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_MasterCategory_Validation Test===========");
+
+			mastercategory.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_MasterCategory_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_MasterCategory_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_MasterCategory_Validation");
+		}
+	}
+	
+	@Test(priority = 17)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_MasterCategory() {
 
 		try {
@@ -308,7 +323,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 17)
+	@Test(priority = 18)
 	public void tcSortByCategoryName_MasterCategory() {
 
 		try {
@@ -323,7 +338,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 19, dataProvider = "ExamMasterCategory_Form")
 	public void tcFilterRecordWithCategoryName_MasterCategory(String categoryName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -340,7 +355,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcEditMasterCategory() {
 
 		try {
@@ -355,7 +370,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcClickOnSaveButton_ToSubmitMasterCategory_Edit() {
 
 		try {
@@ -369,8 +384,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitMasterCategory_Edit");
 		}
 	}
+	@Test(priority = 22)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_MasterCategory_Validation() {
 
-	@Test(priority = 21)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_MasterCategory_Validation Test===========");
+
+			mastercategory.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_MasterCategory_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_MasterCategory_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_MasterCategory_Validation");
+		}
+	}
+	@Test(priority = 23)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_MasterCategory_Edit() {
 
 		try {
@@ -386,7 +414,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 24, dataProvider = "ExamMasterCategory_Form")
 	public void tcFilterRecordWithCategoryName_MasterCategory_ForDeactivate(String categoryName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -405,7 +433,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcDeactivateRecords_MasterCategoryGrid() {
 
 		try {
@@ -420,7 +448,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcCancel_DeactivatePopUp_MasterCategory() {
 
 		try {
@@ -434,8 +462,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcCancel_DeactivatePopUp_MasterCategory");
 		}
 	}
+	@Test(priority = 27)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation_masterCategory() {
 
-	@Test(priority = 25)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation_masterCategory Test===========");
+
+			mastercategory.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation_masterCategory Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation_masterCategory");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation_masterCategory");
+		}
+	}
+	@Test(priority = 28)
 	public void tcClickOnSuccessOkBtn_CancelDeactivate_MasterCategory() {
 
 		try {
@@ -450,7 +491,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 29)
 	public void tcDeactivateRecords_MasterCategoryGrid_AfterCancel() {
 
 		try {
@@ -465,7 +506,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 30)
 	public void tcYesDeactivateRecords_MasterCategory() {
 
 		try {
@@ -479,8 +520,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcYesDeactivateRecords_MasterCategory");
 		}
 	}
+	@Test(priority = 31)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation_MasterCategory() {
 
-	@Test(priority = 28)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation_MasterCategory Test===========");
+
+			mastercategory.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation_MasterCategory Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation_MasterCategory");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation_MasterCategory");
+		}
+	}
+	@Test(priority = 32)
 	public void tcClickOnSuccessOkBtn_Deactivate_MasterCategory() {
 
 		try {
@@ -495,7 +549,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "ExamMasterCategory_Form")
+	@Test(priority = 33, dataProvider = "ExamMasterCategory_Form")
 	public void tcFilterRecordWithCategoryName_MasterCategory_ForActivate(String categoryName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -513,7 +567,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 34)
 	public void tcActivateRecords_MasterCategoryGrid() {
 
 		try {
@@ -528,7 +582,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 35)
 	public void tcCancel_ActivatePopUp() {
 
 		try {
@@ -542,8 +596,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcCancel_ActivatePopUp");
 		}
 	}
+	@Test(priority = 36)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation_MasterCategory() {
 
-	@Test(priority = 32)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation_MasterCategory Test===========");
+
+			mastercategory.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation_MasterCategory Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation_MasterCategory");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation_MasterCategory");
+		}
+	}
+	@Test(priority = 37)
 	public void tcClickOnSuccessOkBtn_CancelActivate_MasterCategory() {
 
 		try {
@@ -558,7 +625,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 38)
 	public void tcActivateRecords_MasterCategoryGrid_AfterCancel() {
 
 		try {
@@ -573,7 +640,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 39)
 	public void tcYesActivateRecords_MasterCategory() {
 
 		try {
@@ -587,8 +654,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcYesActivateRecords_MasterCategory");
 		}
 	}
+	@Test(priority = 40)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation_MasterCategory() {
 
-	@Test(priority = 35)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation_MasterCategory Test===========");
+
+			mastercategory.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation_MasterCategory Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation_MasterCategory");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation_MasterCategory");
+		}
+	}
+	@Test(priority = 41)
 	public void tcClickOnSuccessOkBtn_Activate_MasterCategory() {
 
 		try {
@@ -607,7 +687,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 * CATEGORY CLASS MAPPING
 	 */
 
-	@Test(priority = 36)
+	@Test(priority = 42)
 	public void tcNavigateToCategoryClassMapping() {
 
 		try {
@@ -622,7 +702,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 43)
 	public void tcClickOnAddToSubmit_CategoryClassMappingForm_Blank() {
 
 		try {
@@ -637,7 +717,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 44, dataProvider = "ExamCategoryClassMapping_FormData")
 	public void tcFill_CategoryClassMapping_Form(String academicYear, String Category, String class_ccm,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -655,7 +735,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 45)
 	public void tcClickOnClearButton_ToClearFilledForm_CategoryClassMapping() {
 
 		try {
@@ -672,7 +752,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 40, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 46, dataProvider = "ExamCategoryClassMapping_FormData")
 	public void tcFill_CategoryClassMapping_Form_AfterClear(String academicYear, String Category, String class_ccm,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -690,7 +770,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 41)
+	@Test(priority = 47)
 	public void tcClickOnAddToSubmit_CategoryClassMappingForm_filled() {
 
 		try {
@@ -705,7 +785,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 42, dataProvider = "CategoryClassMapping_2ndData_ClassSection")
+	@Test(priority = 48, dataProvider = "CategoryClassMapping_2ndData_ClassSection")
 	public void tcSelectClassAndSection_ForSecondCategoryClassMapping(String academicYear, String Category,
 			String class_ccm, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -723,7 +803,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 43)
+	@Test(priority = 49)
 	public void tcClickOnAddToSubmit_CategoryClassMappingForm_ToAddSecondRecord() {
 
 		try {
@@ -740,7 +820,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 44)
+	@Test(priority = 50)
 	public void tcClickOnCancelToClear_CategoryClassMappingForm_AND_DetailsSection() {
 
 		try {
@@ -757,7 +837,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 45, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 51, dataProvider = "ExamCategoryClassMapping_FormData")
 	public void tcFill_CategoryClassMapping_Form_AfterCancel(String academicYear, String Category, String class_ccm,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -775,7 +855,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 46)
+	@Test(priority = 52)
 	public void tcClickOnAddToSubmit_CategoryClassMappingForm_filled_AfterCancel() {
 
 		try {
@@ -792,7 +872,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 47, dataProvider = "CategoryClassMapping_2ndData_ClassSection")
+	@Test(priority = 53, dataProvider = "CategoryClassMapping_2ndData_ClassSection")
 	public void tcSelectClassAndSection_ForSecondCategoryClassMapping_AfterCancel(String academicYear, String Category,
 			String class_ccm, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -812,7 +892,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 48)
+	@Test(priority = 54)
 	public void tcClickOnAddToSubmit_CategoryClassMappingForm_ToAddSecondRecord_AfterCancel() {
 
 		try {
@@ -829,7 +909,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 49)
+	@Test(priority = 55)
 	public void tcEditRecordsAndUpdateSection_InDetailsSection() {
 
 		try {
@@ -844,7 +924,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 50)
+	@Test(priority = 56)
 	public void tcClickOnAddToSubmit_CategoryClassMappingForm_EditDetailsSection() {
 
 		try {
@@ -861,7 +941,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 51)
+	@Test(priority = 57)
 	public void tcDeleteRecordsFromDetailsSelection_CategoryClassMapping() {
 
 		try {
@@ -876,7 +956,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 52)
+	@Test(priority = 58)
 	public void tcClickOnSaveToSubmit_CategoryClassMappingForm() {
 
 		try {
@@ -890,8 +970,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcClickOnSaveToSubmit_CategoryClassMappingForm");
 		}
 	}
+	@Test(priority = 59)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_CategoryClass_Validation() {
 
-	@Test(priority = 53)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_CategoryClass_Validation Test===========");
+
+			mastercategory.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_CategoryClass_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_CategoryClass_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_CategoryClass_Validation");
+		}
+	}
+	@Test(priority = 60)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_CategoryClassMapping() {
 
 		try {
@@ -910,7 +1003,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 
 	// GRID SORT,FILTER, VIEW(DEACTIVATE, ACTIVATE, CLOSE), EDIT
 
-	@Test(priority = 54)
+	@Test(priority = 61)
 	public void tcSortWithAcademicYearInGridView() {
 
 		try {
@@ -925,7 +1018,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 55)
+	@Test(priority = 62)
 	public void tcSortWithCategoryNameInGridView() {
 
 		try {
@@ -940,7 +1033,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 56)
+	@Test(priority = 63)
 	public void tcSortWithClassNameInGridView() {
 
 		try {
@@ -955,7 +1048,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 57, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 64, dataProvider = "ExamCategoryClassMapping_FormData")
 	public void tcFilterRecordsBasedOn_AcademicYear(String academicYear, String categoryName, String className,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -973,7 +1066,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 58)
+	@Test(priority = 65)
 	public void tcClearFilledDataForFilter_AcademicYear() {
 
 		try {
@@ -988,7 +1081,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 59, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 66, dataProvider = "ExamCategoryClassMapping_FormData")
 	public void tcFilterRecordsBasedOn_CategoryName(String academicYear, String categoryName, String className, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -1005,7 +1098,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 60)
+	@Test(priority = 67)
 	public void tcClearFilledDataForFilter_EmployeeName() {
 
 		try {
@@ -1020,7 +1113,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 61, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 68, dataProvider = "ExamCategoryClassMapping_FormData")
 	public void tcFilterRecordsBasedOn_ClassName(String academicYear, String categoryName, String className,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1038,7 +1131,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 62)
+	@Test(priority = 69)
 	public void tcClearFilledDataForFilter_ClassName() {
 
 		try {
@@ -1057,7 +1150,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 * View, Edit and activate/deactivate
 	 * 
 	 */
-	@Test(priority = 63, dataProvider = "ExamCategoryClassMapping_FormData")
+	@Test(priority = 70, dataProvider = "ExamCategoryClassMapping_FormData")
 	public void tcFilterRecordsBasedOn_CategoryName_ViewRecords(String academicYear, String categoryName, String className, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -1074,7 +1167,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 	
-	@Test(priority = 64)
+	@Test(priority = 71)
 	public void tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation() {
 
 		try {
@@ -1090,7 +1183,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 65)
+	@Test(priority = 72)
 	public void tcDeactivateRecords_ViewWindow() {
 
 		try {
@@ -1105,7 +1198,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 66)
+	@Test(priority = 73)
 	public void tcCancel_DeactivatePopUp() {
 
 		try {
@@ -1119,8 +1212,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcCancel_DeactivatePopUp");
 		}
 	}
+	@Test(priority = 74)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation_CategoryClass() {
 
-	@Test(priority = 67)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation_CategoryClass Test===========");
+
+			mastercategory.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation_CategoryClass Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation_CategoryClass");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation_CategoryClass");
+		}
+	}
+	@Test(priority = 75)
 	public void tcClickOnSuccessOkBtn_CancelDeactivate() {
 
 		try {
@@ -1135,7 +1241,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 68)
+	@Test(priority = 76)
 	public void tcDeactivateRecords_ViewWindow_AfterCancel() {
 
 		try {
@@ -1150,7 +1256,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 69)
+	@Test(priority = 77)
 	public void tcYesDeactivateCategoryClassMappingRecord() {
 
 		try {
@@ -1164,8 +1270,22 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcYesDeactivateCategoryClassMappingRecord");
 		}
 	}
+	@Test(priority = 78)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation_CategoryClass() {
 
-	@Test(priority = 70)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation_CategoryClass Test===========");
+
+			mastercategory.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation_CategoryClass Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation_CategoryClass");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation_CategoryClass");
+		}
+	}
+
+	@Test(priority = 79)
 	public void tcClickOnSuccessOkBtn_Deactivate() {
 
 		try {
@@ -1180,7 +1300,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 71)
+	@Test(priority = 80)
 	public void tcActivateRecords_ViewWindow() {
 
 		try {
@@ -1195,7 +1315,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 72)
+	@Test(priority = 81)
 	public void tcCancel_ActivatePopUp_viewWindow() {
 
 		try {
@@ -1209,8 +1329,21 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcCancel_ActivatePopUp_viewWindow");
 		}
 	}
+	@Test(priority = 82)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation_CategoryClass() {
 
-	@Test(priority = 73)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation_CategoryClass Test===========");
+
+			mastercategory.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation_CategoryClass Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation_CategoryClass");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation_CategoryClass");
+		}
+	}
+	@Test(priority = 83)
 	public void tcClickOnSuccessOkBtn_CancelActivate() {
 
 		try {
@@ -1225,7 +1358,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 74)
+	@Test(priority = 84)
 	public void tcActivateRecords_ViewWindow_AfterCancel() {
 
 		try {
@@ -1240,7 +1373,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 75)
+	@Test(priority = 85)
 	public void tcYesActivateCategoryClassMappingRecord() {
 
 		try {
@@ -1254,8 +1387,22 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcYesActivateCategoryClassMappingRecord");
 		}
 	}
+	@Test(priority = 86)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation_CategoryClass() {
 
-	@Test(priority = 76)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation_CategoryClass Test===========");
+
+			mastercategory.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation_CategoryClass Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation_CategoryClass");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation_CategoryClass");
+		}
+	}
+
+	@Test(priority = 87)
 	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {
@@ -1270,7 +1417,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 77)
+	@Test(priority = 88)
 	public void tcCloseViewWindow_CategoryClassMapping() {
 
 		try {
@@ -1284,7 +1431,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 78)
+	@Test(priority = 89)
 	public void tcClickOnEditIcon_ToUpdateCategoryClassMapping() {
 
 		try {
@@ -1298,7 +1445,7 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 79)
+	@Test(priority = 90)
 	public void tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit() {
 
 		try {
@@ -1313,8 +1460,22 @@ public class TC_Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			getScreenShot("tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit");
 		}
 	}
+	@Test(priority = 91)
+	public void tcPopUPWindowMessage_SubmitSuccessfully_Edit_CategoryClass_Validation() {
 
-	@Test(priority = 80)
+		try {
+			log.info("============= Strting tcPopUPWindowMessage_SubmitSuccessfully_Edit_CategoryClass_Validation Test===========");
+
+			mastercategory.popWindowMessage_SubmitSuccessfully_Edit();
+			log.info("============= Finished tcPopUPWindowMessage_SubmitSuccessfully_Edit_CategoryClass_Validation Test===========");
+
+			getScreenShot("tcPopUPWindowMessage_SubmitSuccessfully_Edit_CategoryClass_Validation");
+
+		} catch (Exception e) {
+			getScreenShot("tcPopUPWindowMessage_SubmitSuccessfully_Edit_CategoryClass_Validation");
+		}
+	}
+	@Test(priority = 92)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid() {
 
 		try {

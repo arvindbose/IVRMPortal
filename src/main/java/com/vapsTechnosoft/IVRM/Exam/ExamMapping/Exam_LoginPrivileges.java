@@ -3,13 +3,14 @@
  */
 package com.vapsTechnosoft.IVRM.Exam.ExamMapping;
 
+import static org.testng.Assert.assertEquals;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -23,8 +24,7 @@ public class Exam_LoginPrivileges extends TestBase {
 	public static final Logger log = Logger.getLogger(Exam_LoginPrivileges.class.getName());
 
 	private WebDriver driver;
-	private Select select;
-	private WebElement option;
+
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	private WebElement btnHome;
@@ -35,7 +35,12 @@ public class Exam_LoginPrivileges extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Exam Mapping')][1]")
 	private WebElement btn_ExamMapping;
 
-	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Exam Mapping')][1]/following::li[3]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Exam
+	// Mapping')][1]/following::li[3]")
+	// private WebElement btn_ExamLoginPrivilege;
+
+	@FindBy(xpath = "//a[@href='#/app/ExamLoginPrivilages/253']")
 	private WebElement btn_ExamLoginPrivilege;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -145,6 +150,10 @@ public class Exam_LoginPrivileges extends TestBase {
 
 	@FindBy(xpath = "//button[@class='cancel' and text()='Cancel']")
 	private WebElement btnPopUp_Cancel;
+	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 
 	public Exam_LoginPrivileges(WebDriver driver) {
 		this.driver = driver;
@@ -155,7 +164,7 @@ public class Exam_LoginPrivileges extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -171,33 +180,15 @@ public class Exam_LoginPrivileges extends TestBase {
 	 */
 	public void navigateToExamMapping_ExamLoginPrivilege() throws Exception {
 
-		if (btn_Exam.isDisplayed()) {
-			btn_Exam.click();
-			log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
-			// waitForElement(driver, 10, btnFee);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_ExamMapping.isDisplayed()) {
-			btn_ExamMapping.click();
-			log("Clicked on Exam Mapping Button and object is:-" + btn_ExamMapping.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Mapping Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_ExamLoginPrivilege.isDisplayed()) {
-			btn_ExamLoginPrivilege.click();
-			log("Clicked on Exam Login Privilege Button and object is:-" + btn_ExamLoginPrivilege.toString());
-			// waitForElement(driver, 10, btnCustomFeeGr);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Login Privilege Navigation element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Exam);
+		log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
+
+		clickOnButton(btn_ExamMapping);
+		log("Clicked on Exam Mapping Button and object is:-" + btn_ExamMapping.toString());
+
+		clickOnButton(btn_ExamLoginPrivilege);
+		log("Clicked on Exam Login Privilege Button and object is:-" + btn_ExamLoginPrivilege.toString());
+
 	}
 
 	/**
@@ -227,66 +218,31 @@ public class Exam_LoginPrivileges extends TestBase {
 	 * @param sub_Subject
 	 * @throws Exception
 	 */
-	public void fill_ExamLoginPrivilege_Form_ForClassTeacher(String academicYear, String userName,String employeeName, String subject,
-			String sub_Subject) throws Exception {
-		if(!rdBtn_EntryByClassteacher.isSelected()){
+	public void fill_ExamLoginPrivilege_Form_ForClassTeacher(String academicYear, String userName, String employeeName,
+			String subject, String sub_Subject) throws Exception {
+		isDisplayed(rdBtn_EntryByClassteacher);
+		if (!rdBtn_EntryByClassteacher.isSelected()) {
 			rdBtn_EntryByClassteacher.click();
-			log("Class Teacher entry radio button is selected and object is:- "+rdBtn_EntryByClassteacher.toString());
+			log("Class Teacher entry radio button is selected and object is:- " + rdBtn_EntryByClassteacher.toString());
 			Thread.sleep(1000);
-		}else{
+		} else {
 			log("Enter By Class Teacher radio button is alraedy selected.");
 			Thread.sleep(500);
-		}		
-		if (sel_AcademicYear.isDisplayed()) {
-
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
-
-			log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(2000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
 		}
-		if (sel_UserName.isDisplayed()) {
 
-			select = new Select(sel_UserName);
-			select.selectByVisibleText(userName);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("Selected User Name: " + userName + " and object is:- " + sel_UserName.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), userName);
-			Thread.sleep(2000);
-		} else {
-			log("User Name element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_EmployeeName.isDisplayed()) {
+		selectElementFromDropDown(sel_UserName, userName);
+		log("Selected User Name: " + userName + " and object is:- " + sel_UserName.toString());
 
-			select = new Select(sel_EmployeeName);
-			select.selectByVisibleText(employeeName);
+		selectElementFromDropDown(sel_EmployeeName, employeeName);
+		log("Selected Employee: " + employeeName + " and object is:- " + sel_EmployeeName.toString());
 
-			log("Selected Employee: " + employeeName + " and object is:- " + sel_EmployeeName.toString());
-//			option = select.getFirstSelectedOption();
-//			Assert.assertEquals(option.getText().trim(), employeeName);
-			Thread.sleep(3000);
-		} else {
-			log("Employee element is not present");
-			Thread.sleep(500);
-		}
-System.out.println("Employee selected for exam............");
-		if (input_SearchSubject.isDisplayed()) {
-			input_SearchSubject.clear();
-			input_SearchSubject.sendKeys(subject);
-			log("Search subject from list for selection:- " + subject + " and object is:-"
-					+ input_SearchSubject.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Seach subject element is not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_SearchSubject, subject);
+		log("Search subject from list for selection:- " + subject + " and object is:-"
+				+ input_SearchSubject.toString());
+		isDisplayed(chk_Subject);
 		if (!chk_Subject.isSelected()) {
 			chk_Subject.click();
 			log("Subject is selected for the class teacher and object is:- " + chk_Subject.toString());
@@ -326,59 +282,30 @@ System.out.println("Employee selected for exam............");
 	 * @param sub_Subject
 	 * @throws Exception
 	 */
-	public void fill_ExamLoginPrivilege_Form_ForSubjectTeacher(String academicYear, String userName,String employeeName, String subject,
-			String sub_Subject) throws Exception {
+	public void fill_ExamLoginPrivilege_Form_ForSubjectTeacher(String academicYear, String userName,
+			String employeeName, String subject, String sub_Subject) throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_ExamLoginPrivilege);
 		Thread.sleep(1000);
-		
-		if(!rdBtn_EntryBySubjectteacher.isSelected()){
+		isDisplayed(rdBtn_EntryBySubjectteacher);
+		if (!rdBtn_EntryBySubjectteacher.isSelected()) {
 			rdBtn_EntryBySubjectteacher.click();
-			log("Subject Teacher entry radio button is selected and object is:- "+rdBtn_EntryBySubjectteacher.toString());
+			log("Subject Teacher entry radio button is selected and object is:- "
+					+ rdBtn_EntryBySubjectteacher.toString());
 			Thread.sleep(1000);
-		}else{
+		} else {
 			log("Enter By Subject Teacher element is not present.");
 			Thread.sleep(500);
-		}	
-		
-		if (sel_AcademicYear.isDisplayed()) {
-
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
-
-			log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
 		}
-		if (sel_UserName.isDisplayed()) {
 
-			select = new Select(sel_UserName);
-			select.selectByVisibleText(userName);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-			log("Selected User Name: " + userName + " and object is:- " + sel_UserName.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), userName);
-			Thread.sleep(1000);
-		} else {
-			log("User Name element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_EmployeeName.isDisplayed()) {
+		selectElementFromDropDown(sel_UserName, userName);
+		log("Selected User Name: " + userName + " and object is:- " + sel_UserName.toString());
 
-			select = new Select(sel_EmployeeName);
-			select.selectByVisibleText(employeeName);
-
-			log("Selected Employee: " + employeeName + " and object is:- " + sel_EmployeeName.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), employeeName);
-			Thread.sleep(1000);
-		} else {
-			log("Employee element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_EmployeeName, employeeName);
+		log("Selected Employee: " + employeeName + " and object is:- " + sel_EmployeeName.toString());
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class is selected for the Subject teacher and object is:- " + chk_Class.toString());
@@ -387,6 +314,7 @@ System.out.println("Employee selected for exam............");
 			log("Class is already selected for Subject teacher.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section is selected for the Subject teacher and object is:- " + chk_Section.toString());
@@ -396,16 +324,10 @@ System.out.println("Employee selected for exam............");
 			Thread.sleep(500);
 		}
 
-		if (input_SearchSubject.isDisplayed()) {
-			input_SearchSubject.clear();
-			input_SearchSubject.sendKeys(subject);
-			log("Search subject from list for selection:- " + subject + " and object is:-"
-					+ input_SearchSubject.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Seach subject element is not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_SearchSubject, subject);
+		log("Search subject from list for selection:- " + subject + " and object is:-"
+				+ input_SearchSubject.toString());
+		isDisplayed(chk_Subject);
 		if (!chk_Subject.isSelected()) {
 			chk_Subject.click();
 			log("Subject is selected for the class teacher and object is:- " + chk_Subject.toString());
@@ -436,27 +358,16 @@ System.out.println("Employee selected for exam............");
 		// }
 	}
 
-	public void editRecordsAndUpdateSubSubject_InDetailsSection(String academicYear, String userName,String employeeName, String subject,
-			String sub_Subject) throws Exception {
-		
-		if (icon_Edit_Details.isDisplayed()) {
-			icon_Edit_Details.click();
-			log("Edit icon is clicked and object is:- " + icon_Edit_Details.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Edit icon element is not present in details section.");
-			Thread.sleep(500);
-		}
-		if (input_SearchSubSubject.isDisplayed()) {
-			input_SearchSubSubject.clear();
-			input_SearchSubSubject.sendKeys(sub_Subject);
-			log("Search Sub-subject from list for selection:- " + sub_Subject + " and object is:-"
-					+ input_SearchSubSubject.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Seach Sub subject element is not present.");
-			Thread.sleep(500);
-		}
+	public void editRecordsAndUpdateSubSubject_InDetailsSection(String academicYear, String userName,
+			String employeeName, String subject, String sub_Subject) throws Exception {
+
+		clickOnButton(icon_Edit_Details);
+		log("Edit icon is clicked and object is:- " + icon_Edit_Details.toString());
+
+		inputTextIntoInputField(input_SearchSubSubject, sub_Subject);
+		log("Search Sub-subject from list for selection:- " + sub_Subject + " and object is:-"
+				+ input_SearchSubSubject.toString());
+		isDisplayed(chk_SubSubject);
 		if (!chk_SubSubject.isSelected()) {
 			chk_SubSubject.click();
 			log("Sub-subject is selected for the class teacher and object is:- " + chk_SubSubject.toString());
@@ -473,14 +384,10 @@ System.out.println("Employee selected for exam............");
 	 * @throws Exception
 	 */
 	public void submitBlank_ExamLoginPrivilegeForm() throws Exception {
-		if (btn_Add.isDisplayed()) {
-			btn_Add.click();
-			log("Submit blank Exam Login Privilege form and object is:-" + btn_Add.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Add button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Add);
+		log("Submit blank Exam Login Privilege form and object is:-" + btn_Add.toString());
+
 	}
 
 	/**
@@ -489,16 +396,14 @@ System.out.println("Employee selected for exam............");
 	 * @throws Exception
 	 */
 	public void addToSubmit_ExamLoginPrivilegeForm() throws Exception {
-		if (btn_Add.isDisplayed()) {
-			btn_Add.click();
-			log("Submit Exam Login Privilege form to add data in details section and object is:-" + btn_Add.toString());
-			
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_Min_MaxLoginPrivilegeDetails);
-			Thread.sleep(5000);
-		} else {
-			log("Add button element not present.");
-			Thread.sleep(500);
-		}		
+
+		clickOnButton(btn_Add);
+		log("Submit Exam Login Privilege form to add data in details section and object is:-" + btn_Add.toString());
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				btn_Min_MaxLoginPrivilegeDetails);
+		Thread.sleep(5000);
+
 	}
 
 	/**
@@ -507,27 +412,19 @@ System.out.println("Employee selected for exam............");
 	 * @throws Exception
 	 */
 	public void clickOnSaveButton_ToSubmitExamLoginPrivilegeForm() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("clicked on save button to Submit the records for Exam Login Privilege and object is:-"
-					+ btn_Save.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Save Element not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		log("clicked on save button to Submit the records for Exam Login Privilege and object is:-"
+				+ btn_Save.toString());
+
 	}
 
 	public void clickOnCancelButton_ToClearFilledExamLoginPrivilegeForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("clicked on Cancel button to clear filled data for Exam Login Privilege and object is:-"
-					+ btn_Cancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel Element not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("clicked on Cancel button to clear filled data for Exam Login Privilege and object is:-"
+				+ btn_Cancel.toString());
+
 	}
 
 	/**
@@ -537,125 +434,84 @@ System.out.println("Employee selected for exam............");
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button Element not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("clicked on OK button and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void sortWithAcademicYearInGridView() throws Exception {
 
-		if (btn_Sort_AcademicYear.isDisplayed()) {
-			btn_Sort_AcademicYear.click();
-			Thread.sleep(500);
-			btn_Sort_AcademicYear.click();
-			log("Sort by academic year in grid view and object is:- " + btn_Sort_AcademicYear.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Sort_AcademicYear);
+		clickOnButton(btn_Sort_AcademicYear);
+		log("Sort by academic year in grid view and object is:- " + btn_Sort_AcademicYear.toString());
+
 	}
 
 	public void sortWithEmployeeNameInGridView() throws Exception {
 
-		if (btn_Sort_EmployeeName.isDisplayed()) {
-			btn_Sort_EmployeeName.click();
-			log("Sort by Employee Name in grid view and object is:- " + btn_Sort_EmployeeName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Employee Name button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Sort_EmployeeName);
+		log("Sort by Employee Name in grid view and object is:- " + btn_Sort_EmployeeName.toString());
+
 	}
 
 	public void sortWithClassNameInGridView() throws Exception {
 
-		if (btn_Sort_ClassName.isDisplayed()) {
-			btn_Sort_ClassName.click();
-			log("Sort by Class Name in grid view and object is:- " + btn_Sort_ClassName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Class Name button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Sort_ClassName);
+		log("Sort by Class Name in grid view and object is:- " + btn_Sort_ClassName.toString());
+
 	}
 
 	public void sortWithSectionNameInGridView() throws Exception {
 
-		if (btn_Sort_SectionName.isDisplayed()) {
-			btn_Sort_SectionName.click();
-			log("Sort by Section Name in grid view and object is:- " + btn_Sort_SectionName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Section Name button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Sort_SectionName);
+		log("Sort by Section Name in grid view and object is:- " + btn_Sort_SectionName.toString());
+
 	}
 
 	public void filterRecordsBasedOn_AcademicYear(String academicYear, String employeeName, String className,
 			String sectionName) throws Exception {
-		if (input_AcademicYear.isDisplayed()) {
-			input_AcademicYear.clear();
-			input_AcademicYear.sendKeys(academicYear);
-			log("Entered academic year " + academicYear + " to filter records and object is:- "
-					+ input_AcademicYear.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Academic year input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_AcademicYear, academicYear);
+		log("Entered academic year " + academicYear + " to filter records and object is:- "
+				+ input_AcademicYear.toString());
+
 	}
 
 	public void filterRecordsBasedOn_EmployeeName(String academicYear, String employeeName, String className,
 			String sectionName) throws Exception {
-		if (input_EmployeeName.isDisplayed()) {
-			input_EmployeeName.clear();
-			input_EmployeeName.sendKeys(employeeName);
-			log("Entered Employee Name " + employeeName + " to filter records and object is:- "
-					+ input_EmployeeName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Employee Name input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_EmployeeName, employeeName);
+		log("Entered Employee Name " + employeeName + " to filter records and object is:- "
+				+ input_EmployeeName.toString());
+
 	}
 
 	public void filterRecordsBasedOn_ClassName(String academicYear, String employeeName, String className,
 			String sectionName) throws Exception {
-		if (input_ClassName.isDisplayed()) {
-			input_ClassName.clear();
-			input_ClassName.sendKeys(className);
-			log("Entered Class Name " + className + " to filter records and object is:- " + input_ClassName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Class Name input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_ClassName, className);
+		log("Entered Class Name " + className + " to filter records and object is:- " + input_ClassName.toString());
+
 	}
 
 	public void filterRecordsBasedOn_SectionName(String academicYear, String employeeName, String className,
 			String sectionName) throws Exception {
-		if (input_SectionName.isDisplayed()) {
-			input_SectionName.clear();
-			input_SectionName.sendKeys(sectionName);
-			log("Entered Section Name " + sectionName + " to filter records and object is:- "
-					+ input_SectionName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Section Name input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_SectionName, sectionName);
+		log("Entered Section Name " + sectionName + " to filter records and object is:- "
+				+ input_SectionName.toString());
+
 	}
 
 	public void clearFilledDataForFilter() throws Exception {
+		isDisplayed(input_AcademicYear);
 		input_AcademicYear.clear();
+		isDisplayed(input_EmployeeName);
 		input_EmployeeName.clear();
+		isDisplayed(input_ClassName);
 		input_ClassName.clear();
+		isDisplayed(input_SectionName);
 		input_SectionName.clear();
 		log("Cleared filter data in Grid View.");
 		Thread.sleep(1000);
@@ -664,160 +520,183 @@ System.out.println("Employee selected for exam............");
 	public void clickOnViewIcon_ToSeeExamLoginPrivilegeDetailsAndActivationOrDeactivation() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_Edit_Grid);
 		Thread.sleep(1000);
-		if (btn_View_Grid.isDisplayed()) {
-			btn_View_Grid.click();
-			log("Clicked on View Icon to launch pop up windows to see created exam login privilege and object is:-"
-					+ btn_View_Grid.toString());
-			Thread.sleep(1000);
-			boolean closeButton = btn_View_ClosePopUp.isDisplayed();
-			Assert.assertTrue(closeButton);
-			Thread.sleep(1000);
-		} else {
-			log("View Icon element is not present in grid.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_View_Grid);
+		log("Clicked on View Icon to launch pop up windows to see created exam login privilege and object is:-"
+				+ btn_View_Grid.toString());
+		Thread.sleep(1000);
+		boolean closeButton = btn_View_ClosePopUp.isDisplayed();
+		Assert.assertTrue(closeButton);
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnEditIcon_ToUpdateExamLoginPrivilege() throws Exception {
-		
-		if (btn_Edit_Grid.isDisplayed()) {
-			btn_Edit_Grid.click();
-			log("Clicked on Edit Icon to update exam login privilege and object is:-" + btn_Edit_Grid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Edit Icon element is not present in grid.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Edit_Grid);
+		log("Clicked on Edit Icon to update exam login privilege and object is:-" + btn_Edit_Grid.toString());
+
 	}
 
 	public void deactivateRecords_ViewWindow() throws Exception {
 
-		if (icon_DeactivateAndActivate.isDisplayed()) {
+		isDisplayed(icon_DeactivateAndActivate);
+		String DeactivateText = icon_DeactivateAndActivate.getAttribute("aria-label");
+		System.out.println("Tool tip text present :- " + DeactivateText);
 
-			String DeactivateText = icon_DeactivateAndActivate.getAttribute("aria-label");
-			System.out.println("Tool tip text present :- " + DeactivateText);
+		// Compare toll tip text
+		Assert.assertEquals(DeactivateText, "Deactivate Now");
 
-			// Compare toll tip text
-			Assert.assertEquals(DeactivateText, "Deactivate Now");
+		icon_DeactivateAndActivate.click();
+		log("Clicked on Deacivate Icon to Deactivate Exam Login Privilege record and object is:-"
+				+ icon_DeactivateAndActivate.toString());
+		Thread.sleep(1000);
 
-			icon_DeactivateAndActivate.click();
-			log("Clicked on Deacivate Icon to Deactivate Exam Login Privilege record and object is:-"
-					+ icon_DeactivateAndActivate.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Deactivate Icon element is not present.");
-			Thread.sleep(500);
-		}
 	}
 
 	public void activateRecords_ViewWindow() throws Exception {
 
-		if (icon_DeactivateAndActivate.isDisplayed()) {
+		isDisplayed(icon_DeactivateAndActivate);
+		String ActivateText = icon_DeactivateAndActivate.getAttribute("aria-label");
+		System.out.println("Tool tip text present :- " + ActivateText);
 
-			String ActivateText = icon_DeactivateAndActivate.getAttribute("aria-label");
-			System.out.println("Tool tip text present :- " + ActivateText);
+		// Compare toll tip text
+		Assert.assertEquals(ActivateText, "Activate Now");
 
-			// Compare toll tip text
-			Assert.assertEquals(ActivateText, "Activate Now");
+		icon_DeactivateAndActivate.click();
+		log("Clicked on Acivate Icon to Activate Exam Login Privilege record and object is:-"
+				+ icon_DeactivateAndActivate.toString());
+		Thread.sleep(1000);
 
-			icon_DeactivateAndActivate.click();
-			log("Clicked on Acivate Icon to Activate Exam Login Privilege record and object is:-"
-					+ icon_DeactivateAndActivate.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Activate Icon element is not present.");
-			Thread.sleep(500);
-		}
 	}
 
 	public void yesDeactivateExamLoginPrivilegeRecord() throws Exception {
-		if (btnPopUp_YesDeactivateit.isDisplayed()) {
-			btnPopUp_YesDeactivateit.click();
-			log("Clicked on Yes Deactivate button for deactivation of record and object is:- "
-					+ btnPopUp_YesDeactivateit.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Yes Deactivate it button is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnPopUp_YesDeactivateit);
+		log("Clicked on Yes Deactivate button for deactivation of record and object is:- "
+				+ btnPopUp_YesDeactivateit.toString());
+
 	}
 
 	public void yesActivateExamLoginPrivilegeRecord() throws Exception {
-		if (btnPopUp_YesActivateit.isDisplayed()) {
-			btnPopUp_YesActivateit.click();
-			log("Clicked on Yes Activate button for Activation of record and object is:- "
-					+ btnPopUp_YesActivateit.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Yes Activate it button is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnPopUp_YesActivateit);
+		log("Clicked on Yes Activate button for Activation of record and object is:- "
+				+ btnPopUp_YesActivateit.toString());
+
 	}
 
 	public void cancelDeactivationAndActivationOfRecord() throws Exception {
-		if (btnPopUp_Cancel.isDisplayed()) {
-			btnPopUp_Cancel.click();
-			log("Clicked on Cancel button for Cancelation of Activation or Deactivation of record and object is:- "
-					+ btnPopUp_Cancel.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Cancel button is not present in Activation and deactivation pop up.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnPopUp_Cancel);
+		log("Clicked on Cancel button for Cancelation of Activation or Deactivation of record and object is:- "
+				+ btnPopUp_Cancel.toString());
+
 	}
+
 	public void min_Max_ExamLoginPrivilege() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_ExamLoginPrivilege);
 		Thread.sleep(1000);
-		if (btn_Min_MaxLoginPrivilege.isDisplayed()) {
-			btn_Min_MaxLoginPrivilege.click();
-			log("Exam Login Privilege page minimized or maximized and object is:-"
-					+ btn_Min_MaxLoginPrivilege.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Exam Login Privilege Minimized OR Maximize Element not present.");
-		}
+
+		clickOnButton(btn_Min_MaxLoginPrivilege);
+		log("Exam Login Privilege page minimized or maximized and object is:-" + btn_Min_MaxLoginPrivilege.toString());
+
 	}
 
 	public void min_Max_ExamLoginPrivilege_Details() throws Exception {
-		if (btn_Min_MaxLoginPrivilegeDetails.isDisplayed()) {
-			btn_Min_MaxLoginPrivilegeDetails.click();
-			log("Exam Login Privilege Details page minimized or maximized and object is:-"
-					+ btn_Min_MaxLoginPrivilegeDetails.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Exam Login Privilege Details Minimize OR Maximize Element not present.");
-		}
+
+		clickOnButton(btn_Min_MaxLoginPrivilegeDetails);
+		log("Exam Login Privilege Details page minimized or maximized and object is:-"
+				+ btn_Min_MaxLoginPrivilegeDetails.toString());
+
 	}
+
 	public void min_Max_ExamLoginPrivilege_GridView() throws Exception {
-		if (btn_Min_MaxLoginPrivilegeGridView.isDisplayed()) {
-			btn_Min_MaxLoginPrivilegeGridView.click();
-			log("Exam Login Privilege Grid View page minimized or maximized and object is:-"
-					+ btn_Min_MaxLoginPrivilegeGridView.toString());
+
+		clickOnButton(btn_Min_MaxLoginPrivilegeGridView);
+		log("Exam Login Privilege Grid View page minimized or maximized and object is:-"
+				+ btn_Min_MaxLoginPrivilegeGridView.toString());
+
+	}
+
+	public void deleteRecordsFromDetailsSelection() throws Exception {
+
+		clickOnButton(icon_Delete_Details);
+		log("Record deleted from details section and object is:- " + icon_Delete_Details.toString());
+
+	}
+
+	public void closeViewWindow_LoginPrvilege() throws Exception {
+
+		clickOnButton(btn_View_ClosePopUp);
+		log("View window close button is clicked and object is:- " + btn_View_ClosePopUp.toString());
+
+	}
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved/Updated Successfully");
+			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
-		} else {
-			log("Exam Login Privilege Grid View Minimize OR Maximize Element not present.");
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
-	public void deleteRecordsFromDetailsSelection() throws Exception{
-		
-		if(icon_Delete_Details.isDisplayed()){
-			icon_Delete_Details.click();
-			log("Record deleted from details section and object is:- "+icon_Delete_Details.toString());
+	
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved/Updated Successfully");
+			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
-		}else{
-			log("Delete icon element is not present.");
-			Thread.sleep(500);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
-public void closeViewWindow_LoginPrvilege() throws Exception{
-		
-		if(btn_View_ClosePopUp.isDisplayed()){
-			btn_View_ClosePopUp.click();
-			log("View window close button is clicked and object is:- "+btn_View_ClosePopUp.toString());
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "RecordDeactiveCancelled");
+			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
-		}else{
-			log("View button element is not present.");
-			Thread.sleep(500);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Deactivated successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "RecordActiveCancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Activated successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

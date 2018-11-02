@@ -37,9 +37,12 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[7]")
-	WebElement btnFeeClassCategory;
+//	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[7]")
+//	WebElement btnFeeClassCategory;
 
+	@FindBy(xpath = "//a[@href='#/app/FeeClassCategory/83']")
+	WebElement btnFeeClassCategory;
+	
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtFeeClassCategoryMsgDispaly;
 
@@ -105,7 +108,7 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -115,33 +118,16 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	}
 
 	public void nevigateToMasters_Fee_Yearly_ClassCategory() throws Exception {
-		if (btnFee.isDisplayed()) {
-			btnFee.click();
+		
+			clickOnButton(btnFee);
 			log("Clicked on Fee Button and object is:-" + btnFee.toString());
-			Thread.sleep(1000);
-			// waitForElement(driver, 10, btnFee);
-		} else {
-			log("Fee Button element not present");
-			Thread.sleep(500);
-		}
-		if (feeMasters.isDisplayed()) {
-			feeMasters.click();
+		
+			clickOnButton(feeMasters);
 			log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Fee Masters Button element not present");
-			Thread.sleep(500);
-		}
-		if (btnFeeClassCategory.isDisplayed()) {
-			btnFeeClassCategory.click();
+		
+			clickOnButton(btnFeeClassCategory);
 			log("Clicked on Fee class category Button and object is:-" + btnFeeClassCategory.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Fee class category Button element not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public boolean verifyFeeClassCategoryPage() {
@@ -158,10 +144,10 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	}
 
 	public void clickOnYearly_ClassCategoryTab() throws Exception {
-		waitForElement(driver, 10, tabYearlyClassCategory);
-		tabYearlyClassCategory.click();
+	
+		clickOnButton(tabYearlyClassCategory);
 		log("Selected yearly class category and object is:-" + tabYearlyClassCategory.toString());
-		waitForElement(driver, 10, labelSelClass);
+		
 	}
 
 	/**
@@ -174,41 +160,24 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	 */
 	public void selectAcademicYearClassCategoryAndClass(String academicYr, String classCategory, String className)
 			throws Exception {
-		if (selAcademicYr.isDisplayed()) {
-			select = new Select(selAcademicYr);
-			select.selectByVisibleText(academicYr);
+
+			selectElementFromDropDown(selAcademicYr, academicYr);
 			log("selected academic year from the list:-" + academicYr + " and object is " + selAcademicYr.toString());
-			Thread.sleep(1000);
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Academic year element not present");
-			Thread.sleep(500);
-		}
-		if (selClassCategory.isDisplayed()) {
-			select = new Select(selClassCategory);
-			select.selectByVisibleText(classCategory);
+		
+			selectElementFromDropDown(selClassCategory, classCategory);
 			log("selected fees class category from the list:-" + classCategory + " and object is "
 					+ selClassCategory.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classCategory);
-			Thread.sleep(1000);
-		} else {
-			log("fees class category element not present");
-			Thread.sleep(500);
-		}
-
-		selClassButton.click();
-		Thread.sleep(1000);
-		selClass.click();
-		btnAfterClassSelection.click();
+		clickOnButton(selClassButton);
+		clickOnButton(selClass);
+		clickOnButton(btnAfterClassSelection);
+	
 		Thread.sleep(1000);
 		String selectedClass = selClassButton.getText();
 		try {
 			Assert.assertEquals(selectedClass, className);
 		} catch (Exception e) {
+			e.printStackTrace();
 			log("Selected class not matched with the class provided.");
 		}
 		log("Class selected:" + selClassButton.getText() + " and object is:-" + selClassButton.toString());
@@ -216,9 +185,10 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	}
 
 	public void clickOnSaveButton() throws Exception {
-		btnSave.click();
+	
+		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(7000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -236,21 +206,18 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		btnOkonSuccess.click();
+
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	public void searchByClassCategoryInGrid(String classCategory) throws Exception {
-		if (inputSearch.isDisplayed()) {
-		inputSearch.clear();
-		inputSearch.sendKeys(classCategory);
+
+		inputTextIntoInputField(inputSearch, classCategory);
 		log("Entered Class category name:" + classCategory + "and object is:-" + inputSearch.toString());
 		Thread.sleep(1000);
-		} else {
-			log("Class category element not present");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void verifyClassCategoryUpdatedInGrid(String classCategory) throws Exception {
@@ -258,19 +225,23 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
 			String classCategoryName = driver
 					.findElement(By.xpath("(//body[@id='style-4']//div/table)[2]/tbody/tr[" + i + "]/td[3]")).getText();
 			System.out.println(classCategoryName);
 			Thread.sleep(2000);
-			try {
+				if(classCategoryName.equals(classCategory)){
 				Assert.assertEquals(classCategoryName, classCategory);
 
 				log("Class category name is update in the grid:" + classCategory);
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+				}
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -279,28 +250,32 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
 			String classCategoryName = driver
 					.findElement(By.xpath("(//body[@id='style-4']//div/table)[2]/tbody/tr[" + i + "]/td[3]")).getText();
 			System.out.println(classCategoryName);
 			Thread.sleep(2000);
-			try {
+		
+				if(classCategoryName.equals(classCategory)){
 				Assert.assertEquals(classCategoryName, classCategory);
 				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[2]/tbody/tr[" + i + "]/td[8]/a"))
 						.click();
 				log("Clicked on delete link for corresponding Yearly class category in grid");
-
-				Thread.sleep(2000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+				}
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void confirmationForDeletion() throws Exception {
-		btnPopUpYesDeleteit.click();
+	
+		clickOnButton(btnPopUpYesDeleteit);
 		log("Clicked on confirmation Yes Delete it button and object is:" + btnPopUpYesDeleteit.toString());
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifyDeletionSuccessfulPopUp() {
@@ -308,7 +283,7 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 			System.out.println(successfulMessage.getText());
 			successfulMessage.isDisplayed();
 			log("Record Deleted Successfully message is dispalyed and object is:-" + successfulMessage.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -318,8 +293,8 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 
 	public void clickOnDeletionFinalOkBtn() throws Exception {
 
-		btnOkonSuccess.click();
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 }

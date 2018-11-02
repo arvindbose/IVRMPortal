@@ -279,8 +279,21 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcSubmitFilledMasterClassCategoryMapForm");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			masterclasscategory.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -295,7 +308,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 	
-	@Test(priority = 16, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 17, dataProvider = "MasterClassCategorySearchData")
 	public void tcSearchWithClassCategoryNameInTheGrid(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -313,7 +326,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 18, dataProvider = "MasterClassCategorySearchData")
 	public void tcVerifyClassCategoryNameInTheGrid(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -330,7 +343,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcVerifyClassCategoryNameInTheGrid");
 		}
 	}
-	@Test(priority = 18, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 19, dataProvider = "MasterClassCategorySearchData")
 	public void tcEditMasterClassCategory(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -347,7 +360,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSubmitFilledMasterClassCategoryMapForm_Edit() {
 
 		try {
@@ -361,8 +374,21 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcSubmitFilledMasterClassCategoryMapForm_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			masterclasscategory.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -377,7 +403,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 	
-	@Test(priority = 21, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 23, dataProvider = "MasterClassCategorySearchData")
 	public void tcSearchWithClassCategoryNameInTheGrid_ForDeactivate(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -395,7 +421,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 24, dataProvider = "MasterClassCategorySearchData")
 	public void tcDeactivateMasterClassCategory(String categoryName, String selectFilter,String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -413,7 +439,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -428,7 +454,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -443,7 +469,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 27, dataProvider = "MasterClassCategorySearchData")
 	public void tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -461,7 +487,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 28, dataProvider = "MasterClassCategorySearchData")
 	public void tcDeactivateMasterClassCategory_AfterCancel(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -479,7 +505,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -493,8 +519,22 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopWindowMessage_DeactivatedSuccessfully_Validation() {
 
-	@Test(priority = 28)
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+
+			masterclasscategory.popWindowMessage_DeactivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -509,7 +549,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 	
-	@Test(priority = 29, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 32, dataProvider = "MasterClassCategorySearchData")
 	public void tcSearchWithClassCategoryNameInTheGrid_ForActivate(String categoryName,String selectFilter,String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -527,7 +567,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 33, dataProvider = "MasterClassCategorySearchData")
 	public void tcActivateMasterClassCategory(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -545,7 +585,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 34)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -560,7 +600,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 35)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -575,7 +615,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 36, dataProvider = "MasterClassCategorySearchData")
 	public void tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -593,7 +633,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "MasterClassCategorySearchData")
+	@Test(priority = 37, dataProvider = "MasterClassCategorySearchData")
 	public void tcActivateMasterClassCategory_AfterCancel(String categoryName,String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -610,7 +650,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 38)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -624,8 +664,22 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 39)
+	public void tcPopWindowMessage_ActivatedSuccessfully_Validation() {
 
-	@Test(priority = 36)
+		try {
+			log.info("============= Strting tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+
+			masterclasscategory.popWindowMessage_ActivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 40)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {

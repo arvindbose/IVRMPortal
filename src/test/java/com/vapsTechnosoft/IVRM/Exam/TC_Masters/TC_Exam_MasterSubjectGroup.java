@@ -12,8 +12,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterGrade;
 import com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterSubjectGroup;
 import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -329,8 +327,23 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToCreateMasterSubjectGroup_WithoutElective");
 		}
 	}
-
 	@Test(priority = 17)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_WithoutElective_Validation() {
+
+		try {
+			log.info(
+					"============= Strting tcPopUpWindowMessage_SubmitSuccessfully_WithoutElective_Validation Test===========");
+
+			mastersubjectgroup.popWindowMessage_SubmitSuccessfully();
+
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_WithoutElective_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_WithoutElective_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_WithoutElective_Validation");
+		}
+	}
+	@Test(priority = 18)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_WithoutElective_MasterSubjectGroup() {
 
 		try {
@@ -347,7 +360,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 19, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFill_Exam_MasterSubjectGroup_Form_WithElective(String groupName, String maxSubject,
 			String maxApplSubject, String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -366,7 +379,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSelectSubjectForGrouping_WithElectiveSubject() {
 
 		try {
@@ -381,7 +394,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcClickOnSaveButton_ToCreateMasterSubjectGroup_WithElective() {
 
 		try {
@@ -397,8 +410,23 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToCreateMasterSubjectGroup_WithElective");
 		}
 	}
+	@Test(priority = 22)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_WithElective_Validation() {
 
-	@Test(priority = 21)
+		try {
+			log.info(
+					"============= Strting tcPopUpWindowMessage_SubmitSuccessfully_WithElective_Validation Test===========");
+
+			mastersubjectgroup.popWindowMessage_SubmitSuccessfully();
+
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_WithElective_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_WithElective_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_WithElective_Validation");
+		}
+	}
+	@Test(priority = 23)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_WithElective_MasterSubjectGroup() {
 
 		try {
@@ -415,7 +443,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 24)
 	public void tcSortWithGroupNameInGridView() {
 
 		try {
@@ -430,7 +458,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcSortWithTotalSubjectsInGridView() {
 
 		try {
@@ -445,7 +473,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcSortWithMaxApplicableSubjectInGridView() {
 
 		try {
@@ -460,7 +488,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 27)
 	public void tcSortWithMinApplicableSubjectInGridView() {
 
 		try {
@@ -475,7 +503,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 28)
 	public void tcSortWithBestOfSubjectInGridView() {
 
 		try {
@@ -490,7 +518,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 29, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_GroupName(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -510,7 +538,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcClearFilledDataForFilter_GroupName() {
 
 		try {
@@ -525,7 +553,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 31, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_TotalSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -544,7 +572,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 32)
 	public void tcClearFilledDataForFilter_TotalSubjects() {
 
 		try {
@@ -559,7 +587,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 31, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 33, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_MaxApplicableSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -578,7 +606,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 34)
 	public void tcClearFilledDataForFilter_MaxApplicableSubjects() {
 
 		try {
@@ -593,7 +621,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 35, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_MinApplicableSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -612,7 +640,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 36)
 	public void tcClearFilledDataForFilter_MinApplicableSubjects() {
 
 		try {
@@ -627,7 +655,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 37, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_BestOfSubjects(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -646,7 +674,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 38)
 	public void tcClearFilledDataForFilter_BestOfSubjects() {
 
 		try {
@@ -661,7 +689,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 39)
 	public void tcClickOnViewIcon_ToSeeMasterSubjectGroup() {
 
 		try {
@@ -675,7 +703,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 40)
 	public void tcCloseViewWindow_MasterSubjectGroup() {
 
 		try {
@@ -689,7 +717,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 41)
 	public void tcClickOnEditIcon_ToUpdateMasterSubjectGroup() {
 
 		try {
@@ -702,8 +730,8 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcClickOnEditIcon_ToUpdateMasterSubjectGroup");
 		}
 	}
-
-	@Test(priority = 40)
+	
+	@Test(priority = 42)
 	public void tcClickOnSaveButton_ToCreateMasterSubjectGroup_Edit() {
 
 		try {
@@ -718,8 +746,21 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToCreateMasterSubjectGroup_Edit");
 		}
 	}
+	@Test(priority = 43)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 41)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastersubjectgroup.popWindowMessage_SubmitSuccessfully_Edit();
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+
+	@Test(priority = 44)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_Edit_MasterSubjectGroup() {
 
 		try {
@@ -736,7 +777,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 42, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 45, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_GroupName_FilterDeactivate(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -755,7 +796,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 43)
+	@Test(priority = 46)
 	public void tcDeactivateRecords_MasterSubjectGroupGrid() {
 
 		try {
@@ -770,7 +811,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 44)
+	@Test(priority = 47)
 	public void tcCancel_DeactivatePopUp() {
 
 		try {
@@ -784,8 +825,20 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcCancel_DeactivatePopUp");
 		}
 	}
+	@Test(priority = 48)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 
-	@Test(priority = 45)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			mastersubjectgroup.popUpWindowMessage_DeactivateCancel_Validation();
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 49)
 	public void tcClickOnSuccessOkBtn_CancelDeactivate() {
 
 		try {
@@ -800,7 +853,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 46)
+	@Test(priority = 50)
 	public void tcDeactivateRecords_MasterSubjectGroupGrid_AfterCancel() {
 
 		try {
@@ -815,7 +868,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 47)
+	@Test(priority = 51)
 	public void tcYesDeactivateMasterSubjectGroupRecord() {
 
 		try {
@@ -829,8 +882,21 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcYesDeactivateMasterSubjectGroupRecord");
 		}
 	}
+	@Test(priority = 52)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
-	@Test(priority = 48)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			mastersubjectgroup.popUpWindowMessage_DeactivateSucessfully_Validation();
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+
+	@Test(priority = 53)
 	public void tcClickOnSuccessOkBtn_Deactivate() {
 
 		try {
@@ -844,7 +910,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcClickOnSuccessOkBtn_Deactivate");
 		}
 	}
-	@Test(priority = 49, dataProvider = "ExamMasterSubjectGroup_WithElective")
+	@Test(priority = 54, dataProvider = "ExamMasterSubjectGroup_WithElective")
 	public void tcFilterRecordsBasedOn_GroupName_FilterActivate(String groupName, String maxSubject, String maxApplSubject,
 			String minApplSubject, String bestOfSubject, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -862,7 +928,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcFilterRecordsBasedOn_GroupName_FilterDeactivate");
 		}
 	}
-	@Test(priority = 50)
+	@Test(priority = 55)
 	public void tcActivateRecords_MasterSubjectGroupGrid() {
 
 		try {
@@ -877,7 +943,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 51)
+	@Test(priority = 56)
 	public void tcCancel_ActivatePopUp_viewWindow() {
 
 		try {
@@ -891,8 +957,20 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcCancel_ActivatePopUp_viewWindow");
 		}
 	}
+	@Test(priority = 57)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 52)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			mastersubjectgroup.popUpWindowMessage_ActivateCancel_Validation();
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 58)
 	public void tcClickOnSuccessOkBtn_CancelActivate() {
 
 		try {
@@ -907,7 +985,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 53)
+	@Test(priority = 59)
 	public void tcActivateRecords_MasterSubjectGroupGrid_AfterCancel() {
 
 		try {
@@ -922,7 +1000,7 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 54)
+	@Test(priority = 60)
 	public void tcYesActivateMasterSubjectGroupRecord() {
 
 		try {
@@ -936,8 +1014,20 @@ public class TC_Exam_MasterSubjectGroup extends TestBase {
 			getScreenShot("tcYesActivateMasterSubjectGroupRecord");
 		}
 	}
+	@Test(priority = 61)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
 
-	@Test(priority = 55)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			mastersubjectgroup.popUpWindowMessage_ActivateSucessfully_Validation();
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 62)
 	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {

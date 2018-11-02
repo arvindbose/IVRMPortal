@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -37,16 +39,20 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[9]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[9]")
+	// WebElement btnFeeInstallment;
+
+	@FindBy(xpath = "//a[@href='#/app/MasterFeeInstallment/81']")
 	WebElement btnFeeInstallment;
 
-	@FindBy(xpath = "//label[contains(text(),'Installment Name:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@name='name123']")
 	WebElement input_InstallmentName;
 
-	@FindBy(xpath = "(//label[contains(text(),'Type:')]/following-sibling::div/select)[1]")
+	@FindBy(xpath = "//select[@name='typ']")
 	WebElement sel_InstallmentType;
 
-	@FindBy(xpath = "//label[contains(text(),'No. of installments:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@name='noofinstall']")
 	WebElement input_NoOfInstallment;
 
 	@FindBy(xpath = "//table[@id='personalDetail']/tbody/tr[1]/td[2]/input[2]")
@@ -88,7 +94,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnYesDeleteOrDeactIt;
 
-	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
+	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement btnPopUpCancel;
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
@@ -105,6 +111,9 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
 	WebElement successfulMessage;
+
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
 
 	/**
 	 * Constructor
@@ -126,7 +135,7 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -135,32 +144,15 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	}
 
 	public void navigateToFeeInstallment_MasterInstallment() throws Exception {
-		if (btnFee.isDisplayed()) {
-			btnFee.click();
-			log("Clicked on Fee Button and object is:-" + btnFee.toString());
-			// waitForElement(driver, 10, btnFee);
-			Thread.sleep(1000);
-		} else {
-			log("Fee Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (feeMasters.isDisplayed()) {
-			feeMasters.click();
-			log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Fee Masters Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btnFeeInstallment.isDisplayed()) {
-			btnFeeInstallment.click();
-			log("Clicked on Fee Installment Button and object is:-" + btnFeeInstallment.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Fee Installment Navigation element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btnFee);
+		log("Clicked on Fee Button and object is:-" + btnFee.toString());
+
+		clickOnButton(feeMasters);
+		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
+
+		clickOnButton(btnFeeInstallment);
+		log("Clicked on Fee Installment Button and object is:-" + btnFeeInstallment.toString());
+
 	}
 
 	public boolean verifyFeeInstallmentScreen() {
@@ -178,40 +170,18 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 
 	public void fillMasterInstallmentForm(String MasterInstallmentName, String MasterInstallmentType,
 			String NoOfInstallment) throws Exception {
-		if (input_InstallmentName.isDisplayed()) {
-			input_InstallmentName.clear();
-			input_InstallmentName.sendKeys(MasterInstallmentName);
-			log("Entered Fee master installment name:-" + MasterInstallmentName + " and object is "
-					+ input_InstallmentName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Installment Name element is not present");
-			Thread.sleep(500);
-		}
 
-		if (sel_InstallmentType.isDisplayed()) {
-			select = new Select(sel_InstallmentType);
-			select.selectByVisibleText(MasterInstallmentType);
+		inputTextIntoInputField(input_InstallmentName, MasterInstallmentName);
+		log("Entered Fee master installment name:-" + MasterInstallmentName + " and object is "
+				+ input_InstallmentName.toString());
 
-			log("Selected installment type:-" + MasterInstallmentType + " and object is:- "
-					+ sel_InstallmentType.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), MasterInstallmentType);
-			Thread.sleep(2000);
-		} else {
-			log("Installment type element is not present");
-			Thread.sleep(500);
-		}
-		if (input_NoOfInstallment.isDisplayed()) {
-			input_NoOfInstallment.clear();
-			input_NoOfInstallment.sendKeys(NoOfInstallment);
-			log("Entered No. of installment:-" + NoOfInstallment + " and object is "
-					+ input_NoOfInstallment.toString());
-			Thread.sleep(1000);
-		} else {
-			log("No Of Installment element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_InstallmentType, MasterInstallmentType);
+		log("Selected installment type:-" + MasterInstallmentType + " and object is:- "
+				+ sel_InstallmentType.toString());
+
+		inputTextIntoInputField(input_NoOfInstallment, NoOfInstallment);
+		log("Entered No. of installment:-" + NoOfInstallment + " and object is " + input_NoOfInstallment.toString());
+
 	}
 
 	public boolean verifyFeeInstallmentGridIsPresent() {
@@ -230,44 +200,36 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	public void enterNameForSelectedNoOfInstallment(String Installment1, String Installment2, String Installment3,
 			String Installment4, String Installment5) throws Exception {
 
-		txtInstallmentName1.sendKeys(Installment1);
+		inputTextIntoInputField(txtInstallmentName1, Installment1);
 		log("entered 1st installment name:-" + Installment1 + " and object is " + txtInstallmentName1.toString());
-		Thread.sleep(1000);
-		txtInstallmentName2.sendKeys(Installment2);
+
+		inputTextIntoInputField(txtInstallmentName2, Installment2);
 		log("entered 2nd installment name:-" + Installment2 + " and object is " + txtInstallmentName2.toString());
-		Thread.sleep(1000);
-		txtInstallmentName3.sendKeys(Installment3);
+
+		inputTextIntoInputField(txtInstallmentName3, Installment3);
 		log("entered 3rd installment name:-" + Installment3 + " and object is " + txtInstallmentName3.toString());
-		Thread.sleep(1000);
-		txtInstallmentName4.sendKeys(Installment4);
+
+		inputTextIntoInputField(txtInstallmentName4, Installment4);
 		log("entered 4th installment name:-" + Installment4 + " and object is " + txtInstallmentName4.toString());
-		Thread.sleep(1000);
-		txtInstallmentName5.sendKeys(Installment5);
+
+		inputTextIntoInputField(txtInstallmentName5, Installment5);
 		log("entered 5th installment name:-" + Installment5 + " and object is " + txtInstallmentName5.toString());
-		Thread.sleep(1000);
+
 	}
 
 	public void clickOnSaveButton() throws Exception {
-		if (btn_Save_MasterInstallment.isDisplayed()) {
-			btn_Save_MasterInstallment.click();
-			log("clicked on save button and object is:-" + btn_Save_MasterInstallment.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Save Button element is not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save_MasterInstallment);
+		log("clicked on save button and object is:-" + btn_Save_MasterInstallment.toString());
+		Thread.sleep(1000);
 	}
 
 	public void clickOnCancelButton_ToClearedFilledForm() throws Exception {
-		if (btn_Cancel_MasterInstallment.isDisplayed()) {
-			btn_Cancel_MasterInstallment.click();
-			log("clicked on cancel button to cleared filled data and object is:-"
-					+ btn_Cancel_MasterInstallment.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Cancel Button element is not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel_MasterInstallment);
+		log("clicked on cancel button to cleared filled data and object is:-"
+				+ btn_Cancel_MasterInstallment.toString());
+
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -284,14 +246,10 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOkonSuccess.isDisplayed()) {
-			btnOkonSuccess.click();
-			log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK Button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOkonSuccess);
+		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
+
 	}
 
 	/**
@@ -302,16 +260,10 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	 */
 
 	public void searchBy_InstallmentName_InFeeMasterInstallmentGridView(String installmentName) throws Exception {
-		if (input_Search_MasterInstallment.isDisplayed()) {
-			input_Search_MasterInstallment.clear();
-			input_Search_MasterInstallment.sendKeys(installmentName);
-			log("Entered Master Fee Installment Name:" + installmentName + " and object is:-"
-					+ input_Search_MasterInstallment.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search_MasterInstallment, installmentName);
+		log("Entered Master Fee Installment Name:" + installmentName + " and object is:-"
+				+ input_Search_MasterInstallment.toString());
 	}
 
 	/**
@@ -325,21 +277,23 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String feeinstallment = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]")).getText()
-					.trim();
-			System.out.println("Created Fee Installment Master " + feeinstallment);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(feeinstallment, installmentName);
-				log("Master Fee Installment name is update in the grid:" + feeinstallment);
-				Thread.sleep(1000);
-				// break;
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String feeinstallment = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]"))
+						.getText().trim();
+				System.out.println("Created Fee Installment Master " + feeinstallment);
+				Thread.sleep(500);
+				if (feeinstallment.equals(installmentName)) {
+					Assert.assertEquals(feeinstallment, installmentName);
+					log("Master Fee Installment name is update in the grid:" + feeinstallment);
+					Thread.sleep(1000);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -354,22 +308,25 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String feeinstallment = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]")).getText()
-					.trim();
-			System.out.println("Created Fee Installment Master " + installmentName);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(feeinstallment, installmentName);
-				driver.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]/a")).click();
-				log("Clicked on edit link for corresponding Master Fee Installment name in grid");
-				Thread.sleep(1000);
-				// break;
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String feeinstallment = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]"))
+						.getText().trim();
+				System.out.println("Created Fee Installment Master " + installmentName);
+				Thread.sleep(2000);
+				if (feeinstallment.equals(installmentName)) {
+					Assert.assertEquals(feeinstallment, installmentName);
+					driver.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]/a"))
+							.click();
+					log("Clicked on edit link for corresponding Master Fee Installment name in grid");
+					Thread.sleep(1000);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -384,27 +341,29 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String feeinstallment = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]")).getText()
-					.trim();
-			System.out.println("Created Fee Group Master " + feeinstallment);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(feeinstallment, installmentName);
-				WebElement deactiveLink = driver
-						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]/span"));
-				String deactivetext = deactiveLink.getText().trim();
-				Assert.assertEquals("Deactivate", deactivetext);
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				deactiveLink.click();
-				log("Clicked on deactivation link in Master fee Installment grid");
-				Thread.sleep(1000);
-				// break;
-			} catch (Exception e) {
-				e.printStackTrace();
+				String feeinstallment = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]"))
+						.getText().trim();
+				System.out.println("Created Fee Group Master " + feeinstallment);
+				Thread.sleep(2000);
+				if (feeinstallment.equals(installmentName)) {
+					Assert.assertEquals(feeinstallment, installmentName);
+					WebElement deactiveLink = driver.findElement(
+							By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]/span"));
+					String deactivetext = deactiveLink.getText().trim();
+					Assert.assertEquals(deactivetext, "Deactivate");
+
+					deactiveLink.click();
+					log("Clicked on deactivation link in Master fee Installment grid");
+					Thread.sleep(1000);
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -415,26 +374,19 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	 */
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		if (btnYesDeleteOrDeactIt.isDisplayed()) {
-			btnYesDeleteOrDeactIt.click();
-			log("Clicked on yes deactivate or activate or delete it button and object is:-"
-					+ btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Yes Activate/Deactivate button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		log("Clicked on yes deactivate or activate or delete it button and object is:-"
+				+ btnYesDeleteOrDeactIt.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnCancelButton_PopUp() throws Exception {
-		if (btnPopUpCancel.isDisplayed()) {
-			btnPopUpCancel.click();
-			log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnPopUpCancel);
+		log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
+
 	}
 
 	/**
@@ -448,74 +400,132 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String feeinstallment = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]")).getText()
-					.trim();
-			System.out.println("Created Fee Installment Master " + feeinstallment);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(feeinstallment, installmentName);
-				WebElement activeLink = driver
-						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]/span"));
-				String activatext = activeLink.getText().trim();
-				Assert.assertEquals("Activate", activatext);
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				activeLink.click();
-				log("Clicked on activation link in Master fee Installment in grid");
-				Thread.sleep(1000);
-				// break;
-			} catch (Exception e) {
-				e.printStackTrace();
+				String feeinstallment = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[2]"))
+						.getText().trim();
+				System.out.println("Created Fee Installment Master " + feeinstallment);
+				Thread.sleep(2000);
+				if (feeinstallment.equals(installmentName)) {
+					Assert.assertEquals(feeinstallment, installmentName);
+					WebElement activeLink = driver.findElement(
+							By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]/span"));
+					String activatext = activeLink.getText().trim();
+					Assert.assertEquals(activatext, "Activate");
+
+					activeLink.click();
+					log("Clicked on activation link in Master fee Installment in grid");
+					Thread.sleep(1000);
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void minimizeAndMaximize_MasterInstallment() throws Exception {
-		if (btnMin_MaxMasterInstallment.isDisplayed()) {
-			btnMin_MaxMasterInstallment.click();
-			log("clicked on master Installment minimize and maximize button and object is:-"
-					+ btnMin_MaxMasterInstallment.toString());
-			Thread.sleep(1000);
-		} else {
-			log("MinMax Master Installment button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnMin_MaxMasterInstallment);
+		log("clicked on master Installment minimize and maximize button and object is:-"
+				+ btnMin_MaxMasterInstallment.toString());
+
 	}
 
 	public void minimizeAndMaximize_MasterFeeInstallmentGridView() throws Exception {
-		if (btnMin_MaxMasterFeeInstallmentGridView.isDisplayed()) {
-			btnMin_MaxMasterFeeInstallmentGridView.click();
-			log("Master Fee Installment grid table data minimize and maximize and object is:-"
-					+ btnMin_MaxMasterFeeInstallmentGridView.toString());
-			Thread.sleep(1000);
-		} else {
-			log("MinMax Master Fee Installment grid button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnMin_MaxMasterFeeInstallmentGridView);
+		log("Master Fee Installment grid table data minimize and maximize and object is:-"
+				+ btnMin_MaxMasterFeeInstallmentGridView.toString());
+
 	}
 
 	public void minimizeAndMaximize_FeeMasterInstallmentGridView() throws Exception {
-		if (btnMin_MaxMasterFeeMasterInstallmentGridView.isDisplayed()) {
-			btnMin_MaxMasterFeeMasterInstallmentGridView.click();
-			log("Fee Master Installment grid view table data minimize and maximize and object is:-"
-					+ btnMin_MaxMasterFeeMasterInstallmentGridView.toString());
-			Thread.sleep(1000);
-		} else {
-			log("MinMax Fee Master Installment grid button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnMin_MaxMasterFeeMasterInstallmentGridView);
+		log("Fee Master Installment grid view table data minimize and maximize and object is:-"
+				+ btnMin_MaxMasterFeeMasterInstallmentGridView.toString());
+
 	}
 
 	public void sortByMasterInstallmentName() throws Exception {
-		if (btnSortByInstallmentName.isDisplayed()) {
-			btnSortByInstallmentName.click();
-			log("Sorted the record with Fee Installment name and object is:-" + btnSortByInstallmentName.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Sort element not present.");
-			Thread.sleep(500);
+
+		clickOnButton(btnSortByInstallmentName);
+		log("Sorted the record with Fee Installment name and object is:-" + btnSortByInstallmentName.toString());
+
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated for edit.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

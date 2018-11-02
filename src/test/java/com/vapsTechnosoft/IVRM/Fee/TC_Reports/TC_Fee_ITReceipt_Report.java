@@ -34,9 +34,9 @@ public class TC_Fee_ITReceipt_Report extends TestBase {
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "Reports_FeeITReceiptData")
+	@DataProvider(name = "Reports_FeeITReceiptTestData")
 	public String[][] getTestWrittenData() {
-		String[][] testRecordsFeeITReceipt = getData("FeeReportsData.xlsx", "FeeITReceipt_Report");
+		String[][] testRecordsFeeITReceipt = getData("FeeReportsData.xlsx", "FeeItReceiptReportData");
 		return testRecordsFeeITReceipt;
 	}
 
@@ -130,7 +130,7 @@ public class TC_Fee_ITReceipt_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "Reports_FeeITReceiptData")
+	@Test(priority = 6, dataProvider = "Reports_FeeITReceiptTestData")
 	public void tcFill_FeeITReceiptReportForm(String academicYear, String class_It, String section_it,
 			String student_Name, String receipt_No, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -208,7 +208,7 @@ public class TC_Fee_ITReceipt_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 11, dataProvider = "Reports_FeeITReceiptData")
+	@Test(priority = 11, dataProvider = "Reports_FeeITReceiptTestData")
 	public void tcFill_FeeITReceiptReportForm_AfterClearingFilledData(String academicYear, String class_It,
 			String section_it, String student_Name, String receipt_No, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {

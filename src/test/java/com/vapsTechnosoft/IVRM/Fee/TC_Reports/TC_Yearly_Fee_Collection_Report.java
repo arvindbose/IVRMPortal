@@ -271,35 +271,35 @@ public class TC_Yearly_Fee_Collection_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 14)
-	public void tcSelectColumnName_ForDisplayInGrid() {
-
-		try {
-			log.info("============= Strting tcSelectColumnName_ForDisplayInGrid Test===========");
-
-			yarlyfeecollectionreport.selectColumnName_ForDisplayInGrid();
-
-			log.info("============= Finished tcSelectColumnName_ForDisplayInGrid Test===========");
-			getScreenShot("tcSelectColumnName_ForDisplayInGrid");
-		} catch (Exception e) {
-			getScreenShot("tcSelectColumnName_ForDisplayInGrid");
-		}
-	}
-
-	@Test(priority = 15)
-	public void tcCloseDisplayPopUpWindow() {
-
-		try {
-			log.info("============= Strting tcCloseDisplayPopUpWindow Test===========");
-
-			yarlyfeecollectionreport.closeDisplayPopUpWindow();
-
-			log.info("============= Finished tcCloseDisplayPopUpWindow Test===========");
-			getScreenShot("tcCloseDisplayPopUpWindow");
-		} catch (Exception e) {
-			getScreenShot("tcCloseDisplayPopUpWindow");
-		}
-	}
+//	@Test(priority = 14)
+//	public void tcSelectColumnName_ForDisplayInGrid() {
+//
+//		try {
+//			log.info("============= Strting tcSelectColumnName_ForDisplayInGrid Test===========");
+//
+//			yarlyfeecollectionreport.selectColumnName_ForDisplayInGrid();
+//
+//			log.info("============= Finished tcSelectColumnName_ForDisplayInGrid Test===========");
+//			getScreenShot("tcSelectColumnName_ForDisplayInGrid");
+//		} catch (Exception e) {
+//			getScreenShot("tcSelectColumnName_ForDisplayInGrid");
+//		}
+//	}
+//
+//	@Test(priority = 15)
+//	public void tcCloseDisplayPopUpWindow() {
+//
+//		try {
+//			log.info("============= Strting tcCloseDisplayPopUpWindow Test===========");
+//
+//			yarlyfeecollectionreport.closeDisplayPopUpWindow();
+//
+//			log.info("============= Finished tcCloseDisplayPopUpWindow Test===========");
+//			getScreenShot("tcCloseDisplayPopUpWindow");
+//		} catch (Exception e) {
+//			getScreenShot("tcCloseDisplayPopUpWindow");
+//		}
+//	}
 
 	@Test(priority = 16)
 	public void tcClickClearButton_ToClearFilledForm() {

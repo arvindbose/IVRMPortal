@@ -3,16 +3,18 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -37,7 +39,11 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[14]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[14]")
+	// WebElement btnMasters_ActiveDeactiveStudent;
+
+	@FindBy(xpath = "//a[@href='#/app/activedeactivestudent/50']")
 	WebElement btnMasters_ActiveDeactiveStudent;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -85,6 +91,9 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	@FindBy(xpath = "//button[contains(text(),'OK')]")
 	WebElement btnOKSuccess;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Active_Deactive_Students(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -94,7 +103,7 @@ public class Masters_Active_Deactive_Students extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -109,32 +118,15 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_ActiveDeactiveStudent_BGHS() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_Masters.isDisplayed()) {
-			btnAdmission_Masters.click();
-			log("Clicked on Admission masters and object is:-" + btnAdmission_Masters.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission masters button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnMasters_ActiveDeactiveStudent.isDisplayed()) {
-			btnMasters_ActiveDeactiveStudent.click();
-			log("Clicked on Active Deactive Student Button and object is:-"
-					+ btnMasters_ActiveDeactiveStudent.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Active Deactive Student button element not present.");
-			Thread.sleep(500);
-		}
 
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
+
+		clickOnButton(btnAdmission_Masters);
+		log("Clicked on Admission masters and object is:-" + btnAdmission_Masters.toString());
+
+		clickOnButton(btnMasters_ActiveDeactiveStudent);
+		log("Clicked on Active Deactive Student Button and object is:-" + btnMasters_ActiveDeactiveStudent.toString());
 	}
 
 	/**
@@ -158,59 +150,27 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	}
 
 	public void submitBlank_ActiveDeactiveStudentForm() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("Submit blank Active Deactive Student form and object is:-" + btn_Save.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		log("Submit blank Active Deactive Student form and object is:-" + btn_Save.toString());
 	}
 
 	public void fillActiveDeactiveStudentForm(String academicYear, String class_AD, String section) throws Exception {
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYr, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Class, class_AD);
+		log("selected class: " + class_AD + " and object is:- " + sel_Class.toString());
 
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_AD);
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
 
-			log("selected class: " + class_AD + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_AD);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
-
-			log("selected section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
 	}
 
 	public void select_ActiveStudent_RadioButton() throws Exception {
-		if ((rdBtn_ActiveStudent.isDisplayed()) && (!rdBtn_ActiveStudent.isSelected())) {
+		isDisplayed(rdBtn_ActiveStudent);
+		if (!rdBtn_ActiveStudent.isSelected()) {
 			rdBtn_ActiveStudent.click();
 			log("Active Student radio button is selected and object is:-" + rdBtn_ActiveStudent.toString());
 			Thread.sleep(1000);
@@ -221,7 +181,8 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	}
 
 	public void select_DeActiveStudent_RadioButton() throws Exception {
-		if ((rdBtn_DeActiveStudent.isDisplayed()) && (!rdBtn_DeActiveStudent.isSelected())) {
+		isDisplayed(rdBtn_DeActiveStudent);
+		if (!rdBtn_DeActiveStudent.isSelected()) {
 			rdBtn_DeActiveStudent.click();
 			log("De-Active Student radio button is selected and object is:-" + rdBtn_DeActiveStudent.toString());
 			Thread.sleep(1000);
@@ -232,7 +193,8 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	}
 
 	public void select_ActivateStudent_checkBox() throws Exception {
-		if ((chk_ActivateStudent.isDisplayed()) && (!chk_ActivateStudent.isSelected())) {
+		isDisplayed(chk_ActivateStudent);
+		if (!chk_ActivateStudent.isSelected()) {
 			chk_ActivateStudent.click();
 			log("Activate Student check box is checked and object is:-" + chk_ActivateStudent.toString());
 			Thread.sleep(1000);
@@ -243,7 +205,8 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	}
 
 	public void select_DeActivateStudent_checkBox() throws Exception {
-		if ((chk_DeActivateStudent.isDisplayed()) && (!chk_DeActivateStudent.isSelected())) {
+		isDisplayed(chk_DeActivateStudent);
+		if (!chk_DeActivateStudent.isSelected()) {
 			chk_DeActivateStudent.click();
 			log("De-Activate Student check box is checked and object is:-" + chk_DeActivateStudent.toString());
 			Thread.sleep(1000);
@@ -254,56 +217,48 @@ public class Masters_Active_Deactive_Students extends TestBase {
 	}
 
 	public void saveFilledActiveDeactiveStudentForm() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("Save Active Deactive Student form and object is:-" + btn_Save.toString());
-			Thread.sleep(15000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		Thread.sleep(4000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Save Active Deactive Student form and object is:-" + btn_Save.toString());
 	}
 
 	public void clearFilledActiveDeactiveStudentForm() throws Exception {
-		if (btn_Clear.isDisplayed()) {
-			btn_Clear.click();
-			log("Clear Active Deactive Student form and object is:-" + btn_Clear.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Clear);
+		log("Clear Active Deactive Student form and object is:-" + btn_Clear.toString());
+
 	}
 
-	public void searchWithAdmissionNumber_ActivateDeactivateStudentListGrid(String admissionNum) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(admissionNum);
-			log("Entered Admission number to search: " + admissionNum + " and object is:-" + input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+	public void searchWithAdmissionNumber_ActivateDeactivateStudentListGrid(String admissionNum) {
+
+		inputTextIntoInputField(input_Search, admissionNum);
+		log("Entered Admission number to search: " + admissionNum + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void verifyStudent_ForActiveDeactiveInGrid(String admissionNum) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
 
-				Assert.assertEquals(admNumber, admissionNum);
-				log("Student available for active and deactive.");
+				if (admNumber.equals(admissionNum)) {
+					//Assert.assertEquals(admNumber, admissionNum);
+					log("Student available for active and deactive.");
+					break;
+				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -311,73 +266,89 @@ public class Masters_Active_Deactive_Students extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admNumber = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admNumber);
-			// Thread.sleep(2000);
-			try {
-				Assert.assertEquals(admNumber, admissionNum);
-				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]/label/input"))
-						.click();
-				log("Corresponding student check box is checked for Activate or deactivate.");
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String admNumber = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admNumber);
+				// Thread.sleep(2000);
+				if (admNumber.equals(admissionNum)) {
+					//Assert.assertEquals(admNumber, admissionNum);
+					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]/label/input"))
+							.click();
+					log("Corresponding student check box is checked for Activate or deactivate.");
+					Thread.sleep(1000);
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Ok Button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void minimizeActiveDeactiveStudent() throws Exception {
-		if (btnMin_MaxActiveDeactiveStudent.isDisplayed()) {
-			btnMin_MaxActiveDeactiveStudent.click();
-			log("Active Deactive Student page minimized and object is:-" + btnMin_MaxActiveDeactiveStudent.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Active Deactive Student Minimized Element not present.");
-		}
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtMasters_ActiveDeactiveStudentMsgDispaly);
+		Thread.sleep(1000);
+
+		clickOnButton(btnMin_MaxActiveDeactiveStudent);
+		log("Active Deactive Student page minimized and object is:-" + btnMin_MaxActiveDeactiveStudent.toString());
+
 	}
 
 	public void maximizeActiveDeactiveStudent() throws Exception {
-		if (btnMin_MaxActiveDeactiveStudent.isDisplayed()) {
-			btnMin_MaxActiveDeactiveStudent.click();
-			log("Active Deactive Student page maximized and object is:-" + btnMin_MaxActiveDeactiveStudent.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Active Deactive Student Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxActiveDeactiveStudent);
+		log("Active Deactive Student page maximized and object is:-" + btnMin_MaxActiveDeactiveStudent.toString());
+		Thread.sleep(1000);
 	}
 
 	public void minimizeActivateDeactivateStudent() throws Exception {
-		if (btnMin_MaxActivateDeactivateStudent.isDisplayed()) {
-			btnMin_MaxActivateDeactivateStudent.click();
-			log("Activate Deactivate Student page minimized and object is:-"
-					+ btnMin_MaxActivateDeactivateStudent.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Activate Deactivate Student Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxActivateDeactivateStudent);
+		log("Activate Deactivate Student page minimized and object is:-"
+				+ btnMin_MaxActivateDeactivateStudent.toString());
 	}
 
 	public void maximizeActivateDeactivateStudent() throws Exception {
-		if (btnMin_MaxActivateDeactivateStudent.isDisplayed()) {
-			btnMin_MaxActivateDeactivateStudent.click();
-			log("Activate Deactivate Student page maximized and object is:-"
-					+ btnMin_MaxActivateDeactivateStudent.toString());
+
+		clickOnButton(btnMin_MaxActivateDeactivateStudent);
+		log("Activate Deactivate Student page maximized and object is:-"
+				+ btnMin_MaxActivateDeactivateStudent.toString());
+	}
+
+	public void popWindowMessage_DeactivatedSuccessfully() throws Exception {
+		try {
+			//validate_PopUpText.isDisplayed();
+			isDisplayed(validate_PopUpText);
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivated Successfully");
+			log("Record Deactivated sucessfully message validated.");
 			Thread.sleep(1000);
-		} else {
-			log("Activate Deactivate Student Maximize Element not present.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_ActivatedSuccessfully() throws Exception {
+		try {
+			//validate_PopUpText.isDisplayed();
+			isDisplayed(validate_PopUpText);
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activated Successfully");
+			log("Record Activated sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

@@ -441,8 +441,21 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitWrittenTest");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			writtentestschedule.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnSuccessOkBtn_ConfirmWrittenTestSchedule() {
 
 		try {
@@ -456,7 +469,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "Search_WrittenTestScheduleName")
+	@Test(priority = 28, dataProvider = "Search_WrittenTestScheduleName")
 	public void tcSearchWithScheduleName_InwrittenTestScheduleList(String scheduleName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -472,7 +485,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 29)
 	public void tcEdit_WrittenTestSchedule() {
 
 		try {
@@ -486,7 +499,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcDeleteStudentFrom_SelectedStudent_Edit() {
 
 		try {
@@ -500,7 +513,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 31)
 	public void tcConfirmDelete_Cancel_SelectedStudent_Edit() {
 
 		try {
@@ -514,7 +527,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcClickOnSuccessOkBtn_ConfirmCancelDelete() {
 
 		try {
@@ -528,7 +541,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 33)
 	public void tcDeleteStudentFrom_SelectedStudent_Edit_AfterConfirmCancel() {
 
 		try {
@@ -544,7 +557,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 34)
 	public void tcConfirmDelete_YesDeleteIt_SelectedStudent_Edit() {
 
 		try {
@@ -558,7 +571,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 35)
 	public void tcClickOnSuccessOkBtn_ConfirmYesDeleteIt() {
 
 		try {
@@ -572,7 +585,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 36)
 	public void tcDelete_ScheduleWrittenTest_FromScheduleListGrid() {
 
 		try {
@@ -586,7 +599,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 37)
 	public void tcConfirmDelete_Cancel_ScheduleList() {
 
 		try {
@@ -600,7 +613,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 38)
 	public void tcClickOnSuccessOkBtn_ConfirmCancelDelete_ScheduleList() {
 
 		try {
@@ -614,7 +627,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 39)
 	public void tcDelete_ScheduleWrittenTest_FromScheduleListGrid_AfterCancel() {
 
 		try {
@@ -630,7 +643,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 40)
 	public void tcConfirmDelete_YesDeleteIt_ScheduleList() {
 
 		try {
@@ -644,7 +657,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 41)
 	public void tcClickOnSuccessOkBtn_ConfirmDelete_YesDeleteIt_ScheduleList() {
 
 		try {
@@ -660,7 +673,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 41, dataProvider = "WrittenTestFormData_PreAdmission")
+	@Test(priority = 42, dataProvider = "WrittenTestFormData_PreAdmission")
 	public void tcFill_WrittenTestScheduleForm_AfterDelete(String scheduleName, String remarks, String supervisor,
 			String skill, String FromSchTimeHr, String FromSchTimeMin, String ToSchTimeHr, String ToSchTimeMin,
 			String runMode) {
@@ -678,7 +691,7 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 		}
 	}
 
-	@Test(priority = 42)
+	@Test(priority = 43)
 	public void tcSelectStudentFromStudentList_ToScheduleWrittenTest_AfterDelete() {
 
 		try {
@@ -694,8 +707,21 @@ public class TC_InterviewSchedule_WrittenTestSchedule extends TestBase {
 			getScreenShot("tcSelectStudentFromStudentList_ToScheduleWrittenTest_AfterDelete");
 		}
 	}
+	@Test(priority = 44)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
-	@Test(priority = 43)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+
+			writtentestschedule.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		}
+	}
+	@Test(priority = 45)
 	public void tcClickOnSaveButton_ToSubmitWrittenTest_AfterDelete() {
 
 		try {

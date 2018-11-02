@@ -326,8 +326,21 @@ public class TC_Masters_Master_Subject extends TestBase {
 			getScreenShot("tcSubmitFilledMasterSubjectForm_Written");
 		}
 	}
-
 	@Test(priority = 17)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_Written() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_Written Test===========");
+
+			mastersubject.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_Written Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Written");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Written");
+		}
+	}
+	@Test(priority = 18)
 	public void tcClickOnOkSuccessButton_Written() {
 
 		try {
@@ -342,7 +355,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void tcSelect_PreAdmissionFlag_OralForm() {
 
 		try {
@@ -357,7 +370,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "MastersMasterSubjectOralData")
+	@Test(priority = 20, dataProvider = "MastersMasterSubjectOralData")
 	public void tcEnterMasterSubjectFormDetails_forPreAdmissionFlag_Oral(String subjectName, String subjectCode,
 			String maxMarks, String minMarks, String runMode) {
 
@@ -377,7 +390,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcSubmitFilledMasterSubjectForm_Oral() {
 
 		try {
@@ -390,8 +403,21 @@ public class TC_Masters_Master_Subject extends TestBase {
 			getScreenShot("tcSubmitFilledMasterSubjectForm_Oral");
 		}
 	}
+	@Test(priority = 22)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_Oral() {
 
-	@Test(priority = 21)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_Oral Test===========");
+
+			mastersubject.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_Oral Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Oral");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Oral");
+		}
+	}
+	@Test(priority = 23)
 	public void tcClickOnOkSuccessButton_Oral() {
 
 		try {
@@ -406,7 +432,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MastersMasterSubjectWithoutPreAdmData")
+	@Test(priority = 24, dataProvider = "MastersMasterSubjectWithoutPreAdmData")
 	public void tcEnterMasterSubjectFormDetails_Without_PreAdmissionFlag(String subjectName, String subjectCode,
 			String runMode) {
 
@@ -425,7 +451,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcSubmitFilledMasterSubjectForm_Without_PreAdmissionFlag() {
 
 		try {
@@ -438,8 +464,21 @@ public class TC_Masters_Master_Subject extends TestBase {
 			getScreenShot("tcSubmitFilledMasterSubjectForm_Without_PreAdmissionFlag");
 		}
 	}
+	@Test(priority = 26)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_Without_PreAdmissionFlag() {
 
-	@Test(priority = 24)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_Without_PreAdmissionFlag Test===========");
+
+			mastersubject.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_Without_PreAdmissionFlag Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Without_PreAdmissionFlag");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Without_PreAdmissionFlag");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_Without_PreAdmissionFlag() {
 
 		try {
@@ -454,7 +493,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 28, dataProvider = "MasterSubjectSearchData")
 	public void tcSearchWithSubjectNameInTheGrid(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -472,7 +511,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 29, dataProvider = "MasterSubjectSearchData")
 	public void tcVerifySubjectNameInTheGrid(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -490,7 +529,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 30, dataProvider = "MasterSubjectSearchData")
 	public void tcEditMasterSubject(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -508,7 +547,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 31)
 	public void tcSubmitFilledMasterSubjectForm_Edit() {
 
 		try {
@@ -522,8 +561,21 @@ public class TC_Masters_Master_Subject extends TestBase {
 			getScreenShot("tcSubmitFilledMasterSubjectForm_Edit");
 		}
 	}
+	@Test(priority = 32)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 29)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastersubject.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 33)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -538,7 +590,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 34, dataProvider = "MasterSubjectSearchData")
 	public void tcSearchWithSubjectNameInTheGrid_ForDeactivate(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -556,7 +608,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 31, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 35, dataProvider = "MasterSubjectSearchData")
 	public void tcDeactivateMasterSubject(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -574,7 +626,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 36)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -589,7 +641,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -604,7 +656,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 38, dataProvider = "MasterSubjectSearchData")
 	public void tcSearchWithSubjectNameInTheGrid_ForDeactivate_AfterCancel(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -624,7 +676,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 39, dataProvider = "MasterSubjectSearchData")
 	public void tcDeactivateMasterSubject_AfterCancel(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -642,7 +694,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 40)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -656,8 +708,21 @@ public class TC_Masters_Master_Subject extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 41)
+	public void tcPopWindowMessage_DeactivatedSuccessfully_Validation() {
 
-	@Test(priority = 37)
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+
+			mastersubject.popWindowMessage_DeactivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -672,7 +737,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 43, dataProvider = "MasterSubjectSearchData")
 	public void tcSearchWithSubjectNameInTheGrid_ForActivate(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -690,7 +755,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 39, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 44, dataProvider = "MasterSubjectSearchData")
 	public void tcActivateMasterSubject(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -708,7 +773,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 45)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -723,7 +788,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 41)
+	@Test(priority = 46)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -738,7 +803,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 42, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 47, dataProvider = "MasterSubjectSearchData")
 	public void tcSearchWithSubjectNameInTheGrid_ForActivate_AfterCancel(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -756,7 +821,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 43, dataProvider = "MasterSubjectSearchData")
+	@Test(priority = 48, dataProvider = "MasterSubjectSearchData")
 	public void tcActivateMasterSubject_AfterCancel(String subjectName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -773,7 +838,7 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 44)
+	@Test(priority = 49)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -787,8 +852,21 @@ public class TC_Masters_Master_Subject extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 50)
+	public void tcPopWindowMessage_ActivatedSuccessfully_Validation() {
 
-	@Test(priority = 45)
+		try {
+			log.info("============= Strting tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+
+			mastersubject.popWindowMessage_ActivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 51)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {
@@ -803,95 +881,95 @@ public class TC_Masters_Master_Subject extends TestBase {
 		}
 	}
 
-	@Test(priority = 46)
-	public void tcClickOnSetOrder() {
-
-		try {
-			log.info("============= Strting tcClickOnSetOrder Test===========");
-
-			mastersubject.clickOnSetOrder();
-
-			log.info("============= Finished tcClickOnSetOrder Test===========");
-			getScreenShot("tcClickOnSetOrder");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSetOrder");
-		}
-	}
-
-	@Test(priority = 47)
-	public void tcSetSubjectOrder() {
-
-		try {
-			log.info("============= Strting tcSetSubjectOrder Test===========");
-
-			mastersubject.setSubjectOrder();
-
-			log.info("============= Finished tcSetSubjectOrder Test===========");
-			getScreenShot("tcSetSubjectOrder");
-		} catch (Exception e) {
-			getScreenShot("tcSetSubjectOrder");
-		}
-	}
-
-	@Test(priority = 48)
-	public void tcCloseSetSubjectOrderPopUpWindow() {
-
-		try {
-			log.info("============= Strting tcCloseSetSubjectOrderPopUpWindow Test===========");
-
-			mastersubject.closeSetSubjectOrderPopUpWindow();
-
-			log.info("============= Finished tcCloseSetSubjectOrderPopUpWindow Test===========");
-			getScreenShot("tcCloseSetSubjectOrderPopUpWindow");
-		} catch (Exception e) {
-			getScreenShot("tcCloseSetSubjectOrderPopUpWindow");
-		}
-	}
-
-	@Test(priority = 49)
-	public void tcClickOnSetOrder_AfterClose() {
-
-		try {
-			log.info("============= Strting tcClickOnSetOrder Test===========");
-
-			mastersubject.clickOnSetOrder();
-
-			log.info("============= Finished tcClickOnSetOrder Test===========");
-			getScreenShot("tcClickOnSetOrder");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSetOrder");
-		}
-	}
-
-	@Test(priority = 50)
-	public void tcSetSubjectOrder_AfterClose() {
-
-		try {
-			log.info("============= Strting tcSetSubjectOrder_AfterClose Test===========");
-
-			mastersubject.setSubjectOrder();
-
-			log.info("============= Finished tcSetSubjectOrder_AfterClose Test===========");
-			getScreenShot("tcSetSubjectOrder_AfterClose");
-		} catch (Exception e) {
-			getScreenShot("tcSetSubjectOrder_AfterClose");
-		}
-	}
-
-	@Test(priority = 51)
-	public void tcSaveSetSubjectOrderPopUpWindow() {
-
-		try {
-			log.info("============= Strting tcSaveSetSubjectOrderPopUpWindow Test===========");
-
-			mastersubject.saveSetSubjectOrderPopUpWindow();
-
-			log.info("============= Finished tcSaveSetSubjectOrderPopUpWindow Test===========");
-			getScreenShot("tcSaveSetSubjectOrderPopUpWindow");
-		} catch (Exception e) {
-			getScreenShot("tcSaveSetSubjectOrderPopUpWindow");
-		}
-	}
+//	@Test(priority = 52)
+//	public void tcClickOnSetOrder() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSetOrder Test===========");
+//
+//			mastersubject.clickOnSetOrder();
+//
+//			log.info("============= Finished tcClickOnSetOrder Test===========");
+//			getScreenShot("tcClickOnSetOrder");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSetOrder");
+//		}
+//	}
+//
+//	@Test(priority = 53)
+//	public void tcSetSubjectOrder() {
+//
+//		try {
+//			log.info("============= Strting tcSetSubjectOrder Test===========");
+//
+//			mastersubject.setSubjectOrder();
+//
+//			log.info("============= Finished tcSetSubjectOrder Test===========");
+//			getScreenShot("tcSetSubjectOrder");
+//		} catch (Exception e) {
+//			getScreenShot("tcSetSubjectOrder");
+//		}
+//	}
+//
+//	@Test(priority = 54)
+//	public void tcCloseSetSubjectOrderPopUpWindow() {
+//
+//		try {
+//			log.info("============= Strting tcCloseSetSubjectOrderPopUpWindow Test===========");
+//
+//			mastersubject.closeSetSubjectOrderPopUpWindow();
+//
+//			log.info("============= Finished tcCloseSetSubjectOrderPopUpWindow Test===========");
+//			getScreenShot("tcCloseSetSubjectOrderPopUpWindow");
+//		} catch (Exception e) {
+//			getScreenShot("tcCloseSetSubjectOrderPopUpWindow");
+//		}
+//	}
+//
+//	@Test(priority = 55)
+//	public void tcClickOnSetOrder_AfterClose() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSetOrder Test===========");
+//
+//			mastersubject.clickOnSetOrder();
+//
+//			log.info("============= Finished tcClickOnSetOrder Test===========");
+//			getScreenShot("tcClickOnSetOrder");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSetOrder");
+//		}
+//	}
+//
+//	@Test(priority = 56)
+//	public void tcSetSubjectOrder_AfterClose() {
+//
+//		try {
+//			log.info("============= Strting tcSetSubjectOrder_AfterClose Test===========");
+//
+//			mastersubject.setSubjectOrder();
+//
+//			log.info("============= Finished tcSetSubjectOrder_AfterClose Test===========");
+//			getScreenShot("tcSetSubjectOrder_AfterClose");
+//		} catch (Exception e) {
+//			getScreenShot("tcSetSubjectOrder_AfterClose");
+//		}
+//	}
+//
+//	@Test(priority = 57)
+//	public void tcSaveSetSubjectOrderPopUpWindow() {
+//
+//		try {
+//			log.info("============= Strting tcSaveSetSubjectOrderPopUpWindow Test===========");
+//
+//			mastersubject.saveSetSubjectOrderPopUpWindow();
+//
+//			log.info("============= Finished tcSaveSetSubjectOrderPopUpWindow Test===========");
+//			getScreenShot("tcSaveSetSubjectOrderPopUpWindow");
+//		} catch (Exception e) {
+//			getScreenShot("tcSaveSetSubjectOrderPopUpWindow");
+//		}
+//	}
 
 	@AfterClass
 	public void tearDown() {

@@ -9,8 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -23,8 +21,7 @@ public class Fee_Installment_Report extends TestBase {
 	public static final Logger log = Logger.getLogger(Fee_Installment_Report.class.getName());
 
 	private WebDriver driver;
-	private Select select;
-	private WebElement option;
+
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	private WebElement btnHome;
@@ -35,7 +32,11 @@ public class Fee_Installment_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	private WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[4]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[4]")
+	// private WebElement btn_FeeInstallmentReport;
+
+	@FindBy(xpath = "//a[@href='#/app/FeeInstallmentReport/207']")
 	private WebElement btn_FeeInstallmentReport;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -89,7 +90,7 @@ public class Fee_Installment_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -104,31 +105,15 @@ public class Fee_Installment_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToFee_Reports_FeeInstallmentReport() throws Exception {
-		if (btn_Fee.isDisplayed()) {
-			btn_Fee.click();
-			log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeReports.isDisplayed()) {
-			btn_FeeReports.click();
-			log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeInstallmentReport.isDisplayed()) {
-			btn_FeeInstallmentReport.click();
-			log("Clicked on Fee Installment Report Button in navigation panel and object is:-"
-					+ btn_FeeInstallmentReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Installment Report button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Fee);
+		log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
+
+		clickOnButton(btn_FeeReports);
+		log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
+
+		clickOnButton(btn_FeeInstallmentReport);
+		log("Clicked on Fee Installment Report Button in navigation panel and object is:-"
+				+ btn_FeeInstallmentReport.toString());
 
 	}
 
@@ -151,14 +136,10 @@ public class Fee_Installment_Report extends TestBase {
 	}
 
 	public void submitBlank_FeeInstallmentReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
+	
+			clickOnButton(btn_Report);
 			log("Submit blank Fee Installment form and object is:-" + btn_Report.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/*
@@ -166,7 +147,7 @@ public class Fee_Installment_Report extends TestBase {
 	 * 
 	 */
 	public void fill_FeeInstallmentReportForm_ForCategoryWise(String academicYear, String category) throws Exception {
-
+		isDisplayed(rdBtn_CategoryWise);
 		if (!rdBtn_CategoryWise.isSelected()) {
 			rdBtn_CategoryWise.click();
 			log("Category Wise radio button is selected and object is:- " + rdBtn_CategoryWise.toString());
@@ -176,31 +157,13 @@ public class Fee_Installment_Report extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYear, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Category.isDisplayed()) {
-			select = new Select(sel_Category);
-			select.selectByVisibleText(category);
-
+	
+			selectElementFromDropDown(sel_Category, category);
 			log("Selected Category: " + category + " and object is:- " + sel_Category.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), category);
-			Thread.sleep(1000);
-		} else {
-			log("Category element is not present");
-			Thread.sleep(500);
-		}
-
+			
+			isDisplayed(chk_InstallmentType);
 		if (!chk_InstallmentType.isSelected()) {
 			chk_InstallmentType.click();
 			log("Installment check box is checked and object is:- " + chk_InstallmentType.toString());
@@ -210,12 +173,14 @@ public class Fee_Installment_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
 	 * Generate report for Class Wise
 	 * 
 	 */
-	public void fill_FeeInstallmentReportForm_ForClassWise(String academicYear, String class_Inst, String section_Inst) throws Exception {
-
+	public void fill_FeeInstallmentReportForm_ForClassWise(String academicYear, String class_Inst, String section_Inst)
+			throws Exception {
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Class Wise radio button is selected and object is:- " + rdBtn_ClassWise.toString());
@@ -225,110 +190,64 @@ public class Fee_Installment_Report extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYear, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_Inst);
-
+		
+			selectElementFromDropDown(sel_Class, class_Inst);
 			log("Selected Class: " + class_Inst + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Inst);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
-
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section_Inst);
-
+		
+			selectElementFromDropDown(sel_Section, section_Inst);
 			log("Selected Section: " + section_Inst + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_Inst);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present");
-			Thread.sleep(500);
-		}
+			
 	}
+
 	public void min_Max_FeeInstallmentReport_Form() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeInstallmentReport);
 		Thread.sleep(1000);
-		if (btnMin_MaxFeeInstallmentReport.isDisplayed()) {
-			btnMin_MaxFeeInstallmentReport.click();
+
+			clickOnButton(btnMin_MaxFeeInstallmentReport);
 			log("Fee Installment Report page minimized or maximized and object is:-"
 					+ btnMin_MaxFeeInstallmentReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Installment Report Minimized Element not present.");
-		}
+		
 	}
 
 	public void min_Max_FeeInstallmentReport_Grid() throws Exception {
-		if (btnMin_MaxFeeInstallmentReportGrid.isDisplayed()) {
-			btnMin_MaxFeeInstallmentReportGrid.click();
+	
+			clickOnButton(btnMin_MaxFeeInstallmentReportGrid);
 			log("Fee Installment Report Grid page minimized or maximized and object is:-"
 					+ btnMin_MaxFeeInstallmentReportGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Installment Report Grid Minimized Element not present.");
-		}
+			
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
+
+			clickOnButton(btn_ExportToExcel);
 			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to Excel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(3000);
+		
 	}
 
 	public void clickOnExportToPDF_ToDownLoadPDFReport() throws Exception {
-		if (btn_ExportToPDF.isDisplayed()) {
-			btn_ExportToPDF.click();
+		
+			clickOnButton(btn_ExportToPDF);
 			log("To Download PDF report click on Export to PDF and object is:-" + btn_ExportToPDF.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to PDF button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void clickReport_ToGenerate_FeeInstallmentReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
+	
+			clickOnButton(btn_Report);
 			log("Fee Installment Report is generated and object is:-" + btn_Report.toString());
 			Thread.sleep(5000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void clickCancelButton_ToClearFilledForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
+		
+			clickOnButton(btn_Cancel);
 			log("Fee Installment report filled form data is cleared and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 }

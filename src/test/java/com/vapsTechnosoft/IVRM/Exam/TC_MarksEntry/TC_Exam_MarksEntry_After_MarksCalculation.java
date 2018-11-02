@@ -12,8 +12,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.vapsTechnosoft.IVRM.Exam.MarksEntry.Exam_MarksEntry;
 import com.vapsTechnosoft.IVRM.Exam.MarksEntry.Exam_MarksEntry_After_MarksCalculation;
 import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -130,20 +128,19 @@ public class TC_Exam_MarksEntry_After_MarksCalculation extends TestBase{
 	}
 
 	@Test(priority = 5)
-	public void tcClickOnSaveButton_ToSubmitFilledRecords_Blank() {
+	public void tcClickOnSearchButton_ToSubmitRecords_Blank() {
 
 		try {
-			log.info("============= Strting tcClickOnSaveButton_ToSubmitFilledRecords_Blank Test===========");
+			log.info("============= Strting tcClickOnSearchButton_ToSubmitRecords_Blank Test===========");
 
-			marksentry_marksCalc.clickOnSaveButton_ToSubmitFilledRecords();
+			marksentry_marksCalc.clickOnSearchButton_ToGetStudentMarksEntryList();
 
-			log.info("============= Finished tcClickOnSaveButton_ToSubmitFilledRecords_Blank Test===========");
-			getScreenShot("tcClickOnSaveButton_ToSubmitFilledRecords_Blank");
+			log.info("============= Finished tcClickOnSearchButton_ToSubmitRecords_Blank Test===========");
+			getScreenShot("tcClickOnSearchButton_ToSubmitRecords_Blank");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButton_ToSubmitFilledRecords_Blank");
+			getScreenShot("tcClickOnSearchButton_ToSubmitRecords_Blank");
 		}
 	}
-
 	@Test(priority = 6, dataProvider = "Exam_MarksEntry_FormData")
 	public void tcFill_MarksEntry_Form(String academicYear, String class_Me, String section, String examType,
 			String subject, String runMode) {
@@ -520,6 +517,19 @@ public class TC_Exam_MarksEntry_After_MarksCalculation extends TestBase{
 		}
 	}
 	@Test(priority = 31)
+	public void tcPopUpWindowMessage_SubmitSuccessfully() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully Test===========");
+
+			marksentry_marksCalc.popUpWindowMessage_SubmitSuccessfully();
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully");
+		}
+	}
+	@Test(priority = 32)
 	public void tcClickOnSuccessOkBtn_saved() {
 
 		try {

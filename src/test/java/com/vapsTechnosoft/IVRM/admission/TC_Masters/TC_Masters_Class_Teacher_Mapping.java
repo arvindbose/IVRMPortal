@@ -294,8 +294,23 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 			getScreenShot("tcSaveClassTeacherMappInfoData");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_1stStaff() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_1stStaff Test===========");
+
+			classteachermapp.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_1stStaff Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_1stStaff");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_1stStaff");
+		}
+	}
+
+
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -310,7 +325,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 16, dataProvider = "MastersClassTeacher2MappData")
+	@Test(priority = 17, dataProvider = "MastersClassTeacher2MappData")
 	public void tcSelectClassTeacherMappingData_2ndStaff(String academicYr, String class_Map, String section,
 			String staff_Teacher, String runMode) {
 
@@ -329,7 +344,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 17)
+	@Test(priority = 18)
 	public void tcSaveClassTeacherMappInfoData_2ndStaff() {
 
 		try {
@@ -343,8 +358,23 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 			getScreenShot("tcSaveClassTeacherMappInfoData_2ndStaff");
 		}
 	}
+	@Test(priority = 19)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_2ndStaff() {
 
-	@Test(priority = 18)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_2ndStaff Test===========");
+
+			classteachermapp.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_2ndStaff Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_2ndStaff");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_2ndStaff");
+		}
+	}
+
+
+	@Test(priority = 20)
 	public void tcClickOnOkSuccessButton_2ndStaff() {
 
 		try {
@@ -359,7 +389,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "StaffSearchData")
+	@Test(priority = 21, dataProvider = "StaffSearchData")
 	public void tcSearchWithStaffNameInTheGrid(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -377,7 +407,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 20, dataProvider = "StaffSearchData")
+	@Test(priority = 22, dataProvider = "StaffSearchData")
 	public void tcVerifyStaffNameUpdatedInTheGrid(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -395,7 +425,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "StaffSearchData")
+	@Test(priority = 23, dataProvider = "StaffSearchData")
 	public void tcDeactivateClassTeacherMapped(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -413,7 +443,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 24)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -428,7 +458,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -443,7 +473,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 24, dataProvider = "StaffSearchData")
+	@Test(priority = 26, dataProvider = "StaffSearchData")
 	public void tcSearchWithStaffNameInTheGrid_AfterCancel(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -461,7 +491,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "StaffSearchData")
+	@Test(priority = 27, dataProvider = "StaffSearchData")
 	public void tcDeactivateClassTeacherMapped_AfterCancel(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -478,7 +508,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 28)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -493,7 +523,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -508,7 +538,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "StaffSearchData")
+	@Test(priority = 30, dataProvider = "StaffSearchData")
 	public void tcSearchWithStaffNameInTheGrid_ForActivate(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -526,7 +556,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "StaffSearchData")
+	@Test(priority = 31, dataProvider = "StaffSearchData")
 	public void tcActivateClassTeacherMapped(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -544,7 +574,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 32)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -559,7 +589,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 33)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -574,7 +604,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "StaffSearchData")
+	@Test(priority = 34, dataProvider = "StaffSearchData")
 	public void tcSearchWithStaffNameInTheGrid_ForActivateAfterCancel(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -592,7 +622,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "StaffSearchData")
+	@Test(priority = 35, dataProvider = "StaffSearchData")
 	public void tcActivateClassTeacherMapped_AfterCancel(String staffName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -609,7 +639,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 36)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -624,7 +654,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {
@@ -639,7 +669,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 38)
 	public void tcClickOnclassTeacherXchange() {
 
 		try {
@@ -654,7 +684,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 39)
 	public void tcCloseXchangePopUpWindow() {
 
 		try {
@@ -669,7 +699,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 40)
 	public void tcClickOnclassTeacherXchange_AfterClose() {
 
 		try {
@@ -684,7 +714,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 39, dataProvider = "MastersClassTeacherXchangeData")
+	@Test(priority = 41, dataProvider = "MastersClassTeacherXchangeData")
 	public void tcSelectTeacherClassXchangeData(String staff1, String staff2, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -702,7 +732,7 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 42)
 	public void tcSaveTeacherClassXchangeData() {
 
 		try {
@@ -716,8 +746,23 @@ public class TC_Masters_Class_Teacher_Mapping extends TestBase {
 			getScreenShot("tcSaveTeacherClassXchangeData");
 		}
 	}
+	
+	@Test(priority = 43)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Xchange_Validation() {
 
-	@Test(priority = 41)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Xchange_Validation Test===========");
+
+			classteachermapp.popWindowMessage_SubmitSuccessfully_Xchange();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Xchange_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Xchange_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Xchange_Validation");
+		}
+	}
+
+	@Test(priority = 44)
 	public void tcClickOnOkSuccessButton_Xchange() {
 
 		try {

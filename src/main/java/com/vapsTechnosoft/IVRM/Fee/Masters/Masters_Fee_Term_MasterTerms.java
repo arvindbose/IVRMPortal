@@ -27,17 +27,17 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
 	WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[8]")
+	@FindBy(xpath = "//a[@href='#/app/FeeMasterTerms/82']")
 	WebElement btnFeeTerm;
 
-	@FindBy(xpath = "//div[@class='col-sm-8']/input")
-	WebElement txtTermName;
+	@FindBy(xpath = "//input[@name='tname' and @ng-model='FMT_Name']")
+	WebElement input_TermName;
 
 	@FindBy(xpath = "//button[@id='save-btn']")
 	WebElement btnSave;
@@ -82,17 +82,15 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 	}
 
 	public void nevigateToMasters_FeeTermMasterTerm() throws Exception {
-		btnFee.click();
+		clickOnButton(btnFee);
 		log("Clicked on Fee Button and object is:-" + btnFee.toString());
-		Thread.sleep(1000);
 
-		feeMasters.click();
+		clickOnButton(feeMasters);
 		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-		Thread.sleep(1000);
 
-		btnFeeTerm.click();
+		clickOnButton(btnFeeTerm);
 		log("Clicked on Fee Term Button and object is:-" + btnFeeTerm.toString());
-		Thread.sleep(5000);
+
 	}
 
 	public boolean verifyFeeTermPage() {
@@ -109,15 +107,17 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 	}
 
 	public void mastersFeeMasterTerms(String feeTermName) throws Exception {
-		txtTermName.sendKeys(feeTermName);
-		log("entered Fee Term name:-" + txtTermName + " and object is " + txtTermName.toString());
+
+		inputTextIntoInputField(input_TermName, feeTermName);
+		log("entered Fee Term name:-" + feeTermName + " and object is " + input_TermName.toString());
 		Thread.sleep(1000);
 	}
 
 	public void clickOnSaveButton() throws Exception {
-		btnSave.click();
+	
+		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -135,16 +135,17 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		btnOkonSuccess.click();
+	
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	public void searchTermByTermName(String feeTermName) throws Exception {
 
-		inputSearch.sendKeys(feeTermName);
+		inputTextIntoInputField(inputSearch, feeTermName);
 		log("Entered term name:" + feeTermName + "and object is:-" + inputSearch.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	public void verifyTermNameUpdatedInGrid(String feeTermName) throws Exception {
@@ -152,19 +153,24 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String TermName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(TermName);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(TermName, feeTermName);
-
-				log("Term name is update in the grid:" + feeTermName);
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String TermName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText();
+				System.out.println(TermName);
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (TermName.equals(feeTermName)) {
+					Assert.assertEquals(TermName, feeTermName);
+
+					log("Term name is update in the grid:" + feeTermName);
+					Thread.sleep(2000);
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -175,28 +181,34 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String TermName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(TermName);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(TermName, feeTermName);
-				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]/span/a"))
-						.click();
-				log("Clicked on deactivation link in Fee term grid");
-
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String TermName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText();
+				System.out.println(TermName);
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (TermName.equals(feeTermName)) {
+					Assert.assertEquals(TermName, feeTermName);
+					driver.findElement(
+							By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]/span/a")).click();
+					log("Clicked on deactivation link in Fee term grid");
+
+					Thread.sleep(2000);
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void confirmationForDeactivation() throws Exception {
-		btnPopUpYesDeactivateit.click();
+		
+		clickOnButton(btnPopUpYesDeactivateit);
 		log("Clicked on record Yes Deactivate it button and object is:" + btnPopUpYesDeactivateit.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifyDeactivationSuccessfulPopUp() {
@@ -214,9 +226,10 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 	}
 
 	public void clickOnDeactivationFinalOkBtn() throws Exception {
-		btnOkonSuccess.click();
+	
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	// Activation of Fee Term
@@ -226,28 +239,33 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String TermName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(TermName);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(TermName, feeTermName);
-				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]/span/a"))
-						.click();
-				log("Clicked on activation link in Fee term grid");
-
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String TermName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText();
+				System.out.println(TermName);
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (TermName.equals(feeTermName)) {
+					Assert.assertEquals(TermName, feeTermName);
+					driver.findElement(
+							By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]/span/a")).click();
+					log("Clicked on activation link in Fee term grid");
+
+					Thread.sleep(2000);
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void confirmationForActivation() throws Exception {
-		btnPopUpYesDeactivateit.click();
+
+		clickOnButton(btnPopUpYesDeactivateit);
 		log("Clicked on Yes activate it button and object is:" + btnPopUpYesDeactivateit.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifyActivationSuccessfulPopUp() {
@@ -264,9 +282,10 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 	}
 
 	public void clickOnActivationFinalOkBtn() throws Exception {
-		btnOkonSuccess.click();
+
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	public void editFeeTerm_MasterTerm(String feeTermName) throws Exception {
@@ -274,35 +293,42 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String TermName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(TermName);
-			Thread.sleep(2000);
-			try {
-				Assert.assertEquals(TermName, feeTermName);
-				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]/a"))
-						.click();
-				log("Clicked on Edit link in Fee term grid");
-
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String TermName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText();
+				System.out.println(TermName);
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				e.printStackTrace();
+
+				if (TermName.equals(feeTermName)) {
+					Assert.assertEquals(TermName, feeTermName);
+					driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[4]/a"))
+							.click();
+					log("Clicked on Edit link in Fee term grid");
+
+					Thread.sleep(2000);
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void editmastersFeeMasterTerms(String feeTermNameNew) throws Exception {
-		txtTermName.clear();
-		txtTermName.sendKeys(feeTermNameNew);
-		log("entered new Fee Term name:-" + txtTermName + " and object is " + txtTermName.toString());
+	
+		inputTextIntoInputField(input_TermName, feeTermNameNew);
+		log("entered new Fee Term name:-" + feeTermNameNew + " and object is " + input_TermName.toString());
 		Thread.sleep(1000);
 	}
 
 	public void clickOnSaveButtonEdit() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifySuccessfulPopUpEdit() {
@@ -320,9 +346,10 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtnEdit() throws Exception {
-		btnOkonSuccess.click();
-		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
-	}
 	
+		clickOnButton(btnOkonSuccess);
+		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
+	
+	}
+
 }

@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -41,7 +43,11 @@ public class Masters_Government_Bond extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[23]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[23]")
+	// WebElement btnMasters_GovernmentBond;
+
+	@FindBy(xpath = "//a[@href='#/app/governmentbond/69']")
 	WebElement btnMasters_GovernmentBond;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -83,6 +89,9 @@ public class Masters_Government_Bond extends TestBase {
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxGovtBondList;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Government_Bond(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -92,7 +101,7 @@ public class Masters_Government_Bond extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -107,17 +116,15 @@ public class Masters_Government_Bond extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_GovernmentBond_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_GovernmentBond);
 
-		btnMasters_GovernmentBond.click();
+		clickOnButton(btnMasters_GovernmentBond);
 		log("Clicked on Government Bond Button and object is:-" + btnMasters_GovernmentBond.toString());
-		waitForElement(driver, 10, btnSave);
+
 	}
 
 	/**
@@ -138,79 +145,82 @@ public class Masters_Government_Bond extends TestBase {
 		}
 	}
 
-	public void enterMasterGovernmentBondDetailsData(String bondName, String bondDescription) {
+	public void enterMasterGovernmentBondDetailsData(String bondName, String bondDescription) throws Exception {
 
-		input_BondName.clear();
-		input_BondName.sendKeys(bondName);
+		inputTextIntoInputField(input_BondName, bondName);
 		log("Entered bond name " + bondName + " and object is:-" + input_BondName.toString());
 
-		input_BondDescription.clear();
-		input_BondDescription.sendKeys(bondDescription);
+		inputTextIntoInputField(input_BondDescription, bondDescription);
 		log("Entered Bond description " + bondDescription + " and object is:-" + input_BondDescription.toString());
 
 	}
 
 	public void submitBlankGovernmentBondForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Submit blank Government Bond form and object is:-" + btnSave.toString());
-		Thread.sleep(3000);
+
 	}
 
 	public void clearGovernmentBondInfoData() throws Exception {
-		btnCancelClear.click();
+
+		clickOnButton(btnCancelClear);
 		log("Clicked on clear button to clear filled Government Bond info and object is:-" + btnCancelClear.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void saveGovernmentBondInfoData() throws Exception {
-		btnSave.click();
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on save button to save filled Government Bond info and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void searchWithGovernmentBondNameInTheGrid(String bondName) {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(bondName);
+		inputTextIntoInputField(inputSearch, bondName);
 		log("Entered bond name to search: " + bondName + " and object is:-" + inputSearch.toString());
 	}
 
 	public void minimizeMasterGovernmentBond() throws Exception {
-		btnMin_MaxMasterGovtBond.click();
+
+		clickOnButton(btnMin_MaxMasterGovtBond);
 		log("clicked on Government Bond minimize button and object is:-" + btnMin_MaxMasterGovtBond.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterGovernmentBond() throws Exception {
-		btnMin_MaxMasterGovtBond.click();
+
+		clickOnButton(btnMin_MaxMasterGovtBond);
 		log("clicked on Government Bond maximize button and object is:-" + btnMin_MaxMasterGovtBond.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeGovernmentBondList() throws Exception {
 
-		btnMin_MaxGovtBondList.click();
+		clickOnButton(btnMin_MaxGovtBondList);
 		log("Government Bond list table data minimize and object is:-" + btnMin_MaxGovtBondList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeGovernmentBondList() throws Exception {
 
-		btnMin_MaxGovtBondList.click();
+		clickOnButton(btnMin_MaxGovtBondList);
 		log("Government Bond list table data maximized and object is:-" + btnMin_MaxGovtBondList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void sortByBondName() throws Exception {
-		btnSortByBondName.click();
+
+		clickOnButton(btnSortByBondName);
 		log("Sorted the record with bond name and object is:-" + btnSortByBondName.toString());
 		Thread.sleep(3000);
 	}
@@ -220,12 +230,13 @@ public class Masters_Government_Bond extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String bondname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Bond Name: " + bondname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String bondname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Bond Name: " + bondname);
+				// Thread.sleep(2000);
+
 				if (bondname.equalsIgnoreCase(bondName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[1]"))
@@ -234,16 +245,12 @@ public class Masters_Government_Bond extends TestBase {
 					log("Clicked on the edit link in the Government Bondlist grid to edit record");
 
 					break;
-				} else {
-					log("Bond Name not matched with the Government Bond list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+
 	}
 
 	public void deleteGovernmentBond(String bondName) {
@@ -251,12 +258,13 @@ public class Masters_Government_Bond extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String bondname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Bond Name: " + bondname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String bondname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Bond Name: " + bondname);
+				// Thread.sleep(2000);
+
 				if (bondname.equalsIgnoreCase(bondName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[2]"))
@@ -265,30 +273,26 @@ public class Masters_Government_Bond extends TestBase {
 					log("Clicked on the delete link in the Government Bond list grid to delete record");
 
 					break;
-				} else {
-					log("Bond Name not matched with the Government Bond list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+		Thread.sleep(2000);
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnCancel.click();
+		clickOnButton(btnCancel);
 		log("Clicked on cancel button and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void verifyBondNameInTheGrid(String bondName) {
@@ -296,21 +300,45 @@ public class Masters_Government_Bond extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String bondname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Bond Name: " + bondname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String bondname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Bond Name: " + bondname);
+				// Thread.sleep(2000);
+				if (bondname.equals(bondName)) {
 
-				Assert.assertEquals(bondname, bondName);
-				log("Bond name created is updated in the record grid.");
-
-			} catch (Exception e) {
-				e.printStackTrace();
+					log("Bond name created is updated in the record grid.");
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

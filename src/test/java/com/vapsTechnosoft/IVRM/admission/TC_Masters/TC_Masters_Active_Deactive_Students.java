@@ -441,8 +441,21 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 			getScreenShot("tcSaveFilledActiveDeactiveStudentForm_ToDeactivate");
 		}
 	}
-
 	@Test(priority = 24)
+	public void tcPopUpWindowMessage_DeactivatedSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+
+			active_deactivestudent.popWindowMessage_DeactivatedSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivatedSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 25)
 	public void tcClickOnOkSuccessButton_ToDeactivate() {
 
 		try {
@@ -457,7 +470,7 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 		}
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcSelect_DeActiveStudent_RadioButton_ToActivate() {
 
 		try {
@@ -472,7 +485,7 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "Masters_ActDeactivateStudentData")
+	@Test(priority = 27, dataProvider = "Masters_ActDeactivateStudentData")
 	public void tcFillActiveDeactiveStudentForm_ToActivate(String academicYear, String class_AD, String section,
 			String runMode) {
 
@@ -491,7 +504,7 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "Search_ActivateStudentData")
+	@Test(priority = 28, dataProvider = "Search_ActivateStudentData")
 	public void tcSearchWithAdmissionNumber_ActivateDeactivateStudentListGrid_ToActivate(String admissionNum,
 			String runMode) {
 
@@ -512,7 +525,7 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "Search_ActivateStudentData")
+	@Test(priority = 29, dataProvider = "Search_ActivateStudentData")
 	public void tcVerifyStudent_ForActiveDeactiveInGrid_ToActivate(String admissionNum, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -530,7 +543,7 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "Search_ActivateStudentData")
+	@Test(priority = 30, dataProvider = "Search_ActivateStudentData")
 	public void tcSelectStudentForActivateDeactivate_ToActivate(String admissionNum, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -548,7 +561,7 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 31)
 	public void tcSelect_ActivateStudent_checkBox_ToActivate() {
 
 		try {
@@ -563,7 +576,7 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcSaveFilledActiveDeactiveStudentForm_ToActivate() {
 
 		try {
@@ -577,8 +590,22 @@ public class TC_Masters_Active_Deactive_Students extends TestBase {
 			getScreenShot("tcSaveFilledActiveDeactiveStudentForm_ToActivate");
 		}
 	}
+	@Test(priority = 33)
+	public void tcPopUpWindowMessage_ActivatedSuccessfully_Validation() {
 
-	@Test(priority = 32)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivatedSuccessfully_Validation Test===========");
+
+			active_deactivestudent.popWindowMessage_ActivatedSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivatedSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 34)
 	public void tcClickOnOkSuccessButton_ToActivate() {
 
 		try {

@@ -367,19 +367,33 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
+//	@Test(priority = 20)
+//	public void tcVerifySuccessfulPopUp() {
+//
+//		try {
+//			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+//
+//			boolean status = feeMasterInstallment.verifySuccessfulPopUp();
+//			Assert.assertEquals(status, true);
+//
+//			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
+//			getScreenShot("tcVerifySuccessfulPopUp");
+//		} catch (Exception e) {
+//			getScreenShot("tcVerifySuccessfulPopUp");
+//		}
+//	}
 	@Test(priority = 20)
-	public void tcVerifySuccessfulPopUp() {
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
 
-			boolean status = feeMasterInstallment.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			feeMasterInstallment.popWindowMessage_SubmitSuccessfully();
 
-			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
 
@@ -451,7 +465,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 			getScreenShot("tcEdit_MasterFeeInstallment");
 		}
 	}
-
+	
 	@Test(priority = 25)
 	public void tcClickOnSaveButton_MasterFeeInstallmentForm_Edit() {
 
@@ -466,8 +480,22 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 			getScreenShot("tcClickOnSaveButton_MasterFeeInstallmentForm_Edit");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			feeMasterInstallment.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -505,7 +533,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "Search_FeeInstallmentNameData")
+	@Test(priority = 29, dataProvider = "Search_FeeInstallmentNameData")
 	public void tcDeactivationOfCreated_MasterFeeInstallment(String installmentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -523,7 +551,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcClickOnCancelButton_PopUp_deactivate() {
 
 		try {
@@ -537,8 +565,22 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 			getScreenShot("tcClickOnCancelButton_PopUp_deactivate");
 		}
 	}
+	@Test(priority = 31)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 
-	@Test(priority = 30)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			feeMasterInstallment.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -553,7 +595,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 31, dataProvider = "Search_FeeInstallmentNameData")
+	@Test(priority = 33, dataProvider = "Search_FeeInstallmentNameData")
 	public void tcSearchBy_InstallmentName_InFeeMasterInstallmentGridView_ForDeactivate_AfterCancel(
 			String installmentName, String runMode) {
 
@@ -574,7 +616,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "Search_FeeInstallmentNameData")
+	@Test(priority = 34, dataProvider = "Search_FeeInstallmentNameData")
 	public void tcDeactivationOfCreated_MasterFeeInstallment_AfterCancel(String installmentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -592,7 +634,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 35)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -606,8 +648,21 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 36)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
-	@Test(priority = 34)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			feeMasterInstallment.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -622,7 +677,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "Search_FeeInstallmentNameData")
+	@Test(priority = 38, dataProvider = "Search_FeeInstallmentNameData")
 	public void tcSearchBy_InstallmentName_InFeeMasterInstallmentGridView_ForActivate(String installmentName,
 			String runMode) {
 
@@ -643,7 +698,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "Search_FeeInstallmentNameData")
+	@Test(priority = 39, dataProvider = "Search_FeeInstallmentNameData")
 	public void tcActivationOfCreatedFeeInstallment_MasterInstallment(String installmentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -661,7 +716,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 40)
 	public void tcClickOnCancelButton_PopUp_activate() {
 
 		try {
@@ -675,8 +730,21 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 			getScreenShot("tcClickOnCancelButton_PopUp_activate");
 		}
 	}
+	@Test(priority = 41)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 38)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			feeMasterInstallment.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -691,7 +759,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 39, dataProvider = "Search_FeeInstallmentNameData")
+	@Test(priority = 43, dataProvider = "Search_FeeInstallmentNameData")
 	public void tcSearchBy_InstallmentName_InFeeMasterInstallmentGridView_AfterCancel(String installmentName,
 			String runMode) {
 
@@ -712,7 +780,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 40, dataProvider = "Search_FeeInstallmentNameData")
+	@Test(priority = 44, dataProvider = "Search_FeeInstallmentNameData")
 	public void tcActivationOfCreatedFeeInstallment_MasterInstallment_AfterCancel(String installmentName,
 			String runMode) {
 
@@ -732,7 +800,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 		}
 	}
 
-	@Test(priority = 41)
+	@Test(priority = 45)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -746,8 +814,21 @@ public class Tc_Masters_Fee_Installment_MasterInstallment extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 46)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
 
-	@Test(priority = 42)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+			feeMasterInstallment.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 47)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {

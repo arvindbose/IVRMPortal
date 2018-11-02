@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -38,7 +40,11 @@ public class Masters_Master_Subject extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[20]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[20]")
+	// WebElement btnMasters_MasterSubject;
+
+	@FindBy(xpath = "(//a[@href='#/app/subjectmaster/96'])[1]")
 	WebElement btnMasters_MasterSubject;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -53,25 +59,25 @@ public class Masters_Master_Subject extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Set Order')]/parent::button")
 	WebElement btnSetOrder;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[1]")
+	@FindBy(xpath = "//input[@name='Subject']")
 	WebElement input_SubjectName;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[2]")
+	@FindBy(xpath = "//input[@name='code']")
 	WebElement input_SubjectCode;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[3]")
+	@FindBy(xpath = "//input[@name='maxmarks']")
 	WebElement input_MaxMarks;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[4]")
+	@FindBy(xpath = "//input[@name='minmarks']")
 	WebElement input_MinMarks;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[6]")
+	@FindBy(xpath = "//input[@ng-model='searchValue']")
 	WebElement input_Search;
 
-	@FindBy(xpath = "(//div[@class='checkbox text-center well']/label/input)[1]")
+	@FindBy(xpath = "(//input[@name='SubjectFlag'])[1]")
 	WebElement rdbtn_Written;
 
-	@FindBy(xpath = "(//div[@class='checkbox text-center well']/label/input)[2]")
+	@FindBy(xpath = "(//input[@name='SubjectFlag'])[2]")
 	WebElement rdbtn_Oral;
 
 	@FindBy(xpath = "//span[contains(text(),'PreAdmission Flag')]/preceding-sibling::input")
@@ -128,6 +134,9 @@ public class Masters_Master_Subject extends TestBase {
 	@FindBy(xpath = "(//div[@class='modal-body']/table/tbody/tr/td[2][contains(text(),'GK')])[1]")
 	WebElement To;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Master_Subject(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -137,7 +146,7 @@ public class Masters_Master_Subject extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -152,17 +161,14 @@ public class Masters_Master_Subject extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterSubject_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_MasterSubject);
 
-		btnMasters_MasterSubject.click();
+		clickOnButton(btnMasters_MasterSubject);
 		log("Clicked on Master Subject Button and object is:-" + btnMasters_MasterSubject.toString());
-		waitForElement(driver, 10, btnSave);
 
 	}
 
@@ -186,13 +192,13 @@ public class Masters_Master_Subject extends TestBase {
 
 	public void submitBlankMasterSubjectForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Submit blank Master Subject form and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+		Thread.sleep(1000);
 	}
 
 	public void select_PreAdmissionFlag_WrittenForm() throws Exception {
-
+		isDisplayed(chk_PreAdmissionFlag);
 		if (!chk_PreAdmissionFlag.isSelected()) {
 			chk_PreAdmissionFlag.click();
 			log("Pre Admission flag check box is checked and object is:-" + chk_PreAdmissionFlag.toString());
@@ -201,7 +207,7 @@ public class Masters_Master_Subject extends TestBase {
 			log("Pre Admission flag check box is already checked and object is:-" + chk_PreAdmissionFlag.toString());
 			Thread.sleep(2000);
 		}
-
+		isDisplayed(rdbtn_Written);
 		if (!rdbtn_Written.isSelected()) {
 			rdbtn_Written.click();
 			log("Written radio button under preAdmission flag is selected and object is:-" + rdbtn_Written.toString());
@@ -214,7 +220,7 @@ public class Masters_Master_Subject extends TestBase {
 	}
 
 	public void select_PreAdmissionFlag_OralForm() throws Exception {
-
+		isDisplayed(chk_PreAdmissionFlag);
 		if (!chk_PreAdmissionFlag.isSelected()) {
 			chk_PreAdmissionFlag.click();
 			log("Pre Admission flag check box is checked and object is:-" + chk_PreAdmissionFlag.toString());
@@ -223,7 +229,7 @@ public class Masters_Master_Subject extends TestBase {
 			log("Pre Admission flag check box is already checked and object is:-" + chk_PreAdmissionFlag.toString());
 			Thread.sleep(2000);
 		}
-
+		isDisplayed(rdbtn_Oral);
 		if (!rdbtn_Oral.isSelected()) {
 			rdbtn_Oral.click();
 			log("Oral radio button under preAdmission flag is selected and object is:-" + rdbtn_Oral.toString());
@@ -238,63 +244,30 @@ public class Masters_Master_Subject extends TestBase {
 	public void enterMasterSubjectFormDetails_forPreAdmissionFlag(String subjectName, String subjectCode,
 			String maxMarks, String minMarks) throws Exception {
 
-		if (input_SubjectName.isDisplayed()) {
-			input_SubjectName.clear();
-			input_SubjectName.sendKeys(subjectName);
-			log("Entered subject name: " + subjectName + " and object is:-" + input_SubjectName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Element not present.");
-		}
+		inputTextIntoInputField(input_SubjectName, subjectName);
+		log("Entered subject name: " + subjectName + " and object is:-" + input_SubjectName.toString());
 
-		if (input_SubjectCode.isDisplayed()) {
-			input_SubjectCode.clear();
-			input_SubjectCode.sendKeys(subjectCode);
-			log("Entered subject Code: " + subjectCode + " and object is:-" + input_SubjectCode.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Element not present.");
-		}
+		inputTextIntoInputField(input_SubjectCode, subjectCode);
+		log("Entered subject Code: " + subjectCode + " and object is:-" + input_SubjectCode.toString());
 
-		if (input_MaxMarks.isDisplayed()) {
-			input_MaxMarks.clear();
-			input_MaxMarks.sendKeys(maxMarks);
-			log("Entered max marks: " + maxMarks + " and object is:-" + input_MaxMarks.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Element not present.");
-		}
+		inputTextIntoInputField(input_MaxMarks, maxMarks);
+		log("Entered max marks: " + maxMarks + " and object is:-" + input_MaxMarks.toString());
 
-		if (input_MinMarks.isDisplayed()) {
-			input_MinMarks.clear();
-			input_MinMarks.sendKeys(minMarks);
-			log("Entered Min marks: " + minMarks + " and object is:-" + input_MinMarks.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Element not present.");
-		}
+		inputTextIntoInputField(input_MinMarks, minMarks);
+		log("Entered Min marks: " + minMarks + " and object is:-" + input_MinMarks.toString());
+
 	}
 
 	public void enterMasterSubjectFormDetails_Without_PreAdmissionFlag(String subjectName, String subjectCode)
 			throws Exception {
 
-		if (input_SubjectName.isDisplayed()) {
-			input_SubjectName.clear();
-			input_SubjectName.sendKeys(subjectName);
-			log("Entered subject name: " + subjectName + " and object is:-" + input_SubjectName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Element not present.");
-		}
+		inputTextIntoInputField(input_SubjectName, subjectName);
+		log("Entered subject name: " + subjectName + " and object is:-" + input_SubjectName.toString());
 
-		if (input_SubjectCode.isDisplayed()) {
-			input_SubjectCode.clear();
-			input_SubjectCode.sendKeys(subjectCode);
-			log("Entered subject Code: " + subjectCode + " and object is:-" + input_SubjectCode.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Element not present.");
-		}
+		inputTextIntoInputField(input_SubjectCode, subjectCode);
+		log("Entered subject Code: " + subjectCode + " and object is:-" + input_SubjectCode.toString());
+
+		isDisplayed(chk_ExamFlag);
 		if (!chk_ExamFlag.isSelected()) {
 			chk_ExamFlag.click();
 			log("Exam flag check box is checked and object is:-" + chk_ExamFlag.toString());
@@ -303,7 +276,7 @@ public class Masters_Master_Subject extends TestBase {
 			log("Exam flag check box is already checked and object is:-" + chk_ExamFlag.toString());
 			Thread.sleep(1000);
 		}
-
+		isDisplayed(chk_BatchWiseFlag);
 		if (!chk_BatchWiseFlag.isSelected()) {
 			chk_BatchWiseFlag.click();
 			log("Batch wise flag check box is checked and object is:-" + chk_BatchWiseFlag.toString());
@@ -315,65 +288,66 @@ public class Masters_Master_Subject extends TestBase {
 	}
 
 	public void clearMasterSubjectInfoData() throws Exception {
-		btnCancelClear.click();
+
+		clickOnButton(btnCancelClear);
 		log("Clicked on cancel button to clear filled master subject info and object is:-" + btnCancelClear.toString());
-		Thread.sleep(10000);
+
 	}
 
 	public void submitFilledMasterSubjectForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Save filled Master Subject form and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void minimizeMasterSubject() throws Exception {
-		btnMin_MaxMasterSubject.click();
+
+		clickOnButton(btnMin_MaxMasterSubject);
 		log("clicked on Master Subject minimize button and object is:-" + btnMin_MaxMasterSubject.toString());
-		Thread.sleep(2000);
 	}
 
 	public void maximizeMasterSubject() throws Exception {
-		btnMin_MaxMasterSubject.click();
+
+		clickOnButton(btnMin_MaxMasterSubject);
 		log("clicked on Master Subject maximize button and object is:-" + btnMin_MaxMasterSubject.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeMasterSubjectList() throws Exception {
 
-		btnMin_MaxMasterSubjectList.click();
+		clickOnButton(btnMin_MaxMasterSubjectList);
 		log("Master Subject List minimize and object is:-" + btnMin_MaxMasterSubjectList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterSubjectList() throws Exception {
 
-		btnMin_MaxMasterSubjectList.click();
+		clickOnButton(btnMin_MaxMasterSubjectList);
 		log("Master Subject List maximized and object is:-" + btnMin_MaxMasterSubjectList.toString());
-		Thread.sleep(2000);
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void sortBySubjectName() throws Exception {
-		btnSortBySubjectName.click();
+
+		clickOnButton(btnSortBySubjectName);
 		log("Sorted the record with Subject Name and object is:-" + btnSortBySubjectName.toString());
-		Thread.sleep(3000);
+
 	}
 
-	public void searchWithSubjectNameInTheGrid(String subjectName) {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(subjectName);
-			log("Entered subject name to search: " + subjectName + " and object is:-" + input_Search.toString());
-		} else {
-			log("Element not present.");
-		}
+	public void searchWithSubjectNameInTheGrid(String subjectName) throws Exception {
+
+		inputTextIntoInputField(input_Search, subjectName);
+		log("Entered subject name to search: " + subjectName + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void verifySubjectNameInTheGrid(String subjectName) {
@@ -381,21 +355,23 @@ public class Masters_Master_Subject extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String subjectname = driver
-					.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText()
-					.trim();
-			System.out.println("Subject Name: " + subjectname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(subjectname, subjectName);
-				log("Subject name created is updated in the record grid.");
+				String subjectname = driver
+						.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Subject Name: " + subjectname);
+				// Thread.sleep(2000);
+				if (subjectname.equals(subjectName)) {
+					// Assert.assertEquals(subjectname, subjectName);
+					log("Subject name created is updated in the record grid.");
+					break;
+				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -404,30 +380,29 @@ public class Masters_Master_Subject extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String subjectname = driver
-					.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText()
-					.trim();
-			System.out.println("Subject Name: " + subjectname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String subjectname = driver
+						.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Subject Name: " + subjectname);
+				// Thread.sleep(2000);
+
 				if (subjectname.equalsIgnoreCase(subjectName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[14]/a"))
 							.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the edit link in the master Subject list grid to edit record");
 
 					break;
-				} else {
-					log("Subject Name not matched with the master Subject list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -436,12 +411,15 @@ public class Masters_Master_Subject extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String subjectname = driver
-					.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Subject Name: " + subjectname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String subjectname = driver
+						.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Subject Name: " + subjectname);
+				// Thread.sleep(2000);
+
 				if (subjectname.equalsIgnoreCase(subjectName)) {
 
 					WebElement deactiveLink = driver
@@ -450,18 +428,15 @@ public class Masters_Master_Subject extends TestBase {
 					Assert.assertEquals("De-Activate", deactivetext);
 
 					deactiveLink.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the deactivate link in the master Subject list grid");
 
 					break;
-				} else {
-					log("Subject Name not matched with the master Subject list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -470,12 +445,15 @@ public class Masters_Master_Subject extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String subjectname = driver
-					.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Subject Name: " + subjectname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String subjectname = driver
+						.findElement(By.xpath("//div[@class='box-body']//table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Subject Name: " + subjectname);
+				// Thread.sleep(2000);
+
 				if (subjectname.equalsIgnoreCase(subjectName)) {
 
 					WebElement activeLink = driver
@@ -484,50 +462,42 @@ public class Masters_Master_Subject extends TestBase {
 					Assert.assertEquals("Activate", activetext);
 
 					activeLink.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the activate link in the master Subject list grid");
 
 					break;
-				} else {
-					log("Subject Name not matched with the master Subject list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		if (btnYesDeleteOrDeactIt.isDisplayed()) {
-			btnYesDeleteOrDeactIt.click();
-			log("Clicked on yes deactivate or activate or delete it button and object is:-"
-					+ btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(15000);
-		} else {
-			log("Element not present.");
-		}
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Clicked on yes deactivate or activate or delete it button and object is:-"
+				+ btnYesDeleteOrDeactIt.toString());
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
-		if (btnCancel.isDisplayed()) {
-			btnCancel.click();
-			log("Clicked on cancel button and object is:-" + btnCancel.toString());
-			Thread.sleep(15000);
-		} else {
-			log("Element not present.");
-		}
+
+		clickOnButton(btnCancel);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Clicked on cancel button and object is:-" + btnCancel.toString());
+
 	}
 
 	public void clickOnSetOrder() {
-		if (btnSetOrder.isDisplayed()) {
-			btnSetOrder.click();
-			log("Set Order button is clicked and object is:-" + btnSetOrder.toString());
-		} else {
-			log("Element not present.");
-		}
+
+		clickOnButton(btnSetOrder);
+		log("Set Order button is clicked and object is:-" + btnSetOrder.toString());
+
 	}
 
 	public void setSubjectOrder() {
@@ -552,23 +522,65 @@ public class Masters_Master_Subject extends TestBase {
 	}
 
 	public void closeSetSubjectOrderPopUpWindow() {
-		if (btnCloseOrder.isDisplayed()) {
-			btnCloseOrder.click();
-			log("Set Subject Order pop Up window is closed and object is:-" + btnCloseOrder.toString());
-		} else {
-			log("Element not present.");
-		}
+
+		clickOnButton(btnCloseOrder);
+		log("Set Subject Order pop Up window is closed and object is:-" + btnCloseOrder.toString());
+
 	}
 
 	public void saveSetSubjectOrderPopUpWindow() throws Exception {
-		if (btnSaveOrder.isDisplayed()) {
-			btnSaveOrder.click();
-			log("Set Subject Order save button is clicked, pop Up window is closed and object is:-"
-					+ btnSaveOrder.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Element not present.");
+
+		clickOnButton(btnSaveOrder);
+		log("Set Subject Order save button is clicked, pop Up window is closed and object is:-"
+				+ btnSaveOrder.toString());
+
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_DeactivatedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record De-Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_ActivatedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

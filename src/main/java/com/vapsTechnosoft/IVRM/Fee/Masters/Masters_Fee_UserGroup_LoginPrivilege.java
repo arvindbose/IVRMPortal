@@ -26,25 +26,25 @@ public class Masters_Fee_UserGroup_LoginPrivilege extends TestBase{
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
 	WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 	
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[12]")
+	@FindBy(xpath = "//a[@href='#/app/MasterFeePrevilege/312']")
 	WebElement btnloginpreviledge;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtFGLoginPreviledge;
 	
-	@FindBy(xpath = "(//select[@id='sel1'])[1]")
+	@FindBy(xpath = "//select[@name='ayr']")
 	WebElement selAcademicYear;
 
-	@FindBy(xpath = "(//select[@id='sel1'])[2]")
+	@FindBy(xpath = "//select[@name='cat' and @ng-model='fmG_Id']")
 	WebElement selGroup;
 	
-	@FindBy(xpath = "(//select[@id='sel1'])[3]")
+	@FindBy(xpath = "//select[@name='rol']")
 	WebElement selRole;
 	
 	@FindBy(xpath = "//span[contains(text(),'Tuition annual Fee')]")
@@ -74,7 +74,7 @@ public class Masters_Fee_UserGroup_LoginPrivilege extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -110,33 +110,39 @@ public class Masters_Fee_UserGroup_LoginPrivilege extends TestBase{
 	}
 	public void selectAcademicYear_GroupAndRole(String AcademicYear, String userGroup, String role) throws Exception {
 
-		select = new Select(selAcademicYear);
-		select.selectByVisibleText(AcademicYear);
+		selectElementFromDropDown(selAcademicYear, AcademicYear);
 		log("selected Academic year:-" + AcademicYear + " and object is " + selAcademicYear.toString());
-		Thread.sleep(1000);
-
-		select = new Select(selGroup);
-		select.selectByVisibleText(userGroup);
-		log("selected group:-" + userGroup + " and object is " + selGroup.toString());
-		Thread.sleep(1000);
 		
+		selectElementFromDropDown(selGroup, userGroup);
+		log("selected group:-" + userGroup + " and object is " + selGroup.toString());
+		
+		isDisplayed(chkHead);
+		if(!chkHead.isSelected()){
 		chkHead.click();
 		log("selected the head check box and object is:-"+chkHead.toString());
 		Thread.sleep(1000);
-		
-		select = new Select(selRole);
-		select.selectByVisibleText(role);
+		}else{
+			log("Head check box already selected and object is:-"+chkHead.toString());
+		}
+
+		selectElementFromDropDown(selRole, role);
 		log("selected Role:-" + role + " and object is " + selRole.toString());
+	
+		isDisplayed(chkUserName);
+		if(!chkUserName.isSelected()){
+			chkUserName.click();
+			log("selected the user name check box and object is:-"+chkUserName.toString());
 		Thread.sleep(1000);
+		}else{
+			log("user name check box already selected and object is:-"+chkUserName.toString());
+		}
 		
-		chkUserName.click();
-		log("selected the user name check box and object is:-"+chkUserName.toString());
-		Thread.sleep(1000);
 	}
 	public void clickOnSaveButton() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -153,9 +159,10 @@ public class Masters_Fee_UserGroup_LoginPrivilege extends TestBase{
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		btnOkonSuccess.click();
+	
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 }

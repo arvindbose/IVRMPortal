@@ -475,18 +475,33 @@ public class Tc_Masters_Fee_Amount_Entry extends TestBase{
 			getScreenShot("tcClickOnSaveButton_Between");
 		}
 	}
+	
+//	@Test(priority = 27)
+//	public void tcVerifySuccessfulPopUp() {
+//		try {
+//			log.info("============= Strting tcVerifySuccessfulPopUp_Between Test===========");
+//
+//			boolean status =feeamountentry.verifySuccessfulPopUp();
+//			Assert.assertEquals(status, true);
+//			
+//			log.info("============= Finished tcVerifySuccessfulPopUp_Between Test===========");
+//			getScreenShot("tcVerifySuccessfulPopUp_Between");
+//		} catch (Exception e) {
+//			getScreenShot("tcVerifySuccessfulPopUp_Between");
+//		}
+//	}
+	
 	@Test(priority = 27)
-	public void tcVerifySuccessfulPopUp() {
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp_Between Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
 
-			boolean status =feeamountentry.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
-			
-			log.info("============= Finished tcVerifySuccessfulPopUp_Between Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp_Between");
+			feeamountentry.popWindowMessage_SubmitSuccessfully();
+				
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp_Between");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
 	@Test(priority = 28)
@@ -534,30 +549,105 @@ public class Tc_Masters_Fee_Amount_Entry extends TestBase{
 		}
 	}
 	@Test(priority = 31)
-	public void tcRecordDeleteConfirmation() {
-	
+	public void tcClickOnCancelButton_PopUp_delete() {
+
 		try {
-			log.info("============= Strting tcRecordDeleteConfirmation Test===========");
-			feeamountentry.recordDeleteConfirmation();
-			log.info("============= Finished tcRecordDeleteConfirmation Test===========");
-			getScreenShot("tcRecordDeleteConfirmation");
+			log.info("============= Strting tcClickOnCancelButton_PopUp_delete Test===========");
+
+			feeamountentry.clickOnCancelButton_PopUp();
+
+			log.info("============= Finished tcClickOnCancelButton_PopUp_delete Test===========");
+			getScreenShot("tcClickOnCancelButton_PopUp_delete");
 		} catch (Exception e) {
-			getScreenShot("tcRecordDeleteConfirmation");
+			getScreenShot("tcClickOnCancelButton_PopUp_delete");
 		}
 	}
 	@Test(priority = 32)
-	public void tcClickOnSuccessOkBtn_Delete() {
+	public void PopUpWindowMessage_DeleteCancel_Validation() {
+		
 		try {
-			log.info("============= Strting tcClickOnSuccessOkBtn_Delete Test===========");
+			log.info("============= Strting PopUpWindowMessage_DeleteCancel_Validation Test===========");
 
-			feeamountentry.clickOnSuccessOkBtn();
-			
-			log.info("============= Finished tcClickOnSuccessOkBtn_Delete Test===========");
-			getScreenShot("tcClickOnSuccessOkBtn_Delete");
+			feeamountentry.popUpWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished PopUpWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("PopUpWindowMessage_DeleteCancel_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnSuccessOkBtn_Delete");
+			getScreenShot("PopUpWindowMessage_DeleteCancel_Validation");
 		}
 	}
+	@Test(priority = 33)
+	public void tcClickOnOkSuccessButton_deleteCancel() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_deleteCancel Test===========");
+
+			feeamountentry.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_deleteCancel Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_deleteCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_deleteCancel");
+		}
+	}
+	
+	@Test(priority = 34, dataProvider = "SearchAndDeleteData")
+	public void tcDeleteRecordsFromAmountEntryGrid_AfterCancel(String InstallmentName,String runMode) {
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcDeleteRecordsFromAmountEntryGrid_AfterCancel Test===========");
+
+			feeamountentry.deleteRecordsFromAmountEntryGrid(InstallmentName);
+			log.info("============= Finished tcDeleteRecordsFromAmountEntryGrid_AfterCancel Test===========");
+			getScreenShot("tcDeleteRecordsFromAmountEntryGrid_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcDeleteRecordsFromAmountEntryGrid_AfterCancel");
+		}
+	}
+	@Test(priority = 35)
+	public void tcYesDeleteOrDeactivateOrActivateIt_delete() {
+
+		try {
+			log.info("============= Strting tcYesDeleteOrDeactivateOrActivateIt_delete Test===========");
+
+			feeamountentry.recordDeleteConfirmation();
+
+			log.info("============= Finished tcYesDeleteOrDeactivateOrActivateIt_delete Test===========");
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_delete");
+		} catch (Exception e) {
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_delete");
+		}
+	}
+	@Test(priority = 36)
+	public void PopUpWindowMessage_DeletedSucessfully_Validation() {
+				try {
+			log.info("============= Strting PopUpWindowMessage_DeletedSucessfully_Validation Test===========");
+
+			feeamountentry.popUpWindowMessage_DeletedSucessfully_Validation();
+
+			log.info("============= Finished PopUpWindowMessage_DeletedSucessfully_Validation Test===========");
+			getScreenShot("PopUpWindowMessage_DeletedSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("PopUpWindowMessage_DeletedSucessfully_Validation");
+		}
+	}
+	@Test(priority = 37)
+	public void tcClickOnOkSuccessButton_delete() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_delete Test===========");
+
+			feeamountentry.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_delete Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_delete");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_delete");
+		}
+	}
+
 	 @AfterClass
 	 public void tearDown(){
 	 try {

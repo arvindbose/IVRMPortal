@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -41,8 +43,12 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[10]")
+	@FindBy(xpath = "//a[@href='#/app/masterclasscategory/21']")
 	WebElement btnMasters_masterClassCategoryMap;
+	
+//	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[10]")
+//	WebElement btnMasters_masterClassCategoryMap;
+	
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtMasters_MasterClassCategoryMapMsgDispaly;
@@ -95,6 +101,9 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
 	WebElement btnPopUpCancel;
 	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+	
 	
 	public Masters_Master_ClassCategoryMapping(WebDriver driver) {
 		this.driver = driver;
@@ -105,7 +114,7 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -120,17 +129,15 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterClassCategoryMapping_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
-
-		btnAdmission_Masters.click();
+		
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_masterClassCategoryMap);
-
-		btnMasters_masterClassCategoryMap.click();
+	
+		clickOnButton(btnMasters_masterClassCategoryMap);
 		log("Clicked on master class category mapping Button and object is:-" + btnMasters_masterClassCategoryMap.toString());
-		waitForElement(driver, 10, btnSave);
+
 	}
 
 	/**
@@ -153,22 +160,17 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 
 	public void submitBlankMasterClassCategoryMapForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Save blank master class Category mapping form and object is:-" + btnSave.toString());
-		Thread.sleep(2000);
+	
 	}
 
 	public void enterMasterClassCategoryMappingFormData(String academicYear, String category) throws Exception{
 		
-		select = new Select(sel_AcademicYear);
-		select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
 		log("selected academic year " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-		Thread.sleep(1000);
-
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), academicYear);
-		Thread.sleep(1000);
 		
+		isDisplayed(chk_Class);
 		if(!chk_Class.isSelected()){
 			chk_Class.click();
 			log("Class check box is selected and object is:-"+chk_Class.toString());
@@ -178,15 +180,10 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 			log("Class check box is already selected and object is:-"+chk_Class.toString());
 		}
 		
-		select = new Select(sel_Category);
-		select.selectByVisibleText(category);
+		selectElementFromDropDown(sel_Category, category);
 		log("selected category " + category + " and object is:- " + sel_Category.toString());
-		Thread.sleep(1000);
-
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), category);
-		Thread.sleep(1000);
 		
+		isDisplayed(chk_Section);
 		if(!chk_Section.isSelected()){
 			chk_Section.click();
 			log("Section check box is selected and object is:-"+chk_Section.toString());
@@ -198,43 +195,38 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 	}
 	
 	public void clearMasterClassCategoryMappingInfoData() throws Exception {
-		btnClear.click();
+	
+		clickOnButton(btnClear);
 		log("Clicked on clear button to clear filled master category and object is:-" + btnClear.toString());
-		Thread.sleep(15000);
+		Thread.sleep(1000);
 	}
 
 	public void submitFilledMasterClassCategoryMapForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Save filled master category form and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+		
 	}
 
 	public void sortByClassCategoryName() throws Exception {
 
-		btnSortByClassCategoryName.click();
+		clickOnButton(btnSortByClassCategoryName);
 		log("Sorted the record with class Category name and object is:-" + btnSortByClassCategoryName.toString());
-		Thread.sleep(3000);
+	
 	}
 	
 	public void searchWithClassCategoryNameInTheGrid(String categoryName, String selectFilter) throws InterruptedException {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(categoryName);
+		inputTextIntoInputField(inputSearch, categoryName);
 		log("Entered class category name to search: " + categoryName + " and object is:-" + inputSearch.toString());
-	
-		select = new Select(sel_Search);
-		select.selectByVisibleText(selectFilter);
-		log("selected filter for search " + selectFilter + " and object is:- " + sel_Search.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), selectFilter);
-		Thread.sleep(1000);
-		
-		btnSearch.click();
+		selectElementFromDropDown(sel_Search, selectFilter);
+		log("selected filter for search " + selectFilter + " and object is:- " + sel_Search.toString());
+	
+		clickOnButton(btnSearch);
 		log("Clicked search button to filter the item and object is:-"+btnSearch.toString());
-		Thread.sleep(1000);
 	
 	}
 	/**
@@ -248,54 +240,53 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
+		
 			String classcategoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText().trim();
 			System.out.println("Class Category Name: " + classcategoryname);
 			// Thread.sleep(2000);
-			try {
+	
 				if (classcategoryname.equalsIgnoreCase(categoryName)) {
 
-				Assert.assertEquals(classcategoryname, categoryName);
+				//Assert.assertEquals(classcategoryname, categoryName);
 				log("Class category name created is updated in the record grid.");
 				break;
-				} else {
-					log("Class Category Name not matched with the master class category list grid");
-					// Thread.sleep(1000);
 				}
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void minimizeMasterClassCategory() throws Exception {
-		btnMin_MaxMasterClassCategory.click();
+	
+		clickOnButton(btnMin_MaxMasterClassCategory);
 		log("clicked on master class Category minimize button and object is:-" + btnMin_MaxMasterClassCategory.toString());
-		Thread.sleep(2000);
+		
 	}
 
 	public void maximizeMasterClassCategory() throws Exception {
-		btnMin_MaxMasterClassCategory.click();
+
+		clickOnButton(btnMin_MaxMasterClassCategory);
 		log("clicked on master class Category maximize button and object is:-" + btnMin_MaxMasterClassCategory.toString());
-		Thread.sleep(2000);
+	
 	}
 
 	public void minimizeMasterClassCategoryList() throws Exception {
 
-		btnMin_MaxMasterClassCategoryList.click();
+		clickOnButton(btnMin_MaxMasterClassCategoryList);
 		log("Master class Category list table data minimize and object is:-" + btnMin_MaxMasterClassCategoryList.toString());
-		Thread.sleep(2000);
+	
 	}
 
 	public void maximizeMasterClassCategoryList() throws Exception {
 
-		btnMin_MaxMasterClassCategoryList.click();
+		clickOnButton(btnMin_MaxMasterClassCategoryList);
 		log("Master Class Category list table table data maximized and object is:-"
 				+ btnMin_MaxMasterClassCategoryList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void editMasterClassCategory(String categoryName, String selectFilter) {
@@ -303,12 +294,14 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
+		
 			String classcategoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText().trim();
 			System.out.println("Class Category Name: " + classcategoryname);
 			// Thread.sleep(2000);
-			try {
+		
 				if (classcategoryname.equalsIgnoreCase(categoryName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[6]/a")).click();
@@ -316,15 +309,10 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 					log("Clicked on the edit link in the master class category list grid to edit record");
 
 					break;
-				} else {
-					log("Class Category Name not matched with the master class category list grid");
-					// Thread.sleep(1000);
-				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
+				} 
+	}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -333,17 +321,19 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
+			
 			String classcategoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText().trim();
 			System.out.println("Class Category Name: " + classcategoryname);
 			// Thread.sleep(2000);
-			try {
+			
 				if (classcategoryname.equalsIgnoreCase(categoryName)) {
 
 					WebElement deactiveLink = driver
 							.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[6]/span"));
-					String deactivetext = deactiveLink.getText();
+					String deactivetext = deactiveLink.getText().trim();
 					Assert.assertEquals(deactivetext, "Deactivate");
 
 					deactiveLink.click();
@@ -351,14 +341,10 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 					log("Clicked on the deactivate link in the master class category list grid");
 
 					break;
-				} else {
-					log("Class Category Name not matched with the master class category list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -367,12 +353,14 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
+		
 			String classcategoryname = driver
 					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
 			System.out.println("Class category Name: " + classcategoryname);
 			// Thread.sleep(2000);
-			try {
+			
 				if (classcategoryname.equalsIgnoreCase(categoryName)) {
 
 					WebElement activeLink = driver
@@ -385,37 +373,82 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 					log("Clicked on the activate link in the master class category list grid");
 
 					break;
-				} else {
-					log("Category Name not matched with the master class category list grid");
-					// Thread.sleep(1000);
-				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
+				} 
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+	
+		clickOnButton(btnYesDeleteOrDeactIt);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+	
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnPopUpCancel.click();
+		clickOnButton(btnPopUpCancel);
+		Thread.sleep(2000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
-	}
 
+	}
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void popWindowMessage_DeactivatedSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Class Category Deactivated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void popWindowMessage_ActivatedSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Class Category Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

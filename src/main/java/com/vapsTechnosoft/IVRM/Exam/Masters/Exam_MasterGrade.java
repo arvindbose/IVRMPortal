@@ -3,13 +3,14 @@
  */
 package com.vapsTechnosoft.IVRM.Exam.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -33,7 +34,11 @@ public class Exam_MasterGrade extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]")
 	private WebElement btn_Exam_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]/following::li[6]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]/following::li[6]")
+	// private WebElement btn_ExamMasterGrade;
+
+	@FindBy(xpath = "//a[@href='#/app/MasterExamGrade/99']")
 	private WebElement btn_ExamMasterGrade;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -173,6 +178,9 @@ public class Exam_MasterGrade extends TestBase {
 
 	@FindBy(xpath = "//*[@id='style-4']/div[2]/div[1]/div[2]/select")
 	private WebElement noOfItemPerPage;
+	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
 
 	public Exam_MasterGrade(WebDriver driver) {
 		this.driver = driver;
@@ -183,7 +191,7 @@ public class Exam_MasterGrade extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -199,33 +207,15 @@ public class Exam_MasterGrade extends TestBase {
 	 */
 	public void navigateToExamMasters_ExamMasterGrade() throws Exception {
 
-		if (btn_Exam.isDisplayed()) {
-			btn_Exam.click();
-			log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
-			// waitForElement(driver, 10, btnFee);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_Exam_Masters.isDisplayed()) {
-			btn_Exam_Masters.click();
-			log("Clicked on Exam Masters Button and object is:-" + btn_Exam_Masters.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Master Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_ExamMasterGrade.isDisplayed()) {
-			btn_ExamMasterGrade.click();
-			log("Clicked on Exam Master Grade Button and object is:-" + btn_ExamMasterGrade.toString());
-			// waitForElement(driver, 10, btnCustomFeeGr);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Master Grade Navigation element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Exam);
+		log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
+
+		clickOnButton(btn_Exam_Masters);
+		log("Clicked on Exam Masters Button and object is:-" + btn_Exam_Masters.toString());
+
+		clickOnButton(btn_ExamMasterGrade);
+		log("Clicked on Exam Master Grade Button and object is:-" + btn_ExamMasterGrade.toString());
+
 	}
 
 	/**
@@ -254,6 +244,7 @@ public class Exam_MasterGrade extends TestBase {
 	 * @throws Exception
 	 */
 	public void fill_Exam_MasterGrade_Form_Precentage(String gradeName) throws Exception {
+		isDisplayed(rdBtn_Percentage);
 		if (!rdBtn_Percentage.isSelected()) {
 			rdBtn_Percentage.click();
 			log("Percentage radio button is selected and object is:-" + rdBtn_Percentage.toString());
@@ -262,15 +253,10 @@ public class Exam_MasterGrade extends TestBase {
 			log("Percentage radio button is already selected");
 			Thread.sleep(500);
 		}
-		if (input_GradeName.isDisplayed()) {
-			input_GradeName.clear();
-			input_GradeName.sendKeys(gradeName);
+		
+			inputTextIntoInputField(input_GradeName, gradeName);
 			log("Entered Master Grade Name:- and object is: " + input_GradeName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade Name element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -281,6 +267,7 @@ public class Exam_MasterGrade extends TestBase {
 	 * @throws Exception
 	 */
 	public void fill_Exam_MasterGrade_Form_Marks(String gradeName) throws Exception {
+		isDisplayed(rdBtn_Marks);
 		if (!rdBtn_Marks.isSelected()) {
 			rdBtn_Marks.click();
 			log("Marks radio button is selected and object is:-" + rdBtn_Marks.toString());
@@ -289,15 +276,10 @@ public class Exam_MasterGrade extends TestBase {
 			log("Marks radio button is already selected");
 			Thread.sleep(500);
 		}
-		if (input_GradeName.isDisplayed()) {
-			input_GradeName.clear();
-			input_GradeName.sendKeys(gradeName);
+		
+			inputTextIntoInputField(input_GradeName, gradeName);
 			log("Entered Master Grade Name:- and object is: " + input_GradeName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade Name element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -312,52 +294,23 @@ public class Exam_MasterGrade extends TestBase {
 	 */
 	public void fill_MasterGradeDetails_Grade_A(String from_A, String to_A, String grade_A, String gradePoint_A,
 			String remarks_A) throws Exception {
-		if (input_From_A.isDisplayed()) {
-			input_From_A.clear();
-			input_From_A.sendKeys(from_A);
+
+			inputTextIntoInputField(input_From_A, from_A);
 			log("From Marks/Percentage value for grade A entered: " + from_A + " and object is:-"
 					+ input_From_A.toString());
-			Thread.sleep(1000);
-		} else {
-			log("From input field element is not present for grade A.");
-			Thread.sleep(500);
-		}
-		if (input_To_A.isDisplayed()) {
-			input_To_A.clear();
-			input_To_A.sendKeys(to_A);
+	
+			inputTextIntoInputField(input_To_A, to_A);
 			log("To Marks/Percentage value for grade A entered: " + to_A + " and object is:-" + input_To_A.toString());
-			Thread.sleep(1000);
-		} else {
-			log("To input field element is not present for grade A.");
-			Thread.sleep(500);
-		}
-		if (input_Grade_A.isDisplayed()) {
-			input_Grade_A.clear();
-			input_Grade_A.sendKeys(grade_A);
+	
+			inputTextIntoInputField(input_Grade_A, grade_A);
 			log("Grade entered: " + grade_A + " and object is:-" + input_Grade_A.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade input field element is not present for grade A.");
-			Thread.sleep(500);
-		}
-		if (input_GradePoint_A.isDisplayed()) {
-			input_GradePoint_A.clear();
-			input_GradePoint_A.sendKeys(gradePoint_A);
+	
+			inputTextIntoInputField(input_GradePoint_A, gradePoint_A);
 			log("Grade point entered: " + gradePoint_A + " and object is:-" + input_GradePoint_A.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade point input field element is not present for grade A.");
-			Thread.sleep(500);
-		}
-		if (input_Remarks_A.isDisplayed()) {
-			input_Remarks_A.clear();
-			input_Remarks_A.sendKeys(remarks_A);
+		
+			inputTextIntoInputField(input_Remarks_A, remarks_A);
 			log("Remarks entered: " + remarks_A + " and object is:-" + input_Remarks_A.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Remarks input field element is not present for grade A.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -372,52 +325,23 @@ public class Exam_MasterGrade extends TestBase {
 	 */
 	public void fill_MasterGradeDetails_Grade_B(String from_B, String to_B, String grade_B, String gradePoint_B,
 			String remarks_B) throws Exception {
-		if (input_From_B.isDisplayed()) {
-			input_From_B.clear();
-			input_From_B.sendKeys(from_B);
+	
+			inputTextIntoInputField(input_From_B, from_B);
 			log("From Marks/Percentage value for grade B entered: " + from_B + " and object is:-"
 					+ input_From_B.toString());
-			Thread.sleep(1000);
-		} else {
-			log("From input field element is not present for grade B.");
-			Thread.sleep(500);
-		}
-		if (input_To_B.isDisplayed()) {
-			input_To_B.clear();
-			input_To_B.sendKeys(to_B);
+
+			inputTextIntoInputField(input_To_B, to_B);
 			log("To Marks/Percentage value for grade B entered: " + to_B + " and object is:-" + input_To_B.toString());
-			Thread.sleep(1000);
-		} else {
-			log("To input field element is not present for grade B.");
-			Thread.sleep(500);
-		}
-		if (input_Grade_B.isDisplayed()) {
-			input_Grade_B.clear();
-			input_Grade_B.sendKeys(grade_B);
+	
+			inputTextIntoInputField(input_Grade_B, grade_B);
 			log("Grade entered: " + grade_B + " and object is:-" + input_Grade_B.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade input field element is not present for grade B.");
-			Thread.sleep(500);
-		}
-		if (input_GradePoint_B.isDisplayed()) {
-			input_GradePoint_B.clear();
-			input_GradePoint_B.sendKeys(gradePoint_B);
+			
+			inputTextIntoInputField(input_GradePoint_B, gradePoint_B);
 			log("Grade point entered: " + gradePoint_B + " and object is:-" + input_GradePoint_B.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade point input field element is not present for grade B.");
-			Thread.sleep(500);
-		}
-		if (input_Remarks_B.isDisplayed()) {
-			input_Remarks_B.clear();
-			input_Remarks_B.sendKeys(remarks_B);
+		
+			inputTextIntoInputField(input_Remarks_B, remarks_B);
 			log("Remarks entered: " + remarks_B + " and object is:-" + input_Remarks_B.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Remarks input field element is not present for grade B.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -432,52 +356,23 @@ public class Exam_MasterGrade extends TestBase {
 	 */
 	public void fill_MasterGradeDetails_Grade_C(String from_C, String to_C, String grade_C, String gradePoint_C,
 			String remarks_C) throws Exception {
-		if (input_From_C.isDisplayed()) {
-			input_From_C.clear();
-			input_From_C.sendKeys(from_C);
+		
+			inputTextIntoInputField(input_From_C, from_C);
 			log("From Marks/Percentage value for grade C entered: " + from_C + " and object is:-"
 					+ input_From_C.toString());
-			Thread.sleep(1000);
-		} else {
-			log("From input field element is not present for grade C.");
-			Thread.sleep(500);
-		}
-		if (input_To_C.isDisplayed()) {
-			input_To_C.clear();
-			input_To_C.sendKeys(to_C);
+	
+			inputTextIntoInputField(input_To_C, to_C);
 			log("To Marks/Percentage value for grade C entered: " + to_C + " and object is:-" + input_To_C.toString());
-			Thread.sleep(1000);
-		} else {
-			log("To input field element is not present for grade C.");
-			Thread.sleep(500);
-		}
-		if (input_Grade_C.isDisplayed()) {
-			input_Grade_C.clear();
-			input_Grade_C.sendKeys(grade_C);
+		
+			inputTextIntoInputField(input_Grade_C, grade_C);
 			log("Grade entered: " + grade_C + " and object is:-" + input_Grade_C.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade input field element is not present for grade C.");
-			Thread.sleep(500);
-		}
-		if (input_GradePoint_C.isDisplayed()) {
-			input_GradePoint_C.clear();
-			input_GradePoint_C.sendKeys(gradePoint_C);
+			
+			inputTextIntoInputField(input_GradePoint_C, gradePoint_C);
 			log("Grade point entered: " + gradePoint_C + " and object is:-" + input_GradePoint_C.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade point input field element is not present for grade C.");
-			Thread.sleep(500);
-		}
-		if (input_Remarks_C.isDisplayed()) {
-			input_Remarks_C.clear();
-			input_Remarks_C.sendKeys(remarks_C);
+	
+			inputTextIntoInputField(input_Remarks_C, remarks_C);
 			log("Remarks entered: " + remarks_C + " and object is:-" + input_Remarks_C.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Remarks input field element is not present for grade C.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -492,270 +387,171 @@ public class Exam_MasterGrade extends TestBase {
 	 */
 	public void fill_MasterGradeDetails_Grade_D(String from_D, String to_D, String grade_D, String gradePoint_D,
 			String remarks_D) throws Exception {
-		if (input_From_D.isDisplayed()) {
-			input_From_D.clear();
-			input_From_D.sendKeys(from_D);
+	
+			inputTextIntoInputField(input_From_D, from_D);
 			log("From Marks/Percentage value for grade D entered: " + from_D + " and object is:-"
 					+ input_From_D.toString());
-			Thread.sleep(1000);
-		} else {
-			log("From input field element is not present for grade D.");
-			Thread.sleep(500);
-		}
-		if (input_To_D.isDisplayed()) {
-			input_To_D.clear();
-			input_To_D.sendKeys(to_D);
+			
+			inputTextIntoInputField(input_To_D, to_D);
 			log("To Marks/Percentage value for grade D entered: " + to_D + " and object is:-" + input_To_D.toString());
-			Thread.sleep(1000);
-		} else {
-			log("To input field element is not present for grade D.");
-			Thread.sleep(500);
-		}
-		if (input_Grade_D.isDisplayed()) {
-			input_Grade_D.clear();
-			input_Grade_D.sendKeys(grade_D);
+	
+			inputTextIntoInputField(input_Grade_D, grade_D);
 			log("Grade entered: " + grade_D + " and object is:-" + input_Grade_D.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade input field element is not present for grade D.");
-			Thread.sleep(500);
-		}
-		if (input_GradePoint_D.isDisplayed()) {
-			input_GradePoint_D.clear();
-			input_GradePoint_D.sendKeys(gradePoint_D);
+	
+			inputTextIntoInputField(input_GradePoint_D, gradePoint_D);
 			log("Grade point entered: " + gradePoint_D + " and object is:-" + input_GradePoint_D.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade point input field element is not present for grade D.");
-			Thread.sleep(500);
-		}
-		if (input_Remarks_D.isDisplayed()) {
-			input_Remarks_D.clear();
-			input_Remarks_D.sendKeys(remarks_D);
+	
+			inputTextIntoInputField(input_Remarks_D, remarks_D);
 			log("Remarks entered: " + remarks_D + " and object is:-" + input_Remarks_D.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Remarks input field element is not present for grade D.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnPlusSign_ToGetNewRowForGradeDetails_GradeB() throws Exception {
-		if (btn_Action_Add_A.isDisplayed()) {
-			btn_Action_Add_A.click();
+	
+			clickOnButton(btn_Action_Add_A);
 			log("Clicked on grade A plus sign to get row for grade B and object:-" + btn_Action_Add_A.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade A plus sign element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnPlusSign_ToGetNewRowForGradeDetails_GradeC() throws Exception {
-		if (btn_Action_Add_B.isDisplayed()) {
-			btn_Action_Add_B.click();
+	
+			clickOnButton(btn_Action_Add_B);
 			log("Clicked on grade B plus sign to get row for grade C and object:-" + btn_Action_Add_B.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade B plus sign element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnPlusSign_ToGetNewRowForGradeDetails_GradeD() throws Exception {
-		if (btn_Action_Add_C.isDisplayed()) {
-			btn_Action_Add_C.click();
+		
+			clickOnButton(btn_Action_Add_C);
 			log("Clicked on grade C plus sign to get row for grade D and object:-" + btn_Action_Add_C.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade C plus sign element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnMinusSign_ToRemoveRow_GradeD() throws Exception {
-		if (btn_Action_Minus_D.isDisplayed()) {
-			btn_Action_Minus_D.click();
+	
+			clickOnButton(btn_Action_Minus_D);
 			log("Clicked on grade D Minus sign to Remove row for grade D and object:-" + btn_Action_Minus_D.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade D Minus sign element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnSaveButton_ToSubmitMasterGradeDetails() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+		
+			clickOnButton(btn_Save);
 			log("Clicked on Save button to Submit Master Grade Form and object is:- " + btn_Save.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Save button element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnCancelButton_ToClearMasterGradeFilledData() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
+		
+			clickOnButton(btn_Cancel);
 			log("Clicked on Cancel button to Clear Master Grade Form filled data and object is:- "
 					+ btn_Cancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button for Master Grade form element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void submitBlank_MasterGradeDetails() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+		
+			clickOnButton(btn_Save);
 			log("Clicked on Save button to Submit Blank Master Grade Form and object is:- " + btn_Save.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Save button element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void min_Max_MasterGrade() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_MasterGrade);
 		Thread.sleep(1000);
-		if (btn_Min_Max_GradeMaster.isDisplayed()) {
-			btn_Min_Max_GradeMaster.click();
+		
+			clickOnButton(btn_Min_Max_GradeMaster);
 			log("Exam Master Grade page minimized or maximized and object is:-" + btn_Min_Max_GradeMaster.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Master Grade Minimized OR Maximize Element not present.");
-		}
+		
 	}
 
 	public void min_Max_GradeMasterDetailsForm() throws Exception {
-		if (btn_Min_Max_GradeMasterDetails.isDisplayed()) {
-			btn_Min_Max_GradeMasterDetails.click();
+		
+			clickOnButton(btn_Min_Max_GradeMasterDetails);
 			log("Master Grade Details page minimized or maximized and object is:-"
 					+ btn_Min_Max_GradeMasterDetails.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Master Grade Details Minimize OR Maximize Element not present.");
-		}
+			
 	}
 
 	public void min_Max_GradeMaster_GridView() throws Exception {
-		if (btn_Min_Max_GradeMasterGridView.isDisplayed()) {
-			btn_Min_Max_GradeMasterGridView.click();
+	
+			clickOnButton(btn_Min_Max_GradeMasterGridView);
 			log("Master Grade Grid View page minimized or maximized and object is:-"
 					+ btn_Min_Max_GradeMasterGridView.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Master Grade Grid View Minimize OR Maximize Element not present.");
-		}
+			
 	}
 
 	public void sortWithGradeNameInGridView() throws Exception {
 
-		if (btn_Sort_GradeName.isDisplayed()) {
-			btn_Sort_GradeName.click();
+			clickOnButton(btn_Sort_GradeName);
 			log("Sort by Grade Name in Master Grade grid and object is:- " + btn_Sort_GradeName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade Name button element not present in output grid.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void sortWithMarksOrPercentageInGridView() throws Exception {
 
-		if (btn_Sort_MarksOrPercentage.isDisplayed()) {
-			btn_Sort_MarksOrPercentage.click();
+		
+			clickOnButton(btn_Sort_MarksOrPercentage);
 			log("Sort by Marks Or Percentage in grid view and object is:- " + btn_Sort_MarksOrPercentage.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Marks/Percentage button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void filterRecordsBasedOn_GradeName(String gradeName, String marksOrPercentage) throws Exception {
-		if (input_GradeNameFilter.isDisplayed()) {
-			input_GradeNameFilter.clear();
-			input_GradeNameFilter.sendKeys(gradeName);
+	
+			inputTextIntoInputField(input_GradeNameFilter, gradeName);
 			log("Entered Grade Name: " + gradeName + " to filter records and object is:- "
 					+ input_GradeNameFilter.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Grade Name input field element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
-	public void filterRecordsBasedOn_MarksOrPercentage(String gradeName, String marksOrPercentage)
-			throws Exception {
-		if (input_MarksOrPercentage.isDisplayed()) {
-			input_MarksOrPercentage.clear();
-			input_MarksOrPercentage.sendKeys(marksOrPercentage);
+	public void filterRecordsBasedOn_MarksOrPercentage(String gradeName, String marksOrPercentage) throws Exception {
+		
+			inputTextIntoInputField(input_MarksOrPercentage, marksOrPercentage);
 			log("Entered Marks/Percentage: " + marksOrPercentage + " to filter records and object is:- "
 					+ input_MarksOrPercentage.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Marks/Percentage input field element not present in output grid.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clearFilledDataForFilter() throws Exception {
+		isDisplayed(input_GradeNameFilter);
 		input_GradeNameFilter.clear();
+		isDisplayed(input_MarksOrPercentage);
 		input_MarksOrPercentage.clear();
 		log("Cleared filter data in Grid View.");
 		Thread.sleep(1000);
 	}
 
 	public void clickOnViewIcon_ToSeeMasterGradeDetails() throws Exception {
-		// ((JavascriptExecutor)
-		// driver).executeScript("arguments[0].scrollIntoView(true);",
-		// btn_Edit_Grid);
-		// Thread.sleep(1000);
-		if (icon_View.isDisplayed()) {
-			icon_View.click();
+		
+		
+			clickOnButton(icon_View);
 			log("Clicked on View Icon to launch pop up windows to see created Master Grade Details and object is:-"
 					+ icon_View.toString());
 			Thread.sleep(1000);
 			boolean closeButton = btn_View_ClosePopUp.isDisplayed();
 			Assert.assertTrue(closeButton);
 			Thread.sleep(1000);
-		} else {
-			log("View Icon element is not present in grid.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void closeViewWindow_MasterGrade() throws Exception {
 
-		if (btn_View_ClosePopUp.isDisplayed()) {
-			btn_View_ClosePopUp.click();
+			clickOnButton(btn_View_ClosePopUp);
 			log("View window close button is clicked and object is:- " + btn_View_ClosePopUp.toString());
 			Thread.sleep(1000);
-		} else {
-			log("View Close button element is not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void clickOnEditIcon_ToUpdateMasterGrade() throws Exception {
 
-		if (icon_Edit.isDisplayed()) {
-			icon_Edit.click();
+			clickOnButton(icon_Edit);
 			log("Clicked on Edit Icon to update Master Grade and object is:-" + icon_Edit.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Edit Icon element is not present in output grid.");
-			Thread.sleep(500);
-		}
+			
 	}
+
 	public void deactivateRecords_MasterGradeGrid() throws Exception {
 
-		if (icon_Deactivate.isDisplayed()) {
-
+			isDisplayed(icon_Deactivate);
 			String DeactivateText = icon_Deactivate.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + DeactivateText);
 
@@ -766,16 +562,13 @@ public class Exam_MasterGrade extends TestBase {
 			log("Clicked on Deacivate Icon to Deactivate Master Grade record and object is:-"
 					+ icon_Deactivate.toString());
 			Thread.sleep(1000);
-		} else {
-			log("Deactivate Icon Master Grade element is not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void activateRecords_MasterGradeGrid() throws Exception {
 
-		if (icon_Activate.isDisplayed()) {
 
+			isDisplayed(icon_Activate);
 			String ActivateText = icon_Activate.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + ActivateText);
 
@@ -783,38 +576,27 @@ public class Exam_MasterGrade extends TestBase {
 			Assert.assertEquals(ActivateText, "Activate Now");
 
 			icon_Activate.click();
-			log("Clicked on Acivate Icon to Activate Master Grade record and object is:-"
-					+ icon_Activate.toString());
+			log("Clicked on Acivate Icon to Activate Master Grade record and object is:-" + icon_Activate.toString());
 			Thread.sleep(1000);
-		} else {
-			log("Activate Icon Master Grade Grid element is not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void yesDeactivateOrActivateRecords() throws Exception {
-		if (btnPopUp_YesDeactivateOrActivateit.isDisplayed()) {
-			btnPopUp_YesDeactivateOrActivateit.click();
+
+			clickOnButton(btnPopUp_YesDeactivateOrActivateit);
 			log("Clicked on Yes Deactivate Or Activate button for deactivation or Activation of record and object is:- "
 					+ btnPopUp_YesDeactivateOrActivateit.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Yes Deactivate or Activate it button is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void cancelDeactivationAndActivationOfRecord() throws Exception {
-		if (btnPopUp_Cancel.isDisplayed()) {
-			btnPopUp_Cancel.click();
+		
+			clickOnButton(btnPopUp_Cancel);
 			log("Clicked on Cancel button for Cancelation of Activation or Deactivation of record and object is:- "
 					+ btnPopUp_Cancel.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Cancel button is not present in Activation and deactivation pop up.");
-			Thread.sleep(500);
-		}
+			
 	}
+
 	/**
 	 * click on OK button after Saving, Cancel Pop Up, Activation and
 	 * De-activation of the record
@@ -822,13 +604,76 @@ public class Exam_MasterGrade extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
+		
+			clickOnButton(btnOKSuccess);
 			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button Element not present");
-			Thread.sleep(500);
+			
+	}
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record saved successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record updated successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record De-activated successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activated successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

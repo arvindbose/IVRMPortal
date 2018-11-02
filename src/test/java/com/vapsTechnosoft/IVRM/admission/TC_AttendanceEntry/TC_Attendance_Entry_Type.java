@@ -35,7 +35,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 	}
 
 	@DataProvider(name = "AttendanceEntryTypeData")
-	public String[][] getTestWrittenData() {
+	public String[][] getTestAttendanceEntryData() {
 		String[][] testRecordsAttendanceEntryType = getData("Admission_AttendanceEntry.xlsx",
 				"AttendanceEntryTypeData");
 		return testRecordsAttendanceEntryType;
@@ -293,6 +293,21 @@ public class TC_Attendance_Entry_Type extends TestBase {
 		}
 	}
 	@Test(priority = 16)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			attendanceEntryType.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	
+	@Test(priority = 17)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -307,7 +322,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "AttendanceEntryType_Search")
+	@Test(priority = 18, dataProvider = "AttendanceEntryType_Search")
 	public void tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid(String className, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -324,7 +339,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "AttendanceEntryType_Search")
+	@Test(priority = 19, dataProvider = "AttendanceEntryType_Search")
 	public void tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid(String className, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -342,7 +357,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "AttendanceEntryType_Search")
+	@Test(priority = 20, dataProvider = "AttendanceEntryType_Search")
 	public void tcEditAttendanceEntryType(String className, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -359,7 +374,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcSaveFilledAttendanceEntryTypeForm_Edit() {
 
 		try {
@@ -373,7 +388,21 @@ public class TC_Attendance_Entry_Type extends TestBase {
 			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Edit");
 		}
 	}
-	@Test(priority = 21)
+	@Test(priority = 22)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
+
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			attendanceEntryType.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 23)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {

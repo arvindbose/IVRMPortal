@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.AttendanceEntry;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -40,7 +42,12 @@ public class Attendance_Entry_Type extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Attendance Entry')]")
 	WebElement btnAdmission_AttendanceEntry;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Attendance Entry')]/following::li[2]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Attendance
+	// Entry')]/following::li[2]")
+	// WebElement btnAdmission_AttendanceEntry_Type;
+
+	@FindBy(xpath = "//a[@href='#/app/attendanceEntryType/57']")
 	WebElement btnAdmission_AttendanceEntry_Type;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -52,8 +59,11 @@ public class Attendance_Entry_Type extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'Class:')]/following-sibling::div/input")
 	WebElement input_Search_Class;
 
-	@FindBy(xpath = "//span[contains(text(),' LKG  ')]/preceding-sibling::input")
-	WebElement chk_Class;
+	@FindBy(xpath = "//input[@name='option']")
+	List<WebElement> chk_Class;
+	// @FindBy(xpath = "//span[contains(text(),' LKG
+	// ')]/preceding-sibling::input")
+	// WebElement chk_Class;
 
 	@FindBy(xpath = "//span[contains(text(),'Daily Once')]/preceding-sibling::input")
 	WebElement rdBtn_Dailyonce;
@@ -88,6 +98,9 @@ public class Attendance_Entry_Type extends TestBase {
 	@FindBy(xpath = "//div[@class='input-group']/input")
 	WebElement input_Search_ClassInGrid;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Attendance_Entry_Type(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -97,7 +110,7 @@ public class Attendance_Entry_Type extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -112,32 +125,15 @@ public class Attendance_Entry_Type extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_AttendanceEntry_AttendanceEntryType_BGHS() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_AttendanceEntry.isDisplayed()) {
-			btnAdmission_AttendanceEntry.click();
-			log("Clicked on Attendance entry and object is:-" + btnAdmission_AttendanceEntry.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance entry button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_AttendanceEntry_Type.isDisplayed()) {
-			btnAdmission_AttendanceEntry_Type.click();
-			log("Clicked on Attendance entry type Button and object is:-"
-					+ btnAdmission_AttendanceEntry_Type.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance entry type button element not present.");
-			Thread.sleep(500);
-		}
 
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
+
+		clickOnButton(btnAdmission_AttendanceEntry);
+		log("Clicked on Attendance entry and object is:-" + btnAdmission_AttendanceEntry.toString());
+
+		clickOnButton(btnAdmission_AttendanceEntry_Type);
+		log("Clicked on Attendance entry type Button and object is:-" + btnAdmission_AttendanceEntry_Type.toString());
 	}
 
 	/**
@@ -160,52 +156,52 @@ public class Attendance_Entry_Type extends TestBase {
 	}
 
 	public void submitBlankAttendanceEntryTypeForm() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+		
+			clickOnButton(btn_Save);
 			log("Submit blank Attendance entry type form and object is:-" + btn_Save.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+	
 	}
 
 	public void fillAttendanceEntryTypeForm(String academicYear, String class_Search) throws Exception {
-		if (sel_AcademicYr.isDisplayed()) {
-			Select dropdown = new Select(sel_AcademicYr);
-			WebElement dropdownOption = dropdown.getFirstSelectedOption();
-			String SelectedContent = dropdownOption.getText().trim();
-			System.out.println("selected Value " + SelectedContent);
-			Assert.assertEquals(SelectedContent, academicYear);
-			log("Selected academic year: " + SelectedContent + " and object is:- " + sel_AcademicYr.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Academic year element is not present");
-			Thread.sleep(500);
-		}
-
-		if (input_Search_Class.isDisplayed()) {
-			input_Search_Class.clear();
-			input_Search_Class.sendKeys(class_Search);
+		
+			selectedDropdownItemValidation(sel_AcademicYr, academicYear);
+			log("Selected academic year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
+			
+			inputTextIntoInputField(input_Search_Class, class_Search);
 			log("Entered student admission number to search: " + class_Search + " and object is:-"
 					+ input_Search_Class.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Class Search Element not present.");
-			Thread.sleep(500);
+		
+		try{
+		int no_Of_CustomGroup = chk_Class.size();
+		for (int i = 0; i < no_Of_CustomGroup; i++) {
+			if (!chk_Class.get(i).isSelected()) {
+				chk_Class.get(i).click();
+				log(i + " Class check box is checked for attendance entry type and object is:-" + chk_Class.toString());
+				Thread.sleep(1000);
+			} else {
+				log(i + " Class checked box is already checked for attendance entry type and object is:-"
+						+ chk_Class.toString());
+				Thread.sleep(500);
+			}
 		}
-		if(!chk_Class.isSelected()) {
-			chk_Class.click();
-			log("Class is selected for attendance entry type and object is:-" + chk_Class.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Class is already selected for attendance entry type.");
-			Thread.sleep(500);
+		}catch(Exception e){
+			e.printStackTrace();
 		}
+		//
+		// if(!chk_Class.isSelected()) {
+		// chk_Class.click();
+		// log("Class is selected for attendance entry type and object is:-" +
+		// chk_Class.toString());
+		// Thread.sleep(1000);
+		// } else {
+		// log("Class is already selected for attendance entry type.");
+		// Thread.sleep(500);
+		// }
 	}
 
 	public void select_DailyOnce_RadioButton() throws Exception {
-		if(!rdBtn_Dailyonce.isSelected()) {
+		isDisplayed(rdBtn_Dailyonce);
+		if (!rdBtn_Dailyonce.isSelected()) {
 			rdBtn_Dailyonce.click();
 			log("Daily Once attendance entry type is selected and object is:-" + rdBtn_Dailyonce.toString());
 			Thread.sleep(1000);
@@ -216,7 +212,8 @@ public class Attendance_Entry_Type extends TestBase {
 	}
 
 	public void select_DailyTwice_RadioButton() throws Exception {
-		if(!rdBtn_DailyTwice.isSelected()) {
+		isDisplayed(rdBtn_DailyTwice);
+		if (!rdBtn_DailyTwice.isSelected()) {
 			rdBtn_DailyTwice.click();
 			log("Daily Twice attendance entry type is selected and object is:-" + rdBtn_DailyTwice.toString());
 			Thread.sleep(1000);
@@ -227,7 +224,8 @@ public class Attendance_Entry_Type extends TestBase {
 	}
 
 	public void select_Monthly_RadioButton() throws Exception {
-		if(!rdBtn_Monthly.isSelected()) {
+		isDisplayed(rdBtn_Monthly);
+		if (!rdBtn_Monthly.isSelected()) {
 			rdBtn_Monthly.click();
 			log("Monthly attendance entry type is selected and object is:-" + rdBtn_Monthly.toString());
 			Thread.sleep(1000);
@@ -238,7 +236,8 @@ public class Attendance_Entry_Type extends TestBase {
 	}
 
 	public void select_SubjectWise_RadioButton() throws Exception {
-		if(!rdBtn_SubjectWise.isSelected()) {
+		isDisplayed(rdBtn_SubjectWise);
+		if (!rdBtn_SubjectWise.isSelected()) {
 			rdBtn_SubjectWise.click();
 			log("SubjectWise attendance entry type is selected and object is:-" + rdBtn_SubjectWise.toString());
 			Thread.sleep(1000);
@@ -249,133 +248,141 @@ public class Attendance_Entry_Type extends TestBase {
 	}
 
 	public void clearFilledAttendanceEntryTypeForm() throws Exception {
-		if (btn_Clear.isDisplayed()) {
-			btn_Clear.click();
+		
+			clickOnButton(btn_Clear);
 			log("Clicked on clear button to clear filled attendance entry type form and object is:-"
 					+ btn_Clear.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void saveFilledAttendanceEntryTypeForm() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+		
+			clickOnButton(btn_Save);
+			Assert.assertEquals(btnOKSuccess.getText().trim(), "OK");
 			log("Submit blank Attendance entry type form and object is:-" + btn_Save.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void minimizeAttendanceEntryType() throws Exception {
-		if (btnMin_MaxAttendanceEntryType.isDisplayed()) {
-			btnMin_MaxAttendanceEntryType.click();
+		
+			clickOnButton(btnMin_MaxAttendanceEntryType);
 			log("Attendance Entry Type page minimized and object is:-" + btnMin_MaxAttendanceEntryType.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance Entry Type Minimized Element not present.");
-		}
+			
 	}
 
 	public void maximizeAttendanceEntryType() throws Exception {
-		if (btnMin_MaxAttendanceEntryType.isDisplayed()) {
-			btnMin_MaxAttendanceEntryType.click();
+	
+			clickOnButton(btnMin_MaxAttendanceEntryType);
 			log("Attendance Entry Type page maximized and object is:-" + btnMin_MaxAttendanceEntryType.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance Entry Type Maximize Element not present.");
-		}
+			
 	}
 
 	public void minimizeAttendanceEntryTypeList() throws Exception {
-		if (btnMin_MaxAttendanceEntryTypeList.isDisplayed()) {
-			btnMin_MaxAttendanceEntryTypeList.click();
+	
+			clickOnButton(btnMin_MaxAttendanceEntryTypeList);
 			log("clicked on Attendance Entry Type List minimize button and object is:-"
 					+ btnMin_MaxAttendanceEntryTypeList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance Entry Type List Minimize Element not present.");
-		}
+		
 	}
 
 	public void maximizeAttendanceEntryTypeList() throws Exception {
-		if (btnMin_MaxAttendanceEntryTypeList.isDisplayed()) {
-			btnMin_MaxAttendanceEntryTypeList.click();
+	
+			clickOnButton(btnMin_MaxAttendanceEntryTypeList);
 			log("clicked on Attendance Entry Type List maximize button and object is:-"
 					+ btnMin_MaxAttendanceEntryTypeList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Attendance Entry Type List Maximize Element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void searchWithClassNameInThe_AttendanceEntryTypeListGrid(String className) throws Exception {
-		if (input_Search_ClassInGrid.isDisplayed()) {
-			input_Search_ClassInGrid.clear();
-			input_Search_ClassInGrid.sendKeys(className);
+		
+			inputTextIntoInputField(input_Search_ClassInGrid, className);
 			log("Entered Class Name to search: " + className + " and object is:-"
 					+ input_Search_ClassInGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void verifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid(String className) {
+		try {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+	
 		for (int i = 1; i <= rows; i++) {
+			
 			String classname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]"))
 					.getText().trim();
 			System.out.println("Class Name: " + classname);
 			// Thread.sleep(2000);
-			try {
-
-				Assert.assertEquals(classname, className);
+			
+			if(classname.equals(className)){
+				//Assert.assertEquals(classname, className);
 				log("Attendance entry type class is updated in the output grid.");
-
-			} catch (Exception e) {
-				e.printStackTrace();
+				break;
 			}
+		}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void editAttendanceEntryType(String className) {
+		try {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
+			
 			String classname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]"))
 					.getText().trim();
 			System.out.println("Class Name: " + classname);
 			// Thread.sleep(2000);
-			try {
-				Assert.assertEquals(classname, className);
+			
+				if(classname.equals(className)){
+				
 				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[6]/a")).click();
 				log("Clicked on edit link in Attendance entry type to update the created record.");
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				Thread.sleep(2000);
+				break;
+				}
+		}
+
+		} catch (Exception e) {
+			//Assert.assertEquals(classname, className);
+			e.printStackTrace();
 		}
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
+		
+			clickOnButton(btnOKSuccess);
 			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Ok Button element not present.");
-			Thread.sleep(500);
+		
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try{
+			//validate_PopUpText.isDisplayed();
+			isDisplayed(validate_PopUpText);
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try{
+			//validate_PopUpText.isDisplayed();
+			isDisplayed(validate_PopUpText);
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

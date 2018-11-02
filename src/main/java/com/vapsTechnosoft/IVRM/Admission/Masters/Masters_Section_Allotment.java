@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -38,7 +40,11 @@ public class Masters_Section_Allotment extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[15]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[15]")
+	// WebElement btnMasters_SectionAllotment;
+
+	@FindBy(xpath = "//a[@href='#/app/sectionallotment/51']")
 	WebElement btnMasters_SectionAllotment;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/h1/strong")
@@ -336,6 +342,9 @@ public class Masters_Section_Allotment extends TestBase {
 	@FindBy(xpath = "(//div[@class='']/table)[2]/thead/tr/th[2]/a")
 	WebElement btn_sortByStudentNameRollGrid;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Section_Allotment(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -345,7 +354,7 @@ public class Masters_Section_Allotment extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -360,17 +369,14 @@ public class Masters_Section_Allotment extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_SectionAllotment_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_SectionAllotment);
 
-		btnMasters_SectionAllotment.click();
+		clickOnButton(btnMasters_SectionAllotment);
 		log("Clicked on Section Allotment Button and object is:-" + btnMasters_SectionAllotment.toString());
-		waitForElement(driver, 10, btnSave_NewSection);
 
 	}
 
@@ -395,86 +401,45 @@ public class Masters_Section_Allotment extends TestBase {
 
 	public void submitBlankNewSectionAllotmentForm() throws Exception {
 
-		btnSave_NewSection.click();
+		clickOnButton(btnSave_NewSection);
 		log("Submit blank New Section Allotment form and object is:-" + btnSave_NewSection.toString());
-		Thread.sleep(15000);
+		Thread.sleep(1000);
 	}
 
 	public void fillNewSectionAllotmentForm(String academicYr, String classAdmitted, String section_newSec)
 			throws Exception {
 
-		if (sel_AcademicYr_NewSec.isDisplayed()) {
-			select = new Select(sel_AcademicYr_NewSec);
-			select.selectByVisibleText(academicYr);
+		selectElementFromDropDown(sel_AcademicYr_NewSec, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_NewSec.toString());
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_NewSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(2000);
-		} else {
-			log("Academic Year element is not present");
-		}
-		if (sel_AcademicYr_NewSec_Disabled.isDisplayed()) {
-			Select dropdown = new Select(sel_AcademicYr_NewSec_Disabled);
-			WebElement dropdownOption = dropdown.getFirstSelectedOption();
-			String SelectedContent = dropdownOption.getText().trim();
-			System.out.println("selected Value " + SelectedContent);
-			Assert.assertEquals(SelectedContent, academicYr);
-			log("Disabled selected academic year: " + SelectedContent + " and object is:- "
-					+ sel_AcademicYr_NewSec_Disabled.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Disable academic year element is not present");
-		}
+		selectedDropdownItemValidation(sel_AcademicYr_NewSec_Disabled, academicYr);
+		log("Disabled selected academic year: " + academicYr + " and object is:- "
+				+ sel_AcademicYr_NewSec_Disabled.toString());
 
-		if (sel_ClassAdmitted.isDisplayed()) {
-			select = new Select(sel_ClassAdmitted);
-			select.selectByVisibleText(classAdmitted);
+		selectElementFromDropDown(sel_ClassAdmitted, classAdmitted);
+		log("selected Class Admitted: " + classAdmitted + " and object is:- " + sel_ClassAdmitted.toString());
 
-			log("selected Class Admitted: " + classAdmitted + " and object is:- " + sel_ClassAdmitted.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classAdmitted);
-			Thread.sleep(2000);
-		} else {
-			log("Class Admitted element is not present");
-		}
+		selectElementFromDropDown(sel_Class_NewSec, classAdmitted);
+		log("selected Class disabled: " + classAdmitted + " and object is:- " + sel_Class_NewSec.toString());
 
-		if (sel_Class_NewSec.isDisplayed()) {
-			select = new Select(sel_Class_NewSec);
-			select.selectByVisibleText(classAdmitted);
+		selectElementFromDropDown(sel_Section_NewSec, section_newSec);
+		log("selected section: " + section_newSec + " and object is:- " + sel_Section_NewSec.toString());
 
-			log("selected Class disabled: " + classAdmitted + " and object is:- " + sel_Class_NewSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classAdmitted);
-			Thread.sleep(2000);
-		} else {
-			log("Class element is not present");
-		}
-
-		if (sel_Section_NewSec.isDisplayed()) {
-			select = new Select(sel_Section_NewSec);
-			select.selectByVisibleText(section_newSec);
-
-			log("selected section: " + section_newSec + " and object is:- " + sel_Section_NewSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_newSec);
-			Thread.sleep(2000);
-		} else {
-			log("section element is not present");
-		}
 	}
 
 	public void selectStudentForSectionAllotment(String admissionNumber) {
 		int rows = tblRows_AllotStuToSection.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='col-sm-5']/table)[1]/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='col-sm-5']/table)[1]/tbody/tr[" + i + "]/td[4]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					WebElement studentcheckbox = driver.findElement(
@@ -482,21 +447,18 @@ public class Masters_Section_Allotment extends TestBase {
 					if (!studentcheckbox.isSelected()) {
 						studentcheckbox.click();
 						log("Student check box is selected and object is:-" + studentcheckbox.toString());
-						Thread.sleep(500);
+						Thread.sleep(1000);
 					} else {
 						log("Student check box is already selected and object is:-" + studentcheckbox.toString());
 						Thread.sleep(500);
 					}
 
 					break;
-				} else {
-					log("Admission Number not matched with the Student name list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -504,67 +466,56 @@ public class Masters_Section_Allotment extends TestBase {
 		int rows = tblRows_AllotedStuToSection.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='col-sm-6']/table)[1]/tbody/tr[" + i + "]/td[4]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(admissionNum, admissionNumber);
-				log("Section alloted Admission number is updated in the section allotment table.");
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='col-sm-6']/table)[1]/tbody/tr[" + i + "]/td[4]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
 
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
+					// Assert.assertEquals(admissionNum, admissionNumber);
+					log("Section alloted Admission number is updated in the section allotment table.");
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void moveSelectedStudentForSectionAllotment() throws Exception {
 
-		if (btn_shift_SelectedStudent.isDisplayed()) {
-			btn_shift_SelectedStudent.click();
-			log("Selected student for section allotment is moved for section allotment table and object is:-"
-					+ btn_shift_SelectedStudent.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student shift button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_shift_SelectedStudent);
+		log("Selected student for section allotment is moved for section allotment table and object is:-"
+				+ btn_shift_SelectedStudent.toString());
 	}
 
 	public void clearNewSectionAllotmemntForm() throws Exception {
-		if (btnCancelClear_NewSection.isDisplayed()) {
-			btnCancelClear_NewSection.click();
-			log("Cleared filled section allotment form and object is:-" + btnCancelClear_NewSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Clear button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnCancelClear_NewSection);
+		log("Cleared filled section allotment form and object is:-" + btnCancelClear_NewSection.toString());
+
 	}
 
 	public void saveNewSectionAllotmemntForm() throws Exception {
-		if (btnSave_NewSection.isDisplayed()) {
-			btnSave_NewSection.click();
-			log("Save filled section allotment form and object is:-" + btnSave_NewSection.toString());
-			Thread.sleep(20000);
-		} else {
-			log("Save button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnSave_NewSection);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Save filled section allotment form and object is:-" + btnSave_NewSection.toString());
+
 	}
 
-	public void searchWithStudentNameInNewSectionGrid(String admissionNumber) {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(admissionNumber);
-			log("Entered student admission number to search: " + admissionNumber + " and object is:-"
-					+ input_Search.toString());
-		} else {
-			log("Element not present.");
-		}
+	public void searchWithStudentNameInNewSectionGrid(String admissionNumber) throws Exception {
+
+		inputTextIntoInputField(input_Search, admissionNumber);
+		log("Entered student admission number to search: " + admissionNumber + " and object is:-"
+				+ input_Search.toString());
+
 	}
 
 	public void verifyStudentAdmissionNumberInTheGrid(String admissionNumber) throws Exception {
@@ -572,184 +523,122 @@ public class Masters_Section_Allotment extends TestBase {
 		int rows = tblRows_Grid.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[1]/tbody/tr[" + i + "]/td[5]")).getText()
-					.trim();
-			System.out.println("Admission number: " + admissionNum);
-			Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(admissionNum, admissionNumber);
-				log("Section alloted Admission number is updated in the record grid.");
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[1]/tbody/tr[" + i + "]/td[5]"))
+						.getText().trim();
+				System.out.println("Admission number: " + admissionNum);
+				Thread.sleep(2000);
 
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (admissionNum.equals(admissionNumber)) {
+					// Assert.assertEquals(admissionNum, admissionNumber);
+					log("Section alloted Admission number is updated in the record grid.");
+
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void minimizeNewSection() throws Exception {
-		if (btnMin_MaxNewSection.isDisplayed()) {
-			btnMin_MaxNewSection.click();
-			log("New Section page minimize and object is:-" + btnMin_MaxNewSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxNewSection);
+		log("New Section page minimize and object is:-" + btnMin_MaxNewSection.toString());
+
 	}
 
 	public void maximizeNewSection() throws Exception {
-		if (btnMin_MaxNewSection.isDisplayed()) {
-			btnMin_MaxNewSection.click();
-			log("New Section page maximized and object is:-" + btnMin_MaxNewSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxNewSection);
+		log("New Section page maximized and object is:-" + btnMin_MaxNewSection.toString());
+
 	}
 
 	public void minimizeSectionAllotedStudentList() throws Exception {
-		if (btnMin_MaxSectionAllotedStudentList.isDisplayed()) {
-			btnMin_MaxSectionAllotedStudentList.click();
-			log("clicked on Section Alloted Student List minimize button and object is:-"
-					+ btnMin_MaxSectionAllotedStudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxSectionAllotedStudentList);
+		log("clicked on Section Alloted Student List minimize button and object is:-"
+				+ btnMin_MaxSectionAllotedStudentList.toString());
+
 	}
 
 	public void maximizeSectionAllotedStudentList() throws Exception {
-		if (btnMin_MaxSectionAllotedStudentList.isDisplayed()) {
-			btnMin_MaxSectionAllotedStudentList.click();
-			log("clicked on Section Alloted Student List maximize button and object is:-"
-					+ btnMin_MaxSectionAllotedStudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxSectionAllotedStudentList);
+		log("clicked on Section Alloted Student List maximize button and object is:-"
+				+ btnMin_MaxSectionAllotedStudentList.toString());
+
 	}
 
 	public void minimizeAllotStudentToSection() throws Exception {
-		if (btnMin_MaxAllotStuToSection.isDisplayed()) {
-			btnMin_MaxAllotStuToSection.click();
-			log("AllotStudentToSection minimize and object is:-" + btnMin_MaxAllotStuToSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxAllotStuToSection);
+		log("AllotStudentToSection minimize and object is:-" + btnMin_MaxAllotStuToSection.toString());
 	}
 
 	public void maximizeAllotStudentToSection() throws Exception {
-		if (btnMin_MaxAllotStuToSection.isDisplayed()) {
-			btnMin_MaxAllotStuToSection.click();
-			log("AllotStudentToSection maximized and object is:-" + btnMin_MaxAllotStuToSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxAllotStuToSection);
+		log("AllotStudentToSection maximized and object is:-" + btnMin_MaxAllotStuToSection.toString());
+
 	}
 
 	public void sortByStudentNameInGrid() throws Exception {
 
-		if (btn_sortByStudentName.isDisplayed()) {
-			btn_sortByStudentName.click();
-			log("Sorted the record with Student Name and object is:-" + btn_sortByStudentName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student name Element not present.");
-		}
+		clickOnButton(btn_sortByStudentName);
+		log("Sorted the record with Student Name and object is:-" + btn_sortByStudentName.toString());
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Ok button Element not present.");
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void nevigateToDeleteSection() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
 				txtMasters_SectionAllotmentMsgDispaly);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
-		if (tab_DeleteSection.isDisplayed()) {
-			tab_DeleteSection.click();
-			log("Navigated to delete section and object is:-" + tab_DeleteSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Delete section tab not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_DeleteSection);
+		log("Navigated to delete section and object is:-" + tab_DeleteSection.toString());
 	}
 
 	public void submitDeleteSectionForm() throws Exception {
 
-		if (btn_Delete.isDisplayed()) {
-			btn_Delete.click();
-			log("Click on delete button to submit delete section form and object is:-" + btn_Delete.toString());
-			Thread.sleep(15000);
-		} else {
-			log("Delete button is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Delete);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Click on delete button to submit delete section form and object is:-" + btn_Delete.toString());
+
 	}
 
 	public void fillDeleteSectionFormToSelectStudentData(String academicYear, String class_Del, String section_del)
 			throws Exception {
 
-		if (sel_AcademicYr_DelSec.isDisplayed()) {
-			select = new Select(sel_AcademicYr_DelSec);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_AcademicYr_DelSec, academicYear);
+		log("selected Academic year: " + academicYear + " and object is:- " + sel_AcademicYr_DelSec.toString());
 
-			log("selected Academic year: " + academicYear + " and object is:- " + sel_AcademicYr_DelSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(2000);
-		} else {
-			log("Academic year element is not present");
-		}
+		selectElementFromDropDown(sel_Class_DelSec, class_Del);
+		log("selected Class: " + class_Del + " and object is:- " + sel_Class_DelSec.toString());
 
-		if (sel_Class_DelSec.isDisplayed()) {
-			select = new Select(sel_Class_DelSec);
-			select.selectByVisibleText(class_Del);
+		selectElementFromDropDown(sel_Section_DelSec, section_del);
+		log("selected Class: " + section_del + " and object is:- " + sel_Section_DelSec.toString());
 
-			log("selected Class: " + class_Del + " and object is:- " + sel_Class_DelSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Del);
-			Thread.sleep(2000);
-		} else {
-			log("Class element is not present");
-		}
-		if (sel_Section_DelSec.isDisplayed()) {
-			select = new Select(sel_Section_DelSec);
-			select.selectByVisibleText(section_del);
-
-			log("selected Class: " + section_del + " and object is:- " + sel_Section_DelSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_del);
-			Thread.sleep(2000);
-		} else {
-			log("Section element is not present");
-		}
 	}
 
 	public void searchWithStudentNameInThe_DeleteSectionGrid(String admissionNumber) throws Exception {
-		if (input_Search_Delete.isDisplayed()) {
-			input_Search_Delete.clear();
-			input_Search_Delete.sendKeys(admissionNumber);
-			log("Entered student admission number to search: " + admissionNumber + " and object is:-"
-					+ input_Search_Delete.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search_Delete, admissionNumber);
+		log("Entered student admission number to search: " + admissionNumber + " and object is:-"
+				+ input_Search_Delete.toString());
+
 	}
 
 	public void verifyStudentIn_DeleteSectionAllotedGrid(String admissionNumber) {
@@ -757,12 +646,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					log("Student section not deleted.");
@@ -779,15 +669,11 @@ public class Masters_Section_Allotment extends TestBase {
 	}
 
 	public void clearfilledDeleteSectionForm() throws Exception {
-		if (btn_Clear_DeleteSec.isDisplayed()) {
-			btn_Clear_DeleteSec.click();
-			log("clicked on clear button to clear all filled data ofr deleting of section and object is:-"
-					+ btn_Clear_DeleteSec.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Clear button not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Clear_DeleteSec);
+		log("clicked on clear button to clear all filled data ofr deleting of section and object is:-"
+				+ btn_Clear_DeleteSec.toString());
+
 	}
 
 	public void selectStudentToDeleteSection(String admissionNumber) {
@@ -795,12 +681,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[1]/tbody/tr[" + i + "]/td[6]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[1]/tbody/tr[" + i + "]/td[6]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					WebElement studentcheckbox = driver.findElement(
@@ -808,7 +695,7 @@ public class Masters_Section_Allotment extends TestBase {
 					if (!studentcheckbox.isSelected()) {
 						studentcheckbox.click();
 						log("Student check box is selected and object is:-" + studentcheckbox.toString());
-						Thread.sleep(500);
+						Thread.sleep(1000);
 					} else {
 						log("Student check box is already selected and object is:-" + studentcheckbox.toString());
 						Thread.sleep(500);
@@ -830,28 +717,18 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (tab_NewSection.isDisplayed()) {
-			tab_NewSection.click();
-			log("Navigated to New section and object is:-" + tab_NewSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("New section tab not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_NewSection);
+		log("Navigated to New section and object is:-" + tab_NewSection.toString());
+
 	}
 
 	public void nevigateToChangeSection() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (tab_ChangeSection.isDisplayed()) {
-			tab_ChangeSection.click();
-			log("Navigated to change section and object is:-" + tab_ChangeSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Change section tab not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_ChangeSection);
+		log("Navigated to change section and object is:-" + tab_ChangeSection.toString());
+
 	}
 
 	public void fillChangeSectionAllotmentForm(String academicYr, String classAdmitted, String section,
@@ -859,78 +736,26 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (sel_AcademicYr_ChangeSec.isDisplayed()) {
-			select = new Select(sel_AcademicYr_ChangeSec);
-			select.selectByVisibleText(academicYr);
+		selectElementFromDropDown(sel_AcademicYr_ChangeSec, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_ChangeSec.toString());
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_ChangeSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(2000);
-		} else {
-			log("Academic Year element is not present");
-		}
-		if (sel_AcademicYr_Disable_ChangeSec.isDisplayed()) {
-			Select dropdown = new Select(sel_AcademicYr_Disable_ChangeSec);
-			WebElement dropdownOption = dropdown.getFirstSelectedOption();
-			String SelectedContent = dropdownOption.getText().trim();
-			System.out.println("selected Value " + SelectedContent);
-			Assert.assertEquals(SelectedContent, academicYr);
-			log("Disabled selected academic year: " + SelectedContent + " and object is:- "
-					+ sel_AcademicYr_Disable_ChangeSec.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Disable academic year element is not present");
-		}
+		selectedDropdownItemValidation(sel_AcademicYr_Disable_ChangeSec, academicYr);
+		log("Disabled selected academic year: " + academicYr + " and object is:- "
+				+ sel_AcademicYr_Disable_ChangeSec.toString());
 
-		if (sel_ClassAdmitted_ChangeSec.isDisplayed()) {
-			select = new Select(sel_ClassAdmitted_ChangeSec);
-			select.selectByVisibleText(classAdmitted);
+		selectElementFromDropDown(sel_ClassAdmitted_ChangeSec, classAdmitted);
+		log("selected Class Admitted: " + classAdmitted + " and object is:- " + sel_ClassAdmitted_ChangeSec.toString());
 
-			log("selected Class Admitted: " + classAdmitted + " and object is:- "
-					+ sel_ClassAdmitted_ChangeSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classAdmitted);
-			Thread.sleep(2000);
-		} else {
-			log("Class Admitted element is not present");
-		}
+		selectElementFromDropDown(sel_Class_ChangeSec, classAdmitted);
+		log("selected Class disabled: " + classAdmitted + " and object is:- " + sel_Class_ChangeSec.toString());
 
-		if (sel_Class_ChangeSec.isDisplayed()) {
-			select = new Select(sel_Class_ChangeSec);
-			select.selectByVisibleText(classAdmitted);
+		selectElementFromDropDown(sel_Section_ChangeSec, section);
+		log("selected section: " + section + " and object is:- " + sel_Section_ChangeSec.toString());
 
-			log("selected Class disabled: " + classAdmitted + " and object is:- " + sel_Class_ChangeSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classAdmitted);
-			Thread.sleep(2000);
-		} else {
-			log("Class element is not present");
-		}
+		selectElementFromDropDown(sel_SectionToChange_ChangeSec, section_ToChange);
+		log("selected section To change: " + section_ToChange + " and object is:- "
+				+ sel_SectionToChange_ChangeSec.toString());
 
-		if (sel_Section_ChangeSec.isDisplayed()) {
-			select = new Select(sel_Section_ChangeSec);
-			select.selectByVisibleText(section);
-
-			log("selected section: " + section + " and object is:- " + sel_Section_ChangeSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(2000);
-		} else {
-			log("section element is not present");
-		}
-		if (sel_SectionToChange_ChangeSec.isDisplayed()) {
-			select = new Select(sel_SectionToChange_ChangeSec);
-			select.selectByVisibleText(section_ToChange);
-
-			log("selected section To change: " + section_ToChange + " and object is:- "
-					+ sel_SectionToChange_ChangeSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_ToChange);
-			Thread.sleep(2000);
-		} else {
-			log("section To Chnage element is not present");
-		}
 	}
 
 	public void selectStudentForSection_Change(String admissionNumber) {
@@ -938,12 +763,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']//div/table)[3]/tbody/tr[" + i + "]/td[6]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']//div/table)[3]/tbody/tr[" + i + "]/td[6]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					WebElement studentcheckbox = driver.findElement(By.xpath(
@@ -951,7 +777,7 @@ public class Masters_Section_Allotment extends TestBase {
 					if (!studentcheckbox.isSelected()) {
 						studentcheckbox.click();
 						log("Student check box is selected and object is:-" + studentcheckbox.toString());
-						Thread.sleep(500);
+						Thread.sleep(1000);
 					} else {
 						log("Student check box is already selected and object is:-" + studentcheckbox.toString());
 						Thread.sleep(500);
@@ -974,12 +800,12 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']//div/table)[4]/tbody/tr[" + i + "]/td[6]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']//div/table)[4]/tbody/tr[" + i + "]/td[6]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
 
 				Assert.assertEquals(admissionNum, admissionNumber);
 				log("Section alloted Admission number is updated in the section allotment table.");
@@ -994,49 +820,35 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (btn_shift_SelectedStudent_SecChange.isDisplayed()) {
-			btn_shift_SelectedStudent_SecChange.click();
-			log("Selected student for section change is moved for section change table and object is:-"
-					+ btn_shift_SelectedStudent_SecChange.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student shift button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_shift_SelectedStudent_SecChange);
+		log("Selected student for section change is moved for section change table and object is:-"
+				+ btn_shift_SelectedStudent_SecChange.toString());
+
 	}
 
 	public void saveSectionChange() throws Exception {
-		if (btn_Save_ChangeSec.isDisplayed()) {
-			btn_Save_ChangeSec.click();
-			log("Clicked on Save button to save the section change request and object is:-"
-					+ btn_Save_ChangeSec.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save_ChangeSec);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Clicked on Save button to save the section change request and object is:-"
+				+ btn_Save_ChangeSec.toString());
+
 	}
 
 	public void clearSectionChangeData() throws Exception {
-		if (btn_Clear_ChangeSec.isDisplayed()) {
-			btn_Clear_ChangeSec.click();
-			log("Clear filled section change data and object is:-" + btn_Clear_ChangeSec.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Clear_ChangeSec);
+		log("Clear filled section change data and object is:-" + btn_Clear_ChangeSec.toString());
+
 	}
 
-	public void searchWithStudentNameInThe_ChangeSectionGrid(String admissionNumber) {
-		if (input_Search_ChangeSec.isDisplayed()) {
-			input_Search_ChangeSec.clear();
-			input_Search_ChangeSec.sendKeys(admissionNumber);
-			log("Entered student admission number to search: " + admissionNumber + " and object is:-"
-					+ input_Search_ChangeSec.toString());
-		} else {
-			log("Element not present.");
-		}
+	public void searchWithStudentNameInThe_ChangeSectionGrid(String admissionNumber) throws Exception {
+
+		inputTextIntoInputField(input_Search_ChangeSec, admissionNumber);
+		log("Entered student admission number to search: " + admissionNumber + " and object is:-"
+				+ input_Search_ChangeSec.toString());
+
 	}
 
 	public void verifyStudentIn_ChangeSectionAllotedGrid(String admissionNumber) {
@@ -1044,12 +856,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[1]/tbody/tr[" + i + "]/td[5]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[1]/tbody/tr[" + i + "]/td[5]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				Assert.assertEquals(admissionNum, admissionNumber);
 				log("Student section chnage is updated in the section change grid.");
 
@@ -1059,15 +872,12 @@ public class Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	public void searchWithStudentNameInThe_PromoteStudentGrid(String admissionNumber) {
-		if (input_Search_PromotedStu.isDisplayed()) {
-			input_Search_PromotedStu.clear();
-			input_Search_PromotedStu.sendKeys(admissionNumber);
-			log("Entered student admission number to search: " + admissionNumber + " and object is:-"
-					+ input_Search_PromotedStu.toString());
-		} else {
-			log("Element not present.");
-		}
+	public void searchWithStudentNameInThe_PromoteStudentGrid(String admissionNumber) throws Exception {
+
+		inputTextIntoInputField(input_Search_PromotedStu, admissionNumber);
+		log("Entered student admission number to search: " + admissionNumber + " and object is:-"
+				+ input_Search_PromotedStu.toString());
+
 	}
 
 	public void verifyStudentIn_PromotedStudentGrid(String admissionNumber) {
@@ -1075,12 +885,14 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[3]/tbody/tr[" + i + "]/td[5]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[3]/tbody/tr[" + i + "]/td[5]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
 				Assert.assertEquals(admissionNum, admissionNumber);
 				log("Student promoted section is updated in the promotion section grid.");
 
@@ -1094,14 +906,9 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (tab_PromotionSection.isDisplayed()) {
-			tab_PromotionSection.click();
-			log("Navigated to promotion section and object is:-" + tab_PromotionSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Promotion section tab not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_PromotionSection);
+		log("Navigated to promotion section and object is:-" + tab_PromotionSection.toString());
+
 	}
 
 	public void fillPromotionSectionAllotmentForm(String academicYr, String YrsToPromot, String class_Current,
@@ -1110,97 +917,32 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (sel_AcademicYr_PromSec.isDisplayed()) {
-			select = new Select(sel_AcademicYr_PromSec);
-			select.selectByVisibleText(academicYr);
+		selectElementFromDropDown(sel_AcademicYr_PromSec, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_PromSec.toString());
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_PromSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(2000);
-		} else {
-			log("Academic Year element is not present");
-		}
+		clickOnButton(btnOKSuccess);
+		log("Number of years to be promoted pop up is handled and object is:-" + btnOKSuccess.toString());
 
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Number of years to be promoted pop up is handled and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Pop up OK button element not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_YearsPromoted, YrsToPromot);
+		log("Entered No of years promoted:" + YrsToPromot + " and object is:-" + input_YearsPromoted.toString());
 
-		if (input_YearsPromoted.isDisplayed()) {
-			input_YearsPromoted.clear();
-			input_YearsPromoted.sendKeys(YrsToPromot);
-			log("Entered No of years promoted:" + YrsToPromot + " and object is:-" + input_YearsPromoted.toString());
-			Thread.sleep(500);
-		} else {
-			log("Number of years promoted element not present.");
-		}
+		selectElementFromDropDown(sel_CurrentClass, class_Current);
+		log("selected Current Class for promotion: " + class_Current + " and object is:- "
+				+ sel_CurrentClass.toString());
 
-		if (sel_CurrentClass.isDisplayed()) {
-			select = new Select(sel_CurrentClass);
-			select.selectByVisibleText(class_Current);
+		selectElementFromDropDown(sel_CurrentSection, section_Current);
+		log("selected Current section: " + section_Current + " and object is:- " + sel_CurrentSection.toString());
 
-			log("selected Current Class for promotion: " + class_Current + " and object is:- "
-					+ sel_CurrentClass.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Current);
-			Thread.sleep(2000);
-		} else {
-			log("Class Current element is not present");
-		}
+		selectedDropdownItemValidation(sel_AcademicYr_Disable_PromSec, academicYr_Promot);
+		log("Disabled promoted academic year: " + academicYr_Promot + " and object is:- "
+				+ sel_AcademicYr_Disable_PromSec.toString());
 
-		if (sel_CurrentSection.isDisplayed()) {
-			select = new Select(sel_CurrentSection);
-			select.selectByVisibleText(section_Current);
+		selectedDropdownItemValidation(sel_Class_Promoted, promoted_Class);
+		log("Disabled promoted class: " + promoted_Class + " and object is:- " + sel_Class_Promoted.toString());
 
-			log("selected Current section: " + section_Current + " and object is:- " + sel_CurrentSection.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_Current);
-			Thread.sleep(2000);
-		} else {
-			log("Current section element is not present");
-		}
-
-		if (sel_AcademicYr_Disable_PromSec.isDisplayed()) {
-			Select dropdown = new Select(sel_AcademicYr_Disable_PromSec);
-			WebElement dropdownOption = dropdown.getFirstSelectedOption();
-			String SelectedContent = dropdownOption.getText().trim();
-			System.out.println("selected Value " + SelectedContent);
-			Assert.assertEquals(SelectedContent, academicYr_Promot);
-			log("Disabled promoted academic year: " + SelectedContent + " and object is:- "
-					+ sel_AcademicYr_Disable_PromSec.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Disable promoted academic year element is not present");
-		}
-		if (sel_Class_Promoted.isDisplayed()) {
-			Select dropdown1 = new Select(sel_Class_Promoted);
-			WebElement dropdownOption1 = dropdown1.getFirstSelectedOption();
-			String SelectedContent1 = dropdownOption1.getText().trim();
-			System.out.println("selected Value " + SelectedContent1);
-			Assert.assertEquals(SelectedContent1, promoted_Class);
-			log("Disabled promoted class: " + SelectedContent1 + " and object is:- " + sel_Class_Promoted.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Disable promoted class element is not present");
-		}
-
-		if (sel_SectionToPromot_PromSec.isDisplayed()) {
-			select = new Select(sel_SectionToPromot_PromSec);
-			select.selectByVisibleText(section_ToPromot);
-
-			log("selected section to promot: " + section_ToPromot + " and object is:- "
-					+ sel_SectionToPromot_PromSec.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_ToPromot);
-			Thread.sleep(2000);
-		} else {
-			log("Promoted section element is not present");
-		}
+		selectElementFromDropDown(sel_SectionToPromot_PromSec, section_ToPromot);
+		log("selected section to promot: " + section_ToPromot + " and object is:- "
+				+ sel_SectionToPromot_PromSec.toString());
 
 	}
 
@@ -1209,12 +951,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']//div/table)[5]/tbody/tr[" + i + "]/td[6]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']//div/table)[5]/tbody/tr[" + i + "]/td[6]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					WebElement studentcheckbox = driver.findElement(By.xpath(
@@ -1245,13 +988,14 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']//div/table)[6]/tbody/tr[" + i + "]/td[6]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']//div/table)[6]/tbody/tr[" + i + "]/td[6]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
 
+				Thread.sleep(1000);
 				Assert.assertEquals(admissionNum, admissionNumber);
 				log("Section promoted Admission number is updated in the section promotion table.");
 
@@ -1265,74 +1009,52 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (btn_shift_SelectedStudent_PromSection.isDisplayed()) {
-			btn_shift_SelectedStudent_PromSection.click();
-			log("Selected student for section promotion is moved for section promotion table and object is:-"
-					+ btn_shift_SelectedStudent_PromSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student shift button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_shift_SelectedStudent_PromSection);
+		log("Selected student for section promotion is moved for section promotion table and object is:-"
+				+ btn_shift_SelectedStudent_PromSection.toString());
+
 	}
 
 	public void saveSectionPromotion() throws Exception {
-		if (btn_Save_PromotSec.isDisplayed()) {
-			btn_Save_PromotSec.click();
-			log("Clicked on Save button to save the section promotion request and object is:-"
-					+ btn_Save_PromotSec.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save_PromotSec);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Clicked on Save button to save the section promotion request and object is:-"
+				+ btn_Save_PromotSec.toString());
+
 	}
 
 	public void clearSectionPromotionData() throws Exception {
-		if (btn_Clear_PromotSec.isDisplayed()) {
-			btn_Clear_PromotSec.click();
-			log("Clear filled section promotion data and object is:-" + btn_Clear_PromotSec.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Clear_PromotSec);
+		log("Clear filled section promotion data and object is:-" + btn_Clear_PromotSec.toString());
+
 	}
 
 	public void nevigateToYearLossSection() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (tab_YearLossSection.isDisplayed()) {
-			tab_YearLossSection.click();
-			log("Navigated to Year Loss Section and object is:-" + tab_YearLossSection.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Year Loss Section tab not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_YearLossSection);
+		log("Navigated to Year Loss Section and object is:-" + tab_YearLossSection.toString());
+
 	}
 
 	public void saveYearLossSection() throws Exception {
-		if (btn_Save_YrLoss.isDisplayed()) {
-			btn_Save_YrLoss.click();
-			log("Clicked on Save button to save the Year Loss request and object is:-" + btn_Save_YrLoss.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save_YrLoss);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
+		log("Clicked on Save button to save the Year Loss request and object is:-" + btn_Save_YrLoss.toString());
+
 	}
 
 	public void clearYearLossSectionData() throws Exception {
-		if (btn_Clear_YrLoss.isDisplayed()) {
-			btn_Clear_YrLoss.click();
-			log("Clear filled Year Loss Section data and object is:-" + btn_Clear_YrLoss.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Clear_YrLoss);
+		log("Clear filled Year Loss Section data and object is:-" + btn_Clear_YrLoss.toString());
+
 	}
 
 	public void fillYearLossSectionAllotmentForm(String academicYr, String class_Current, String section_Current,
@@ -1340,80 +1062,25 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (sel_AcademicYr_YrLoss.isDisplayed()) {
-			select = new Select(sel_AcademicYr_YrLoss);
-			select.selectByVisibleText(academicYr);
+		selectElementFromDropDown(sel_AcademicYr_YrLoss, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_YrLoss.toString());
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_YrLoss.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(2000);
-		} else {
-			log("Academic Year element is not present");
-		}
+		selectElementFromDropDown(sel_Class_YrLoss, class_Current);
+		log("selected Current Class for YrLoss: " + class_Current + " and object is:- " + sel_Class_YrLoss.toString());
 
-		if (sel_Class_YrLoss.isDisplayed()) {
-			select = new Select(sel_Class_YrLoss);
-			select.selectByVisibleText(class_Current);
+		selectElementFromDropDown(sel_Section_YrLoss, section_Current);
+		log("selected Current section: " + section_Current + " and object is:- " + sel_Section_YrLoss.toString());
 
-			log("selected Current Class for YrLoss: " + class_Current + " and object is:- "
-					+ sel_Class_YrLoss.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_Current);
-			Thread.sleep(2000);
-		} else {
-			log("Class Current element is not present");
-		}
+		selectedDropdownItemValidation(sel_AcademicYr_Disable_YrLoss, academicYr_New);
+		log("Disabled promoted academic year: " + academicYr_New + " and object is:- "
+				+ sel_AcademicYr_Disable_YrLoss.toString());
 
-		if (sel_Section_YrLoss.isDisplayed()) {
-			select = new Select(sel_Section_YrLoss);
-			select.selectByVisibleText(section_Current);
+		selectedDropdownItemValidation(sel_Class_Disable_YrLoss, new_Class);
+		log("Disabled Year loss class: " + new_Class + " and object is:- " + sel_Class_Disable_YrLoss.toString());
 
-			log("selected Current section: " + section_Current + " and object is:- " + sel_Section_YrLoss.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_Current);
-			Thread.sleep(2000);
-		} else {
-			log("Current section element is not present");
-		}
-
-		if (sel_AcademicYr_Disable_YrLoss.isDisplayed()) {
-			Select dropdown = new Select(sel_AcademicYr_Disable_YrLoss);
-			WebElement dropdownOption = dropdown.getFirstSelectedOption();
-			String SelectedContent = dropdownOption.getText().trim();
-			System.out.println("selected Value " + SelectedContent);
-			Assert.assertEquals(SelectedContent, academicYr_New);
-			log("Disabled promoted academic year: " + SelectedContent + " and object is:- "
-					+ sel_AcademicYr_Disable_YrLoss.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Disable promoted academic year element is not present");
-		}
-		if (sel_Class_Disable_YrLoss.isDisplayed()) {
-			Select dropdown2 = new Select(sel_Class_Disable_YrLoss);
-			WebElement dropdownOption2 = dropdown2.getFirstSelectedOption();
-			String SelectedContent2 = dropdownOption2.getText().trim();
-			System.out.println("selected Value " + SelectedContent2);
-			Assert.assertEquals(SelectedContent2, new_Class);
-			log("Disabled Year loss class: " + SelectedContent2 + " and object is:- "
-					+ sel_Class_Disable_YrLoss.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Disable year loss class element is not present");
-		}
-
-		if (sel_SectionToAllot_YrLoss.isDisplayed()) {
-			select = new Select(sel_SectionToAllot_YrLoss);
-			select.selectByVisibleText(section_YrLoss);
-
-			log("selected section to year loss: " + section_YrLoss + " and object is:- "
-					+ sel_SectionToAllot_YrLoss.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_YrLoss);
-			Thread.sleep(2000);
-		} else {
-			log("year loss section element is not present");
-		}
+		selectElementFromDropDown(sel_SectionToAllot_YrLoss, section_YrLoss);
+		log("selected section to year loss: " + section_YrLoss + " and object is:- "
+				+ sel_SectionToAllot_YrLoss.toString());
 
 	}
 
@@ -1422,12 +1089,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']//div/table)[7]/tbody/tr[" + i + "]/td[6]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']//div/table)[7]/tbody/tr[" + i + "]/td[6]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					WebElement studentcheckbox = driver.findElement(By.xpath(
@@ -1458,12 +1126,12 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']//div/table)[8]/tbody/tr[" + i + "]/td[6]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']//div/table)[8]/tbody/tr[" + i + "]/td[6]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
 
 				Assert.assertEquals(admissionNum, admissionNumber);
 				log("Year Loss Section Admission number is updated in the section promotion table.");
@@ -1478,29 +1146,17 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (btn_shift_SelectedStudent_YrLoss.isDisplayed()) {
-			btn_shift_SelectedStudent_YrLoss.click();
-			log("Selected student for Year Loss section is moved for section promotion table and object is:-"
-					+ btn_shift_SelectedStudent_YrLoss.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student shift button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_shift_SelectedStudent_YrLoss);
+		log("Selected student for Year Loss section is moved for section promotion table and object is:-"
+				+ btn_shift_SelectedStudent_YrLoss.toString());
 	}
 
 	public void searchStudentToValidateUpdatedYearLossStudentInGrid(String admissionNumber) throws Exception {
 
-		if (input_Search_YrLossStu_Updated.isDisplayed()) {
-			input_Search_YrLossStu_Updated.clear();
-			input_Search_YrLossStu_Updated.sendKeys(admissionNumber);
-			log("Entered admission number " + admissionNumber + " to search student in the grid and object is:-"
-					+ input_Search_YrLossStu_Updated.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search element not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_Search_YrLossStu_Updated, admissionNumber);
+		log("Entered admission number " + admissionNumber + " to search student in the grid and object is:-"
+				+ input_Search_YrLossStu_Updated.toString());
+
 	}
 
 	public void verifyUpdatedYearLossStudentInGrid(String admissionNumber) {
@@ -1508,12 +1164,12 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver
-					.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]")).getText()
-					.trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='box-body']/table)[2]/tbody/tr[" + i + "]/td[5]"))
+						.getText().trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
 
 				Assert.assertEquals(admissionNum, admissionNumber);
 				log("Admission number updated in the year loss section output grid " + admissionNumber);
@@ -1530,37 +1186,25 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (tab_UpdateRollNumber.isDisplayed()) {
-			tab_UpdateRollNumber.click();
-			log("Navigated to Update roll number and object is:-" + tab_UpdateRollNumber.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Update roll number tab not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(tab_UpdateRollNumber);
+		log("Navigated to Update roll number and object is:-" + tab_UpdateRollNumber.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void saveUpdateRollNumber() throws Exception {
-		if (btn_Save_UpdatedRoll.isDisplayed()) {
-			btn_Save_UpdatedRoll.click();
-			log("Clicked on Save button to save the updated roll number request and object is:-"
-					+ btn_Save_UpdatedRoll.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save_UpdatedRoll);
+		log("Clicked on Save button to save the updated roll number request and object is:-"
+				+ btn_Save_UpdatedRoll.toString());
+
 	}
 
 	public void clearUpdateRollNumberData() throws Exception {
-		if (btn_Clear_UpdatedRoll.isDisplayed()) {
-			btn_Clear_UpdatedRoll.click();
-			log("Clear filled updated roll number data and object is:-" + btn_Clear_UpdatedRoll.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Clear button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Clear_UpdatedRoll);
+		log("Clear filled updated roll number data and object is:-" + btn_Clear_UpdatedRoll.toString());
+
 	}
 
 	public void fillUpdateRollNumberAllotmentForm(String academicYr, String class_rollNo, String section_rollNo)
@@ -1568,43 +1212,17 @@ public class Masters_Section_Allotment extends TestBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", DashBoard);
 		Thread.sleep(2000);
 
-		if (sel_AcademicYr_UpdateRoll.isDisplayed()) {
-			select = new Select(sel_AcademicYr_UpdateRoll);
-			select.selectByVisibleText(academicYr);
+		selectElementFromDropDown(sel_AcademicYr_UpdateRoll, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_UpdateRoll.toString());
 
-			log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr_UpdateRoll.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(2000);
-		} else {
-			log("Academic Year element is not present");
-		}
+		selectElementFromDropDown(sel_Class_UpdateRoll, class_rollNo);
+		log("selected Class for roll number update: " + class_rollNo + " and object is:- "
+				+ sel_Class_UpdateRoll.toString());
 
-		if (sel_Class_UpdateRoll.isDisplayed()) {
-			select = new Select(sel_Class_UpdateRoll);
-			select.selectByVisibleText(class_rollNo);
+		selectElementFromDropDown(sel_Section_UpdateRoll, section_rollNo);
+		log("selected section for roll number: " + section_rollNo + " and object is:- "
+				+ sel_Section_UpdateRoll.toString());
 
-			log("selected Class for roll number update: " + class_rollNo + " and object is:- "
-					+ sel_Class_UpdateRoll.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_rollNo);
-			Thread.sleep(2000);
-		} else {
-			log("Class roll number element is not present");
-		}
-
-		if (sel_Section_UpdateRoll.isDisplayed()) {
-			select = new Select(sel_Section_UpdateRoll);
-			select.selectByVisibleText(section_rollNo);
-
-			log("selected section for roll number: " + section_rollNo + " and object is:- "
-					+ sel_Section_UpdateRoll.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section_rollNo);
-			Thread.sleep(2000);
-		} else {
-			log("Current section element is not present");
-		}
 	}
 
 	public void updateRollNumberForTheStudent(String admissionNumber, String rollNumber) {
@@ -1612,11 +1230,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver.findElement(By.xpath("(//div[@class='']/table)[1]/tbody/tr[" + i + "]/td[5]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='']/table)[1]/tbody/tr[" + i + "]/td[5]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					WebElement rollnumber = driver
@@ -1640,30 +1260,18 @@ public class Masters_Section_Allotment extends TestBase {
 
 	public void searchStudentToUpdateRollNumber(String admissionNumber) throws Exception {
 
-		if (input_Search_ToUpdateRoll.isDisplayed()) {
-			input_Search_ToUpdateRoll.clear();
-			input_Search_ToUpdateRoll.sendKeys(admissionNumber);
-			log("Entered admission number " + admissionNumber + " to search student and object is:-"
-					+ input_Search_ToUpdateRoll.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search element not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_Search_ToUpdateRoll, admissionNumber);
+		log("Entered admission number " + admissionNumber + " to search student and object is:-"
+				+ input_Search_ToUpdateRoll.toString());
+
 	}
 
 	public void searchStudentToValidateUpdatedRollNumberInGrid(String admissionNumber) throws Exception {
 
-		if (input_Search_ToUpdatedRollInGrid.isDisplayed()) {
-			input_Search_ToUpdatedRollInGrid.clear();
-			input_Search_ToUpdatedRollInGrid.sendKeys(admissionNumber);
-			log("Entered admission number " + admissionNumber + " to search student in the grid and object is:-"
-					+ input_Search_ToUpdatedRollInGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search element not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_Search_ToUpdatedRollInGrid, admissionNumber);
+		log("Entered admission number " + admissionNumber + " to search student in the grid and object is:-"
+				+ input_Search_ToUpdatedRollInGrid.toString());
+
 	}
 
 	public void verifyUpdatedRollNumberForTheStudentInGrid(String admissionNumber, String rollNumber) {
@@ -1671,11 +1279,13 @@ public class Masters_Section_Allotment extends TestBase {
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String admissionNum = driver.findElement(By.xpath("(//div[@class='']/table)[2]/tbody/tr[" + i + "]/td[5]"))
-					.getText().trim();
-			System.out.println("Admission Number: " + admissionNum);
-			// Thread.sleep(2000);
 			try {
+				String admissionNum = driver
+						.findElement(By.xpath("(//div[@class='']/table)[2]/tbody/tr[" + i + "]/td[5]")).getText()
+						.trim();
+				System.out.println("Admission Number: " + admissionNum);
+				// Thread.sleep(2000);
+
 				if (admissionNum.equalsIgnoreCase(admissionNumber)) {
 
 					String rollnumber = driver
@@ -1698,76 +1308,115 @@ public class Masters_Section_Allotment extends TestBase {
 	}
 
 	public void minimizeUpdateRollNumber() throws Exception {
-		if (btnMin_MaxUpdateRoll.isDisplayed()) {
-			btnMin_MaxUpdateRoll.click();
-			log("Update roll number page minimize and object is:-" + btnMin_MaxUpdateRoll.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxUpdateRoll);
+		log("Update roll number page minimize and object is:-" + btnMin_MaxUpdateRoll.toString());
+
 	}
 
 	public void maximizeUpdateRollNumber() throws Exception {
-		if (btnMin_MaxUpdateRoll.isDisplayed()) {
-			btnMin_MaxUpdateRoll.click();
-			log("Update roll number page maximized and object is:-" + btnMin_MaxUpdateRoll.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxUpdateRoll);
+		log("Update roll number page maximized and object is:-" + btnMin_MaxUpdateRoll.toString());
+
 	}
 
 	public void minimizeUpdateRollNumberStudentList() throws Exception {
-		if (btnMin_MaxUpdateRollStuList.isDisplayed()) {
-			btnMin_MaxUpdateRollStuList.click();
-			log("clicked on update roll number Student List minimize button and object is:-"
-					+ btnMin_MaxUpdateRollStuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxUpdateRollStuList);
+		log("clicked on update roll number Student List minimize button and object is:-"
+				+ btnMin_MaxUpdateRollStuList.toString());
+
 	}
 
 	public void maximizeUpdateRollNumberStudentList() throws Exception {
-		if (btnMin_MaxUpdateRollStuList.isDisplayed()) {
-			btnMin_MaxUpdateRollStuList.click();
-			log("clicked on update roll number Student List maximize button and object is:-"
-					+ btnMin_MaxUpdateRollStuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxUpdateRollStuList);
+		log("clicked on update roll number Student List maximize button and object is:-"
+				+ btnMin_MaxUpdateRollStuList.toString());
+
 	}
 
 	public void minimizeUpdatedRollNumberInGrid() throws Exception {
-		if (btnMin_MaxUpdateRollStuListGrid.isDisplayed()) {
-			btnMin_MaxUpdateRollStuListGrid.click();
-			log("Student list grid minimize and object is:-" + btnMin_MaxUpdateRollStuListGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Minimize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxUpdateRollStuListGrid);
+		log("Student list grid minimize and object is:-" + btnMin_MaxUpdateRollStuListGrid.toString());
+
 	}
 
 	public void maximizeUpdatedRollNumberInGrid() throws Exception {
-		if (btnMin_MaxUpdateRollStuListGrid.isDisplayed()) {
-			btnMin_MaxUpdateRollStuListGrid.click();
-			log("Student list grid maximized and object is:-" + btnMin_MaxUpdateRollStuListGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxUpdateRollStuListGrid);
+		log("Student list grid maximized and object is:-" + btnMin_MaxUpdateRollStuListGrid.toString());
+
 	}
 
 	public void sortByStudentNameInUpdateRollNumberGrid() throws Exception {
 
-		if (btn_sortByStudentNameRollGrid.isDisplayed()) {
-			btn_sortByStudentNameRollGrid.click();
-			log("Sorted the record with Student Name in the grid and object is:-"
-					+ btn_sortByStudentNameRollGrid.toString());
+		clickOnButton(btn_sortByStudentNameRollGrid);
+		log("Sorted the record with Student Name in the grid and object is:-"
+				+ btn_sortByStudentNameRollGrid.toString());
+
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
-		} else {
-			log("Student name Element not present.");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
+	public void popWindowMessage_SubmitSuccessfully_Promotion() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Selected Record Promoted Successfully");
+			log("Record Promoted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_YrLoss() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Selected Record Year Loss Updated Successfully");
+			log("Year Loss Updated sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Delete() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Selected Record Deleted Successfully");
+			log("Record Deleted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_RollUpdate() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

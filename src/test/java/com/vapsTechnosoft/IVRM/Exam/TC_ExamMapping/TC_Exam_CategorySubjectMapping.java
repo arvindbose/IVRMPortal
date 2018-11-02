@@ -265,8 +265,21 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitCategorySubjectMappingForm");
 		}
 	}
-
 	@Test(priority = 14)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			categorysubjectmapping.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 15)
 	public void tcClickOnSuccessOkBtn_ForConfirmation() {
 
 		try {
@@ -281,7 +294,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 15, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 16, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_AcademicYear(String academicYear, String categoryName, String groupName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -299,7 +312,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 17)
 	public void tcClearFilledDataForFilter_AcademicYear() {
 
 		try {
@@ -313,7 +326,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 18, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_CategoryName(String academicYear, String categoryName, String groupName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -331,7 +344,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void tcClearFilledDataForFilter_CategoryName() {
 
 		try {
@@ -345,7 +358,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 20, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_GroupName(String academicYear, String categoryName, String groupName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -363,7 +376,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcClearFilledDataForFilter_GroupName() {
 
 		try {
@@ -377,7 +390,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 21)
+	@Test(priority = 22)
 	public void tcClickOnViewIcon_ToSeeTheMappedSubjectAndSubjectCode() {
 
 		try {
@@ -391,7 +404,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void tcCloseViewPopUpWindows() {
 
 		try {
@@ -405,7 +418,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 23, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 24, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_AcademicYear_ToEditRecords(String academicYear, String categoryName,
 			String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -423,7 +436,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void tcClickOnEditIcon_ToUpdateCategorySubjectMapping() {
 
 		try {
@@ -437,7 +450,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcClickOnSaveButton_ToSubmitCategorySubjectMappingForm_Edit() {
 
 		try {
@@ -452,8 +465,21 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitCategorySubjectMappingForm_Edit");
 		}
 	}
+	@Test(priority = 27)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 26)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			categorysubjectmapping.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 28)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_Edit() {
 
 		try {
@@ -468,7 +494,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 29, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_AcademicYear_ToDeactivateRecords(String academicYear, String categoryName,
 			String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -486,7 +512,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcClickOnDeActivationIcon_ToDeactivateCategorySubjectMapping() {
 
 		try {
@@ -503,7 +529,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 31)
 	public void tcCancel_DeactivatePopUp() {
 
 		try {
@@ -517,8 +543,21 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 			getScreenShot("tcCancel_DeactivatePopUp");
 		}
 	}
+	@Test(priority = 32)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 
-	@Test(priority = 30)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			categorysubjectmapping.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 33)
 	public void tcClickOnSuccessOkBtn_CancelDeactivate() {
 
 		try {
@@ -533,7 +572,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 31, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 34, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_AcademicYear_ToDeactivateRecords_AfterCancel(String academicYear,
 			String categoryName, String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -553,7 +592,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 35)
 	public void tcClickOnDeActivationIcon_ToDeactivateCategorySubjectMapping_AfterCancel() {
 
 		try {
@@ -570,7 +609,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 36)
 	public void tcConfirmationForDeactivate() {
 
 		try {
@@ -584,8 +623,21 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 			getScreenShot("tcConfirmationForDeactivate");
 		}
 	}
+	@Test(priority = 37)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
-	@Test(priority = 34)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			categorysubjectmapping.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 38)
 	public void tcClickOnSuccessOkBtn_Deactivate() {
 
 		try {
@@ -600,7 +652,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 39, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_AcademicYear_ToActivateRecords(String academicYear, String categoryName,
 			String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -618,7 +670,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 40)
 	public void tcClickOnActivationIcon_ToActivateCategorySubjectMapping() {
 
 		try {
@@ -634,7 +686,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 41)
 	public void tcCancel_ActivatePopUp() {
 
 		try {
@@ -648,8 +700,21 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 			getScreenShot("tcCancel_ActivatePopUp");
 		}
 	}
+	@Test(priority = 42)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 38)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			categorysubjectmapping.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 43)
 	public void tcClickOnSuccessOkBtn_CancelActivate() {
 
 		try {
@@ -664,7 +729,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 39, dataProvider = "Filter_CategorySubMapping_GridView")
+	@Test(priority = 44, dataProvider = "Filter_CategorySubMapping_GridView")
 	public void tcFilterRecordsBasedOn_AcademicYear_ToActivateRecords_AfterCancel(String academicYear,
 			String categoryName, String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -684,7 +749,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 45)
 	public void tcClickOnActivationIcon_ToActivateCategorySubjectMapping_AfterCancel() {
 
 		try {
@@ -701,7 +766,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 41)
+	@Test(priority = 46)
 	public void tcConfirmationForActivate() {
 
 		try {
@@ -715,8 +780,21 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 			getScreenShot("tcConfirmationForActivate");
 		}
 	}
+	@Test(priority = 47)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
 
-	@Test(priority = 42)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+			categorysubjectmapping.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 48)
 	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {
@@ -731,7 +809,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 43)
+	@Test(priority = 49)
 	public void tcSortWithAcademicYearInGridView() {
 
 		try {
@@ -746,7 +824,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 44)
+	@Test(priority = 50)
 	public void tcSortWithCategoryNameInGridView() {
 
 		try {
@@ -761,7 +839,7 @@ public class TC_Exam_CategorySubjectMapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 45)
+	@Test(priority = 51)
 	public void tcSortWithGroupNameInGridView() {
 
 		try {

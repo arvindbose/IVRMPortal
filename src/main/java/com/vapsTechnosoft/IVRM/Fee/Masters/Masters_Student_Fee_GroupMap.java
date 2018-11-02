@@ -14,7 +14,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -41,7 +40,10 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[2]")
+//	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[2]")
+//	WebElement btnStudentFGrMap;
+	
+	@FindBy(xpath = "//a[@href='#/app/StudentFeeGroupMapping/88']")
 	WebElement btnStudentFGrMap;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -161,7 +163,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -171,30 +173,16 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	public void navigateToMasters_StudentFeegroupMap() throws Exception {
-		if (btnFee.isDisplayed()) {
-			btnFee.click();
+	
+			clickOnButton(btnFee);
 			log("Clicked on Fee Button and object is:-" + btnFee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Button element not present.");
-			Thread.sleep(500);
-		}
-		if (feeMasters.isDisplayed()) {
-			feeMasters.click();
+	
+			clickOnButton(feeMasters);
 			log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee masters Button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnStudentFGrMap.isDisplayed()) {
-			btnStudentFGrMap.click();
+
+			clickOnButton(btnStudentFGrMap);
 			log("Clicked on student Fee Group map Button and object is:-" + btnStudentFGrMap.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Student Fee Group map Button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public boolean verifyStudentFeeGroupMapPage() {
@@ -202,7 +190,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			System.out.println(txtStudentFeeGrmap.getText());
 			txtStudentFeeGrmap.isDisplayed();
 			log("student Fee Group Map page is dispalyed and object is:-" + txtStudentFeeGrmap.toString());
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -211,7 +199,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnAll(String academicYr) throws Exception {
-
+		isDisplayed(rdBtn_All);
 		if (!rdBtn_All.isSelected()) {
 			rdBtn_All.click();
 			log("Radio button ALL is selected and object is:-" + rdBtn_All.toString());
@@ -220,51 +208,25 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button ALL is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
 
 	}
 
 	public void mapStudentWithGroup(String bystudentName, String studentName) throws Exception {
-		if (sel_Search_StuList.isDisplayed()) {
-			select = new Select(sel_Search_StuList);
-			select.selectByVisibleText(bystudentName);
+	
+			selectElementFromDropDown(sel_Search_StuList, bystudentName);
 			log("Selected serach for:-" + bystudentName + " and object is " + sel_Search_StuList.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), bystudentName);
-			Thread.sleep(1000);
-		} else {
-			log("Select serach for element is not present");
-			Thread.sleep(500);
-		}
-		if (input_Search_StuList.isDisplayed()) {
-			input_Search_StuList.clear();
-			input_Search_StuList.sendKeys(studentName);
+			inputTextIntoInputField(input_Search_StuList, studentName);
 			log("Entered Student name for search " + studentName + " and object is " + input_Search_StuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Input field element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_Search_StuList.isDisplayed()) {
-			btn_Search_StuList.click();
+
+			clickOnButton(btn_Search_StuList);
 			log("Search button for student list is clicked and object is " + btn_Search_StuList.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Search button element for student list is not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 		// if(chk_toSelectStuForGroupMap.isDisplayed()){
 		// if(!chk_toSelectStuForGroupMap.isSelected()){
 		// chk_toSelectStuForGroupMap.click();
@@ -280,6 +242,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 		// Thread.sleep(500);
 		// }
 		//
+			isDisplayed(chk_toSelectStuForGroupMap);
 		if (!chk_toSelectStuForGroupMap.isSelected()) {
 
 			chk_toSelectStuForGroupMap.click();
@@ -291,6 +254,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			Thread.sleep(500);
 
 		}
+		isDisplayed(chk_GroupList);
 		if (!chk_GroupList.isSelected()) {
 			chk_GroupList.click();
 			log("Group is selected from group list and object is " + chk_GroupList.toString());
@@ -303,21 +267,17 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	public void editStuentIn_StudentListToMapGroup() throws Exception {
-		if (icon_Edit_StuList.isDisplayed()) {
-			icon_Edit_StuList.click();
+	
+			clickOnButton(icon_Edit_StuList);
 			log("Student is selected form student list for group mapping and object is "
 					+ icon_Edit_StuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student is already selected for group mapping.");
-			Thread.sleep(500);
-		}
+			
 
 	}
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnAll_ClassWise(String academicYr, String classSelection,
 			String section) throws Exception {
-
+		isDisplayed(rdBtn_All);
 		if (!rdBtn_All.isSelected()) {
 			rdBtn_All.click();
 			log("Radio button ALL is selected and object is:-" + rdBtn_All.toString());
@@ -326,6 +286,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button ALL is already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_ClassWise);
 		if (!chk_ClassWise.isSelected()) {
 
 			chk_ClassWise.click();
@@ -336,49 +297,22 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(classSelection);
+			selectElementFromDropDown(sel_Class, classSelection);
 			log("Selected Class:-" + classSelection + " and object is " + sel_Class.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classSelection);
-			Thread.sleep(1000);
-		} else {
-			log("Select Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+			selectElementFromDropDown(sel_Section, section);
 			log("Selected Section:-" + section + " and object is " + sel_Section.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Select Section element is not present");
-			Thread.sleep(500);
-		}
 	}
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnFeeClassCategory(String academicYr, String feeclassCategory)
 			throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
-		
+		isDisplayed(rdBtn_FeeClassCategory);
 		if (!rdBtn_FeeClassCategory.isSelected()) {
 			rdBtn_FeeClassCategory.click();
 			log("Radio button Fee Class Category is selected and object is:-" + rdBtn_FeeClassCategory.toString());
@@ -387,31 +321,15 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button Fee Class Category is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_FeeClassCategory.isDisplayed()) {
-			select = new Select(sel_FeeClassCategory);
-			select.selectByVisibleText(feeclassCategory);
+			selectElementFromDropDown(sel_FeeClassCategory, feeclassCategory);
 			log("Selected Fee Class Category:-" + feeclassCategory + " and object is "
 					+ sel_FeeClassCategory.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), feeclassCategory);
-			Thread.sleep(1000);
-		} else {
-			log("Fee Class Category dropdown element is not present");
-			Thread.sleep(500);
-		}
+		
 
 	}
 
@@ -419,6 +337,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
+		isDisplayed(rdBtn_AdmissionClassCategory);
 		if (!rdBtn_AdmissionClassCategory.isSelected()) {
 			rdBtn_AdmissionClassCategory.click();
 			log("Radio button Admission Category is selected and object is:-"
@@ -428,38 +347,22 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button Admission Category is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_AdmClassCategory.isDisplayed()) {
-			select = new Select(sel_AdmClassCategory);
-			select.selectByVisibleText(admissionclassCategory);
+			selectElementFromDropDown(sel_AdmClassCategory, admissionclassCategory);
 			log("Selected Admission Class Category:-" + admissionclassCategory + " and object is "
 					+ sel_AdmClassCategory.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), admissionclassCategory);
-			Thread.sleep(1000);
-		} else {
-			log("Admission Class Category dropdown element is not present");
-			Thread.sleep(500);
-		}
-
+		
 	}
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnRegularStudent_WithoutClassWise(String academicYr)
 			throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
+		isDisplayed(rdBtn_RegularStudent);
 		if (!rdBtn_RegularStudent.isSelected()) {
 			rdBtn_RegularStudent.click();
 			log("Radio button Regular Student is selected and object is:-" + rdBtn_RegularStudent.toString());
@@ -468,18 +371,10 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button Regular Student is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
 
 	}
 
@@ -487,6 +382,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			String classSelection, String section) throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
+		isDisplayed(rdBtn_RegularStudent);
 		if (!rdBtn_RegularStudent.isSelected()) {
 			rdBtn_RegularStudent.click();
 			log("Radio button Regular Student is selected and object is:-" + rdBtn_RegularStudent.toString());
@@ -495,6 +391,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button Regular Student is already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_ClassWise);
 		if (!chk_ClassWise.isSelected()) {
 
 			chk_ClassWise.click();
@@ -505,47 +402,21 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(classSelection);
+			selectElementFromDropDown(sel_Class, classSelection);
 			log("Selected Class:-" + classSelection + " and object is " + sel_Class.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classSelection);
-			Thread.sleep(1000);
-		} else {
-			log("Select Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+			selectElementFromDropDown(sel_Section, section);
 			log("Selected Section:-" + section + " and object is " + sel_Section.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Select Section element is not present");
-			Thread.sleep(500);
-		}
 	}
 
 	public void fill_StudentFeeGroupMappingForm_rdBtnNewStudent_WithoutClassWise(String academicYr) throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
+		isDisplayed(rdBtn_NewStudent);
 		if (!rdBtn_NewStudent.isSelected()) {
 			rdBtn_NewStudent.click();
 			log("Radio button New Student is selected and object is:-" + rdBtn_NewStudent.toString());
@@ -554,18 +425,10 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button New Student is already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
 
 	}
 
@@ -573,6 +436,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			String section) throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
+		isDisplayed(rdBtn_NewStudent);
 		if (!rdBtn_NewStudent.isSelected()) {
 			rdBtn_NewStudent.click();
 			log("Radio button New Student is selected and object is:-" + rdBtn_NewStudent.toString());
@@ -581,6 +445,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			log("Radio button New Student is already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_ClassWise);
 		if (!chk_ClassWise.isSelected()) {
 
 			chk_ClassWise.click();
@@ -591,78 +456,40 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYr);
+			selectElementFromDropDown(sel_AcademicYear, academicYr);
 			log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYr);
-			Thread.sleep(1000);
-		} else {
-			log("Select Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(classSelection);
+			selectElementFromDropDown(sel_Class, classSelection);
 			log("Selected Class:-" + classSelection + " and object is " + sel_Class.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), classSelection);
-			Thread.sleep(1000);
-		} else {
-			log("Select Class element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+			selectElementFromDropDown(sel_Section, section);
 			log("Selected Section:-" + section + " and object is " + sel_Section.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Select Section element is not present");
-			Thread.sleep(500);
-		}
 	}
 
 	public void clickOnSaveButton() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+
+			clickOnButton(btn_Save);
 			log("clicked on save button and object is:-" + btn_Save.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Save Button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
 	}
 
 	public void clickOnSaveButton_ToSubmitBlankForm() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
+	
+			clickOnButton(btn_Save);
 			log("clicked on save button to submit blank form and object is:-" + btn_Save.toString());
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 
-		} else {
-			log("Save Button element not present.");
-			Thread.sleep(500);
-		}
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
 	}
 
 	public void clickOnCancelButton() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
+		
+			clickOnButton(btn_Cancel);
 			log("clicked on Cancel button and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel Button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -670,7 +497,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 			System.out.println(successfulMessage.getText());
 			successfulMessage.isDisplayed();
 			log("Record saved successfully message is dispalyed and object is:-" + successfulMessage.toString());
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -679,14 +506,11 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOkonSuccess.isDisplayed()) {
-			btnOkonSuccess.click();
+	
+			clickOnButton(btnOkonSuccess);
 			log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Ok Button element is not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	/**
@@ -698,119 +522,76 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	 */
 
 	public void searchBy_StudentName_NameInOutputGrid(String bystudentName, String studentName) throws Exception {
-		if (sel_Search_OutputGrid.isDisplayed()) {
-			select = new Select(sel_Search_OutputGrid);
-			select.selectByVisibleText(bystudentName);
+
+			selectElementFromDropDown(sel_Search_OutputGrid, bystudentName);
 			log("Selected serach for:-" + bystudentName + " and object is " + sel_Search_OutputGrid.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), bystudentName);
-			Thread.sleep(1000);
-		} else {
-			log("Select serach for element is not present");
-			Thread.sleep(500);
-		}
-		if (input_Search_OutputGrid.isDisplayed()) {
-			input_Search_OutputGrid.clear();
-			input_Search_OutputGrid.sendKeys(studentName);
+			inputTextIntoInputField(input_Search_OutputGrid, studentName);
 			log("Entered Student name for search " + studentName + " and object is "
 					+ input_Search_OutputGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Input field element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_Search_OutputGrid.isDisplayed()) {
-			btn_Search_OutputGrid.click();
+
+			clickOnButton(btn_Search_OutputGrid);
 			log("Search button for Output grid is clicked and object is " + btn_Search_OutputGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search button element for Output grid is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void deleteUpdatedRecordFrom_OutputGrid() throws Exception {
 
-		if (icon_delete_OutputGrid.isDisplayed()) {
-			icon_delete_OutputGrid.click();
+			clickOnButton(icon_delete_OutputGrid);
 			log("Click on delete button to delete record and object is:-" + icon_delete_OutputGrid.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Delete element is not present in the output grid.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		if (btnYesDeleteOrDeactIt.isDisplayed()) {
-			btnYesDeleteOrDeactIt.click();
+	
+			clickOnButton(btnYesDeleteOrDeactIt);
 			log("Clicked on yes delete it button and object is:-" + btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Yes Delete it button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(2000);
+		
 	}
 
 	public void clickOnCancelButton_PopUp() throws Exception {
-		if (btnPopUpCancel.isDisplayed()) {
-			btnPopUpCancel.click();
+		
+			clickOnButton(btnPopUpCancel);
 			log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+	
 	}
 
 	public void minimizeAndMaximize_StudentFeeGroupMapping() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txtStudentFeeGrmap);
 		Thread.sleep(1000);
-		if (btnMin_MaxStudentFeeGrMapping.isDisplayed()) {
-			btnMin_MaxStudentFeeGrMapping.click();
+		
+			clickOnButton(btnMin_MaxStudentFeeGrMapping);
 			log("clicked on Student FeeGroup Mapping minimize Or maximize button and object is:-"
 					+ btnMin_MaxStudentFeeGrMapping.toString());
 			Thread.sleep(1000);
-		} else {
-			log("MinMax Student FeeGroup Mapping button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void minimizeAndMaximize_StudentAndGroupList() throws Exception {
-		if (btnMin_MaxStudentAndGroupList.isDisplayed()) {
-			btnMin_MaxStudentAndGroupList.click();
+	
+			clickOnButton(btnMin_MaxStudentAndGroupList);
 			log("clicked on Student and Group list minimize Or maximize and object is:-"
 					+ btnMin_MaxStudentAndGroupList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("MinMax Student and Group list button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void minimizeAndMaximize_StudentFeeGroupMappingList() throws Exception {
-		if (btnMin_MaxStudentFeeGroupMappingList.isDisplayed()) {
-			btnMin_MaxStudentFeeGroupMappingList.click();
+		
+			clickOnButton(btnMin_MaxStudentFeeGroupMappingList);
 			log("clicked on Student Fee Group mapping list minimize Or maximize and object is:-"
 					+ btnMin_MaxStudentFeeGroupMappingList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("MinMax Student Fee Group mapping list button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void sortByStudentName() throws Exception {
-		if (btnSortByStudentName.isDisplayed()) {
-			btnSortByStudentName.click();
-			btnSortByStudentName.click();
+		
+			clickOnButton(btnSortByStudentName);
+			clickOnButton(btnSortByStudentName);
 			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Sort element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 }

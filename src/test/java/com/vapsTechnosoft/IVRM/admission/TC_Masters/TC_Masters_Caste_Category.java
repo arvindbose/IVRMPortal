@@ -280,8 +280,21 @@ public class TC_Masters_Caste_Category extends TestBase {
 			getScreenShot("tcSaveCasteCategoryInfoData");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			mastercastecategory.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -296,7 +309,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 16, dataProvider = "CasteCategorySearchData")
+	@Test(priority = 17, dataProvider = "CasteCategorySearchData")
 	public void tcSearchWithCasteCategoryNameInTheGrid(String casteCategoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -314,7 +327,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "CasteCategorySearchData")
+	@Test(priority = 18, dataProvider = "CasteCategorySearchData")
 	public void tcVerifyCasteCategoryNameInTheGrid(String casteCategoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -332,7 +345,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "CasteCategorySearchData")
+	@Test(priority = 19, dataProvider = "CasteCategorySearchData")
 	public void tcEditMasterCasteCategory(String casteCategoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -350,7 +363,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSaveCasteCategoryInfoData_Edit() {
 
 		try {
@@ -364,8 +377,21 @@ public class TC_Masters_Caste_Category extends TestBase {
 			getScreenShot("tcSaveCasteCategoryInfoData_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastercastecategory.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -380,7 +406,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "CasteCategorySearchData")
+	@Test(priority = 23, dataProvider = "CasteCategorySearchData")
 	public void tcSearchWithCasteCategoryNameInTheGrid_delete(String casteCategoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -398,7 +424,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "CasteCategorySearchData")
+	@Test(priority = 24, dataProvider = "CasteCategorySearchData")
 	public void tcDeleteMasterCasteCategory(String casteCategoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -416,7 +442,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton() {
 
 		try {
@@ -431,7 +457,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -446,7 +472,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "CasteCategorySearchData")
+	@Test(priority = 27, dataProvider = "CasteCategorySearchData")
 	public void tcDeleteMasterCasteCategory_AfterCancel(String casteCategoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -464,7 +490,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 28)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -479,7 +505,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -494,7 +520,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MastersCasteCategoryData")
+	@Test(priority = 30, dataProvider = "MastersCasteCategoryData")
 	public void tcEnterMasterCasteCategoryDetailsData_AfterDelete(String casteCategoryName,
 			String casteCategoryDescription, String runMode) {
 
@@ -513,7 +539,7 @@ public class TC_Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 31)
 	public void tcSaveCasteCategoryInfoData_AfterDelete() {
 
 		try {
@@ -527,8 +553,22 @@ public class TC_Masters_Caste_Category extends TestBase {
 			getScreenShot("tcSaveCasteCategoryInfoData_AfterDelete");
 		}
 	}
+	@Test(priority = 32)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
-	@Test(priority = 30)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+
+			mastercastecategory.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		}
+	}
+
+	@Test(priority = 33)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

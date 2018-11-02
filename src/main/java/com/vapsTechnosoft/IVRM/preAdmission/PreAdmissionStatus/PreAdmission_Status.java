@@ -38,7 +38,10 @@ public class PreAdmission_Status extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Preadmission Status')][1]")
 	private WebElement btn_PreadmissionStatus;
 
-	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Preadmission Status')][1]/following::li[1]")
+//	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Preadmission Status')][1]/following::li[1]")
+//	private WebElement btn_Status;
+	
+	@FindBy(xpath = "//a[@href='#/app/status/37']")
 	private WebElement btn_Status;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -147,7 +150,7 @@ public class PreAdmission_Status extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -162,30 +165,16 @@ public class PreAdmission_Status extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToPreAdmission_Status() throws Exception {
-		if (btn_PreAdmission.isDisplayed()) {
-			btn_PreAdmission.click();
+	
+			clickOnButton(btn_PreAdmission);
 			log("Clicked on PreAdmission Button and object is:-" + btn_PreAdmission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("PreAdmission button element not present and object is:-" + btn_PreAdmission.toString());
-			Thread.sleep(500);
-		}
-		if (btn_PreadmissionStatus.isDisplayed()) {
-			btn_PreadmissionStatus.click();
+
+			clickOnButton(btn_PreadmissionStatus);
 			log("Clicked on PreAdmission Status and object is:-" + btn_PreadmissionStatus.toString());
-			Thread.sleep(1000);
-		} else {
-			log("PreAdmission Status button element not present and object is:-" + btn_PreadmissionStatus.toString());
-			Thread.sleep(500);
-		}
-		if (btn_Status.isDisplayed()) {
-			btn_Status.click();
+		
+			clickOnButton(btn_Status);
 			log("Clicked on Status Button and object is:-" + btn_Status.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Status button element not present and object is:-" + btn_Status.toString());
-			Thread.sleep(500);
-		}
+			
 
 	}
 
@@ -208,14 +197,10 @@ public class PreAdmission_Status extends TestBase {
 	}
 
 	public void submitBlank_PreadmissionStatusForm() throws Exception {
-		if (btn_Search.isDisplayed()) {
-			btn_Search.click();
+		
+			clickOnButton(btn_Search);
 			log("Submit blank Preadmission Status form and object is:-" + btn_Search.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Search to get records button element not present and object is:-" + btn_Search.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -228,6 +213,7 @@ public class PreAdmission_Status extends TestBase {
 	 */
 	public void fillPreAdmissionStatusForm_ApplicationStatus(String academicYear, String class_status, String status)
 			throws Exception {
+		isDisplayed(rdBtn_ApplicationStatus);
 		if (!rdBtn_ApplicationStatus.isSelected()) {
 			rdBtn_ApplicationStatus.click();
 			log("Application status radio button is selected and object is:-" + rdBtn_ApplicationStatus.toString());
@@ -238,42 +224,15 @@ public class PreAdmission_Status extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_status);
-
+	
+			selectElementFromDropDown(sel_Class, class_status);
 			log("Selected Class: " + class_status + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_status);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present and object is:- " + sel_Class.toString());
-			Thread.sleep(500);
-		}
-		if (sel_Status.isDisplayed()) {
-			select = new Select(sel_Status);
-			select.selectByVisibleText(status);
-
+	
+			selectElementFromDropDown(sel_Status, status);
 			log("Selected Status: " + class_status + " and object is:- " + sel_Status.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), status);
-			Thread.sleep(1000);
-		} else {
-			log("status element is not present and object is:- " + sel_Status.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -287,6 +246,7 @@ public class PreAdmission_Status extends TestBase {
 
 	public void fillPreAdmissionStatusForm_AdmissionStatus(String academicYear, String class_status, String status)
 			throws Exception {
+		isDisplayed(rdBtn_AdmissionStatus);
 		if (!rdBtn_AdmissionStatus.isSelected()) {
 			rdBtn_AdmissionStatus.click();
 			log("Admission status radio button is selected and object is:-" + rdBtn_AdmissionStatus.toString());
@@ -297,104 +257,55 @@ public class PreAdmission_Status extends TestBase {
 			Thread.sleep(500);
 		}
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-
+			selectElementFromDropDown(sel_AcademicYr, academicYear);
 			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_status);
-
+	
+			selectElementFromDropDown(sel_Class, class_status);
 			log("Selected Class: " + class_status + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_status);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present and object is:- " + sel_Class.toString());
-			Thread.sleep(500);
-		}
-		if (sel_Status.isDisplayed()) {
-			select = new Select(sel_Status);
-			select.selectByVisibleText(status);
-
+		
+			selectElementFromDropDown(sel_Status, status);
 			log("Selected Status: " + class_status + " and object is:- " + sel_Status.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), status);
-			Thread.sleep(1000);
-		} else {
-			log("status element is not present and object is:- " + sel_Status.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnSearchTo_GetRecords() throws Exception {
-		if (btn_Search.isDisplayed()) {
-			btn_Search.click();
+		
+			clickOnButton(btn_Search);
 			log("Submit filled Preadmission Status form and object is:-" + btn_Search.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Search to get records button element not present and object is:-" + btn_Search.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnCancelTo_ClearFilledData_Status() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
+
+			clickOnButton(btn_Cancel);
 			log("Clear filled form and object is:-" + btn_Cancel.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Cancel button element not present and object is:-" + btn_Cancel.toString());
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void clickOnExportToExcel() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
+	
+			clickOnButton(btn_ExportToExcel);
 			log("Export To Excel Report button is clicked to DownLoad report and object is:-"
 					+ btn_ExportToExcel.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Export To Excel button element is not present and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(500);
-		}
+			Thread.sleep(3000);
+		
 	}
 	public void clickOnPrint_withoutSelectingRecord() throws Exception {
 
-	
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
+			clickOnButton(btn_Print);
 			log("Print button is clicked to generate print preview report and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 
-		} else {
-			log("Print button element is not present and object is:-" + btn_Print.toString());
-			Thread.sleep(500);
-		}
 	}
 
 	public void clickOnPrint() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
+			clickOnButton(btn_Print);
 			log("Print button is clicked to generate print preview report and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 
-		} else {
-			log("Print button element is not present and object is:-" + btn_Print.toString());
-			Thread.sleep(500);
-		}
 
 		Set<String> allWin = driver.getWindowHandles();
 
@@ -424,71 +335,45 @@ public class PreAdmission_Status extends TestBase {
 	}
 
 	public void update_StatusforAllStudent(String status_All) throws Exception {
-		if (sel_UpdateStatusAll.isDisplayed()) {
-			select = new Select(sel_UpdateStatusAll);
-			select.selectByVisibleText(status_All);
-
+	
+			selectElementFromDropDown(sel_UpdateStatusAll, status_All);
 			log("Selected Status: " + status_All + " and object is:- " + sel_UpdateStatusAll.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), status_All);
-			Thread.sleep(1000);
-		} else {
-			log("Update Status all element is not present and object is:- " + sel_UpdateStatusAll.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void searchForStudent_InStatusDetails(String studentName) throws Exception {
-		if (input_search.isDisplayed()) {
-			input_search.clear();
-			input_search.sendKeys(studentName);
+	
+			inputTextIntoInputField(input_search, studentName);
 			log("Entered Student name:-" + studentName + " and object is " + input_search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search element in Status details not present and object is:-" + input_search.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void sortWithStudentNameInStatusDetails() throws Exception {
 
-		if (sort_StudentName.isDisplayed()) {
-			sort_StudentName.click();
+			clickOnButton(sort_StudentName);
 			log("Sort by Student Name in Status Details and object is:- " + sort_StudentName.toString());
 			Thread.sleep(1000);
-		} else {
-			log("Student Name button element not present in Status Details and object is:- "
-					+ sort_StudentName.toString());
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void sortWithGenderSexInStatusDetails() throws Exception {
 
-		if (sort_sexGender.isDisplayed()) {
-			sort_sexGender.click();
+			clickOnButton(sort_sexGender);
 			log("Sort by sex in Status Details and object is:- " + sort_sexGender.toString());
 			Thread.sleep(1000);
-		} else {
-			log("sex button element not present in Status Details and object is:- " + sort_sexGender.toString());
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void sortWithRegistrationNumberInStatusDetails() throws Exception {
 
-		if (sort_RegNo.isDisplayed()) {
-			sort_RegNo.click();
+			clickOnButton(sort_RegNo);
 			log("Sort by Registration Number in Status Details and object is:- " + sort_RegNo.toString());
 			Thread.sleep(1000);
-		} else {
-			log("Registration Number button element not present in Status Details and object is:- "
-					+ sort_RegNo.toString());
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void generateReportForAllStudent_ClickHeaderCheckBox() throws Exception {
+		isDisplayed(chk_AllRecords);
 		if (!chk_AllRecords.isSelected()) {
 			chk_AllRecords.click();
 			log("All Records check box is selected in Status details and object is:-" + chk_AllRecords.toString());
@@ -501,6 +386,7 @@ public class PreAdmission_Status extends TestBase {
 	}
 
 	public void selectSpecificStudentStatusReport(String remarks) throws Exception {
+		isDisplayed(chk_FirstStudent);
 		if (!chk_FirstStudent.isSelected()) {
 			chk_FirstStudent.click();
 			log("First Records check box is selected in Status details and object is:-" + chk_FirstStudent.toString());
@@ -510,18 +396,14 @@ public class PreAdmission_Status extends TestBase {
 					+ chk_FirstStudent.toString());
 			Thread.sleep(500);
 		}
-		if (input_remarks.isDisplayed()) {
-			input_remarks.clear();
-			input_remarks.sendKeys(remarks);
+		
+			inputTextIntoInputField(input_remarks, remarks);
 			log("Entered Remarks:-" + remarks + " and object is " + input_remarks.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Remarks element in Status details not present and object is:-" + input_remarks.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void checkEmailAndSms() throws Exception {
+		isDisplayed(chk_Email);
 		if (!chk_Email.isSelected()) {
 			chk_Email.click();
 			log("Email check box is selected and object is:-" + chk_Email.toString());
@@ -530,6 +412,7 @@ public class PreAdmission_Status extends TestBase {
 			log("Email check box element is not present and object is:-" + chk_Email.toString());
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_SmS);
 		if (!chk_SmS.isSelected()) {
 			chk_SmS.click();
 			log("SMS check box is selected and object is:-" + chk_SmS.toString());
@@ -542,100 +425,57 @@ public class PreAdmission_Status extends TestBase {
 
 	public void fillEmailAndSmsDetails(String emailSubject, String emailHeader, String emailMessage, String emailFooter,
 			String smsContent) throws Exception {
-		if (input_email_subject.isDisplayed()) {
-			input_email_subject.clear();
-			input_email_subject.sendKeys(emailSubject);
-			log("Entered Email Subject:-" + emailSubject + " and object is " + input_email_subject.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Email Subject element in not present and object is:-" + input_email_subject.toString());
-			Thread.sleep(500);
-		}
-		if (input_email_header.isDisplayed()) {
-			input_email_header.clear();
-			input_email_header.sendKeys(emailHeader);
-			log("Entered Email Header:-" + emailHeader + " and object is " + input_email_header.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Email Header element in not present and object is:-" + input_email_header.toString());
-			Thread.sleep(500);
-		}
-		if (input_email_Message.isDisplayed()) {
-			input_email_Message.clear();
-			input_email_Message.sendKeys(emailMessage);
-			log("Entered Email Message:-" + emailMessage + " and object is " + input_email_Message.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Email Message element in not present and object is:-" + input_email_Message.toString());
-			Thread.sleep(500);
-		}
-		if (input_email_footer.isDisplayed()) {
-			input_email_footer.clear();
-			input_email_footer.sendKeys(emailFooter);
-			log("Entered Email footer:-" + emailFooter + " and object is " + input_email_footer.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Email footer element in not present and object is:-" + input_email_footer.toString());
-			Thread.sleep(500);
-		}
 
-		if (input_smsContent.isDisplayed()) {
-			input_smsContent.clear();
-			input_smsContent.sendKeys(smsContent);
+			inputTextIntoInputField(input_email_subject, emailSubject);
+			log("Entered Email Subject:-" + emailSubject + " and object is " + input_email_subject.toString());
+	
+			inputTextIntoInputField(input_email_header, emailHeader);
+			log("Entered Email Header:-" + emailHeader + " and object is " + input_email_header.toString());
+		
+			inputTextIntoInputField(input_email_Message, emailMessage);
+			log("Entered Email Message:-" + emailMessage + " and object is " + input_email_Message.toString());
+	
+			inputTextIntoInputField(input_email_footer, emailFooter);
+			log("Entered Email footer:-" + emailFooter + " and object is " + input_email_footer.toString());
+
+			inputTextIntoInputField(input_smsContent, smsContent);
 			log("Entered sms content:-" + smsContent + " and object is " + input_smsContent.toString());
-			Thread.sleep(1000);
-		} else {
-			log("sms content element in not present and object is:-" + input_smsContent.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void updateStatusSend_EmailAndSms() throws Exception {
-		if (btn_UpdateStatus.isDisplayed()) {
-			btn_UpdateStatus.click();
+		
+			clickOnButton(btn_UpdateStatus);
 			log("Click on Update Status button to submit change in status and send Email & SMS and object is:-"
 					+ btn_UpdateStatus.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Update Status button element is not present and object is:-" + btn_UpdateStatus.toString());
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 	
 	public void confirm_UpdateStatusSend_EmailAndSms() throws Exception {
-		if (btn_UpdateStatusPopUp.isDisplayed()) {
-			btn_UpdateStatusPopUp.click();
+	
+			clickOnButton(btn_UpdateStatusPopUp);
 			log("Update Status button pop up window to submit change in status and send Email & SMS and object is:-"
 					+ btn_UpdateStatusPopUp.toString());
 			Thread.sleep(1000);
-		} else {
-			log("Update Status button pop up window element is not present and object is:-" + btn_UpdateStatusPopUp.toString());
-			Thread.sleep(500);
-		}
+		
 	}
 	
 	public void confirm_UpdateStatus_Yes() throws Exception {
-		if (btnPopUp_Yes_UpdateStatus.isDisplayed()) {
-			btnPopUp_Yes_UpdateStatus.click();
+		
+			clickOnButton(btnPopUp_Yes_UpdateStatus);
 			log("Confirm Update Status Yes button pop up window to submit change in status and send Email & SMS and object is:-"
 					+ btnPopUp_Yes_UpdateStatus.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Update Status Yes button pop up window element is not present and object is:-" + btnPopUp_Yes_UpdateStatus.toString());
-			Thread.sleep(500);
-		}
+			
 	}
 	
 	public void confirm_UpdateStatus_Cancel() throws Exception {
-		if (btnPopUp_Cancel_UpdateStatus.isDisplayed()) {
-			btnPopUp_Cancel_UpdateStatus.click();
+
+			clickOnButton(btnPopUp_Cancel_UpdateStatus);
 			log("Confirm Update Status Cancel button pop up window to Cancel change in status and send Email & SMS and object is:-"
 					+ btnPopUp_Cancel_UpdateStatus.toString());
 			Thread.sleep(1000);
-		} else {
-			log("Update Status Cancel button pop up window element is not present and object is:-" + btnPopUp_Cancel_UpdateStatus.toString());
-			Thread.sleep(500);
-		}
+		
 	}
 	
 	/**
@@ -645,14 +485,10 @@ public class PreAdmission_Status extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
+	
+			clickOnButton(btnOKSuccess);
 			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button Element not present");
-			Thread.sleep(500);
-		}
+			
 	}
 	
 }

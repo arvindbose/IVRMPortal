@@ -196,6 +196,20 @@ public class TC_Exam_StudentMapping extends TestBase{
 		}
 	}
 	@Test(priority = 10)
+	public void tcPopUpWindowMessage_SubmitWithoutSelectingStudent_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitWithoutSelectingStudent_Validation Test===========");
+
+			studentmapping.popWindowMessage_SubmitWithoutSelectingStudent();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitWithoutSelectingStudent_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitWithoutSelectingStudent_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitWithoutSelectingStudent_Validation");
+		}
+	}
+	@Test(priority = 11)
 	public void tcClickOnSuccessOkBtn_ToHandleRecordNotSelectedPopUp() {
 
 		try {
@@ -209,7 +223,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcClickOnSuccessOkBtn_ToHandleRecordNotSelectedPopUp");
 		}
 	}
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void tcSort_StudentList() {
 
 		try {
@@ -223,7 +237,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcSort_StudentList");
 		}
 	}
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void tcSort_AdmissionNumber() {
 
 		try {
@@ -237,7 +251,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcSort_AdmissionNumber");
 		}
 	}
-	@Test(priority = 13)
+	@Test(priority = 14)
 	public void tcSort_RollNumber() {
 
 		try {
@@ -252,7 +266,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 14, dataProvider = "Filter_StudentMapping_StudentList")
+	@Test(priority = 15, dataProvider = "Filter_StudentMapping_StudentList")
 	public void tcSearch_ToFilterStudentFromList(String studentName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -268,7 +282,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcSearch_ToFilterStudentFromList");
 		}
 	}
-	@Test(priority = 15)
+	@Test(priority = 16)
 	public void tcClickOnCancelButton_ToClearSelectedRecords() {
 
 		try {
@@ -282,7 +296,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcClickOnCancelButton_ToClearSelectedRecords");
 		}
 	}
-	@Test(priority = 16, dataProvider = "ExamStudentMapping_FormData")
+	@Test(priority = 17, dataProvider = "ExamStudentMapping_FormData")
 	public void tcFill_StudentMapping_Form_AfterCancel(String academicYear, String examCategory,String subjecGroup, String class_sm,
 			String section_sm,String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -299,7 +313,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcFill_StudentMapping_Form_AfterCancel");
 		}
 	}
-	@Test(priority = 17)
+	@Test(priority = 18)
 	public void tcClickOnSearchButton_ToGetStudentSubjectList() {
 
 		try {
@@ -313,7 +327,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcClickOnSearchButton_ToGetStudentSubjectList");
 		}
 	}
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void tcDeSelectStudentForMapping_ifAnyRecordSelectedPreviously_AfterCancel() {
 
 		try {
@@ -327,7 +341,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcDeSelectStudentForMapping_ifAnyRecordSelectedPreviously_AfterCancel");
 		}
 	}
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSelectStudentForMapping() {
 
 		try {
@@ -341,7 +355,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcSelectStudentForMapping");
 		}
 	}
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcSelectSubjectForMapping_Sub1() {
 
 		try {
@@ -355,7 +369,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcSelectSubjectForMapping_Sub1");
 		}
 	}
-	@Test(priority = 21)
+	@Test(priority = 22)
 	public void tcSelectSubjectForMapping_Sub2() {
 
 		try {
@@ -369,7 +383,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcSelectSubjectForMapping_Sub2");
 		}
 	}
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void tcSelectSubjectForMapping_Sub3() {
 
 		try {
@@ -383,7 +397,7 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcSelectSubjectForMapping_Sub3");
 		}
 	}
-	@Test(priority = 23)
+	@Test(priority = 24)
 	public void tcClickOnSaveButton_ToSubmitSelectedRecords() {
 
 		try {
@@ -397,7 +411,21 @@ public class TC_Exam_StudentMapping extends TestBase{
 			getScreenShot("tcClickOnSaveButton_ToSubmitSelectedRecords");
 		}
 	}
-	@Test(priority = 24)
+	@Test(priority = 25)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			studentmapping.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 26)
 	public void tcClickOnSuccessOkBtn_FinalSubmit() {
 
 		try {

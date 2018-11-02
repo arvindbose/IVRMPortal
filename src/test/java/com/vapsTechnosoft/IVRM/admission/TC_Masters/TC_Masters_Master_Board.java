@@ -277,8 +277,22 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcSaveBoardInfoData");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			masterboard.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -293,7 +307,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 	
-	@Test(priority = 16, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 17, dataProvider = "MasterBoardSearchData")
 	public void tcSearchWithBoardNameInTheGrid(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -311,7 +325,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 18, dataProvider = "MasterBoardSearchData")
 	public void tcVerifyBoardNameInTheGrid(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -329,7 +343,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 	
-	@Test(priority = 18, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 19, dataProvider = "MasterBoardSearchData")
 	public void tcEditMasterBoard(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -347,7 +361,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSaveBoardInfoData_Edit() {
 
 		try {
@@ -361,8 +375,22 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcSaveBoardInfoData_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			masterboard.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -377,7 +405,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 23, dataProvider = "MasterBoardSearchData")
 	public void tcSearchWithBoardNameInTheGrid_delete(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -395,7 +423,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 24, dataProvider = "MasterBoardSearchData")
 	public void tcDeleteMasterBoard(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -413,7 +441,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton() {
 
 		try {
@@ -428,7 +456,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -444,7 +472,7 @@ public class TC_Masters_Master_Board extends TestBase{
 	}
 	
 
-	@Test(priority = 25, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 27, dataProvider = "MasterBoardSearchData")
 	public void tcSearchWithBoardNameInTheGrid_AfterDeleteCancel(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -462,7 +490,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 28, dataProvider = "MasterBoardSearchData")
 	public void tcDeleteMasterBoard_AfterCancel(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -479,8 +507,8 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcDeleteMasterBoard_AfterCancel");
 		}
 	}
-
-	@Test(priority = 27)
+	
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -494,8 +522,22 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopWindowMessage_DeletedSuccessfully_Validation() {
 
-	@Test(priority = 28)
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeletedSuccessfully_Validation Test===========");
+
+			masterboard.popWindowMessage_DeletedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_DeletedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeletedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeletedSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -509,7 +551,7 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_delete");
 		}
 	}
-	@Test(priority = 29, dataProvider = "MastersMasterBoardData")
+	@Test(priority = 32, dataProvider = "MastersMasterBoardData")
 	public void tcEnterMasterBoardData_AfterDelete(String boardName, String boardDescription, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -527,7 +569,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 	
-	@Test(priority = 30)
+	@Test(priority = 33)
 	public void tcSaveBoardInfoData_AfterDelete() {
 
 		try {
@@ -541,8 +583,21 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcSaveBoardInfoData_AfterDelete");
 		}
 	}
+	@Test(priority = 34)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
-	@Test(priority = 31)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+
+			masterboard.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		}
+	}
+	@Test(priority = 35)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

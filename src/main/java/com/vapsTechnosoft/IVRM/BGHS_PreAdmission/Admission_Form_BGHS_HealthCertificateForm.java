@@ -461,7 +461,7 @@ public class Admission_Form_BGHS_HealthCertificateForm extends TestBase {
 		log("Clicked on back button of payment page and object is:-" + btnPaymentBack.toString());
 //		Thread.sleep(3000);
 		
-		waitForElement(driver, btnHealthCertForm_BGHS, 20);
+		//waitForElement(driver, btnHealthCertForm_BGHS, 20);
 	}
 
 

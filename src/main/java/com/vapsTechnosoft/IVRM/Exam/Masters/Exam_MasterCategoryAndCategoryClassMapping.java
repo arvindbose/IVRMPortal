@@ -3,13 +3,14 @@
  */
 package com.vapsTechnosoft.IVRM.Exam.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -23,8 +24,8 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	public static final Logger log = Logger.getLogger(Exam_MasterCategoryAndCategoryClassMapping.class.getName());
 
 	private WebDriver driver;
-	private Select select;
-	private WebElement option;
+
+	
 
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	private WebElement btnHome;
@@ -35,9 +36,12 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]")
 	private WebElement btn_Exam_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]/following::li[3]")
-	private WebElement btn_ExamMasterCategory;
+//	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]/following::li[3]")
+//	private WebElement btn_ExamMasterCategory;
 
+	@FindBy(xpath = "//a[@href='#/app/exammastercategory/94']")
+	private WebElement btn_ExamMasterCategory;
+	
 	@FindBy(xpath = "//div//section//ol//li")
 	private WebElement txt_ExamMasterCategory;
 
@@ -168,6 +172,8 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	@FindBy(xpath = "(//*[@id='style-4']/div[2]/div[1]/div[2]/select)[2]")
 	private WebElement noOfItemPerPage;
 	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
 
 	public Exam_MasterCategoryAndCategoryClassMapping(WebDriver driver) {
 		this.driver = driver;
@@ -178,7 +184,7 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -194,33 +200,16 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 */
 	public void navigateToExamMasters_ExamMasterCategory() throws Exception {
 
-		if (btn_Exam.isDisplayed()) {
-			btn_Exam.click();
+		
+			clickOnButton(btn_Exam);
 			log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
-			// waitForElement(driver, 10, btnFee);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_Exam_Masters.isDisplayed()) {
-			btn_Exam_Masters.click();
+	
+			clickOnButton(btn_Exam_Masters);
 			log("Clicked on Exam Masters Button and object is:-" + btn_Exam_Masters.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Master Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_ExamMasterCategory.isDisplayed()) {
-			btn_ExamMasterCategory.click();
+	
+			clickOnButton(btn_ExamMasterCategory);
 			log("Clicked on Exam Master Category Button and object is:-" + btn_ExamMasterCategory.toString());
-			// waitForElement(driver, 10, btnCustomFeeGr);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Master Category Navigation element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	/**
@@ -250,64 +239,41 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 */
 	public void fill_Exam_MasterCategory_Form(String categoryName) throws Exception {
 
-		if (input_CategoryName.isDisplayed()) {
-			input_CategoryName.clear();
-			input_CategoryName.sendKeys(categoryName);
+			inputTextIntoInputField(input_CategoryName, categoryName);
 			log("Entered Master Category Name:- and object is: " + input_CategoryName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Name element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnSaveButton_ToSubmitMasterCategory() throws Exception {
-		if (btn_Save_MasterCategory.isDisplayed()) {
-			btn_Save_MasterCategory.click();
+		
+			clickOnButton(btn_Save_MasterCategory);
 			log("Clicked on Save button to Submit Master Category Form and object is:- "
 					+ btn_Save_MasterCategory.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Save button element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnCancelButton_ToClearMasterCategoryFilledData() throws Exception {
-		if (btn_Cancel_MasterCategory.isDisplayed()) {
-			btn_Cancel_MasterCategory.click();
+		
+			clickOnButton(btn_Cancel_MasterCategory);
 			log("Clicked on Cancel button to Clear Master Category Form filled data and object is:- "
 					+ btn_Cancel_MasterCategory.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button for Master Category form element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void sortByCategoryName_MasterCategory() throws Exception {
-		if (sort_CategoryName_MasterCategory.isDisplayed()) {
-			sort_CategoryName_MasterCategory.click();
-			sort_CategoryName_MasterCategory.click();
+		
+			clickOnButton(sort_CategoryName_MasterCategory);
+			clickOnButton(sort_CategoryName_MasterCategory);
 			log("Record sorted by Master Category Name and object is:- " + sort_CategoryName_MasterCategory.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Name Sorting button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void filterRecordWithCategoryName(String categoryName) throws Exception {
-		if (input_Filter_CategoryName_MasterCategory.isDisplayed()) {
-			input_Filter_CategoryName_MasterCategory.clear();
-			input_Filter_CategoryName_MasterCategory.sendKeys(categoryName);
+	
+			inputTextIntoInputField(input_Filter_CategoryName_MasterCategory, categoryName);
 			log("Entered Master Category Name:-" + categoryName + " to filter records and object is: "
 					+ input_Filter_CategoryName_MasterCategory.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Name field element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -317,14 +283,10 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
+		
+			clickOnButton(btnOKSuccess);
 			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button Element not present");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -333,144 +295,88 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 * @throws Exception
 	 */
 	public void editMasterCategory() throws Exception {
-		if (icon_Edit_MasterCategory.isDisplayed()) {
-
+	
+			isDisplayed(icon_Edit_MasterCategory);
 			String editText = icon_Edit_MasterCategory.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + editText);
 
 			// Compare toll tip text
 			Assert.assertEquals(editText, "Edit");
 
-			icon_Edit_MasterCategory.click();
+			clickOnButton(icon_Edit_MasterCategory);
 			log("Clicked on Edit Icon to Edit Master Category record and object is:-"
 					+ icon_Edit_MasterCategory.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Edit Icon element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void deactivateRecords_MasterCategoryGrid() throws Exception {
 
-		if (icon_Deactivate_MasterCategory.isDisplayed()) {
-
+			isDisplayed(icon_Deactivate_MasterCategory);
 			String DeactivateText = icon_Deactivate_MasterCategory.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + DeactivateText);
 
 			// Compare toll tip text
 			Assert.assertEquals(DeactivateText, "Deactivate Now");
 
-			icon_Deactivate_MasterCategory.click();
+			clickOnButton(icon_Deactivate_MasterCategory);
 			log("Clicked on Deacivate Icon to Deactivate Master Category record and object is:-"
 					+ icon_Deactivate_MasterCategory.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Deactivate Icon Master Category element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void activateRecords_MasterCategoryGrid() throws Exception {
 
-		if (icon_Activate_MasterCategory.isDisplayed()) {
-
+			isDisplayed(icon_Activate_MasterCategory);
 			String ActivateText = icon_Activate_MasterCategory.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + ActivateText);
 
 			// Compare toll tip text
 			Assert.assertEquals(ActivateText, "Activate Now");
-
-			icon_Activate_MasterCategory.click();
+			clickOnButton(icon_Activate_MasterCategory);
 			log("Clicked on Acivate Icon to Activate Master Category record and object is:-"
 					+ icon_Activate_MasterCategory.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Activate Icon Master Category Grid element is not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void yesDeactivateOrActivateRecords() throws Exception {
-		if (btnPopUp_YesDeactivateOrActivateit.isDisplayed()) {
-			btnPopUp_YesDeactivateOrActivateit.click();
+		
+			clickOnButton(btnPopUp_YesDeactivateOrActivateit);
 			log("Clicked on Yes Deactivate Or Activate button for deactivation or Activation of record and object is:- "
 					+ btnPopUp_YesDeactivateOrActivateit.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Yes Deactivate or Activate it button is not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void cancelDeactivationAndActivationOfRecord() throws Exception {
-		if (btnPopUp_Cancel.isDisplayed()) {
-			btnPopUp_Cancel.click();
+		
+			clickOnButton(btnPopUp_Cancel);
 			log("Clicked on Cancel button for Cancelation of Activation or Deactivation of record and object is:- "
 					+ btnPopUp_Cancel.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Cancel button is not present in Activation and deactivation pop up.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	// CATEGORY CLASS MAPPING
 
 	public void navigateToCategoryClassMapping() throws Exception {
 
-		if (tab_CategoryClassMapping.isDisplayed()) {
-			tab_CategoryClassMapping.click();
+			clickOnButton(tab_CategoryClassMapping);
 			log("Page Swich from Master Category to Category Class mapping and object is:-"
 					+ tab_CategoryClassMapping.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Category Class Mapping tab is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void fill_CategoryClassMapping_Form(String academicYear, String Category, String class_ccm)
 			throws Exception {
-		if (sel_AcademicYear.isDisplayed()) {
-
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
-
+	
+			selectElementFromDropDown(sel_AcademicYear, academicYear);
 			log("Selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Category.isDisplayed()) {
-
-			select = new Select(sel_Category);
-			select.selectByVisibleText(Category);
-
+		
+			selectElementFromDropDown(sel_Category, Category);
 			log("Selected Category: " + Category + " and object is:- " + sel_Category.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), Category);
-			Thread.sleep(1000);
-		} else {
-			log("User Name element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
 
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_ccm);
-
+			selectElementFromDropDown(sel_Class, class_ccm);
 			log("Selected Class: " + class_ccm + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_ccm);
-			Thread.sleep(2000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
+			
+			isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section Check box is checked and object is:-" + chk_Section.toString());
@@ -487,14 +393,10 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 * @throws Exception
 	 */
 	public void submitBlank_CategoryClassMappingForm() throws Exception {
-		if (btn_Add.isDisplayed()) {
-			btn_Add.click();
+	
+			clickOnButton(btn_Add);
 			log("Submit blank Category Class Mapping form and object is:-" + btn_Add.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Add button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	/**
@@ -504,19 +406,11 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnAddToSubmit_CategoryClassMappingForm() throws Exception {
-		if (btn_Add.isDisplayed()) {
-			btn_Add.click();
+	
+			clickOnButton(btn_Add);
 			log("Submit Category Class mapping form to add data in details section and object is:-"
 					+ btn_Add.toString());
-			Thread.sleep(3000);
-			// ((JavascriptExecutor)
-			// driver).executeScript("arguments[0].scrollIntoView(true);",
-			// btn_Min_MaxLoginPrivilegeDetails);
-			
-		} else {
-			log("Add button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	/**
@@ -527,19 +421,11 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	 */
 	public void selectClassAndSection_ForSecondCategoryClassMapping(String academicYear, String Category,
 			String class_ccm) throws Exception {
-		if (sel_Class.isDisplayed()) {
-
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_ccm);
-
+	
+			selectElementFromDropDown(sel_Class, class_ccm);
 			log("Selected Class: " + class_ccm + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_ccm);
-			Thread.sleep(2000);
-		} else {
-			log("Class element is not present");
-			Thread.sleep(500);
-		}
+			
+			isDisplayed(chk_Section);
 		if (!chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Section Check box is checked and object is:-" + chk_Section.toString());
@@ -551,84 +437,58 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	}
 
 	public void clickOnSaveToSubmit_CategoryClassMappingForm() throws Exception {
-		if (btn_Save_CategoryClassMapping.isDisplayed()) {
-			btn_Save_CategoryClassMapping.click();
+		
+			clickOnButton(btn_Save_CategoryClassMapping);
 			log("Save Category Class Mapping form and object is:-" + btn_Save_CategoryClassMapping.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Save button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnCancelToClear_CategoryClassMappingForm_AND_DetailsSection() throws Exception {
-		if (btn_Cancel_CategoryClassMapping.isDisplayed()) {
-			btn_Cancel_CategoryClassMapping.click();
+		
+			clickOnButton(btn_Cancel_CategoryClassMapping);
 			log("Clear Category Class Mapping form and details section data and object is:-"
 					+ btn_Cancel_CategoryClassMapping.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnClearButton_ToClearFilledForm() throws Exception {
-		if (btn_Clear.isDisplayed()) {
-			btn_Clear.click();
+		
+			clickOnButton(btn_Clear);
 			log("Clear all the selected item to fill Category Class mapping form and object is:-"
 					+ btn_Clear.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Clear button element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void min_Max_CategoryDashBoard() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_ExamMasterCategory);
 		Thread.sleep(1000);
-		if (btn_Min_Max_Category.isDisplayed()) {
-			btn_Min_Max_Category.click();
+		
+			clickOnButton(btn_Min_Max_Category);
 			log("Exam Master Category Or Category Class Mapping dashboard page minimized or maximized and object is:-"
 					+ btn_Min_Max_Category.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category DashBoard Minimized OR Maximize Element not present.");
-		}
+			
 	}
 
 	public void min_Max_MasterCategoryForm() throws Exception {
-		if (btn_Min_Max_MasterCategory.isDisplayed()) {
-			btn_Min_Max_MasterCategory.click();
+	
+			clickOnButton(btn_Min_Max_MasterCategory);
 			log("Master Category page minimized or maximized and object is:-" + btn_Min_Max_MasterCategory.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Master Category Minimize OR Maximize Element not present.");
-		}
+			
 	}
 
 	public void min_Max_MasterCategory_GridView() throws Exception {
-		if (btn_Min_Max_MasterCategoryGridView.isDisplayed()) {
-			btn_Min_Max_MasterCategoryGridView.click();
+		
+			clickOnButton(btn_Min_Max_MasterCategoryGridView);
 			log("Master Category Grid View page minimized or maximized and object is:-"
 					+ btn_Min_Max_MasterCategoryGridView.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Master Category Grid View Minimize OR Maximize Element not present.");
-		}
+			
 	}
 
 	public void editRecordsAndUpdateSection_InDetailsSection() throws Exception {
 
-		if (icon_Edit_Details.isDisplayed()) {
-			icon_Edit_Details.click();
+			clickOnButton(icon_Edit_Details);
 			log("Edit icon is clicked and object is:- " + icon_Edit_Details.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Edit icon element is not present in details section.");
-			Thread.sleep(500);
-		}
+		isDisplayed(chk_Section);
 		if (chk_Section.isSelected()) {
 			chk_Section.click();
 			log("Already selected for edit and object is:- " + chk_Section_edit.toString());
@@ -637,6 +497,7 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 			log("Sub-subject is already selected for class teacher.");
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Section_edit);
 		if (!chk_Section_edit.isSelected()) {
 			chk_Section_edit.click();
 			log("Change of section is selected for edit and object is:- " + chk_Section_edit.toString());
@@ -649,96 +510,61 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 
 	public void deleteRecordsFromDetailsSelection() throws Exception {
 
-		if (icon_Delete_Details.isDisplayed()) {
-			icon_Delete_Details.click();
+			clickOnButton(icon_Delete_Details);
 			log("Record deleted from details section and object is:- " + icon_Delete_Details.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Delete icon element is not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void sortWithAcademicYearInGridView() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", noOfItemPerPage);
 		Thread.sleep(1000);
-		
-		
-		if (btn_Sort_AcademicYear.isDisplayed()) {
-			btn_Sort_AcademicYear.click();
-			Thread.sleep(500);
-			btn_Sort_AcademicYear.click();
+			clickOnButton(btn_Sort_AcademicYear);
+			clickOnButton(btn_Sort_AcademicYear);
 			log("Sort by academic year in grid view and object is:- " + btn_Sort_AcademicYear.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void sortWithCategoryNameInGridView() throws Exception {
 
-		if (btn_Sort_CategoryName.isDisplayed()) {
-			btn_Sort_CategoryName.click();
+			clickOnButton(btn_Sort_CategoryName);
 			log("Sort by Category Name in Category Class Mapping details grid and object is:- " + btn_Sort_CategoryName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Name button element not present in output grid.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void sortWithClassNameInGridView() throws Exception {
 
-		if (btn_Sort_ClassName.isDisplayed()) {
-			btn_Sort_ClassName.click();
+			clickOnButton(btn_Sort_ClassName);
 			log("Sort by Class Name in grid view and object is:- " + btn_Sort_ClassName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Class Name button element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 	public void filterRecordsBasedOn_AcademicYear(String academicYear, String categoryName, String className) throws Exception {
-		if (input_AcademicYear.isDisplayed()) {
-			input_AcademicYear.clear();
-			input_AcademicYear.sendKeys(academicYear);
+		
+			inputTextIntoInputField(input_AcademicYear, academicYear);
 			log("Entered academic year " + academicYear + " to filter records and object is:- "
 					+ input_AcademicYear.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Academic year input field element not present.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void filterRecordsBasedOn_CategoryName(String academicYear, String categoryName, String className) throws Exception {
-		if (input_CategoryNameGrid.isDisplayed()) {
-			input_CategoryNameGrid.clear();
-			input_CategoryNameGrid.sendKeys(categoryName);
+		
+			inputTextIntoInputField(input_CategoryNameGrid, categoryName);
 			log("Entered Category Name " + categoryName + " to filter records and object is:- "
 					+ input_CategoryNameGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Name input field element not present in output grid.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void filterRecordsBasedOn_ClassName(String academicYear, String categoryName, String className) throws Exception {
-		if (input_ClassName.isDisplayed()) {
-			input_ClassName.clear();
-			input_ClassName.sendKeys(className);
+		
+			inputTextIntoInputField(input_ClassName, className);
 			log("Entered Class Name " + className + " to filter records and object is:- " + input_ClassName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Class Name input field element not present in output grid.");
-			Thread.sleep(500);
-		}
+			
 	}
 	public void clearFilledDataForFilter() throws Exception {
+		isDisplayed(input_AcademicYear);
 		input_AcademicYear.clear();
+		isDisplayed(input_CategoryNameGrid);
 		input_CategoryNameGrid.clear();
+		isDisplayed(input_ClassName);
 		input_ClassName.clear();
 		log("Cleared filter data in Grid View.");
 		Thread.sleep(1000);
@@ -747,81 +573,125 @@ public class Exam_MasterCategoryAndCategoryClassMapping extends TestBase {
 	public void clickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation() throws Exception {
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_Edit_Grid);
 //		Thread.sleep(1000);
-		if (btn_View_Grid.isDisplayed()) {
-			btn_View_Grid.click();
+		
+			clickOnButton(btn_View_Grid);
 			log("Clicked on View Icon to launch pop up windows to see created Category Class Mapping and object is:-"
 					+ btn_View_Grid.toString());
 			Thread.sleep(1000);
 			boolean closeButton = btn_View_ClosePopUp.isDisplayed();
 			Assert.assertTrue(closeButton);
-			Thread.sleep(1000);
-		} else {
-			log("View Icon element is not present in grid.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void clickOnEditIcon_ToUpdateCategoryClassMapping() throws Exception {
 		
-		if (btn_Edit_Grid.isDisplayed()) {
-			btn_Edit_Grid.click();
+	
+			clickOnButton(btn_Edit_Grid);
 			log("Clicked on Edit Icon to update Category Class Mapping and object is:-" + btn_Edit_Grid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Edit Icon element is not present in output grid.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void deactivateRecords_ViewWindow() throws Exception {
 
-		if (icon_DeactivateAndActivate.isDisplayed()) {
-
+			isDisplayed(icon_DeactivateAndActivate);
 			String DeactivateText = icon_DeactivateAndActivate.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + DeactivateText);
 
 			// Compare toll tip text
 			Assert.assertEquals(DeactivateText, "Deactivate Now");
 
-			icon_DeactivateAndActivate.click();
+			clickOnButton(icon_DeactivateAndActivate);
 			log("Clicked on Deacivate Icon to Deactivate Category Class Mapping view popup window and object is:-"
 					+ icon_DeactivateAndActivate.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Deactivate Icon element is not present in view popup window.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void activateRecords_ViewWindow() throws Exception {
 
-		if (icon_DeactivateAndActivate.isDisplayed()) {
-
+			isDisplayed(icon_DeactivateAndActivate);
 			String ActivateText = icon_DeactivateAndActivate.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + ActivateText);
 
 			// Compare toll tip text
 			Assert.assertEquals(ActivateText, "Activate Now");
 
-			icon_DeactivateAndActivate.click();
+			clickOnButton(icon_DeactivateAndActivate);
 			log("Clicked on Acivate Icon to Activate Category Class Mapping view popup window record and object is:-"
 					+ icon_DeactivateAndActivate.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Activate Icon element is not present in view popup window.");
-			Thread.sleep(500);
-		}
+			
 	}
 
 	public void closeViewWindow_CategoryClassMapping() throws Exception{
 		
-		if(btn_View_ClosePopUp.isDisplayed()){
-			btn_View_ClosePopUp.click();
+			clickOnButton(btn_View_ClosePopUp);
 			log("View window close button is clicked and object is:- "+btn_View_ClosePopUp.toString());
+			
+	}
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record saved Successfully");
+			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
-		}else{
-			log("View Close button element is not present.");
-			Thread.sleep(500);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record De-activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

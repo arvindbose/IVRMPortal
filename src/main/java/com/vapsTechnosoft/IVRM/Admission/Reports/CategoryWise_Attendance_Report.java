@@ -41,7 +41,11 @@ public class CategoryWise_Attendance_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btnAdmission_Reports;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// WebElement btnReports_CategoryWise_AttendanceReport;
+
+	@FindBy(xpath = "//a[@href='#/app/CategoryWiseAttendance/168']")
 	WebElement btnReports_CategoryWise_AttendanceReport;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -58,6 +62,9 @@ public class CategoryWise_Attendance_Report extends TestBase {
 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date;
+	
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	WebElement btn_MonthYear2;
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
 	WebElement btn_Report;
@@ -104,7 +111,7 @@ public class CategoryWise_Attendance_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -119,31 +126,15 @@ public class CategoryWise_Attendance_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Reports_CategoryWise_AttendanceReport_BGHS() throws Exception {
-		if (btn_Admission.isDisplayed()) {
-			btn_Admission.click();
-			log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnAdmission_Reports.isDisplayed()) {
-			btnAdmission_Reports.click();
-			log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Admission reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btnReports_CategoryWise_AttendanceReport.isDisplayed()) {
-			btnReports_CategoryWise_AttendanceReport.click();
-			log("Clicked on CategoryWise Attendance reports Button and object is:-"
-					+ btnReports_CategoryWise_AttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("CategoryWise Attendance reports button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Admission);
+		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
+
+		clickOnButton(btnAdmission_Reports);
+		log("Clicked on Admission reports and object is:-" + btnAdmission_Reports.toString());
+
+		clickOnButton(btnReports_CategoryWise_AttendanceReport);
+		log("Clicked on CategoryWise Attendance reports Button and object is:-"
+				+ btnReports_CategoryWise_AttendanceReport.toString());
 
 	}
 
@@ -168,117 +159,71 @@ public class CategoryWise_Attendance_Report extends TestBase {
 	}
 
 	public void exportReport_WithoutSelectingRecords() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
-			log("Without selecting records click on Excel Button and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Excel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_ExportToExcel);
+		log("Without selecting records click on Excel Button and object is:-" + btn_ExportToExcel.toString());
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void fill_CategoryWise_AttendanceReportForm(String academicYear) throws Exception {
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
-			log("selected academic yaer: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			Thread.sleep(1000);
+		selectElementFromDropDown(sel_AcademicYr, academicYear);
+		log("selected academic yaer: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
 
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present.");
-			Thread.sleep(500);
-		}
-		if (btnCalendar_Date.isDisplayed()) {
-			btnCalendar_Date.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
-			Thread.sleep(500);
-			btn_Date.click();
-			log("Attendance date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("Calendar button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btnCalendar_Date);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear2);
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		btn_Date.click();
+		log("Attendance date is selected from calender.");
+
 	}
 
 	public void clickOnReport_TogetRecords() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("To Get the records for report generation click on Report Button and object is:-"
-					+ btn_Report.toString());
-			Thread.sleep(15000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("To Get the records for report generation click on Report Button and object is:-" + btn_Report.toString());
+
 	}
 
 	public void clickOn_CancelButton_ToClearFilledData() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("Cancel button is clicked to Clear filled data and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("Cancel button is clicked to Clear filled data and object is:-" + btn_Cancel.toString());
+
 	}
 
 	public void exportReport_ToDownloadExcelReport() throws Exception {
-		if (btn_ExportToExcel.isDisplayed()) {
-			btn_ExportToExcel.click();
-			log("To Download excel report click on Excel Button and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Excel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_ExportToExcel);
+		log("To Download excel report click on Excel Button and object is:-" + btn_ExportToExcel.toString());
+
 	}
 
 	public void clickOnPrint_WithoutSelectingRecords() throws Exception {
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
-			log("Print button is clicked to generate report as print preview without selecting records and object is:-"
-					+ btn_Print.toString());
-			Thread.sleep(5000);
+		clickOnButton(btn_Print);
+		log("Print button is clicked to generate report as print preview without selecting records and object is:-"
+				+ btn_Print.toString());
 
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
 	}
 
 	public void clickOnPrint() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			btn_Print.click();
-			log("Print button is clicked to generate report as print preview and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
-
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Print);
+		log("Print button is clicked to generate report as print preview and object is:-" + btn_Print.toString());
+		Thread.sleep(2000);
 
 		Set<String> allWin = driver.getWindowHandles();
 
@@ -304,83 +249,72 @@ public class CategoryWise_Attendance_Report extends TestBase {
 
 		driver.close();
 		driver.switchTo().window(parentWin);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	public void minimize_CategoryWise_AttendanceReport() throws Exception {
-		if (btnMin_MaxCategoryWise_AttendanceReport.isDisplayed()) {
-			btnMin_MaxCategoryWise_AttendanceReport.click();
-			log("Category Wise attendance Report page minimized and object is:-"
-					+ btnMin_MaxCategoryWise_AttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Wise attendance Report Minimized Element not present.");
-		}
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_CategoryWise_AttendanceReportMsgDispaly);
+		Thread.sleep(1000);
+
+		clickOnButton(btnMin_MaxCategoryWise_AttendanceReport);
+		log("Category Wise attendance Report page minimized and object is:-"
+				+ btnMin_MaxCategoryWise_AttendanceReport.toString());
+
 	}
 
 	public void maximize_CategoryWise_AttendanceReport() throws Exception {
-		if (btnMin_MaxCategoryWise_AttendanceReport.isDisplayed()) {
-			btnMin_MaxCategoryWise_AttendanceReport.click();
-			log("Category Wise attendance Report page maximized and object is:-"
-					+ btnMin_MaxCategoryWise_AttendanceReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Wise attendance Report Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxCategoryWise_AttendanceReport);
+		log("Category Wise attendance Report page maximized and object is:-"
+				+ btnMin_MaxCategoryWise_AttendanceReport.toString());
+
 	}
 
 	public void minimize_CategoryWise_AttendanceReportCategoryList() throws Exception {
-		if (btnMin_MaxCategoryWise_AttendanceReportCategoryList.isDisplayed()) {
-			btnMin_MaxCategoryWise_AttendanceReportCategoryList.click();
-			log("Category Wise attendance Report Student List page minimized and object is:-"
-					+ btnMin_MaxCategoryWise_AttendanceReportCategoryList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Wise attendance Report Student List Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxCategoryWise_AttendanceReportCategoryList);
+		log("Category Wise attendance Report Student List page minimized and object is:-"
+				+ btnMin_MaxCategoryWise_AttendanceReportCategoryList.toString());
+
 	}
 
 	public void maximize_CategoryWise_AttendanceReportCategoryList() throws Exception {
-		if (btnMin_MaxCategoryWise_AttendanceReportCategoryList.isDisplayed()) {
-			btnMin_MaxCategoryWise_AttendanceReportCategoryList.click();
-			log("Category Wise attendance Report Student List page maximized and object is:-"
-					+ btnMin_MaxCategoryWise_AttendanceReportCategoryList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Category Wise attendance Report Student List Maximize Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxCategoryWise_AttendanceReportCategoryList);
+		log("Category Wise attendance Report Student List page maximized and object is:-"
+				+ btnMin_MaxCategoryWise_AttendanceReportCategoryList.toString());
+
 	}
 
 	public void searchCategoryToGenerateReport_FromCategoryWiseAttendanceReportGrid(String categoryName)
 			throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(categoryName);
-			log("Entered Category Name to search: " + categoryName + " and object is:-" + input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search input field element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, categoryName);
+		log("Entered Category Name to search: " + categoryName + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void verifyCategory_ForCategoryWiseAttendanceReportInGrid(String categoryName) {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
-			String category_name = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText().trim();
-			System.out.println("Category Name: " + category_name);
-			// Thread.sleep(2000);
-			try {
-
-				Assert.assertEquals(category_name, categoryName);
+			
+				String category_name = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
+						.trim();
+				System.out.println("Category Name: " + category_name);
+				// Thread.sleep(2000);
+				if(category_name.equals(categoryName)){
+				//Assert.assertEquals(category_name, categoryName);
 				log("Category available for Category Wise attendance Report.");
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+		}	
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -388,30 +322,39 @@ public class CategoryWise_Attendance_Report extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
-			String category_name = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText().trim();
-			System.out.println("Category Name: " + category_name);
-			// Thread.sleep(2000);
-			try {
-				Assert.assertEquals(category_name, categoryName);
+		
+				String category_name = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[3]")).getText()
+						.trim();
+				System.out.println("Category Name: " + category_name);
+				// Thread.sleep(2000);
+				if(category_name.equals(categoryName)){
+				//Assert.assertEquals(category_name, categoryName);
 				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[1]/label/input"))
 						.click();
 				log("Corresponding Category check box is checked for Category Wise attendance Report.");
 				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+				}
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void validateTotalStudentInACategory() throws Exception {
+		isDisplayed(total_PresentStudent);
 		String numberPresentStudent = total_PresentStudent.getText();
 		int presentStudent = Integer.parseInt(numberPresentStudent);
-		System.out.println("Present Student: "+presentStudent);
+		System.out.println("Present Student: " + presentStudent);
+		isDisplayed(total_AbsentStudent);
 		String numberAbsentStudent = total_AbsentStudent.getText();
 		int absentStudent = Integer.parseInt(numberAbsentStudent);
-		System.out.println("Absent Student: "+absentStudent);
+		System.out.println("Absent Student: " + absentStudent);
+		isDisplayed(total_Student);
 		String numberStudent = total_Student.getText();
 		int students = Integer.parseInt(numberStudent);
 		System.out.println((presentStudent + absentStudent));

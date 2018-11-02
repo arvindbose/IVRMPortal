@@ -110,10 +110,10 @@ public class Masters_SubjectWise_Period_Settings extends TestBase {
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
 		waitForElement(driver, 10, btnMasters_SubjectWisePeriodSettings);
 
-		btnMasters_SubjectWisePeriodSettings.click();
-		log("Clicked on Subject wise period settings Button and object is:-"
-				+ btnMasters_SubjectWisePeriodSettings.toString());
-		waitForElement(driver, 10, btnSave);
+//		btnMasters_SubjectWisePeriodSettings.click();
+//		log("Clicked on Subject wise period settings Button and object is:-"
+//				+ btnMasters_SubjectWisePeriodSettings.toString());
+//		waitForElement(driver, 10, btnSave);
 
 	}
 

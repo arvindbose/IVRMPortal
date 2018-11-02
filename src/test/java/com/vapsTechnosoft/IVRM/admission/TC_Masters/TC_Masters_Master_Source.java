@@ -285,8 +285,21 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcSaveSourceInfoData");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			mastersource.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -303,7 +316,7 @@ public class TC_Masters_Master_Source extends TestBase {
 
 	
 
-	@Test(priority = 16, dataProvider = "MasterSourceSearchData")
+	@Test(priority = 17, dataProvider = "MasterSourceSearchData")
 	public void tcSearchWithSourceNameInTheGrid(String sourceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -321,7 +334,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MasterSourceSearchData")
+	@Test(priority = 18, dataProvider = "MasterSourceSearchData")
 	public void tcVerifySourceNameInTheGrid(String sourceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -339,7 +352,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "MasterSourceSearchData")
+	@Test(priority = 19, dataProvider = "MasterSourceSearchData")
 	public void tcEditMasterSource(String sourceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -357,7 +370,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSaveSourceInfoData_Edit() {
 
 		try {
@@ -371,8 +384,21 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcSaveSourceInfoData_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastersource.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -387,7 +413,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "MasterSourceSearchData")
+	@Test(priority = 23, dataProvider = "MasterSourceSearchData")
 	public void tcSearchWithSourceNameInTheGrid_delete(String sourceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -405,7 +431,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MasterSourceSearchData")
+	@Test(priority = 24, dataProvider = "MasterSourceSearchData")
 	public void tcDeleteMasterSource(String sourceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -423,7 +449,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton() {
 
 		try {
@@ -438,7 +464,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -453,7 +479,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "MasterSourceSearchData")
+	@Test(priority = 27, dataProvider = "MasterSourceSearchData")
 	public void tcDeleteMasterSource_AfterCancel(String sourceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -471,7 +497,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 28)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -485,8 +511,22 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 29)
+	public void tcPopWindowMessage_DeletedSuccessfully_Validation() {
 
-	@Test(priority = 27)
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeletedSuccessfully_Validation Test===========");
+
+			mastersource.popWindowMessage_DeletedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_DeletedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeletedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeletedSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 30)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -501,7 +541,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MastersMasterSourceData")
+	@Test(priority = 31, dataProvider = "MastersMasterSourceData")
 	public void tcEnterMasterSourceDetailsData_AfterDelete(String sourceName, String sourceDiscription,
 			String runMode) {
 
@@ -520,7 +560,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 32)
 	public void tcSaveSourceInfoData_AfterDelete() {
 
 		try {
@@ -534,8 +574,21 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcSaveSourceInfoData_AfterDelete");
 		}
 	}
+	@Test(priority = 33)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
-	@Test(priority = 30)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+
+			mastersource.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		}
+	}
+	@Test(priority = 34)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

@@ -163,6 +163,20 @@ public class TC_Exam_MarksCalculation_Calculation extends TestBase {
 		}
 	}
 	@Test(priority = 8)
+	public void tcPopUpWindowMessage_MarksCalCulationSuccessfully() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_MarksCalCulationSuccessfully Test===========");
+
+			calculationmarks.popUpWindowMessage_MarksCalCulationSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_MarksCalCulationSuccessfully Test===========");
+			getScreenShot("tcPopUpWindowMessage_MarksCalCulationSuccessfully");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_MarksCalCulationSuccessfully");
+		}
+	}
+	@Test(priority = 9)
 	public void tcClickOnSuccessOkBtn_ConfirmSubmitCalculation() {
 
 		try {

@@ -465,20 +465,35 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 		}
 	}
 
+//	@Test(priority = 26)
+//	public void tcVerifySuccessfulPopUp() {
+//		masterInstallmentDueDate = new Masters_Fee_Installment_MasterInstallment_DueDate(driver);
+//
+//		try {
+//			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+//
+//			boolean status = masterInstallmentDueDate.verifySuccessfulPopUp();
+//			Assert.assertEquals(status, true);
+//
+//			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
+//			getScreenShot("tcVerifySuccessfulPopUp");
+//		} catch (Exception e) {
+//			getScreenShot("tcVerifySuccessfulPopUp");
+//		}
+//	}
 	@Test(priority = 26)
-	public void tcVerifySuccessfulPopUp() {
+	public void PopUpWindowMessage_SubmitSuccessfully_Validation() {
 		masterInstallmentDueDate = new Masters_Fee_Installment_MasterInstallment_DueDate(driver);
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+			log.info("============= Strting PopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
 
-			boolean status = masterInstallmentDueDate.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			masterInstallmentDueDate.popWindowMessage_SubmitSuccessfully();
 
-			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp");
+			log.info("============= Finished PopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("PopUpWindowMessage_SubmitSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp");
+			getScreenShot("PopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
 
@@ -567,8 +582,22 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 			getScreenShot("tcClickOnSaveButton_MasterFeeInstallmentForm_Edit");
 		}
 	}
-
 	@Test(priority = 32)
+	public void PopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
+		masterInstallmentDueDate = new Masters_Fee_Installment_MasterInstallment_DueDate(driver);
+
+		try {
+			log.info("============= Strting PopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			masterInstallmentDueDate.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished PopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("PopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("PopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 33)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -585,7 +614,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 
 	//
 
-	@Test(priority = 33, dataProvider = "Search_DueDateInstallmentNameTestData")
+	@Test(priority = 34, dataProvider = "Search_DueDateInstallmentNameTestData")
 	public void tcSearchBy_InstallmentName_InFeeInstallmentDueDateGridView_ForDelete(String installmentName,
 			String runMode) {
 
@@ -606,7 +635,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "Search_DueDateInstallmentNameTestData")
+	@Test(priority = 35, dataProvider = "Search_DueDateInstallmentNameTestData")
 	public void tcDeletionOf_MasterFeeInstallmentDueDateFromGrid(String installmentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -624,7 +653,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 36)
 	public void tcClickOnCancelButton_PopUp_delete() {
 
 		try {
@@ -638,8 +667,22 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 			getScreenShot("tcClickOnCancelButton_PopUp_delete");
 		}
 	}
+	@Test(priority = 37)
+	public void PopUpWindowMessage_DeleteCancel_Validation() {
+		masterInstallmentDueDate = new Masters_Fee_Installment_MasterInstallment_DueDate(driver);
 
-	@Test(priority = 36)
+		try {
+			log.info("============= Strting PopUpWindowMessage_DeleteCancel_Validation Test===========");
+
+			masterInstallmentDueDate.popUpWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished PopUpWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("PopUpWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("PopUpWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	@Test(priority = 38)
 	public void tcClickOnOkSuccessButton_deleteCancel() {
 
 		try {
@@ -654,7 +697,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 		}
 	}
 
-	@Test(priority = 37, dataProvider = "Search_DueDateInstallmentNameTestData")
+	@Test(priority = 39, dataProvider = "Search_DueDateInstallmentNameTestData")
 	public void tcSearchBy_InstallmentName_InFeeInstallmentDueDateGridView_ForDelete_AfterCancel(String installmentName,
 			String runMode) {
 
@@ -675,7 +718,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "Search_DueDateInstallmentNameTestData")
+	@Test(priority = 40, dataProvider = "Search_DueDateInstallmentNameTestData")
 	public void tcDeletionOf_MasterFeeInstallmentDueDateFromGrid_AfterCancel(String installmentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -695,7 +738,7 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 41)
 	public void tcYesDeleteOrDeactivateOrActivateIt_delete() {
 
 		try {
@@ -709,8 +752,22 @@ public class Tc_Masters_Fee_Installment_MasterInstallment_DueDate extends TestBa
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_delete");
 		}
 	}
+	@Test(priority = 42)
+	public void PopUpWindowMessage_DeletedSucessfully_Validation() {
+		masterInstallmentDueDate = new Masters_Fee_Installment_MasterInstallment_DueDate(driver);
 
-	@Test(priority = 40)
+		try {
+			log.info("============= Strting PopUpWindowMessage_DeletedSucessfully_Validation Test===========");
+
+			masterInstallmentDueDate.popUpWindowMessage_DeletedSucessfully_Validation();
+
+			log.info("============= Finished PopUpWindowMessage_DeletedSucessfully_Validation Test===========");
+			getScreenShot("PopUpWindowMessage_DeletedSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("PopUpWindowMessage_DeletedSucessfully_Validation");
+		}
+	}
+	@Test(priority = 43)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {

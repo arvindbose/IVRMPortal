@@ -1,196 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="4" failed="0" ignored="0" total="24" passed="20">
+<testng-results skipped="4" failed="0" ignored="0" total="13" passed="9">
   <reporter-output>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png' height='100' width='100'/> </a>]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //input[@id='login-username']]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
     </line>
     <line>
-      <![CDATA[entered password:-Password@123 and object is [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //input[@id='login-password']]]]>
+      <![CDATA[Entered value to input Field is Rakesh and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
     </line>
     <line>
-      <![CDATA[cliked on login button and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //button[@ng-show='prereg']]]]>
+      <![CDATA[UserName entered Rakesh and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
     </line>
     <line>
-      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_03_07_2018_05_54_26.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_03_07_2018_05_54_26.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Entered value to input Field is Password@123 and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
     </line>
     <line>
-      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
+      <![CDATA[Password entered Password@123 and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_03_07_2018_05_54_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_03_07_2018_05_54_31.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
     </line>
     <line>
-      <![CDATA[Clicked on Fee Button in Navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
     </line>
     <line>
-      <![CDATA[Clicked on Fee reports in navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]]]]>
+      <![CDATA[Clicked on Login button and redirected to Home page, Object is:-Proxy element for: DefaultElementLocator 'By.xpath: //b[text()='Sign in ']/parent::button']]>
     </line>
     <line>
-      <![CDATA[Clicked on Fee Installment Report Button in navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[4]]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNavigateToFee_Reports_FeeInstallmentReport_03_07_2018_05_54_36.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNavigateToFee_Reports_FeeInstallmentReport_03_07_2018_05_54_36.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //div//section//ol//li]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeReports_FeeInstallmentReport_Page_03_07_2018_05_54_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeReports_FeeInstallmentReport_Page_03_07_2018_05_54_37.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
     </line>
     <line>
-      <![CDATA[Submit blank Fee Installment form and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSubmitBlank_FeeInstallmentReportForm_03_07_2018_05_54_44.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSubmitBlank_FeeInstallmentReportForm_03_07_2018_05_54_44.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
     </line>
     <line>
-      <![CDATA[Category Wise Radio button already selected.]]>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
     </line>
     <line>
-      <![CDATA[selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]]]>
+      <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
     </line>
     <line>
-      <![CDATA[Selected Category: Nursery and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Category')]/following-sibling::div/select]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
     </line>
     <line>
-      <![CDATA[Installment check box is checked and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[text()='Yearly']/preceding-sibling::input]]]>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_03_07_2018_05_54_49.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_03_07_2018_05_54_49.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Clicked on Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_03_07_2018_05_54_54.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_03_07_2018_05_54_54.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]]]>
+      <![CDATA[Clicked on Fee Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Form_03_07_2018_05_54_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Form_03_07_2018_05_54_57.png' height='100' width='100'/> </a>]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Grid_03_07_2018_05_54_58.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Grid_03_07_2018_05_54_58.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]]]>
+      <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Grid_03_07_2018_05_55_00.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Grid_03_07_2018_05_55_00.png' height='100' width='100'/> </a>]]>
+      <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Form_03_07_2018_05_55_02.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Form_03_07_2018_05_55_02.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[Fee Installment report filled form data is cleared and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Cancel')]/parent::button]]]>
+      <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickCancelButton_ToClearFilledForm_03_07_2018_05_55_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickCancelButton_ToClearFilledForm_03_07_2018_05_55_09.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
     </line>
     <line>
-      <![CDATA[Category Wise Radio button already selected.]]>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
     </line>
     <line>
-      <![CDATA[selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]]]>
+      <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
     </line>
     <line>
-      <![CDATA[Selected Category: Nursery and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Category')]/following-sibling::div/select]]]>
+      <![CDATA[Created record is added into the output gridSanjana Tamada]]>
     </line>
     <line>
-      <![CDATA[Installment check box is checked and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[text()='Yearly']/preceding-sibling::input]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData_03_07_2018_05_55_14.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData_03_07_2018_05_55_14.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
+      <![CDATA[Clicked on print receipt and receipt is open]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData_03_07_2018_05_55_19.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData_03_07_2018_05_55_19.png' height='100' width='100'/> </a>]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise_03_07_2018_05_55_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise_03_07_2018_05_55_25.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
     </line>
     <line>
-      <![CDATA[To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]]]>
+      <![CDATA[Clicked on Fee receipt screen close button]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise_03_07_2018_05_55_30.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise_03_07_2018_05_55_30.png' height='100' width='100'/> </a>]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[Class Wise radio button is selected and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Class Wise')]/preceding-sibling::input]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
     </line>
     <line>
-      <![CDATA[selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]]]>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
     </line>
     <line>
-      <![CDATA[Selected Class: LKG and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Class:')]/following-sibling::div/select]]]>
+      <![CDATA[Clicked on Search cancel button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
     </line>
     <line>
-      <![CDATA[Selected Section: A and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Section:')]/following-sibling::div/select]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForClassWise_03_07_2018_05_55_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForClassWise_03_07_2018_05_55_35.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
-      <![CDATA[Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
+      <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise_03_07_2018_05_55_41.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise_03_07_2018_05_55_41.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
     </line>
     <line>
-      <![CDATA[To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]]]>
+      <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise_03_07_2018_05_55_46.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise_03_07_2018_05_55_46.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]]]>
+      <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise_03_07_2018_05_55_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise_03_07_2018_05_55_52.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[logout is done and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Logout')]]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+    </line>
+    <line>
+      <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+    </line>
+    <line>
+      <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on print receipt and receipt is open]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
+    </line>
+    <line>
+      <![CDATA[Print button is clicked to generate report and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Logout button and object is:-Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Logout')]/preceding-sibling::button']]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="119122" started-at="2018-07-03T12:23:56Z" finished-at="2018-07-03T12:25:55Z">
+  <suite name="Default suite" duration-ms="126729" started-at="2018-11-02T10:58:25Z" finished-at="2018-11-02T11:00:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="119122" started-at="2018-07-03T12:23:56Z" finished-at="2018-07-03T12:25:55Z">
-      <class name="com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="setUp" is-config="true" duration-ms="9520" started-at="2018-07-03T17:53:56Z" finished-at="2018-07-03T17:54:06Z">
+    <test name="Default test" duration-ms="126729" started-at="2018-11-02T10:58:25Z" finished-at="2018-11-02T11:00:31Z">
+      <class name="com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="setUp" is-config="true" duration-ms="10257" started-at="2018-11-02T16:28:25Z" finished-at="2018-11-02T16:28:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2018-07-03T17:54:06Z" finished-at="2018-07-03T17:54:06Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="3" started-at="2018-11-02T16:28:35Z" finished-at="2018-11-02T16:28:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="loginToappWithrequiredCredentials" duration-ms="20065" started-at="2018-07-03T17:54:06Z" data-provider="vapsloginData" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="34213" started-at="2018-11-02T16:28:35Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
@@ -210,48 +246,58 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png' height='100' width='100'/> </a>]]>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png' height='100' width='100'/> </a>]]>
             </line>
             <line>
-              <![CDATA[entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //input[@id='login-username']]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
             </line>
             <line>
-              <![CDATA[entered password:-Password@123 and object is [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //input[@id='login-password']]]]>
+              <![CDATA[Entered value to input Field is Rakesh and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
             </line>
             <line>
-              <![CDATA[cliked on login button and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //button[@ng-show='prereg']]]]>
+              <![CDATA[UserName entered Rakesh and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
             </line>
             <line>
-              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
             </line>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_03_07_2018_05_54_26.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\loginToappWithrequiredCredentials_03_07_2018_05_54_26.png' height='100' width='100'/> </a>]]>
+              <![CDATA[Entered value to input Field is Password@123 and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
+            </line>
+            <line>
+              <![CDATA[Password entered Password@123 and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Login button and redirected to Home page, Object is:-Proxy element for: DefaultElementLocator 'By.xpath: //b[text()='Sign in ']/parent::button']]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+            </line>
+            <line>
+              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png' height='100' width='100'/> </a>]]>
             </line>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SUCCESS method=TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\Login Page_03_07_2018_05_54_06.png' height='100' width='100'/> </a>]]]>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SUCCESS method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png' height='100' width='100'/> </a>]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="loginToappWithrequiredCredentials" duration-ms="0" started-at="2018-07-03T17:54:26Z" data-provider="vapsloginData" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
@@ -275,7 +321,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -307,7 +353,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-07-03T17:54:26Z" data-provider="vapsloginData" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="3" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
@@ -331,7 +388,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -363,51 +420,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output={null}]]]>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="loginToappWithrequiredCredentials" duration-ms="0" started-at="2018-07-03T17:54:26Z" data-provider="vapsloginData" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
@@ -431,7 +466,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -463,29 +498,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output={null}]]]>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="loginToappWithrequiredCredentials" duration-ms="0" started-at="2018-07-03T17:54:26Z" data-provider="vapsloginData" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
@@ -509,7 +544,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: user marked this record as no run
-	at com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.loginToappWithrequiredCredentials(TC_Fee_Installment_Report.java:60)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -541,172 +576,137 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=TC_Fee_Installment_Report.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output={null}]]]>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcHomeButtonValidation()[pri:2, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcHomeButtonValidation" duration-ms="5326" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:32Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcHomeButtonValidation()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcHomeButtonValidation()[pri:2, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcHomeButtonValidation" duration-ms="1307" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:11Z">
           <reporter-output>
             <line>
-              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
+              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
             </line>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_03_07_2018_05_54_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcHomeButtonValidation_03_07_2018_05_54_31.png' height='100' width='100'/> </a>]]>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png' height='100' width='100'/> </a>]]>
             </line>
           </reporter-output>
         </test-method> <!-- tcHomeButtonValidation -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:26Z" finished-at="2018-07-03T17:54:26Z">
+        <test-method status="PASS" signature="tcNevigateTo_FeeTransaction()[pri:3, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcNevigateTo_FeeTransaction" duration-ms="4467" started-at="2018-11-02T16:29:11Z" finished-at="2018-11-02T16:29:15Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Fee Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcNevigateTo_FeeTransaction -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:11Z" finished-at="2018-11-02T16:29:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcHomeButtonValidation()]]>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcNevigateTo_FeeTransaction()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:32Z" finished-at="2018-07-03T17:54:32Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:11Z" finished-at="2018-11-02T16:29:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcHomeButtonValidation status=SUCCESS method=TC_Fee_Installment_Report.tcHomeButtonValidation()[pri:2, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]]>
+                <![CDATA[[TestResult name=tcHomeButtonValidation status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcHomeButtonValidation()[pri:2, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcNavigateToFee_Reports_FeeInstallmentReport()[pri:3, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcNavigateToFee_Reports_FeeInstallmentReport" duration-ms="4222" started-at="2018-07-03T17:54:32Z" finished-at="2018-07-03T17:54:36Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Clicked on Fee Button in Navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Fee reports in navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Fee Installment Report Button in navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[4]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNavigateToFee_Reports_FeeInstallmentReport_03_07_2018_05_54_36.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcNavigateToFee_Reports_FeeInstallmentReport_03_07_2018_05_54_36.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcNavigateToFee_Reports_FeeInstallmentReport -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:32Z" finished-at="2018-07-03T17:54:32Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:15Z" finished-at="2018-11-02T16:29:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcNavigateToFee_Reports_FeeInstallmentReport()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:36Z" finished-at="2018-07-03T17:54:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcNavigateToFee_Reports_FeeInstallmentReport status=SUCCESS method=TC_Fee_Installment_Report.tcNavigateToFee_Reports_FeeInstallmentReport()[pri:3, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Clicked on Fee Button in Navigation panel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]]>
+                <![CDATA[[TestResult name=tcNevigateTo_FeeTransaction status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcNevigateTo_FeeTransaction()[pri:3, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcVerifyFeeReports_FeeInstallmentReport_Page()[pri:4, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcVerifyFeeReports_FeeInstallmentReport_Page" duration-ms="1325" started-at="2018-07-03T17:54:36Z" finished-at="2018-07-03T17:54:37Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //div//section//ol//li]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeReports_FeeInstallmentReport_Page_03_07_2018_05_54_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcVerifyFeeReports_FeeInstallmentReport_Page_03_07_2018_05_54_37.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcVerifyFeeReports_FeeInstallmentReport_Page -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:36Z" finished-at="2018-07-03T17:54:36Z">
+        <test-method status="PASS" signature="tcValidationOfDataInOutputTableGrid(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcValidationOfDataInOutputTableGrid" duration-ms="10039" started-at="2018-11-02T16:29:15Z" data-provider="searchOutputGridTestData" finished-at="2018-11-02T16:29:25Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcVerifyFeeReports_FeeInstallmentReport_Page()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-07-03T17:54:37Z" finished-at="2018-07-03T17:54:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcSubmitBlank_FeeInstallmentReportForm()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:37Z" finished-at="2018-07-03T17:54:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcVerifyFeeReports_FeeInstallmentReport_Page status=SUCCESS method=TC_Fee_Installment_Report.tcVerifyFeeReports_FeeInstallmentReport_Page()[pri:4, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report page text is dispalyed and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //div//section//ol//li]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcSubmitBlank_FeeInstallmentReportForm()[pri:5, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcSubmitBlank_FeeInstallmentReportForm" duration-ms="7420" started-at="2018-07-03T17:54:37Z" finished-at="2018-07-03T17:54:45Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Submit blank Fee Installment form and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSubmitBlank_FeeInstallmentReportForm_03_07_2018_05_54_44.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcSubmitBlank_FeeInstallmentReportForm_03_07_2018_05_54_44.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcSubmitBlank_FeeInstallmentReportForm -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:45Z" finished-at="2018-07-03T17:54:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcSubmitBlank_FeeInstallmentReportForm status=SUCCESS method=TC_Fee_Installment_Report.tcSubmitBlank_FeeInstallmentReportForm()[pri:5, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Submit blank Fee Installment form and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:45Z" finished-at="2018-07-03T17:54:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForCategoryWise(java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcFill_FeeInstallmentReportForm_ForCategoryWise(java.lang.String, java.lang.String, java.lang.String)[pri:6, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcFill_FeeInstallmentReportForm_ForCategoryWise" duration-ms="4608" started-at="2018-07-03T17:54:45Z" data-provider="Reports_FeeInstallment_CategoryWise" finished-at="2018-07-03T17:54:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2018-2019]]>
+                <![CDATA[Student Name]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Nursery]]>
+                <![CDATA[Sanjana Tamada]]>
               </value>
             </param>
             <param index="2">
@@ -717,235 +717,209 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[Category Wise Radio button already selected.]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]]]>
+              <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[Selected Category: Nursery and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Category')]/following-sibling::div/select]]]>
+              <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
             </line>
             <line>
-              <![CDATA[Installment check box is checked and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[text()='Yearly']/preceding-sibling::input]]]>
+              <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_03_07_2018_05_54_49.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_03_07_2018_05_54_49.png' height='100' width='100'/> </a>]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+            </line>
+            <line>
+              <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+            </line>
+            <line>
+              <![CDATA[Created record is added into the output gridSanjana Tamada]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png' height='100' width='100'/> </a>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- tcFill_FeeInstallmentReportForm_ForCategoryWise -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-07-03T17:54:49Z" finished-at="2018-07-03T17:54:49Z">
+        </test-method> <!-- tcValidationOfDataInOutputTableGrid -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:15Z" finished-at="2018-11-02T16:29:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport()]]>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidationOfDataInOutputTableGrid(java.lang.String,java.lang.String,java.lang.String)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:49Z" finished-at="2018-07-03T17:54:49Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:25Z" finished-at="2018-11-02T16:29:25Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcFill_FeeInstallmentReportForm_ForCategoryWise status=SUCCESS method=TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForCategoryWise(java.lang.String, java.lang.String, java.lang.String)[pri:6, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Category Wise Radio button already selected.]]]>
+                <![CDATA[[TestResult name=tcValidationOfDataInOutputTableGrid status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcValidationOfDataInOutputTableGrid(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcClickReport_ToGenerate_FeeInstallmentReport()[pri:7, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickReport_ToGenerate_FeeInstallmentReport" duration-ms="5420" started-at="2018-07-03T17:54:49Z" finished-at="2018-07-03T17:54:55Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_03_07_2018_05_54_54.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_03_07_2018_05_54_54.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickReport_ToGenerate_FeeInstallmentReport -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:55Z" finished-at="2018-07-03T17:54:55Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:26Z" finished-at="2018-11-02T16:29:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcClickReport_ToGenerate_FeeInstallmentReport status=SUCCESS method=TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport()[pri:7, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:55Z" finished-at="2018-07-03T17:54:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMinimize_FeeInstallmentReport_Form()]]>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(java.lang.String,java.lang.String)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcMinimize_FeeInstallmentReport_Form()[pri:8, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcMinimize_FeeInstallmentReport_Form" duration-ms="2364" started-at="2018-07-03T17:54:55Z" finished-at="2018-07-03T17:54:57Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Form_03_07_2018_05_54_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Form_03_07_2018_05_54_57.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcMinimize_FeeInstallmentReport_Form -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:57Z" finished-at="2018-07-03T17:54:57Z">
+        <test-method status="PASS" signature="tcPrintReceiptValidation(java.lang.String, java.lang.String)[pri:19, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcPrintReceiptValidation" duration-ms="9494" started-at="2018-11-02T16:29:26Z" data-provider="PrintReceipt_StudentNameData" finished-at="2018-11-02T16:29:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcMinimize_FeeInstallmentReport_Form status=SUCCESS method=TC_Fee_Installment_Report.tcMinimize_FeeInstallmentReport_Form()[pri:8, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:57Z" finished-at="2018-07-03T17:54:57Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMinimize_FeeInstallmentReport_Grid()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcMinimize_FeeInstallmentReport_Grid()[pri:9, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcMinimize_FeeInstallmentReport_Grid" duration-ms="1347" started-at="2018-07-03T17:54:57Z" finished-at="2018-07-03T17:54:58Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Grid_03_07_2018_05_54_58.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMinimize_FeeInstallmentReport_Grid_03_07_2018_05_54_58.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcMinimize_FeeInstallmentReport_Grid -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:58Z" finished-at="2018-07-03T17:54:58Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcMinimize_FeeInstallmentReport_Grid status=SUCCESS method=TC_Fee_Installment_Report.tcMinimize_FeeInstallmentReport_Grid()[pri:9, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcMaximize_FeeInstallmentReport_Grid()[pri:10, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcMaximize_FeeInstallmentReport_Grid" duration-ms="1358" started-at="2018-07-03T17:54:58Z" finished-at="2018-07-03T17:55:00Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Grid_03_07_2018_05_55_00.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Grid_03_07_2018_05_55_00.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcMaximize_FeeInstallmentReport_Grid -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:54:58Z" finished-at="2018-07-03T17:54:58Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMaximize_FeeInstallmentReport_Grid()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:00Z" finished-at="2018-07-03T17:55:00Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcMaximize_FeeInstallmentReport_Form()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcMaximize_FeeInstallmentReport_Form()[pri:11, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcMaximize_FeeInstallmentReport_Form" duration-ms="2338" started-at="2018-07-03T17:55:00Z" finished-at="2018-07-03T17:55:02Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Form_03_07_2018_05_55_02.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcMaximize_FeeInstallmentReport_Form_03_07_2018_05_55_02.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcMaximize_FeeInstallmentReport_Form -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:00Z" finished-at="2018-07-03T17:55:00Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcMaximize_FeeInstallmentReport_Grid status=SUCCESS method=TC_Fee_Installment_Report.tcMaximize_FeeInstallmentReport_Grid()[pri:10, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report Grid page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[2]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:02Z" finished-at="2018-07-03T17:55:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcMaximize_FeeInstallmentReport_Form status=SUCCESS method=TC_Fee_Installment_Report.tcMaximize_FeeInstallmentReport_Form()[pri:11, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report page minimized or maximized and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: (//button[@class='btn btn-box-tool'])[1]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:02Z" finished-at="2018-07-03T17:55:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickCancelButton_ToClearFilledForm()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcClickCancelButton_ToClearFilledForm()[pri:12, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickCancelButton_ToClearFilledForm" duration-ms="7513" started-at="2018-07-03T17:55:02Z" finished-at="2018-07-03T17:55:10Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment report filled form data is cleared and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Cancel')]/parent::button]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickCancelButton_ToClearFilledForm_03_07_2018_05_55_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickCancelButton_ToClearFilledForm_03_07_2018_05_55_09.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickCancelButton_ToClearFilledForm -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:10Z" finished-at="2018-07-03T17:55:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickCancelButton_ToClearFilledForm status=SUCCESS method=TC_Fee_Installment_Report.tcClickCancelButton_ToClearFilledForm()[pri:12, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment report filled form data is cleared and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Cancel')]/parent::button]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData(java.lang.String, java.lang.String, java.lang.String)[pri:13, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData" duration-ms="4327" started-at="2018-07-03T17:55:10Z" data-provider="Reports_FeeInstallment_CategoryWise" finished-at="2018-07-03T17:55:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2018-2019]]>
+                <![CDATA[Sanjana Tamada]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Nursery]]>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on print receipt and receipt is open]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcPrintReceiptValidation -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:35Z" finished-at="2018-11-02T16:29:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcPrintReceiptValidation status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(java.lang.String, java.lang.String)[pri:19, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Creted record is added into the output gridSanjana Tamada]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcClickOnFeeReceiptCloseButton()[pri:20, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnFeeReceiptCloseButton" duration-ms="1429" started-at="2018-11-02T16:29:35Z" finished-at="2018-11-02T16:29:37Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Fee receipt screen close button]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcClickOnFeeReceiptCloseButton -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:35Z" finished-at="2018-11-02T16:29:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnFeeReceiptCloseButton()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:37Z" finished-at="2018-11-02T16:29:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSearch_CancelButton()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:37Z" finished-at="2018-11-02T16:29:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcClickOnFeeReceiptCloseButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnFeeReceiptCloseButton()[pri:20, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcClickOnSearch_CancelButton()[pri:21, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnSearch_CancelButton" duration-ms="1665" started-at="2018-11-02T16:29:37Z" finished-at="2018-11-02T16:29:38Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Search cancel button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcClickOnSearch_CancelButton -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:38Z" finished-at="2018-11-02T16:29:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcClickOnSearch_CancelButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnSearch_CancelButton()[pri:21, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:38Z" finished-at="2018-11-02T16:29:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnPrintReceiptButton(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcClickOnPrintReceiptButton(java.lang.String, java.lang.String, java.lang.String)[pri:22, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnPrintReceiptButton" duration-ms="13088" started-at="2018-11-02T16:29:38Z" data-provider="searchOutputGridTestData" finished-at="2018-11-02T16:29:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Student Name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Sanjana Tamada]]>
               </value>
             </param>
             <param index="2">
@@ -956,311 +930,113 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[Category Wise Radio button already selected.]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]]]>
+              <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[Selected Category: Nursery and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Category')]/following-sibling::div/select]]]>
+              <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
             </line>
             <line>
-              <![CDATA[Installment check box is checked and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[text()='Yearly']/preceding-sibling::input]]]>
+              <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData_03_07_2018_05_55_14.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData_03_07_2018_05_55_14.png' height='100' width='100'/> </a>]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+            </line>
+            <line>
+              <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+            </line>
+            <line>
+              <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on print receipt and receipt is open]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png' height='100' width='100'/> </a>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:10Z" finished-at="2018-07-03T17:55:10Z">
+        </test-method> <!-- tcClickOnPrintReceiptButton -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:51Z" finished-at="2018-11-02T16:29:51Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData(java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData()[pri:14, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData" duration-ms="5377" started-at="2018-07-03T17:55:14Z" finished-at="2018-07-03T17:55:19Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData_03_07_2018_05_55_19.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData_03_07_2018_05_55_19.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:14Z" finished-at="2018-07-03T17:55:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:14Z" finished-at="2018-07-03T17:55:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData status=SUCCESS method=TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForCategoryWise_AfterClearingFilledData(java.lang.String, java.lang.String, java.lang.String)[pri:13, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Category Wise Radio button already selected.]]]>
+                <![CDATA[[TestResult name=tcClickOnPrintReceiptButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnPrintReceiptButton(java.lang.String, java.lang.String, java.lang.String)[pri:22, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-07-03T17:55:19Z" finished-at="2018-07-03T17:55:19Z">
+        <test-method status="PASS" signature="tcPrintOfFeereceipt()[pri:23, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcPrintOfFeereceipt" duration-ms="6198" started-at="2018-11-02T16:29:51Z" finished-at="2018-11-02T16:29:58Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
+            </line>
+            <line>
+              <![CDATA[Print button is clicked to generate report and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcPrintOfFeereceipt -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:51Z" finished-at="2018-11-02T16:29:51Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise()]]>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintOfFeereceipt()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:19Z" finished-at="2018-07-03T17:55:19Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:58Z" finished-at="2018-11-02T16:29:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData status=SUCCESS method=TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport_ForCategoryWise_Active_AfterClearingFilledData()[pri:14, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]]>
+                <![CDATA[[TestResult name=tcPrintOfFeereceipt status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcPrintOfFeereceipt()[pri:23, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise()[pri:15, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise" duration-ms="5423" started-at="2018-07-03T17:55:19Z" finished-at="2018-07-03T17:55:25Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tearDown" is-config="true" duration-ms="33592" started-at="2018-11-02T16:29:58Z" finished-at="2018-11-02T16:30:31Z">
           <reporter-output>
             <line>
-              <![CDATA[To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
             </line>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise_03_07_2018_05_55_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise_03_07_2018_05_55_25.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-07-03T17:55:25Z" finished-at="2018-07-03T17:55:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise status=SUCCESS method=TC_Fee_Installment_Report.tcClickOnExportToExcel_ToDownLoadExcelReport_ForCategoryWise()[pri:15, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise()[pri:16, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise" duration-ms="5647" started-at="2018-07-03T17:55:25Z" finished-at="2018-07-03T17:55:31Z">
-          <reporter-output>
-            <line>
-              <![CDATA[To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]]]>
+              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
             </line>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise_03_07_2018_05_55_30.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise_03_07_2018_05_55_30.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:25Z" finished-at="2018-07-03T17:55:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:31Z" finished-at="2018-07-03T17:55:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise status=SUCCESS method=TC_Fee_Installment_Report.tcClickOnExportToPDF_ToDownLoadPDFReport_ForCategoryWise()[pri:16, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcFill_FeeInstallmentReportForm_ForClassWise(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:17, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcFill_FeeInstallmentReportForm_ForClassWise" duration-ms="4963" started-at="2018-07-03T17:55:31Z" data-provider="Reports_FeeInstallment_ClassWise" finished-at="2018-07-03T17:55:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2018-2019]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[LKG]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[A]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Y]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[Class Wise radio button is selected and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Class Wise')]/preceding-sibling::input]]]>
-            </line>
-            <line>
-              <![CDATA[selected Academic Year: 2018-2019 and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Academic Year:')]/following-sibling::div/select]]]>
-            </line>
-            <line>
-              <![CDATA[Selected Class: LKG and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Class:')]/following-sibling::div/select]]]>
-            </line>
-            <line>
-              <![CDATA[Selected Section: A and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //label[contains(text(),'Section:')]/following-sibling::div/select]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForClassWise_03_07_2018_05_55_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcFill_FeeInstallmentReportForm_ForClassWise_03_07_2018_05_55_35.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcFill_FeeInstallmentReportForm_ForClassWise -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:31Z" finished-at="2018-07-03T17:55:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForClassWise(java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:35Z" finished-at="2018-07-03T17:55:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcFill_FeeInstallmentReportForm_ForClassWise status=SUCCESS method=TC_Fee_Installment_Report.tcFill_FeeInstallmentReportForm_ForClassWise(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:17, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Class Wise radio button is selected and object is:- [[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Class Wise')]/preceding-sibling::input]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise()[pri:18, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise" duration-ms="5364" started-at="2018-07-03T17:55:35Z" finished-at="2018-07-03T17:55:41Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise_03_07_2018_05_55_41.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise_03_07_2018_05_55_41.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:35Z" finished-at="2018-07-03T17:55:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:41Z" finished-at="2018-07-03T17:55:41Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise()[pri:19, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise" duration-ms="5406" started-at="2018-07-03T17:55:41Z" finished-at="2018-07-03T17:55:46Z">
-          <reporter-output>
-            <line>
-              <![CDATA[To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise_03_07_2018_05_55_46.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise_03_07_2018_05_55_46.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:41Z" finished-at="2018-07-03T17:55:41Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise status=SUCCESS method=TC_Fee_Installment_Report.tcClickReport_ToGenerate_FeeInstallmentReport_ForClassWise()[pri:18, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=Fee Installment Report is generated and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Report')]/parent::button]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:46Z" finished-at="2018-07-03T17:55:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise status=SUCCESS method=TC_Fee_Installment_Report.tcClickOnExportToExcel_ToDownLoadExcelReport_ForClassWise()[pri:19, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=To Download excel report click on Export to excel and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to Excel')]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise()[pri:20, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise" duration-ms="5878" started-at="2018-07-03T17:55:46Z" finished-at="2018-07-03T17:55:52Z">
-          <reporter-output>
-            <line>
-              <![CDATA[To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise_03_07_2018_05_55_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\test\automation\uiAutomation\screenshot\tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise_03_07_2018_05_55_52.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:46Z" finished-at="2018-07-03T17:55:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report.tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-03T17:55:52Z" finished-at="2018-07-03T17:55:52Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise status=SUCCESS method=TC_Fee_Installment_Report.tcClickOnExportToPDF_ToDownLoadPDFReport_ForClassWise()[pri:20, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3] output=To Download PDF report click on Export to PDF and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //a[contains(text(),'Export to PDF')]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="tearDown" is-config="true" duration-ms="3081" started-at="2018-07-03T17:55:52Z" finished-at="2018-07-03T17:55:55Z">
-          <reporter-output>
-            <line>
-              <![CDATA[logout is done and object is:-[[ChromeDriver: chrome on XP (a3622c149d282052ad869d7b59b3b4e5)] -> xpath: //span[contains(text(),'Logout')]]]]>
+              <![CDATA[Clicked on Logout button and object is:-Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Logout')]/preceding-sibling::button']]>
             </line>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report@6279cee3]" name="endTest" is-config="true" duration-ms="191" started-at="2018-07-03T17:55:55Z" finished-at="2018-07-03T17:55:55Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="endTest" is-config="true" duration-ms="174" started-at="2018-11-02T16:30:31Z" finished-at="2018-11-02T16:30:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-      </class> <!-- com.test.automation.uiAutomation.Fee.TC_Reports.TC_Fee_Installment_Report -->
+      </class> <!-- com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

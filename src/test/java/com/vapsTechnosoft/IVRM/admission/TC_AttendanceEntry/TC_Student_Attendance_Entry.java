@@ -167,6 +167,21 @@ public class TC_Student_Attendance_Entry extends TestBase {
 		}
 	}
 	@Test(priority = 7)
+	public void tcValidation_MessageForMarksEntry() {
+
+		try {
+			log.info("============= Strting tcValidation_MessageForMarksEntry Test===========");
+
+			studentAttendanceEntry.validation_MessageForMarksEntry();
+
+			log.info("============= Finished tcValidation_MessageForMarksEntry Test===========");
+			getScreenShot("tcValidation_MessageForMarksEntry");
+		} catch (Exception e) {
+			getScreenShot("tcValidation_MessageForMarksEntry");
+		}
+	}
+	
+	@Test(priority = 8)
 	public void tcMnimizeAttendanceEntry() {
 
 		try {
@@ -181,7 +196,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 		}
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 9)
 	public void tcMinimize_DailyOnce() {
 
 		try {
@@ -195,7 +210,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcMinimize_DailyOnce");
 		}
 	}
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void tcMinimize_StudentDetails() {
 
 		try {
@@ -210,7 +225,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 		}
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 11)
 	public void tcMaximize_StudentDetails() {
 
 		try {
@@ -225,7 +240,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 		}
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void tcMaximize_DailyOnce() {
 
 		try {
@@ -239,7 +254,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcMaximize_DailyOnce");
 		}
 	}
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void tcMaximizeAttendanceEntry() {
 
 		try {
@@ -253,7 +268,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcMaximize_DailyOnce");
 		}
 	}
-	@Test(priority = 13)
+	@Test(priority = 14)
 	public void tcCancelFilled_StudentAttendanceEntryForm() {
 
 		try {
@@ -267,7 +282,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcCancelFilled_StudentAttendanceEntryForm");
 		}
 	}
-	@Test(priority = 14, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyOnce")
+	@Test(priority = 15, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyOnce")
 	public void tcFillWith_AttendanceEntry_Data_AfterCancel(String academicYr, String class_Entry, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -283,7 +298,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcFillWith_AttendanceEntry_Data");
 		}
 	}
-	@Test(priority = 15, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyOnce")
+	@Test(priority = 16, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyOnce")
 	public void tcFillwith_DailyOnce_EntryData_AfterCancel(String academicYr, String class_Entry, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -299,7 +314,21 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcFillwith_DailyOnce_EntryData");
 		}
 	}
-	@Test(priority = 16, dataProvider = "Search_StudentAttendanceEntryData_DailyOnce")
+	@Test(priority = 17)
+	public void tcValidation_MessageForMarksEntry_AfterClear() {
+
+		try {
+			log.info("============= Strting tcValidation_MessageForMarksEntry_AfterClear Test===========");
+
+			studentAttendanceEntry.validation_MessageForMarksEntry();
+
+			log.info("============= Finished tcValidation_MessageForMarksEntry_AfterClear Test===========");
+			getScreenShot("tcValidation_MessageForMarksEntry_AfterClear");
+		} catch (Exception e) {
+			getScreenShot("tcValidation_MessageForMarksEntry_AfterClear");
+		}
+	}
+	@Test(priority = 18, dataProvider = "Search_StudentAttendanceEntryData_DailyOnce")
 	public void tcSearchWithRegistrationNumberInThe_StudentDetailsListGrid(String registrationNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -315,7 +344,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcSearchWithRegistrationNumberInThe_StudentDetailsListGrid");
 		}
 	}
-	@Test(priority = 17, dataProvider = "Search_StudentAttendanceEntryData_DailyOnce")
+	@Test(priority = 19, dataProvider = "Search_StudentAttendanceEntryData_DailyOnce")
 	public void tcVerifyStudentIn_StudentAttendanceEntry_StudentDetailsListGrid(String registrationNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -331,7 +360,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcVerifyStudentIn_StudentAttendanceEntry_StudentDetailsListGrid");
 		}
 	}
-	@Test(priority = 18, dataProvider = "Search_StudentAttendanceEntryData_DailyOnce")
+	@Test(priority = 20, dataProvider = "Search_StudentAttendanceEntryData_DailyOnce")
 	public void tcSelectStudent_ForAttendanceEntry_FromStudentDetailsList(String registrationNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -347,7 +376,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcSelectStudent_ForAttendanceEntry_FromStudentDetailsList");
 		}
 	}
-	@Test(priority = 19)
+	@Test(priority = 21)
 	public void tcSaveFilled_StudentAttendanceEntryForm() {
 
 		try {
@@ -361,7 +390,21 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcSaveFilled_StudentAttendanceEntryForm");
 		}
 	}
-	@Test(priority = 20)
+	@Test(priority = 22)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			studentAttendanceEntry.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 23)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -377,7 +420,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 	}
 	
 	
-	@Test(priority = 21, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyTwice")
+	@Test(priority = 24, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyTwice")
 	public void tcFillWith_AttendanceEntry_Data_DailyTwice(String academicYr, String class_Entry, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -393,7 +436,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcFillWith_AttendanceEntry_Data_DailyTwice");
 		}
 	}
-	@Test(priority = 22, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyTwice")
+	@Test(priority = 25, dataProvider = "AttendanceEntry_StudentAttendanceEntryData_DailyTwice")
 	public void tcFillwith_DailyTwice_AttendanceEntryData(String academicYr, String class_Entry, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -409,7 +452,22 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcFillwith_DailyTwice_AttendanceEntryData");
 		}
 	}
-	@Test(priority = 23, dataProvider = "Search_StudentAttendanceEntryData_DailyTwice")
+	@Test(priority = 26)
+	public void tcValidation_MessageForMarksEntry_DailyTwice() {
+
+		try {
+			log.info("============= Strting tcValidation_MessageForMarksEntry_DailyTwice Test===========");
+
+			studentAttendanceEntry.validation_MessageForMarksEntry();
+
+			log.info("============= Finished tcValidation_MessageForMarksEntry_DailyTwice Test===========");
+			getScreenShot("tcValidation_MessageForMarksEntry_DailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcValidation_MessageForMarksEntry_DailyTwice");
+		}
+	}
+	
+	@Test(priority = 27, dataProvider = "Search_StudentAttendanceEntryData_DailyTwice")
 	public void tcSearchWithRegistrationNumberInThe_StudentDetailsListGrid_DailyTwice(String registrationNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -425,7 +483,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcSearchWithRegistrationNumberInThe_StudentDetailsListGrid_DailyTwice");
 		}
 	}
-	@Test(priority = 24, dataProvider = "Search_StudentAttendanceEntryData_DailyTwice")
+	@Test(priority = 28, dataProvider = "Search_StudentAttendanceEntryData_DailyTwice")
 	public void tcVerifyStudentIn_StudentAttendanceEntry_StudentDetailsListGrid_DailyTwice(String registrationNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -441,7 +499,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcVerifyStudentIn_StudentAttendanceEntry_StudentDetailsListGrid_DailyTwice");
 		}
 	}
-	@Test(priority = 25, dataProvider = "Search_StudentAttendanceEntryData_DailyTwice")
+	@Test(priority = 29, dataProvider = "Search_StudentAttendanceEntryData_DailyTwice")
 	public void tcSelectStudent_ForAttendanceEntry_FromStudentDetailsList_DailyTwice(String registrationNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -457,7 +515,7 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcSelectStudent_ForAttendanceEntry_FromStudentDetailsList_DailyTwice");
 		}
 	}
-	@Test(priority = 26)
+	@Test(priority = 30)
 	public void tcSaveFilled_StudentAttendanceEntryForm_DailyTwice() {
 
 		try {
@@ -471,7 +529,22 @@ public class TC_Student_Attendance_Entry extends TestBase {
 			getScreenShot("tcSaveFilled_StudentAttendanceEntryForm_DailyTwice");
 		}
 	}
-	@Test(priority = 27)
+	
+	@Test(priority = 31)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_Twice() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_Twice Test===========");
+
+			studentAttendanceEntry.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_Twice Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Twice");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Twice");
+		}
+	}
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_DailyTwice() {
 
 		try {

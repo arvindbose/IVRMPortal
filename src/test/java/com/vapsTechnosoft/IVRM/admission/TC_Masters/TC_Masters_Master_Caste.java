@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.admission.TC_Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
@@ -280,8 +282,21 @@ public class TC_Masters_Master_Caste extends TestBase{
 			getScreenShot("tcSaveMasterCasteInfoData");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			mastercaste.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -296,7 +311,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 16, dataProvider = "MasterCasteSearchData")
+	@Test(priority = 17, dataProvider = "MasterCasteSearchData")
 	public void tcSearchWithCasteNameInTheGrid(String casteName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -314,7 +329,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MasterCasteSearchData")
+	@Test(priority = 18, dataProvider = "MasterCasteSearchData")
 	public void tcVerifyCasteNameInTheGrid(String casteName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -332,7 +347,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "MasterCasteSearchData")
+	@Test(priority = 19, dataProvider = "MasterCasteSearchData")
 	public void tcEditMasterCaste(String casteName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -350,7 +365,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSaveMasterCasteInfoData_Edit() {
 
 		try {
@@ -364,8 +379,21 @@ public class TC_Masters_Master_Caste extends TestBase{
 			getScreenShot("tcSaveMasterCasteInfoData_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastercaste.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -380,7 +408,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "MasterCasteSearchData")
+	@Test(priority = 23, dataProvider = "MasterCasteSearchData")
 	public void tcSearchWithCasteNameInTheGrid_delete(String casteName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -398,7 +426,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MasterCasteSearchData")
+	@Test(priority = 24, dataProvider = "MasterCasteSearchData")
 	public void tcDeleteMasterCaste(String casteName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -416,7 +444,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton() {
 
 		try {
@@ -431,7 +459,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -446,7 +474,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "MasterCasteSearchData")
+	@Test(priority = 27, dataProvider = "MasterCasteSearchData")
 	public void tcDeleteMasterCaste_AfterCancel(String casteName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -464,7 +492,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 28)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -479,7 +507,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -494,9 +522,9 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MastersCasteData")
-	public void tcEnterMasterCasteDetailsData_AfterDelete(String casteName,
-			String casteDescription,String casteCategory, String runMode) {
+	@Test(priority = 30, dataProvider = "MastersCasteData")
+	public void tcEnterMasterCasteDetailsData_AfterDelete(String casteName, String casteDescription,
+			String casteCategory, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -512,7 +540,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 31)
 	public void tcSaveMasterCasteInfoData_AfterDelete() {
 
 		try {
@@ -527,7 +555,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

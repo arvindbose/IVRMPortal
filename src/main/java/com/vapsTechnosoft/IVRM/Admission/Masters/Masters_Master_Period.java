@@ -41,7 +41,11 @@ public class Masters_Master_Period extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[19]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[19]")
+	// WebElement btnMasters_masterPeriod;
+
+	@FindBy(xpath = "//a[@href='#/app/masterPeriod/62']")
 	WebElement btnMasters_masterPeriod;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -101,7 +105,7 @@ public class Masters_Master_Period extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -116,17 +120,14 @@ public class Masters_Master_Period extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterPeriod_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_masterPeriod);
 
-		btnMasters_masterPeriod.click();
+		clickOnButton(btnMasters_masterPeriod);
 		log("Clicked on master Period Button and object is:-" + btnMasters_masterPeriod.toString());
-		waitForElement(driver, 10, btnSave);
 
 	}
 
@@ -150,24 +151,13 @@ public class Masters_Master_Period extends TestBase {
 
 	public void enterMasterPeriodData(String periodName, String periodOrder) throws Exception {
 
-		select = new Select(selPeriodName);
-		select.selectByVisibleText(periodName);
+		selectElementFromDropDown(selPeriodName, periodName);
 		log("selected period name " + periodName + " and object is:- " + selPeriodName.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), periodName);
-		Thread.sleep(1000);
-
-		select = new Select(selPeriodOrder);
-		select.selectByVisibleText(periodOrder);
+		selectElementFromDropDown(selPeriodOrder, periodOrder);
 		log("selected period order " + periodOrder + " and object is:- " + selPeriodOrder.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), periodOrder);
-		Thread.sleep(1000);
-
+		isDisplayed(chkCategory);
 		if (!chkCategory.isSelected()) {
 			chkCategory.click();
 			log("Category check box is selected and object is:-" + chkCategory.toString());
@@ -177,6 +167,7 @@ public class Masters_Master_Period extends TestBase {
 	}
 
 	public void selectIstHalfPeriodRadioButton() {
+		isDisplayed(rdIHalf);
 		if (!rdIHalf.isSelected()) {
 			rdIHalf.click();
 			log("I Half period radio button is selected and object is:-" + rdIHalf.toString());
@@ -186,6 +177,7 @@ public class Masters_Master_Period extends TestBase {
 	}
 
 	public void selectIIndHalfPeriodRadioButton() {
+		isDisplayed(rdIIHalf);
 		if (!rdIIHalf.isSelected()) {
 			rdIIHalf.click();
 			log("II Half period radio button is selected and object is:-" + rdIIHalf.toString());
@@ -196,66 +188,69 @@ public class Masters_Master_Period extends TestBase {
 
 	public void submitBlankMasterPeriodForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Submit blank master Period form and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clearPeriodInfoData() throws Exception {
-		btnCancelClear.click();
+
+		clickOnButton(btnCancelClear);
 		log("Clicked on clear button to clear filled Period info and object is:-" + btnCancelClear.toString());
-		Thread.sleep(10000);
+
 	}
 
 	public void savePeriodInfoData() throws Exception {
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Clicked on save button to save filled Period info and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+		Thread.sleep(1000);
 	}
 
 	public void minimizeMasterPeriod() throws Exception {
-		btnMin_MaxMasterPeriod.click();
+
+		clickOnButton(btnMin_MaxMasterPeriod);
 		log("clicked on master Period minimize button and object is:-" + btnMin_MaxMasterPeriod.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterPeriod() throws Exception {
-		btnMin_MaxMasterPeriod.click();
+
+		clickOnButton(btnMin_MaxMasterPeriod);
 		log("clicked on master Period maximize button and object is:-" + btnMin_MaxMasterPeriod.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeMasterPeriodList() throws Exception {
 
-		btnMin_MaxMasterPeriodList.click();
+		clickOnButton(btnMin_MaxMasterPeriodList);
 		log("Master Period list table data minimize and object is:-" + btnMin_MaxMasterPeriodList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterPeriodList() throws Exception {
 
-		btnMin_MaxMasterPeriodList.click();
+		clickOnButton(btnMin_MaxMasterPeriodList);
 		log("Master Period list table table data maximized and object is:-" + btnMin_MaxMasterPeriodList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void sortByCategoryName() throws Exception {
-		btnSortByCategoryName.click();
+
+		clickOnButton(btnSortByCategoryName);
 		log("Sorted the record with Category name and object is:-" + btnSortByCategoryName.toString());
-		Thread.sleep(3000);
+
 	}
 
 	public void searchWithCategoryNameInTheGrid(String categoryName) {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(categoryName);
+		inputTextIntoInputField(inputSearch, categoryName);
 		log("Entered category name to search: " + categoryName + " and object is:-" + inputSearch.toString());
 	}
 
@@ -264,19 +259,22 @@ public class Masters_Master_Period extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String categoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Category Name: " + categoryname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(categoryname, categoryName);
-				log("Category name created is updated in the record grid.");
-			} catch (Exception e) {
-				e.printStackTrace();
+				String categoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText().trim();
+				System.out.println("Category Name: " + categoryname);
+				// Thread.sleep(2000);
+				if (categoryname.equals(categoryName)) {
+
+					// Assert.assertEquals(categoryname, categoryName);
+					log("Category name created is updated in the record grid.");
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -285,12 +283,14 @@ public class Masters_Master_Period extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String categoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Category Name: " + categoryname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String categoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText().trim();
+				System.out.println("Category Name: " + categoryname);
+				// Thread.sleep(2000);
+
 				if (categoryname.equalsIgnoreCase(categoryName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[6]/a[1]"))
@@ -299,15 +299,10 @@ public class Masters_Master_Period extends TestBase {
 					log("Clicked on the edit link in the master Period list grid to edit record");
 
 					break;
-				} else {
-					log("Category Name not matched with the master Period list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -316,12 +311,14 @@ public class Masters_Master_Period extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String categoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Category Name: " + categoryname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String categoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Category Name: " + categoryname);
+				// Thread.sleep(2000);
+
 				if (categoryname.equalsIgnoreCase(categoryName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[6]/a[2]"))
@@ -335,25 +332,25 @@ public class Masters_Master_Period extends TestBase {
 					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnCancel.click();
+		clickOnButton(btnCancel);
 		log("Clicked on cancel button and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
 }

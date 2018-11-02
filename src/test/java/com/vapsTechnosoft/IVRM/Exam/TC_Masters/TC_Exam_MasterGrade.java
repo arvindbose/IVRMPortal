@@ -12,8 +12,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping;
 import com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterGrade;
 import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -596,8 +594,23 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitMasterGradeDetails_Percentage");
 		}
 	}
-
 	@Test(priority = 32)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Percentage() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Percentage Test===========");
+
+			mastergrade.popWindowMessage_SubmitSuccessfully();
+
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Percentage Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Percentage");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Percentage");
+		}
+	}
+
+	@Test(priority = 33)
 	public void tcClickOnSuccessOkBtn_ToSubmit_MasterGrade_Percentage() {
 
 		try {
@@ -613,7 +626,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 	}
 	// Marks
 
-	@Test(priority = 33, dataProvider = "ExamMasterGrade_Form_Marks")
+	@Test(priority = 34, dataProvider = "ExamMasterGrade_Form_Marks")
 	public void tcFill_Exam_MasterGrade_Form_Marks(String gradeName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -630,7 +643,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "MasterGradeDetails_GradeA")
+	@Test(priority = 35, dataProvider = "MasterGradeDetails_GradeA")
 	public void tcFill_MasterGradeDetails_Grade_A_Marks(String from_A, String to_A, String grade_A, String gradePoint_A,
 			String remarks_A, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -648,7 +661,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 36)
 	public void tcClickOnPlusSign_ToGetNewRowForGradeDetails_GradeB_Marks() {
 
 		try {
@@ -664,7 +677,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "MasterGradeDetails_GradeB")
+	@Test(priority = 37, dataProvider = "MasterGradeDetails_GradeB")
 	public void tcFill_MasterGradeDetails_Grade_B_Marks(String from_B, String to_B, String grade_B, String gradePoint_B,
 			String remarks_B, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -682,7 +695,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 38)
 	public void tcClickOnPlusSign_ToGetNewRowForGradeDetails_GradeC_Marks() {
 
 		try {
@@ -698,7 +711,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "MasterGradeDetails_GradeC")
+	@Test(priority = 39, dataProvider = "MasterGradeDetails_GradeC")
 	public void tcFill_MasterGradeDetails_Grade_C_Marks(String from_C, String to_C, String grade_C, String gradePoint_C,
 			String remarks_C, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -716,7 +729,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 40)
 	public void tcClickOnPlusSign_ToGetNewRowForGradeDetails_GradeD_Marks() {
 
 		try {
@@ -732,7 +745,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 40, dataProvider = "MasterGradeDetails_GradeD")
+	@Test(priority = 41, dataProvider = "MasterGradeDetails_GradeD")
 	public void tcFill_MasterGradeDetails_Grade_D_Marks(String from_D, String to_D, String grade_D, String gradePoint_D,
 			String remarks_D, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -750,7 +763,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 41)
+	@Test(priority = 42)
 	public void tcClickOnMinusSign_ToRemoveRow_GradeD_Marks() {
 
 		try {
@@ -765,7 +778,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 42)
+	@Test(priority = 43)
 	public void tcClickOnSaveButton_ToSubmitMasterGradeDetails_Marks() {
 
 		try {
@@ -779,8 +792,22 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitMasterGradeDetails_Marks");
 		}
 	}
+	@Test(priority = 44)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Marks() {
 
-	@Test(priority = 43)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Marks Test===========");
+
+			mastergrade.popWindowMessage_SubmitSuccessfully();
+
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Marks Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Marks");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Marks");
+		}
+	}
+	@Test(priority = 45)
 	public void tcClickOnSuccessOkBtn_ToSubmit_MasterGrade_Marks() {
 
 		try {
@@ -795,7 +822,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 44)
+	@Test(priority = 46)
 	public void tcSortWithGradeNameInGridView() {
 
 		try {
@@ -810,7 +837,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 45)
+	@Test(priority = 47)
 	public void tcSortWithMarksOrPercentageInGridView() {
 
 		try {
@@ -825,7 +852,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 46, dataProvider = "filter_MasterGrade_Percentage")
+	@Test(priority = 48, dataProvider = "filter_MasterGrade_Percentage")
 	public void tcFilterRecordsBasedOn_GradeName(String gradeName, String marksOrPercentage, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -842,7 +869,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 47)
+	@Test(priority = 49)
 	public void tcClearFilledDataForFilter_GradeName() {
 
 		try {
@@ -857,7 +884,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 48, dataProvider = "filter_MasterGrade_Percentage")
+	@Test(priority = 50, dataProvider = "filter_MasterGrade_Percentage")
 	public void tcFilterRecordsBasedOn_MarksOrPercentage(String gradeName, String marksOrPercentage, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -874,7 +901,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 49)
+	@Test(priority = 51)
 	public void tcClearFilledDataForFilter_MarksOrPercentage() {
 
 		try {
@@ -889,7 +916,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 50)
+	@Test(priority = 52)
 	public void tcClickOnViewIcon_ToSeeMasterGradeDetails() {
 
 		try {
@@ -903,7 +930,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 51)
+	@Test(priority = 53)
 	public void tcCloseViewWindow_MasterGrade() {
 
 		try {
@@ -917,7 +944,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 52)
+	@Test(priority = 54)
 	public void tcClickOnEditIcon_ToUpdateMasterGrade() {
 
 		try {
@@ -931,7 +958,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 53)
+	@Test(priority = 55)
 	public void tcClickOnSaveButton_ToSubmitMasterGradeDetails_Edit() {
 
 		try {
@@ -946,8 +973,22 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcClickOnSaveButton_ToSubmitMasterGradeDetails_Edit");
 		}
 	}
+	@Test(priority = 56)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 54)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			mastergrade.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 57)
 	public void tcClickOnSuccessOkBtn_ForConfirmation_Edit_MasterGrade() {
 
 		try {
@@ -962,7 +1003,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 55, dataProvider = "filter_MasterGrade_Percentage")
+	@Test(priority = 58, dataProvider = "filter_MasterGrade_Percentage")
 	public void tcFilterRecordsBasedOn_GradeName_ForDeactivate(String gradeName, String marksOrPercentage,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -980,7 +1021,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 56)
+	@Test(priority = 59)
 	public void tcDeactivateRecords_MasterGradeGrid() {
 
 		try {
@@ -995,7 +1036,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 57)
+	@Test(priority = 60)
 	public void tcCancel_DeactivatePopUp() {
 
 		try {
@@ -1009,8 +1050,21 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcCancel_DeactivatePopUp");
 		}
 	}
+	@Test(priority = 61)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 
-	@Test(priority = 58)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			mastergrade.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 62)
 	public void tcClickOnSuccessOkBtn_CancelDeactivate() {
 
 		try {
@@ -1025,7 +1079,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 59)
+	@Test(priority = 63)
 	public void tcDeactivateRecords_MasterGradeGrid_AfterCancel() {
 
 		try {
@@ -1040,7 +1094,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 60)
+	@Test(priority = 64)
 	public void tcYesDeactivateMasterGradeRecord() {
 
 		try {
@@ -1054,8 +1108,21 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcYesDeactivateMasterGradeRecord");
 		}
 	}
+	@Test(priority = 65)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
-	@Test(priority = 61)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			mastergrade.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 66)
 	public void tcClickOnSuccessOkBtn_Deactivate() {
 
 		try {
@@ -1069,7 +1136,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcClickOnSuccessOkBtn_Deactivate");
 		}
 	}
-	@Test(priority = 62, dataProvider = "filter_MasterGrade_Percentage")
+	@Test(priority = 67, dataProvider = "filter_MasterGrade_Percentage")
 	public void tcFilterRecordsBasedOn_GradeName_ForActivate(String gradeName, String marksOrPercentage,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1087,7 +1154,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 63)
+	@Test(priority = 68)
 	public void tcActivateRecords_MasterGradeGrid() {
 
 		try {
@@ -1102,7 +1169,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 64)
+	@Test(priority = 69)
 	public void tcCancel_ActivatePopUp_viewWindow() {
 
 		try {
@@ -1116,8 +1183,21 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcCancel_ActivatePopUp_viewWindow");
 		}
 	}
+	@Test(priority = 70)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 65)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			mastergrade.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 71)
 	public void tcClickOnSuccessOkBtn_CancelActivate() {
 
 		try {
@@ -1132,7 +1212,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 66)
+	@Test(priority = 72)
 	public void tcActivateRecords_MasterGradeGrid_AfterCancel() {
 
 		try {
@@ -1147,7 +1227,7 @@ public class TC_Exam_MasterGrade extends TestBase {
 		}
 	}
 
-	@Test(priority = 67)
+	@Test(priority = 73)
 	public void tcYesActivateMasterGradeRecord() {
 
 		try {
@@ -1161,8 +1241,21 @@ public class TC_Exam_MasterGrade extends TestBase {
 			getScreenShot("tcYesActivateMasterGradeRecord");
 		}
 	}
+	@Test(priority = 74)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
 
-	@Test(priority = 68)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+			mastergrade.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 75)
 	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {

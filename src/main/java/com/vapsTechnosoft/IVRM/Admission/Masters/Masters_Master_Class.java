@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -42,49 +44,53 @@ public class Masters_Master_Class extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[7]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[7]")
+	// WebElement btnMasters_masterClass;
+
+	@FindBy(xpath = "//a[@href='#/app/masterclass/6']")
 	WebElement btnMasters_masterClass;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtMasters_MasterClassMsgDispaly;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[1]")
+	@FindBy(xpath = "//input[@name='classname']")
 	WebElement input_ClassName;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[2]")
+	@FindBy(xpath = "//input[@name='classorder']")
 	WebElement input_ClassOrder;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[3]")
+	@FindBy(xpath = "//input[@name='classcode']")
 	WebElement input_ClassCode;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[4]")
+	@FindBy(xpath = "//input[@name='PreAdmissionFlag']")
 	WebElement chkPreAdmFlag;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[5]")
+	@FindBy(xpath = "//input[@name='classcapacity']")
 	WebElement input_ClassCapacity;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[7]")
+	@FindBy(xpath = "//input[@ng-model='searchValue']")
 	WebElement inputSearch;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/select)[1]")
+	@FindBy(xpath = "//select[@name='classmaxyear']")
 	WebElement sel_MaxAgeYear;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/select)[2]")
+	@FindBy(xpath = "//select[@name='classmaxmonth']")
 	WebElement sel_MaxAgeMonth;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/select)[3]")
+	@FindBy(xpath = "//select[@name='classmaxday']")
 	WebElement sel_MaxAgeDay;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/select)[4]")
+	@FindBy(xpath = "//select[@name='minyear']")
 	WebElement sel_MinAgeYear;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/select)[5]")
+	@FindBy(xpath = "//select[@name='minmonth']")
 	WebElement sel_MinAgeMonth;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/select)[6]")
+	@FindBy(xpath = "//select[@name='minday']")
 	WebElement sel_MinAgeDay;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/select)[7]")
+	@FindBy(xpath = "//select[@ng-model='searchColumn']")
 	WebElement sel_GridSearchCategory;
 
 	@FindBy(xpath = "(//span[contains(text(),'Save')]/parent::button)[1]")
@@ -141,6 +147,9 @@ public class Masters_Master_Class extends TestBase {
 	@FindBy(xpath = "//ul[@id='single']/li[1]")
 	WebElement To;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Master_Class(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -150,7 +159,7 @@ public class Masters_Master_Class extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -165,17 +174,15 @@ public class Masters_Master_Class extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterClass_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_masterClass);
 
-		btnMasters_masterClass.click();
+		clickOnButton(btnMasters_masterClass);
 		log("Clicked on master class Button and object is:-" + btnMasters_masterClass.toString());
-		waitForElement(driver, 10, btnSave);
+
 	}
 
 	/**
@@ -197,24 +204,21 @@ public class Masters_Master_Class extends TestBase {
 	}
 
 	public void enterMasterClassRequiredFormData(String className, String classOrder, String classCode,
-			String classCapacity) {
+			String classCapacity) throws Exception {
 
-		input_ClassName.clear();
-		input_ClassName.sendKeys(className);
+		inputTextIntoInputField(input_ClassName, className);
 		log("Entered class name " + className + " and object is:-" + input_ClassName.toString());
 
-		input_ClassOrder.clear();
-		input_ClassOrder.sendKeys(classOrder);
+		inputTextIntoInputField(input_ClassOrder, classOrder);
 		log("Entered class Order " + classOrder + " and object is:-" + input_ClassOrder.toString());
 
-		input_ClassCode.clear();
-		input_ClassCode.sendKeys(classCode);
+		inputTextIntoInputField(input_ClassCode, classCode);
 		log("Entered class code " + classCode + " and object is:-" + input_ClassCode.toString());
 
-		input_ClassCapacity.clear();
-		input_ClassCapacity.sendKeys(classCapacity);
+		inputTextIntoInputField(input_ClassCapacity, classCapacity);
 		log("Entered class capacity " + classCapacity + " and object is:-" + input_ClassCapacity.toString());
 
+		isDisplayed(chkPreAdmFlag);
 		if (!chkPreAdmFlag.isSelected()) {
 			chkPreAdmFlag.click();
 			log("Selected pre admission flag check box and object is:-" + chkPreAdmFlag.toString());
@@ -226,136 +230,108 @@ public class Masters_Master_Class extends TestBase {
 
 	public void selectMaximumAgeForClass(String maxAgeYear, String maxAgeMonth, String maxAgeDay) throws Exception {
 
-		select = new Select(sel_MaxAgeYear);
-		select.selectByVisibleText(maxAgeYear);
+		selectElementFromDropDown(sel_MaxAgeYear, maxAgeYear);
 		log("selected maximum age year " + maxAgeYear + " and object is:- " + sel_MaxAgeYear.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), maxAgeYear);
-		Thread.sleep(1000);
-
-		select = new Select(sel_MaxAgeMonth);
-		select.selectByVisibleText(maxAgeMonth);
+		selectElementFromDropDown(sel_MaxAgeMonth, maxAgeMonth);
 		log("selected maximum age month " + maxAgeMonth + " and object is:- " + sel_MaxAgeMonth.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), maxAgeMonth);
-		Thread.sleep(1000);
-
-		select = new Select(sel_MaxAgeDay);
-		select.selectByVisibleText(maxAgeDay);
+		selectElementFromDropDown(sel_MaxAgeDay, maxAgeDay);
 		log("selected maximum age day " + maxAgeDay + " and object is:- " + sel_MaxAgeDay.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), maxAgeDay);
-		Thread.sleep(1000);
 	}
 
 	public void selectMinimumAgeForClass(String minAgeYear, String minAgeMonth, String minAgeDay) throws Exception {
 
-		select = new Select(sel_MinAgeYear);
-		select.selectByVisibleText(minAgeYear);
+		selectElementFromDropDown(sel_MinAgeYear, minAgeYear);
 		log("selected minximum age year " + minAgeYear + " and object is:- " + sel_MinAgeYear.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), minAgeYear);
-		Thread.sleep(1000);
-
-		select = new Select(sel_MinAgeMonth);
-		select.selectByVisibleText(minAgeMonth);
+		selectElementFromDropDown(sel_MinAgeMonth, minAgeMonth);
 		log("selected minimum age month " + minAgeMonth + " and object is:- " + sel_MinAgeMonth.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), minAgeMonth);
-		Thread.sleep(1000);
-
-		select = new Select(sel_MinAgeDay);
-		select.selectByVisibleText(minAgeDay);
+		selectElementFromDropDown(sel_MinAgeDay, minAgeDay);
 		log("selected minimum age day " + minAgeDay + " and object is:- " + sel_MinAgeDay.toString());
-		Thread.sleep(1000);
 
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText(), minAgeDay);
-		Thread.sleep(1000);
 	}
 
 	public void submitBlankMasterClassForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Submit blank Master Class form and object is:-" + btnSave.toString());
-		Thread.sleep(3000);
+
 	}
-	
+
 	public void clickOnClearButton() throws Exception {
 
-		btnClear.click();
+		clickOnButton(btnClear);
 		log("clicked on clear button and object is:-" + btnClear.toString());
-		Thread.sleep(10000);
+
 	}
 
 	public void clickOnSaveButton() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("clicked on Save button and object is:-" + btnSave.toString());
-		Thread.sleep(10000);
+
 	}
 
 	public void minimizeMasterClass() throws Exception {
-		btnMin_MaxMasterClass.click();
+
+		clickOnButton(btnMin_MaxMasterClass);
 		log("clicked on master class minimize button and object is:-" + btnMin_MaxMasterClass.toString());
-		Thread.sleep(1000);
+
 	}
 
 	public void maximizeMasterClass() throws Exception {
-		btnMin_MaxMasterClass.click();
+
+		clickOnButton(btnMin_MaxMasterClass);
 		log("clicked on master class maximize button and object is:-" + btnMin_MaxMasterClass.toString());
-		Thread.sleep(1000);
+
 	}
 
 	public void minimizeMasterClassList() {
-
-		btnMin_MaxMasterClassList.click();
+		clickOnButton(btnMin_MaxMasterClassList);
 		log("Master class list table data minimize and object is:-" + btnMin_MaxMasterClassList.toString());
 
 	}
 
 	public void maximizeMasterClassList() {
 
-		btnMin_MaxMasterClassList.click();
+		clickOnButton(btnMin_MaxMasterClassList);
 		log("Master class list table table data maximized and object is:-" + btnMin_MaxMasterClassList.toString());
 
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void searchWithClassName(String className) throws Exception {
-		inputSearch.clear();
-		inputSearch.sendKeys(className);
+
+		inputTextIntoInputField(inputSearch, className);
 		log("search with class Name in the Master class list and object is:-" + inputSearch.toString());
-		btnSearch.click();
+
+		clickOnButton(btnSearch);
 		log("search button is clicked in the Master class list and object is:-" + btnSearch.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	public void clickSearchResetButton() {
-		btnSearchReset.click();
+
+		clickOnButton(btnSearchReset);
 		log("search reset button is clicked in the Master class list and object is:-" + btnSearchReset.toString());
 	}
 
 	public void sortByClasName() throws Exception {
-		btnSortByClassName.click();
+
+		clickOnButton(btnSortByClassName);
 		log("Sorted the record with class name and object is:-" + btnSortByClassName.toString());
-		Thread.sleep(3000);
+
 	}
 
 	public void editMasterClass(String className) {
@@ -363,29 +339,28 @@ public class Masters_Master_Class extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Class Name: " + classname);
-			// Thread.sleep(2000);
-			try {
-				if (classname.equalsIgnoreCase(className)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String classname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Class Name: " + classname);
+				Thread.sleep(1000);
+				if (classname.equals(className)) {
+					// Assert.assertEquals(classname, className);
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[13]/a[1]"))
 							.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the edit link in the master class list grid");
 
 					break;
-				} else {
-					log("Class Name not matched with the master class list grid");
-					// Thread.sleep(1000);
+
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -394,17 +369,23 @@ public class Masters_Master_Class extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Class Name: " + classname);
-			// Thread.sleep(2000);
-			try {
-				if (classname.equalsIgnoreCase(className)) {
+
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String classname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Class Name: " + classname);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
+				if (classname.equals(className)) {
+					// Assert.assertEquals(classname, className);
 
 					WebElement deactiveLink = driver
 							.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[13]/a[2]"));
-					String deactivetext = deactiveLink.getText();
+					String deactivetext = deactiveLink.getText().trim();
 					Assert.assertEquals("De-Activate", deactivetext);
 
 					deactiveLink.click();
@@ -412,14 +393,11 @@ public class Masters_Master_Class extends TestBase {
 					log("Clicked on the deactivate link in the master class list grid");
 
 					break;
-				} else {
-					log("Class Name not matched with the master class list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -428,13 +406,17 @@ public class Masters_Master_Class extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Class Name: " + classname);
-			// Thread.sleep(2000);
-			try {
-				if (classname.equalsIgnoreCase(className)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String classname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Class Name: " + classname);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
+				if (classname.equals(className)) {
+					Assert.assertEquals(classname, className);
 
 					WebElement activeLink = driver
 							.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[13]/a[2]"));
@@ -442,40 +424,40 @@ public class Masters_Master_Class extends TestBase {
 					Assert.assertEquals("Activate", activetext);
 
 					activeLink.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the activate link in the master class list grid");
 
 					break;
-				} else {
-					log("Class Name not matched with the master class list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnCancel.click();
+		clickOnButton(btnCancel);
 		log("Clicked on cancel button and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
-	public void clickOnSetOrder() {
+	public void clickOnSetOrder() throws Exception {
 
-		btnSetOrder.click();
+		clickOnButton(btnSetOrder);
 		log("Set Order button is clicked and object is:-" + btnSetOrder.toString());
+
 	}
 
 	public void setClassOrder() {
@@ -504,13 +486,51 @@ public class Masters_Master_Class extends TestBase {
 	}
 
 	public void closeSetClassOrderPopUpWindow() {
-		btnCloseOrder.click();
+
+		clickOnButton(btnCloseOrder);
 		log("Set class Order pop Up window is closed and object is:-" + btnCloseOrder.toString());
 	}
 
 	public void saveSetClassOrderPopUpWindow() throws Exception {
-		btnSaveOrder.click();
+
+		clickOnButton(btnSaveOrder);
 		log("Set class Order pop Up window is closed and object is:-" + btnSaveOrder.toString());
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SearchedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Searched Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

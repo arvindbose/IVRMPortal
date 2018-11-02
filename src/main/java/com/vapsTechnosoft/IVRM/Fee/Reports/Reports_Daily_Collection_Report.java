@@ -31,13 +31,13 @@ public class Reports_Daily_Collection_Report extends TestBase {
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
-	WebElement btnFee;
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
+	private WebElement btn_Fee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[4]")
-	WebElement feeReports;
-
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[4]/ul/li[22]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
+	private WebElement btn_FeeReports;
+	
+	@FindBy(xpath = "//a[@href='#/app/DailyFeeCollReport/205']")
 	WebElement btnDailyCollectionReports;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -143,17 +143,15 @@ public class Reports_Daily_Collection_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void nevigateToReports_Daily_CollectionReports() throws Exception {
-		btnFee.click();
-		log("Clicked on Fee Button and object is:-" + btnFee.toString());
-		Thread.sleep(2000);
+		clickOnButton(btn_Fee);
+		log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
 
-		feeReports.click();
-		log("Clicked on Fee Reports Button and object is:-" + feeReports.toString());
-		Thread.sleep(2000);
+		clickOnButton(btn_FeeReports);
+		log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
 
-		btnDailyCollectionReports.click();
+		clickOnButton(btnDailyCollectionReports);
 		log("Clicked on Daily collection reports Button and object is:-" + btnDailyCollectionReports.toString());
-		Thread.sleep(2000);
+
 	}
 
 	/**

@@ -12,8 +12,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.vapsTechnosoft.IVRM.Admission.AdmissionForm.AdmissionForm_StudentAdmissionForm;
 import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.preAdmission.ApplicationForm.PreAdmission_ApplicationForm;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -54,9 +52,9 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		return testRecordsAddressForm;
 	}
 
-	@DataProvider(name = "FatherDetails_PreAdmApplication_Data")
+	@DataProvider(name = "FatherDetailsPreAdmApplicationForm_Data")
 	public String[][] getTestFatherData() {
-		String[][] testRecordsFatherForm = getData("PreAdmissionApllication.xlsx", "FatherDetails_PreAdmApplication");
+		String[][] testRecordsFatherForm = getData("PreAdmissionApllication.xlsx", "FatherDetailsPreAdmApplForm");
 		return testRecordsFatherForm;
 	}
 
@@ -95,25 +93,11 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		String[][] testRecordsUndertakingText = getData("PreAdmissionApllication.xlsx", "UnderTaking_Text");
 		return testRecordsUndertakingText;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
-	@DataProvider(name = "StudentAdmForm_Others_Achievement")
-	public String[][] getTestAchievementData() {
-		String[][] testRecordsAchievementForm = getData("StudentAdmissionFormData.xlsx", "Others_AchievementData");
-		return testRecordsAchievementForm;
-	}
-
-	@DataProvider(name = "StudentAdmForm_Document")
-	public String[][] getTestDocumentData() {
-		String[][] testRecordsDocumentForm = getData("StudentAdmissionFormData.xlsx", "DocumentsUpload_DocumentName");
-		return testRecordsDocumentForm;
+	@DataProvider(name = "SearchInGrid_PreAdmApplication")
+	public String[][] getTestSearch() {
+		String[][] testRecordsSearch = getData("PreAdmissionApllication.xlsx", "Search_StudentInGrid");
+		return testRecordsSearch;
 	}
 
 	@BeforeClass
@@ -197,7 +181,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		try {
 			log.info("============= Starting tcClickOnSubmitButton_ToSubmitBlankForm Test===========");
 
-			applicationform.clickOnSubmitButton();
+			applicationform.clickOnSubmitButton_submitBlankForm();
 
 			log.info("============= Finished tcClickOnSubmitButton_ToSubmitBlankForm Test===========");
 			getScreenShot("tcClickOnSubmitButton_ToSubmitBlankForm");
@@ -206,7 +190,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 6)
 	public void tcPopUpValidationOnSuccess_ToSubmitBlankForm() {
 
 		try {
@@ -221,7 +205,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "ApplicationForm_ChildDetails")
+	@Test(priority = 7, dataProvider = "ApplicationForm_ChildDetails")
 	public void tcEnterStudentInformationFor_ApplicationForm_ChildDetails(String fName, String mName, String sName,
 			String mNumber, String birthPlace, String religion, String caste, String gender, String apply_class,
 			String email, String academicYear, String nationality, String motherTongue, String syllabus,
@@ -245,7 +229,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 8)
 	public void tcUpload_StudentPhoto() {
 
 		try {
@@ -260,7 +244,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 7, dataProvider = "ApplicationForm_OthersDetails")
+	@Test(priority = 9, dataProvider = "ApplicationForm_OthersDetails")
 	public void tcOthersDetails_ForPreadmApplicationForm(String secondLang, String thirdLang, String tribe,
 			String playGroup, String runMode) {
 
@@ -279,7 +263,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 8, dataProvider = "Residential_Address")
+	@Test(priority = 10, dataProvider = "Residential_Address")
 	public void tcResidentialAndPermanentAddress_PreAdmApplicationForm(String street, String area, String Country,
 			String state, String city, String pinZip, String runMode) {
 
@@ -299,7 +283,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 9, dataProvider = "FatherDetails_PreAdmApplication_Data")
+	@Test(priority = 11, dataProvider = "FatherDetailsPreAdmApplicationForm_Data")
 	public void tcFathersDetails_PreAdmission_ApplicationForm(String fatherName, String fatherSurName,
 			String fatherQualification, String fatherOccupation, String fatherReligion, String fatherCaste,
 			String fatherTribe, String fatherNationanlity, String fatherEmail, String fatherPhOffice,
@@ -322,7 +306,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 10, dataProvider = "MotherDetails_PreAdmApplication_Data")
+	@Test(priority = 12, dataProvider = "MotherDetails_PreAdmApplication_Data")
 	public void tcMothersDetails_PreAdmission_ApplicationForm(String motherName, String motherSurName,
 			String motherQualification, String motherOccupation, String motherReligion, String motherCaste,
 			String motherTribe, String motherNationanlity, String motherEmail, String motherPhOffice,
@@ -345,7 +329,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 11, dataProvider = "MonthlyIncome_Parent_PreApplication")
+	@Test(priority = 13, dataProvider = "MonthlyIncome_Parent_PreApplication")
 	public void tcParentMonthlyIncomeDetails_PreAdmissionApplication(String fatherIncome, String motherIncome,
 			String altContact, String altEmail, String runMode) {
 
@@ -364,7 +348,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 12, dataProvider = "SiblingDetails_PreAdmAppl_Data")
+	@Test(priority = 14, dataProvider = "SiblingDetails_PreAdmAppl_Data")
 	public void tcSiblingDetails_PreAdmApplication(String siblingName, String siblingClass, String siblingAdmNo,
 			String runMode) {
 
@@ -382,7 +366,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "GuardianDetails_PreAdmApplicationData")
+	@Test(priority = 15, dataProvider = "GuardianDetails_PreAdmApplicationData")
 	public void tcGurdianDetails_PreAdmApplicationForm(String guardianName, String gurdianRelWithStu,
 			String gurdianAddress, String guardianPhOffice, String guardianPhResidance, String runMode) {
 
@@ -401,7 +385,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 16)
 	public void tcUpload_FatherPhoto() {
 
 		try {
@@ -416,7 +400,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 17)
 	public void tcUpload_MotherPhoto() {
 
 		try {
@@ -431,7 +415,7 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "PreviousSchoolDetails_PreAdmApplication")
+	@Test(priority = 18, dataProvider = "PreviousSchoolDetails_PreAdmApplication")
 	public void tcPreviousSchoolDetails_PreAdmissionApplication(String prevSchoolName, String prevClass,
 			String prevGrade, String prevPassedYr, String PrevAddress, String runMode) {
 
@@ -450,13 +434,13 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 5)
-	public void tcUploadRequiredDocuments() {
+	@Test(priority = 19)
+	public void tcUploadAndViewUploadedDocument() {
 
 		try {
 			log.info("============= Starting tcUploadRequiredDocuments Test===========");
 
-			applicationform.uploadRequiredDocuments();
+			applicationform.uploadAndViewUploadedDocument();
 
 			log.info("============= Finished tcUploadRequiredDocuments Test===========");
 			getScreenShot("tcUploadRequiredDocuments");
@@ -465,36 +449,58 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 		}
 	}
 
-	@Test(priority = 5)
-	public void tcValidationOfUploadedDOBCertificate() {
+	// @Test(priority = 19)
+	// public void ploadRequiredDocuments() {
+	//
+	// try {
+	// log.info("============= Starting tcUploadRequiredDocuments
+	// Test===========");
+	//
+	// applicationform.uploadRequiredDocuments();
+	//
+	// log.info("============= Finished tcUploadRequiredDocuments
+	// Test===========");
+	// getScreenShot("tcUploadRequiredDocuments");
+	// } catch (Exception e) {
+	// getScreenShot("tcUploadRequiredDocuments");
+	// }
+	// }
+	//
+	// @Test(priority = 20)
+	// public void tcValidationOfUploadedDOBCertificate() {
+	//
+	// try {
+	// log.info("============= Starting tcValidationOfUploadedDOBCertificate
+	// Test===========");
+	//
+	// applicationform.validationOfUploadedDOBCertificate();
+	//
+	// log.info("============= Finished tcValidationOfUploadedDOBCertificate
+	// Test===========");
+	// getScreenShot("tcValidationOfUploadedDOBCertificate");
+	// } catch (Exception e) {
+	// getScreenShot("tcValidationOfUploadedDOBCertificate");
+	// }
+	// }
+	//
+	// @Test(priority = 21)
+	// public void tcClickOnPopupCloseButton() {
+	//
+	// try {
+	// log.info("============= Starting tcClickOnPopupCloseButton
+	// Test===========");
+	//
+	// applicationform.clickOnPopupCloseButton();
+	//
+	// log.info("============= Finished tcClickOnPopupCloseButton
+	// Test===========");
+	// getScreenShot("tcClickOnPopupCloseButton");
+	// } catch (Exception e) {
+	// getScreenShot("tcClickOnPopupCloseButton");
+	// }
+	// }
 
-		try {
-			log.info("============= Starting tcValidationOfUploadedDOBCertificate Test===========");
-
-			applicationform.validationOfUploadedDOBCertificate();
-
-			log.info("============= Finished tcValidationOfUploadedDOBCertificate Test===========");
-			getScreenShot("tcValidationOfUploadedDOBCertificate");
-		} catch (Exception e) {
-			getScreenShot("tcValidationOfUploadedDOBCertificate");
-		}
-	}
-
-	@Test(priority = 5)
-	public void tcClickOnPopupCloseButton() {
-
-		try {
-			log.info("============= Starting tcClickOnPopupCloseButton Test===========");
-
-			applicationform.clickOnPopupCloseButton();
-
-			log.info("============= Finished tcClickOnPopupCloseButton Test===========");
-			getScreenShot("tcClickOnPopupCloseButton");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnPopupCloseButton");
-		}
-	}
-	@Test(priority = 13, dataProvider = "UnderTaking_Text_PreAdmApplication")
+	@Test(priority = 22, dataProvider = "UnderTaking_Text_PreAdmApplication")
 	public void tcVerifyUndertakingText_PreAdmissionApplication(String textToVerify, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -504,15 +510,15 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 			log.info("============= Starting tcPreviousSchoolDetails_PreAdmissionApplication Test===========");
 
 			applicationform.verifyUndertakingText(textToVerify);
-				
+
 			log.info("============= Finished tcPreviousSchoolDetails_PreAdmissionApplication Test===========");
 			getScreenShot("tcPreviousSchoolDetails_PreAdmissionApplication");
 		} catch (Exception e) {
 			getScreenShot("tcPreviousSchoolDetails_PreAdmissionApplication");
 		}
 	}
-	
-	@Test(priority = 5)
+
+	@Test(priority = 23)
 	public void tcConfirmUndertakingYes() {
 
 		try {
@@ -526,7 +532,8 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 			getScreenShot("tcConfirmUndertakingYes");
 		}
 	}
-	@Test(priority = 5)
+
+	@Test(priority = 24)
 	public void tcClickOnSubmitButton_ToSubmitFilledForm() {
 
 		try {
@@ -540,7 +547,8 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 			getScreenShot("tcClickOnSubmitButton_ToSubmitFilledForm");
 		}
 	}
-	@Test(priority = 5)
+
+	@Test(priority = 25)
 	public void tcPopUpValidationCancel_ToSubmitFilledForm() {
 
 		try {
@@ -554,21 +562,23 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 			getScreenShot("tcPopUpValidationCancel_ToSubmitFilledForm");
 		}
 	}
-	@Test(priority = 5)
-	public void tcClickOnSubmitButton_ToSubmitFilledForm_AfterCance() {
+
+	@Test(priority = 26)
+	public void tcClickOnSubmitButton_ToSubmitFilledForm_AfterCancel() {
 
 		try {
-			log.info("============= Starting tcClickOnSubmitButton_ToSubmitFilledForm_AfterCance Test===========");
+			log.info("============= Starting tcClickOnSubmitButton_ToSubmitFilledForm_AfterCancel Test===========");
 
 			applicationform.clickOnSubmitButton();
 
 			log.info("============= Finished tcClickOnSubmitButton_ToSubmitFilledForm_AfterCance Test===========");
-			getScreenShot("tcClickOnSubmitButton_ToSubmitFilledForm_AfterCance");
+			getScreenShot("tcClickOnSubmitButton_ToSubmitFilledForm_AfterCancel");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnSubmitButton_ToSubmitFilledForm_AfterCance");
+			getScreenShot("tcClickOnSubmitButton_ToSubmitFilledForm_AfterCancel");
 		}
 	}
-	@Test(priority = 5)
+
+	@Test(priority = 27)
 	public void tcPopUpValidationYes_FinalSubmit() {
 
 		try {
@@ -582,24 +592,182 @@ public class TC_PreAdmission_ApplicationForm extends TestBase {
 			getScreenShot("tcPopUpValidationYes_FinalSubmit");
 		}
 	}
-	@Test(priority = 13, dataProvider = "UnderTaking_Text_PreAdmApplication")
-	public void tcVerifyUndertakingText_PreAdmissionApplication(String textToVerify, String runMode) {
+
+	@Test(priority = 28)
+	public void tcPopUpValidationOnSuccess_FinalSubmit() {
+
+		try {
+			log.info("============= Starting tcPopUpValidationOnSuccess_FinalSubmit Test===========");
+
+			applicationform.popUpValidationOnSuccess();
+
+			log.info("============= Finished tcPopUpValidationOnSuccess_FinalSubmit Test===========");
+			getScreenShot("tcPopUpValidationOnSuccess_FinalSubmit");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpValidationOnSuccess_FinalSubmit");
+		}
+	}
+
+	@Test(priority = 29, dataProvider = "SearchInGrid_PreAdmApplication")
+	public void tcSearchByStudentNameInGrid_PreAdmissionApplication(String studentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Starting tcPreviousSchoolDetails_PreAdmissionApplication Test===========");
+			log.info("============= Starting tcSearchByStudentNameInGrid_PreAdmissionApplication Test===========");
 
-			applicationform.searchByFatherNameInGrid(FatherName);
-				
-			log.info("============= Finished tcPreviousSchoolDetails_PreAdmissionApplication Test===========");
-			getScreenShot("tcPreviousSchoolDetails_PreAdmissionApplication");
+			applicationform.searchByStudentNameInGrid(studentName);
+
+			log.info("============= Finished tcSearchByStudentNameInGrid_PreAdmissionApplication Test===========");
+			getScreenShot("tcSearchByStudentNameInGrid_PreAdmissionApplication");
 		} catch (Exception e) {
-			getScreenShot("tcPreviousSchoolDetails_PreAdmissionApplication");
+			getScreenShot("tcSearchByStudentNameInGrid_PreAdmissionApplication");
 		}
 	}
-	
+	@Test(priority = 30, dataProvider = "SearchInGrid_PreAdmApplication")
+	public void tcVerifyStudentNameInStudentListGrid_PreAdmissionApplication(String studentName, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Starting tcVerifyStudentNameInStudentListGrid_PreAdmissionApplication Test===========");
+
+			applicationform.verifyStudentNameInStudentListGrid(studentName);
+
+			log.info("============= Finished tcVerifyStudentNameInStudentListGrid_PreAdmissionApplication Test===========");
+			getScreenShot("tcVerifyStudentNameInStudentListGrid_PreAdmissionApplication");
+		} catch (Exception e) {
+			getScreenShot("tcVerifyStudentNameInStudentListGrid_PreAdmissionApplication");
+		}
+	}
+	@Test(priority = 31, dataProvider = "SearchInGrid_PreAdmApplication")
+	public void tcEdit_PreAdmissionApplicationForm(String studentName, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Starting tcEdit_PreAdmissionApplicationForm Test===========");
+
+			applicationform.edit_PreAdmissionApplicationForm(studentName);
+
+			log.info("============= Finished tcEdit_PreAdmissionApplicationForm Test===========");
+			getScreenShot("tcEdit_PreAdmissionApplicationForm");
+		} catch (Exception e) {
+			getScreenShot("tcEdit_PreAdmissionApplicationForm");
+		}
+	}
+
+	@Test(priority = 32)
+	public void tcClickOnSubmitButton_ToSubmitFilledForm_Edit() {
+
+		try {
+			log.info("============= Starting tcClickOnSubmitButton_ToSubmitFilledForm_Edit Test===========");
+
+			applicationform.clickOnSubmitButton();
+
+			log.info("============= Finished tcClickOnSubmitButton_ToSubmitFilledForm_Edit Test===========");
+			getScreenShot("tcClickOnSubmitButton_ToSubmitFilledForm_Edit");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSubmitButton_ToSubmitFilledForm_Edit");
+		}
+	}
+
+	@Test(priority = 33)
+	public void tcPopUpValidationYes_FinalSubmit_Edit() {
+
+		try {
+			log.info("============= Starting tcPopUpValidationYes_FinalSubmit_Edit Test===========");
+
+			applicationform.popUpValidationYes();
+
+			log.info("============= Finished tcPopUpValidationYes_FinalSubmit_Edit Test===========");
+			getScreenShot("tcPopUpValidationYes_FinalSubmit_Edit");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpValidationYes_FinalSubmit_Edit");
+		}
+	}
+
+	@Test(priority = 34)
+	public void tcPopUpValidationOnSuccess_FinalSubmit_Edit() {
+
+		try {
+			log.info("============= Starting tcPopUpValidationOnSuccess_FinalSubmit_Edit Test===========");
+
+			applicationform.popUpValidationOnSuccess();
+
+			log.info("============= Finished tcPopUpValidationOnSuccess_FinalSubmit_Edit Test===========");
+			getScreenShot("tcPopUpValidationOnSuccess_FinalSubmit_Edit");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpValidationOnSuccess_FinalSubmit_Edit");
+		}
+	}
+
+	@Test(priority = 35, dataProvider = "SearchInGrid_PreAdmApplication")
+	public void tcView_PreAdmissionApplicationForm(String studentName, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Starting tcView_PreAdmissionApplicationForm Test===========");
+
+			applicationform.view_PreAdmissionApplicationForm(studentName);
+
+			log.info("============= Finished tcView_PreAdmissionApplicationForm Test===========");
+			getScreenShot("tcView_PreAdmissionApplicationForm");
+		} catch (Exception e) {
+			getScreenShot("tcView_PreAdmissionApplicationForm");
+		}
+	}
+	@Test(priority = 37)
+	public void tcCloseViewApplicationWindow() {
+
+		try {
+			log.info("============= Starting tcCloseViewApplicationWindow Test===========");
+
+			applicationform.closeViewApplicationWindow();
+
+			log.info("============= Finished tcCloseViewApplicationWindow Test===========");
+			getScreenShot("tcCloseViewApplicationWindow");
+		} catch (Exception e) {
+			getScreenShot("tcCloseViewApplicationWindow");
+		}
+	}
+	@Test(priority = 38, dataProvider = "SearchInGrid_PreAdmApplication")
+	public void tcView_PreAdmissionApplicationForm_AfterClose(String studentName, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Starting tcView_PreAdmissionApplicationForm_AfterClose Test===========");
+
+			applicationform.view_PreAdmissionApplicationForm(studentName);
+
+			log.info("============= Finished tcView_PreAdmissionApplicationForm_AfterClose Test===========");
+			getScreenShot("tcView_PreAdmissionApplicationForm_AfterClose");
+		} catch (Exception e) {
+			getScreenShot("tcView_PreAdmissionApplicationForm_AfterClose");
+		}
+	}
+	@Test(priority = 39)
+	public void tcClickOnPrint_ForPrintPreview() {
+
+		try {
+			log.info("============= Starting tcClickOnPrint_ForPrintPreview Test===========");
+
+			applicationform.clickOnPrint_ForPrintPreview();
+
+			log.info("============= Finished tcClickOnPrint_ForPrintPreview Test===========");
+			getScreenShot("tcClickOnPrint_ForPrintPreview");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnPrint_ForPrintPreview");
+		}
+	}
+
 	@AfterClass
 	public void tearDown() {
 		try {

@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -40,7 +42,11 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[5]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[5]")
+	// WebElement btnCustomFeeSpecialHead;
+
+	@FindBy(xpath = "//a[@href='#/app/SpecialFeeHead/85']")
 	WebElement btnCustomFeeSpecialHead;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -52,11 +58,15 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'Fee Head :')]/following-sibling::div/input")
 	WebElement input_FeeHeadSearch;
 
-	@FindBy(xpath = "//span[contains(text(),'Annual Fees')]")
-	WebElement chk_FeeHeadText;
+	// @FindBy(xpath = "//span[contains(text(),'Annual Fees')]")
+	// WebElement chk_FeeHeadText;
 
-	@FindBy(xpath = "//span[contains(text(),'Annual Fees')]/preceding-sibling::input")
-	WebElement chk_boxSelectionFeeHead;
+	@FindBy(xpath = "(//input[@name='clsse'])[1]")
+	WebElement chk_FeeHead;
+
+	// @FindBy(xpath = "//span[contains(text(),'Annual
+	// Fees')]/preceding-sibling::input")
+	// WebElement chk_boxSelectionFeeHead;
 
 	@FindBy(xpath = "//span[contains(text(),'Save')]/parent::button")
 	WebElement btn_Save;
@@ -76,7 +86,7 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnYesDeleteOrDeactIt;
 
-	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
+	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement btnPopUpCancel;
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
@@ -91,6 +101,9 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
 	WebElement successfulMessage;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Custom_Fee_Special_Head(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -100,7 +113,7 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -115,32 +128,15 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToMasters_Custom_Special_FeeHead() throws Exception {
-		if (btnFee.isDisplayed()) {
-			btnFee.click();
-			log("Clicked on Fee Button and object is:-" + btnFee.toString());
-			// waitForElement(driver, 10, btnFee);
-			Thread.sleep(1000);
-		} else {
-			log("Fee Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (feeMasters.isDisplayed()) {
-			feeMasters.click();
-			log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Fee Masters Navigation element not present.");
-			Thread.sleep(500);
-		}
-		if (btnCustomFeeSpecialHead.isDisplayed()) {
-			btnCustomFeeSpecialHead.click();
-			log("Clicked on Custom Fee Special Head Button and object is:-" + btnCustomFeeSpecialHead.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Fee Installment Navigation element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btnFee);
+		log("Clicked on Fee Button and object is:-" + btnFee.toString());
+
+		clickOnButton(feeMasters);
+		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
+
+		clickOnButton(btnCustomFeeSpecialHead);
+		log("Clicked on Custom Fee Special Head Button and object is:-" + btnCustomFeeSpecialHead.toString());
+
 	}
 
 	/**
@@ -171,49 +167,31 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	 */
 
 	public void fill_CustomSpecialFeeHeadForm(String specialFeeHead, String feehead) throws Exception {
-		if (input_SplFeeHeadName.isDisplayed()) {
-			input_SplFeeHeadName.clear();
-			input_SplFeeHeadName.sendKeys(specialFeeHead);
-			log("Entered special fee head name:" + specialFeeHead + " and object is:-"
-					+ input_SplFeeHeadName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Special Fee Head Name element not present.");
-			Thread.sleep(500);
-		}
-		if (input_FeeHeadSearch.isDisplayed()) {
-			input_FeeHeadSearch.clear();
-			input_FeeHeadSearch.sendKeys(feehead);
-			log("Entered fee head for search " + feehead + " and object is:-" + input_FeeHeadSearch.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Head Search element not present.");
-			Thread.sleep(500);
-		}
-		String feeHeadselection = chk_FeeHeadText.getText().trim();
-		try {
-			Assert.assertEquals(feeHeadselection, feehead);
-		} catch (Exception e) {
-			log("Fee head for selection  is not matched");
-		}
-		if (!chk_boxSelectionFeeHead.isSelected()) {
 
-			chk_boxSelectionFeeHead.click();
-			log("Fee head check box is selected for the specific group");
-		} else {
-			log("Fee head Check box is already selected");
+		inputTextIntoInputField(input_SplFeeHeadName, specialFeeHead);
+		log("Entered special fee head name:" + specialFeeHead + " and object is:-" + input_SplFeeHeadName.toString());
+
+		inputTextIntoInputField(input_FeeHeadSearch, feehead);
+		log("Entered fee head for search " + feehead + " and object is:-" + input_FeeHeadSearch.toString());
+
+		isDisplayed(chk_FeeHead);
+		try {
+			if (!chk_FeeHead.isSelected()) {
+				chk_FeeHead.click();
+				log("Fee head check box is selected for the specific group");
+			} else {
+				log("Fee head Check box is already selected");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 	public void clickOnCancelButton_ClearFilledForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("clicked on cancel button and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel Button element is not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("clicked on cancel button and object is:-" + btn_Cancel.toString());
+
 	}
 
 	/**
@@ -222,14 +200,11 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSaveButton() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("clicked on save button and object is:-" + btn_Save.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Save Button element is not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		log("clicked on save button and object is:-" + btn_Save.toString());
+		Thread.sleep(1000);
+
 	}
 
 	/**
@@ -257,14 +232,10 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btn_OkonSuccess.isDisplayed()) {
-			btn_OkonSuccess.click();
-			log("clicked on OK button and object is:-" + btn_OkonSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK Button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_OkonSuccess);
+		log("clicked on OK button and object is:-" + btn_OkonSuccess.toString());
+		Thread.sleep(1000);
 	}
 
 	/**
@@ -274,16 +245,9 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	 * @throws Exception
 	 */
 	public void searchBySpLFeeHeadNameInGrid(String specialfeehead) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(specialfeehead);
-			log("Entered custom special fee head name:" + specialfeehead + " and object is:-"
-					+ input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, specialfeehead);
+		log("Entered custom special fee head name:" + specialfeehead + " and object is:-" + input_Search.toString());
 	}
 
 	/**
@@ -297,19 +261,21 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String customSPLFeeHead = driver
-					.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText();
-			Thread.sleep(2000);
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-			try {
-				Assert.assertEquals(customSPLFeeHead, specialFeeHead);
-				log("Custom speceal fee head name is update in the grid:" + customSPLFeeHead);
+				String customSPLFeeHead = driver
+						.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText();
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				log("Custom Special fee head is not updated in the grid.");
+				if (customSPLFeeHead.equals(specialFeeHead)) {
+					Assert.assertEquals(customSPLFeeHead, specialFeeHead);
+					log("Custom speceal fee head name is update in the grid:" + customSPLFeeHead);
+					Thread.sleep(2000);
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			log("Custom Special fee head is not updated in the grid.");
 		}
 	}
 
@@ -324,24 +290,26 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String customSPLFeeHead = driver
-					.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText()
-					.trim();
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-			Thread.sleep(2000);
+				String customSPLFeeHead = driver
+						.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText()
+						.trim();
 
-			try {
-				Assert.assertEquals(customSPLFeeHead, specialFeeHead);
-				driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[5]/a")).click();
-				log("Clicked on edit link for corresponding special Fee Head name in grid");
-
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				log("Edit link is not clicked for editing of custom special fee head");
-				Thread.sleep(500);
+				Thread.sleep(2000);
+				if (customSPLFeeHead.equals(specialFeeHead)) {
+					Assert.assertEquals(customSPLFeeHead, specialFeeHead);
+					driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[5]/a"))
+							.click();
+					log("Clicked on edit link for corresponding special Fee Head name in grid");
+					Thread.sleep(1000);
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			log("Edit link is not clicked for editing of custom special fee head");
+			Thread.sleep(500);
 		}
 	}
 
@@ -356,27 +324,29 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String customSPLFeeHead = driver
-					.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText()
-					.trim();
-			Thread.sleep(2000);
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-			try {
-				Assert.assertEquals(customSPLFeeHead, specialFeeHead);
-				WebElement deactiveLink = driver
-						.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[5]/span"));
-				String deactivetext = deactiveLink.getText().trim();
-				Assert.assertEquals("Deactivate", deactivetext);
-
-				deactiveLink.click();
-				log("Clicked on deactivation link in custom special Fee Head grid");
-
+				String customSPLFeeHead = driver
+						.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText()
+						.trim();
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				log("Deactivation link is not available for the custom special fee head");
-			}
+				if (customSPLFeeHead.equals(specialFeeHead)) {
+					Assert.assertEquals(customSPLFeeHead, specialFeeHead);
+					WebElement deactiveLink = driver
+							.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[5]/span"));
+					String deactivetext = deactiveLink.getText().trim();
+					Assert.assertEquals(deactivetext, "Deactivate");
 
+					deactiveLink.click();
+					log("Clicked on deactivation link in custom special Fee Head grid");
+
+					Thread.sleep(2000);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			log("Deactivation link is not available for the custom special fee head");
 		}
 	}
 
@@ -387,26 +357,18 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	 */
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		if (btnYesDeleteOrDeactIt.isDisplayed()) {
-			btnYesDeleteOrDeactIt.click();
-			log("Clicked on yes deactivate or activate or delete it button and object is:-"
-					+ btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Yes Activate/Deactivate button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		log("Clicked on yes deactivate or activate or delete it button and object is:-"
+				+ btnYesDeleteOrDeactIt.toString());
+
 	}
 
 	public void clickOnCancelButton_PopUp() throws Exception {
-		if (btnPopUpCancel.isDisplayed()) {
-			btnPopUpCancel.click();
-			log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnPopUpCancel);
+		log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
+
 	}
 
 	/**
@@ -420,56 +382,121 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String customSPLFeeHead = driver
-					.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText();
-			Thread.sleep(2000);
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-			try {
-				Assert.assertEquals(customSPLFeeHead, specialFeeHead);
-				WebElement activeLink = driver
-						.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[5]/span"));
-				String activatext = activeLink.getText().trim();
-				Assert.assertEquals("Activate", activatext);
-				activeLink.click();
-				log("Clicked on activation link in Custom special Fee Head name grid");
+				String customSPLFeeHead = driver
+						.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[3]")).getText();
 				Thread.sleep(2000);
-			} catch (Exception e) {
-				log("Activation link is not available in the custom special fee head");
+				if (customSPLFeeHead.equals(specialFeeHead)) {
+					Assert.assertEquals(customSPLFeeHead, specialFeeHead);
+					WebElement activeLink = driver
+							.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[5]/span"));
+					String activatext = activeLink.getText().trim();
+					Assert.assertEquals(activatext, "Activate");
+					activeLink.click();
+					log("Clicked on activation link in Custom special Fee Head name grid");
+					Thread.sleep(2000);
+					break;
+				}
 			}
+		} catch (Exception e) {
+			log("Activation link is not available in the custom special fee head");
 		}
 	}
+
 	public void minimizeAndMaximize_SpecialFeeHead() throws Exception {
-		if (btnMin_Max_SpecialFeeHead.isDisplayed()) {
-			btnMin_Max_SpecialFeeHead.click();
-			log("clicked on Special Fee Head minimize and maximize button and object is:-"
-					+ btnMin_Max_SpecialFeeHead.toString());
-			Thread.sleep(1000);
-		} else {
-			log("MinMax Special Fee Head button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnMin_Max_SpecialFeeHead);
+		log("clicked on Special Fee Head minimize and maximize button and object is:-"
+				+ btnMin_Max_SpecialFeeHead.toString());
+
 	}
 
 	public void minimizeAndMaximize_SpecialHeadGridView() throws Exception {
-		if (btnMin_Max_SpecialHeadGridView.isDisplayed()) {
-			btnMin_Max_SpecialHeadGridView.click();
-			log("Special Head grid table data minimize and maximize and object is:-"
-					+ btnMin_Max_SpecialHeadGridView.toString());
+
+		clickOnButton(btnMin_Max_SpecialHeadGridView);
+		log("Special Head grid table data minimize and maximize and object is:-"
+				+ btnMin_Max_SpecialHeadGridView.toString());
+
+	}
+
+	public void sortByFeeHead() throws Exception {
+
+		clickOnButton(btnSortBy_FeeHead);
+		log("Sorted the record with Fee Head and object is:-" + btnSortBy_FeeHead.toString());
+
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
-		} else {
-			log("MinMax Special Head grid button element not present.");
-			Thread.sleep(500);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	public void sortByFeeHead() throws Exception {
-		if (btnSortBy_FeeHead.isDisplayed()) {
-			btnSortBy_FeeHead.click();
-			log("Sorted the record with Fee Head and object is:-" + btnSortBy_FeeHead.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Sort element not present.");
-			Thread.sleep(500);
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated for edit.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

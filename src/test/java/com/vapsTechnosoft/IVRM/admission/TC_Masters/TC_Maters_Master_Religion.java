@@ -273,8 +273,21 @@ public class TC_Maters_Master_Religion extends TestBase{
 			getScreenShot("tcSubmitFilledMasterReligionForm");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			master_religion.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -292,7 +305,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 	
 	
 
-	@Test(priority = 16, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 17, dataProvider = "MastersMasterReligionData")
 	public void tcSearchWithReligionNameInTheGrid(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -310,7 +323,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 18, dataProvider = "MastersMasterReligionData")
 	public void tcVerifyReligionNameInTheGrid(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -328,7 +341,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 19, dataProvider = "MastersMasterReligionData")
 	public void tcEditMasterReligion(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -345,7 +358,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSubmitFilledMasterReligionForm_Edit() {
 
 		try {
@@ -359,8 +372,21 @@ public class TC_Maters_Master_Religion extends TestBase{
 			getScreenShot("tcSubmitFilledMasterReligionForm_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			master_religion.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -377,7 +403,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 	
 	//
 	
-	@Test(priority = 21, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 23, dataProvider = "MastersMasterReligionData")
 	public void tcSearchWithReligionNameInTheGrid_ForDeactivate(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -395,7 +421,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 24, dataProvider = "MastersMasterReligionData")
 	public void tcDeactivateMasterReligion(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -413,7 +439,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -428,7 +454,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -443,7 +469,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 27, dataProvider = "MastersMasterReligionData")
 	public void tcSearchWithReligionNameInTheGrid_ForDeactivate_AfterCancel(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -461,7 +487,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 28, dataProvider = "MastersMasterReligionData")
 	public void tcDeactivateMasterReligion_AfterCancel(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -479,7 +505,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -493,8 +519,21 @@ public class TC_Maters_Master_Religion extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopWindowMessage_DeactivatedSuccessfully_Validation() {
 
-	@Test(priority = 28)
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+
+			master_religion.popWindowMessage_DeactivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_DeactivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeactivatedSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -509,7 +548,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 	
-	@Test(priority = 29, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 32, dataProvider = "MastersMasterReligionData")
 	public void tcSearchWithReligionNameInTheGrid_ForActivate(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -527,7 +566,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 33, dataProvider = "MastersMasterReligionData")
 	public void tcActivateMasterReligion(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -545,7 +584,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 34)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -560,7 +599,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 35)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -575,7 +614,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 36, dataProvider = "MastersMasterReligionData")
 	public void tcSearchWithReligionNameInTheGrid_ForActivate_AfterCancel(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -593,7 +632,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "MastersMasterReligionData")
+	@Test(priority = 37, dataProvider = "MastersMasterReligionData")
 	public void tcActivateMasterReligion_AfterCancel(String religionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -610,7 +649,7 @@ public class TC_Maters_Master_Religion extends TestBase{
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 38)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -624,8 +663,21 @@ public class TC_Maters_Master_Religion extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 39)
+	public void tcPopWindowMessage_ActivatedSuccessfully_Validation() {
 
-	@Test(priority = 36)
+		try {
+			log.info("============= Strting tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+
+			master_religion.popWindowMessage_ActivatedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_ActivatedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 40)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {

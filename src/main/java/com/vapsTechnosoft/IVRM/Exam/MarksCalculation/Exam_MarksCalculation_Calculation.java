@@ -35,7 +35,12 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Marks Calculation')][1]")
 	private WebElement btn_Exam_MarksCalculation;
 
-	@FindBy(xpath = "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Marks Calculation')][1]/following::li[1]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Marks
+	// Calculation')][1]/following::li[1]")
+	// private WebElement btn_Calculation_NavMenu;
+
+	@FindBy(xpath = "//a[@href='#/app/exammarkcalculation/271']")
 	private WebElement btn_Calculation_NavMenu;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -58,7 +63,10 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 
 	@FindBy(xpath = "//button[text()='OK']")
 	private WebElement btnOKSuccess;
-	
+
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Exam_MarksCalculation_Calculation(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -68,7 +76,7 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -83,35 +91,20 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToExam_MarksCalculation_Calculation() throws Exception {
-		if (btn_Exam.isDisplayed()) {
-			btn_Exam.click();
-			log("Clicked on Exam Navigation Menu Button and object is:-" + btn_Exam.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Exam Navigation Menu button element not present and object is:-" + btn_Exam.toString());
-			Thread.sleep(500);
-		}
-		if (btn_Exam_MarksCalculation.isDisplayed()) {
-			btn_Exam_MarksCalculation.click();
-			log("Clicked on Marks Calculation to Navigate to Calculation and object is:-" + btn_Exam_MarksCalculation.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Marks Calculation button element not present and object is:-" + btn_Exam_MarksCalculation.toString());
-			Thread.sleep(500);
-		}
-		if (btn_Calculation_NavMenu.isDisplayed()) {
-			btn_Calculation_NavMenu.click();
-			log("Clicked on Calculation and page opened Button and object is:-" + btn_Calculation_NavMenu.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Calculation button element not present and object is:-" + btn_Calculation_NavMenu.toString());
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Exam);
+		log("Clicked on Exam Button and object is:-" + btn_Exam.toString());
+
+		clickOnButton(btn_Exam_MarksCalculation);
+		log("Clicked on Marks Calculation to Navigate to Calculation and object is:-"
+				+ btn_Exam_MarksCalculation.toString());
+
+		clickOnButton(btn_Calculation_NavMenu);
+		log("Clicked on Calculation and page opened Button and object is:-" + btn_Calculation_NavMenu.toString());
 
 	}
 
 	/**
-	 * Validation of  Exam > Marks Calculation > Calculation Page Path message
+	 * Validation of Exam > Marks Calculation > Calculation Page Path message
 	 * 
 	 * @return
 	 */
@@ -129,14 +122,10 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 	}
 
 	public void submitBlank_MarksCalculation_CalculationForm() throws Exception {
-		if (btn_CalculationSubmit.isDisplayed()) {
-			btn_CalculationSubmit.click();
-			log("Submit blank Calculation form and object is:-" + btn_CalculationSubmit.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Calculation button element not present and object is:-" + btn_CalculationSubmit.toString());
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_CalculationSubmit);
+		log("Submit blank Calculation form and object is:-" + btn_CalculationSubmit.toString());
+
 	}
 
 	/**
@@ -147,71 +136,30 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 	 * @param status
 	 * @throws Exception
 	 */
-	public void fill_ExamMarksCalculation_CalculationForm(String academicYear, String class_mc, String section, String examName)
-			throws Exception {
+	public void fill_ExamMarksCalculation_CalculationForm(String academicYear, String class_mc, String section,
+			String examName) throws Exception {
 
+		selectElementFromDropDown(sel_AcademicYr, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
 
-		if (sel_AcademicYr.isDisplayed()) {
-			select = new Select(sel_AcademicYr);
-			select.selectByVisibleText(academicYear);
+		selectElementFromDropDown(sel_Class, class_mc);
+		log("Selected Class: " + class_mc + " and object is:- " + sel_Class.toString());
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYr.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(class_mc);
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
-			log("Selected Class: " + class_mc + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), class_mc);
-			Thread.sleep(1000);
-		} else {
-			log("Class element is not present and object is:- " + sel_Class.toString());
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_ExamName, examName);
+		log("Selected Exam Name: " + examName + " and object is:- " + sel_ExamName.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section element is not present and object is:- " + sel_Section.toString());
-			Thread.sleep(500);
-		}
-		if (sel_ExamName.isDisplayed()) {
-			select = new Select(sel_ExamName);
-			select.selectByVisibleText(examName);
-
-			log("Selected Exam Name: " + examName + " and object is:- " + sel_ExamName.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), examName);
-			Thread.sleep(1000);
-		} else {
-			log("Exam Name element is not present and object is:- " + sel_ExamName.toString());
-			Thread.sleep(500);
-		}
 	}
-	
+
 	public void submit_MarksCalculation_CalculationForm() throws Exception {
-		if (btn_CalculationSubmit.isDisplayed()) {
-			btn_CalculationSubmit.click();
-			waitForElement(driver, btnOKSuccess, 30);
-			log("Submit Calculation form and object is:-" + btn_CalculationSubmit.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Calculation button element not present and object is:-" + btn_CalculationSubmit.toString());
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_CalculationSubmit);
+		log("Submit Calculation form and object is:-" + btn_CalculationSubmit.toString());
+
 	}
+
 	/**
 	 * click on OK button after Saving, Cancel Pop Up, Activation and
 	 * De-activation of the record
@@ -219,16 +167,22 @@ public class Exam_MarksCalculation_Calculation extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			assertEquals("OK", btnOKSuccess.getText().trim());
-			btnOKSuccess.click();
-			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button Element not present");
-			Thread.sleep(500);
+		isDisplayed(btnOKSuccess);
+		assertEquals("OK", btnOKSuccess.getText().trim());
+		btnOKSuccess.click();
+		log("clicked on OK button and object is:-" + btnOKSuccess.toString());
+		Thread.sleep(2000);
+	}
+	public void popUpWindowMessage_MarksCalCulationSuccessfully() throws Exception {
+		try{
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Marks Calculated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
-
 }

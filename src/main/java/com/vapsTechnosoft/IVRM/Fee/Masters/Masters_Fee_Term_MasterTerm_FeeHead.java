@@ -30,19 +30,19 @@ public class Masters_Fee_Term_MasterTerm_FeeHead extends TestBase{
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
 	WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 	
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[4]")
+	@FindBy(xpath = "//a[@href='#/app/FeeMasterTerms/82']")
 	WebElement btnFeeTerm;
 	
 	@FindBy(xpath = "//body[@id='style-4']//md-tab-item[2]")
 	WebElement tabMasterTermFeeHead;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[1]")
+	@FindBy(xpath = "//select[@name='Termreq']")
 	WebElement selTermName;
 	
 	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[2]")
@@ -94,17 +94,16 @@ public class Masters_Fee_Term_MasterTerm_FeeHead extends TestBase{
 	}
 
 	public void nevigateToMasters_FeeTermMasterTerm_FeeHead() throws Exception {
-		btnFee.click();
+	
+		clickOnButton(btnFee);
 		log("Clicked on Fee Button and object is:-" + btnFee.toString());
-		waitForElement(driver, 10, btnFee);
-
-		feeMasters.click();
+	
+		clickOnButton(feeMasters);
 		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-		waitForElement(driver, 10, feeMasters);
-
-		btnFeeTerm.click();
+	
+		clickOnButton(btnFeeTerm);
 		log("Clicked on Fee Term Button and object is:-" + btnFeeTerm.toString());
-		waitForElement(driver, 10, btnFeeTerm);
+		
 	}
 
 	public boolean verifyFeeTermPage() {
@@ -120,21 +119,19 @@ public class Masters_Fee_Term_MasterTerm_FeeHead extends TestBase{
 		}
 	}
 	public void clickOnMasterTerm_FeeHeadTab() throws Exception{
-		tabMasterTermFeeHead.click();
+	
+		clickOnButton(tabMasterTermFeeHead);
 		log("Selected master Term Fee Head and object is:-"+tabMasterTermFeeHead.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 	public void selectTermFeeHeadAndInstallmentName(String TermName, String FeesHead) throws Exception{
-		
-		select = new Select(selTermName);
-		select.selectByVisibleText(TermName);
+	
+		selectElementFromDropDown(selTermName, TermName);
 		log("selected Term Name from the list:-" + TermName + " and object is " + selTermName.toString());
-		Thread.sleep(2000); 
-		
-		select = new Select(selFeeHead);
-		select.selectByVisibleText(FeesHead);
+	
+		selectElementFromDropDown(selFeeHead, FeesHead);
 		log("selected fees Head from the list:-" + FeesHead + " and object is " + selFeeHead.toString());
-		Thread.sleep(2000); 
+		
 		
 		chkInstallmentName.click();
 		log("selected installment name and object is: "+chkInstallmentName.toString());

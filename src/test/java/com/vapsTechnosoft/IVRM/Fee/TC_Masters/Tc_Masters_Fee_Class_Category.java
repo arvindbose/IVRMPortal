@@ -120,8 +120,21 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 			getScreenShot("tcVerifyFeeClassCategoryPage");
 		}
 	}
+	@Test(priority = 5)
+	public void tcClickOnSaveButton_ToSubmitBlankForm() {
 
-	@Test(priority = 5, dataProvider = "FeeClassCategoryData")
+		try {
+			log.info("============= Strting tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+
+			feeclasscategory.clickOnSaveButton_ToSubmitBlankForm();
+
+			log.info("============= Finished tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		}
+	}
+	@Test(priority = 6, dataProvider = "FeeClassCategoryData")
 	public void tcEnterClassCategoryNameAndCode(String classCategoryName, String classCategoryCode, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -139,38 +152,54 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 6)
-	public void tcClickOnSaveButton() {
+	@Test(priority = 7)
+	public void tcClickOnSaveButton_ToSubmitFilledForm() {
 
 		try {
-			log.info("============= Strting tcClickOnSaveButton Test===========");
+			log.info("============= Strting tcClickOnSaveButton_ToSubmitFilledForm Test===========");
 
 			feeclasscategory.clickOnSaveButton();
 
-			log.info("============= Finished tcClickOnSaveButton Test===========");
-			getScreenShot("tcClickOnSaveButton");
+			log.info("============= Finished tcClickOnSaveButton_ToSubmitFilledForm Test===========");
+			getScreenShot("tcClickOnSaveButton_ToSubmitFilledForm");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButton");
+			getScreenShot("tcClickOnSaveButton_ToSubmitFilledForm");
 		}
 	}
 
-	@Test(priority = 7)
-	public void tcVerifySuccessfulPopUp() {
+//	@Test(priority = 8)
+//	public void tcVerifySuccessfulPopUp() {
+//
+//		try {
+//			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+//
+//			boolean status = feeclasscategory.verifySuccessfulPopUp();
+//			Assert.assertEquals(status, true);
+//
+//			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
+//			getScreenShot("tcVerifySuccessfulPopUp");
+//		} catch (Exception e) {
+//			getScreenShot("tcVerifySuccessfulPopUp");
+//		}
+//	}
+	
+	@Test(priority = 8)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
 
-			boolean status = feeclasscategory.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			feeclasscategory.popWindowMessage_SubmitSuccessfully();
+			
 
-			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 9)
 	public void tcClickOnSuccessOkBtn() {
 
 		try {
@@ -185,7 +214,7 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 9, dataProvider = "CCSearchTestData")
+	@Test(priority = 10, dataProvider = "CCSearchTestData")
 	public void tcSearchByClassCategoryName(String classCtgName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -203,7 +232,7 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 10, dataProvider = "CCSearchTestData")
+	@Test(priority = 11, dataProvider = "CCSearchTestData")
 	public void tcVerifyClassCategoryNameUpdatedInGrid(String classCtgName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -221,7 +250,7 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 11, dataProvider = "CCSearchTestData")
+	@Test(priority = 12, dataProvider = "CCSearchTestData")
 	public void tcDeactivationOfCreatedClassCategory(String classCtgName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -238,8 +267,67 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 			getScreenShot("tcDeactivationOfCreatedClassCategory");
 		}
 	}
+	@Test(priority = 13)
+	public void tcClickonCancel_PopUpWindow_DeactivateCancel() {
 
-	@Test(priority = 12)
+		try {
+			log.info("============= Strting tcClickonCancel_PopUpWindow_DeactivateCancel Test===========");
+
+			feeclasscategory.clickonCancel_PopUpWindow();
+
+			log.info("============= Finished tcClickonCancel_PopUpWindow_DeactivateCancel Test===========");
+			getScreenShot("tcClickonCancel_PopUpWindow_DeactivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickonCancel_PopUpWindow_DeactivateCancel");
+		}
+	}
+	@Test(priority = 14)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			feeclasscategory.popUpWindowMessage_DeactivateCancel_Validation();
+			
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 15)
+	public void tcClickOnSuccessOkBtn_DeactivateCancel() {
+
+		try {
+			log.info("============= Strting tcClickOnSuccessOkBtn_DeactivateCancel Test===========");
+
+			feeclasscategory.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnSuccessOkBtn_DeactivateCancel Test===========");
+			getScreenShot("tcClickOnSuccessOkBtn_DeactivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSuccessOkBtn_DeactivateCancel");
+		}
+	}
+	@Test(priority = 16, dataProvider = "CCSearchTestData")
+	public void tcDeactivationOfCreatedClassCategory_AfterCancel(String classCtgName, String runMode) {
+
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcDeactivationOfCreatedClassCategory_AfterCancel Test===========");
+
+			feeclasscategory.deactivationOfCreatedClassCategory(classCtgName);
+
+			log.info("============= Finished tcDeactivationOfCreatedClassCategory_AfterCancel Test===========");
+			getScreenShot("tcDeactivationOfCreatedClassCategory_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcDeactivationOfCreatedClassCategory_AfterCancel");
+		}
+	}
+	@Test(priority = 17)
 	public void tcConfirmationForDeactivation() {
 
 		try {
@@ -253,40 +341,55 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 			getScreenShot("tcConfirmationForDeactivation");
 		}
 	}
-
-	@Test(priority = 13)
-	public void tcVerifyDeactivationSuccessfulPopUp() {
+//
+//	@Test(priority = 17)
+//	public void tcVerifyDeactivationSuccessfulPopUp() {
+//
+//		try {
+//			log.info("============= Strting tcVerifyDeactivationSuccessfulPopUp Test===========");
+//
+//			boolean status = feeclasscategory.verifyDeactivationSuccessfulPopUp();
+//			Assert.assertEquals(status, true);
+//
+//			log.info("============= Finished tcVerifyDeactivationSuccessfulPopUp Test===========");
+//			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+//		} catch (Exception e) {
+//			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+//		}
+//	}
+	@Test(priority = 18)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
 		try {
-			log.info("============= Strting tcVerifyDeactivationSuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
 
-			boolean status = feeclasscategory.verifyDeactivationSuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			feeclasscategory.popUpWindowMessage_DeactivateSucessfully_Validation();
+			
 
-			log.info("============= Finished tcVerifyDeactivationSuccessfulPopUp Test===========");
-			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
 		}
 	}
 
-	@Test(priority = 14)
-	public void tcClickOnDeactivationFinalOkBtn() {
+	@Test(priority = 19)
+	public void tcClickOnSuccessOkBtn_Deactivate() {
 
 		try {
-			log.info("============= Strting tcClickOnDeactivationFinalOkBtn Test===========");
+			log.info("============= Strting tcClickOnSuccessOkBtn_Deactivate Test===========");
 
-			feeclasscategory.clickOnDeactivationFinalOkBtn();
+			feeclasscategory.clickOnSuccessOkBtn();
 
-			log.info("============= Finished tcClickOnDeactivationFinalOkBtn Test===========");
-			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+			log.info("============= Finished tcClickOnSuccessOkBtn_Deactivate Test===========");
+			getScreenShot("tcClickOnSuccessOkBtn_Deactivate");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+			getScreenShot("tcClickOnSuccessOkBtn_Deactivate");
 		}
 	}
 
 	// search
-	@Test(priority = 15, dataProvider = "CCSearchTestData")
+	@Test(priority = 20, dataProvider = "CCSearchTestData")
 	public void tcSearchByClassCategoryNameForActivation(String classCtgName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -306,7 +409,7 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 
 	// Activation
 
-	@Test(priority = 16, dataProvider = "CCSearchTestData")
+	@Test(priority = 21, dataProvider = "CCSearchTestData")
 	public void tcActivationOfCreatedClassCategory(String classCtgName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -323,8 +426,67 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 			getScreenShot("tcActivationOfCreatedClassCategory");
 		}
 	}
+	@Test(priority = 22)
+	public void tcClickonCancel_PopUpWindow_ActivateCancel() {
 
-	@Test(priority = 17)
+		try {
+			log.info("============= Strting tcClickonCancel_PopUpWindow_ActivateCancel Test===========");
+
+			feeclasscategory.clickonCancel_PopUpWindow();
+
+			log.info("============= Finished tcClickonCancel_PopUpWindow_ActivateCancel Test===========");
+			getScreenShot("tcClickonCancel_PopUpWindow_ActivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickonCancel_PopUpWindow_ActivateCancel");
+		}
+	}
+	@Test(priority = 23)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			feeclasscategory.popUpWindowMessage_ActivateCancel_Validation();
+			
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 24)
+	public void tcClickOnSuccessOkBtn_ActivateCancel() {
+
+		try {
+			log.info("============= Strting tcClickOnSuccessOkBtn_ActivateCancel Test===========");
+
+			feeclasscategory.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnSuccessOkBtn_ActivateCancel Test===========");
+			getScreenShot("tcClickOnSuccessOkBtn_ActivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSuccessOkBtn_ActivateCancel");
+		}
+	}
+		@Test(priority = 25, dataProvider = "CCSearchTestData")
+		public void tcActivationOfCreatedClassCategory_AfterCancel(String classCtgName, String runMode) {
+
+			if (runMode.equalsIgnoreCase("n")) {
+				throw new SkipException("user marked this record as no run");
+			}
+			try {
+				log.info("============= Strting tcActivationOfCreatedClassCategory_AfterCancel Test===========");
+
+				feeclasscategory.activationOfCreatedClassCategory(classCtgName);
+
+				log.info("============= Finished tcActivationOfCreatedClassCategory_AfterCancel Test===========");
+				getScreenShot("tcActivationOfCreatedClassCategory_AfterCancel");
+			} catch (Exception e) {
+				getScreenShot("tcActivationOfCreatedClassCategory_AfterCancel");
+			}
+		}
+	@Test(priority = 26)
 	public void tcConfirmationForActivation() {
 
 		try {
@@ -339,39 +501,54 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
-	public void tcVerifyActivationSuccessfulPopUp() {
+//	@Test(priority = 27)
+//	public void tcVerifyActivationSuccessfulPopUp() {
+//
+//		try {
+//			log.info("============= Strting tcVerifyActivationSuccessfulPopUp Test===========");
+//
+//			boolean status = feeclasscategory.verifyActivationSuccessfulPopUp();
+//			Assert.assertEquals(status, true);
+//
+//			log.info("============= Finished tcVerifyActivationSuccessfulPopUp Test===========");
+//			getScreenShot("tcVerifyActivationSuccessfulPopUp");
+//		} catch (Exception e) {
+//			getScreenShot("tcVerifyActivationSuccessfulPopUp");
+//		}
+//	}
+	@Test(priority = 27)
+	public void tcPopUpWindowMessage_ActivateSuccessfully_Validation() {
 
 		try {
-			log.info("============= Strting tcVerifyActivationSuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSuccessfully_Validation Test===========");
 
-			boolean status = feeclasscategory.verifyActivationSuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			feeclasscategory.popUpWindowMessage_ActivateSucessfully_Validation();
+			
 
-			log.info("============= Finished tcVerifyActivationSuccessfulPopUp Test===========");
-			getScreenShot("tcVerifyActivationSuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifyActivationSuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_ActivateSuccessfully_Validation");
 		}
 	}
 
-	@Test(priority = 19)
-	public void tcClickOnActivationFinalOkBtn() {
+	@Test(priority = 28)
+	public void tcClickOnSuccessOkBtn_Activate() {
 
 		try {
-			log.info("============= Strting tcClickOnActivationFinalOkBtn Test===========");
+			log.info("============= Strting tcClickOnSuccessOkBtn_Activate Test===========");
 
-			feeclasscategory.clickOnActivationFinalOkBtn();
+			feeclasscategory.clickOnSuccessOkBtn();
 
-			log.info("============= Finished tcClickOnActivationFinalOkBtn Test===========");
-			getScreenShot("tcClickOnActivationFinalOkBtn");
+			log.info("============= Finished tcClickOnSuccessOkBtn_Activate Test===========");
+			getScreenShot("tcClickOnSuccessOkBtn_Activate");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnActivationFinalOkBtn");
+			getScreenShot("tcClickOnSuccessOkBtn_Activate");
 		}
 	}
 
 	// search
-	@Test(priority = 20, dataProvider = "CCSearchTestData")
+	@Test(priority = 29, dataProvider = "CCSearchTestData")
 	public void tcSearchByClassCategoryNameForEditing(String classCtgName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -391,7 +568,7 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 
 	// Edit
 
-	@Test(priority = 21, dataProvider = "CCSearchTestData")
+	@Test(priority = 30, dataProvider = "CCSearchTestData")
 	public void tcCreatedClassCategoryEdit(String classCtgName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -409,49 +586,63 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 22)
-	public void tcClickOnSaveButtonEdit() {
+	@Test(priority = 31)
+	public void tcClickOnSaveButton_Edit() {
 
 		try {
-			log.info("============= Strting tcClickOnSaveButtonEdit Test===========");
+			log.info("============= Strting tcClickOnSaveButton_Edit Test===========");
 
-			feeclasscategory.clickOnSaveButtonEdit();
+			feeclasscategory.clickOnSaveButton();
 
-			log.info("============= Finished tcClickOnSaveButtonEdit Test===========");
-			getScreenShot("tcClickOnSaveButtonEdit");
+			log.info("============= Finished tcClickOnSaveButton_Edit Test===========");
+			getScreenShot("tcClickOnSaveButton_Edit");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButtonEdit");
+			getScreenShot("tcClickOnSaveButton_Edit");
 		}
 	}
 
-	@Test(priority = 23)
-	public void tcVerifySuccessfulPopUpEdit() {
+//	@Test(priority = 32)
+//	public void tcVerifySuccessfulPopUpEdit() {
+//
+//		try {
+//			log.info("============= Strting tcVerifySuccessfulPopUpEdit Test===========");
+//
+//			boolean status = feeclasscategory.verifySuccessfulPopUpEdit();
+//			Assert.assertEquals(status, true);
+//
+//			log.info("============= Finished tcVerifySuccessfulPopUpEdit Test===========");
+//			getScreenShot("tcVerifySuccessfulPopUpEdit");
+//		} catch (Exception e) {
+//			getScreenShot("tcVerifySuccessfulPopUpEdit");
+//		}
+//	}
+	@Test(priority = 32)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUpEdit Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
 
-			boolean status = feeclasscategory.verifySuccessfulPopUpEdit();
-			Assert.assertEquals(status, true);
+			feeclasscategory.popWindowMessage_SubmitSuccessfully_Edit();
+			
 
-			log.info("============= Finished tcVerifySuccessfulPopUpEdit Test===========");
-			getScreenShot("tcVerifySuccessfulPopUpEdit");
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUpEdit");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
 		}
 	}
-
-	@Test(priority = 24)
-	public void tcClickOnSuccessOkBtnEdit() {
+	@Test(priority = 33)
+	public void tcClickOnSuccessOkBtn_Edit() {
 
 		try {
-			log.info("============= Strting tcClickOnSuccessOkBtnEdit Test===========");
+			log.info("============= Strting tcClickOnSuccessOkBtn_Edit Test===========");
 
-			feeclasscategory.clickOnSuccessOkBtnEdit();
+			feeclasscategory.clickOnSuccessOkBtn();
 
-			log.info("============= Finished tcClickOnSuccessOkBtnEdit Test===========");
-			getScreenShot("tcClickOnSuccessOkBtnEdit");
+			log.info("============= Finished tcClickOnSuccessOkBtn_Edit Test===========");
+			getScreenShot("tcClickOnSuccessOkBtn_Edit");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnSuccessOkBtnEdit");
+			getScreenShot("tcClickOnSuccessOkBtn_Edit");
 		}
 	}
 

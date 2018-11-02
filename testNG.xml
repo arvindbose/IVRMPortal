@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Integration Suite">
-
-	<listeners>
-		<!-- <listener class-name="com.test.automation.uiAutomation.customListner.Listener"></listener> -->
-		<listener
-			class-name="com.test.automation.uiAutomation.customListner.RetryListener"></listener>
-	</listeners>
-
-	<test name="MasterFeeGroup">
-		<classes>
-			<class
-				name="com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_MasterGroup"></class>
-
-		</classes>
-	</test>
-	<test name="YearlyFeeGroup">
-		<classes>
-
-			<class
-				name="com.test.automation.uiAutomation.Fee.TC_Masters.Tc_Masters_Fee_Group_YearlyGroup"></class>
-
-		</classes>
-	</test>
-
+<suite name="Sample Test Suite" verbose="1" >
+  <test name="Method Test Cases" >
+    <classes>
+       <class name="com.vapsTechnosoft.IVRM.admission.TC_Masters.TC_Masters_Caste_Category">
+        <methods>
+        <include name="loginToappWithrequiredCredentials" />
+        <include name="tcNavigateToAdmission_Masters_CasteCategory_BGHS" />
+         <include name="tcSearchWithCasteCategoryNameInTheGrid" />
+        <include name="tcVerifyCasteCategoryNameInTheGrid" />       
+        <include name="tearDown" />
+      </methods>
+       </class>
+    </classes>
+  </test>
 </suite>

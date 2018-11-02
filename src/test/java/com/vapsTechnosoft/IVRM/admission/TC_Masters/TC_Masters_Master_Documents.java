@@ -277,8 +277,22 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcSaveDocumentInfoData");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			masterdocuments.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -293,7 +307,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 	
-	@Test(priority = 16, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 17, dataProvider = "MasterDocumentSearchData")
 	public void tcSearchWithDocumentNameInTheGrid(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -311,7 +325,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 18, dataProvider = "MasterDocumentSearchData")
 	public void tcVerifyDocumentNameInTheGrid(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -329,7 +343,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 	
-	@Test(priority = 18, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 19, dataProvider = "MasterDocumentSearchData")
 	public void tcEditMasterDocument(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -347,7 +361,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcSaveDocumentInfoData_Edit() {
 
 		try {
@@ -361,8 +375,21 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcSaveDocumentInfoData_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			masterdocuments.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -377,7 +404,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 23, dataProvider = "MasterDocumentSearchData")
 	public void tcSearchWithDocumentNameInTheGrid_delete(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -395,7 +422,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 24, dataProvider = "MasterDocumentSearchData")
 	public void tcDeleteMasterDocument(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -413,7 +440,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton() {
 
 		try {
@@ -428,7 +455,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -444,7 +471,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 	}
 	
 
-	@Test(priority = 25, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 27, dataProvider = "MasterDocumentSearchData")
 	public void tcSearchWithDocumentNameInTheGrid_AfterDeleteCancel(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -462,7 +489,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 28, dataProvider = "MasterDocumentSearchData")
 	public void tcDeleteMasterDocument_AfterCancel(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -480,7 +507,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -494,8 +521,21 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopWindowMessage_DeletedSuccessfully_Validation() {
 
-	@Test(priority = 28)
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeletedSuccessfully_Validation Test===========");
+
+			masterdocuments.popWindowMessage_DeletedSuccessfully();
+
+			log.info("============= Finished tcPopWindowMessage_DeletedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeletedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeletedSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -509,7 +549,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_delete");
 		}
 	}
-	@Test(priority = 29, dataProvider = "MastersMasterDocumentData")
+	@Test(priority = 32, dataProvider = "MastersMasterDocumentData")
 	public void tcEnterMasterDocumentData_AfterDelete(String documentName, String documentDescription, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -527,7 +567,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 	
-	@Test(priority = 30)
+	@Test(priority = 33)
 	public void tcSaveDocumentInfoData_AfterDelete() {
 
 		try {
@@ -541,8 +581,22 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcSaveDocumentInfoData_AfterDelete");
 		}
 	}
+	@Test(priority = 34)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
-	@Test(priority = 31)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+
+			masterdocuments.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		}
+	}
+
+	@Test(priority = 35)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

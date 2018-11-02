@@ -419,8 +419,22 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 	 getScreenShot("tcSaveBatchWiseStudentMappInfoData");
 	 }
 	 }
-
 	@Test(priority = 23)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			batchwiseStudentmapp.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 24)
 	 public void tcClickOnOkSuccessButton() {
 	
 	 try {
@@ -434,7 +448,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 	 getScreenShot("tcClickOnOkSuccessButton");
 	 }
 	 }
-	@Test(priority = 24, dataProvider = "BatchNameSearchData")
+	@Test(priority = 25, dataProvider = "BatchNameSearchData")
 	public void tcSearchWithBatchNameIntheGrid(String batchName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -451,7 +465,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "BatchNameSearchData")
+	@Test(priority = 26, dataProvider = "BatchNameSearchData")
 	public void tcVerifyBatchNameUpdatedInTheGrid(String batchName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -469,7 +483,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void tcSelectRadioButtonTo_UpdateCreatedBatch() {
 
 		try {
@@ -484,7 +498,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "MastersUpdateBatchData")
+	@Test(priority = 28, dataProvider = "MastersUpdateBatchData")
 	public void tcFillBatchwiseStudentMappFormTo_UpdateBatch(String academicYr, String classBatch, String section,
 			String subject, String batchName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -503,7 +517,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "AcademicYrSearchData")
+	@Test(priority = 29, dataProvider = "AcademicYrSearchData")
 	public void tcSearchWithRegNoAcademicYearTo_SelectStudent_ToUpdate(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -520,7 +534,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcSaveBatchWiseStudentMappInfoData_Update() {
 
 		try {
@@ -533,8 +547,21 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 			getScreenShot("tcSaveBatchWiseStudentMappInfoData_Update");
 		}
 	}
+	@Test(priority = 31)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_Update() {
 
-	@Test(priority = 30)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_Update Test===========");
+
+			batchwiseStudentmapp.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_Update Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Update");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Update");
+		}
+	}
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_Update() {
 
 		try {

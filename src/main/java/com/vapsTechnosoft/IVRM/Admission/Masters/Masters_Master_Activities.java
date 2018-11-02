@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -22,8 +24,8 @@ import com.vapsTechnosoft.IVRM.testBase.TestBase;
  * @author vaps
  *
  */
-public class Masters_Master_Activities extends TestBase{
-	
+public class Masters_Master_Activities extends TestBase {
+
 	public static final Logger log = Logger.getLogger(Masters_Master_Activities.class.getName());
 
 	WebDriver driver;
@@ -41,7 +43,11 @@ public class Masters_Master_Activities extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[4]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[4]")
+	// WebElement btnMasters_MasterActivities;
+
+	@FindBy(xpath = "//a[@href='#/app/masteractivites/66']")
 	WebElement btnMasters_MasterActivities;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -82,8 +88,10 @@ public class Masters_Master_Activities extends TestBase{
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxMasterActivitiesList;
-	
-	
+
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Master_Activities(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -93,7 +101,7 @@ public class Masters_Master_Activities extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -108,17 +116,15 @@ public class Masters_Master_Activities extends TestBase{
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterActivities_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_MasterActivities);
 
-		btnMasters_MasterActivities.click();
+		clickOnButton(btnMasters_MasterActivities);
 		log("Clicked on master activity Button and object is:-" + btnMasters_MasterActivities.toString());
-		waitForElement(driver, 10, btnSave);
+
 	}
 
 	/**
@@ -130,7 +136,8 @@ public class Masters_Master_Activities extends TestBase{
 		try {
 			System.out.println(txtMasters_MasterActivitiesMsgDispaly.getText());
 			txtMasters_MasterActivitiesMsgDispaly.isDisplayed();
-			log("Master Activities page is dispalyed and object is:-" + txtMasters_MasterActivitiesMsgDispaly.toString());
+			log("Master Activities page is dispalyed and object is:-"
+					+ txtMasters_MasterActivitiesMsgDispaly.toString());
 			Thread.sleep(1000);
 			return true;
 
@@ -139,81 +146,86 @@ public class Masters_Master_Activities extends TestBase{
 		}
 	}
 
-	public void enterMasterActivitiesDetailsData(String activityName, String activityDescription) {
+	public void enterMasterActivitiesDetailsData(String activityName, String activityDescription) throws Exception {
 
-		input_ActivityName.clear();
-		input_ActivityName.sendKeys(activityName);
+		inputTextIntoInputField(input_ActivityName, activityName);
 		log("Entered Activity name " + activityName + " and object is:-" + input_ActivityName.toString());
 
-		input_ActivityDescription.clear();
-		input_ActivityDescription.sendKeys(activityDescription);
-		log("Entered activity description " + activityDescription + " and object is:-" + input_ActivityDescription.toString());
+		inputTextIntoInputField(input_ActivityDescription, activityDescription);
+		log("Entered activity description " + activityDescription + " and object is:-"
+				+ input_ActivityDescription.toString());
 
 	}
 
 	public void submitBlankMasterActivitiesForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Submit blank Master Activities form and object is:-" + btnSave.toString());
-		Thread.sleep(3000);
 	}
 
 	public void clearMasterActivitiesInfoData() throws Exception {
-		btnCancelClear.click();
-		log("Clicked on clear button to clear filled Master Activities info and object is:-" + btnCancelClear.toString());
-		Thread.sleep(15000);
+
+		clickOnButton(btnCancelClear);
+		log("Clicked on clear button to clear filled Master Activities info and object is:-"
+				+ btnCancelClear.toString());
+
 	}
 
 	public void saveMasterActivitiesInfoData() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on save button to save filled Master Activities info and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void searchWithMasterActivitiesNameInTheGrid(String activityName) {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(activityName);
+		inputTextIntoInputField(inputSearch, activityName);
 		log("Entered activity name to search: " + activityName + " and object is:-" + inputSearch.toString());
 	}
 
 	public void minimizeMasterActivities() throws Exception {
-		btnMin_MaxMasterActivity.click();
+
+		clickOnButton(btnMin_MaxMasterActivity);
 		log("clicked on Master Activities minimize button and object is:-" + btnMin_MaxMasterActivity.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterActivities() throws Exception {
-		btnMin_MaxMasterActivity.click();
+
+		clickOnButton(btnMin_MaxMasterActivity);
 		log("clicked on Master Activities maximize button and object is:-" + btnMin_MaxMasterActivity.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeMasterActivitiesList() throws Exception {
 
-		btnMin_MaxMasterActivitiesList.click();
+		clickOnButton(btnMin_MaxMasterActivitiesList);
 		log("Master Activity list table data minimize and object is:-" + btnMin_MaxMasterActivitiesList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterActivitiesList() throws Exception {
 
-		btnMin_MaxMasterActivitiesList.click();
+		clickOnButton(btnMin_MaxMasterActivitiesList);
 		log("Master Activity list table data maximized and object is:-" + btnMin_MaxMasterActivitiesList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void sortByActivityName() throws Exception {
-		btnSortByActivityName.click();
+
+		clickOnButton(btnSortByActivityName);
 		log("Sorted the record with Activity name and object is:-" + btnSortByActivityName.toString());
-		Thread.sleep(3000);
+
 	}
 
 	public void editMasterActivities(String activityName) {
@@ -221,29 +233,25 @@ public class Masters_Master_Activities extends TestBase{
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String activityname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Activity Name: " + activityname);
-			// Thread.sleep(2000);
-			try {
-				if (activityname.equalsIgnoreCase(activityName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String activityname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Activity Name: " + activityname);
+				// Thread.sleep(2000);
 
-					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[1]"))
-							.click();
-					Thread.sleep(5000);
-					log("Clicked on the edit link in the Master Activities list grid to edit record");
+				Thread.sleep(1000);
+				assertEquals(activityname, activityName);
 
-					break;
-				} else {
-					log("Activity Name not matched with the Master Activities list grid");
-					// Thread.sleep(1000);
-				}
+				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[1]")).click();
+				Thread.sleep(2000);
+				log("Clicked on the edit link in the Master Activities list grid to edit record");
 
-			} catch (Exception e) {
-				e.printStackTrace();
+				break;
+
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -252,13 +260,17 @@ public class Masters_Master_Activities extends TestBase{
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String activityname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Activity Name: " + activityname);
-			// Thread.sleep(2000);
-			try {
-				if (activityname.equalsIgnoreCase(activityName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String activityname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Activity Name: " + activityname);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
+				if (activityname.equals(activityName)) {
+					// assertEquals(activityname, activityName);
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[2]"))
 							.click();
@@ -266,30 +278,26 @@ public class Masters_Master_Activities extends TestBase{
 					log("Clicked on the delete link in the Master Activities list grid to delete record");
 
 					break;
-				} else {
-					log("Activity Name not matched with the Master Activities list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnCancel.click();
+		clickOnButton(btnCancel);
 		log("Clicked on cancel button and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+		Thread.sleep(2000);
 	}
 
 	public void verifyMasterActivitiesInTheGrid(String activityName) {
@@ -297,22 +305,45 @@ public class Masters_Master_Activities extends TestBase{
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String activityname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Activity Name: " + activityname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String activityname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Activity Name: " + activityname);
+				// Thread.sleep(2000);
+				if (activityname.equals(activityName)) {
+					// Assert.assertEquals(activityname, activityName);
+					log("Activity name created is updated in the record grid.");
+					break;
+				}
 
-				Assert.assertEquals(activityname, activityName);
-				log("Activity name created is updated in the record grid.");
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

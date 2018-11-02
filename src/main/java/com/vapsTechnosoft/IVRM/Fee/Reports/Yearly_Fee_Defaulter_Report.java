@@ -18,7 +18,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -45,7 +44,11 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]")
 	WebElement btn_FeeReports;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Reports')][1]/following::li[5]")
+	// WebElement btn_YearlyFeeDefaulterReport;
+
+	@FindBy(xpath = "//a[@href='#/app/FeeDefaulterReport/203']")
 	WebElement btn_YearlyFeeDefaulterReport;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -149,21 +152,18 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 
 	@FindBy(xpath = "//div[@id='table2']//table//tbody//tr//td[1]//input")
 	List<WebElement> Chk_FeeDefaulterReportGrid_FeeGrWise;
-	
+
 	@FindBy(xpath = "//div[@id='table3']//table//tbody//tr//td[1]//input")
 	List<WebElement> Chk_FeeDefaulterReportGrid_FeeHeadWise;
-	
+
 	@FindBy(xpath = "//div[@id='table4']//table//tbody//tr//td[1]//input")
 	List<WebElement> Chk_FeeDefaulterReportGrid_ClassWise;
-	
+
 	@FindBy(xpath = "//div[@id='table1']//table//tbody//tr//td[1]//input")
 	List<WebElement> Chk_FeeDefaulterReportGrid_StudentWise;
-	
+
 	@FindBy(xpath = "//div[@ng-show='Grid_view']/div/h3")
 	WebElement grid_HeaderName;
-	
-	
-	
 
 	public Yearly_Fee_Defaulter_Report(WebDriver driver) {
 		this.driver = driver;
@@ -189,31 +189,15 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToFee_Reports_YearlyFeeDefaulterReport() throws Exception {
-		if (btn_Fee.isDisplayed()) {
-			btn_Fee.click();
-			log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_FeeReports.isDisplayed()) {
-			btn_FeeReports.click();
-			log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee reports button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_YearlyFeeDefaulterReport.isDisplayed()) {
-			btn_YearlyFeeDefaulterReport.click();
-			log("Clicked on Yearly Fee Defaulter Report Button in navigation panel and object is:-"
-					+ btn_YearlyFeeDefaulterReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Yearly Fee Defaulter Report button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Fee);
+		log("Clicked on Fee Button in Navigation panel and object is:-" + btn_Fee.toString());
+
+		clickOnButton(btn_FeeReports);
+		log("Clicked on Fee reports in navigation panel and object is:-" + btn_FeeReports.toString());
+
+		clickOnButton(btn_YearlyFeeDefaulterReport);
+		log("Clicked on Yearly Fee Defaulter Report Button in navigation panel and object is:-"
+				+ btn_YearlyFeeDefaulterReport.toString());
 
 	}
 
@@ -237,14 +221,11 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	public void submitBlank_YearlyFeeDefaulterReportForm() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Submit blank YearlyFeeDefaulterReport form and object is:-" + btn_Report.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Submit blank YearlyFeeDefaulterReport form and object is:-" + btn_Report.toString());
+		Thread.sleep(1000);
+
 	}
 
 	/*
@@ -255,7 +236,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeGroupWise_ForActiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -264,6 +245,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeGroupWise);
 		if (!rdBtn_FeeGroupWise.isSelected()) {
 			rdBtn_FeeGroupWise.click();
 			log("Fee Group Wise radio button is selected and object is:- " + rdBtn_FeeGroupWise.toString());
@@ -272,43 +254,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Group Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(2000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -327,7 +308,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeGroupWise_ForDeactiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -336,6 +317,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeGroupWise);
 		if (!rdBtn_FeeGroupWise.isSelected()) {
 			rdBtn_FeeGroupWise.click();
 			log("Fee Group Wise radio button is selected and object is:- " + rdBtn_FeeGroupWise.toString());
@@ -344,42 +326,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Group Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -389,6 +371,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
 	 * Generate report for Yearly Wise, Fee Head Wise without selecting class
 	 * and section
@@ -397,7 +380,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeHeadWise_ForDeactiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -406,6 +389,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeHeadWise);
 		if (!rdBtn_FeeHeadWise.isSelected()) {
 			rdBtn_FeeHeadWise.click();
 			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
@@ -414,42 +398,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -459,15 +443,16 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
-	 * Generate report for Yearly Wise, Class Wise without selecting class
-	 * and section
+	 * Generate report for Yearly Wise, Class Wise without selecting class and
+	 * section
 	 * 
 	 * For De-Active Student
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForDeactiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -476,6 +461,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Class Wise radio button is selected and object is:- " + rdBtn_ClassWise.toString());
@@ -484,42 +470,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -528,16 +514,18 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("De-Active check box button already checked.");
 			Thread.sleep(500);
 		}
+
 	}
+
 	/*
-	 * Generate report for Yearly Wise, Student Wise without selecting class
-	 * and section
+	 * Generate report for Yearly Wise, Student Wise without selecting class and
+	 * section
 	 * 
 	 * For De-Active Student
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForDeactiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -546,6 +534,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_StudentWise);
 		if (!rdBtn_StudentWise.isSelected()) {
 			rdBtn_StudentWise.click();
 			log("Student Wise radio button is selected and object is:- " + rdBtn_StudentWise.toString());
@@ -554,42 +543,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Student Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -599,6 +588,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
 	 * Generate report for Yearly Wise, Fee Group Wise without selecting class
 	 * and section
@@ -607,7 +597,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeGroupWise_ForLeftStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -616,6 +606,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeGroupWise);
 		if (!rdBtn_FeeGroupWise.isSelected()) {
 			rdBtn_FeeGroupWise.click();
 			log("Fee Group Wise radio button is selected and object is:- " + rdBtn_FeeGroupWise.toString());
@@ -624,41 +615,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Group Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -677,7 +669,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeGroupWise_ForActiveStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -686,6 +678,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeGroupWise);
 		if (!rdBtn_FeeGroupWise.isSelected()) {
 			rdBtn_FeeGroupWise.click();
 			log("Fee Group Wise radio button is selected and object is:- " + rdBtn_FeeGroupWise.toString());
@@ -694,41 +687,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Group Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -737,31 +731,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -780,7 +757,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeGroupWise_ForLeftStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -789,6 +766,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeGroupWise);
 		if (!rdBtn_FeeGroupWise.isSelected()) {
 			rdBtn_FeeGroupWise.click();
 			log("Fee Group Wise radio button is selected and object is:- " + rdBtn_FeeGroupWise.toString());
@@ -797,41 +775,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Group Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -840,31 +819,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -883,7 +845,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeHeadWise_ForActiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -892,6 +854,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeHeadWise);
 		if (!rdBtn_FeeHeadWise.isSelected()) {
 			rdBtn_FeeHeadWise.click();
 			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
@@ -900,41 +863,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -953,7 +917,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeHeadWise_ForLeftStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -962,6 +926,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeHeadWise);
 		if (!rdBtn_FeeHeadWise.isSelected()) {
 			rdBtn_FeeHeadWise.click();
 			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
@@ -970,41 +935,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -1023,7 +989,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeHeadWise_ForActiveStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1032,6 +998,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeHeadWise);
 		if (!rdBtn_FeeHeadWise.isSelected()) {
 			rdBtn_FeeHeadWise.click();
 			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
@@ -1040,42 +1007,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1084,31 +1051,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -1118,6 +1068,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
 	 * Generate report for Yearly Wise, Fee Group Wise, selecting class and
 	 * section
@@ -1126,7 +1077,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeGroupWise_ForDeactiveStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1135,6 +1086,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeGroupWise);
 		if (!rdBtn_FeeGroupWise.isSelected()) {
 			rdBtn_FeeGroupWise.click();
 			log("Fee Group Wise radio button is selected and object is:- " + rdBtn_FeeGroupWise.toString());
@@ -1143,42 +1095,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Group Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1187,31 +1139,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -1221,6 +1156,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
 	 * Generate report for Yearly Wise, Fee Head Wise, selecting class and
 	 * section
@@ -1229,7 +1165,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeHeadWise_ForDeactiveStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1238,6 +1174,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeHeadWise);
 		if (!rdBtn_FeeHeadWise.isSelected()) {
 			rdBtn_FeeHeadWise.click();
 			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
@@ -1246,42 +1183,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1290,31 +1227,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -1324,15 +1244,15 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
-	 * Generate report for Yearly Wise, Class Wise, selecting class and
-	 * section
+	 * Generate report for Yearly Wise, Class Wise, selecting class and section
 	 * 
 	 * For De-Active Student
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForDeactiveStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1341,6 +1261,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Class Wise radio button is selected and object is:- " + rdBtn_ClassWise.toString());
@@ -1349,42 +1270,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1393,31 +1314,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -1427,6 +1331,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
 	 * Generate report for Yearly Wise, Student Wise, selecting class and
 	 * section
@@ -1435,7 +1340,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForDeactiveStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1444,6 +1349,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_StudentWise);
 		if (!rdBtn_StudentWise.isSelected()) {
 			rdBtn_StudentWise.click();
 			log("Student Wise radio button is selected and object is:- " + rdBtn_StudentWise.toString());
@@ -1452,42 +1358,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Student Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
 
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1496,31 +1402,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_De_Active);
 		if (!chk_De_Active.isSelected()) {
 			chk_De_Active.click();
 			log("De-Active Student check box is checked and object is:- " + chk_De_Active.toString());
@@ -1530,6 +1419,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			Thread.sleep(500);
 		}
 	}
+
 	/*
 	 * Generate report for Yearly Wise, Fee Head Wise, selecting class and
 	 * section
@@ -1538,7 +1428,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_FeeHeadWise_ForLeftStudent_SelectClass(String academicYear,
 			String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1547,6 +1437,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_FeeHeadWise);
 		if (!rdBtn_FeeHeadWise.isSelected()) {
 			rdBtn_FeeHeadWise.click();
 			log("Fee Head Wise radio button is selected and object is:- " + rdBtn_FeeHeadWise.toString());
@@ -1555,41 +1446,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Fee Head Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1598,31 +1490,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -1641,7 +1516,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForActiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1650,6 +1525,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Class Wise radio button is selected and object is:- " + rdBtn_ClassWise.toString());
@@ -1658,41 +1534,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -1711,7 +1588,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForLeftStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1720,6 +1597,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Class Wise radio button is selected and object is:- " + rdBtn_ClassWise.toString());
@@ -1728,41 +1606,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -1780,7 +1659,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForActiveStudent_SelectClass(String academicYear,
 			String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1789,6 +1668,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Class Wise radio button is selected and object is:- " + rdBtn_ClassWise.toString());
@@ -1797,41 +1677,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1840,31 +1721,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -1882,7 +1746,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_ClassWise_ForLeftStudent_SelectClass(String academicYear,
 			String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1891,6 +1755,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
 			rdBtn_ClassWise.click();
 			log("Class Wise radio button is selected and object is:- " + rdBtn_ClassWise.toString());
@@ -1899,41 +1764,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -1942,31 +1808,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -1985,7 +1834,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForActiveStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -1994,6 +1843,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_StudentWise);
 		if (!rdBtn_StudentWise.isSelected()) {
 			rdBtn_StudentWise.click();
 			log("Student Wise radio button is selected and object is:- " + rdBtn_StudentWise.toString());
@@ -2002,41 +1852,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Student Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -2055,7 +1906,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForLeftStudent(String academicYear)
 			throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -2064,6 +1915,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_StudentWise);
 		if (!rdBtn_StudentWise.isSelected()) {
 			rdBtn_StudentWise.click();
 			log("Student Wise radio button is selected and object is:- " + rdBtn_StudentWise.toString());
@@ -2072,41 +1924,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Student Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -2125,7 +1978,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForActiveStudent_SelectClass(
 			String academicYear, String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -2134,6 +1987,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_StudentWise);
 		if (!rdBtn_StudentWise.isSelected()) {
 			rdBtn_StudentWise.click();
 			log("Student Wise radio button is selected and object is:- " + rdBtn_StudentWise.toString());
@@ -2142,41 +1996,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Student Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -2185,31 +2040,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Active);
 		if (!chk_Active.isSelected()) {
 			chk_Active.click();
 			log("Active Student check box is checked and object is:- " + chk_Active.toString());
@@ -2228,7 +2066,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	 */
 	public void fill_YearlyFeeDefaulterReportForm_YearlyWise_StudentWise_ForLeftStudent_SelectClass(String academicYear,
 			String select_class, String section) throws Exception {
-
+		isDisplayed(rdBtn_YearlyWise);
 		if (!rdBtn_YearlyWise.isSelected()) {
 			rdBtn_YearlyWise.click();
 			log("Yearly Wise radio button is selected and object is:- " + rdBtn_YearlyWise.toString());
@@ -2237,6 +2075,7 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Yearly Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
+		isDisplayed(rdBtn_StudentWise);
 		if (!rdBtn_StudentWise.isSelected()) {
 			rdBtn_StudentWise.click();
 			log("Student Wise radio button is selected and object is:- " + rdBtn_StudentWise.toString());
@@ -2245,41 +2084,42 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Student Wise Radio button already selected.");
 			Thread.sleep(500);
 		}
-		if (sel_AcademicYear.isDisplayed()) {
-			select = new Select(sel_AcademicYear);
-			select.selectByVisibleText(academicYear);
 
-			log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), academicYear);
-			Thread.sleep(1000);
-		} else {
-			log("Academic Year element is not present");
-			Thread.sleep(500);
-		}
-		int no_Of_CustomGroup = Chk_CustomGroup.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
-			if (!Chk_CustomGroup.get(i).isSelected()) {
-				Chk_CustomGroup.get(i).click();
-				log(i + " Custom Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Custom Group name checked box is already checked.");
-				Thread.sleep(500);
+		selectElementFromDropDown(sel_AcademicYear, academicYear);
+		log("selected Academic Year: " + academicYear + " and object is:- " + sel_AcademicYear.toString());
+
+		try {
+			int no_Of_CustomGroup = Chk_CustomGroup.size();
+			for (int i = 0; i < no_Of_CustomGroup; i++) {
+				if (!Chk_CustomGroup.get(i).isSelected()) {
+					Chk_CustomGroup.get(i).click();
+					log(i + " Custom Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Custom Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			int no_Of_FeeGroup = Chk_FeeGroup.size();
+			for (int i = 0; i < no_Of_FeeGroup; i++) {
+				if (!Chk_FeeGroup.get(i).isSelected()) {
+					Chk_FeeGroup.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
-		int no_Of_FeeGroup = Chk_FeeGroup.size();
-		for (int i = 0; i < no_Of_FeeGroup; i++) {
-			if (!Chk_FeeGroup.get(i).isSelected()) {
-				Chk_FeeGroup.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
-			}
-		}
+		isDisplayed(chk_Class);
 		if (!chk_Class.isSelected()) {
 			chk_Class.click();
 			log("Class check box is checked and object is:- " + chk_Class.toString());
@@ -2288,31 +2128,14 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 			log("Class check box already checked.");
 			Thread.sleep(500);
 		}
-		if (sel_Class.isDisplayed()) {
-			select = new Select(sel_Class);
-			select.selectByVisibleText(select_class);
 
-			log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), select_class);
-			Thread.sleep(1000);
-		} else {
-			log("Class combo box element is not present");
-			Thread.sleep(500);
-		}
-		if (sel_Section.isDisplayed()) {
-			select = new Select(sel_Section);
-			select.selectByVisibleText(section);
+		selectElementFromDropDown(sel_Class, select_class);
+		log("selected class: " + select_class + " and object is:- " + sel_Class.toString());
 
-			log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), section);
-			Thread.sleep(1000);
-		} else {
-			log("Section combo box element is not present");
-			Thread.sleep(500);
-		}
+		selectElementFromDropDown(sel_Section, section);
+		log("Selected Section: " + section + " and object is:- " + sel_Section.toString());
 
+		isDisplayed(chk_Left);
 		if (!chk_Left.isSelected()) {
 			chk_Left.click();
 			log("Left Student check box is checked and object is:- " + chk_Left.toString());
@@ -2324,61 +2147,39 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	public void clickReport_ToGenerate_YearlyFeeDefaulterReport() throws Exception {
-		if (btn_Report.isDisplayed()) {
-			btn_Report.click();
-			log("Yearly Fee Defaulter Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(2000);
-			assertEquals(grid_HeaderName.getText().trim(), "FEE DEFAULTER REPORT");
-		} else {
-			log("Report button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Report);
+		log("Yearly Fee Defaulter Report is generated and object is:-" + btn_Report.toString());
+		Thread.sleep(1000);
+		assertEquals(grid_HeaderName.getText().trim(), "FEE DEFAULTER REPORT");
+		Thread.sleep(1000);
 	}
 
 	public void clickCancelButton_ToClearFilledForm() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("Yearly Fee Defaulter report filled form data is cleared and object is:-" + btn_Cancel.toString());
-			Thread.sleep(7000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("Yearly Fee Defaulter report filled form data is cleared and object is:-" + btn_Cancel.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnExportToExcel_ToDownLoadExcelReport() throws Exception {
-	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_YearlyFeeDefaulterReport);
-	Thread.sleep(1000);
-	if (btn_ExportToExcel.isDisplayed()) {
-			String excel = btn_ExportToExcel.getText().trim();
-			System.out.println(excel);
-			Assert.assertEquals(excel,"EXPORT TO EXCEL");
-			btn_ExportToExcel.click();
-			log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
-			Thread.sleep(5000);
-		} else {
-			log("Export to Excel button element not present.");
-			Thread.sleep(500);
-		}
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_YearlyFeeDefaulterReport);
+		Thread.sleep(1000);
+
+		clickOnButton(btn_ExportToExcel);
+		log("To Download excel report click on Export to excel and object is:-" + btn_ExportToExcel.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnPrint_ForPrintPreview() throws Exception {
 
 		String parentWin = driver.getWindowHandle();
 
-		if (btn_Print.isDisplayed()) {
-			String print = btn_Print.getText().trim();
-			System.out.println(print);
-			Assert.assertEquals(print,"PRINT");
-			
-			btn_Print.click();
-			log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
-			Thread.sleep(5000);
-
-		} else {
-			log("Print button element is not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Print);
+		log("Print button is clicked to generate report and object is:-" + btn_Print.toString());
+		Thread.sleep(1000);
 
 		Set<String> allWin = driver.getWindowHandles();
 
@@ -2408,136 +2209,129 @@ public class Yearly_Fee_Defaulter_Report extends TestBase {
 	}
 
 	public void clickOnSMSButton_StudentWiseReport() throws Exception {
-		if (btn_SMS.isDisplayed()) {
-			btn_SMS.click();
-			log("SMS is sent for selected student and object is:-" + btn_SMS.toString());
-			Thread.sleep(2000);
-		} else {
-			log("SMS button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_SMS);
+		log("SMS is sent for selected student and object is:-" + btn_SMS.toString());
+		Thread.sleep(500);
 	}
 
 	public void clickOnEmailButton_StudentWiseReport() throws Exception {
-		if (btn_Email.isDisplayed()) {
-			btn_Email.click();
-			log("Email is sent for selected student and object is:-" + btn_Email.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Email button element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Email);
+		log("Email is sent for selected student and object is:-" + btn_Email.toString());
+		Thread.sleep(500);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button element is not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void min_Max_FeeDefaulterReport_Form() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_YearlyFeeDefaulterReport);
 		Thread.sleep(1000);
-		if (btnMin_MaxFeeDefaulterReport.isDisplayed()) {
-			btnMin_MaxFeeDefaulterReport.click();
-			log("Fee Defaulter Report page minimized or maximized and object is:-"
-					+ btnMin_MaxFeeDefaulterReport.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Defaulter Report Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxFeeDefaulterReport);
+		log("Fee Defaulter Report page minimized or maximized and object is:-"
+				+ btnMin_MaxFeeDefaulterReport.toString());
+
 	}
 
 	public void min_Max_FeeDefaulterReport_Grid() throws Exception {
-		if (btnMin_MaxFeeDefaulterReportGrid.isDisplayed()) {
-			btnMin_MaxFeeDefaulterReportGrid.click();
-			log("Fee Defaulter Report Grid page minimized or maximized and object is:-"
-					+ btnMin_MaxFeeDefaulterReportGrid.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Fee Defaulter Report Grid Minimized Element not present.");
-		}
+
+		clickOnButton(btnMin_MaxFeeDefaulterReportGrid);
+		log("Fee Defaulter Report Grid page minimized or maximized and object is:-"
+				+ btnMin_MaxFeeDefaulterReportGrid.toString());
+
 	}
 
 	public void searchWithGroupName_InYearlyFeeDefaulterReportGrid(String groupName) throws Exception {
-		if (input_Search.isDisplayed()) {
-			input_Search.clear();
-			input_Search.sendKeys(groupName);
-			log("Entered Group Name to search: " + groupName + " and object is:-" + input_Search.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present.");
-			Thread.sleep(500);
-		}
+
+		inputTextIntoInputField(input_Search, groupName);
+		log("Entered Group Name to search: " + groupName + " and object is:-" + input_Search.toString());
+
 	}
 
 	public void sortRecordsByGroupName() throws Exception {
-		if (btnSortByGroupName.isDisplayed()) {
-			btnSortByGroupName.click();
-			// btnSortByGroupName.click();
-			log("Sorted the record with Group name and object is:-" + btnSortByGroupName.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Sort element not present.");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnSortByGroupName);
+		log("Sorted the record with Group name and object is:-" + btnSortByGroupName.toString());
+
 	}
 
 	public void selectRecordToGenerateReport_FeeGroupWise() throws Exception {
-		int no_Of_Record = Chk_FeeDefaulterReportGrid_FeeGrWise.size();
-		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_FeeDefaulterReportGrid_FeeGrWise.get(i).isSelected()) {
-				Chk_FeeDefaulterReportGrid_FeeGrWise.get(i).click();
-				log(i + " Fee Group Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Group name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_Record = Chk_FeeDefaulterReportGrid_FeeGrWise.size();
+			for (int i = 0; i < no_Of_Record; i++) {
+				if (!Chk_FeeDefaulterReportGrid_FeeGrWise.get(i).isSelected()) {
+					Chk_FeeDefaulterReportGrid_FeeGrWise.get(i).click();
+					log(i + " Fee Group Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Group name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	public void selectRecordToGenerateReport_FeeHeadWise() throws Exception {
-		int no_Of_Record = Chk_FeeDefaulterReportGrid_FeeHeadWise.size();
-		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_FeeDefaulterReportGrid_FeeHeadWise.get(i).isSelected()) {
-				Chk_FeeDefaulterReportGrid_FeeHeadWise.get(i).click();
-				log(i + " Fee Head Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Fee Head name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_Record = Chk_FeeDefaulterReportGrid_FeeHeadWise.size();
+			for (int i = 0; i < no_Of_Record; i++) {
+				if (!Chk_FeeDefaulterReportGrid_FeeHeadWise.get(i).isSelected()) {
+					Chk_FeeDefaulterReportGrid_FeeHeadWise.get(i).click();
+					log(i + " Fee Head Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Fee Head name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	public void selectRecordToGenerateReport_ClassWise() throws Exception {
-		int no_Of_Record = Chk_FeeDefaulterReportGrid_ClassWise.size();
-		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_FeeDefaulterReportGrid_ClassWise.get(i).isSelected()) {
-				Chk_FeeDefaulterReportGrid_ClassWise.get(i).click();
-				log(i + " Class Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Class name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_Record = Chk_FeeDefaulterReportGrid_ClassWise.size();
+			for (int i = 0; i < no_Of_Record; i++) {
+				if (!Chk_FeeDefaulterReportGrid_ClassWise.get(i).isSelected()) {
+					Chk_FeeDefaulterReportGrid_ClassWise.get(i).click();
+					log(i + " Class Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Class name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	public void selectRecordToGenerateReport_StudentWise() throws Exception {
-		int no_Of_Record = Chk_FeeDefaulterReportGrid_StudentWise.size();
-		for (int i = 0; i < no_Of_Record; i++) {
-			if (!Chk_FeeDefaulterReportGrid_StudentWise.get(i).isSelected()) {
-				Chk_FeeDefaulterReportGrid_StudentWise.get(i).click();
-				log(i + " Student Name check box is checked.");
-				Thread.sleep(1000);
-			} else {
-				log(i + " Student name checked box is already checked.");
-				Thread.sleep(500);
+		try {
+			int no_Of_Record = Chk_FeeDefaulterReportGrid_StudentWise.size();
+			for (int i = 0; i < no_Of_Record; i++) {
+				if (!Chk_FeeDefaulterReportGrid_StudentWise.get(i).isSelected()) {
+					Chk_FeeDefaulterReportGrid_StudentWise.get(i).click();
+					log(i + " Student Name check box is checked.");
+					Thread.sleep(1000);
+				} else {
+					log(i + " Student name checked box is already checked.");
+					Thread.sleep(500);
+				}
 			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

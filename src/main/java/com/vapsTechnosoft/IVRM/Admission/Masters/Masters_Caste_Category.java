@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -14,7 +16,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -41,7 +42,11 @@ public class Masters_Caste_Category extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[1]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[1]")
+	// WebElement btnMasters_CasteCategory;
+
+	@FindBy(xpath = "//a[@href='#/app/castecategory/70']")
 	WebElement btnMasters_CasteCategory;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -53,7 +58,7 @@ public class Masters_Caste_Category extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Cancel')]/parent::button")
 	WebElement btnCancelClear;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[1]")
+	@FindBy(xpath = "//input[@name='Category']")
 	WebElement input_CasteCategoryName;
 
 	@FindBy(xpath = "//textarea[@name='Description']")
@@ -83,6 +88,15 @@ public class Masters_Caste_Category extends TestBase {
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxCastecategoryList;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
+	@FindBy(xpath = "//table/thead/tr/th")
+	List<WebElement> casteCategoryGrid_Th;
+
+	@FindBy(xpath = "//table/tbody/tr[1]/td")
+	List<WebElement> casteCategoryGrid_Tr1;
+
 	public Masters_Caste_Category(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -92,7 +106,7 @@ public class Masters_Caste_Category extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -107,17 +121,17 @@ public class Masters_Caste_Category extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_CasteCategory_BGHS() throws Exception {
-		btn_Admission.click();
+
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_CasteCategory);
 
-		btnMasters_CasteCategory.click();
+		clickOnButton(btnMasters_CasteCategory);
 		log("Clicked on Caste Category Button and object is:-" + btnMasters_CasteCategory.toString());
-		waitForElement(driver, 10, btnSave);
+		// Thread.sleep(5000);
+
 	}
 
 	/**
@@ -139,15 +153,14 @@ public class Masters_Caste_Category extends TestBase {
 		}
 	}
 
-	public void enterMasterCasteCategoryDetailsData(String casteCategoryName, String casteCategoryDescription) {
+	public void enterMasterCasteCategoryDetailsData(String casteCategoryName, String casteCategoryDescription)
+			throws Exception {
 
-		input_CasteCategoryName.clear();
-		input_CasteCategoryName.sendKeys(casteCategoryName);
+		inputTextIntoInputField(input_CasteCategoryName, casteCategoryName);
 		log("Entered caste category name " + casteCategoryName + " and object is:-"
 				+ input_CasteCategoryName.toString());
 
-		input_CategoryDescription.clear();
-		input_CategoryDescription.sendKeys(casteCategoryDescription);
+		inputTextIntoInputField(input_CategoryDescription, casteCategoryDescription);
 		log("Entered caste category description " + casteCategoryDescription + " and object is:-"
 				+ input_CategoryDescription.toString());
 
@@ -155,69 +168,75 @@ public class Masters_Caste_Category extends TestBase {
 
 	public void submitBlankMasterCasteCategoryForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Submit blank master caste category form and object is:-" + btnSave.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	public void clearCasteCategoryInfoData() throws Exception {
-		btnCancelClear.click();
+
+		clickOnButton(btnCancelClear);
 		log("Clicked on clear button to clear filled Caste Category info and object is:-" + btnCancelClear.toString());
-		Thread.sleep(15000);
+		Thread.sleep(1000);
 	}
 
 	public void saveCasteCategoryInfoData() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on save button to save filled Caste Category info and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void searchWithCasteCategoryNameInTheGrid(String casteCategoryName) {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(casteCategoryName);
+		inputTextIntoInputField(inputSearch, casteCategoryName);
 		log("Enterd Caste Category name to search: " + casteCategoryName + " and object is:-" + inputSearch.toString());
 	}
 
 	public void minimizeMasterCasteCategory() throws Exception {
-		btnMin_MaxMasterCasteCategory.click();
+
+		clickOnButton(btnMin_MaxMasterCasteCategory);
 		log("clicked on master Caste Category minimize button and object is:-"
 				+ btnMin_MaxMasterCasteCategory.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterCasteCategory() throws Exception {
-		btnMin_MaxMasterCasteCategory.click();
+
+		clickOnButton(btnMin_MaxMasterCasteCategory);
 		log("clicked on master Caste Category maximize button and object is:-"
 				+ btnMin_MaxMasterCasteCategory.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeCasteCategoryList() throws Exception {
 
-		btnMin_MaxCastecategoryList.click();
+		clickOnButton(btnMin_MaxCastecategoryList);
 		log("Master Caste Category list table data minimize and object is:-" + btnMin_MaxCastecategoryList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeCasteCategoryList() throws Exception {
 
-		btnMin_MaxCastecategoryList.click();
+		clickOnButton(btnMin_MaxCastecategoryList);
 		log("Master Caste Category list table data maximized and object is:-" + btnMin_MaxCastecategoryList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void sortByCasteCategoryName() throws Exception {
-		btnSortByCasteCategoryName.click();
+
+		clickOnButton(btnSortByCasteCategoryName);
 		log("Sorted the record with Caste Category name and object is:-" + btnSortByCasteCategoryName.toString());
-		Thread.sleep(3000);
+
 	}
 
 	public void editMasterCasteCategory(String casteCategoryName) {
@@ -225,30 +244,30 @@ public class Masters_Caste_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String castecategoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Caste Category Name: " + castecategoryname);
-			// Thread.sleep(2000);
-			try {
-				if (castecategoryname.equalsIgnoreCase(casteCategoryName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String castecategoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Caste Category Name: " + castecategoryname);
+				// Thread.sleep(2000);
+				if (castecategoryname.equals(casteCategoryName)) {
+					// assertEquals(castecategoryname, casteCategoryName);
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[1]"))
 							.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the edit link in the Caste Category list grid to edit record");
 
 					break;
-				} else {
-					log("Caste Category Name not matched with the Caste Category list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+
 	}
 
 	public void deleteMasterCasteCategory(String casteCategoryName) {
@@ -256,44 +275,44 @@ public class Masters_Caste_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String castecategoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Caste Category Name: " + castecategoryname);
-			// Thread.sleep(2000);
-			try {
-				if (castecategoryname.equalsIgnoreCase(casteCategoryName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String castecategoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Caste Category Name: " + castecategoryname);
+				// Thread.sleep(2000);
+
+				if (castecategoryname.equals(casteCategoryName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[2]"))
 							.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the delete link in the Caste Category list grid to delete record");
 
 					break;
-				} else {
-					log("Caste Category Name not matched with the Caste Category list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		Thread.sleep(2000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnCancel.click();
+		clickOnButton(btnCancel);
 		log("Clicked on cancel button and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void verifyCasteCategoryNameInTheGrid(String casteCategoryName) {
@@ -301,21 +320,58 @@ public class Masters_Caste_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String castecategoryname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Caste Category Name: " + castecategoryname);
-			// Thread.sleep(2000);
-			try {
 
-				Assert.assertEquals(castecategoryname, casteCategoryName);
-				log("Caste Category name created is updated in the record grid.");
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String castecategoryname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Caste Category Name: " + castecategoryname);
 
-			} catch (Exception e) {
-				e.printStackTrace();
+				Thread.sleep(1000);
+				if (castecategoryname.equals(casteCategoryName)) {
+					// Assert.assertEquals(castecategoryname,
+					// casteCategoryName);
+					log("Caste Category name created is updated in the record grid.");
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void validateGrid_ColumnHeader() throws Exception {
+		verifyColumnHeaderWithExcelData(casteCategoryGrid_Th, "AdmissionMasterGridHeader.xlsx", "CasteCategoryHeader",
+				"Masters_Admission");
+	}
+
+	public void validateGrid_RowValue() throws Exception {
+		verifyRowValuesWithExcelData(casteCategoryGrid_Tr1, "AdmissionMasterGridHeader.xlsx", "CasteCategoryData",
+				"Masters_Admission");
 	}
 
 }

@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -22,7 +24,7 @@ import com.vapsTechnosoft.IVRM.testBase.TestBase;
  * @author vaps
  *
  */
-public class Masters_Master_Documents extends TestBase{
+public class Masters_Master_Documents extends TestBase {
 
 	public static final Logger log = Logger.getLogger(Masters_Master_Documents.class.getName());
 
@@ -41,7 +43,11 @@ public class Masters_Master_Documents extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[13]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[13]")
+	// WebElement btnMasters_masterDocument;
+
+	@FindBy(xpath = "//a[@href='#/app/masterdocument/38']")
 	WebElement btnMasters_masterDocument;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -53,7 +59,7 @@ public class Masters_Master_Documents extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Cancel')]/parent::button")
 	WebElement btnCancelClear;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[1]")
+	@FindBy(xpath = "//input[@name='name']")
 	WebElement input_DocumentName;
 
 	@FindBy(xpath = "//textarea[@name='description']")
@@ -61,7 +67,7 @@ public class Masters_Master_Documents extends TestBase{
 
 	@FindBy(xpath = "//label[contains(text(),' Document Is Mandatory Or Not :')]/following-sibling::input")
 	WebElement chkMandatoryDoc;
-	
+
 	@FindBy(xpath = "(//body[@id='style-4']//div/input)[4]")
 	WebElement inputSearch;
 
@@ -86,6 +92,9 @@ public class Masters_Master_Documents extends TestBase{
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxMasterDocumentsList;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Master_Documents(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -95,7 +104,7 @@ public class Masters_Master_Documents extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -110,17 +119,14 @@ public class Masters_Master_Documents extends TestBase{
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterDocument_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_masterDocument);
 
-		btnMasters_masterDocument.click();
+		clickOnButton(btnMasters_masterDocument);
 		log("Clicked on master document Button and object is:-" + btnMasters_masterDocument.toString());
-		waitForElement(driver, 10, btnSave);
 	}
 
 	/**
@@ -140,92 +146,97 @@ public class Masters_Master_Documents extends TestBase{
 			return false;
 		}
 	}
-	
-	public void enterMasterDocumentData(String documentName, String documentDescription) {
 
-		input_DocumentName.clear();
-		input_DocumentName.sendKeys(documentName);
+	public void enterMasterDocumentData(String documentName, String documentDescription) throws Exception {
+		inputTextIntoInputField(input_DocumentName, documentName);
 		log("Entered document name " + documentName + " and object is:-" + input_DocumentName.toString());
 
-		input_DocumentDescription.clear();
-		input_DocumentDescription.sendKeys(documentDescription);
+		inputTextIntoInputField(input_DocumentDescription, documentDescription);
 		log("Entered document discription " + documentDescription + " and object is:-"
 				+ input_DocumentDescription.toString());
-		
+		isDisplayed(chkMandatoryDoc);
 		if (!chkMandatoryDoc.isSelected()) {
 			chkMandatoryDoc.click();
+			Thread.sleep(1000);
 			log("Selected document as mandatory check box and object is:-" + chkMandatoryDoc.toString());
 		} else {
 			log("Mandatory document check box is already selected and object is:-" + chkMandatoryDoc.toString());
-
+			Thread.sleep(500);
 		}
 
 	}
-	
+
 	public void submitBlankMasterDocumentForm() throws Exception {
 
-		btnSave.click();
+		clickOnButton(btnSave);
 		log("Submit blank master Document form and object is:-" + btnSave.toString());
-		Thread.sleep(2000);
+
 	}
 
-
 	public void clearDocumentInfoData() throws Exception {
-		btnCancelClear.click();
+
+		clickOnButton(btnCancelClear);
 		log("Clicked on cancel button to clear filled Document info and object is:-" + btnCancelClear.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void saveDocumentInfoData() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on save button to save filled Document info and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void minimizeMasterDocument() throws Exception {
-		btnMin_MaxMasterDocument.click();
+
+		clickOnButton(btnMin_MaxMasterDocument);
 		log("clicked on master Document minimize button and object is:-" + btnMin_MaxMasterDocument.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterDocument() throws Exception {
-		btnMin_MaxMasterDocument.click();
+
+		clickOnButton(btnMin_MaxMasterDocument);
 		log("clicked on master Document maximize button and object is:-" + btnMin_MaxMasterDocument.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeMasterDocumentList() throws Exception {
 
-		btnMin_MaxMasterDocumentsList.click();
+		clickOnButton(btnMin_MaxMasterDocumentsList);
 		log("Master Document list table data minimize and object is:-" + btnMin_MaxMasterDocumentsList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterDocumentList() throws Exception {
 
-		btnMin_MaxMasterDocumentsList.click();
-		log("Master Document list table table data maximized and object is:-" + btnMin_MaxMasterDocumentsList.toString());
-		Thread.sleep(2000);
+		clickOnButton(btnMin_MaxMasterDocumentsList);
+		log("Master Document list table table data maximized and object is:-"
+				+ btnMin_MaxMasterDocumentsList.toString());
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void sortByDocumentName() throws Exception {
-		btnSortByDocumentName.click();
+
+		clickOnButton(btnSortByDocumentName);
 		log("Sorted the record with Document name and object is:-" + btnSortByDocumentName.toString());
-		Thread.sleep(3000);
+
 	}
 
-	public void searchWithDocumentNameInTheGrid(String documentName) {
+	public void searchWithDocumentNameInTheGrid(String documentName) throws Exception {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(documentName);
+		inputTextIntoInputField(inputSearch, documentName);
 		log("Entered Document name to search: " + documentName + " and object is:-" + inputSearch.toString());
+
 	}
 
 	public void verifyDocumentNameInTheGrid(String documentName) {
@@ -234,97 +245,134 @@ public class Masters_Master_Documents extends TestBase{
 		System.out.println(rows);
 		// Thread.sleep(2000);
 		for (int i = 1; i <= rows; i++) {
-			String documentname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Document Name: " + documentname);
-			// Thread.sleep(2000);
-			
+
 			try {
-				
+				String documentname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Document Name: " + documentname);
+				// Thread.sleep(2000);
+
+				Thread.sleep(1000);
 				Assert.assertEquals(documentname, documentName);
 				log("Document name created is updated in the record grid.");
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
 		}
 	}
-	
+
 	public void editMasterDocument(String documentName) {
 
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String documentname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Document Name: " + documentname);
-			// Thread.sleep(2000);
-			try {
-				if (documentname.equalsIgnoreCase(documentName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
+				String documentname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Document Name: " + documentname);
+				// Thread.sleep(2000);
 
+				if (documentname.equalsIgnoreCase(documentName)) {
+					Thread.sleep(1000);
+					// Assert.assertEquals(documentname, documentName);
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[1]"))
 							.click();
 					Thread.sleep(5000);
 					log("Clicked on the edit link in the master document list grid to edit record");
 
 					break;
-				} else {
-					log("Document Name not matched with the master document list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 	public void deleteMasterDocument(String documentName) {
 
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String documentname = driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]"))
-					.getText();
-			System.out.println("Document Name: " + documentname);
-			// Thread.sleep(2000);
-			try {
-				if (documentname.equalsIgnoreCase(documentName)) {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String documentname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Document Name: " + documentname);
+				// Thread.sleep(2000);
+
+				if (documentname.equalsIgnoreCase(documentName)) {
+					// Thread.sleep(1000);
+					// Assert.assertEquals(documentname, documentName);
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[2]"))
 							.click();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					log("Clicked on the delete link in the master document list grid to delete record");
 
 					break;
-				} else {
-					log("Document Name not matched with the master document list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnCancel.click();
+		clickOnButton(btnCancel);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on cancel button and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+
 	}
-	
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_DeletedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deleted Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

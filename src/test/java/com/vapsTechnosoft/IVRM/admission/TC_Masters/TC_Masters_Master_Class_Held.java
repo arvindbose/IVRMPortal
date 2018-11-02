@@ -302,8 +302,21 @@ public class TC_Masters_Master_Class_Held extends TestBase{
 			getScreenShot("tcSubmitFilledMasterClassHeldForm");
 		}
 	}
-
 	@Test(priority = 16)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			master_classHeld.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 17)
 	public void tcClickOnOkSuccessButton() {
 
 		try {

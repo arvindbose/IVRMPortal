@@ -31,13 +31,13 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
 	WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[11]")
+	@FindBy(xpath = "//a[@href='#/app/MasterFineSlab/90']")
 	WebElement btnMasterFineSlab;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -88,7 +88,7 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -104,17 +104,16 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToMasters_masterFineSlab() throws Exception {
-		btnFee.click();
+		
+		clickOnButton(btnFee);
 		log("Clicked on Fee Button and object is:-" + btnFee.toString());
-		Thread.sleep(1000);
-
-		feeMasters.click();
+	
+		clickOnButton(feeMasters);
 		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-		Thread.sleep(1000);
-
-		btnMasterFineSlab.click();
+	
+		clickOnButton(btnMasterFineSlab);
 		log("Clicked on master fine slab Button and object is:-" + btnMasterFineSlab.toString());
-		Thread.sleep(1000);
+	
 	}
 
 	/**
@@ -147,30 +146,20 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 
 	public void mastersFineSlabTypeFromDayAndToDay_Between(String fineslabType, String fromDay, String toDay)
 			throws Exception {
-		if (selType.isDisplayed()) {
-			Select select = new Select(selType);
-			select.selectByVisibleText(fineslabType);
+		
+			selectElementFromDropDown(selType, fineslabType);
 			log("selected fine slab  type:-" + fineslabType + " and object is " + selType.toString());
-			Thread.sleep(1000);
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), fineslabType);
-			Thread.sleep(1000);
-		} else {
-			log("fine slab element not present");
-			Thread.sleep(500);
-		}
 
-		txtFromDay.sendKeys(fromDay);
+		inputTextIntoInputField(txtFromDay, fromDay);
 		log("entered From Day:-" + fromDay + " and object is " + txtFromDay.toString());
-		Thread.sleep(1000);
-
-		txtToDay.sendKeys(toDay);
+	
+		inputTextIntoInputField(txtToDay, toDay);
 		log("entered To Day:-" + toDay + " and object is " + txtToDay.toString());
-		Thread.sleep(1000);
-
+		
 		String ecsflag = "ECS Flag";
 		try {
 			Assert.assertEquals(textECSFlag.getText(), ecsflag);
+			isDisplayed(textECSFlag);
 			if (!chkECSFlag.isSelected()) {
 				chkECSFlag.click();
 				log("Ecs flag check box is checked and object is:-" + chkECSFlag.toString());
@@ -194,26 +183,18 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	 */
 
 	public void mastersFineSlabTypeFromDayAndToDay_GreaterThan(String fineslabType, String fromDay) throws Exception {
-		if (selType.isDisplayed()) {
-			select = new Select(selType);
-			select.selectByVisibleText(fineslabType);
+		
+			selectElementFromDropDown(selType, fineslabType);
 			log("selected fine slab  type:-" + fineslabType + " and object is " + selType.toString());
-			Thread.sleep(1000);
-			option = select.getFirstSelectedOption();
-			Assert.assertEquals(option.getText().trim(), fineslabType);
-			Thread.sleep(1000);
-		} else {
-			log("fine slab element not present");
-			Thread.sleep(500);
-		}
-
-		txtFromDay.sendKeys(fromDay);
+	
+		inputTextIntoInputField(txtFromDay, fromDay);
 		log("entered From Day:-" + fromDay + " and object is " + txtFromDay.toString());
-		Thread.sleep(1000);
+
 
 		String ecsflag = "ECS Flag";
 		try {
 			Assert.assertEquals(textECSFlag.getText(), ecsflag);
+			isDisplayed(chkECSFlag);
 			if (!chkECSFlag.isSelected()) {
 				chkECSFlag.click();
 				log("Ecs flag check box is checked and object is:-" + chkECSFlag.toString());
@@ -239,26 +220,17 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	 */
 
 	public void mastersFineSlabTypeFromDayAndToDay_LessThan(String fineslabType, String fromDay) throws Exception {
-		if(selType.isDisplayed()){
-		Select select = new Select(selType);
-		select.selectByVisibleText(fineslabType);
+	
+		selectElementFromDropDown(selType, fineslabType);
 		log("selected fine slab  type:-" + fineslabType + " and object is " + selType.toString());
-		Thread.sleep(1000);
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), fineslabType);
-		Thread.sleep(1000);
-	} else {
-		log("fine slab element not present");
-		Thread.sleep(500);
-	}
-
-		txtFromDay.sendKeys(fromDay);
+		
+		inputTextIntoInputField(txtFromDay, fromDay);
 		log("entered From Day:-" + fromDay + " and object is " + txtFromDay.toString());
-		Thread.sleep(1000);
-
+		
 		String ecsflag = "ECS Flag";
 		try {
 			Assert.assertEquals(textECSFlag.getText(), ecsflag);
+			isDisplayed(chkECSFlag);
 			if (!chkECSFlag.isSelected()) {
 				chkECSFlag.click();
 				log("Ecs flag check box is checked and object is:-" + chkECSFlag.toString());
@@ -274,9 +246,10 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	}
 
 	public void clickOnSaveButton() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(15000);
+		Thread.sleep(2000);
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -293,9 +266,10 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		btnOkonSuccess.click();
+		
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	/**
@@ -305,8 +279,8 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	 * @throws Exception
 	 */
 	public void searchByToDayInGrid(String toDay) throws Exception {
-		inputSearch.clear();
-		inputSearch.sendKeys(toDay);
+		
+		inputTextIntoInputField(inputSearch, toDay);
 		log("Entered master fine slab to day:" + toDay + " and object is:-" + inputSearch.toString());
 		Thread.sleep(1000);
 	}
@@ -322,18 +296,21 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(1000);
+		try {
 		for (int i = 1; i <= rows; i++) {
 			String to_day = driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[4]"))
 					.getText().trim();
 			System.out.println(to_day);
 			Thread.sleep(1000);
-			try {
+			if(to_day.equals(toDay)){
 				Assert.assertEquals(to_day, toDay);
 				log("Master fine slab to day is updated in the grid:" + to_day);
 				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			break;
+		}
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -348,20 +325,25 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(1000);
+		try {
 		for (int i = 1; i <= rows; i++) {
 			String to_day = driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[4]"))
 					.getText().trim();
 			System.out.println(to_day);
 			Thread.sleep(1000);
-			try {
+	
+				if(to_day.equals(toDay)){
 				Assert.assertEquals(to_day, toDay);
 				driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[6]/a")).click();
 				log("Clicked on edit link for corresponding master fine slab in grid");
 
 				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+				}
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -373,9 +355,7 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	 */
 	public void editMasterFineSlab(String fromDay) throws InterruptedException {
 
-		txtFromDay.clear();
-		Thread.sleep(500);
-		txtFromDay.sendKeys(fromDay);
+		inputTextIntoInputField(txtFromDay, fromDay);
 		log("entered From Day:-" + fromDay + " and object is " + txtFromDay.toString());
 		Thread.sleep(1000);
 	}
@@ -391,20 +371,24 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(1000);
+		try {
 		for (int i = 1; i <= rows; i++) {
 			String to_day = driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[4]"))
 					.getText().trim();
 			System.out.println(to_day);
 			Thread.sleep(1000);
-			try {
+		
+				if(to_day.equals(toDay)){
 				Assert.assertEquals(to_day, toDay);
 				driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[6]/span")).click();
 				log("Clicked on deactivation link in master fine slab grid");
-
 				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+				break;
+				}
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -415,9 +399,10 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	 */
 
 	public void confirmationForDeactivation() throws Exception {
-		btnPopUpYesDeactivateit.click();
+	
+		clickOnButton(btnPopUpYesDeactivateit);
 		log("Clicked Yes Deactivate it button and object is:" + btnPopUpYesDeactivateit.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 	/**
@@ -431,20 +416,22 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(1000);
+		try {
 		for (int i = 1; i <= rows; i++) {
 			String to_day = driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[4]"))
 					.getText().trim();
 			System.out.println(to_day);
 			Thread.sleep(1000);
-			try {
+			if(to_day.equals(toDay)){
 				Assert.assertEquals(to_day, toDay);
 				driver.findElement(By.xpath("//body[@id='style-4']//div/table/tbody/tr[" + i + "]/td[6]/span")).click();
 				log("Clicked on activation link in master fine slab grid");
-
 				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
+				break;
 			}
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -454,9 +441,10 @@ public class Masters_Master_Fine_Slab_With_ECSFLAG extends TestBase {
 	 * @throws Exception
 	 */
 	public void confirmationForActivation() throws Exception {
-		btnPopUpYesDeactivateit.click();
+
+		clickOnButton(btnPopUpYesDeactivateit);
 		log("Clicked on Yes activate it button and object is:" + btnPopUpYesDeactivateit.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 }

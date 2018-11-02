@@ -131,15 +131,15 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		try {
 			log.info("============= Strting tcOralTestScheduleInfo Test===========");
 
-			oralTestSchedule.oralTestScheduleInfo(scheduleName, scheduleDate, remarks, supervisor, skill,
-					FromSchTimeHr, FromSchTimeMin, ToSchTimeHr, ToSchTimeMin, minutes, nosOfStudents);
+			oralTestSchedule.oralTestScheduleInfo(scheduleName, scheduleDate, remarks, supervisor, skill, FromSchTimeHr,
+					FromSchTimeMin, ToSchTimeHr, ToSchTimeMin, minutes, nosOfStudents);
 			log.info("============= Finished tcOralTestScheduleInfo Test===========");
 			getScreenShot("tcOralTestScheduleInfo");
 		} catch (Exception e) {
 			getScreenShot("tcOralTestScheduleInfo");
 		}
 	}
-	
+
 	@Test(priority = 6)
 	public void tcValidateSelectedStuFromStuList_withSelectedStuToCart() {
 
@@ -154,7 +154,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcValidateSelectedStuFromStuList_withSelectedStuToCart");
 		}
 	}
-	
+
 	@Test(priority = 7)
 	public void tcMinimize_OralTestSchedule() {
 
@@ -169,6 +169,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMinimize_OralTestSchedule");
 		}
 	}
+
 	@Test(priority = 8)
 	public void tcSortWithStudentNameInStudentList() {
 
@@ -183,6 +184,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcSortWithStudentNameInStudentList");
 		}
 	}
+
 	@Test(priority = 9)
 	public void tcSortWithRegistrationNumberInStudentList() {
 
@@ -197,6 +199,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcSortWithRegistrationNumberInStudentList");
 		}
 	}
+
 	@Test(priority = 10)
 	public void tcSortWithGenderInStudentList() {
 
@@ -211,6 +214,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcSortWithGenderInStudentList");
 		}
 	}
+
 	@Test(priority = 11)
 	public void tcMinimize_StudentList() {
 
@@ -225,6 +229,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMinimize_StudentList");
 		}
 	}
+
 	@Test(priority = 12)
 	public void tcMinimize_SelectedStudentToCart() {
 
@@ -239,6 +244,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMinimize_SelectedStudentToCart");
 		}
 	}
+
 	@Test(priority = 13)
 	public void tcSortWithScheduleNameInScheduleList() {
 
@@ -253,6 +259,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcSortWithScheduleNameInScheduleList");
 		}
 	}
+
 	@Test(priority = 14)
 	public void tcSortWithScheduleDateInScheduleList() {
 
@@ -267,6 +274,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcSortWithScheduleDateInScheduleList");
 		}
 	}
+
 	@Test(priority = 15)
 	public void tcMinimize_OralTestScheduleList_GridView() {
 
@@ -281,6 +289,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMinimize_OralTestScheduleList_GridView");
 		}
 	}
+
 	@Test(priority = 16)
 	public void tcMaximize_OralTestScheduleList_GridView() {
 
@@ -295,6 +304,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMaximize_OralTestScheduleList_GridView");
 		}
 	}
+
 	@Test(priority = 17)
 	public void tcMaximize_SelectedStudentToCart() {
 
@@ -309,6 +319,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMaximize_SelectedStudentToCart");
 		}
 	}
+
 	@Test(priority = 18)
 	public void tcMaximize_StudentList() {
 
@@ -323,6 +334,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMaximize_StudentList");
 		}
 	}
+
 	@Test(priority = 19)
 	public void tcMaximize_OralTestSchedule() {
 
@@ -337,7 +349,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 			getScreenShot("tcMaximize_OralTestSchedule");
 		}
 	}
-	
+
 	@Test(priority = 20)
 	public void tcClickOnResetButton_ToClearFilledData() {
 
@@ -363,23 +375,26 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		try {
 			log.info("============= Strting tcOralTestScheduleInfo_AfterReset Test===========");
 
-			oralTestSchedule.oralTestScheduleInfo(scheduleName, scheduleDate, remarks, supervisor, skill,
-					FromSchTimeHr, FromSchTimeMin, ToSchTimeHr, ToSchTimeMin, minutes, nosOfStudents);
+			oralTestSchedule.oralTestScheduleInfo(scheduleName, scheduleDate, remarks, supervisor, skill, FromSchTimeHr,
+					FromSchTimeMin, ToSchTimeHr, ToSchTimeMin, minutes, nosOfStudents);
 			log.info("============= Finished tcOralTestScheduleInfo_AfterReset Test===========");
 			getScreenShot("tcOralTestScheduleInfo_AfterReset");
 		} catch (Exception e) {
 			getScreenShot("tcOralTestScheduleInfo_AfterReset");
 		}
 	}
+
 	@Test(priority = 22)
 	public void tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterReset() {
 
 		try {
-			log.info("============= Strting tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterReset Test===========");
+			log.info(
+					"============= Strting tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterReset Test===========");
 
 			oralTestSchedule.validateSelectedStuFromStuList_withSelectedStuToCart();
 
-			log.info("============= Finished tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterReset Test===========");
+			log.info(
+					"============= Finished tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterReset Test===========");
 			getScreenShot("tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterReset");
 		} catch (Exception e) {
 			getScreenShot("tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterReset");
@@ -401,6 +416,20 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 	}
 
 	@Test(priority = 24)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			oralTestSchedule.popWindowMessage_SubmitSuccessfully();
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 25)
 	public void tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule() {
 
 		try {
@@ -414,7 +443,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcValidationOf12HourTimeFormatScheduleList() {
 
 		try {
@@ -428,7 +457,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void tcValidationOf24HourTimeFormatScheduleList() {
 
 		try {
@@ -442,9 +471,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	
-
-	@Test(priority = 27, dataProvider = "SearchByScheduleNameData")
+	@Test(priority = 28, dataProvider = "SearchByScheduleNameData")
 	public void tcSearchWithScheduleNameInScheduleList(String scheduleName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -461,7 +488,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "SearchByScheduleNameData")
+	@Test(priority = 29, dataProvider = "SearchByScheduleNameData")
 	public void tcVerifyscheduleNameInOralTestScheduleListGrid(String scheduleName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -478,7 +505,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "SearchByScheduleNameData")
+	@Test(priority = 30, dataProvider = "SearchByScheduleNameData")
 	public void tcDeleteScheduledOralTest(String scheduleName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -495,7 +522,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 31)
 	public void tcCancellationOfDelete() {
 
 		try {
@@ -509,7 +536,21 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
+	public void tcPopUpWindowMessage_DeletedCancelled_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeletedCancelled_Validation Test===========");
+
+			oralTestSchedule.popWindowMessage_DeletedCancelled();
+			log.info("============= Finished tcPopUpWindowMessage_DeletedCancelled_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeletedCancelled_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeletedCancelled_Validation");
+		}
+	}
+
+	@Test(priority = 33)
 	public void tcClickOnSuccessOkBtn_DeleteCancel() {
 		try {
 			log.info("============= Strting tcClickOnSuccessOkBtn_DeleteCancel Test===========");
@@ -522,7 +563,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "SearchByScheduleNameData")
+	@Test(priority = 34, dataProvider = "SearchByScheduleNameData")
 	public void tcDeleteScheduledOralTestForYesDeleteIT(String scheduleName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -539,7 +580,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 36)
 	public void tcYesDeleteItButtonClick() {
 		try {
 			log.info("============= Strting tcCancellationOfDelete Test===========");
@@ -552,7 +593,21 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 37)
+	public void tcPopUpWindowMessage_DeletedSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeletedSuccessfully_Validation Test===========");
+
+			oralTestSchedule.popWindowMessage_DeletedSuccessfully();
+			log.info("============= Finished tcPopUpWindowMessage_DeletedSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeletedSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeletedSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 38)
 	public void tcClickOnSuccessOkBtn_DeleteYes() {
 
 		try {
@@ -566,7 +621,7 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "BGHSOralTestScheduleData")
+	@Test(priority = 39, dataProvider = "BGHSOralTestScheduleData")
 	public void tcOralTestScheduleInfo_AfterDelete(String scheduleName, String scheduleDate, String remarks,
 			String supervisor, String skill, String FromSchTimeHr, String FromSchTimeMin, String ToSchTimeHr,
 			String ToSchTimeMin, String minutes, String nosOfStudents, String runMode) {
@@ -576,30 +631,33 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		try {
 			log.info("============= Strting tcOralTestScheduleInfo_AfterDelete Test===========");
 
-			oralTestSchedule.oralTestScheduleInfo(scheduleName, scheduleDate, remarks, supervisor, skill,
-					FromSchTimeHr, FromSchTimeMin, ToSchTimeHr, ToSchTimeMin, minutes, nosOfStudents);
+			oralTestSchedule.oralTestScheduleInfo(scheduleName, scheduleDate, remarks, supervisor, skill, FromSchTimeHr,
+					FromSchTimeMin, ToSchTimeHr, ToSchTimeMin, minutes, nosOfStudents);
 			log.info("============= Finished tcOralTestScheduleInfo_AfterDelete Test===========");
 			getScreenShot("tcOralTestScheduleInfo_AfterDelete");
 		} catch (Exception e) {
 			getScreenShot("tcOralTestScheduleInfo_AfterDelete");
 		}
 	}
-	@Test(priority = 36)
+
+	@Test(priority = 40)
 	public void tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterDelete() {
 
 		try {
-			log.info("============= Strting tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterDelete Test===========");
+			log.info(
+					"============= Strting tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterDelete Test===========");
 
 			oralTestSchedule.validateSelectedStuFromStuList_withSelectedStuToCart();
 
-			log.info("============= Finished tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterDelete Test===========");
+			log.info(
+					"============= Finished tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterDelete Test===========");
 			getScreenShot("tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterDelete");
 		} catch (Exception e) {
 			getScreenShot("tcValidateSelectedStuFromStuList_withSelectedStuToCart_AfterDelete");
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 41)
 	public void tcClickOnSaveButton_ToSubmitOralTestSchedule_AfterDelete() {
 
 		try {
@@ -613,14 +671,32 @@ public class TC_InterviewSchedule_OralTest_Schedule_AutoSelect12Hr extends TestB
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 42)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
+
+		try {
+			log.info(
+					"============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+
+			oralTestSchedule.popWindowMessage_SubmitSuccessfully();
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		}
+	}
+
+	@Test(priority = 43)
 	public void tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule_AfterDelete() {
 
 		try {
-			log.info("============= Strting tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule_AfterDelete Test===========");
+			log.info(
+					"============= Strting tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule_AfterDelete Test===========");
 
 			oralTestSchedule.clickOnSuccessOkBtn();
-			log.info("============= Finished tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule_AfterDelete Test===========");
+			log.info(
+					"============= Finished tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule_AfterDelete Test===========");
 			getScreenShot("tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule_AfterDelete");
 		} catch (Exception e) {
 			getScreenShot("tcClickOnSuccessOkBtn_AutoSelectOralTestSchedule_AfterDelete");

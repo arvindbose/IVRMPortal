@@ -46,6 +46,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 	}
 
 	@DataProvider(name = "MastersAcdemicYearSearchData")
+
 	public String[][] getTestAcaYrData() {
 		String[][] testRecordsAcaYr = getData("BGHS_AdmissionData.xlsx", "BGHS_SearchAcademic_Year");
 		return testRecordsAcaYr;
@@ -87,8 +88,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		try {
 			log.info("============= Strting tcHomeButtonValidation Test===========");
 
-			boolean status = academicYear.verifyHomeButton();
-			Assert.assertEquals(status, true);
+			academicYear.verifyHomeButton();
 			log.info("============= Finished tcHomeButtonValidation Test===========");
 			getScreenShot("tcHomeButtonValidation");
 		} catch (Exception e) {
@@ -141,45 +141,45 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 6, dataProvider = "Masters_AcdemicYearData")
-	public void tcFillAcademicYearDetailsForm(String FromAcademicYr,String academicYrOrder,String instituition, String runMode) {
-
-		if (runMode.equalsIgnoreCase("BGHS")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcFillAcademicYearDetailsForm Test===========");
-
-			academicYear.fillAcademicYearDetailsForm(FromAcademicYr,academicYrOrder,instituition);
-
-			log.info("============= Finished tcFillAcademicYearDetailsForm Test===========");
-			getScreenShot("tcFillAcademicYearDetailsForm");
-		} catch (Exception e) {
-			getScreenShot("tcFillAcademicYearDetailsForm");
-		}
-	}
-
-//
-//	@Test(priority = 6, dataProvider = "MastersAcdemicYearData")
-//	public void tcEnterMastersAcademicYearDetails(String FromAcademicYr, String startdate, String end_date,
-//			String preAdmStartDate, String preAdmEndDate, String academicYrOrder, String cutoffDate,
-//			String instituition, String runMode) {
+//	@Test(priority = 6, dataProvider = "Masters_AcdemicYearData")
+//	public void tcFillAcademicYearDetailsForm(String FromAcademicYr,String academicYrOrder,String instituition, String runMode) {
 //
 //		if (runMode.equalsIgnoreCase("BGHS")) {
 //			throw new SkipException("user marked this record as no run");
 //		}
 //		try {
-//			log.info("============= Strting tcEnterMastersAcademicYearDetails Test===========");
+//			log.info("============= Strting tcFillAcademicYearDetailsForm Test===========");
 //
-//			academicYear.enterMastersAcademicYearDetails(FromAcademicYr, startdate, end_date, preAdmStartDate,
-//					preAdmEndDate, academicYrOrder, cutoffDate, instituition);
+//			academicYear.fillAcademicYearDetailsForm(FromAcademicYr,academicYrOrder,instituition);
 //
-//			log.info("============= Finished tcEnterMastersAcademicYearDetails Test===========");
-//			getScreenShot("tcEnterMastersAcademicYearDetails");
+//			log.info("============= Finished tcFillAcademicYearDetailsForm Test===========");
+//			getScreenShot("tcFillAcademicYearDetailsForm");
 //		} catch (Exception e) {
-//			getScreenShot("tcEnterMastersAcademicYearDetails");
+//			getScreenShot("tcFillAcademicYearDetailsForm");
 //		}
 //	}
+
+
+	@Test(priority = 6, dataProvider = "MastersAcdemicYearData")
+	public void tcEnterMastersAcademicYearDetails(String FromAcademicYr, String startdate, String end_date,
+			String preAdmStartDate, String preAdmEndDate, String academicYrOrder, String cutoffDate,
+			String instituition, String runMode) {
+
+		if (runMode.equalsIgnoreCase("BGHS")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcEnterMastersAcademicYearDetails Test===========");
+
+			academicYear.enterMastersAcademicYearDetails(FromAcademicYr, startdate, end_date, preAdmStartDate,
+					preAdmEndDate, academicYrOrder, cutoffDate, instituition);
+
+			log.info("============= Finished tcEnterMastersAcademicYearDetails Test===========");
+			getScreenShot("tcEnterMastersAcademicYearDetails");
+		} catch (Exception e) {
+			getScreenShot("tcEnterMastersAcademicYearDetails");
+		}
+	}
 
 	
 	@Test(priority = 7)
@@ -272,44 +272,44 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 			getScreenShot("tcClickOnClearButton_ToClearedFilledData");
 		}
 	}
-	@Test(priority = 13, dataProvider = "Masters_AcdemicYearData")
-	public void tcFillAcademicYearDetailsForm_AfterClear(String FromAcademicYr,String academicYrOrder,String instituition, String runMode) {
-
-		if (runMode.equalsIgnoreCase("BGHS")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcFillAcademicYearDetailsForm_AfterClear Test===========");
-
-			academicYear.fillAcademicYearDetailsForm(FromAcademicYr,academicYrOrder,instituition);
-
-			log.info("============= Finished tcFillAcademicYearDetailsForm_AfterClear Test===========");
-			getScreenShot("tcFillAcademicYearDetailsForm_AfterClear");
-		} catch (Exception e) {
-			getScreenShot("tcFillAcademicYearDetailsForm_AfterClear");
-		}
-	}
-	
-//	@Test(priority = 13, dataProvider = "MastersAcdemicYearData")
-//	public void tcEnterMastersAcademicYearDetails_AfterClear(String FromAcademicYr, String startdate, String end_date,
-//			String preAdmStartDate, String preAdmEndDate, String academicYrOrder, String cutoffDate,
-//			String instituition, String runMode) {
+//	@Test(priority = 13, dataProvider = "Masters_AcdemicYearData")
+//	public void tcFillAcademicYearDetailsForm_AfterClear(String FromAcademicYr,String academicYrOrder,String instituition, String runMode) {
 //
 //		if (runMode.equalsIgnoreCase("BGHS")) {
 //			throw new SkipException("user marked this record as no run");
 //		}
 //		try {
-//			log.info("============= Strting tcEnterMastersAcademicYearDetails_AfterClear Test===========");
+//			log.info("============= Strting tcFillAcademicYearDetailsForm_AfterClear Test===========");
 //
-//			academicYear.enterMastersAcademicYearDetails(FromAcademicYr, startdate, end_date, preAdmStartDate,
-//					preAdmEndDate, academicYrOrder, cutoffDate, instituition);
+//			academicYear.fillAcademicYearDetailsForm(FromAcademicYr,academicYrOrder,instituition);
 //
-//			log.info("============= Finished tcEnterMastersAcademicYearDetails_AfterClear Test===========");
-//			getScreenShot("tcEnterMastersAcademicYearDetails_AfterClear");
+//			log.info("============= Finished tcFillAcademicYearDetailsForm_AfterClear Test===========");
+//			getScreenShot("tcFillAcademicYearDetailsForm_AfterClear");
 //		} catch (Exception e) {
-//			getScreenShot("tcEnterMastersAcademicYearDetails_AfterClear");
+//			getScreenShot("tcFillAcademicYearDetailsForm_AfterClear");
 //		}
 //	}
+	
+	@Test(priority = 13, dataProvider = "MastersAcdemicYearData")
+	public void tcEnterMastersAcademicYearDetails_AfterClear(String FromAcademicYr, String startdate, String end_date,
+			String preAdmStartDate, String preAdmEndDate, String academicYrOrder, String cutoffDate,
+			String instituition, String runMode) {
+
+		if (runMode.equalsIgnoreCase("BGHS")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcEnterMastersAcademicYearDetails_AfterClear Test===========");
+
+			academicYear.enterMastersAcademicYearDetails(FromAcademicYr, startdate, end_date, preAdmStartDate,
+					preAdmEndDate, academicYrOrder, cutoffDate, instituition);
+
+			log.info("============= Finished tcEnterMastersAcademicYearDetails_AfterClear Test===========");
+			getScreenShot("tcEnterMastersAcademicYearDetails_AfterClear");
+		} catch (Exception e) {
+			getScreenShot("tcEnterMastersAcademicYearDetails_AfterClear");
+		}
+	}
 
 	@Test(priority = 14)
 	public void tcClickOnSaveButton() {
@@ -325,8 +325,22 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 			getScreenShot("tcClickOnSaveButton");
 		}
 	}
-
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			academicYear.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -341,7 +355,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 16, dataProvider = "MastersAcdemicYearSearchData")
+	@Test(priority = 17, dataProvider = "MastersAcdemicYearSearchData")
 	public void tcSearchWithAcademicYear(String academicyear, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -359,7 +373,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "MastersAcdemicYearSearchData")
+	@Test(priority = 18, dataProvider = "MastersAcdemicYearSearchData")
 	public void tcEditAcademicYears(String academicyear, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -377,7 +391,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void tcClickOnSaveButton_edit() {
 
 		try {
@@ -391,8 +405,22 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 			getScreenShot("tcClickOnSaveButton_edit");
 		}
 	}
+	@Test(priority = 20)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 19)
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			academicYear.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+
+	@Test(priority = 21)
 	public void tcClickOnOkSuccessButton_edit() {
 
 		try {
@@ -407,7 +435,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 20, dataProvider = "MastersAcdemicYearSearchData")
+	@Test(priority = 22, dataProvider = "MastersAcdemicYearSearchData")
 	public void tcSearchWithAcademicYear_ForDeactivate(String academicyear, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -426,7 +454,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 	}
 
 	
-	@Test(priority = 21, dataProvider = "MastersAcdemicYearSearchData")
+	@Test(priority = 23, dataProvider = "MastersAcdemicYearSearchData")
 	public void tcDeactivateAcademicYears(String academicyear, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -444,7 +472,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 22)
+	@Test(priority = 24)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -459,7 +487,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -474,7 +502,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 24, dataProvider = "MastersAcdemicYearSearchData")
+	@Test(priority = 26, dataProvider = "MastersAcdemicYearSearchData")
 	public void tcDeactivateAcademicYears_AfterCancel(String academicyear, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -492,7 +520,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 25)
+	@Test(priority = 27)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -507,7 +535,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 28)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -522,7 +550,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 27, dataProvider = "MastersAcdemicYearSearchData")
+	@Test(priority = 29, dataProvider = "MastersAcdemicYearSearchData")
 	public void tcActivateAcademicYears(String academicyear, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -539,7 +567,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 			getScreenShot("tcActivateAcademicYears");
 		}
 	}
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -554,7 +582,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 29)
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -569,7 +597,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 30, dataProvider = "MastersAcdemicYearSearchData")
+	@Test(priority = 32, dataProvider = "MastersAcdemicYearSearchData")
 	public void tcActivateAcademicYears_AfterCancel(String academicyear, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -587,7 +615,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 31)
+	@Test(priority = 33)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -602,7 +630,7 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 34)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {
@@ -617,119 +645,119 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 		}
 	}
 	
-	@Test(priority = 33, dataProvider = "MastersAcdemicYearSearchData")
-	public void tcDeleteteAcademicYears(String academicyear, String runMode) {
-
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcDeleteteAcademicYears Test===========");
-
-			academicYear.deleteAcademicYears(academicyear);
-
-			log.info("============= Finished tcDeleteteAcademicYears Test===========");
-			getScreenShot("tcDeleteteAcademicYears");
-		} catch (Exception e) {
-			getScreenShot("tcDeleteteAcademicYears");
-		}
-	}
-	
-	@Test(priority = 34)
-	public void tcClickOnCancelButton_delete() {
-
-		try {
-			log.info("============= Strting tcClickOnCancelButton_delete Test===========");
-
-			academicYear.clickOnCancelButton();
-
-			log.info("============= Finished tcClickOnCancelButton_delete Test===========");
-			getScreenShot("tcClickOnCancelButton_delete");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnCancelButton_delete");
-		}
-	}
-	
-	@Test(priority = 35)
-	public void tcClickOnOkSuccessButton_deleteCancel() {
-
-		try {
-			log.info("============= Strting tcClickOnOkSuccessButton_deleteCancel Test===========");
-
-			academicYear.clickOnOkSuccessButton();
-
-			log.info("============= Finished tcClickOnOkSuccessButton_deleteCancel Test===========");
-			getScreenShot("tcClickOnOkSuccessButton_deleteCancel");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnOkSuccessButton_deleteCancel");
-		}
-	}
-	
-	@Test(priority = 36, dataProvider = "MastersAcdemicYearSearchData")
-	public void tcDeleteteAcademicYears_AfterCancel(String academicyear, String runMode) {
-
-		if (runMode.equalsIgnoreCase("n")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcDeleteteAcademicYears_AfterCancel Test===========");
-
-			academicYear.deleteAcademicYears(academicyear);
-
-			log.info("============= Finished tcDeleteteAcademicYears_AfterCancel Test===========");
-			getScreenShot("tcDeleteteAcademicYears_AfterCancel");
-		} catch (Exception e) {
-			getScreenShot("tcDeleteteAcademicYears_AfterCancel");
-		}
-	}
-	
-	@Test(priority = 37)
-	public void tcYesDeleteOrDeactivateOrActivateIt_Delete() {
-
-		try {
-			log.info("============= Strting tcYesDeleteOrDeactivateOrActivateIt_Delete Test===========");
-
-			academicYear.yesDeleteOrDeactivateOrActivateIt();
-
-			log.info("============= Finished tcYesDeleteOrDeactivateOrActivateIt_Delete Test===========");
-			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Delete");
-		} catch (Exception e) {
-			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Delete");
-		}
-	}
-
-	@Test(priority = 38)
-	public void tcClickOnOkSuccessButton_delete() {
-
-		try {
-			log.info("============= Strting tcClickOnOkSuccessButton_delete Test===========");
-
-			academicYear.clickOnOkSuccessButton();
-
-			log.info("============= Finished tcClickOnOkSuccessButton_delete Test===========");
-			getScreenShot("tcClickOnOkSuccessButton_delete");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnOkSuccessButton_delete");
-		}
-	}
-	@Test(priority = 39, dataProvider = "Masters_AcdemicYearData")
-	public void tcFillAcademicYearDetailsForm_AfterDelete(String FromAcademicYr,String academicYrOrder,String instituition, String runMode) {
-
-		if (runMode.equalsIgnoreCase("BGHS")) {
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcFillAcademicYearDetailsForm_AfterDelete Test===========");
-
-			academicYear.fillAcademicYearDetailsForm(FromAcademicYr,academicYrOrder,instituition);
-
-			log.info("============= Finished tcFillAcademicYearDetailsForm_AfterDelete Test===========");
-			getScreenShot("tcFillAcademicYearDetailsForm_AfterDelete");
-		} catch (Exception e) {
-			getScreenShot("tcFillAcademicYearDetailsForm_AfterDelete");
-		}
-	}
-//	@Test(priority = 39, dataProvider = "MastersAcdemicYearData")
+//	@Test(priority = 35, dataProvider = "MastersAcdemicYearSearchData")
+//	public void tcDeleteteAcademicYears(String academicyear, String runMode) {
+//
+//		if (runMode.equalsIgnoreCase("n")) {
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info("============= Strting tcDeleteteAcademicYears Test===========");
+//
+//			academicYear.deleteAcademicYears(academicyear);
+//
+//			log.info("============= Finished tcDeleteteAcademicYears Test===========");
+//			getScreenShot("tcDeleteteAcademicYears");
+//		} catch (Exception e) {
+//			getScreenShot("tcDeleteteAcademicYears");
+//		}
+//	}
+//	
+//	@Test(priority = 36)
+//	public void tcClickOnCancelButton_delete() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnCancelButton_delete Test===========");
+//
+//			academicYear.clickOnCancelButton();
+//
+//			log.info("============= Finished tcClickOnCancelButton_delete Test===========");
+//			getScreenShot("tcClickOnCancelButton_delete");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnCancelButton_delete");
+//		}
+//	}
+//	
+//	@Test(priority = 37)
+//	public void tcClickOnOkSuccessButton_deleteCancel() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnOkSuccessButton_deleteCancel Test===========");
+//
+//			academicYear.clickOnOkSuccessButton();
+//
+//			log.info("============= Finished tcClickOnOkSuccessButton_deleteCancel Test===========");
+//			getScreenShot("tcClickOnOkSuccessButton_deleteCancel");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnOkSuccessButton_deleteCancel");
+//		}
+//	}
+//	
+//	@Test(priority = 38, dataProvider = "MastersAcdemicYearSearchData")
+//	public void tcDeleteteAcademicYears_AfterCancel(String academicyear, String runMode) {
+//
+//		if (runMode.equalsIgnoreCase("n")) {
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info("============= Strting tcDeleteteAcademicYears_AfterCancel Test===========");
+//
+//			academicYear.deleteAcademicYears(academicyear);
+//
+//			log.info("============= Finished tcDeleteteAcademicYears_AfterCancel Test===========");
+//			getScreenShot("tcDeleteteAcademicYears_AfterCancel");
+//		} catch (Exception e) {
+//			getScreenShot("tcDeleteteAcademicYears_AfterCancel");
+//		}
+//	}
+//	
+//	@Test(priority = 39)
+//	public void tcYesDeleteOrDeactivateOrActivateIt_Delete() {
+//
+//		try {
+//			log.info("============= Strting tcYesDeleteOrDeactivateOrActivateIt_Delete Test===========");
+//
+//			academicYear.yesDeleteOrDeactivateOrActivateIt();
+//
+//			log.info("============= Finished tcYesDeleteOrDeactivateOrActivateIt_Delete Test===========");
+//			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Delete");
+//		} catch (Exception e) {
+//			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Delete");
+//		}
+//	}
+//
+//	@Test(priority = 40)
+//	public void tcClickOnOkSuccessButton_delete() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnOkSuccessButton_delete Test===========");
+//
+//			academicYear.clickOnOkSuccessButton();
+//
+//			log.info("============= Finished tcClickOnOkSuccessButton_delete Test===========");
+//			getScreenShot("tcClickOnOkSuccessButton_delete");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnOkSuccessButton_delete");
+//		}
+//	}
+////	@Test(priority = 41, dataProvider = "Masters_AcdemicYearData")
+////	public void tcFillAcademicYearDetailsForm_AfterDelete(String FromAcademicYr,String academicYrOrder,String instituition, String runMode) {
+////
+////		if (runMode.equalsIgnoreCase("BGHS")) {
+////			throw new SkipException("user marked this record as no run");
+////		}
+////		try {
+////			log.info("============= Strting tcFillAcademicYearDetailsForm_AfterDelete Test===========");
+////
+////			academicYear.fillAcademicYearDetailsForm(FromAcademicYr,academicYrOrder,instituition);
+////
+////			log.info("============= Finished tcFillAcademicYearDetailsForm_AfterDelete Test===========");
+////			getScreenShot("tcFillAcademicYearDetailsForm_AfterDelete");
+////		} catch (Exception e) {
+////			getScreenShot("tcFillAcademicYearDetailsForm_AfterDelete");
+////		}
+////	}
+//	@Test(priority = 42, dataProvider = "MastersAcdemicYearData")
 //	public void tcEnterMastersAcademicYearDetails_AfterDelete(String FromAcademicYr, String startdate, String end_date,
 //			String preAdmStartDate, String preAdmEndDate, String academicYrOrder, String cutoffDate,
 //			String instituition, String runMode) {
@@ -749,36 +777,36 @@ public class TC_Masters_Academic_Year_Staging extends TestBase {
 //			getScreenShot("tcEnterMastersAcademicYearDetails_AfterDelete");
 //		}
 //	}
-
-	@Test(priority = 40)
-	public void tcClickOnSaveButton_AfterDelete() {
-
-		try {
-			log.info("============= Strting tcClickOnSaveButton_AfterDelete Test===========");
-
-			academicYear.clickOnSaveButton();
-
-			log.info("============= Finished tcClickOnSaveButton_AfterDelete Test===========");
-			getScreenShot("tcClickOnSaveButton_AfterDelete");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButton_AfterDelete");
-		}
-	}
-
-	@Test(priority = 41)
-	public void tcClickOnOkSuccessButton_AfterDelete() {
-
-		try {
-			log.info("============= Strting tcClickOnOkSuccessButton_AfterDelete Test===========");
-
-			academicYear.clickOnOkSuccessButton();
-
-			log.info("============= Finished tcClickOnOkSuccessButton_AfterDelete Test===========");
-			getScreenShot("tcClickOnOkSuccessButton_AfterDelete");
-		} catch (Exception e) {
-			getScreenShot("tcClickOnOkSuccessButton_AfterDelete");
-		}
-	}
+//
+//	@Test(priority = 43)
+//	public void tcClickOnSaveButton_AfterDelete() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnSaveButton_AfterDelete Test===========");
+//
+//			academicYear.clickOnSaveButton();
+//
+//			log.info("============= Finished tcClickOnSaveButton_AfterDelete Test===========");
+//			getScreenShot("tcClickOnSaveButton_AfterDelete");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnSaveButton_AfterDelete");
+//		}
+//	}
+//
+//	@Test(priority = 44)
+//	public void tcClickOnOkSuccessButton_AfterDelete() {
+//
+//		try {
+//			log.info("============= Strting tcClickOnOkSuccessButton_AfterDelete Test===========");
+//
+//			academicYear.clickOnOkSuccessButton();
+//
+//			log.info("============= Finished tcClickOnOkSuccessButton_AfterDelete Test===========");
+//			getScreenShot("tcClickOnOkSuccessButton_AfterDelete");
+//		} catch (Exception e) {
+//			getScreenShot("tcClickOnOkSuccessButton_AfterDelete");
+//		}
+//	}
 	
 	
 	

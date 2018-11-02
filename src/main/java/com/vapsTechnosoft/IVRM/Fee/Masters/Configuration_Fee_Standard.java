@@ -30,13 +30,17 @@ public class Configuration_Fee_Standard extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Configuration')][1]")
 	WebElement feeConfiguration;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Configuration')][1]/following::li[1]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Configuration')][1]/following::li[1]")
+	// WebElement btnFeeStandard;
+
+	@FindBy(xpath = "//a[@href='#/app/MasterFeeConfig/78']")
 	WebElement btnFeeStandard;
 
-	@FindBy(xpath = "//label[@class='radio-inline']/child::span[contains(text(),'Fee Group')]/preceding-sibling::input")
+	@FindBy(xpath = "//span[text()='Fee Group']/preceding-sibling::input")
 	WebElement btnFeeGroup;
 
-	@FindBy(xpath = "//label[@class='radio-inline']/child::span[contains(text(),'Fee Term')]/preceding-sibling::input")
+	@FindBy(xpath = "//span[text()='Fee Term']/preceding-sibling::input")
 	WebElement btnFeeTerm;
 
 	@FindBy(xpath = "//span[contains(text(),'Concession Process')]")
@@ -64,12 +68,12 @@ public class Configuration_Fee_Standard extends TestBase {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public boolean verifyHomeButton() {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -79,124 +83,81 @@ public class Configuration_Fee_Standard extends TestBase {
 	}
 
 	public void nevigateTofeeStandard() throws Exception {
-		if(btnFee.isDisplayed()){
-		btnFee.click();
+
+		clickOnButton(btnFee);
 		log("Clicked on Fee Button and object is:-" + btnFee.toString());
-		Thread.sleep(1000);
-		}
-		else{
-			log("Fee button element is not present.");
-			Thread.sleep(500);
-		}
-		if(feeConfiguration.isDisplayed()){
-		feeConfiguration.click();
+
+		clickOnButton(feeConfiguration);
 		log("Clicked on Fee Configuration Button and object is:-" + feeConfiguration.toString());
-		Thread.sleep(1000);
-		}
-		else{
-			log("fee Configuration button element is not present.");
-			Thread.sleep(500);
-		}
-		if(btnFeeStandard.isDisplayed()){
-		btnFeeStandard.click();
+
+		clickOnButton(btnFeeStandard);
 		log("Clicked on Fee Standard Button and object is:-" + btnFeeStandard.toString());
-		Thread.sleep(1000);
-		}
-		else{
-			log("Fee Standard button element is not present.");
-			Thread.sleep(500);
-		}
 	}
 
 	public void selectFeeGroupRadioBtn() throws Exception {
-		
-		if(!btnFeeGroup.isSelected()){
-			btnFeeGroup.click();
+
+		clickOnButton(btnFeeGroup);
 		log("Fee Group radio Button is selected and object is:-" + btnFeeGroup.toString());
-		Thread.sleep(1000);
-		}
-		else{
-			log("Fee Group radio Button is already selected " + btnFeeGroup.toString());
-			Thread.sleep(1000);
-		}
+
 	}
 
 	public void selectConcessionProcess() throws Exception {
-		
-		if(!chkFeeConcessionProc.isSelected()){
+		isDisplayed(chkFeeConcessionProc);
+		if (!chkFeeConcessionProc.isSelected()) {
 			chkFeeConcessionProc.click();
-		log("Concession Process check box is selected and object is:-" + chkFeeConcessionProc.toString());
-		Thread.sleep(1000);
-		}
-		else{
-			log("Concession Process check box is already selected (OR) element not present and object is:-" + chkFeeConcessionProc.toString());
+			log("Concession Process check box is selected and object is:-" + chkFeeConcessionProc.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Concession Process check box is already selected (OR) element not present and object is:-"
+					+ chkFeeConcessionProc.toString());
 			Thread.sleep(500);
 		}
 	}
 
 	public void selectCardTypeAndEnterCharges() throws Exception {
-		
-			if(!chkCardtype.isSelected()){
+		isDisplayed(chkCardtype);
+		if (!chkCardtype.isSelected()) {
 			chkCardtype.click();
-		log("Card type check box is selected and object is:-" + chkCardtype.toString());
-		Thread.sleep(1000);
-			}
-			else{
-				log("Card type check box is already selected and object is:-" + chkCardtype.toString());
-				Thread.sleep(500);
-			}
-	
-		if(txtEnterDebitCardCharge.isDisplayed()){
-		txtEnterDebitCardCharge.sendKeys("10");
+			log("Card type check box is selected and object is:-" + chkCardtype.toString());
+			Thread.sleep(1000);
+		} else {
+			log("Card type check box is already selected and object is:-" + chkCardtype.toString());
+			Thread.sleep(500);
+		}
+
+		inputTextIntoInputField(txtEnterDebitCardCharge, "10");
 		log("entered debit card transaction charge:-" + "10" + " and object is " + txtEnterDebitCardCharge.toString());
-		Thread.sleep(1000);
+
+		inputTextIntoInputField(txtEnterCreditCardCharge, "15");
+		log("entered credit card transaction charge:-" + "15" + " and object is "
+				+ txtEnterCreditCardCharge.toString());
+
 	}
-	else{
-		log("Debit card transaction charge element is not present.");
-		Thread.sleep(500);
+
+	public void clickedOnSaveButton() throws Exception {
+
+		clickOnButton(btnSave);
+		log("clicked on save button and object is:-" + btnSave.toString());
+
 	}
-		if(txtEnterCreditCardCharge.isDisplayed()){
-		txtEnterCreditCardCharge.sendKeys("15");
-		log("entered credit card transaction charge:-" + "15" + " and object is " + txtEnterCreditCardCharge.toString());
-		Thread.sleep(1000);
-	}
-	else{
-		log("Debit card transaction charge element is not present.");
-		Thread.sleep(500);
-	}
-	}
-	public void clickedOnSaveButton() throws Exception{
-		if(btnSave.isDisplayed()){
-		btnSave.click();
-		log("clicked on save button and object is:-"+btnSave.toString());
-		Thread.sleep(7000);
-	}
-	else{
-		log("Save button element is not present.");
-		Thread.sleep(500);
-	}
-	}
-	public boolean successMessagevalidation(){
+
+	public boolean successMessagevalidation() {
 		try {
-			
+
 			successfulMessage.isDisplayed();
-			log("Record saved successfully is dispalyed and object is:-"+successfulMessage.toString());
+			log("Record saved successfully is dispalyed and object is:-" + successfulMessage.toString());
 			Thread.sleep(2000);
 			return true;
 		} catch (Exception e) {
 			return false;
 		}
 
-}
-public void clickOnSuccessOkButton() throws Exception{
-	if(btnOkonSuccess.isDisplayed()){
-	btnOkonSuccess.click();
-	log("Clicked on Ok button of success confirmation and object is:-"+btnOkonSuccess.toString());
-	Thread.sleep(2000);
-}
-else{
-	log("Save button element is not present.");
-	Thread.sleep(500);
-}
-}
+	}
+
+	public void clickOnSuccessOkButton() throws Exception {
+
+		clickOnButton(btnOkonSuccess);
+		log("Clicked on Ok button of success confirmation and object is:-" + btnOkonSuccess.toString());
+
+	}
 }

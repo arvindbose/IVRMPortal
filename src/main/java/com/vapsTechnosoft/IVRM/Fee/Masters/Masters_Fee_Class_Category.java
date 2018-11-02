@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -36,22 +38,26 @@ public class Masters_Fee_Class_Category extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[7]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[7]")
+	// WebElement btnFeeClassCategory;
+
+	@FindBy(xpath = "//a[@href='#/app/FeeClassCategory/83']")
 	WebElement btnFeeClassCategory;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtFeeClassCategoryMsgDispaly;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[1]")
-	WebElement txtClassCategoryName;
+	@FindBy(xpath = "//input[@name='name123']")
+	WebElement input_ClassCategoryName;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[2]")
-	WebElement txtClassCategoryCode;
+	@FindBy(xpath = "//input[@name='ccde']")
+	WebElement input_ClassCategoryCode;
 
 	@FindBy(xpath = "//button[@id='save-btn']")
 	WebElement btnSave;
 
-	@FindBy(xpath = "(//div[@class='text-center']/button)[3]")
+	@FindBy(xpath = "(//span[contains(text(),'Cancel')]/parent::button)[1]")
 	WebElement btnCancel;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
@@ -60,7 +66,7 @@ public class Masters_Fee_Class_Category extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
 	WebElement successfulMessage;
 
-	@FindBy(xpath = "(//div[@class='input-group']/input)[1]")
+	@FindBy(xpath = "//input[@ng-model='search']")
 	WebElement inputSearch;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr")
@@ -68,6 +74,12 @@ public class Masters_Fee_Class_Category extends TestBase {
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnPopUpYesDeactivateit;
+
+	@FindBy(xpath = "//button[text()='Cancel']")
+	WebElement btnPopUpCancel;
+
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
 
 	public Masters_Fee_Class_Category(WebDriver driver) {
 		this.driver = driver;
@@ -78,7 +90,7 @@ public class Masters_Fee_Class_Category extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(7000);
+			Thread.sleep(2000);
 			return true;
 
 		} catch (Exception e) {
@@ -88,34 +100,14 @@ public class Masters_Fee_Class_Category extends TestBase {
 	}
 
 	public void nevigateToMasters_Fee_ClassCategory() throws Exception {
-		if (btnFee.isDisplayed()) {
-			btnFee.click();
-			log("Clicked on Fee Button and object is:-" + btnFee.toString());
-			Thread.sleep(1000);
-			// waitForElement(driver, 10, btnFee);
-		} else {
-			log("Fee Button element not present");
-			Thread.sleep(500);
-		}
-		if (feeMasters.isDisplayed()) {
-			feeMasters.click();
-			log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-			// waitForElement(driver, 10, feeMasters);
-			Thread.sleep(1000);
-		} else {
-			log("Fee Masters Button element not present");
-			Thread.sleep(500);
-		}
+		clickOnButton(btnFee);
+		log("Clicked on Fee Button and object is:-" + btnFee.toString());
 
-		if (btnFeeClassCategory.isDisplayed()) {
-			btnFeeClassCategory.click();
-			log("Clicked on Fee class category Button and object is:-" + btnFeeClassCategory.toString());
-			// waitForElement(driver, 10, btnFeeClassCategory);
-			Thread.sleep(1000);
-		} else {
-			log("Fee class category Button element not present");
-			Thread.sleep(500);
-		}
+		clickOnButton(feeMasters);
+		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
+
+		clickOnButton(btnFeeClassCategory);
+		log("Clicked on Fee class category Button and object is:-" + btnFeeClassCategory.toString());
 
 	}
 
@@ -133,30 +125,29 @@ public class Masters_Fee_Class_Category extends TestBase {
 	}
 
 	public void enterClassCategoryNameAndCode(String classCategoryName, String classCategoryCode) throws Exception {
-	if(txtClassCategoryName.isDisplayed()){
-		txtClassCategoryName.clear();
-		txtClassCategoryName.sendKeys(classCategoryName);
-		log("Entered class category name: " + classCategoryName + " and object is:-" + txtClassCategoryName.toString());
-		Thread.sleep(1000);
-	} else {
-		log("Fee class category name element not present");
-		Thread.sleep(500);
+
+		inputTextIntoInputField(input_ClassCategoryName, classCategoryName);
+		log("Entered class category name: " + classCategoryName + " and object is:-"
+				+ input_ClassCategoryName.toString());
+
+		inputTextIntoInputField(input_ClassCategoryCode, classCategoryCode);
+		log("Entered class category Code: " + classCategoryCode + " and object is:-"
+				+ input_ClassCategoryCode.toString());
+
 	}
-	if(txtClassCategoryCode.isDisplayed()){
-		txtClassCategoryCode.clear();
-		txtClassCategoryCode.sendKeys(classCategoryCode);
-		log("Entered class category Code: " + classCategoryCode + " and object is:-" + txtClassCategoryCode.toString());
-		Thread.sleep(1000);
-	} else {
-		log("Class category Code element not present");
-		Thread.sleep(500);
-	}
+
+	public void clickOnSaveButton_ToSubmitBlankForm() throws Exception {
+
+		clickOnButton(btnSave);
+		log("clicked on save button and object is:-" + btnSave.toString());
+
 	}
 
 	public void clickOnSaveButton() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(7000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -174,21 +165,17 @@ public class Masters_Fee_Class_Category extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-		btnOkonSuccess.click();
+
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+
 	}
 
 	public void searchByClassCategoryName(String classCtgName) throws Exception {
-		if(inputSearch.isDisplayed()){
-		inputSearch.clear();
-		inputSearch.sendKeys(classCtgName);
+
+		inputTextIntoInputField(inputSearch, classCtgName);
 		log("Entered class category name for search:" + classCtgName + " and object is:-" + inputSearch.toString());
-		Thread.sleep(2000);
-	} else {
-		log("Class category name search element not present");
-		Thread.sleep(500);
-	}
+
 	}
 
 	public void verifyClassCategoryNameUpdatedInGrid(String classCtgName) throws Exception {
@@ -196,19 +183,24 @@ public class Masters_Fee_Class_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classCategoryName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(classCategoryName);
-			Thread.sleep(500);
-			try {
-				Assert.assertEquals(classCategoryName, classCtgName);
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				log("Class category name is updated in the grid:" + classCategoryName);
+				String classCategoryName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText().trim();
+				System.out.println(classCategoryName);
 				Thread.sleep(500);
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (classCategoryName.equals(classCtgName)) {
+					Assert.assertEquals(classCategoryName, classCtgName);
+
+					log("Class category name is updated in the grid:" + classCategoryName);
+					Thread.sleep(500);
+					break;
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -217,28 +209,42 @@ public class Masters_Fee_Class_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classCtgrName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(classCtgrName);
-			Thread.sleep(500);
-			try {
-				Assert.assertEquals(classCtgrName, classCtgName);
-				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[5]/span"))
-						.click();
-				log("Clicked on deactivation link in Fee term grid");
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String classCtgrName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText();
+				System.out.println(classCtgrName);
 				Thread.sleep(500);
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (classCtgrName.equals(classCtgName)) {
+					Assert.assertEquals(classCtgrName, classCtgName);
+					driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[5]/span"))
+							.click();
+					log("Clicked on deactivation link in Fee term grid");
+
+					Thread.sleep(500);
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void confirmationForDeactivation() throws Exception {
-		btnPopUpYesDeactivateit.click();
+
+		clickOnButton(btnPopUpYesDeactivateit);
 		log("Clicked on record Yes Deactivate it button and object is:" + btnPopUpYesDeactivateit.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
+	}
+
+	public void clickonCancel_PopUpWindow() throws Exception {
+
+		clickOnButton(btnPopUpCancel);
+		log("Clicked on record Yes Deactivate it button and object is:" + btnPopUpCancel.toString());
+		Thread.sleep(1000);
 	}
 
 	public boolean verifyDeactivationSuccessfulPopUp() {
@@ -255,40 +261,41 @@ public class Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	public void clickOnDeactivationFinalOkBtn() throws Exception {
-		btnOkonSuccess.click();
-		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
-	}
-
 	// Activation
 	public void activationOfCreatedClassCategory(String classCtgName) throws Exception {
 
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classCategoryName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(classCategoryName);
-			Thread.sleep(500);
-			try {
-				Assert.assertEquals(classCategoryName, classCtgName);
-				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[5]/span"))
-						.click();
-				log("Clicked on activation link in Fee class category grid");
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String classCategoryName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText();
+				System.out.println(classCategoryName);
 				Thread.sleep(500);
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (classCategoryName.equals(classCtgName)) {
+					Assert.assertEquals(classCategoryName, classCtgName);
+					driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[5]/span"))
+							.click();
+					log("Clicked on activation link in Fee class category grid");
+
+					Thread.sleep(500);
+					break;
+				}
+
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void confirmationForActivation() throws Exception {
-		btnPopUpYesDeactivateit.click();
+
+		clickOnButton(btnPopUpYesDeactivateit);
 		log("Clicked on Yes activate it button and object is:" + btnPopUpYesDeactivateit.toString());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 	public boolean verifyActivationSuccessfulPopUp() {
@@ -305,12 +312,6 @@ public class Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
-	public void clickOnActivationFinalOkBtn() throws Exception {
-		btnOkonSuccess.click();
-		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
-	}
-
 	// Edit
 
 	public void editFeeClassCategory(String classCtgName) throws Exception {
@@ -318,28 +319,28 @@ public class Masters_Fee_Class_Category extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String classcategoryName = driver
-					.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println(classcategoryName);
-			Thread.sleep(500);
-			try {
-				Assert.assertEquals(classcategoryName, classCtgName);
-				driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[5]/a"))
-						.click();
-				log("Clicked on Edit link in class category grid");
+		try {
+			for (int i = 1; i <= rows; i++) {
 
+				String classcategoryName = driver
+						.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[2]"))
+						.getText();
+				System.out.println(classcategoryName);
 				Thread.sleep(500);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+				if (classcategoryName.equals(classCtgName)) {
+					Assert.assertEquals(classcategoryName, classCtgName);
+					driver.findElement(By.xpath("(//body[@id='style-4']//div/table)[1]/tbody/tr[" + i + "]/td[5]/a"))
+							.click();
+					log("Clicked on Edit link in class category grid");
 
-	public void clickOnSaveButtonEdit() throws Exception {
-		btnSave.click();
-		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(2000);
+					Thread.sleep(500);
+					break;
+				}
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean verifySuccessfulPopUpEdit() {
@@ -356,10 +357,76 @@ public class Masters_Fee_Class_Category extends TestBase {
 
 	}
 
-	public void clickOnSuccessOkBtnEdit() throws Exception {
-		btnOkonSuccess.click();
-		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated for edit.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivation Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Deactivated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activation Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -130,17 +130,17 @@ public class TC_Exam_MarksEntry extends TestBase{
 	}
 
 	@Test(priority = 5)
-	public void tcClickOnSaveButton_ToSubmitFilledRecords_Blank() {
+	public void tcClickOnSearchButton_ToSubmitRecords_Blank() {
 
 		try {
-			log.info("============= Strting tcClickOnSaveButton_ToSubmitFilledRecords_Blank Test===========");
+			log.info("============= Strting tcClickOnSearchButton_ToSubmitRecords_Blank Test===========");
 
-			marksentry.clickOnSaveButton_ToSubmitFilledRecords();
+			marksentry.clickOnSearchButton_ToGetStudentMarksEntryList();
 
-			log.info("============= Finished tcClickOnSaveButton_ToSubmitFilledRecords_Blank Test===========");
-			getScreenShot("tcClickOnSaveButton_ToSubmitFilledRecords_Blank");
+			log.info("============= Finished tcClickOnSearchButton_ToSubmitRecords_Blank Test===========");
+			getScreenShot("tcClickOnSearchButton_ToSubmitRecords_Blank");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnSaveButton_ToSubmitFilledRecords_Blank");
+			getScreenShot("tcClickOnSearchButton_ToSubmitRecords_Blank");
 		}
 	}
 
@@ -481,6 +481,19 @@ public class TC_Exam_MarksEntry extends TestBase{
 		}
 	}
 	@Test(priority = 28)
+	public void tcPopUpWindowMessage_SubmitSuccessfully() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully Test===========");
+
+			marksentry.popUpWindowMessage_SubmitSuccessfully();
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully");
+		}
+	}
+	@Test(priority = 29)
 	public void tcClickOnSuccessOkBtn_saved() {
 
 		try {

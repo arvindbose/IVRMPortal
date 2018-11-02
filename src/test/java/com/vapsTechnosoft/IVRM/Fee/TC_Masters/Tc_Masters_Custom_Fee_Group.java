@@ -119,7 +119,22 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcVerifyCustomFeeGroupPage");
 		}
 	}
-	@Test(priority = 5, dataProvider = "CustomFeeGroupTestData")
+	@Test(priority = 5)
+	public void tcClickOnSaveButton_ToSubmitBlankForm() {
+		
+
+		try {
+			log.info("============= Strting tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+
+			customfeegroup.clickOnSaveButton_Blank();
+			
+			log.info("============= Finished tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		}
+	}
+	@Test(priority = 6, dataProvider = "CustomFeeGroupTestData")
 	public void tcEnterCustomFeeGrNameGroupCodeAndSelectFeeGroup(String customFeeGrName, String feeGroupCode, String Feegroup,String runMode) {
 		
 		if(runMode.equalsIgnoreCase("n")){
@@ -136,7 +151,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcEnterCustomFeeGrNameGroupCodeAndSelectFeeGroup");
 		}
 	}
-	@Test(priority = 6)
+	@Test(priority = 7)
 	public void tcClickOnSaveButton() {
 		
 
@@ -151,23 +166,20 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcClickOnSaveButton");
 		}
 	}
-	@Test(priority = 7)
-	public void tcVerifySuccessfulPopUp() {
+	@Test(priority = 8)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 		
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
-
-			boolean status =customfeegroup.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
-			
-			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			customfeegroup.popWindowMessage_SubmitSuccessfully();
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
-	@Test(priority = 8)
+	@Test(priority = 9)
 	public void tcClickOnSuccessOkBtn() {
 		
 
@@ -189,7 +201,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 	 * @param runMode
 	 */
 	
-	@Test(priority = 9, dataProvider = "CustomGroupNameTestData")
+	@Test(priority = 10, dataProvider = "CustomGroupNameTestData")
 	public void tcSearchByGroupNameInGrid(String customGroupName,String runMode) {
 		
 		if(runMode.equalsIgnoreCase("n")){
@@ -206,7 +218,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcSearchByGroupNameInGrid");
 		}
 	}
-	@Test(priority = 10, dataProvider = "CustomGroupNameTestData")
+	@Test(priority = 11, dataProvider = "CustomGroupNameTestData")
 	public void tcVerifyCustomGroupupdatedInGrid(String customGroupName,String runMode) {
 		
 		if(runMode.equalsIgnoreCase("n")){
@@ -224,7 +236,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 		}
 	}
 	
-	@Test(priority = 11, dataProvider = "CustomGroupNameTestData")
+	@Test(priority = 12, dataProvider = "CustomGroupNameTestData")
 	public void tcEdit_CustomFeeGroup(String customGroupName,String runMode) {
 		
 		if(runMode.equalsIgnoreCase("n")){
@@ -241,7 +253,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcEdit_CustomFeeGroup");
 		}
 	}
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void tcClickOnSaveButtonEdit() {
 		
 
@@ -256,23 +268,20 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcClickOnSaveButtonEdit");
 		}
 	}
-	@Test(priority = 13)
-	public void tcVerifySuccessfulPopUpEdit() {
+	@Test(priority = 14)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 		
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUpEdit Test===========");
-
-			boolean status = customfeegroup.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
-
-			log.info("============= Finished tcVerifySuccessfulPopUpEdit Test===========");
-			getScreenShot("tcVerifySuccessfulPopUpEdit");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			customfeegroup.popWindowMessage_SubmitSuccessfully_Edit();
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUpEdit");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
 		}
 	}
-	@Test(priority = 14)
+	@Test(priority = 15)
 	public void tcClickOnSuccessOkBtnEdit() {
 		
 
@@ -289,7 +298,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 	}
 	//search
 	
-	@Test(priority = 15, dataProvider = "CustomGroupNameTestData")
+	@Test(priority = 16, dataProvider = "CustomGroupNameTestData")
 	public void tcSearchByGroupNameInGridForDeactivation(String customGroupName,String runMode) {
 		
 		if(runMode.equalsIgnoreCase("n")){
@@ -308,7 +317,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 	}
 	//deactivation
 	
-	@Test(priority = 16, dataProvider = "CustomGroupNameTestData")
+	@Test(priority = 17, dataProvider = "CustomGroupNameTestData")
 	public void tcDeactivationOfCreatedCustomGroup(String customGroupName,String runMode) {
 		
 		if(runMode.equalsIgnoreCase("n")){
@@ -325,7 +334,74 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcDeactivationOfCreatedCustomGroup");
 		}
 	}
-	@Test(priority = 17)
+	
+	
+	@Test(priority = 18)
+	public void tcConfirmationForDeactivation_Cancel() {
+		
+
+		try {
+			log.info("============= Strting tcConfirmationForDeactivation_Cancel Test===========");
+
+			customfeegroup.confirmationForDeactivation_Cancel();
+
+			log.info("============= Finished tcConfirmationForDeactivation_Cancel Test===========");
+			getScreenShot("tcConfirmationForDeactivation_Cancel");
+		} catch (Exception e) {
+			getScreenShot("tcConfirmationForDeactivation_Cancel");
+		}
+	}
+	@Test(priority = 19)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
+		
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			customfeegroup.popUpWindowMessage_DeactivateCancel_Validation();
+			
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 20)
+	public void tcClickOnDeactivationOkBtn_Cancel() {
+	
+
+		try {
+			log.info("============= Strting tcClickOnDeactivationFinalOkBtn Test===========");
+
+			customfeegroup.clickOnSuccessOkBtn();
+
+			log.info("============= Finished tcClickOnDeactivationFinalOkBtn Test===========");
+			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+		}
+	}
+	@Test(priority = 21, dataProvider = "CustomGroupNameTestData")
+	public void tcDeactivationOfCreatedCustomGroup_AfterCancel(String customGroupName,String runMode) {
+		
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcDeactivationOfCreatedCustomGroup_AfterCancel Test===========");
+
+			customfeegroup.deactivationOfCreatedCustomGroup(customGroupName);
+			
+			log.info("============= Finished tcDeactivationOfCreatedCustomGroup_AfterCancel Test===========");
+			getScreenShot("tcDeactivationOfCreatedCustomGroup_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcDeactivationOfCreatedCustomGroup_AfterCancel");
+		}
+	}
+	
+	
+	@Test(priority = 22)
 	public void tcConfirmationForDeactivation() {
 		
 
@@ -340,40 +416,39 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 			getScreenShot("tcConfirmationForDeactivation");
 		}
 	}
-	@Test(priority = 18)
-	public void tcVerifyDeactivationSuccessfulPopUp() {
+	@Test(priority = 23)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 		
 
 		try {
-			log.info("============= Strting tcVerifyDeactivationSuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
 
-			boolean status = customfeegroup.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			customfeegroup.popUpWindowMessage_DeactivateSucessfully_Validation();
+			
 
-			log.info("============= Finished tcVerifyDeactivationSuccessfulPopUp Test===========");
-			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
 		}
 	}
-	@Test(priority = 19)
-	public void tcClickOnDeactivationFinalOkBtn() {
+	@Test(priority = 24)
+	public void tcClickOnDeactivationOkBtn_Confirm() {
 	
 
 		try {
-			log.info("============= Strting tcClickOnDeactivationFinalOkBtn Test===========");
+			log.info("============= Strting tcClickOnDeactivationOkBtn_Confirm Test===========");
 
 			customfeegroup.clickOnSuccessOkBtn();
 
-			log.info("============= Finished tcClickOnDeactivationFinalOkBtn Test===========");
-			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+			log.info("============= Finished tcClickOnDeactivationOkBtn_Confirm Test===========");
+			getScreenShot("tcClickOnDeactivationOkBtn_Confirm");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+			getScreenShot("tcClickOnDeactivationOkBtn_Confirm");
 		}
 	}
-	
 	//search
-	@Test(priority = 20, dataProvider = "CustomGroupNameTestData")
+	@Test(priority = 25, dataProvider = "CustomGroupNameTestData")
 	public void tcSearchByGroupNameInGridForActivation(String customGroupName,String runMode) {
 		
 		if(runMode.equalsIgnoreCase("n")){
@@ -391,7 +466,7 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 		}
 	}
 		
-		@Test(priority = 21, dataProvider = "CustomGroupNameTestData")
+		@Test(priority = 26, dataProvider = "CustomGroupNameTestData")
 		public void tcActivationOfCreatedCustomGroup(String customGroupName,String runMode) {
 			
 			if(runMode.equalsIgnoreCase("n")){
@@ -408,52 +483,111 @@ public class Tc_Masters_Custom_Fee_Group extends TestBase{
 				getScreenShot("tcActivationOfCreatedCustomGroup");
 			}
 		}
-		@Test(priority = 22)
-		public void tcConfirmationForActivation() {
+		@Test(priority = 27)
+		public void tcConfirmationForActivation_Cancel() {
 			
 			try {
-				log.info("============= Strting tcConfirmationForActivation Test===========");
+				log.info("============= Strting tcConfirmationForActivation_Cancel Test===========");
 
-				customfeegroup.confirmationForActivation();
-
-				log.info("============= Finished tcConfirmationForActivation Test===========");
-				getScreenShot("tcConfirmationForActivation");
+				customfeegroup.confirmationForActivation_Cancel();
+				log.info("============= Finished tcConfirmationForActivation_Cancel Test===========");
+				getScreenShot("tcConfirmationForActivation_Cancel");
 			} catch (Exception e) {
-				getScreenShot("tcConfirmationForActivation");
+				getScreenShot("tcConfirmationForActivation_Cancel");
 			}
 		}
-		@Test(priority = 23)
-		public void tcVerifyActivationSuccessfulPopUp() {
+		@Test(priority = 28)
+		public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 			
 
 			try {
-				log.info("============= Strting tcVerifyActivationSuccessfulPopUp Test===========");
+				log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
 
-				boolean status = customfeegroup.verifySuccessfulPopUp();
-				Assert.assertEquals(status, true);
+				customfeegroup.popUpWindowMessage_ActivateCancel_Validation();
+			
 
-				log.info("============= Finished tcVerifyActivationSuccessfulPopUp Test===========");
-				getScreenShot("tcVerifyActivationSuccessfulPopUp");
+				log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+				getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
 			} catch (Exception e) {
-				getScreenShot("tcVerifyActivationSuccessfulPopUp");
+				getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
 			}
 		}
-		@Test(priority = 24)
-		public void tcClickOnActivationFinalOkBtn() {
+		@Test(priority = 29)
+		public void tcClickOnActivationOkBtn_CancelActivate() {
 			
 
 			try {
-				log.info("============= Strting tcClickOnActivationFinalOkBtn Test===========");
+				log.info("============= Strting tcClickOnActivationOkBtn_CancelActivate Test===========");
 
 				customfeegroup.clickOnSuccessOkBtn();
 
-				log.info("============= Finished tcClickOnActivationFinalOkBtn Test===========");
-				getScreenShot("tcClickOnActivationFinalOkBtn");
+				log.info("============= Finished tcClickOnActivationOkBtn_CancelActivate Test===========");
+				getScreenShot("tcClickOnActivationOkBtn_CancelActivate");
 			} catch (Exception e) {
-				getScreenShot("tcClickOnActivationFinalOkBtn");
+				getScreenShot("tcClickOnActivationOkBtn_CancelActivate");
 			}
 		}
-		
+		@Test(priority = 30, dataProvider = "CustomGroupNameTestData")
+		public void tcActivationOfCreatedCustomGroup_AfterCancel(String customGroupName,String runMode) {
+			
+			if(runMode.equalsIgnoreCase("n")){
+				throw new SkipException("user marked this record as no run");
+			}
+			try {
+				log.info("============= Strting tcActivationOfCreatedCustomGroup_AfterCancel Test===========");
+
+				customfeegroup.activationOfCreatedCustomGroup(customGroupName);
+				
+				log.info("============= Finished tcActivationOfCreatedCustomGroup_AfterCancel Test===========");
+				getScreenShot("tcActivationOfCreatedCustomGroup_AfterCancel");
+			} catch (Exception e) {
+				getScreenShot("tcActivationOfCreatedCustomGroup_AfterCancel");
+			}
+		}
+		@Test(priority = 31)
+		public void tcConfirmationForActivation_Confirm() {
+			
+			try {
+				log.info("============= Strting tcConfirmationForActivation_Confirm Test===========");
+
+				customfeegroup.confirmationForActivation();
+				log.info("============= Finished tcConfirmationForActivation_Confirm Test===========");
+				getScreenShot("tcConfirmationForActivation_Confirm");
+			} catch (Exception e) {
+				getScreenShot("tcConfirmationForActivation_Confirm");
+			}
+		}
+		@Test(priority = 32)
+		public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
+			
+
+			try {
+				log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+				customfeegroup.popUpWindowMessage_ActivateSucessfully_Validation();
+			
+
+				log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+				getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+			} catch (Exception e) {
+				getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+			}
+		}
+		@Test(priority = 33)
+		public void tcClickOnActivationOkBtn_Activate() {
+			
+
+			try {
+				log.info("============= Strting tcClickOnActivationOkBtn_Activate Test===========");
+
+				customfeegroup.clickOnSuccessOkBtn();
+
+				log.info("============= Finished tcClickOnActivationOkBtn_Activate Test===========");
+				getScreenShot("tcClickOnActivationOkBtn_Activate");
+			} catch (Exception e) {
+				getScreenShot("tcClickOnActivationOkBtn_Activate");
+			}
+		}
 		@AfterClass
 		public void tearDown(){
 			try {

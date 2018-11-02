@@ -25,13 +25,13 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[1]")
 	WebElement btnHome;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button")
 	WebElement btnFee;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]")
+	@FindBy(xpath = "//span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement feeMasters;
 
-	@FindBy(xpath = "//aside[@id='style-4']/section/ul/li[4]/ul/li[2]/ul/li[8]")
+	@FindBy(xpath = "//a[@href='#/app/YearlyFeeGroupMapping/86']")
 	WebElement btnYFGHMap;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
@@ -104,7 +104,7 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			return true;
 			
 
@@ -119,17 +119,16 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
  * @throws Exception
  */
 	public void nevigateToMasters_YearlyGrHeadMap() throws Exception {
-		btnFee.click();
+	
+		clickOnButton(btnFee);
 		log("Clicked on Fee Button and object is:-" + btnFee.toString());
-		Thread.sleep(1000);
-
-		feeMasters.click();
+	
+		clickOnButton(feeMasters);
 		log("Clicked on Fee Masters Button and object is:-" + feeMasters.toString());
-		Thread.sleep(1000);
 
-		btnYFGHMap.click();
+		clickOnButton(btnYFGHMap);
 		log("Clicked on yearly Fee Group Head map Button and object is:-" + btnYFGHMap.toString());
-		Thread.sleep(1000);
+
 	}
 /**
  * Validate yearly group head map message is displayed on the screen
@@ -158,15 +157,12 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 
 	public void selectAcademicYearAndFeeGroup(String AcademicYr, String FeeGroup) throws Exception {
 
-		select = new Select(selAcademicYr);
-		select.selectByVisibleText(AcademicYr);
+		selectElementFromDropDown(selAcademicYr, AcademicYr);
 		log("selected Academic year:-" + AcademicYr + " and object is " + selAcademicYr.toString());
-		Thread.sleep(1000);
-
-		select = new Select(selfeeGroup);
-		select.selectByVisibleText(FeeGroup);
+	
+		selectElementFromDropDown(selfeeGroup, FeeGroup);
 		log("selected fee group:-" + FeeGroup + " and object is " + selfeeGroup.toString());
-		Thread.sleep(1000);
+		
 
 	}
 /**
@@ -179,16 +175,13 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 	
 	public void mapFeeHeadAndInstallment(String feeHead, String feeInstallment) throws Exception {
 
-		select = new Select(selFeeHead1);
-		select.selectByVisibleText(feeHead);
+		selectElementFromDropDown(selFeeHead1, feeHead);
 		log("selected fee head:-" + feeHead + " and object is " + selFeeHead1.toString());
-		Thread.sleep(1000);
-
-		select = new Select(selfeeInstallment1);
-		select.selectByVisibleText(feeInstallment);
-		log("selected fee Installment:-" + feeInstallment + " and object is " + selfeeInstallment1.toString());
-		Thread.sleep(1000);
 		
+		selectElementFromDropDown(selfeeInstallment1, feeInstallment);
+		log("selected fee Installment:-" + feeInstallment + " and object is " + selfeeInstallment1.toString());
+
+		isDisplayed(chkFine1);
 		if(!chkFine1.isSelected()){
 		chkFine1.click();
 		log("clicked on fine checkbox and object is:-" + chkFine1.toString());
@@ -197,7 +190,7 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 		else{
 			log("Fine check box is already selected and object is:-" +chkFine1.toString());
 		}
-		
+		isDisplayed(chkActive1);
 		if(!chkActive1.isSelected()){
 		chkActive1.click();
 		log("clicked on Active checkbox and object is:-" + chkActive1.toString());
@@ -206,7 +199,7 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 		else{
 			log("Active check box is already selected and object is:-" + chkActive1.toString());
 		}
-		
+		isDisplayed(chkCommonAmt1);
 		if(!chkCommonAmt1.isSelected()){
 		chkCommonAmt1.click();
 		log("clicked on Common Amount checkbox and object is:-" + chkCommonAmt1.toString());
@@ -222,9 +215,10 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 	 */
 	
 	public void addNewFeeHead() throws Exception{
-		btnAddNew.click();
+	
+		clickOnButton(btnAddNew);
 		log("clicked on Add new button and object is:-" + btnAddNew.toString());
-		Thread.sleep(1000);
+
 	}
 	
 	/**
@@ -234,27 +228,40 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 	 */
 	public void verifyUserAbleToAddNewHead(String feeHead2, String feeInstallment2) throws Exception {
 		
-		select = new Select(selFeeHead2);
-		select.selectByVisibleText(feeHead2);
+		selectElementFromDropDown(selFeeHead2, feeHead2);
 		log("selected fee head:-" + feeHead2 + " and object is " + selFeeHead2.toString());
-		Thread.sleep(1000);
 
-		select = new Select(selfeeInstallment2);
-		select.selectByVisibleText(feeInstallment2);
+		selectElementFromDropDown(selfeeInstallment2, feeInstallment2);
 		log("selected fee installment2:-" + feeInstallment2 + " and object is " + selfeeInstallment2.toString());
-		Thread.sleep(1000);
-
+	
+		isDisplayed(chkFine2);
+		if(!chkFine2.isSelected()){
 		chkFine2.click();
 		log("clicked on fine2 checkbox and object is:-" + chkFine2.toString());
 		Thread.sleep(1000);
-
-		chkActive2.click();
-		log("clicked on Active2 checkbox and object is:-" + chkActive2.toString());
-		Thread.sleep(1000);
-
-		chkCommonAmt2.click();
-		log("clicked on Common Amount2 checkbox and object is:-" + chkCommonAmt2.toString());
-		Thread.sleep(1000);
+		}
+		else{
+			log("chkActive2 checkbox and object is:-" + chkFine2.toString());
+		}
+		isDisplayed(chkActive2);
+		if(!chkActive2.isSelected()){
+			chkActive2.click();
+			log("clicked on Active2 checkbox and object is:-" + chkActive2.toString());
+			Thread.sleep(1000);
+			}
+			else{
+				log("Active2 checkbox and object is:-" + chkActive2.toString());
+			}
+		isDisplayed(chkCommonAmt2);
+		if(!chkCommonAmt2.isSelected()){
+			chkCommonAmt2.click();
+			log("clicked on Common Amount2 checkbox and object is:-" + chkCommonAmt2.toString());
+			Thread.sleep(1000);
+			}
+			else{
+				log("Common Amount2 checkbox and object is:-" + chkCommonAmt2.toString());
+			}
+		
 	}
 
 	/**
@@ -264,7 +271,7 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 	 */
 	public void removeAddedFeeHeadAndInstallment() throws Exception {
 
-		btnRemove.click();
+		clickOnButton(btnRemove);
 		log("clicked on remove button and added head is removed and object is:-" + chkFine1.toString());
 		Thread.sleep(1000);
 	}
@@ -274,9 +281,10 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSaveButton() throws Exception {
-		btnSave.click();
+
+		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	/**
@@ -301,8 +309,9 @@ public class Masters_Yearly_Group_HeadMap extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		btnOkonSuccess.click();
+
+		clickOnButton(btnOkonSuccess);
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 }

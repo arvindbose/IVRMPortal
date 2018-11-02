@@ -34,7 +34,12 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]")
 	private WebElement btn_InterviewSchedule;
 
-	@FindBy(xpath = "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview Schedule')][1]/following::li[2]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Preadmission')]/preceding-sibling::button/following::span[contains(text(),'Interview
+	// Schedule')][1]/following::li[2]")
+	// private WebElement btn_WrittenTestSchedule;
+
+	@FindBy(xpath = "//a[@href='#/app/wschedule/15']")
 	private WebElement btn_WrittenTestSchedule;
 
 	@FindBy(xpath = "//div//section//ol//li")
@@ -58,10 +63,10 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 	@FindBy(xpath = "(//label[contains(text(),'Date:')]/following-sibling::div//child::button)[1]")
 	private WebElement btn_Calender;
 
-	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Nov 2018')]")
 	private WebElement btn_MonthYear;
 
-	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[27]")
+	@FindBy(xpath = "//span[contains(text(),'Nov 2018')]/following::td[29]")
 	private WebElement btn_ScheduleDate;
 
 	@FindBy(xpath = "(//table/tbody)[1]/tr[2]/td[1]/input")
@@ -90,10 +95,10 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 
 	@FindBy(xpath = "(//table/tbody)[3]/tr[2]/td[8]/input")
 	private WebElement chk_Student2StuList;
-	
+
 	@FindBy(xpath = "(//table/tbody)[3]/tr[3]/td[8]/input")
 	private WebElement chk_Student3StuList;
-	
+
 	@FindBy(xpath = "(//table/tbody)[5]/tr[2]/td[9]/a")
 	private WebElement icon_deleteCart;
 
@@ -108,9 +113,9 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 
 	@FindBy(xpath = "//input[@ng-model='searchValue']")
 	private WebElement inputsearch_ScheduleName;
-	
+
 	@FindBy(xpath = "(//table/tbody)[8]/tr[1]/td[2]")
-	private WebElement ScheduleName_Validate;	
+	private WebElement ScheduleName_Validate;
 
 	@FindBy(xpath = "(//table/tbody)[8]/tr[1]/td[7]/span[1]/a")
 	private WebElement icon_Edit;
@@ -141,10 +146,10 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 
 	@FindBy(xpath = "//button[@class='confirm' and text()='Yes,delete it!']")
 	private WebElement btn_Yesdeleteit;
-	
+
 	@FindBy(xpath = "//button[@class='confirm' and text()='Yes,Delete it!']")
 	private WebElement btn_Yesdeleteit_Grid;
-	
+
 	@FindBy(xpath = "//button[@class='cancel' and text()='Cancel..!']")
 	private WebElement btn_Cancel_delete;
 
@@ -166,6 +171,9 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 	@FindBy(xpath = "(//table/thead)[4]/tr/th[2]/a")
 	private WebElement sort_ScheduleDate_ScheduleList;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public InterviewSchedule_WrittenTestSchedule(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -184,31 +192,15 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 	}
 
 	public void navigateToInterViewSchedule_writtenTestSchedule() throws Exception {
-		if (btn_PreAdmission.isDisplayed()) {
-			btn_PreAdmission.click();
-			log("Clicked on pre admission button and object is:-" + btn_PreAdmission.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Navigation menu pre admission button element not presentand object is:-"
-					+ btn_PreAdmission.toString());
-			Thread.sleep(500);
-		}
-		if (btn_InterviewSchedule.isDisplayed()) {
-			btn_InterviewSchedule.click();
-			log("Clicked on interview schedule button and object is:-" + btn_InterviewSchedule.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Navigation sub-menu Interview schedule button element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_WrittenTestSchedule.isDisplayed()) {
-			btn_WrittenTestSchedule.click();
-			log("Clicked on Written test schedule button and object is:-" + btn_WrittenTestSchedule.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Navigation sub-menu Written Test Schedule button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_PreAdmission);
+		log("Clicked on pre admission button and object is:-" + btn_PreAdmission.toString());
+
+		clickOnButton(btn_InterviewSchedule);
+		log("Clicked on interview schedule button and object is:-" + btn_InterviewSchedule.toString());
+
+		clickOnButton(btn_WrittenTestSchedule);
+		log("Clicked on Written test schedule button and object is:-" + btn_WrittenTestSchedule.toString());
+
 	}
 
 	public boolean verifyInterviewSchedule_WrittenTestSchedulePage() {
@@ -225,18 +217,11 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 
 	}
 
-	public void fill_WrittenTestSchedule_Form(String scheduleName,String remarks, String supervisor,
-			String skill, String FromSchTimeHr, String FromSchTimeMin, String ToSchTimeHr, String ToSchTimeMin) throws Exception {
-		
-		if (input_ScheduleName.isDisplayed()) {
-			input_ScheduleName.clear();
-			input_ScheduleName.sendKeys(scheduleName);
-			log("Entered schedule name " + scheduleName + " and object is:-" + input_ScheduleName.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Schedule name field element not present.");
-			Thread.sleep(500);
-		}
+	public void fill_WrittenTestSchedule_Form(String scheduleName, String remarks, String supervisor, String skill,
+			String FromSchTimeHr, String FromSchTimeMin, String ToSchTimeHr, String ToSchTimeMin) throws Exception {
+
+		inputTextIntoInputField(input_ScheduleName, scheduleName);
+		log("Entered schedule name " + scheduleName + " and object is:-" + input_ScheduleName.toString());
 
 		// copyToClipbord(scheduleDate);
 		//
@@ -255,101 +240,45 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 		// inputOraltestDate.toString());
 		// Thread.sleep(2000);
 
-		if (btn_Calender.isDisplayed()) {
-			btn_Calender.click();
-			Thread.sleep(500);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
-			Thread.sleep(500);
-			btn_ScheduleDate.click();
-			log("Schedule date is selected from calender.");
-			Thread.sleep(1000);
-		} else {
-			log("Schedule Date Calendar button element not present.");
-			Thread.sleep(500);
-		}
-		
-		if (input_Remarks.isDisplayed()) {
-			input_Remarks.clear();
-			input_Remarks.sendKeys(remarks);
-			log("Entered remarks " + remarks + " and object is:-" + input_Remarks.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Remarks field element not present.");
-			Thread.sleep(500);
-		}
-		
-		if (input_Supervisor.isDisplayed()) {
-			input_Supervisor.clear();
-			input_Supervisor.sendKeys(supervisor);
-			log("Entered supervisor " + supervisor + " and object is:-" + input_Supervisor.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Supervisor field element not present.");
-			Thread.sleep(500);
-		}
-		
-		if (input_Skills.isDisplayed()) {
-			input_Skills.clear();
-			input_Skills.sendKeys(skill);
-			log("Entered skill " + skill + " and object is:-" + input_Skills.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Skills field element not present and object is:-" + input_Skills.toString());
-			Thread.sleep(500);
-		}
+		clickOnButton(btn_Calender);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		Thread.sleep(500);
+		btn_ScheduleDate.click();
+		log("Schedule date is selected from calender.");
+		Thread.sleep(1000);
 
-		if (input_ScheduleTime_FromHr.isDisplayed()) {
-			input_ScheduleTime_FromHr.clear();
-			input_ScheduleTime_FromHr.sendKeys(FromSchTimeHr);
-			log("Entered From schedule time hour(From) " + FromSchTimeHr + " and object is:-"
-					+ input_ScheduleTime_FromHr.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Schedule time hour(From) field element not present and object is:-"
-					+ input_ScheduleTime_FromHr.toString());
-			Thread.sleep(500);
-		}
-		if (input_ScheduleTime_FromMin.isDisplayed()) {
-			input_ScheduleTime_FromMin.clear();
-			input_ScheduleTime_FromMin.sendKeys(FromSchTimeMin);
-			log("Entered From schedule time minute(From) " + FromSchTimeMin + " and object is:-"
-					+ input_ScheduleTime_FromMin.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Schedule time minute(From) field element not present.");
-			Thread.sleep(500);
-		}
-		if (input_ScheduleTime_ToHr.isDisplayed()) {
-			input_ScheduleTime_ToHr.clear();
-			input_ScheduleTime_ToHr.sendKeys(ToSchTimeHr);
-			log("Entered To schedule time hour(To) " + ToSchTimeHr + " and object is:-"
-					+ input_ScheduleTime_ToHr.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Schedule time hour(To) field element not present.");
-			Thread.sleep(500);
-		}
-		if (input_ScheduleTime_ToMin.isDisplayed()) {
-			input_ScheduleTime_ToMin.clear();
-			input_ScheduleTime_ToMin.sendKeys(ToSchTimeMin);
-			log("Entered To schedule time minute " + ToSchTimeMin + " and object is:-"
-					+ input_ScheduleTime_ToMin.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Schedule time minute(To) field element not present.");
-			Thread.sleep(500);
-		}
-		if (btn_To_AM_PM.isDisplayed()) {
-			btn_To_AM_PM.click();
-			log("PM is selected for To Time and object is:-" + btn_To_AM_PM.toString());
-			Thread.sleep(1000);
-		} else {
-			log("To AM/PM button element not present.");
-			Thread.sleep(500);
-		}
+		inputTextIntoInputField(input_Remarks, remarks);
+		log("Entered remarks " + remarks + " and object is:-" + input_Remarks.toString());
+
+		inputTextIntoInputField(input_Supervisor, supervisor);
+		log("Entered supervisor " + supervisor + " and object is:-" + input_Supervisor.toString());
+
+		inputTextIntoInputField(input_Skills, skill);
+		log("Entered skill " + skill + " and object is:-" + input_Skills.toString());
+
+		inputTextIntoInputField(input_ScheduleTime_FromHr, FromSchTimeHr);
+		log("Entered From schedule time hour(From) " + FromSchTimeHr + " and object is:-"
+				+ input_ScheduleTime_FromHr.toString());
+
+		inputTextIntoInputField(input_ScheduleTime_FromMin, FromSchTimeMin);
+		log("Entered From schedule time minute(From) " + FromSchTimeMin + " and object is:-"
+				+ input_ScheduleTime_FromMin.toString());
+
+		inputTextIntoInputField(input_ScheduleTime_ToHr, ToSchTimeHr);
+		log("Entered To schedule time hour(To) " + ToSchTimeHr + " and object is:-"
+				+ input_ScheduleTime_ToHr.toString());
+
+		inputTextIntoInputField(input_ScheduleTime_ToMin, ToSchTimeMin);
+		log("Entered To schedule time minute " + ToSchTimeMin + " and object is:-"
+				+ input_ScheduleTime_ToMin.toString());
+
+		clickOnButton(btn_To_AM_PM);
+		log("PM is selected for To Time and object is:-" + btn_To_AM_PM.toString());
+
 	}
 
 	public void selectStudentFromStudentList_ToScheduleWrittenTest() throws Exception {
+		isDisplayed(chk_Student1StuList);
 		if (!chk_Student1StuList.isSelected()) {
 			chk_Student1StuList.click();
 			log("Student 1 is selected for written test schedule and object is:-" + chk_Student1StuList.toString());
@@ -358,7 +287,7 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 			log("Student 1 is already selected for written test and object is:-" + chk_Student1StuList.toString());
 			Thread.sleep(500);
 		}
-
+		isDisplayed(chk_Student2StuList);
 		if (!chk_Student2StuList.isSelected()) {
 			chk_Student2StuList.click();
 			log("Student 2 is selected for written test schedule and object is:-" + chk_Student2StuList.toString());
@@ -367,6 +296,7 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 			log("Student 2 is already selected for written test and object is:-" + chk_Student2StuList.toString());
 			Thread.sleep(500);
 		}
+		isDisplayed(chk_Student3StuList);
 		if (!chk_Student3StuList.isSelected()) {
 			chk_Student3StuList.click();
 			log("Student 3 is selected for written test schedule and object is:-" + chk_Student3StuList.toString());
@@ -387,7 +317,7 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 			// Compare toll tip text
 			Assert.assertEquals(DeleteText, "Delete");
 
-			icon_deleteCart.click();
+			clickOnButton(icon_deleteCart);
 			log("Clicked on Delete Icon to delete student selected to cart for written test and object is:-"
 					+ icon_deleteCart.toString());
 			Thread.sleep(1000);
@@ -398,121 +328,99 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 	}
 
 	public void clickOnSaveButton_ToSubmitWrittenTest() throws Exception {
-		if (btn_Save.isDisplayed()) {
-			btn_Save.click();
-			log("Save button is clicked to save the Written test schedule and object is:-" + btn_Save.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Save button element not present and object is:-" + btn_Save.toString());
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Save);
+		log("Save button is clicked to save the Written test schedule and object is:-" + btn_Save.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnCancelButton_ToClearFilledWrittenTest() throws Exception {
-		if (btn_Cancel.isDisplayed()) {
-			btn_Cancel.click();
-			log("Cancel button is clicked to Clear filled Written test schedule and object is:-"
-					+ btn_Cancel.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Save button element not present and object is:-" + btn_Cancel.toString());
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel);
+		log("Cancel button is clicked to Clear filled Written test schedule and object is:-" + btn_Cancel.toString());
+
 	}
 
 	public void searchWithScheduleName_InwrittenTestScheduleList(String scheduleName) throws Exception {
-		if (inputsearch_ScheduleName.isDisplayed()) {
-			inputsearch_ScheduleName.clear();
-			inputsearch_ScheduleName.sendKeys(scheduleName);
-			log("Entered schedule name " + scheduleName + " and object is:-" + inputsearch_ScheduleName.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Search Element not present in Written test schedule list and object is:-"
-					+ inputsearch_ScheduleName.toString());
-			Thread.sleep(500);
-		}
-		if(ScheduleName_Validate.isDisplayed()){
-			String schName = ScheduleName_Validate.getText().trim();
-			assertEquals(scheduleName, schName);
-			log("First Schedule name and searched with schedule name is same and object is:-"+ScheduleName_Validate.toString());
-			Thread.sleep(1000);		
+
+		inputTextIntoInputField(inputsearch_ScheduleName, scheduleName);
+		log("Entered schedule name " + scheduleName + " and object is:-" + inputsearch_ScheduleName.toString());
+		try {
+			if (ScheduleName_Validate.isDisplayed()) {
+				String schName = ScheduleName_Validate.getText().trim();
+				assertEquals(scheduleName, schName);
+				log("First Schedule name and searched with schedule name is same and object is:-"
+						+ ScheduleName_Validate.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void edit_WrittenTestSchedule() throws Exception {
+		try {
+			if (icon_Edit.isDisplayed()) {
 
-		if (icon_Edit.isDisplayed()) {
+				String EditText = icon_Edit.getAttribute("title");
+				System.out.println("Tool tip text present :- " + EditText);
 
-			String EditText = icon_Edit.getAttribute("title");
-			System.out.println("Tool tip text present :- " + EditText);
+				// Compare toll tip text
+				Assert.assertEquals(EditText, "Edit");
 
-			// Compare toll tip text
-			Assert.assertEquals(EditText, "Edit");
-
-			icon_Edit.click();
-			log("Clicked on Edit Icon to edit schedule for written test and object is:-" + icon_Edit.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Edit Icon element is not present in schedule list grid and object is:-" + icon_Edit.toString());
-			Thread.sleep(500);
+				icon_Edit.click();
+				log("Clicked on Edit Icon to edit schedule for written test and object is:-" + icon_Edit.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void deleteStudentFrom_SelectedStudent_Edit() throws Exception {
+		try {
+			if (icon_Delete_SelectedStudentEdit.isDisplayed()) {
 
-		if (icon_Delete_SelectedStudentEdit.isDisplayed()) {
+				String DeleteText = icon_Delete_SelectedStudentEdit.getAttribute("title");
+				System.out.println("Tool tip text present :- " + DeleteText);
 
-			String DeleteText = icon_Delete_SelectedStudentEdit.getAttribute("title");
-			System.out.println("Tool tip text present :- " + DeleteText);
+				// Compare toll tip text
+				Assert.assertEquals(DeleteText, "Delete");
 
-			// Compare toll tip text
-			Assert.assertEquals(DeleteText, "Delete");
-
-			icon_Delete_SelectedStudentEdit.click();
-			log("Clicked on Delete Icon to delete student from selected list(edit) for written test and object is:-"
-					+ icon_Delete_SelectedStudentEdit.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Delete Icon element is not present in selected student edit and object is:-"
-					+ icon_Delete_SelectedStudentEdit.toString());
-			Thread.sleep(500);
+				icon_Delete_SelectedStudentEdit.click();
+				log("Clicked on Delete Icon to delete student from selected list(edit) for written test and object is:-"
+						+ icon_Delete_SelectedStudentEdit.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void confirmDelete_YesDeleteIt() throws Exception {
-		if (btn_Yesdeleteit.isDisplayed()) {
-			btn_Yesdeleteit.click();
-			log("Yes Delete It is clicked to delete student from sheduled Written test schedule list and object is:-"
-					+ btn_Yesdeleteit.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Yes Delete It button element not present and object is:-" + btn_Yesdeleteit.toString());
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Yesdeleteit);
+		log("Yes Delete It is clicked to delete student from sheduled Written test schedule list and object is:-"
+				+ btn_Yesdeleteit.toString());
+
 	}
 
 	public void confirmDelete_YesDeleteIt_Grid() throws Exception {
-		if (btn_Yesdeleteit_Grid.isDisplayed()) {
-			btn_Yesdeleteit_Grid.click();
-			log("Yes Delete It is clicked to delete student from sheduled Written test schedule list and object is:-"
-					+ btn_Yesdeleteit_Grid.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Yes Delete It button element not present and object is:-" + btn_Yesdeleteit_Grid.toString());
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Yesdeleteit_Grid);
+		log("Yes Delete It is clicked to delete student from sheduled Written test schedule list and object is:-"
+				+ btn_Yesdeleteit_Grid.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void confirmDelete_Cancel() throws Exception {
-		if (btn_Cancel_delete.isDisplayed()) {
-			btn_Cancel_delete.click();
-			log("Cancel button pop up is clicked to cancel student from deleting, from sheduled Written test schedule list and object is:-"
-					+ btn_Cancel_delete.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Cancel (delete) button element not present and object is:-" + btn_Cancel_delete.toString());
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btn_Cancel_delete);
+		log("Cancel button pop up is clicked to cancel student from deleting, from sheduled Written test schedule list and object is:-"
+				+ btn_Cancel_delete.toString());
+
 	}
 
 	/**
@@ -522,155 +430,140 @@ public class InterviewSchedule_WrittenTestSchedule extends TestBase {
 	 * @throws Exception
 	 */
 	public void clickOnSuccessOkBtn() throws Exception {
-		if (btnOKSuccess.isDisplayed()) {
-			btnOKSuccess.click();
-			log("clicked on OK button and object is:-" + btnOKSuccess.toString());
-			Thread.sleep(3000);
-		} else {
-			log("OK button Element not present");
-			Thread.sleep(500);
-		}
+
+		clickOnButton(btnOKSuccess);
+		log("clicked on OK button and object is:-" + btnOKSuccess.toString());
+
 	}
 
 	public void delete_ScheduleWrittenTest_FromScheduleListGrid() throws Exception {
-		if (icon_Delete.isDisplayed()) {
+		try {
+			if (icon_Delete.isDisplayed()) {
+				String DeleteText = icon_Delete.getAttribute("title");
+				System.out.println("Tool tip text present :- " + DeleteText);
 
-			String DeleteText = icon_Delete.getAttribute("title");
-			System.out.println("Tool tip text present :- " + DeleteText);
+				// Compare toll tip text
+				Assert.assertEquals(DeleteText, "Delete");
 
-			// Compare toll tip text
-			Assert.assertEquals(DeleteText, "Delete");
-
-			icon_Delete.click();
-			log("Clicked on Delete Icon to delete Schedule from schedule list grid for written test and object is:-"
-					+ icon_Delete.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Delete Icon element is not present in schedule list grid and object is:-" + icon_Delete.toString());
-			Thread.sleep(500);
+				icon_Delete.click();
+				log("Clicked on Delete Icon to delete Schedule from schedule list grid for written test and object is:-"
+						+ icon_Delete.toString());
+				Thread.sleep(1000);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void sortWithStudentName_InStudentList() throws Exception {
 
-		if (sort_StudentName_StuList.isDisplayed()) {
-			sort_StudentName_StuList.click();
-			Thread.sleep(500);
-			sort_StudentName_StuList.click();
-			log("Sort by Student Name in Student list and object is:- " + sort_StudentName_StuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student Name button element not present and object is:- " + sort_StudentName_StuList.toString());
-			Thread.sleep(500);
-		}
+		clickOnButton(sort_StudentName_StuList);
+		clickOnButton(sort_StudentName_StuList);
+		log("Sort by Student Name in Student list and object is:- " + sort_StudentName_StuList.toString());
+
 	}
 
 	public void sortWithRegistrationNumber_InStudentList() throws Exception {
 
-		if (sort_RegNo_StuList.isDisplayed()) {
-			sort_RegNo_StuList.click();
-			log("Sort by Registration Number in Student list and object is:- " + sort_RegNo_StuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Registration Number button element not present and object is:- " + sort_RegNo_StuList.toString());
-			Thread.sleep(500);
-		}
+		clickOnButton(sort_RegNo_StuList);
+		log("Sort by Registration Number in Student list and object is:- " + sort_RegNo_StuList.toString());
+
 	}
 
 	public void sortWithGender_InStudentList() throws Exception {
 
-		if (sort_Gender_StuList.isDisplayed()) {
-			sort_Gender_StuList.click();
-			log("Sort by Gender in Student list and object is:- " + sort_Gender_StuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Gender button element not present and object is:- " + sort_Gender_StuList.toString());
-			Thread.sleep(500);
-		}
+		clickOnButton(sort_Gender_StuList);
+		log("Sort by Gender in Student list and object is:- " + sort_Gender_StuList.toString());
+
 	}
 
 	public void sortWithClass_InStudentList() throws Exception {
 
-		if (sort_Class_StuList.isDisplayed()) {
-			sort_Class_StuList.click();
-			log("Sort by Class in Student list and object is:- " + sort_Class_StuList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Class button element not present and object is:- " + sort_Class_StuList.toString());
-			Thread.sleep(500);
-		}
+		clickOnButton(sort_Class_StuList);
+		log("Sort by Class in Student list and object is:- " + sort_Class_StuList.toString());
+
 	}
 
 	public void sortWithScheduleName_InScheduleList() throws Exception {
 
-		if (sort_ScheduleName_ScheduleList.isDisplayed()) {
-			sort_ScheduleName_ScheduleList.click();
-			log("Sort by Schedule Name in Schedule list and object is:- " + sort_ScheduleName_ScheduleList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Schedule Name button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(sort_ScheduleName_ScheduleList);
+		log("Sort by Schedule Name in Schedule list and object is:- " + sort_ScheduleName_ScheduleList.toString());
+
 	}
 
 	public void sortWithScheduleDate_InScheduleList() throws Exception {
 
-		if (sort_ScheduleDate_ScheduleList.isDisplayed()) {
-			sort_ScheduleDate_ScheduleList.click();
-			log("Sort by Schedule Date in Schedule list and object is:- " + sort_ScheduleDate_ScheduleList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Schedule Date button element not present.");
-			Thread.sleep(500);
-		}
+		clickOnButton(sort_ScheduleDate_ScheduleList);
+		log("Sort by Schedule Date in Schedule list and object is:- " + sort_ScheduleDate_ScheduleList.toString());
+
 	}
 
 	public void min_Max_WrittenTestScheduleForm() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
 				txt_PreAdm_writtenTestSchedulePage);
-		if (btn_Min_Max_WRITTENTESTSCHEDULE.isDisplayed()) {
-			btn_Min_Max_WRITTENTESTSCHEDULE.click();
-			log("Written Test Schedule form section minimized or maximized and object is:-"
-					+ btn_Min_Max_WRITTENTESTSCHEDULE.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Written Test Schedule form section Minimize OR Maximize Element not present and object is:-"
-					+ btn_Min_Max_WRITTENTESTSCHEDULE.toString());
-		}
+
+		clickOnButton(btn_Min_Max_WRITTENTESTSCHEDULE);
+		log("Written Test Schedule form section minimized or maximized and object is:-"
+				+ btn_Min_Max_WRITTENTESTSCHEDULE.toString());
+
 	}
 
 	public void min_Max_StudentList() throws Exception {
-		if (btn_Min_Max_StudentList.isDisplayed()) {
-			btn_Min_Max_StudentList.click();
-			log("Student list section minimized or maximized and object is:-" + btn_Min_Max_StudentList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student list section Minimize OR Maximize Element not present and object is:-"
-					+ btn_Min_Max_StudentList.toString());
-		}
+
+		clickOnButton(btn_Min_Max_StudentList);
+		log("Student list section minimized or maximized and object is:-" + btn_Min_Max_StudentList.toString());
+
 	}
 
 	public void min_Max_SelectedStudentToCart() throws Exception {
-		if (btn_Min_Max_SELECTEDSTUDENTTOCART.isDisplayed()) {
-			btn_Min_Max_SELECTEDSTUDENTTOCART.click();
-			log("Selected student to cart section minimized or maximized and object is:-"
-					+ btn_Min_Max_SELECTEDSTUDENTTOCART.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Selected student to cart section Minimize OR Maximize Element not present and object is:-"
-					+ btn_Min_Max_SELECTEDSTUDENTTOCART.toString());
-		}
+
+		clickOnButton(btn_Min_Max_SELECTEDSTUDENTTOCART);
+		log("Selected student to cart section minimized or maximized and object is:-"
+				+ btn_Min_Max_SELECTEDSTUDENTTOCART.toString());
+
 	}
 
 	public void min_Max_WrittenTestScheduleListGrid() throws Exception {
-		if (btn_Min_Max_WRITTENTESTSCHEDULELISTGrid.isDisplayed()) {
-			btn_Min_Max_WRITTENTESTSCHEDULELISTGrid.click();
-			log("Written Test Schedule list grid section minimized or maximized and object is:-"
-					+ btn_Min_Max_WRITTENTESTSCHEDULELISTGrid.toString());
+
+		clickOnButton(btn_Min_Max_WRITTENTESTSCHEDULELISTGrid);
+		log("Written Test Schedule list grid section minimized or maximized and object is:-"
+				+ btn_Min_Max_WRITTENTESTSCHEDULELISTGrid.toString());
+
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
-		} else {
-			log("Written Test Schedule list grid section Minimize OR Maximize Element not present and object is:-"
-					+ btn_Min_Max_WRITTENTESTSCHEDULELISTGrid.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_DeletedCancelled() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Deleted Cancelled validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_DeletedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deleted Successfully");
+			log("Record Deleted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Admission.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.util.List;
 
@@ -42,25 +44,29 @@ public class Masters_Master_Section extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]")
 	WebElement btnAdmission_Masters;
 
-	@FindBy(xpath = "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[9]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'Admission')]/preceding-sibling::button/following::span[contains(text(),'Masters')][1]/following::li[9]")
+	// WebElement btnMasters_masterSection;
+
+	@FindBy(xpath = "//a[@href='#/app/section/20']")
 	WebElement btnMasters_masterSection;
 
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtMasters_MasterSectionMsgDispaly;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[1]")
+	@FindBy(xpath = "//input[@name='Name']")
 	WebElement input_SectionName;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[2]")
+	@FindBy(xpath = "//input[@name='order']")
 	WebElement input_SectionOrder;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[3]")
+	@FindBy(xpath = "//input[@name='code']")
 	WebElement input_SectionCode;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[4]")
+	@FindBy(xpath = "//input[@name='capacity']")
 	WebElement input_SectionCapacity;
 
-	@FindBy(xpath = "(//body[@id='style-4']//div/input)[6]")
+	@FindBy(xpath = "//input[@ng-model='searchValue']")
 	WebElement inputSearch;
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
@@ -105,6 +111,9 @@ public class Masters_Master_Section extends TestBase {
 	@FindBy(xpath = "//li[contains(text(),'A')]")
 	WebElement To;
 
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+
 	public Masters_Master_Section(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -129,17 +138,14 @@ public class Masters_Master_Section extends TestBase {
 	 * @throws Exception
 	 */
 	public void navigateToAdmission_Masters_MasterSection_BGHS() throws Exception {
-		btn_Admission.click();
+		clickOnButton(btn_Admission);
 		log("Clicked on admission Button and object is:-" + btn_Admission.toString());
-		waitForElement(driver, 10, btnAdmission_Masters);
 
-		btnAdmission_Masters.click();
+		clickOnButton(btnAdmission_Masters);
 		log("Clicked on Masters Button and object is:-" + btnAdmission_Masters.toString());
-		waitForElement(driver, 10, btnMasters_masterSection);
 
-		btnMasters_masterSection.click();
+		clickOnButton(btnMasters_masterSection);
 		log("Clicked on master section Button and object is:-" + btnMasters_masterSection.toString());
-		waitForElement(driver, 10, btnSubmit);
 	}
 
 	/**
@@ -162,47 +168,47 @@ public class Masters_Master_Section extends TestBase {
 
 	public void submitBlankMasterSectionForm() throws Exception {
 
-		btnSubmit.click();
+		clickOnButton(btnSubmit);
 		log("Submit blank master section form and object is:-" + btnSubmit.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void enterMasterSectionFormData(String sectionName, String sectionOrder, String sectionCode,
-			String sectionCapacity) {
+			String sectionCapacity) throws InterruptedException {
 
-		input_SectionName.clear();
-		input_SectionName.sendKeys(sectionName);
+		inputTextIntoInputField(input_SectionName, sectionName);
 		log("Entered section name: " + sectionName + " and object is:-" + input_SectionName.toString());
 
-		input_SectionOrder.clear();
-		input_SectionOrder.sendKeys(sectionOrder);
+		inputTextIntoInputField(input_SectionOrder, sectionOrder);
 		log("Entered section order: " + sectionOrder + " and object is:-" + input_SectionOrder.toString());
 
-		input_SectionCode.clear();
-		input_SectionCode.sendKeys(sectionCode);
+		inputTextIntoInputField(input_SectionCode, sectionCode);
 		log("Entered section code: " + sectionCode + " and object is:-" + input_SectionCode.toString());
 
-		input_SectionCapacity.clear();
-		input_SectionCapacity.sendKeys(sectionCapacity);
+		inputTextIntoInputField(input_SectionCapacity, sectionCapacity);
 		log("Entered section capacity: " + sectionCapacity + " and object is:-" + input_SectionCapacity.toString());
+
 	}
 
 	public void clearSectionInfoData() throws Exception {
-		btnClear.click();
+
+		clickOnButton(btnClear);
 		log("Clicked on clear button to clear filled master section and object is:-" + btnClear.toString());
-		Thread.sleep(10000);
+
 	}
 
 	public void submitFilledMasterSectionForm() throws Exception {
 
-		btnSubmit.click();
+		clickOnButton(btnSubmit);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Submit filled master section form and object is:-" + btnSubmit.toString());
-		Thread.sleep(10000);
+
 	}
 
 	public void clickOnSetOrder() {
 
-		btnSetOrder.click();
+		clickOnButton(btnSetOrder);
 		log("Set Order button is clicked and object is:-" + btnSetOrder.toString());
 	}
 
@@ -232,26 +238,29 @@ public class Masters_Master_Section extends TestBase {
 	}
 
 	public void closeSetSectionOrderPopUpWindow() {
-		btnCloseOrder.click();
+
+		clickOnButton(btnCloseOrder);
 		log("Set section Order pop Up window is closed and object is:-" + btnCloseOrder.toString());
 	}
 
 	public void saveSetSectionOrderPopUpWindow() throws Exception {
-		btnSaveOrder.click();
-		log("Set section Order save button is clicked, pop Up window is closed and object is:-" + btnSaveOrder.toString());
-		Thread.sleep(10000);
+
+		clickOnButton(btnSaveOrder);
+		log("Set section Order save button is clicked, pop Up window is closed and object is:-"
+				+ btnSaveOrder.toString());
+		Thread.sleep(1000);
 	}
 
 	public void sortBySectionName() throws Exception {
-		btnSortBySectionName.click();
+
+		clickOnButton(btnSortBySectionName);
 		log("Sorted the record with section name and object is:-" + btnSortBySectionName.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	public void searchWithSectionNameInTheGrid(String sectionName) {
 
-		inputSearch.clear();
-		inputSearch.sendKeys(sectionName);
+		inputTextIntoInputField(inputSearch, sectionName);
 		log("Entered section name to search: " + sectionName + " and object is:-" + inputSearch.toString());
 	}
 
@@ -260,47 +269,53 @@ public class Masters_Master_Section extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String sectionname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Section Name: " + sectionname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
 
-				Assert.assertEquals(sectionname, sectionName);
-				log("Section name created is updated in the record grid.");
+				String sectionname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Section Name: " + sectionname);
+				// Thread.sleep(2000);
 
-			} catch (Exception e) {
-				e.printStackTrace();
+				Thread.sleep(1000);
+				if (sectionname.equals(sectionName)) {
+					// Assert.assertEquals(sectionname, sectionName);
+					log("Section name created is updated in the record grid.");
+					break;
+				}
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public void minimizeMasterSection() throws Exception {
-		btnMin_MaxMasterSection.click();
+
+		clickOnButton(btnMin_MaxMasterSection);
 		log("clicked on master section minimize button and object is:-" + btnMin_MaxMasterSection.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterSection() throws Exception {
-		btnMin_MaxMasterSection.click();
+
+		clickOnButton(btnMin_MaxMasterSection);
 		log("clicked on master section maximize button and object is:-" + btnMin_MaxMasterSection.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void minimizeMasterSectionList() throws Exception {
 
-		btnMin_MaxMasterSectionList.click();
+		clickOnButton(btnMin_MaxMasterSectionList);
 		log("Master section list table data minimize and object is:-" + btnMin_MaxMasterSectionList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void maximizeMasterSectionList() throws Exception {
 
-		btnMin_MaxMasterSectionList.click();
+		clickOnButton(btnMin_MaxMasterSectionList);
 		log("Master section list table table data maximized and object is:-" + btnMin_MaxMasterSectionList.toString());
-		Thread.sleep(2000);
+
 	}
 
 	public void editMasterSection(String sectionName) {
@@ -308,12 +323,15 @@ public class Masters_Master_Section extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String sectionname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Section Name: " + sectionname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String sectionname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText()
+						.trim();
+				System.out.println("Section Name: " + sectionname);
+				// Thread.sleep(2000);
+
 				if (sectionname.equalsIgnoreCase(sectionName)) {
 
 					driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[6]/a[1]"))
@@ -322,15 +340,10 @@ public class Masters_Master_Section extends TestBase {
 					log("Clicked on the edit link in the master section list grid to edit record");
 
 					break;
-				} else {
-					log("Section Name not matched with the master section list grid");
-					// Thread.sleep(1000);
 				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -339,12 +352,14 @@ public class Masters_Master_Section extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String sectionname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Section Name: " + sectionname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String sectionname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Section Name: " + sectionname);
+				// Thread.sleep(2000);
+
 				if (sectionname.equalsIgnoreCase(sectionName)) {
 
 					WebElement deactiveLink = driver
@@ -357,14 +372,11 @@ public class Masters_Master_Section extends TestBase {
 					log("Clicked on the deactivate link in the master section list grid");
 
 					break;
-				} else {
-					log("Section Name not matched with the master section list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -373,12 +385,14 @@ public class Masters_Master_Section extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
-		for (int i = 1; i <= rows; i++) {
-			String sectionname = driver
-					.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
-			System.out.println("Section Name: " + sectionname);
-			// Thread.sleep(2000);
-			try {
+		try {
+			for (int i = 1; i <= rows; i++) {
+
+				String sectionname = driver
+						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
+				System.out.println("Section Name: " + sectionname);
+				// Thread.sleep(2000);
+
 				if (sectionname.equalsIgnoreCase(sectionName)) {
 
 					WebElement activeLink = driver
@@ -391,36 +405,86 @@ public class Masters_Master_Section extends TestBase {
 					log("Clicked on the activate link in the master section list grid");
 
 					break;
-				} else {
-					log("Section Name not matched with the master section list grid");
-					// Thread.sleep(1000);
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		btnYesDeleteOrDeactIt.click();
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on yes deactivate or activate or delete it button and object is:-"
 				+ btnYesDeleteOrDeactIt.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-		btnCancel.click();
+		clickOnButton(btnCancel);
+		Thread.sleep(3000);
+		assertEquals(btnOKSuccess.getText().trim(), "OK");
 		log("Clicked on cancel button and object is:-" + btnCancel.toString());
-		Thread.sleep(15000);
+
 	}
 
 	public void clickOnOkSuccessButton() throws Exception {
 
-		btnOKSuccess.click();
+		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
 		Thread.sleep(2000);
+	}
+
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_DeactivatedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Section De-Activate Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_ActivatedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Section Activate Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

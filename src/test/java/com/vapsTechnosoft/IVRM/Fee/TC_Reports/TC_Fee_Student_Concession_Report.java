@@ -34,15 +34,15 @@ public class TC_Fee_Student_Concession_Report extends TestBase {
 		return testRecordsLogin;
 	}
 
-	@DataProvider(name = "Reports_FeeStudentConcession_All_Data")
+	@DataProvider(name = "StudentFeeConcessionData_All_Data")
 	public String[][] getTestWrittenData() {
-		String[][] testRecordsClassWiseAttendance = getData("FeeReportsData.xlsx", "FeeStuConcession_AllData");
-		return testRecordsClassWiseAttendance;
+		String[][] testRecordsStuConcession = getData("FeeReportsData.xlsx", "StudentFeeConcessionData_All");
+		return testRecordsStuConcession;
 	}
 
-	@DataProvider(name = "Reports_FeeStudentConcession_Individual_Data")
+	@DataProvider(name = "StudentFeeConcessionData_Indivi_Data")
 	public String[][] getTestSearchData() {
-		String[][] testRecordsSearchDetails = getData("FeeReportsData.xlsx", "FeeStuConcession_IndividualData");
+		String[][] testRecordsSearchDetails = getData("FeeReportsData.xlsx", "StudentFeeConcessionData_Indivi");
 		return testRecordsSearchDetails;
 	}
 
@@ -142,7 +142,7 @@ public class TC_Fee_Student_Concession_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 6, dataProvider = "Reports_FeeStudentConcession_All_Data")
+	@Test(priority = 6, dataProvider = "StudentFeeConcessionData_All_Data")
 	public void tcFill_FeeStudentConcessionReportForm_rdBtnAll(String academicYear, String concession_Type,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -300,7 +300,7 @@ public class TC_Fee_Student_Concession_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 16, dataProvider = "Reports_FeeStudentConcession_All_Data")
+	@Test(priority = 16, dataProvider = "StudentFeeConcessionData_All_Data")
 	public void tcFill_FeeStudentConcessionReportForm_rdBtnAll_AfterClearing(String academicYear,
 			String concession_Type, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -386,7 +386,7 @@ public class TC_Fee_Student_Concession_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "Reports_FeeStudentConcession_Individual_Data")
+	@Test(priority = 21, dataProvider = "StudentFeeConcessionData_Indivi_Data")
 	public void tcFill_FeeStudentConcessionReportForm_rdBtnIndividual(String academicYear, String concession_Type,
 			String select_class, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {

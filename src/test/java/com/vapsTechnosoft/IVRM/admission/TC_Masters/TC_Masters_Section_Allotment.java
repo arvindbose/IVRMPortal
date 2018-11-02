@@ -437,8 +437,23 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcSaveNewSectionAllotmemntForm");
 		}
 	}
-
+	
 	@Test(priority = 22)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_NewSection() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_NewSection Test===========");
+
+			sectionAllotment_NewSec.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_NewSection Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_NewSection");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_NewSection");
+		}
+	}
+	
+	@Test(priority = 23)
 	public void tcClickOnOkSuccessButton_NewSection() {
 
 		try {
@@ -453,7 +468,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 23, dataProvider = "SectionAllotment_NewSection")
+	@Test(priority = 24, dataProvider = "SectionAllotment_NewSection")
 	public void tcFillNewSectionAllotmentForm_ForSearch(String academicYr, String classAdmitted, String section_newSec,
 			String runMode) {
 
@@ -472,7 +487,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 24, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 25, dataProvider = "NewSection_AdmissionNum")
 	public void tcSearchWithStudentNameInNewSectionGrid(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -489,7 +504,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 26, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentAdmissionNumberInTheGrid(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -506,7 +521,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void tcNevigateToDeleteSection() {
 
 		try {
@@ -521,7 +536,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 28)
 	public void tcSubmitDeleteSectionForm_Blank() {
 
 		try {
@@ -536,7 +551,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "SectionAllotment_NewSection")
+	@Test(priority = 29, dataProvider = "SectionAllotment_NewSection")
 	public void tcFillDeleteSectionFormToSelectStudentData(String academicYear, String class_Del, String section_del,
 			String runMode) {
 
@@ -555,7 +570,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcSubmitDeleteSectionForm_WithoutSelectingStudent() {
 
 		try {
@@ -570,7 +585,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_DeleteSection_WithoutStuSelection() {
 
 		try {
@@ -587,7 +602,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcNevigateToDeleteSection_After_WithoutSelectingStudentAction() {
 
 		try {
@@ -604,7 +619,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "SectionAllotment_NewSection")
+	@Test(priority = 33, dataProvider = "SectionAllotment_NewSection")
 	public void tcFillDeleteSectionFormToSelectStudentData_After_WithoutSelectingStudentAction(String academicYear,
 			String class_Del, String section_del, String runMode) {
 
@@ -625,7 +640,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 34, dataProvider = "NewSection_AdmissionNum")
 	public void tcSelectStudentToDeleteSection(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -642,7 +657,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 35)
 	public void tcClearfilledDeleteSectionForm() {
 
 		try {
@@ -657,7 +672,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "SectionAllotment_NewSection")
+	@Test(priority = 36, dataProvider = "SectionAllotment_NewSection")
 	public void tcFillDeleteSectionFormToSelectStudentData_After_Clear(String academicYear, String class_Del,
 			String section_del, String runMode) {
 
@@ -676,7 +691,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 37, dataProvider = "NewSection_AdmissionNum")
 	public void tcSelectStudentToDeleteSection_AfterClear(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -693,7 +708,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 38)
 	public void tcSubmitDeleteSectionForm_Final() {
 
 		try {
@@ -707,8 +722,21 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcSubmitDeleteSectionForm_Final");
 		}
 	}
+	@Test(priority = 39)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Delete() {
 
-	@Test(priority = 38)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Delete Test===========");
+
+			sectionAllotment_NewSec.popWindowMessage_SubmitSuccessfully_Delete();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Delete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Delete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Delete");
+		}
+	}
+	@Test(priority = 40)
 	public void tcClickOnOkSuccessButton_DeleteSection() {
 
 		try {
@@ -723,7 +751,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 41)
 	public void tcNevigateToDeleteSection_After_SectionDelete() {
 
 		try {
@@ -738,7 +766,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 40, dataProvider = "SectionAllotment_NewSection")
+	@Test(priority = 42, dataProvider = "SectionAllotment_NewSection")
 	public void tcFillDeleteSectionFormToSelectStudentData_ForSearchValidation(String academicYear, String class_Del,
 			String section_del, String runMode) {
 
@@ -759,7 +787,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 41, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 43, dataProvider = "NewSection_AdmissionNum")
 	public void tcSearchWithStudentNameInThe_DeleteSectionGrid(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -776,7 +804,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 42, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 44, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentIn_DeleteSectionAllotedGrid(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -793,7 +821,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 43)
+	@Test(priority = 45)
 	public void tcNevigateToNewSection() {
 
 		try {
@@ -808,7 +836,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 44, dataProvider = "SectionAllotment_NewSection")
+	@Test(priority = 46, dataProvider = "SectionAllotment_NewSection")
 	public void tcFillNewSectionAllotmentForm_AfterDelete(String academicYr, String classAdmitted,
 			String section_newSec, String runMode) {
 
@@ -827,7 +855,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 45, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 47, dataProvider = "NewSection_AdmissionNum")
 	public void tcSelectStudentForSectionAllotment_AfterDelete(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -845,7 +873,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 46)
+	@Test(priority = 48)
 	public void tcMoveSelectedStudentForSectionAllotment_AfterDelete() {
 
 		try {
@@ -860,7 +888,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 47, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 49, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentForSectionAllotment_MovedToSectionAllotmentTable_AfterDelete(String admissionNumber,
 			String runMode) {
 
@@ -881,7 +909,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 48)
+	@Test(priority = 50)
 	public void tcSaveNewSectionAllotmemntForm_AfterDelete() {
 
 		try {
@@ -895,8 +923,21 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcSaveNewSectionAllotmemntForm_AfterDelete");
 		}
 	}
+	@Test(priority = 51)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_NewSection_AfterDelete() {
 
-	@Test(priority = 49)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_NewSection_AfterDelete Test===========");
+
+			sectionAllotment_NewSec.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_NewSection_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_NewSection_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_NewSection_AfterDelete");
+		}
+	}
+	@Test(priority = 52)
 	public void tcClickOnOkSuccessButton_NewSection_AfterDelete() {
 
 		try {
@@ -911,7 +952,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 50)
+	@Test(priority = 53)
 	public void tcNevigateToChangeSection() {
 
 		try {
@@ -926,7 +967,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 51)
+	@Test(priority = 54)
 	public void tcSaveSectionChange_SubmitBlankSectionChangeForm() {
 
 		try {
@@ -941,7 +982,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 52, dataProvider = "MastersSectionChangeData")
+	@Test(priority = 55, dataProvider = "MastersSectionChangeData")
 	public void tcFillChangeSectionAllotmentForm(String academicYr, String classAdmitted, String section,
 			String section_ToChange, String runMode) {
 
@@ -961,7 +1002,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 53, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 56, dataProvider = "NewSection_AdmissionNum")
 	public void tcSelectStudentForSection_Change(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -979,7 +1020,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 54)
+	@Test(priority = 57)
 	public void tcMoveSelectedStudentForSectionChange() {
 
 		try {
@@ -994,7 +1035,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 55, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 58, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentForSectionChange_MovedToSectionChangeTable(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1013,7 +1054,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 56)
+	@Test(priority = 59)
 	public void tcClearSectionChangeFilledData() {
 
 		try {
@@ -1028,7 +1069,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 57, dataProvider = "MastersSectionChangeData")
+	@Test(priority = 60, dataProvider = "MastersSectionChangeData")
 	public void tcFillChangeSectionAllotmentForm_AfterClear(String academicYr, String classAdmitted, String section,
 			String section_ToChange, String runMode) {
 
@@ -1048,7 +1089,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 58, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 61, dataProvider = "NewSection_AdmissionNum")
 	public void tcSelectStudentForSection_Change_AfterClear(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1066,7 +1107,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 59)
+	@Test(priority = 62)
 	public void tcMoveSelectedStudentForSectionChange_AfterClear() {
 
 		try {
@@ -1081,7 +1122,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 60, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 63, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentForSectionChange_MovedToSectionChangeTable_AfterClear(String admissionNumber,
 			String runMode) {
 
@@ -1102,7 +1143,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 61)
+	@Test(priority = 64)
 	public void tcSaveSectionChange_Final() {
 
 		try {
@@ -1116,8 +1157,21 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcSaveSectionChange_Final");
 		}
 	}
+	@Test(priority = 65)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_SectionChange() {
 
-	@Test(priority = 62)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_SectionChange Test===========");
+
+			sectionAllotment_NewSec.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_SectionChange Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_SectionChange");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_SectionChange");
+		}
+	}
+	@Test(priority = 66)
 	public void tcClickOnOkSuccessButton_ChangeSection() {
 
 		try {
@@ -1132,7 +1186,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 63, dataProvider = "MastersSectionChangeData")
+	@Test(priority = 67, dataProvider = "MastersSectionChangeData")
 	public void tcFillChangeSectionAllotmentForm_ForSectionChangeGridUpdate(String academicYr, String classAdmitted,
 			String section, String section_ToChange, String runMode) {
 
@@ -1154,7 +1208,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 64, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 68, dataProvider = "NewSection_AdmissionNum")
 	public void tcSearchWithStudentNameInThe_ChangeSectionGrid(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1172,7 +1226,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 65, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 69, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentIn_ChangeSectionAllotedGrid(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1190,7 +1244,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 66)
+	@Test(priority = 70)
 	public void tcNevigateToPromotionSection() {
 
 		try {
@@ -1205,7 +1259,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 67)
+	@Test(priority = 71)
 	public void tcSaveSectionPromotion_SubmitBlankForm() {
 
 		try {
@@ -1220,7 +1274,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 68, dataProvider = "MastersSectionPromotionData")
+	@Test(priority = 72, dataProvider = "MastersSectionPromotionData")
 	public void tcFillPromotionSectionAllotmentForm(String academicYr, String YrsToPromot, String class_Current,
 			String section_Current, String academicYr_Promot, String promoted_Class, String section_ToPromot,
 			String runMode) {
@@ -1241,7 +1295,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 69, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 73, dataProvider = "NewSection_AdmissionNum")
 	public void tcSelectStudentForSection_Promotion(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1259,7 +1313,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 70)
+	@Test(priority = 74)
 	public void tcMoveSelectedStudentForSectionPromotion() {
 
 		try {
@@ -1274,7 +1328,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 71, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 75, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentForSectionPromotion_MovedToSectionPromotionTable(String admissionNumber,
 			String runMode) {
 
@@ -1295,7 +1349,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 72)
+	@Test(priority = 76)
 	public void tcClearSectionPromotionData() {
 
 		try {
@@ -1310,7 +1364,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 73, dataProvider = "MastersSectionPromotionData")
+	@Test(priority = 77, dataProvider = "MastersSectionPromotionData")
 	public void tcFillPromotionSectionAllotmentForm_AfterClear(String academicYr, String YrsToPromot,
 			String class_Current, String section_Current, String academicYr_Promot, String promoted_Class,
 			String section_ToPromot, String runMode) {
@@ -1331,7 +1385,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 74, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 78, dataProvider = "NewSection_AdmissionNum")
 	public void tcSelectStudentForSection_Promotion_AfterClear(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1349,7 +1403,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 75)
+	@Test(priority = 79)
 	public void tcMoveSelectedStudentForSectionPromotion_AfterClear() {
 
 		try {
@@ -1364,7 +1418,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 76, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 80, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentForSectionPromotion_MovedToSectionPromotionTable_AfterClear(String admissionNumber,
 			String runMode) {
 
@@ -1385,7 +1439,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 77)
+	@Test(priority = 81)
 	public void tcSaveSectionPromotion_Final() {
 
 		try {
@@ -1399,8 +1453,21 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcSaveSectionPromotion_Final");
 		}
 	}
+	@Test(priority = 82)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Promotion() {
 
-	@Test(priority = 78)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Promotion Test===========");
+
+			sectionAllotment_NewSec.popWindowMessage_SubmitSuccessfully_Promotion();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Promotion Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Promotion");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Promotion");
+		}
+	}
+	@Test(priority = 83)
 	public void tcClickOnOkSuccessButton_PromotionSection() {
 
 		try {
@@ -1415,7 +1482,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 79)
+	@Test(priority = 84)
 	public void tcNevigateToPromotionSection_GridUpdateCheck() {
 
 		try {
@@ -1430,7 +1497,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 80, dataProvider = "MastersSectionPromotionData")
+	@Test(priority = 85, dataProvider = "MastersSectionPromotionData")
 	public void tcFillPromotionSectionAllotmentForm_ForSearchUpdatedInfrid(String academicYr, String YrsToPromot,
 			String class_Current, String section_Current, String academicYr_Promot, String promoted_Class,
 			String section_ToPromot, String runMode) {
@@ -1453,7 +1520,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 81, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 86, dataProvider = "NewSection_AdmissionNum")
 	public void tcSearchWithStudentNameInThe_PromoteStudentGrid(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1471,7 +1538,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 82, dataProvider = "NewSection_AdmissionNum")
+	@Test(priority = 87, dataProvider = "NewSection_AdmissionNum")
 	public void tcVerifyStudentIn_PromotedStudentGrid(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1489,7 +1556,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 83)
+	@Test(priority = 88)
 	public void tcNevigateToYearLossSection() {
 
 		try {
@@ -1504,7 +1571,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 84)
+	@Test(priority = 89)
 	public void tcSubmitBlankYearLossSectionForm() {
 
 		try {
@@ -1519,7 +1586,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 85, dataProvider = "YearLossSectionData")
+	@Test(priority = 90, dataProvider = "YearLossSectionData")
 	public void tcFillYearLossSectionAllotmentForm(String academicYr, String class_Current, String section_Current,
 			String academicYr_New, String new_Class, String section_YrLoss, String runMode) {
 
@@ -1539,7 +1606,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 86, dataProvider = "YearLoss_AdmNumber")
+	@Test(priority = 91, dataProvider = "YearLoss_AdmNumber")
 	public void tcSelectStudentFor_YearLossStudent(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1557,7 +1624,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 87)
+	@Test(priority = 92)
 	public void tcMoveSelectedStudentForYearLossSection() {
 
 		try {
@@ -1572,7 +1639,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 88, dataProvider = "YearLoss_AdmNumber")
+	@Test(priority = 93, dataProvider = "YearLoss_AdmNumber")
 	public void tcVerifyStudentFor_YearLossStudent_MovedTo_YearLossStudentTable(String admissionNumber,
 			String runMode) {
 
@@ -1593,7 +1660,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 89)
+	@Test(priority = 94)
 	public void tcClearYearLossSectionData() {
 
 		try {
@@ -1608,7 +1675,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 90, dataProvider = "YearLossSectionData")
+	@Test(priority = 95, dataProvider = "YearLossSectionData")
 	public void tcFillYearLossSectionAllotmentForm_AfterClear(String academicYr, String class_Current,
 			String section_Current, String academicYr_New, String new_Class, String section_YrLoss, String runMode) {
 
@@ -1628,7 +1695,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 91, dataProvider = "YearLoss_AdmNumber")
+	@Test(priority = 96, dataProvider = "YearLoss_AdmNumber")
 	public void tcSelectStudentFor_YearLossStudent_AfterClear(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1646,7 +1713,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 92)
+	@Test(priority = 97)
 	public void tcMoveSelectedStudentForYearLossSection_AfterClear() {
 
 		try {
@@ -1661,7 +1728,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 93, dataProvider = "YearLoss_AdmNumber")
+	@Test(priority = 98, dataProvider = "YearLoss_AdmNumber")
 	public void tcVerifyStudentFor_YearLossStudent_MovedTo_YearLossStudentTable_AfterClear(String admissionNumber,
 			String runMode) {
 
@@ -1682,7 +1749,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 94)
+	@Test(priority = 99)
 	public void tcSaveYearLossSection() {
 
 		try {
@@ -1696,8 +1763,21 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcSaveYearLossSection");
 		}
 	}
+	@Test(priority = 100)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_YrLoss() {
 
-	@Test(priority = 95)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_YrLoss Test===========");
+
+			sectionAllotment_NewSec.popWindowMessage_SubmitSuccessfully_YrLoss();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_YrLoss Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_YrLoss");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_YrLoss");
+		}
+	}
+	@Test(priority = 101)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -1712,7 +1792,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 96)
+	@Test(priority = 102)
 	public void tcNevigateToYearLossSection_AfterFinalSubmition() {
 
 		try {
@@ -1727,7 +1807,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 97, dataProvider = "YearLossSectionData")
+	@Test(priority = 103, dataProvider = "YearLossSectionData")
 	public void tcFillYearLossSectionAllotmentForm__AfterFinalSubmition(String academicYr, String class_Current,
 			String section_Current, String academicYr_New, String new_Class, String section_YrLoss, String runMode) {
 
@@ -1747,7 +1827,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 98, dataProvider = "YearLoss_AdmNumber")
+	@Test(priority = 104, dataProvider = "YearLoss_AdmNumber")
 	public void tcSearchStudentToValidateUpdatedYearLossStudentInGrid(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1765,7 +1845,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 99, dataProvider = "YearLoss_AdmNumber")
+	@Test(priority = 105, dataProvider = "YearLoss_AdmNumber")
 	public void tcVerifyUpdatedYearLossStudentInGrid(String admissionNumber, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -1783,7 +1863,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 100)
+	@Test(priority = 106)
 	public void tcNavigateToUpdateRollNumber() {
 
 		try {
@@ -1798,7 +1878,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 101)
+	@Test(priority = 107)
 	public void tcSubmitBlankUpdateRollNumberForm() {
 
 		try {
@@ -1813,7 +1893,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 102, dataProvider = "Update_RollNumberFormData")
+	@Test(priority = 108, dataProvider = "Update_RollNumberFormData")
 	public void tcFillUpdateRollNumberAllotmentForm(String academicYr, String class_rollNo, String section_rollNo,
 			String runMode) {
 
@@ -1832,7 +1912,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 103, dataProvider = "Update_RollNumberSearch")
+	@Test(priority = 109, dataProvider = "Update_RollNumberSearch")
 	public void tcSearchStudentToUpdateRollNumber(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -1849,7 +1929,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 104, dataProvider = "Update_RollNumber")
+	@Test(priority = 110, dataProvider = "Update_RollNumber")
 	public void tcUpdateRollNumberForTheStudent(String admissionNumber, String rollNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -1866,7 +1946,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 105)
+	@Test(priority = 111)
 	public void tcMinimizeUpdateRollNumber() {
 
 		try {
@@ -1881,7 +1961,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 106)
+	@Test(priority = 112)
 	public void tcMinimizeUpdateRollNumberStudentList() {
 
 		try {
@@ -1896,7 +1976,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 107)
+	@Test(priority = 113)
 	public void tcSortByStudentNameInUpdatedRollNumberGrid() {
 
 		try {
@@ -1911,7 +1991,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 108)
+	@Test(priority = 114)
 	public void tcMinimizeUpdatedRollNumberInGrid() {
 
 		try {
@@ -1926,7 +2006,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 109)
+	@Test(priority = 115)
 	public void tcMaximizeUpdateRollNumber() {
 
 		try {
@@ -1941,7 +2021,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 110)
+	@Test(priority = 116)
 	public void tcMaximizeUpdateRollNumberStudentList() {
 
 		try {
@@ -1956,7 +2036,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 111)
+	@Test(priority = 117)
 	public void tcMaximizeUpdatedRollNumberInGrid() {
 
 		try {
@@ -1971,7 +2051,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 112)
+	@Test(priority = 118)
 	public void tcClearUpdateRollNumberData() {
 
 		try {
@@ -1986,7 +2066,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 113, dataProvider = "Update_RollNumberFormData")
+	@Test(priority = 119, dataProvider = "Update_RollNumberFormData")
 	public void tcFillUpdateRollNumberAllotmentForm_AfterClear(String academicYr, String class_rollNo,
 			String section_rollNo, String runMode) {
 
@@ -2005,7 +2085,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 114, dataProvider = "Update_RollNumberSearch")
+	@Test(priority = 120, dataProvider = "Update_RollNumberSearch")
 	public void tcSearchStudentToUpdateRollNumber_AfterClear(String admissionNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -2022,7 +2102,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 115, dataProvider = "Update_RollNumber")
+	@Test(priority = 121, dataProvider = "Update_RollNumber")
 	public void tcUpdateRollNumberForTheStudent_AfterClear(String admissionNumber, String rollNumber, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -2039,7 +2119,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 116)
+	@Test(priority = 122)
 	public void tcSaveUpdateRollNumber() {
 
 		try {
@@ -2053,8 +2133,21 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcSaveUpdateRollNumber");
 		}
 	}
+	@Test(priority = 123)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_RollUpdate() {
 
-	@Test(priority = 117)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_RollUpdate Test===========");
+
+			sectionAllotment_NewSec.popWindowMessage_SubmitSuccessfully_RollUpdate();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_RollUpdate Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_RollUpdate");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_RollUpdate");
+		}
+	}
+	@Test(priority = 124)
 	public void tcClickOnOkSuccessButton_updateRoll() {
 
 		try {
@@ -2068,7 +2161,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcClickOnOkSuccessButton_updateRoll");
 		}
 	}
-	@Test(priority = 118)
+	@Test(priority = 125)
 	public void tcNavigateToUpdateRollNumber_ForGridValidation() {
 
 		try {
@@ -2083,7 +2176,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 119, dataProvider = "Update_RollNumberFormData")
+	@Test(priority = 126, dataProvider = "Update_RollNumberFormData")
 	public void tcFillUpdateRollNumberAllotmentForm_ForOutputGridValidation(String academicYr, String class_rollNo,
 			String section_rollNo, String runMode) {
 
@@ -2103,7 +2196,7 @@ public class TC_Masters_Section_Allotment extends TestBase {
 		}
 	}
 
-	@Test(priority = 120, dataProvider = "Update_RollNumber")
+	@Test(priority = 127, dataProvider = "Update_RollNumber")
 	public void tcVerifyUpdatedRollNumberForTheStudentInGrid(String admissionNumber, String rollNumber,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {

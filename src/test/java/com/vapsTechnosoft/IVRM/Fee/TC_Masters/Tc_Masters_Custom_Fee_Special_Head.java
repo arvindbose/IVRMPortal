@@ -284,18 +284,17 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 	}
 
 	@Test(priority = 15)
-	public void tcVerifySuccessfulPopUp() {
+	public void tcPopUpWindowMessage_SubmitSuccessfully() {
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully Test===========");
 
-			boolean status = customSplfeeHead.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
-
-			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp");
+			customSplfeeHead.popWindowMessage_SubmitSuccessfully();
+		
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully");
 		}
 	}
 
@@ -389,8 +388,22 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 			getScreenShot("tcClickOnSaveButton_CustomSpecialFeeHead_Edit");
 		}
 	}
-
 	@Test(priority = 21)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			customSplfeeHead.popWindowMessage_SubmitSuccessfully_Edit();
+		
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -407,7 +420,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 
 	//
 
-	@Test(priority = 22, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 23, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcSearchBySpLFeeHeadNameInGrid_ForDeactivate(String specialfeehead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -425,7 +438,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 23, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 24, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcDeactivationOfCreatedCustomSPLFeeHead(String specialFeeHead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -443,7 +456,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton_PopUp_deactivate() {
 
 		try {
@@ -457,8 +470,21 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 			getScreenShot("tcClickOnCancelButton_PopUp_deactivate");
 		}
 	}
+	@Test(priority = 26)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 
-	@Test(priority = 25)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			customSplfeeHead.popUpWindowMessage_DeactivateCancel_Validation();
+		
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -473,7 +499,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 28, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcSearchBySpLFeeHeadNameInGrid_ForDeactivate_AfterCancel(String specialfeehead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -491,7 +517,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 29, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcDeactivationOfCreatedCustomSPLFeeHead_AfterCancel(String specialFeeHead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -509,7 +535,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -523,8 +549,21 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 31)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
-	@Test(priority = 29)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			customSplfeeHead.popUpWindowMessage_DeactivateSucessfully_Validation();
+		
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -539,7 +578,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 33, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcSearchBySpLFeeHeadNameInGrid_ForActivate(String specialfeehead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -557,7 +596,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 31, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 34, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcActivationOfCreatedCustomSPLFeeHead(String specialFeeHead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -575,7 +614,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 35)
 	public void tcClickOnCancelButton_PopUp_activate() {
 
 		try {
@@ -589,8 +628,21 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 			getScreenShot("tcClickOnCancelButton_PopUp_activate");
 		}
 	}
+	@Test(priority = 36)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 33)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			customSplfeeHead.popUpWindowMessage_ActivateCancel_Validation();
+		
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -605,7 +657,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 38, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcSearchBySpLFeeHeadNameInGrid_AfterCancel(String specialfeehead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -623,7 +675,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "searchBySpecialFeeHeadName")
+	@Test(priority = 39, dataProvider = "searchBySpecialFeeHeadName")
 	public void tcActivationOfCreatedCustomSPLFeeHead_AfterCancel(String specialFeeHead, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -640,7 +692,7 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 40)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -654,8 +706,21 @@ public class Tc_Masters_Custom_Fee_Special_Head extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 41)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
 
-	@Test(priority = 37)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+			customSplfeeHead.popUpWindowMessage_ActivateSucessfully_Validation();
+		
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {

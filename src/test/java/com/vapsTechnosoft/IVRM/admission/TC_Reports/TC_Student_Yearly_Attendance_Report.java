@@ -127,37 +127,7 @@ public class TC_Student_Yearly_Attendance_Report extends TestBase{
 		}
 	}
 
-//	@Test(priority = 5, dataProvider = "Reports_StudentYearly_AttendanceReport_All_AndIndividual")
-//	public void tcFill100Percent_AttendanceReportForm_All(String academicYear, String Class_100, String section, String runMode) {
-//		if (runMode.equalsIgnoreCase("n")) {
-//			throw new SkipException("user marked this record as no run");
-//		}
-//		try {
-//			log.info("============= Strting tcFill100Percent_AttendanceReportForm_All Test===========");
-//
-//			studentyearly_attendancereport.fillStudentYearly_AttendanceReportForm_All(academicYear, Class_100, section);
-//
-//			log.info("============= Finished tcFill100Percent_AttendanceReportForm_All Test===========");
-//			getScreenShot("tcFill100Percent_AttendanceReportForm_All");
-//		} catch (Exception e) {
-//			getScreenShot("tcFill100Percent_AttendanceReportForm_All");
-//		}
-//	}
 
-//	@Test(priority = 6)
-//	public void tcClickOnReport_TogetRecords_All() {
-//
-//		try {
-//			log.info("============= Strting tcClickOnReport_TogetRecords_All Test===========");
-//
-//			studentyearly_attendancereport.clickOnReport_TogetRecords();
-//
-//			log.info("============= Finished tcClickOnReport_TogetRecords_All Test===========");
-//			getScreenShot("tcClickOnReport_TogetRecords_All");
-//		} catch (Exception e) {
-//			getScreenShot("tcClickOnReport_TogetRecords_All");
-//		}
-//	}
 	@Test(priority =5, dataProvider = "Reports_StudentYearly_AttendanceReport_All_AndIndividual")
 	public void tcFillStudentYearly_AttendanceReportForm(String academicYear, String Class_Yearly, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -499,7 +469,7 @@ public class TC_Student_Yearly_Attendance_Report extends TestBase{
 		}
 	}
 	@Test(priority = 27)
-	public void tcClickOnReport_TogetRecords_Individual() {
+	public void tcClickOnReport_TogetRecords() {
 
 		try {
 			log.info("============= Strting tcClickOnReport_TogetRecords_Individual Test===========");
