@@ -567,7 +567,6 @@ public class Exam_MasterGrade extends TestBase {
 
 	public void activateRecords_MasterGradeGrid() throws Exception {
 
-
 			isDisplayed(icon_Activate);
 			String ActivateText = icon_Activate.getAttribute("aria-label");
 			System.out.println("Tool tip text present :- " + ActivateText);

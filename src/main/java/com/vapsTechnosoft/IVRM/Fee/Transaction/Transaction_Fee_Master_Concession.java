@@ -68,6 +68,9 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 	@FindBy(xpath = "//div[@class='multiselect col-sm-8']/label/input")
 	List<WebElement> Chk_GroupName;
 
+	@FindBy(xpath = "//label[@data-ng-model='FMG_Id']/span")
+	List<WebElement> List_GroupName;
+
 	@FindBy(xpath = "//table//tbody//tr[1]/td[6]//label//input")
 	WebElement chk_StudentList;
 
@@ -150,13 +153,12 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 	}
 
 	public void navigateToTransaction_FeeMasterConcession() throws Exception {
-	
+
 		clickOnButton(btnFee);
 		log("Clicked on Fee Button and object is:-" + btnFee.toString());
 
 		clickOnButton(feeTransaction);
 		log("Clicked on Transaction Button and object is:-" + feeTransaction.toString());
-
 
 		clickOnButton(btnFeeMasterConcession);
 		log("Clicked on Fee Master Concession Button and object is:-" + btnFeeMasterConcession.toString());
@@ -202,7 +204,7 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 		}
 	}
 
-	public void fill_FeeMasterConcessionForm_rdBtnClassWise(String academicYr, String class_ClassWise)
+	public void fill_FeeMasterConcessionForm_rdBtnClassWise(String academicYr, String class_ClassWise, String groupName)
 			throws Exception {
 		isDisplayed(rdBtn_ClassWise);
 		if (!rdBtn_ClassWise.isSelected()) {
@@ -221,20 +223,25 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 		log("Selected Class:-" + class_ClassWise + " and object is " + sel_Class.toString());
 
 		try {
-			int no_Of_Group = Chk_GroupName.size();
-			for (int i = 0; i < no_Of_Group; i++) {
-				if (!Chk_GroupName.get(i).isSelected()) {
-					Chk_GroupName.get(i).click();
-					log(i + " Group Name check box is checked.");
-					Thread.sleep(1000);
+			int groupList = List_GroupName.size();
+			for (int i = 0; i < groupList; i++) {
+				if (List_GroupName.get(i).getText().trim().equals(groupName)) {
+					if (!Chk_GroupName.get(i).isSelected()) {
+						Chk_GroupName.get(i).click();
+						log(i + " Group Name check box is checked.");
+						Thread.sleep(1000);
+					}
+					break;
 				}
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
-	public void fill_FeeMasterConcessionForm_rdBtnCategoryWise(String category, String academicYr) throws Exception {
+	public void fill_FeeMasterConcessionForm_rdBtnCategoryWise(String category, String academicYr,String groupName) throws Exception {
 		isDisplayed(rdBtn_CategoryWise);
 		if (!rdBtn_CategoryWise.isSelected()) {
 			rdBtn_CategoryWise.click();
@@ -252,14 +259,18 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 		log("Selected Academic Year:-" + academicYr + " and object is " + sel_AcademicYear.toString());
 
 		try {
-			int no_Of_Group = Chk_GroupName.size();
-			for (int i = 0; i < no_Of_Group; i++) {
-				if (!Chk_GroupName.get(i).isSelected()) {
-					Chk_GroupName.get(i).click();
-					log(i + " Group Name check box is checked.");
-					Thread.sleep(1000);
+			int groupList = List_GroupName.size();
+			for (int i = 0; i < groupList; i++) {
+				if (List_GroupName.get(i).getText().trim().equals(groupName)) {
+					if (!Chk_GroupName.get(i).isSelected()) {
+						Chk_GroupName.get(i).click();
+						log(i + " Group Name check box is checked.");
+						Thread.sleep(1000);
+					}
+					break;
 				}
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -267,11 +278,10 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 	}
 
 	public void searchStudentFromStudentList(String studentName) throws Exception {
-		
-			inputTextIntoInputField(input_Search_StudentList, studentName);
-			log("Entered student for search is: " + studentName + " and object is:-"
-					+ input_Search_StudentList.toString());
-			
+
+		inputTextIntoInputField(input_Search_StudentList, studentName);
+		log("Entered student for search is: " + studentName + " and object is:-" + input_Search_StudentList.toString());
+
 	}
 
 	public void selectStudentForFeeConcession_FromStudentList() throws Exception {
@@ -297,33 +307,32 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 			log("Fee Head is already selected for fee concession.");
 			Thread.sleep(500);
 		}
-	
-			selectElementFromDropDown(sel_Type_FeeHeadList, concessionType);
-			log("Selected Concession type:-" + concessionType + " and object is " + sel_Type_FeeHeadList.toString());
 
-			inputTextIntoInputField(input_ConcessionAmount_FeeHeadList, amount);
-			log("Entered Concession amount" + amount + " and object is "
-					+ input_ConcessionAmount_FeeHeadList.toString());
-		
-			inputTextIntoInputField(input_Remarks_FeeHeadList, remarks);
-			log("Entered Concession Remarks" + remarks + " and object is " + input_Remarks_FeeHeadList.toString());
-			
+		selectElementFromDropDown(sel_Type_FeeHeadList, concessionType);
+		log("Selected Concession type:-" + concessionType + " and object is " + sel_Type_FeeHeadList.toString());
+
+		inputTextIntoInputField(input_ConcessionAmount_FeeHeadList, amount);
+		log("Entered Concession amount" + amount + " and object is " + input_ConcessionAmount_FeeHeadList.toString());
+
+		inputTextIntoInputField(input_Remarks_FeeHeadList, remarks);
+		log("Entered Concession Remarks" + remarks + " and object is " + input_Remarks_FeeHeadList.toString());
+
 	}
 
 	public void clickOnSaveButton() throws Exception {
-	
-			clickOnButton(btn_Save);
-			log("clicked on save button and object is:-" + btn_Save.toString());
-			Thread.sleep(3000);
-		
+
+		clickOnButton(btn_Save);
+		log("clicked on save button and object is:-" + btn_Save.toString());
+		Thread.sleep(3000);
+
 	}
 
 	public void clickOnCancelButton() throws Exception {
 
-			clickOnButton(btn_Cancel);
-			log("clicked on Cancel button and object is:-" + btn_Cancel.toString());
-			Thread.sleep(3000);
-		
+		clickOnButton(btn_Cancel);
+		log("clicked on Cancel button and object is:-" + btn_Cancel.toString());
+		Thread.sleep(3000);
+
 	}
 
 	public boolean verifySuccessfulPopUp() {
@@ -340,85 +349,84 @@ public class Transaction_Fee_Master_Concession extends TestBase {
 	}
 
 	public void clickOnSuccessOkBtn() throws Exception {
-	
-			clickOnButton(btnOkonSuccess);
-			log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
-			
+
+		clickOnButton(btnOkonSuccess);
+		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
+
 	}
 
 	public void searchStudentFrom_StudentFeeConcessionGrid(String studentName) throws Exception {
-	
-			inputTextIntoInputField(input_Search_OutputGrid, studentName);
-			log("Entered student for search in Student Fee Concession Grid: " + studentName + " and object is:-"
-					+ input_Search_OutputGrid.toString());
-			Thread.sleep(1000);
+
+		inputTextIntoInputField(input_Search_OutputGrid, studentName);
+		log("Entered student for search in Student Fee Concession Grid: " + studentName + " and object is:-"
+				+ input_Search_OutputGrid.toString());
+		Thread.sleep(1000);
 	}
 
 	public void deleteStudentFrom_StudentFeeConcessionGrid() throws InterruptedException {
 
-			clickOnButton(icon_DeleteRecord_OutputGrid);
-			log("Delete icon is clicked for deletion of record and object is:-"
-					+ icon_DeleteRecord_OutputGrid.toString());
-			Thread.sleep(1000);
-		
+		clickOnButton(icon_DeleteRecord_OutputGrid);
+		log("Delete icon is clicked for deletion of record and object is:-" + icon_DeleteRecord_OutputGrid.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-	
-			clickOnButton(btnYesDeleteOrDeactIt);
-			log("Clicked on yes delete it button and object is:-" + btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(5000);
-		
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		log("Clicked on yes delete it button and object is:-" + btnYesDeleteOrDeactIt.toString());
+		Thread.sleep(5000);
+
 	}
 
 	public void clickOnCancelButton_PopUp() throws Exception {
-	
-			clickOnButton(btnPopUpCancel);
-			log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-			Thread.sleep(1000);
-		
+
+		clickOnButton(btnPopUpCancel);
+		log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void minimizeAndMaximize_FeeConcession() throws Exception {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txt_FeeMasterConcession);
 		Thread.sleep(1000);
-	
-			clickOnButton(btnMin_MaxFeeConcession);
-			log("clicked on Fee Concession minimize Or maximize button and object is:-"
-					+ btnMin_MaxFeeConcession.toString());
-			
+
+		clickOnButton(btnMin_MaxFeeConcession);
+		log("clicked on Fee Concession minimize Or maximize button and object is:-"
+				+ btnMin_MaxFeeConcession.toString());
+
 	}
 
 	public void minimizeAndMaximize_StudentList() throws Exception {
-	
-			clickOnButton(btnMin_MaxStudentList);
-			log("clicked on Student list minimize Or maximize and object is:-" + btnMin_MaxStudentList.toString());
-			Thread.sleep(1000);
-		
+
+		clickOnButton(btnMin_MaxStudentList);
+		log("clicked on Student list minimize Or maximize and object is:-" + btnMin_MaxStudentList.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void minimizeAndMaximize_FeeHeadList() throws Exception {
-	
-			clickOnButton(btnMin_MaxFeeHeadList);
-			log("clicked on Fee Head list minimize Or maximize and object is:-" + btnMin_MaxFeeHeadList.toString());
-			Thread.sleep(1000);
-		
+
+		clickOnButton(btnMin_MaxFeeHeadList);
+		log("clicked on Fee Head list minimize Or maximize and object is:-" + btnMin_MaxFeeHeadList.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void minimizeAndMaximize_StudentFeeConcessionGridOutput() throws Exception {
-	
-			clickOnButton(btnMin_MaxStudentFeeConcessionGridOutput);
-			log("clicked on Student Fee Concession Grid Output minimize Or maximize and object is:-"
-					+ btnMin_MaxStudentFeeConcessionGridOutput.toString());
-			Thread.sleep(1000);
-		
+
+		clickOnButton(btnMin_MaxStudentFeeConcessionGridOutput);
+		log("clicked on Student Fee Concession Grid Output minimize Or maximize and object is:-"
+				+ btnMin_MaxStudentFeeConcessionGridOutput.toString());
+		Thread.sleep(1000);
+
 	}
 
 	public void sortByStudentName() throws Exception {
-		
-			clickOnButton(btnSortByStudentName);
-			clickOnButton(btnSortByStudentName);
-			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
-			
+
+		clickOnButton(btnSortByStudentName);
+		clickOnButton(btnSortByStudentName);
+		log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
+
 	}
 }

@@ -16,7 +16,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -73,6 +72,10 @@ public class Masters_Master_Activities extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByActivityName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_ActivityName;
+
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -224,7 +227,8 @@ public class Masters_Master_Activities extends TestBase {
 	public void sortByActivityName() throws Exception {
 
 		clickOnButton(btnSortByActivityName);
-		log("Sorted the record with Activity name and object is:-" + btnSortByActivityName.toString());
+		SortData_InColumn_DescendingOrder(list_ActivityName);
+		log("Sorted the record with Activity name in Descending Order and object is:-" + btnSortByActivityName.toString());
 
 	}
 
@@ -241,6 +245,7 @@ public class Masters_Master_Activities extends TestBase {
 				// Thread.sleep(2000);
 
 				Thread.sleep(1000);
+				if(activityname.equals(activityName)){
 				assertEquals(activityname, activityName);
 
 				driver.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[4]/a[1]")).click();
@@ -248,7 +253,7 @@ public class Masters_Master_Activities extends TestBase {
 				log("Clicked on the edit link in the Master Activities list grid to edit record");
 
 				break;
-
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -341,6 +346,28 @@ public class Masters_Master_Activities extends TestBase {
 			String text = validate_PopUpText.getText().trim();
 			assertEquals(text, "Record Updated Successfully");
 			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_DeleteSuccess_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deleted Successfully");
+			log("Record Deleted sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();

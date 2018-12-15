@@ -237,8 +237,9 @@ public void searchWithSujectCodeToUpdateMaxPeriod(String subjectCode){
 	}
 	public void sortBySubjectName() throws Exception {
 		btnSortBySubjectName.click();
+		
 		log("Sorted the record with Subject Name and object is:-" + btnSortBySubjectName.toString());
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 

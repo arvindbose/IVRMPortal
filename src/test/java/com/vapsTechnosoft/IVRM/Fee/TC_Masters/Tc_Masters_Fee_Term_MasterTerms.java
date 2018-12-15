@@ -118,7 +118,23 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcVerifyFeeTermPage");
 		}
 	}
-	@Test(priority = 5, dataProvider = "FeeTermTestData")
+	@Test(priority = 5)
+	public void tcClickOnSaveButton_ToSubmitBlankForm() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+
+			feeTerm.clickOnSaveButton_ToSubmitBlankForm();
+			
+			log.info("============= Finished tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		}
+	}
+	
+	@Test(priority = 6, dataProvider = "FeeTermTestData")
 	public void tcMastersFeeMasterTerms(String feeTermName,String runMode) {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 		if(runMode.equalsIgnoreCase("n")){
@@ -135,7 +151,111 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcMastersFeeMasterTerms");
 		}
 	}
-	@Test(priority = 6)
+	@Test(priority = 7)
+	public void tcMinimize_MasterFeeTerm() {
+		
+		try {
+			log.info("============= Strting tcMinimize_MasterFeeTerm Test===========");
+
+			feeTerm.minimizeAndMaximize_FeeTerm();
+			
+			log.info("============= Finished tcMinimize_MasterFeeTerm Test===========");
+			getScreenShot("tcMinimize_MasterFeeTerm");
+		} catch (Exception e) {
+			getScreenShot("tcMinimize_MasterFeeTerm");
+		}
+	}
+	@Test(priority = 8)
+	public void tcSortByFeeTermName() {
+
+		try {
+			log.info("============= Strting tcSortByFeeTermName Test===========");
+			getScreenShot("tcSortByFeeTermName_BeforeSorting");
+
+			feeTerm.sortByFeeTermName();
+
+			log.info("============= Finished tcSortByFeeTermName Test===========");
+			getScreenShot("tcSortByFeeTermName");
+		} catch (Exception e) {
+			getScreenShot("tcSortByFeeTermName");
+		}
+	}
+	@Test(priority = 9)
+	public void tcMinimize_FeeMasterTermGridView() {
+		
+		try {
+			log.info("============= Strting tcMinimize_FeeMasterTermGridView Test===========");
+
+			feeTerm.minimizeAndMaximize_FeeMasterTermGridView();
+			
+			log.info("============= Finished tcMinimize_FeeMasterTermGridView Test===========");
+			getScreenShot("tcMinimize_FeeMasterTermGridView");
+		} catch (Exception e) {
+			getScreenShot("tcMinimize_FeeMasterTermGridView");
+		}
+	}
+	@Test(priority = 10)
+	public void tcMaximize_FeeMasterTermGridView() {
+		
+		try {
+			log.info("============= Strting tcMaximize_FeeMasterTermGridView Test===========");
+
+			feeTerm.minimizeAndMaximize_FeeMasterTermGridView();
+			
+			log.info("============= Finished tcMaximize_FeeMasterTermGridView Test===========");
+			getScreenShot("tcMaximize_FeeMasterTermGridView");
+		} catch (Exception e) {
+			getScreenShot("tcMaximize_FeeMasterTermGridView");
+		}
+	}
+	@Test(priority = 11)
+	public void tcMaximize_MasterFeeTerm() {
+		
+		try {
+			log.info("============= Strting tcMaximize_MasterFeeTerm Test===========");
+
+			feeTerm.minimizeAndMaximize_FeeTerm();
+			
+			log.info("============= Finished tcMaximize_MasterFeeTerm Test===========");
+			getScreenShot("tcMaximize_MasterFeeTerm");
+		} catch (Exception e) {
+			getScreenShot("tcMaximize_MasterFeeTerm");
+		}
+	}
+	@Test(priority = 12)
+	public void tcClickOnCancelButton_ToClearFilledData() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcClickOnCancelButton_ToClearFilledData Test===========");
+
+			feeTerm.clickOnCancelButton_ToClearFilledData();
+			
+			log.info("============= Finished tcClickOnCancelButton_ToClearFilledData Test===========");
+			getScreenShot("tcClickOnCancelButton_ToClearFilledData");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnCancelButton_ToClearFilledData");
+		}
+	}
+	//
+	@Test(priority = 13, dataProvider = "FeeTermTestData")
+	public void tcMastersFeeMasterTerms_AfterCancel(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcMastersFeeMasterTerms_AfterCancel Test===========");
+
+			feeTerm.mastersFeeMasterTerms(feeTermName);
+			
+			log.info("============= Finished tcMastersFeeMasterTerms_AfterCancel Test===========");
+			getScreenShot("tcMastersFeeMasterTerms_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcMastersFeeMasterTerms_AfterCancel");
+		}
+	}
+	@Test(priority = 14)
 	public void tcClickOnSaveButton() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
@@ -150,23 +270,23 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcClickOnSaveButton");
 		}
 	}
-	@Test(priority = 7)
-	public void tcVerifySuccessfulPopUp() {
+	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
 
-			boolean status =feeTerm.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			feeTerm.popWindowMessage_SubmitSuccessfully();
+
 			
-			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
-	@Test(priority = 8)
+	@Test(priority = 16)
 	public void tcClickOnSuccessOkBtn() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
@@ -181,7 +301,7 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcClickOnSuccessOkBtn");
 		}
 	}
-	@Test(priority = 9, dataProvider = "FeeTermTestData")
+	@Test(priority = 17, dataProvider = "FeeTermTestData")
 	public void tcSearchTermByTermName(String feeTermName,String runMode) {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 		if(runMode.equalsIgnoreCase("n")){
@@ -198,7 +318,7 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcSearchTermByTermName");
 		}
 	}
-	@Test(priority = 10, dataProvider = "FeeTermTestData")
+	@Test(priority = 18, dataProvider = "FeeTermTestData")
 	public void tcVerifyTermNameUpdatedInGrid(String feeTermName,String runMode) {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 		if(runMode.equalsIgnoreCase("n")){
@@ -215,7 +335,7 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcVerifyTermNameUpdatedInGrid");
 		}
 	}
-	@Test(priority = 11, dataProvider = "FeeTermTestData")
+	@Test(priority = 19, dataProvider = "FeeTermTestData")
 	public void tcDeactivationOfCreatedTerm(String feeTermName,String runMode) {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 		if(runMode.equalsIgnoreCase("n")){
@@ -232,55 +352,184 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcDeactivationOfCreatedTerm");
 		}
 	}
-	@Test(priority = 12)
-	public void tcConfirmationForDeactivation() {
+	@Test(priority = 20)
+	public void tcClickOnCancelButton_PopUp_ForDeactivation() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcConfirmationForDeactivation Test===========");
+			log.info("============= Strting tcClickOnCancelButton_PopUp_ForDeactivation Test===========");
 
-			feeTerm.confirmationForDeactivation();
+			feeTerm.clickOnCancelButton_PopUp();
 
-			log.info("============= Finished tcConfirmationForDeactivation Test===========");
-			getScreenShot("tcConfirmationForDeactivation");
+			log.info("============= Finished tcClickOnCancelButton_PopUp_ForDeactivation Test===========");
+			getScreenShot("tcClickOnCancelButton_PopUp_ForDeactivation");
 		} catch (Exception e) {
-			getScreenShot("tcConfirmationForDeactivation");
+			getScreenShot("tcClickOnCancelButton_PopUp_ForDeactivation");
 		}
 	}
-	@Test(priority = 13)
-	public void tcVerifyDeactivationSuccessfulPopUp() {
+	@Test(priority = 21)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcVerifyDeactivationSuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
 
-			boolean status = feeTerm.verifyDeactivationSuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			feeTerm.popUpWindowMessage_DeactivateCancel_Validation();
 
-			log.info("============= Finished tcVerifyDeactivationSuccessfulPopUp Test===========");
-			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifyDeactivationSuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
 		}
 	}
-	@Test(priority = 14)
-	public void tcClickOnDeactivationFinalOkBtn() {
+	@Test(priority = 22)
+	public void tcClickOnOkButton_DeactivateCancel() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcClickOnDeactivationFinalOkBtn Test===========");
+			log.info("============= Strting tcClickOnOkButton_DeactivateCancel Test===========");
 
 			feeTerm.clickOnDeactivationFinalOkBtn();
 
-			log.info("============= Finished tcClickOnDeactivationFinalOkBtn Test===========");
-			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+			log.info("============= Finished tcClickOnOkButton_DeactivateCancel Test===========");
+			getScreenShot("tcClickOnOkButton_DeactivateCancel");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnDeactivationFinalOkBtn");
+			getScreenShot("tcClickOnOkButton_DeactivateCancel");
+		}
+	}
+	//
+	@Test(priority = 23, dataProvider = "FeeTermTestData")
+	public void tcSearchTermByTermName_AfterDeactivateCancel(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchTermByTermName_AfterDeactivateCancel Test===========");
+
+			feeTerm.searchTermByTermName(feeTermName);
+			
+			log.info("============= Finished tcSearchTermByTermName_AfterDeactivateCancel Test===========");
+			getScreenShot("tcSearchTermByTermName_AfterDeactivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcSearchTermByTermName_AfterDeactivateCancel");
+		}
+	}
+	@Test(priority = 24, dataProvider = "FeeTermTestData")
+	public void tcVerifyTermNameUpdatedInGrid_AfterDeactivateCancel(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcVerifyTermNameUpdatedInGrid_AfterDeactivateCancel Test===========");
+
+			feeTerm.verifyTermNameUpdatedInGrid(feeTermName);
+			
+			log.info("============= Finished tcVerifyTermNameUpdatedInGrid_AfterDeactivateCancel Test===========");
+			getScreenShot("tcVerifyTermNameUpdatedInGrid_AfterDeactivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcVerifyTermNameUpdatedInGrid_AfterDeactivateCancel");
+		}
+	}
+	@Test(priority = 25, dataProvider = "FeeTermTestData")
+	public void tcDeactivationOfCreatedTerm_AfterDeactivateCancel(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcDeactivationOfCreatedTerm Test===========");
+
+			feeTerm.deactivationOfCreatedTerm(feeTermName);
+			
+			log.info("============= Finished tcDeactivationOfCreatedTerm Test===========");
+			getScreenShot("tcDeactivationOfCreatedTerm");
+		} catch (Exception e) {
+			getScreenShot("tcDeactivationOfCreatedTerm");
+		}
+	}
+	@Test(priority = 26)
+	public void tcClickOnYesDeleteOrDeactivateOrActivateIt_PopUp_ForDeactivation() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcClickOnYesDeleteOrDeactivateOrActivateIt_PopUp_ForDeactivation Test===========");
+
+			feeTerm.yesDeleteOrDeactivateOrActivateIt();
+
+			log.info("============= Finished tcClickOnYesDeleteOrDeactivateOrActivateIt_PopUp_ForDeactivation Test===========");
+			getScreenShot("tcClickOnYesDeleteOrDeactivateOrActivateIt_PopUp_ForDeactivation");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnYesDeleteOrDeactivateOrActivateIt_PopUp_ForDeactivation");
+		}
+	}
+	@Test(priority = 27)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			feeTerm.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 28)
+	public void tcClickOnOkButton_DeactivateSucessfully() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcClickOnOkButton_DeactivateSucessfully Test===========");
+
+			feeTerm.clickOnDeactivationFinalOkBtn();
+
+			log.info("============= Finished tcClickOnOkButton_DeactivateSucessfully Test===========");
+			getScreenShot("tcClickOnOkButton_DeactivateSucessfully");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkButton_DeactivateSucessfully");
 		}
 	}
 	//Activation
-	
-	@Test(priority = 15, dataProvider = "FeeTermTestData")
+	@Test(priority = 29, dataProvider = "FeeTermTestData")
+	public void tcSearchTermByTermName_ToActivate(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchTermByTermName_ToActivate Test===========");
+
+			feeTerm.searchTermByTermName(feeTermName);
+			
+			log.info("============= Finished tcSearchTermByTermName_ToActivate Test===========");
+			getScreenShot("tcSearchTermByTermName_ToActivate");
+		} catch (Exception e) {
+			getScreenShot("tcSearchTermByTermName_ToActivate");
+		}
+	}
+	@Test(priority = 30, dataProvider = "FeeTermTestData")
+	public void tcVerifyTermNameUpdatedInGrid_ToActivate(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcVerifyTermNameUpdatedInGrid_ToActivate Test===========");
+
+			feeTerm.verifyTermNameUpdatedInGrid(feeTermName);
+			
+			log.info("============= Finished tcVerifyTermNameUpdatedInGrid_ToActivate Test===========");
+			getScreenShot("tcVerifyTermNameUpdatedInGrid_ToActivate");
+		} catch (Exception e) {
+			getScreenShot("tcVerifyTermNameUpdatedInGrid_ToActivate");
+		}
+	}
+	@Test(priority = 31, dataProvider = "FeeTermTestData")
 	public void tcActivationOfCreatedTerm(String feeTermName,String runMode) {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 		if(runMode.equalsIgnoreCase("n")){
@@ -297,54 +546,167 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcActivationOfCreatedTerm");
 		}
 	}
-	@Test(priority = 16)
-	public void tcConfirmationForActivation() {
+	@Test(priority = 32)
+	public void tcClickOnCancelButton_PopUp_ForActivation() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcConfirmationForActivation Test===========");
+			log.info("============= Strting tcClickOnCancelButton_PopUp_ForActivation Test===========");
 
-			feeTerm.confirmationForActivation();
+			feeTerm.clickOnCancelButton_PopUp();
 
-			log.info("============= Finished tcConfirmationForActivation Test===========");
-			getScreenShot("tcConfirmationForActivation");
+			log.info("============= Finished tcClickOnCancelButton_PopUp_ForActivation Test===========");
+			getScreenShot("tcClickOnCancelButton_PopUp_ForActivation");
 		} catch (Exception e) {
-			getScreenShot("tcConfirmationForActivation");
+			getScreenShot("tcClickOnCancelButton_PopUp_ForActivation");
 		}
 	}
-	@Test(priority = 17)
-	public void tcVerifyActivationSuccessfulPopUp() {
+	@Test(priority = 33)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcVerifyActivationSuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
 
-			boolean status = feeTerm.verifyActivationSuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			feeTerm.popUpWindowMessage_ActivateCancel_Validation();
 
-			log.info("============= Finished tcVerifyActivationSuccessfulPopUp Test===========");
-			getScreenShot("tcVerifyActivationSuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifyActivationSuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
 		}
 	}
-	@Test(priority = 18)
-	public void tcClickOnActivationFinalOkBtn() {
+	@Test(priority = 34)
+	public void tcClickOnOkButton_ActivateCancel() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcClickOnActivationFinalOkBtn Test===========");
+			log.info("============= Strting tcClickOnOkButton_ActivateCancel Test===========");
+
+			feeTerm.clickOnDeactivationFinalOkBtn();
+
+			log.info("============= Finished tcClickOnOkButton_ActivateCancel Test===========");
+			getScreenShot("tcClickOnOkButton_ActivateCancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkButton_ActivateCancel");
+		}
+	}
+	//
+	@Test(priority = 35, dataProvider = "FeeTermTestData")
+	public void tcSearchTermByTermName_ToActivate_AfterCancel(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchTermByTermName_ToActivate_AfterCancel Test===========");
+
+			feeTerm.searchTermByTermName(feeTermName);
+			
+			log.info("============= Finished tcSearchTermByTermName_ToActivate_AfterCancel Test===========");
+			getScreenShot("tcSearchTermByTermName_ToActivate_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcSearchTermByTermName_ToActivate_AfterCancel");
+		}
+	}
+	@Test(priority = 36, dataProvider = "FeeTermTestData")
+	public void tcVerifyTermNameUpdatedInGrid_ToActivate_AfterCancel(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcVerifyTermNameUpdatedInGrid_ToActivate_AfterCancel Test===========");
+
+			feeTerm.verifyTermNameUpdatedInGrid(feeTermName);
+			
+			log.info("============= Finished tcVerifyTermNameUpdatedInGrid_ToActivate_AfterCancel Test===========");
+			getScreenShot("tcVerifyTermNameUpdatedInGrid_ToActivate_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcVerifyTermNameUpdatedInGrid_ToActivate_AfterCancel");
+		}
+	}
+	@Test(priority = 37, dataProvider = "FeeTermTestData")
+	public void tcActivationOfCreatedTerm_AfterCancel(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcActivationOfCreatedTerm_AfterCancel Test===========");
+
+			feeTerm.activationOfCreatedTerm(feeTermName);
+			
+			log.info("============= Finished tcActivationOfCreatedTerm_AfterCancel Test===========");
+			getScreenShot("tcActivationOfCreatedTerm_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcActivationOfCreatedTerm_AfterCancel");
+		}
+	}
+	@Test(priority = 38)
+	public void tcYesDeleteOrDeactivateOrActivateIt_ForActivation() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcYesDeleteOrDeactivateOrActivateIt_ForActivation Test===========");
+
+			feeTerm.yesDeleteOrDeactivateOrActivateIt();
+
+			log.info("============= Finished tcYesDeleteOrDeactivateOrActivateIt_ForActivation Test===========");
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_ForActivation");
+		} catch (Exception e) {
+			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_ForActivation");
+		}
+	}
+	@Test(priority = 39)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+			feeTerm.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 40)
+	public void tcClickOnOkButton_ActivateSucessfully() {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+
+		try {
+			log.info("============= Strting tcClickOnOkButton_ActivateSucessfully Test===========");
 
 			feeTerm.clickOnActivationFinalOkBtn();
 
-			log.info("============= Finished tcClickOnActivationFinalOkBtn Test===========");
-			getScreenShot("tcClickOnActivationFinalOkBtn");
+			log.info("============= Finished tcClickOnOkButton_ActivateSucessfully Test===========");
+			getScreenShot("tcClickOnOkButton_ActivateSucessfully");
 		} catch (Exception e) {
-			getScreenShot("tcClickOnActivationFinalOkBtn");
+			getScreenShot("tcClickOnOkButton_ActivateSucessfully");
 		}
 	}
-	
-	@Test(priority = 19, dataProvider = "FeeTermTestData")
+	//Edit
+	@Test(priority = 41, dataProvider = "FeeTermTestData")
+	public void tcSearchTermByTermName_ToEdit(String feeTermName,String runMode) {
+		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+		if(runMode.equalsIgnoreCase("n")){
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchTermByTermName_ToEdit Test===========");
+
+			feeTerm.searchTermByTermName(feeTermName);
+			
+			log.info("============= Finished tcSearchTermByTermName_ToEdit Test===========");
+			getScreenShot("tcSearchTermByTermName_ToEdit");
+		} catch (Exception e) {
+			getScreenShot("tcSearchTermByTermName_ToEdit");
+		}
+	}
+	@Test(priority = 42, dataProvider = "FeeTermTestData")
 	public void tcEditFeeTerm_MasterTerm(String feeTermName,String runMode) {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 		if(runMode.equalsIgnoreCase("n")){
@@ -361,25 +723,25 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcEditFeeTerm_MasterTerm");
 		}
 	}
-	@Test(priority = 20, dataProvider = "FeeTermNewTestData")
-	public void tcEditmastersFeeMasterTerms(String feeTermNameNew,String runMode) {
-		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
-		if(runMode.equalsIgnoreCase("n")){
-			throw new SkipException("user marked this record as no run");
-		}
-		try {
-			log.info("============= Strting tcEditmastersFeeMasterTerms Test===========");
-
-			feeTerm.editmastersFeeMasterTerms(feeTermNameNew);
-			
-			log.info("============= Finished tcEditmastersFeeMasterTerms Test===========");
-			getScreenShot("tcEditmastersFeeMasterTerms");
-		} catch (Exception e) {
-			getScreenShot("tcEditmastersFeeMasterTerms");
-		}
-	}
+//	@Test(priority = 43, dataProvider = "FeeTermNewTestData")
+//	public void tcEditmastersFeeMasterTerms(String feeTermNameNew,String runMode) {
+//		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
+//		if(runMode.equalsIgnoreCase("n")){
+//			throw new SkipException("user marked this record as no run");
+//		}
+//		try {
+//			log.info("============= Strting tcEditmastersFeeMasterTerms Test===========");
+//
+//			feeTerm.editmastersFeeMasterTerms(feeTermNameNew);
+//			
+//			log.info("============= Finished tcEditmastersFeeMasterTerms Test===========");
+//			getScreenShot("tcEditmastersFeeMasterTerms");
+//		} catch (Exception e) {
+//			getScreenShot("tcEditmastersFeeMasterTerms");
+//		}
+//	}
 	
-	@Test(priority = 21)
+	@Test(priority = 44)
 	public void tcClickOnSaveButtonEdit() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
@@ -394,23 +756,23 @@ public class Tc_Masters_Fee_Term_MasterTerms extends TestBase{
 			getScreenShot("tcClickOnSaveButton");
 		}
 	}
-	@Test(priority = 22)
-	public void tcVerifySuccessfulPopUpEdit() {
+	@Test(priority = 45)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUpEdit Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit Test===========");
 
-			boolean status =feeTerm.verifySuccessfulPopUpEdit();
-			Assert.assertEquals(status, true);
+			feeTerm.popWindowMessage_SubmitSuccessfully_Edit();
+		
 			
-			log.info("============= Finished tcVerifySuccessfulPopUpEdit Test===========");
-			getScreenShot("tcVerifySuccessfulPopUpEdit");
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUpEdit");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit");
 		}
 	}
-	@Test(priority = 23)
+	@Test(priority = 46)
 	public void tcClickOnSuccessOkBtnEdit() {
 		feeTerm = new Masters_Fee_Term_MasterTerms(driver);
 

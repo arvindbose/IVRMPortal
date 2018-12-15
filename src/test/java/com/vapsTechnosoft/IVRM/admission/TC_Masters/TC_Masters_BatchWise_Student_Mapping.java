@@ -176,7 +176,20 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 7, dataProvider = "AcademicYrSearchData")
+	@Test(priority = 7)
+	public void tcSortStudentListByStudentName() {
+
+		try {
+			log.info("============= Starting tcSortStudentListByStudentName Test===========");
+			getScreenShot("tcSortStudentListByStudentName_Before Sorting");
+			batchwiseStudentmapp.sortStudentListByStudentName();
+			log.info("============= Finished tcSortStudentListByStudentName Test===========");
+			getScreenShot("tcSortStudentListByStudentName");
+		} catch (Exception e) {
+			getScreenShot("tcSortStudentListByStudentName");
+		}
+	}
+	@Test(priority = 8, dataProvider = "AcademicYrSearchData")
 	public void tcSearchWithRegNoAcademicYearTo_SelectStudent(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -193,7 +206,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 8, dataProvider = "AcademicYrSearchData")
+	@Test(priority = 9, dataProvider = "AcademicYrSearchData")
 	public void tcSelectStudentToMappWithBatchFromStudentList(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -210,7 +223,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void tcMinimizeBatchWiseStudentMapping() {
 
 		try {
@@ -224,19 +237,6 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 10)
-	public void tcSortStudentListByStudentName() {
-
-		try {
-			log.info("============= Starting tcSortStudentListByStudentName Test===========");
-			getScreenShot("tcSortStudentListByStudentName_Before Sorting");
-			batchwiseStudentmapp.sortStudentListByStudentName();
-			log.info("============= Finished tcSortStudentListByStudentName Test===========");
-			getScreenShot("tcSortStudentListByStudentName");
-		} catch (Exception e) {
-			getScreenShot("tcSortStudentListByStudentName");
-		}
-	}
 
 	@Test(priority = 11)
 	public void tcMinimizeStudentList() {
@@ -253,20 +253,6 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 	}
 
 	@Test(priority = 12)
-	public void tcSortStudentMappListByStudentName() {
-
-		try {
-			log.info("============= Starting tcSortStudentMappListByStudentName Test===========");
-			getScreenShot("tcSortStudentMappListByStudentName_Before Sorting");
-			batchwiseStudentmapp.sortStudentMappListByStudentName();
-			log.info("============= Finished tcSortStudentMappListByStudentName Test===========");
-			getScreenShot("tcSortStudentMappListByStudentName");
-		} catch (Exception e) {
-			getScreenShot("tcSortStudentMappListByStudentName");
-		}
-	}
-
-	@Test(priority = 13)
 	public void tcMinimizeStudentMappList() {
 
 		try {
@@ -280,7 +266,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 13)
 	public void tcMaximizeBatchWiseStudentMapping() {
 
 		try {
@@ -294,7 +280,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 15)
+	@Test(priority = 14)
 	public void tcMaximizeStudentList() {
 
 		try {
@@ -308,7 +294,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 15)
 	public void tcMaximizeStudentMappList() {
 
 		try {
@@ -322,7 +308,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 17)
+	@Test(priority = 16)
 	public void tcClearBatchWiseStudentMappInfoData() {
 
 		try {
@@ -336,7 +322,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 17)
 	public void tcSelectRadioButtonTo_CreateNewBatch_AfterClear() {
 
 		try {
@@ -351,7 +337,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "MastersCreateBatchData")
+	@Test(priority = 18, dataProvider = "MastersCreateBatchData")
 	public void tcFillBatchwiseStudentMappFormTo_CreateNewBatch_AfterClear(String academicYr, String classBatch,
 			String section, String subject, String batchName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -372,7 +358,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 20, dataProvider = "AcademicYrSearchData")
+	@Test(priority = 19, dataProvider = "AcademicYrSearchData")
 	public void tcSearchWithRegNoAcademicYearTo_SelectStudent_AfterClear(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -389,7 +375,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "AcademicYrSearchData")
+	@Test(priority = 20, dataProvider = "AcademicYrSearchData")
 	public void tcSelectStudentToMappWithBatchFromStudentList_AfterClear(String academicYr, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -406,7 +392,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 21)
 	 public void tcSaveBatchWiseStudentMappInfoData() {
 	
 	 try {
@@ -419,7 +405,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 	 getScreenShot("tcSaveBatchWiseStudentMappInfoData");
 	 }
 	 }
-	@Test(priority = 23)
+	@Test(priority = 22)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
 		try {
@@ -434,7 +420,7 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 23)
 	 public void tcClickOnOkSuccessButton() {
 	
 	 try {
@@ -448,6 +434,21 @@ public class TC_Masters_BatchWise_Student_Mapping extends TestBase {
 	 getScreenShot("tcClickOnOkSuccessButton");
 	 }
 	 }
+
+	@Test(priority = 24)
+	public void tcSortStudentMappListByStudentName() {
+
+		try {
+			log.info("============= Starting tcSortStudentMappListByStudentName Test===========");
+			getScreenShot("tcSortStudentMappListByStudentName_Before Sorting");
+			batchwiseStudentmapp.sortStudentMappListByStudentName();
+			log.info("============= Finished tcSortStudentMappListByStudentName Test===========");
+			getScreenShot("tcSortStudentMappListByStudentName");
+		} catch (Exception e) {
+			getScreenShot("tcSortStudentMappListByStudentName");
+		}
+	}
+
 	@Test(priority = 25, dataProvider = "BatchNameSearchData")
 	public void tcSearchWithBatchNameIntheGrid(String batchName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {

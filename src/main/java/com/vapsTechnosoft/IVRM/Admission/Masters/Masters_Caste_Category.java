@@ -72,6 +72,9 @@ public class Masters_Caste_Category extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]")
 	WebElement btnSortByCasteCategoryName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_CasteCategoryName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -233,9 +236,10 @@ public class Masters_Caste_Category extends TestBase {
 	}
 
 	public void sortByCasteCategoryName() throws Exception {
-
+		
 		clickOnButton(btnSortByCasteCategoryName);
-		log("Sorted the record with Caste Category name and object is:-" + btnSortByCasteCategoryName.toString());
+		SortData_InColumn_DescendingOrder(list_CasteCategoryName);
+		log("Sorted the record with Caste Category name In Descending order and object is:-" + btnSortByCasteCategoryName.toString());
 
 	}
 

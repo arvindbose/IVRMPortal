@@ -1113,20 +1113,20 @@ public class TC_Student_Attendance_Report extends TestBase {
 		}
 	}
 
-//	@Test(priority = 63)
-//	public void tcClickOnPrint_Individual_Monthly_MonthDayWise() {
-//
-//		try {
-//			log.info("============= Strting tcClickOnPrint_Individual_Monthly_MonthDayWise Test===========");
-//
-//			studentAttendanceReport.clickOnPrint();
-//
-//			log.info("============= Finished tcClickOnPrint_Individual_Monthly_MonthDayWise Test===========");
-//			getScreenShot("tcClickOnPrint_Individual_Monthly_MonthDayWise");
-//		} catch (Exception e) {
-//			getScreenShot("tcClickOnPrint_Individual_Monthly_MonthDayWise");
-//		}
-//	}
+	@Test(priority = 63)
+	public void tcClickOnPrint_Individual_Monthly_MonthDayWise() {
+
+		try {
+			log.info("============= Strting tcClickOnPrint_Individual_Monthly_MonthDayWise Test===========");
+
+			studentAttendanceReport.clickOnPrint();
+
+			log.info("============= Finished tcClickOnPrint_Individual_Monthly_MonthDayWise Test===========");
+			getScreenShot("tcClickOnPrint_Individual_Monthly_MonthDayWise");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnPrint_Individual_Monthly_MonthDayWise");
+		}
+	}
 
 	@Test(priority = 64)
 	public void tcClickOnCancelButton_AfterIndividual_Monthly_MonthDayWise() {

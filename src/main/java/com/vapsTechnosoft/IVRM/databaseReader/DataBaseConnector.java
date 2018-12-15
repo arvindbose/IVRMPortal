@@ -153,24 +153,28 @@ public class DataBaseConnector {
 	}
 
 	public static void main(String[] args) {
+		
+	/*
+	 * Based on requirement we provide SQL Query and fetch the value and use for test cases
+	 */
+		boolean flag = false;
+		List<String> listOfDBValues = new ArrayList<String>();
 
-		 boolean flag = false;
-	        List<String> listOfDBValues = new ArrayList<String>();
+		String sqlQuery = "Select Name from employee Where Eid=102 AND Name='Arvind'";
+	
+		listOfDBValues = DataBaseConnector.executeSQLQuery_List("QA", sqlQuery);
 		
-		String sqlQuery = "select Name from employee";
-        String expectedEmpName = "Arvind";
-        //Getting employee data by Id
-        listOfDBValues = DataBaseConnector.executeSQLQuery_List("QA", sqlQuery);
-        System.out.println("Employee data retrieved from database :" + listOfDBValues);
-       
-        for (String strName : listOfDBValues) {
-            if (strName.equalsIgnoreCase(expectedEmpName)) {
-                flag = true;
-                break;
-            }
-        }
-        Assert.assertTrue(flag, "Retrieved values are not matching with Expected values");
-    
-		
-	}
+		System.out.println("Print value from database based on condition: "+listOfDBValues);
+		int noOfName=listOfDBValues.size();
+				System.out.println("Number of employee Found: "+noOfName);
+				if(noOfName>1){
+					Assert.assertTrue(flag, "Duplicate record found: Fail");					
+				}
+				else{
+					System.out.println("Duplicate Name not found");
+				}
+		System.out.println("Employee data retrieved from database :" + listOfDBValues);
+
+
+}
 }

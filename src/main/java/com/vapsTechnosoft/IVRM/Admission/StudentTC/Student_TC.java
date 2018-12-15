@@ -117,8 +117,8 @@ public class Student_TC extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'Last Class Studied:')]/following-sibling::div/label")
 	WebElement sel_LastClassStudied;
 
-	@FindBy(xpath = "//label[contains(text(),'SC or ST:')]/following-sibling::div/label")
-	WebElement sel_SC_ST;
+	@FindBy(xpath = "//label[contains(text(),'Caste :')]/following-sibling::div/label")
+	WebElement sel_Caste;
 
 	@FindBy(xpath = "//input[@id='usr' and @name='med_instr']")
 	WebElement input_Medium_Of_Instruction;
@@ -513,6 +513,7 @@ public class Student_TC extends TestBase {
 		try {
 			if (sel_DateOfAdmission.isDisplayed()) {
 				String DOAdm = sel_DateOfAdmission.getText().trim();
+				System.out.println("DOA: "+DOAdm);
 				Assert.assertEquals(DOAdm, dateOfAdm);
 				log("Date of admission from admission form is same in student tc and object is:-"
 						+ sel_DateOfAdmission.toString());
@@ -550,10 +551,10 @@ public class Student_TC extends TestBase {
 		}
 		// Label name not proper in the application
 		try {
-			if (sel_SC_ST.isDisplayed()) {
-				String casteTC = sel_SC_ST.getText().trim();
+			if (sel_Caste.isDisplayed()) {
+				String casteTC = sel_Caste.getText().trim();
 				Assert.assertEquals(casteTC, caste);
-				log("Caste from admission form is same in student tc and object is:-" + sel_SC_ST.toString());
+				log("Caste from admission form is same in student tc and object is:-" + sel_Caste.toString());
 				Thread.sleep(1000);
 			}
 		} catch (Exception e) {

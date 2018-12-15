@@ -81,9 +81,12 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[3]/tbody/tr[1]/td[3]/following::button[1]")
 	WebElement btnCalendar_1stInsFromdate;
 
-	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Nov 2018')]")
 	WebElement btn_MonthYear;
-
+	
+	@FindBy(xpath = "//td[text()='2018']/following::td[@aria-label='May 2018']")
+	WebElement btn_MonthFrom;
+	
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear_1stInsFromdate;
 
@@ -95,6 +98,9 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 
 	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
 	WebElement btn_MonthYear_1stInsTodate;
+	
+	@FindBy(xpath = "//td[text()='2018']/following::td[@aria-label='June 2018']")
+	WebElement btn_MonthTo;
 
 	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]/following::td[31]/span")
 	WebElement btn_Date_1stInsTodate;
@@ -105,6 +111,9 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
 	WebElement btn_MonthYear_1stInsApplicabledate;
 
+	@FindBy(xpath = "//td[text()='2018']/following::td[@aria-label='May 2018']")
+	WebElement btn_MonthApplicable;
+	
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[17]/span")
 	WebElement btn_Date_1stInsApplicabledate;
 
@@ -279,7 +288,7 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 	@FindBy(xpath = "//span[contains(text(),'Apr 2019')]/following::td[6]/span")
 	WebElement btn_Date_5thInsDuedate;
 
-	@FindBy(xpath = "(//div[@class='input-group']/span/following-sibling::input)[2]")
+	@FindBy(xpath = "//input[@ng-model='searchvalue1']")
 	WebElement input_Search_InstDueDate;
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[4]/tbody/tr")
@@ -302,6 +311,10 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[4]/thead/tr/th[3]/a")
 	WebElement btnSortByInstallmentName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[3]")
+	List<WebElement> list_InstallmentName;
+	
 
 	@FindBy(xpath = "//h2")
 	WebElement validate_PopUpText;
@@ -383,7 +396,10 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 		// thirdApril2017.click();
 
 		clickOnButton(btnCalendar_1stInsFromdate);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
+		clickOnButton(btn_MonthYear);
+		Thread.sleep(500);
+		clickOnButton(btn_MonthFrom);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_1stInsFromdate);
 		Thread.sleep(500);
 		btn_Date_1stInsFromdate.click();
 		log("First Installment From date is selected from calender.");
@@ -392,6 +408,8 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 		Thread.sleep(1000);
 
 		clickOnButton(btnCalendar_1stInsTodate);
+		clickOnButton(btn_MonthYear);
+		clickOnButton(btn_MonthTo);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_1stInsTodate);
 		Thread.sleep(500);
 		btn_Date_1stInsTodate.click();
@@ -401,7 +419,10 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 		Thread.sleep(1000);
 
 		clickOnButton(btnCalendar_1stInsApplicabledate);
-		Thread.sleep(500);
+		
+//		clickOnButton(btn_MonthYear);
+//		Thread.sleep(500);
+//		clickOnButton(btn_MonthApplicable);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
 				btn_MonthYear_1stInsApplicabledate);
 		Thread.sleep(500);
@@ -683,7 +704,7 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 				Thread.sleep(1000);
 				if (feeinstallmentname.equals(installmentName)) {
 				Assert.assertEquals(feeinstallmentname, installmentName);
-				driver.findElement(By.xpath("(//div[@class='box-body']/table)[4]/tbody/tr[" + i + "]/td[8]/a[1]/i"))
+				driver.findElement(By.xpath("(//div[@class='box-body']/table)[4]/tbody/tr[" + i + "]/td[8]/a[1]"))
 						.click();
 				log("Clicked on edit link for corresponding Master Fee Installment name in grid");
 				Thread.sleep(1000);
@@ -718,7 +739,12 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 				Assert.assertEquals(feeinstallment, installmentName);
 				WebElement deleteLink = driver
 						.findElement(By.xpath("(//div[@class='box-body']/table)[4]/tbody/tr[" + i + "]/td[8]/a[2]"));
+				String DeleteText = deleteLink.getAttribute("title");
+				System.out.println("Tool tip text present :- " + DeleteText);
 
+				// Compare toll tip text
+				Assert.assertEquals(DeleteText, "Delete");
+				
 				deleteLink.click();
 				log("Clicked on delete link in Master fee Installment Due Date grid");
 				Thread.sleep(1000);
@@ -779,7 +805,8 @@ public class Masters_Fee_Installment_MasterInstallment_DueDate extends TestBase 
 	public void sortByMasterInstallmentName() throws Exception {
 
 		clickOnButton(btnSortByInstallmentName);
-		log("Sorted the record with Fee Installment name and object is:-" + btnSortByInstallmentName.toString());
+		SortData_InColumn_AscendingOrder(list_InstallmentName);
+		log("Sorted the record with Fee Installment name in asceding order and object is:-" + btnSortByInstallmentName.toString());
 
 	}
 

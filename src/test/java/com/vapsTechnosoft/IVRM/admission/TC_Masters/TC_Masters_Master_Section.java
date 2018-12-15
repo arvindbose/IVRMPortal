@@ -184,7 +184,7 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcMinimizeMasterSection");
 		}
 	}
-	
+
 	@Test(priority = 9)
 	public void tcSortBySectionName() {
 
@@ -266,35 +266,21 @@ public class TC_Masters_Master_Section extends TestBase {
 	}
 
 	@Test(priority = 14)
-	 public void tcSubmitFilledMasterSectionForm() {
-	
-	 try {
-	 log.info("============= Strting tcSubmitFilledMasterSectionForm Test===========");
-	
-	 mastersection.submitFilledMasterSectionForm();
-	
-	 log.info("============= Finished tcSubmitFilledMasterSectionForm Test===========");
-	 getScreenShot("tcSubmitFilledMasterSectionForm");
-	 } catch (Exception e) {
-	 getScreenShot("tcSubmitFilledMasterSectionForm");
-	 }
-	 }
+	public void tcSubmitFilledMasterSectionForm() {
+
+		try {
+			log.info("============= Strting tcSubmitFilledMasterSectionForm Test===========");
+
+			mastersection.submitFilledMasterSectionForm();
+
+			log.info("============= Finished tcSubmitFilledMasterSectionForm Test===========");
+			getScreenShot("tcSubmitFilledMasterSectionForm");
+		} catch (Exception e) {
+			getScreenShot("tcSubmitFilledMasterSectionForm");
+		}
+	}
 
 	@Test(priority = 15)
-	 public void tcClickOnOkSuccessButton() {
-	
-	 try {
-	 log.info("============= Strting tcClickOnOkSuccessButton Test===========");
-	
-	 mastersection.clickOnOkSuccessButton();
-	
-	 log.info("============= Finished tcClickOnOkSuccessButton Test===========");
-	 getScreenShot("tcClickOnOkSuccessButton");
-	 } catch (Exception e) {
-	 getScreenShot("tcClickOnOkSuccessButton");
-	 }
-	 }
-	@Test(priority = 16)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
 		try {
@@ -308,7 +294,21 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
-	
+
+	@Test(priority = 16)
+	public void tcClickOnOkSuccessButton() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton Test===========");
+
+			mastersection.clickOnOkSuccessButton();
+
+			log.info("============= Finished tcClickOnOkSuccessButton Test===========");
+			getScreenShot("tcClickOnOkSuccessButton");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton");
+		}
+	}
 
 	@Test(priority = 17, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid(String sectionName, String runMode) {
@@ -378,6 +378,7 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcSubmitFilledMasterSectionForm_Edit");
 		}
 	}
+
 	@Test(priority = 21)
 	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
@@ -392,6 +393,7 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
 		}
 	}
+
 	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
@@ -460,6 +462,21 @@ public class TC_Masters_Master_Section extends TestBase {
 	}
 
 	@Test(priority = 26)
+	public void tcPopWindowMessage_DeactivateCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeactivateCancel_Validation Test===========");
+
+			mastersection.popWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -474,7 +491,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 28, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid_ForDeactivate_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -492,7 +509,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 29, dataProvider = "MasterSectionSearchData")
 	public void tcDeactivateMasterSection_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -510,7 +527,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -524,7 +541,8 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
-	@Test(priority = 30)
+
+	@Test(priority = 31)
 	public void tcPopWindowMessage_DeactivatedSuccessfully_Validation() {
 
 		try {
@@ -539,7 +557,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -554,7 +572,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 33, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid_ForActivate(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -572,7 +590,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 34, dataProvider = "MasterSectionSearchData")
 	public void tcActivateMasterSection(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -590,7 +608,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 35)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -605,7 +623,22 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 36)
+	public void tcPopWindowMessage_ActivateCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopWindowMessage_ActivateCancel_Validation Test===========");
+
+			mastersection.popWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_ActivateCancel_Validation");
+		}
+	}
+
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -620,7 +653,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 38, dataProvider = "MasterSectionSearchData")
 	public void tcSearchWithSectionNameInTheGrid_ForActivate_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -638,7 +671,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 37, dataProvider = "MasterSectionSearchData")
+	@Test(priority = 39, dataProvider = "MasterSectionSearchData")
 	public void tcActivateMasterSection_AfterCancel(String sectionName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -655,7 +688,7 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 40)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -669,7 +702,8 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
-	@Test(priority = 39)
+
+	@Test(priority = 41)
 	public void tcPopWindowMessage_ActivatedSuccessfully_Validation() {
 
 		try {
@@ -683,7 +717,8 @@ public class TC_Masters_Master_Section extends TestBase {
 			getScreenShot("tcPopWindowMessage_ActivatedSuccessfully_Validation");
 		}
 	}
-	@Test(priority = 40)
+
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {
@@ -698,95 +733,101 @@ public class TC_Masters_Master_Section extends TestBase {
 		}
 	}
 
-//	@Test(priority = 41)
-//	public void tcClickOnSetOrder() {
-//
-//		try {
-//			log.info("============= Strting tcClickOnSetOrder Test===========");
-//
-//			mastersection.clickOnSetOrder();
-//
-//			log.info("============= Finished tcClickOnSetOrder Test===========");
-//			getScreenShot("tcClickOnSetOrder");
-//		} catch (Exception e) {
-//			getScreenShot("tcClickOnSetOrder");
-//		}
-//	}
-//
-//	@Test(priority = 42)
-//	public void tcSetSectionOrder() {
-//
-//		try {
-//			log.info("============= Strting tcSetSectionOrder Test===========");
-//
-//			mastersection.setSectionOrder();
-//
-//			log.info("============= Finished tcSetSectionOrder Test===========");
-//			getScreenShot("tcSetSectionOrder");
-//		} catch (Exception e) {
-//			getScreenShot("tcSetSectionOrder");
-//		}
-//	}
-//
-//	@Test(priority = 43)
-//	public void tcCloseSetSectionOrderPopUpWindow() {
-//
-//		try {
-//			log.info("============= Strting tcCloseSetSectionOrderPopUpWindow Test===========");
-//
-//			mastersection.closeSetSectionOrderPopUpWindow();
-//
-//			log.info("============= Finished tcCloseSetSectionOrderPopUpWindow Test===========");
-//			getScreenShot("tcCloseSetSectionOrderPopUpWindow");
-//		} catch (Exception e) {
-//			getScreenShot("tcCloseSetSectionOrderPopUpWindow");
-//		}
-//	}
-//
-//	@Test(priority = 44)
-//	public void tcClickOnSetOrder_AfterClose() {
-//
-//		try {
-//			log.info("============= Strting tcClickOnSetOrder Test===========");
-//
-//			mastersection.clickOnSetOrder();
-//
-//			log.info("============= Finished tcClickOnSetOrder Test===========");
-//			getScreenShot("tcClickOnSetOrder");
-//		} catch (Exception e) {
-//			getScreenShot("tcClickOnSetOrder");
-//		}
-//	}
-//
-//	@Test(priority = 45)
-//	public void tcSetSectionOrder_AfterClose() {
-//
-//		try {
-//			log.info("============= Strting tcSetSectionOrder_AfterClose Test===========");
-//
-//			mastersection.setSectionOrder();
-//
-//			log.info("============= Finished tcSetSectionOrder_AfterClose Test===========");
-//			getScreenShot("tcSetSectionOrder_AfterClose");
-//		} catch (Exception e) {
-//			getScreenShot("tcSetSectionOrder_AfterClose");
-//		}
-//	}
-//
-//	@Test(priority = 46)
-//	public void tcSaveSetSectionOrderPopUpWindow() {
-//
-//		try {
-//			log.info("============= Strting tcSaveSetSectionOrderPopUpWindow Test===========");
-//
-//			mastersection.saveSetSectionOrderPopUpWindow();
-//
-//			log.info("============= Finished tcSaveSetSectionOrderPopUpWindow Test===========");
-//			getScreenShot("tcSaveSetSectionOrderPopUpWindow");
-//		} catch (Exception e) {
-//			getScreenShot("tcSaveSetSectionOrderPopUpWindow");
-//		}
-//	}
+	// @Test(priority = 43)
+	// public void tcClickOnSetOrder() {
+	//
+	// try {
+	// log.info("============= Strting tcClickOnSetOrder Test===========");
+	//
+	// mastersection.clickOnSetOrder();
+	//
+	// log.info("============= Finished tcClickOnSetOrder Test===========");
+	// getScreenShot("tcClickOnSetOrder");
+	// } catch (Exception e) {
+	// getScreenShot("tcClickOnSetOrder");
+	// }
+	// }
+	//
+	// @Test(priority = 44)
+	// public void tcSetSectionOrder() {
+	//
+	// try {
+	// log.info("============= Strting tcSetSectionOrder Test===========");
+	//
+	// mastersection.setSectionOrder();
+	//
+	// log.info("============= Finished tcSetSectionOrder Test===========");
+	// getScreenShot("tcSetSectionOrder");
+	// } catch (Exception e) {
+	// getScreenShot("tcSetSectionOrder");
+	// }
+	// }
+	//
+	// @Test(priority = 45)
+	// public void tcCloseSetSectionOrderPopUpWindow() {
+	//
+	// try {
+	// log.info("============= Strting tcCloseSetSectionOrderPopUpWindow
+	// Test===========");
+	//
+	// mastersection.closeSetSectionOrderPopUpWindow();
+	//
+	// log.info("============= Finished tcCloseSetSectionOrderPopUpWindow
+	// Test===========");
+	// getScreenShot("tcCloseSetSectionOrderPopUpWindow");
+	// } catch (Exception e) {
+	// getScreenShot("tcCloseSetSectionOrderPopUpWindow");
+	// }
+	// }
+	//
+	// @Test(priority = 46)
+	// public void tcClickOnSetOrder_AfterClose() {
+	//
+	// try {
+	// log.info("============= Strting tcClickOnSetOrder Test===========");
+	//
+	// mastersection.clickOnSetOrder();
+	//
+	// log.info("============= Finished tcClickOnSetOrder Test===========");
+	// getScreenShot("tcClickOnSetOrder");
+	// } catch (Exception e) {
+	// getScreenShot("tcClickOnSetOrder");
+	// }
+	// }
+	//
+	// @Test(priority = 47)
+	// public void tcSetSectionOrder_AfterClose() {
+	//
+	// try {
+	// log.info("============= Strting tcSetSectionOrder_AfterClose
+	// Test===========");
+	//
+	// mastersection.setSectionOrder();
+	//
+	// log.info("============= Finished tcSetSectionOrder_AfterClose
+	// Test===========");
+	// getScreenShot("tcSetSectionOrder_AfterClose");
+	// } catch (Exception e) {
+	// getScreenShot("tcSetSectionOrder_AfterClose");
+	// }
+	// }
+	//
+	// @Test(priority = 48)
+	// public void tcSaveSetSectionOrderPopUpWindow() {
+	//
+	// try {
+	// log.info("============= Strting tcSaveSetSectionOrderPopUpWindow
+	// Test===========");
+	//
+	// mastersection.saveSetSectionOrderPopUpWindow();
+	//
+	// log.info("============= Finished tcSaveSetSectionOrderPopUpWindow
+	// Test===========");
+	// getScreenShot("tcSaveSetSectionOrderPopUpWindow");
+	// } catch (Exception e) {
+	// getScreenShot("tcSaveSetSectionOrderPopUpWindow");
+	// }
+	// }
 
 	@AfterClass
 	public void tearDown() {

@@ -61,6 +61,14 @@ public class Transaction_Fee_Transaction extends TestBase {
 
 	@FindBy(xpath = "//input[@name='option1[]']")
 	WebElement chk_Group;
+	
+	@FindBy(xpath = "//label[@data-ng-model='FMG_Id']/span/preceding-sibling::input")
+	List<WebElement> chkList_Group;
+	
+	
+	@FindBy(xpath = "//label[@data-ng-model='FMG_Id']/span")
+	List<WebElement> List_Group;
+	
 
 	@FindBy(xpath = "//div[@id='sel1']/div[1]/span/i")
 	WebElement selIcon;
@@ -230,7 +238,7 @@ public class Transaction_Fee_Transaction extends TestBase {
 		}
 	}
 
-	public void enterStudentNameAndSeelctFeeGrCheck(String studentName) throws Exception {
+	public void enterStudentNameAndSeelctFeeGrCheck(String studentName, String groupName) throws Exception {
 		try {
 			copyToClipbord(studentName);
 			inputStudentName.click();
@@ -242,15 +250,25 @@ public class Transaction_Fee_Transaction extends TestBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		isDisplayed(chk_Group);
-		if(!chk_Group.isSelected()){
-		chk_Group.click();
-		log("Select the check box Fee group and object is:" + chk_Group.toString());
-		Thread.sleep(1000);
+		
+		try {
+			int groupList = List_Group.size();
+			for (int i = 0; i < groupList; i++) {
+				if (List_Group.get(i).getText().trim().equals(groupName)) {
+					if (!chkList_Group.get(i).isSelected()) {
+						chkList_Group.get(i).click();
+						log(i + " Group check box is checked.");
+						Thread.sleep(1000);
+					}
+					break;
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		else{
-			log("check box Fee group and object is:" + chk_Group.toString());
-		}
+
+
 	}
 
 	public void validateStudentInformationData(String stuName, String stuAdmNo, String stuRollNo, String stuMobNo,

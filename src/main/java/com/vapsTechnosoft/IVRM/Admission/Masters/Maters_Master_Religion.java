@@ -69,6 +69,9 @@ public class Maters_Master_Religion extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByReligionName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_ReligionName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -167,7 +170,8 @@ public class Maters_Master_Religion extends TestBase {
 	public void sortByReligionName() throws Exception {
 
 		clickOnButton(btnSortByReligionName);
-		log("Sorted the record with Religion name and object is:-" + btnSortByReligionName.toString());
+		SortData_InColumn_DescendingOrder(list_ReligionName);
+		log("Sorted the record with Religion name in Descending order and object is:-" + btnSortByReligionName.toString());
 
 	}
 
@@ -355,7 +359,7 @@ public class Maters_Master_Religion extends TestBase {
 		try {
 			validate_PopUpText.isDisplayed();
 			String text = validate_PopUpText.getText().trim();
-			assertEquals(text, "Record Saved Successfully");
+			assertEquals(text, "Record Saved Successfully.");
 			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
@@ -367,31 +371,52 @@ public class Maters_Master_Religion extends TestBase {
 		try {
 			validate_PopUpText.isDisplayed();
 			String text = validate_PopUpText.getText().trim();
-			assertEquals(text, "Record Updated Successfully");
+			assertEquals(text, "Record Updated Successfully.");
 			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	public void popWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record deactivation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void popWindowMessage_DeactivatedSuccessfully() throws Exception {
 		try {
 			validate_PopUpText.isDisplayed();
 			String text = validate_PopUpText.getText().trim();
-			assertEquals(text, "Religion Deactivated Successfully");
+			assertEquals(text, "Religion Deactivated Successfully.");
 			log("Record Deactivated sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	public void popWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Activation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void popWindowMessage_ActivatedSuccessfully() throws Exception {
 		try {
 			validate_PopUpText.isDisplayed();
 			String text = validate_PopUpText.getText().trim();
-			assertEquals(text, "Religion Activated Successfully");
+			assertEquals(text, "Religion Activated Successfully.");
 			log("Record Activated sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {

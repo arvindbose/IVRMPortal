@@ -16,7 +16,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -73,6 +72,9 @@ public class Masters_Government_Bond extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByBondName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_BondName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -221,8 +223,9 @@ public class Masters_Government_Bond extends TestBase {
 	public void sortByBondName() throws Exception {
 
 		clickOnButton(btnSortByBondName);
-		log("Sorted the record with bond name and object is:-" + btnSortByBondName.toString());
-		Thread.sleep(3000);
+		SortData_InColumn_DescendingOrder(list_BondName);
+		log("Sorted the record with bond name in descending Order and object is:-" + btnSortByBondName.toString());
+		Thread.sleep(1000);
 	}
 
 	public void editGovernmentBond(String bondName) {
@@ -336,6 +339,28 @@ public class Masters_Government_Bond extends TestBase {
 			String text = validate_PopUpText.getText().trim();
 			assertEquals(text, "Record Updated Successfully");
 			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_DeleteSuccess_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deleted Successfully");
+			log("Record Deleted sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();

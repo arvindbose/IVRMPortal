@@ -88,7 +88,7 @@ public class Masters_Master_Class_Held extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {

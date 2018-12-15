@@ -125,6 +125,10 @@ public class Masters_Master_Class extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByClassName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_ClassName;
+
 
 	@FindBy(xpath = "//div[@class='box-body']/table/tbody/tr")
 	List<WebElement> tblRows;
@@ -330,7 +334,8 @@ public class Masters_Master_Class extends TestBase {
 	public void sortByClasName() throws Exception {
 
 		clickOnButton(btnSortByClassName);
-		log("Sorted the record with class name and object is:-" + btnSortByClassName.toString());
+		SortData_InColumn_DescendingOrder(list_ClassName);
+		log("Sorted the record with class name in Descending order and object is:-" + btnSortByClassName.toString());
 
 	}
 
@@ -532,5 +537,52 @@ public class Masters_Master_Class extends TestBase {
 			e.printStackTrace();
 		}
 	}
+	public void popWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record deactivation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 
+	public void popWindowMessage_DeactivateSuccess_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Class De-Activated Successfully");
+			log("Class Deactivated Successfully. message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Activation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	public void popWindowMessage_ActivateSuccess_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Class Activated Successfully");
+			log("Class Activated Successfully. message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

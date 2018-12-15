@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -52,36 +54,25 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	@FindBy(xpath = "(//div[@class='form-group']/label)[6]")
 	WebElement labelSelClass;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[1]")
+	@FindBy(xpath = "//select[@name='yer']")
 	WebElement selAcademicYr;
 
 	@FindBy(xpath = "(//div[@class='col-sm-8'])[3]")
 	WebElement afterAcademicSelection;
 
-	@FindBy(xpath = "(//div[@class='col-sm-8']/select)[2]")
+	@FindBy(xpath = "//select[@name='clscate']")
 	WebElement selClassCategory;
 
-	@FindBy(xpath = "//div[@class='btn-group']/button")
-	WebElement selClassButton;
-	@FindBy(xpath = "//div[@class='btn-group open']/button")
-	WebElement btnAfterClassSelection;
-	// div[@class='btn-group']
+	@FindBy(xpath = "//input[@ng-model='searchchkbx']")
+	WebElement search_Class;	
+	
+	@FindBy(xpath = "(//input[@name='clsse'])[1]")
+	WebElement chk_Class;	
 
-	// use inside script and try with different class name
-	@FindBy(xpath = "//span[contains(text(),'Test')]")
-	WebElement selClass;
-	// span[contains(text(),'Test')]
-
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[1]")
-	WebElement txtClassCategoryName;
-
-	@FindBy(xpath = "(//div[@class='col-sm-8']/input)[2]")
-	WebElement txtClassCategoryCode;
-
-	@FindBy(xpath = "(//div[@class='text-center']/button)[4]")
+	@FindBy(xpath = "(//span[contains(text(),'Save')]/parent::button)[2]")
 	WebElement btnSave;
 
-	@FindBy(xpath = "(//div[@class='text-center']/button)[5]")
+	@FindBy(xpath = "(//span[contains(text(),'Cancel')]/parent::button)[2]")
 	WebElement btnCancel;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
@@ -90,7 +81,7 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
 	WebElement successfulMessage;
 
-	@FindBy(xpath = "(//div[@class='input-group']/input)[2]")
+	@FindBy(xpath = "//input[@ng-model='search1']")
 	WebElement inputSearch;
 
 	@FindBy(xpath = "(//body[@id='style-4']//div/table)[2]/tbody/tr")
@@ -98,6 +89,26 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnPopUpYesDeleteit;
+	
+	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
+	WebElement btnPopUpCancel;
+	
+	@FindBy(xpath = "(//table/thead)[2]/tr/th[3]/a")
+	WebElement sort_YrlyClassCategory;
+	
+	@FindBy(xpath = "(//table/tbody)[2]/tr/td[3]")
+	List<WebElement> list_ClassCategory;
+	
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[3]")
+	WebElement btnMin_MaxYearlyClassCategory;
+
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[4]")
+	WebElement btnMin_MaxYearlyClassCategoryGridView;
+	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+	
+	
 
 	public Masters_Fee_Yearly_Class_Category(WebDriver driver) {
 		this.driver = driver;
@@ -168,26 +179,37 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 			log("selected fees class category from the list:-" + classCategory + " and object is "
 					+ selClassCategory.toString());
 
-		clickOnButton(selClassButton);
-		clickOnButton(selClass);
-		clickOnButton(btnAfterClassSelection);
-	
+		inputTextIntoInputField(search_Class, className);
+		log("Class for search to select check box:" + className + " and object is:-" + search_Class.toString());
 		Thread.sleep(1000);
-		String selectedClass = selClassButton.getText();
-		try {
-			Assert.assertEquals(selectedClass, className);
-		} catch (Exception e) {
-			e.printStackTrace();
-			log("Selected class not matched with the class provided.");
+		isDisplayed(chk_Class);
+		if(!chk_Class.isSelected()){
+			chk_Class.click();
+			log("Check box is checked and object is: "+chk_Class.toString());
 		}
-		log("Class selected:" + selClassButton.getText() + " and object is:-" + selClassButton.toString());
-		Thread.sleep(1000);
+		else{
+			log("Check box is already checked and object is: "+chk_Class.toString());
+		}
 	}
 
+	public void clickOnSaveButton_ToSubmitBlankForm() throws Exception {
+		
+		clickOnButton(btnSave);
+		log("clicked on save button to submit blank form and object is:-" + btnSave.toString());
+		Thread.sleep(1000);
+	}
+	
 	public void clickOnSaveButton() throws Exception {
 	
 		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
+		Thread.sleep(1000);
+	}
+	
+	public void clickOnCancelButton_ToClearFilledData() throws Exception {
+		
+		clickOnButton(btnCancel);
+		log("clicked on Cancel button to clear filled data and object is:-" + btnCancel.toString());
 		Thread.sleep(1000);
 	}
 
@@ -277,6 +299,14 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 		log("Clicked on confirmation Yes Delete it button and object is:" + btnPopUpYesDeleteit.toString());
 		Thread.sleep(1000);
 	}
+	
+	public void clickOnCancelButton_PopUp() throws Exception {
+		
+		clickOnButton(btnPopUpCancel);
+		log("Clicked on cancel button for delete and object is:-" + btnPopUpCancel.toString());
+		Thread.sleep(3000);
+	
+}
 
 	public boolean verifyDeletionSuccessfulPopUp() {
 		try {
@@ -297,4 +327,65 @@ public class Masters_Fee_Yearly_Class_Category extends TestBase {
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
 		Thread.sleep(1000);
 	}
+	
+	public void sortByClassCategory_Yrly() throws Exception {
+
+		clickOnButton(sort_YrlyClassCategory);
+		SortData_InColumn_AscendingOrder(list_ClassCategory);
+		log("Sorted the record with Class Category name in Ascending order and object is:-" + sort_YrlyClassCategory.toString());
+		
+}
+	
+	public void minimizeAndMaximize_YearlyClassCategory() throws Exception {
+		
+		clickOnButton(btnMin_MaxYearlyClassCategory);
+		log("clicked on Fee Head minimize and maximize button and object is:-" + btnMin_MaxYearlyClassCategory.toString());
+		Thread.sleep(1000);
+	
+}
+
+public void minimizeAndMaximize_YearlyClassCategoryGridView() throws Exception {
+
+		clickOnButton(btnMin_MaxYearlyClassCategoryGridView);
+		log("Fee Master Term grid table data minimize and maximize and object is:-"
+				+ btnMin_MaxYearlyClassCategoryGridView.toString());
+		Thread.sleep(1000);
+	
+}
+public void popWindowMessage_SubmitSuccessfully() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Saved Successfully");
+		log("Record submitted sucessfully message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+
+public void popUpWindowMessage_DeleteCancel_Validation() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Deletion Cancelled");
+		log("Record Deletion Cancelled message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+public void popUpWindowMessage_DeleteSucessfully_Validation() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Deleted Successfully");
+		log("Record Deleted sucessfully message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
 }

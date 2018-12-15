@@ -79,12 +79,18 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'Fee Class Category:')]/following-sibling::div/select")
 	WebElement sel_FeeClassCategory;
 
-	@FindBy(xpath = "//label[contains(text(),'Admission Class Category:')]/following-sibling::div/select")
+	@FindBy(xpath = "//select[@ng-model='AMC_Id']")
 	WebElement sel_AdmClassCategory;
 
 	@FindBy(xpath = "(//select[@id='sel1' and @name='search_for'])[1]")
 	WebElement sel_Search_StuList;
-
+	
+	@FindBy(xpath = "//body[@id='style-4']//div/ul/li/div/span")
+	List<WebElement> list_GroupName;
+	
+	@FindBy(xpath = "//body[@id='style-4']//div/ul/li/div/span/preceding-sibling::input")
+	List<WebElement> chk_GroupName;
+	
 	@FindBy(xpath = "//span[text()='Baldwin CoEducation School Fee']//preceding-sibling::input[@name='selcolchbx']")
 	WebElement chk_GroupList;
 
@@ -118,9 +124,12 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	// @FindBy(xpath = "(//body[@id='style-4']//div/table)[1]/tbody/tr")
 	// List<WebElement> tblRows_StuList;
 
-	@FindBy(xpath = "//table//tbody//tr[1]//td[6]//label//input")
-	WebElement chk_toSelectStuForGroupMap;
-
+	@FindBy(xpath = "(//table/tbody)[1]/tr/td[6]/label/input")
+	List<WebElement> chk_toSelectStuForGroupMap;
+	
+	@FindBy(xpath = "(//table/tbody)[1]/tr/td[3]")
+	List<WebElement> list_AdmNumber;
+	
 	@FindBy(xpath = "//table//tbody//tr[1]//td[6]//a")
 	WebElement icon_Edit_StuList;
 
@@ -148,8 +157,12 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[5]")
 	WebElement btnMin_MaxStudentFeeGroupMappingList;
 
-	@FindBy(xpath = "(//div[@class='box-body']/table)[1]//thead//tr//th[2]/a")
+	@FindBy(xpath = "(//table/thead)[4]/tr/th[2]/a")
 	WebElement btnSortByStudentName;
+	
+	@FindBy(xpath = "(//table/tbody)[4]/tr/td[2]")
+	List<WebElement> list_StudentName;
+	
 
 	@FindBy(xpath = "//table//tbody//tr[1]//td[7]/a")
 	WebElement icon_delete_OutputGrid;
@@ -215,7 +228,7 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 
 	}
 
-	public void mapStudentWithGroup(String bystudentName, String studentName) throws Exception {
+	public void mapStudentWithGroup(String bystudentName, String studentName, String admNumber, String groupName) throws Exception {
 	
 			selectElementFromDropDown(sel_Search_StuList, bystudentName);
 			log("Selected serach for:-" + bystudentName + " and object is " + sel_Search_StuList.toString());
@@ -242,27 +255,68 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 		// Thread.sleep(500);
 		// }
 		//
-			isDisplayed(chk_toSelectStuForGroupMap);
-		if (!chk_toSelectStuForGroupMap.isSelected()) {
+			
+			/*
+			 * Check sepecific student check box to map student with group
+			 */
+			try {
+				int admNumList = list_AdmNumber.size();
+				for (int i = 0; i < admNumList; i++) {
+					if (list_AdmNumber.get(i).getText().trim().equals(admNumber)) {
+						if (!chk_toSelectStuForGroupMap.get(i).isSelected()) {
+							chk_toSelectStuForGroupMap.get(i).click();
+							log(i + " student check box to map group is checked.");
+							Thread.sleep(1000);
+						}
+						break;
+					}
+				}
 
-			chk_toSelectStuForGroupMap.click();
-			log("Student is selected from student list for group mapping and object is "
-					+ chk_toSelectStuForGroupMap.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Student is already selected for group mapping.");
-			Thread.sleep(500);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-		}
-		isDisplayed(chk_GroupList);
-		if (!chk_GroupList.isSelected()) {
-			chk_GroupList.click();
-			log("Group is selected from group list and object is " + chk_GroupList.toString());
-			Thread.sleep(1000);
-		} else {
-			log("Group is already selected.");
-			Thread.sleep(500);
-		}
+			
+//			
+//			isDisplayed(chk_toSelectStuForGroupMap);
+//		if (!chk_toSelectStuForGroupMap.isSelected()) {
+//
+//			chk_toSelectStuForGroupMap.click();
+//			log("Student is selected from student list for group mapping and object is "
+//					+ chk_toSelectStuForGroupMap.toString());
+//			Thread.sleep(1000);
+//		} else {
+//			log("Student is already selected for group mapping.");
+//			Thread.sleep(500);
+//
+//		}
+		
+			try {
+				int grNameList = list_GroupName.size();
+				for (int i = 0; i < grNameList; i++) {
+					if (list_GroupName.get(i).getText().trim().equals(groupName)) {
+						if (!chk_GroupName.get(i).isSelected()) {
+							chk_GroupName.get(i).click();
+							log(i + " Group Name check box to map group is checked.");
+							Thread.sleep(1000);
+						}
+						break;
+					}
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+//		isDisplayed(chk_GroupList);
+//		if (!chk_GroupList.isSelected()) {
+//			chk_GroupList.click();
+//			log("Group is selected from group list and object is " + chk_GroupList.toString());
+//			Thread.sleep(1000);
+//		} else {
+//			log("Group is already selected.");
+//			Thread.sleep(500);
+//		}
 
 	}
 
@@ -589,8 +643,8 @@ public class Masters_Student_Fee_GroupMap extends TestBase {
 	public void sortByStudentName() throws Exception {
 		
 			clickOnButton(btnSortByStudentName);
-			clickOnButton(btnSortByStudentName);
-			log("Sorted the record with Student name and object is:-" + btnSortByStudentName.toString());
+			SortData_InColumn_DescendingOrder(list_StudentName);
+			log("Sorted the record with Student name in descending order and object is:-" + btnSortByStudentName.toString());
 			Thread.sleep(1000);
 		
 	}

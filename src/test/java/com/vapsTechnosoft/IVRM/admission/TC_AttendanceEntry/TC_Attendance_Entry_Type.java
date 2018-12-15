@@ -292,6 +292,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 			getScreenShot("tcSaveFilledAttendanceEntryTypeForm");
 		}
 	}
+
 	@Test(priority = 16)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
@@ -306,7 +307,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
-	
+
 	@Test(priority = 17)
 	public void tcClickOnOkSuccessButton() {
 
@@ -388,6 +389,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Edit");
 		}
 	}
+
 	@Test(priority = 22)
 	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
@@ -402,6 +404,7 @@ public class TC_Attendance_Entry_Type extends TestBase {
 			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
 		}
 	}
+
 	@Test(priority = 23)
 	public void tcClickOnOkSuccessButton_Edit() {
 
@@ -414,6 +417,369 @@ public class TC_Attendance_Entry_Type extends TestBase {
 			getScreenShot("tcClickOnOkSuccessButton_Edit");
 		} catch (Exception e) {
 			getScreenShot("tcClickOnOkSuccessButton_Edit");
+		}
+	}
+
+	@Test(priority = 24, dataProvider = "AttendanceEntryTypeData")
+	public void tcFillAttendanceEntryTypeForm_DailyTwice(String academicYear, String class_Search, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcFillAttendanceEntryTypeForm_DailyTwice Test===========");
+
+			attendanceEntryType.fillAttendanceEntryTypeForm(academicYear, class_Search);
+
+			log.info("============= Finished tcFillAttendanceEntryTypeForm_DailyTwice Test===========");
+			getScreenShot("tcFillAttendanceEntryTypeForm_DailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcFillAttendanceEntryTypeForm_DailyTwice");
+		}
+	}
+
+	@Test(priority = 25)
+	public void tcSelect_DailyTwice_RadioButton_AfterClear() {
+
+		try {
+			log.info("============= Starting tcSelect_DailyTwice_RadioButton_AfterClear Test===========");
+
+			attendanceEntryType.select_DailyTwice_RadioButton();
+
+			log.info("============= Finished tcSelect_DailyTwice_RadioButton_AfterClear Test===========");
+			getScreenShot("tcSelect_DailyTwice_RadioButton_AfterClear");
+		} catch (Exception e) {
+			getScreenShot("tcSelect_DailyTwice_RadioButton_AfterClear");
+		}
+	}
+
+	@Test(priority = 26)
+	public void tcSaveFilledAttendanceEntryTypeForm_ForDailyTwice() {
+
+		try {
+			log.info("============= Strting tcSaveFilledAttendanceEntryTypeForm_ForDailyTwice Test===========");
+
+			attendanceEntryType.saveFilledAttendanceEntryTypeForm();
+
+			log.info("============= Finished tcSaveFilledAttendanceEntryTypeForm_ForDailyTwice Test===========");
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 27)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_ForDailyTwice() {
+
+		try {
+			log.info(
+					"============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_ForDailyTwice Test===========");
+
+			attendanceEntryType.popWindowMessage_SubmitSuccessfully();
+
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_ForDailyTwice Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 28)
+	public void tcClickOnOkSuccessButton_ForDailyTwice() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_ForDailyTwice Test===========");
+
+			attendanceEntryType.clickOnOkSuccessButton();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_ForDailyTwice Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 29, dataProvider = "AttendanceEntryType_Search")
+	public void tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_ForDailyTwice(String className, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info(
+					"============= Strting tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_ForDailyTwice Test===========");
+
+			attendanceEntryType.searchWithClassNameInThe_AttendanceEntryTypeListGrid(className);
+
+			log.info(
+					"============= Finished tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_ForDailyTwice Test===========");
+			getScreenShot("tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 30, dataProvider = "AttendanceEntryType_Search")
+	public void tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_ForDailyTwice(String className,
+			String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info(
+					"============= Strting tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_ForDailyTwice Test===========");
+
+			attendanceEntryType.verifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid(className);
+
+			log.info(
+					"============= Finished tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_ForDailyTwice Test===========");
+			getScreenShot("tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 31, dataProvider = "AttendanceEntryType_Search")
+	public void tcEditAttendanceEntryType_ForDailyTwice(String className, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Starting tcEditAttendanceEntryType_ForDailyTwice Test===========");
+
+			attendanceEntryType.editAttendanceEntryType(className);
+
+			log.info("============= Finished tcEditAttendanceEntryType_ForDailyTwice Test===========");
+			getScreenShot("tcEditAttendanceEntryType_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcEditAttendanceEntryType_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 32)
+	public void tcSaveFilledAttendanceEntryTypeForm_Edit_ForDailyTwice() {
+
+		try {
+			log.info("============= Strting tcSaveFilledAttendanceEntryTypeForm_Edit_ForDailyTwice Test===========");
+
+			attendanceEntryType.saveFilledAttendanceEntryTypeForm();
+
+			log.info("============= Finished tcSaveFilledAttendanceEntryTypeForm_Edit_ForDailyTwice Test===========");
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Edit_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Edit_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 33)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_ForDailyTwice() {
+
+		try {
+			log.info(
+					"============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_ForDailyTwice Test===========");
+
+			attendanceEntryType.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info(
+					"============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_ForDailyTwice Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 34)
+	public void tcClickOnOkSuccessButton_Edit_ForDailyTwice() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_Edit_ForDailyTwice Test===========");
+
+			attendanceEntryType.clickOnOkSuccessButton();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_Edit_ForDailyTwice Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_Edit_ForDailyTwice");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_Edit_ForDailyTwice");
+		}
+	}
+
+	@Test(priority = 35, dataProvider = "AttendanceEntryTypeData")
+	public void tcFillAttendanceEntryTypeForm_Monthly(String academicYear, String class_Search, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Starting tcFillAttendanceEntryTypeForm_Monthly Test===========");
+
+			attendanceEntryType.fillAttendanceEntryTypeForm(academicYear, class_Search);
+
+			log.info("============= Finished tcFillAttendanceEntryTypeForm_Monthly Test===========");
+			getScreenShot("tcFillAttendanceEntryTypeForm_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcFillAttendanceEntryTypeForm_Monthly");
+		}
+	}
+
+	@Test(priority = 36)
+	public void tcSelect_Monthly_RadioButton_AfterClear() {
+
+		try {
+			log.info("============= Starting tcSelect_Monthly_RadioButton_AfterClear Test===========");
+
+			attendanceEntryType.select_Monthly_RadioButton();
+
+			log.info("============= Finished tcSelect_Monthly_RadioButton_AfterClear Test===========");
+			getScreenShot("tcSelect_Monthly_RadioButton_AfterClear");
+		} catch (Exception e) {
+			getScreenShot("tcSelect_Monthly_RadioButton_AfterClear");
+		}
+	}
+
+	@Test(priority = 37)
+	public void tcSaveFilledAttendanceEntryTypeForm_Monthly() {
+
+		try {
+			log.info("============= Strting tcSaveFilledAttendanceEntryTypeForm_Monthly Test===========");
+
+			attendanceEntryType.saveFilledAttendanceEntryTypeForm();
+
+			log.info("============= Finished tcSaveFilledAttendanceEntryTypeForm_Monthly Test===========");
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Monthly");
+		}
+	}
+
+	@Test(priority = 38)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_Monthly() {
+
+		try {
+			log.info(
+					"============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_Monthly Test===========");
+
+			attendanceEntryType.popWindowMessage_SubmitSuccessfully();
+
+			log.info(
+					"============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_Monthly Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_Monthly");
+		}
+	}
+
+	@Test(priority = 39)
+	public void tcClickOnOkSuccessButton_Monthly() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_Monthly Test===========");
+
+			attendanceEntryType.clickOnOkSuccessButton();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_Monthly Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_Monthly");
+		}
+	}
+
+	@Test(priority = 40, dataProvider = "AttendanceEntryType_Search")
+	public void tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_Monthly(String className, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info(
+					"============= Strting tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_Monthly Test===========");
+
+			attendanceEntryType.searchWithClassNameInThe_AttendanceEntryTypeListGrid(className);
+
+			log.info(
+					"============= Finished tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_Monthly Test===========");
+			getScreenShot("tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcSearchWithClassNameInThe_AttendanceEntryTypeListGrid_Monthly");
+		}
+	}
+
+	@Test(priority = 41, dataProvider = "AttendanceEntryType_Search")
+	public void tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_Monthly(String className, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info(
+					"============= Strting tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_Monthly Test===========");
+
+			attendanceEntryType.verifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid(className);
+
+			log.info(
+					"============= Finished tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_Monthly Test===========");
+			getScreenShot("tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcVerifyAttendanceEntryTypeIn_AttendanceEntryTypeListGrid_Monthly");
+		}
+	}
+
+	@Test(priority = 42, dataProvider = "AttendanceEntryType_Search")
+	public void tcEditAttendanceEntryType_Monthly(String className, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Starting tcEditAttendanceEntryType_Monthly Test===========");
+
+			attendanceEntryType.editAttendanceEntryType(className);
+
+			log.info("============= Finished tcEditAttendanceEntryType_Monthly Test===========");
+			getScreenShot("tcEditAttendanceEntryType_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcEditAttendanceEntryType_Monthly");
+		}
+	}
+
+	@Test(priority = 43)
+	public void tcSaveFilledAttendanceEntryTypeForm_Edit_Monthly() {
+
+		try {
+			log.info("============= Strting tcSaveFilledAttendanceEntryTypeForm_Edit_Monthly Test===========");
+
+			attendanceEntryType.saveFilledAttendanceEntryTypeForm();
+
+			log.info("============= Finished tcSaveFilledAttendanceEntryTypeForm_Edit_Monthly Test===========");
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Edit_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcSaveFilledAttendanceEntryTypeForm_Edit_Monthly");
+		}
+	}
+
+	@Test(priority = 44)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_Monthly() {
+
+		try {
+			log.info(
+					"============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_Monthly Test===========");
+
+			attendanceEntryType.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info(
+					"============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_Monthly Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation_Monthly");
+		}
+	}
+
+	@Test(priority = 45)
+	public void tcClickOnOkSuccessButton_Edit_Monthly() {
+
+		try {
+			log.info("============= Strting tcClickOnOkSuccessButton_Edit_Monthly Test===========");
+
+			attendanceEntryType.clickOnOkSuccessButton();
+
+			log.info("============= Finished tcClickOnOkSuccessButton_Edit_Monthly Test===========");
+			getScreenShot("tcClickOnOkSuccessButton_Edit_Monthly");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnOkSuccessButton_Edit_Monthly");
 		}
 	}
 

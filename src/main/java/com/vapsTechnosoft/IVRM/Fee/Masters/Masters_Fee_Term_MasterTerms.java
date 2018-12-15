@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -62,6 +64,28 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnPopUpYesDeactivateit;
+	
+	@FindBy(xpath = "//table/thead/tr/th[2]/a[text()='Term Name']")
+	WebElement sort_TermName;
+	
+	@FindBy(xpath = "(//table/tbody)[1]/tr/td[2]")
+	List<WebElement> list_TermName;
+	
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
+	WebElement btnMin_MaxFeeTerm;
+
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
+	WebElement btnMin_MaxFeeMasterTermGridView;
+	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+	
+	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
+	WebElement btnYesDeleteOrDeactIt;
+
+	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/button")
+	WebElement btnPopUpCancel;
+	
 
 	public Masters_Fee_Term_MasterTerms(WebDriver driver) {
 		this.driver = driver;
@@ -119,7 +143,21 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 		log("clicked on save button and object is:-" + btnSave.toString());
 		Thread.sleep(1000);
 	}
+	public void clickOnSaveButton_ToSubmitBlankForm() throws Exception {
+		
+		clickOnButton(btnSave);
+		log("clicked on save button submit blank form and object is:-" + btnSave.toString());
+		Thread.sleep(1000);
+	}
 
+	public void clickOnCancelButton_ToClearFilledData() throws Exception {
+		
+		clickOnButton(btnCancel);
+		log("clicked on Cancel button and object is:-" + btnCancel.toString());
+		Thread.sleep(1000);
+	}
+
+	
 	public boolean verifySuccessfulPopUp() {
 		try {
 			System.out.println(successfulMessage.getText());
@@ -351,5 +389,122 @@ public class Masters_Fee_Term_MasterTerms extends TestBase {
 		log("clicked on OK button and object is:-" + btnOkonSuccess.toString());
 	
 	}
+	public void sortByFeeTermName() throws Exception {
+
+		clickOnButton(sort_TermName);
+		SortData_InColumn_AscendingOrder(list_TermName);
+		log("Sorted the record with Fee Term name in Ascending order and object is:-" + sort_TermName.toString());
+		
+}
+	
+	public void minimizeAndMaximize_FeeTerm() throws Exception {
+		
+		clickOnButton(btnMin_MaxFeeTerm);
+		log("clicked on Fee Head minimize and maximize button and object is:-" + btnMin_MaxFeeTerm.toString());
+		Thread.sleep(1000);
+	
+}
+
+public void minimizeAndMaximize_FeeMasterTermGridView() throws Exception {
+
+		clickOnButton(btnMin_MaxFeeMasterTermGridView);
+		log("Fee Master Term grid table data minimize and maximize and object is:-"
+				+ btnMin_MaxFeeMasterTermGridView.toString());
+		Thread.sleep(1000);
+	
+}
+public void popWindowMessage_SubmitSuccessfully() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Saved Successfully");
+		log("Record submitted sucessfully message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Updated Successfully");
+		log("Record Updated sucessfully message validated for edit.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Deactivate Cancelled");
+		log("Record Deactivate Cancelled message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Deactivated Successfully");
+		log("Record Deactivated sucessfully message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Activate Cancelled");
+		log("Record Activate Cancelled message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+	try {
+		validate_PopUpText.isDisplayed();
+		String text = validate_PopUpText.getText().trim();
+		assertEquals(text, "Record Activated Successfully");
+		log("Record Activated sucessfully message validated.");
+		Thread.sleep(1000);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+/**
+ * Confirmation validation for deactivation, activation
+ * 
+ * @throws Exception
+ */
+
+public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
+
+		clickOnButton(btnYesDeleteOrDeactIt);
+		log("Clicked on yes deactivate or activate or delete it button and object is:-"
+				+ btnYesDeleteOrDeactIt.toString());
+		Thread.sleep(1000);
+	
+}
+
+public void clickOnCancelButton_PopUp() throws Exception {
+	
+		clickOnButton(btnPopUpCancel);
+		log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
+		Thread.sleep(1000);
+	
+}
 
 }

@@ -445,6 +445,7 @@ public class TC_Masters_Master_Category extends TestBase{
 			getScreenShot("tcDeactivateMasterCategory");
 		}
 	}
+	
 
 	@Test(priority = 25)
 	public void tcClickOnCancelButton_deactivate() {
@@ -460,8 +461,22 @@ public class TC_Masters_Master_Category extends TestBase{
 			getScreenShot("tcClickOnCancelButton_deactivate");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			mastercategory.popWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -476,7 +491,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 28, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid_ForDeactivate_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -494,7 +509,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 29, dataProvider = "MasterCategorySearchData")
 	public void tcDeactivateMasterCategory_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -512,7 +527,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -526,8 +541,21 @@ public class TC_Masters_Master_Category extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 31)
+	public void tcPopUpWindowMessage_DeactivateSuccess_Validation() {
 
-	@Test(priority = 30)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSuccess_Validation Test===========");
+
+			mastercategory.popWindowMessage_DeactivateSuccess_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSuccess_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSuccess_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSuccess_Validation");
+		}
+	}
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -542,7 +570,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 	
-	@Test(priority = 31, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 33, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid_ForActivate(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -560,7 +588,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 32, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 34, dataProvider = "MasterCategorySearchData")
 	public void tcActivateMasterCategory(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -578,7 +606,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 35)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -592,8 +620,21 @@ public class TC_Masters_Master_Category extends TestBase{
 			getScreenShot("tcClickOnCancelButton_activate");
 		}
 	}
+	@Test(priority = 36)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 34)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			mastercategory.popWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -608,7 +649,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 38, dataProvider = "MasterCategorySearchData")
 	public void tcSearchWithCategoryNameInTheGrid_ForActivate_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -626,7 +667,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "MasterCategorySearchData")
+	@Test(priority = 39, dataProvider = "MasterCategorySearchData")
 	public void tcActivateMasterCategory_AfterCancel(String categoryName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -643,7 +684,7 @@ public class TC_Masters_Master_Category extends TestBase{
 		}
 	}
 
-	@Test(priority = 37)
+	@Test(priority = 40)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -657,8 +698,22 @@ public class TC_Masters_Master_Category extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 41)
+	public void tcPopUpWindowMessage_ActivateSuccess_Validation() {
 
-	@Test(priority = 38)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSuccess_Validation Test===========");
+
+			mastercategory.popWindowMessage_ActivateSuccess_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSuccess_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSuccess_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSuccess_Validation");
+		}
+	}
+
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {

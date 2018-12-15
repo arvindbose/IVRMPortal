@@ -97,9 +97,17 @@ public class Masters_BatchWise_Student_Mapping extends TestBase {
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[1]/thead/tr/th[3]/a")
 	WebElement btnSortByStudentName_StudentList;
+	
+	@FindBy(xpath = "(//table/tbody)[1]/tr/td[3]")
+	private List<WebElement> list_StudentNameInStuList;
+	
+	
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[2]/thead/tr/th[2]/a")
 	WebElement btnSortByStudentName_StudentMappList;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_StudentNameInMapList;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -243,7 +251,8 @@ public class Masters_BatchWise_Student_Mapping extends TestBase {
 	public void sortStudentListByStudentName() throws Exception {
 
 		clickOnButton(btnSortByStudentName_StudentList);
-		log("Sorted the record with student name in student list and object is:-"
+		SortData_InColumn_DescendingOrder(list_StudentNameInStuList);
+		log("Sorted the record with student name in student list Descending order and object is:-"
 				+ btnSortByStudentName_StudentList.toString());
 
 	}
@@ -251,7 +260,8 @@ public class Masters_BatchWise_Student_Mapping extends TestBase {
 	public void sortStudentMappListByStudentName() throws Exception {
 
 		clickOnButton(btnSortByStudentName_StudentMappList);
-		log("Sorted the record with student name in student mapp list and object is:-"
+		SortData_InColumn_DescendingOrder(list_StudentNameInMapList);
+		log("Sorted the record with student name in student mapp list Descending order and object is:-"
 				+ btnSortByStudentName_StudentMappList.toString());
 
 	}

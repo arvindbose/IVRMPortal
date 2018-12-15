@@ -3,8 +3,6 @@
  */
 package com.vapsTechnosoft.IVRM.admission.TC_Masters;
 
-import static org.testng.Assert.assertEquals;
-
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
@@ -458,8 +456,21 @@ public class TC_Masters_Master_Caste extends TestBase{
 			getScreenShot("tcClickOnCancelButton");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopUpWindowMessage_DeleteCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+
+			mastercaste.popWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -474,7 +485,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "MasterCasteSearchData")
+	@Test(priority = 28, dataProvider = "MasterCasteSearchData")
 	public void tcDeleteMasterCaste_AfterCancel(String casteName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -492,7 +503,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -506,8 +517,21 @@ public class TC_Masters_Master_Caste extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopUpWindowMessage_DeleteSuccess_Validation() {
 
-	@Test(priority = 29)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteSuccess_Validation Test===========");
+
+			mastercaste.popWindowMessage_DeletedSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteSuccess_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteSuccess_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteSuccess_Validation");
+		}
+	}
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -522,7 +546,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "MastersCasteData")
+	@Test(priority = 32, dataProvider = "MastersCasteData")
 	public void tcEnterMasterCasteDetailsData_AfterDelete(String casteName, String casteDescription,
 			String casteCategory, String runMode) {
 
@@ -540,7 +564,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 33)
 	public void tcSaveMasterCasteInfoData_AfterDelete() {
 
 		try {
@@ -555,7 +579,7 @@ public class TC_Masters_Master_Caste extends TestBase{
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 34)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

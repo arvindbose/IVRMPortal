@@ -63,14 +63,18 @@ public class ClassWise_Daily_Attendance_Report extends TestBase {
 	@FindBy(xpath = "(//label[contains(text(),'Date:')]/following::button[1])[1]")
 	WebElement btnCalendar_Date;
 
-	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]")
 	WebElement btn_MonthYear;
 
-	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]/following::td[1]/span")
 	WebElement btn_Date;
 	
-	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]")
 	WebElement btn_MonthYear2;
+	
+	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	WebElement btn_MonthYear3;
+
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
 	WebElement btn_Report;
@@ -92,6 +96,10 @@ public class ClassWise_Daily_Attendance_Report extends TestBase {
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	WebElement btnMin_MaxClassWiseDailyAttendanceListGrid;
+	
+	@FindBy(xpath = "//table/thead/tr/th")
+	List<WebElement> ClassWiseDailyAttndRepGrid_ColumnHeader;
+
 
 	public ClassWise_Daily_Attendance_Report(WebDriver driver) {
 		this.driver = driver;
@@ -169,8 +177,10 @@ public class ClassWise_Daily_Attendance_Report extends TestBase {
 
 		clickOnButton(btnCalendar_Date);
 		Thread.sleep(500);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear2);
-		//Thread.sleep(500);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear2);
+//		Thread.sleep(500);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear3);
+//		Thread.sleep(500);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear);
 		Thread.sleep(500);
 		btn_Date.click();
@@ -298,5 +308,8 @@ public class ClassWise_Daily_Attendance_Report extends TestBase {
 			e.printStackTrace();
 		}
 	}
-
+	public void validateGrid_ColumnHeader() throws Exception {
+		verifyColumnHeaderWithExcelData(ClassWiseDailyAttndRepGrid_ColumnHeader, "AdmissionMasterGridHeader.xlsx", "ClassWise Daily Attendance Report",
+				"AdmissionReport_ClmnHeader");
+	}
 }

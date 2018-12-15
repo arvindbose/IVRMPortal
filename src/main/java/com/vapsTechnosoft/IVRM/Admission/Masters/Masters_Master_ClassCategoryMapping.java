@@ -91,6 +91,9 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 	
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByClassCategoryName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_ClassCategoryName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -114,7 +117,7 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -213,7 +216,8 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 	public void sortByClassCategoryName() throws Exception {
 
 		clickOnButton(btnSortByClassCategoryName);
-		log("Sorted the record with class Category name and object is:-" + btnSortByClassCategoryName.toString());
+		SortData_InColumn_DescendingOrder(list_ClassCategoryName);
+		log("Sorted the record with class Category name in Descending order and object is:-" + btnSortByClassCategoryName.toString());
 	
 	}
 	
@@ -426,6 +430,17 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 			e.printStackTrace();
 		}
 	}
+	public void popWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record deactivation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public void popWindowMessage_DeactivatedSuccessfully() throws Exception {
 		try{
@@ -438,7 +453,17 @@ public class Masters_Master_ClassCategoryMapping extends TestBase{
 			e.printStackTrace();
 		}
 	}
-	
+	public void popWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Activation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void popWindowMessage_ActivatedSuccessfully() throws Exception {
 		try{
 			validate_PopUpText.isDisplayed();

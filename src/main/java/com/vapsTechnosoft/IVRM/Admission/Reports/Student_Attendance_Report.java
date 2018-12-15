@@ -87,13 +87,13 @@ public class Student_Attendance_Report extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'From Date:')]/following::button[1]")
 	WebElement btnCalendars_FromDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]")
 	WebElement btn_MonthYear_FromDate;
 	
 	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
 	WebElement btn_MonthYear_FromDate2;
 
-	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]/following::td[1]/span")
 	WebElement btn_Date_FromDate;
 
 	// @FindBy(xpath = "//span[contains(text(),'Jan 2018')]")
@@ -105,22 +105,22 @@ public class Student_Attendance_Report extends TestBase {
 	@FindBy(xpath = "//label[contains(text(),'To Date:')]/following::button[1]")
 	WebElement btnCalendars_ToDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Oct 2018')]")
 	WebElement btn_MonthYear_ToDate;
 
-	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]//following::td[2]")
+	@FindBy(xpath = "//span[contains(text(),'Oct 2018')]//following::td[32]")
 	WebElement btn_Date_ToDate;
 
 	@FindBy(xpath = "//label[contains(text(),'Daily:')]/following::button[1]")
 	WebElement btnCalendars_Daily;
 
-	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]")
 	WebElement btn_MonthYear_Daily;
 	
 	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
 	WebElement btn_MonthYear_Daily2;
 
-	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]/following::td[1]/span")
 	WebElement btn_Date_Daily;
 
 	// @FindBy(xpath = "//span[contains(text(),'Mar 2018')]")
@@ -513,8 +513,8 @@ public class Student_Attendance_Report extends TestBase {
 
 		clickOnButton(btnCalendars_FromDate);
 		Thread.sleep(500);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate2);
-		Thread.sleep(500);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate2);
+//		Thread.sleep(500);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate);
 		Thread.sleep(500);
 		btn_Date_FromDate.click();
@@ -565,8 +565,8 @@ public class Student_Attendance_Report extends TestBase {
 
 		clickOnButton(btnCalendars_Daily);
 		Thread.sleep(500);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily2);
-		Thread.sleep(500);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily2);
+//		Thread.sleep(500);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily);
 		Thread.sleep(500);
 		btn_Date_Daily.click();
@@ -588,6 +588,16 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected.");
 			Thread.sleep(500);
 		}
+		
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
+
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
+
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
+
 		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
@@ -607,15 +617,7 @@ public class Student_Attendance_Report extends TestBase {
 			Thread.sleep(500);
 		}
 
-		selectElementFromDropDown(sel_AcademicYr, academicYr);
-		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-
-		selectElementFromDropDown(sel_Class, rep_class);
-		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-
-		selectElementFromDropDown(sel_Section, section);
-		log("selected section: " + section + " and object is:- " + sel_Section.toString());
-
+		
 		selectElementFromDropDown(sel_StudentName, studentName);
 		log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
 
@@ -638,6 +640,17 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected.");
 			Thread.sleep(500);
 		}
+		
+
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
+
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
+
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
+
 		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
@@ -656,23 +669,14 @@ public class Student_Attendance_Report extends TestBase {
 			log("Between Date radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-
-		selectElementFromDropDown(sel_AcademicYr, academicYr);
-		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-
-		selectElementFromDropDown(sel_Class, rep_class);
-		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-
-		selectElementFromDropDown(sel_Section, section);
-		log("selected section: " + section + " and object is:- " + sel_Section.toString());
-
+		
 		selectElementFromDropDown(sel_StudentName, studentName);
 		log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
 
 		clickOnButton(btnCalendars_FromDate);
 		Thread.sleep(500);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate2);
-		Thread.sleep(500);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate2);
+//		Thread.sleep(500);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_FromDate);
 		Thread.sleep(500);
 		btn_Date_FromDate.click();
@@ -701,6 +705,17 @@ public class Student_Attendance_Report extends TestBase {
 			log("All radio button is already selected.");
 			Thread.sleep(500);
 		}
+		
+
+		selectElementFromDropDown(sel_AcademicYr, academicYr);
+		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
+
+		selectElementFromDropDown(sel_Class, rep_class);
+		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
+
+		selectElementFromDropDown(sel_Section, section);
+		log("selected section: " + section + " and object is:- " + sel_Section.toString());
+
 		isDisplayed(rdBtn_Name);
 		if (!rdBtn_Name.isSelected()) {
 			rdBtn_Name.click();
@@ -719,23 +734,14 @@ public class Student_Attendance_Report extends TestBase {
 			log("Daily radio button is already selected (OR) all radio button element not present.");
 			Thread.sleep(500);
 		}
-
-		selectElementFromDropDown(sel_AcademicYr, academicYr);
-		log("selected Academic Year: " + academicYr + " and object is:- " + sel_AcademicYr.toString());
-
-		selectElementFromDropDown(sel_Class, rep_class);
-		log("selected class: " + rep_class + " and object is:- " + sel_Class.toString());
-
-		selectElementFromDropDown(sel_Section, section);
-		log("selected section: " + section + " and object is:- " + sel_Section.toString());
-
+		
 		selectElementFromDropDown(sel_StudentName, studentName);
 		log("selected Student: " + studentName + " and object is:- " + sel_Section.toString());
 
 		clickOnButton(btnCalendars_Daily);
 		Thread.sleep(500);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily2);
-		Thread.sleep(500);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily2);
+//		Thread.sleep(500);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn_MonthYear_Daily);
 		Thread.sleep(500);
 		btn_Date_Daily.click();

@@ -124,6 +124,9 @@ public class Masters_Section_Allotment extends TestBase {
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[1]/thead/tr/th[2]/a")
 	WebElement btn_sortByStudentName;
+	
+	@FindBy(xpath = "(//table/tbody)[3]/tr/td[2]")
+	private List<WebElement> list_StudentName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -488,6 +491,9 @@ public class Masters_Section_Allotment extends TestBase {
 	}
 
 	public void moveSelectedStudentForSectionAllotment() throws Exception {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtMasters_SectionAllotmentMsgDispaly);
+		Thread.sleep(1000);
 
 		clickOnButton(btn_shift_SelectedStudent);
 		log("Selected student for section allotment is moved for section allotment table and object is:-"
@@ -590,7 +596,8 @@ public class Masters_Section_Allotment extends TestBase {
 	public void sortByStudentNameInGrid() throws Exception {
 
 		clickOnButton(btn_sortByStudentName);
-		log("Sorted the record with Student Name and object is:-" + btn_sortByStudentName.toString());
+		SortData_InColumn_DescendingOrder(list_StudentName);
+		log("Sorted the record with Student Name in descending order and object is:-" + btn_sortByStudentName.toString());
 
 	}
 
@@ -1354,7 +1361,8 @@ public class Masters_Section_Allotment extends TestBase {
 	public void sortByStudentNameInUpdateRollNumberGrid() throws Exception {
 
 		clickOnButton(btn_sortByStudentNameRollGrid);
-		log("Sorted the record with Student Name in the grid and object is:-"
+		SortData_InColumn_DescendingOrder(list_StudentName);
+		log("Sorted the record with Student Name in the grid in descending order and object is:-"
 				+ btn_sortByStudentNameRollGrid.toString());
 
 	}

@@ -279,6 +279,20 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 		}
 	}
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			chequebounce.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
 		try {
@@ -293,7 +307,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 		}
 	}
 	
-	@Test(priority = 16, dataProvider = "Search_FeeChequeBounceData")
+	@Test(priority = 17, dataProvider = "Search_FeeChequeBounceData")
 	public void tcSearchByStudentNameInGrid(String byStudentName,String studentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -310,7 +324,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 			getScreenShot("tcSearchByStudentNameInGrid");
 		}
 	}
-	@Test(priority = 17, dataProvider = "Verify_ChequeBounceGridRecords")
+	@Test(priority = 18, dataProvider = "Verify_ChequeBounceGridRecords")
 	public void tcVerifyChequeBounceStudentDetailsUpdatedInGrid(String studentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -329,7 +343,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 	}
 	
 
-	@Test(priority = 18, dataProvider = "Verify_ChequeBounceGridRecords")
+	@Test(priority = 19, dataProvider = "Verify_ChequeBounceGridRecords")
 	public void tcDeleteChequeBounceDetailsFromGrid(String studentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -347,7 +361,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcCancel_DeletePopUp() {
 
 		try {
@@ -361,8 +375,21 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 			getScreenShot("tcCancel_DeletePopUp");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopUpWindowMessage_DeleteCancel_Validation() {
 
-	@Test(priority = 20)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+
+			chequebounce.popUpWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -378,7 +405,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 	}
 	
 
-	@Test(priority = 21, dataProvider = "Verify_ChequeBounceGridRecords")
+	@Test(priority = 23, dataProvider = "Verify_ChequeBounceGridRecords")
 	public void tcDeleteChequeBounceDetailsFromGrid_AfterCancel(String studentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -396,7 +423,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 24)
 	public void tcConfirmationForDelete_YesDeleteIt() {
 
 		try {
@@ -410,8 +437,21 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 			getScreenShot("tcConfirmationForDelete_YesDeleteIt");
 		}
 	}
+	@Test(priority = 25)
+	public void tcPopUpWindowMessage_DeleteSucessfully_Validation() {
 
-	@Test(priority = 23)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteSucessfully_Validation Test===========");
+
+			chequebounce.popUpWindowMessage_DeleteSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteSucessfully_Validation");
+		}
+	}
+	@Test(priority = 26)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -425,7 +465,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_delete");
 		}
 	}
-	@Test(priority = 24, dataProvider = "FeeChequeBounceData")
+	@Test(priority = 27, dataProvider = "FeeChequeBounceData")
 	public void tcFill_FeeChequeBounce_Form_AfterDelete(String academicYear, String stu_Class,String studentName,String receiptNo,String remarks, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -442,7 +482,7 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 		}
 	}
 	
-	@Test(priority = 25)
+	@Test(priority = 28)
 	public void tcClickOnSaveButton_ToSubmitChequeBounceForm_AfterDelete() {
 
 		try {
@@ -456,8 +496,21 @@ public class TC_Transaction_Fee_ChequeBounce extends TestBase{
 			getScreenShot("tcClickOnSaveButton_ToSubmitChequeBounceForm_AfterDelete");
 		}
 	}
+	@Test(priority = 29)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
-	@Test(priority = 26)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+
+			chequebounce.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
+		}
+	}
+	@Test(priority = 30)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

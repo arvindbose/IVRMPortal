@@ -177,6 +177,20 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 		}
 	}
 	@Test(priority = 8)
+	public void tcValidateGrid_ColumnHeader_WithExcelValue() {
+
+		try {
+			log.info("============= Strting tcValidateGrid_ColumnHeader_WithExcelValue Test===========");
+
+			classwiseAttendance.validateGrid_ColumnHeader();
+
+			log.info("============= Finished tcValidateGrid_ColumnHeader_WithExcelValue Test===========");
+			getScreenShot("tcValidateGrid_ColumnHeader_WithExcelValue");
+		} catch (Exception e) {
+			getScreenShot("tcValidateGrid_ColumnHeader_WithExcelValue");
+		}
+	}
+	@Test(priority = 9)
 	public void tcMinimizeClassWiseDailyAttendance() {
 
 		try {
@@ -191,7 +205,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void tcMinimizeClassWiseDailyAttendanceListGrid() {
 
 		try {
@@ -206,7 +220,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 11)
 	public void tcMaximizeClassWiseDailyAttendance() {
 
 		try {
@@ -221,7 +235,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void tcMaximizeClassWiseDailyAttendanceListGrid() {
 
 		try {
@@ -235,7 +249,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 			getScreenShot("tcMaximizeAttendanceEntryTypeList");
 		}
 	}
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void tcClickOnCancelButton() {
 
 		try {
@@ -249,7 +263,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 			getScreenShot("tcClickOnCancelButton");
 		}
 	}
-	@Test(priority = 13, dataProvider = "Reports_ClassWiseAttendanceReportData")
+	@Test(priority = 14, dataProvider = "Reports_ClassWiseAttendanceReportData")
 	public void tcFillClassWiseDailyAttendanceReportForm_AfterCancel(String academicYr, String class_Rep, String section, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -265,7 +279,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 			getScreenShot("tcFillClassWiseDailyAttendanceReportForm_AfterCancel");
 		}
 	}
-	@Test(priority = 14)
+	@Test(priority = 15)
 	public void tcClickOnReportButtonToGenerateReport_AfterCancel() {
 
 		try {
@@ -279,7 +293,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 			getScreenShot("tcClickOnReportButtonToGenerateReport_AfterCancel");
 		}
 	}
-	@Test(priority = 15, dataProvider = "Search_ClassWiseAttendanceReportData")
+	@Test(priority = 16, dataProvider = "Search_ClassWiseAttendanceReportData")
 	public void tcSearchWithAdmissionNumberInThe_ClasswiseAttendanceReportListGrid(String AdmissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -295,7 +309,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 			getScreenShot("tcSearchWithAdmissionNumberInThe_ClasswiseAttendanceReportListGrid");
 		}
 	}
-	@Test(priority = 16, dataProvider = "Search_ClassWiseAttendanceReportData")
+	@Test(priority = 17, dataProvider = "Search_ClassWiseAttendanceReportData")
 	public void tcVerifyStudentForAttendanceIn_ClassWiseAttendanceReportListGrid(String AdmissionNum, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -311,7 +325,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 			getScreenShot("tcVerifyStudentForAttendanceIn_ClassWiseAttendanceReportListGrid");
 		}
 	}
-	@Test(priority = 17, dataProvider = "ValidationData_ClassWiseAttendanceReportData")
+	@Test(priority = 18, dataProvider = "ValidationData_ClassWiseAttendanceReportData")
 	public void tcValidateStudentAttendanceStatus_And_SelectStudentToDownloadToExcel(String AdmissionNum,String attendance_Status, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -327,7 +341,7 @@ public class TC_ClassWise_Daily_Attendance_Report extends TestBase {
 			getScreenShot("tcValidateStudentAttendanceStatus_And_SelectStudentToDownloadToExcel");
 		}
 	}
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void tcClickOnExportButton_ToDownloadExcelReport() {
 
 		try {

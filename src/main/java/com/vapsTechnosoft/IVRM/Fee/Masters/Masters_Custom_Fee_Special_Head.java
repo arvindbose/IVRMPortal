@@ -97,6 +97,9 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[4]/a")
 	WebElement btnSortBy_FeeHead;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[4]")
+	private List<WebElement> list_FeeHeadName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
 	WebElement successfulMessage;
@@ -424,7 +427,9 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 	public void sortByFeeHead() throws Exception {
 
 		clickOnButton(btnSortBy_FeeHead);
-		log("Sorted the record with Fee Head and object is:-" + btnSortBy_FeeHead.toString());
+		clickOnButton(btnSortBy_FeeHead);
+		SortData_InColumn_DescendingOrder(list_FeeHeadName);
+		log("Sorted the record with Fee Head in descending order and object is:-" + btnSortBy_FeeHead.toString());
 
 	}
 
@@ -468,7 +473,7 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 		try {
 			validate_PopUpText.isDisplayed();
 			String text = validate_PopUpText.getText().trim();
-			assertEquals(text, "Record Deactivated Successfully");
+			assertEquals(text, "Record Deactivated Successfully.");
 			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
@@ -492,7 +497,7 @@ public class Masters_Custom_Fee_Special_Head extends TestBase {
 		try {
 			validate_PopUpText.isDisplayed();
 			String text = validate_PopUpText.getText().trim();
-			assertEquals(text, "Record Activated Successfully");
+			assertEquals(text, "Record Activated Successfully.");
 			log("Record submitted sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {

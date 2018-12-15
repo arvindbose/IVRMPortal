@@ -21,8 +21,8 @@ import com.vapsTechnosoft.IVRM.testBase.TestBase;
  * @author vaps
  *
  */
-public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
-	
+public class TC_Masters_Master_ClassCategoryMapping extends TestBase {
+
 	public static final Logger log = Logger.getLogger(TC_Masters_Master_ClassCategoryMapping.class.getName());
 
 	Masters_Master_ClassCategoryMapping masterclasscategory;
@@ -95,11 +95,13 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 	public void tcNavigateToAdmission_Masters_MasterClassCategoryMapping_BGHS() {
 
 		try {
-			log.info("============= Strting tcNavigateToAdmission_Masters_MasterClassCategoryMapping_BGHS Test===========");
+			log.info(
+					"============= Strting tcNavigateToAdmission_Masters_MasterClassCategoryMapping_BGHS Test===========");
 
 			masterclasscategory.navigateToAdmission_Masters_MasterClassCategoryMapping_BGHS();
 
-			log.info("============= Finished tcNavigateToAdmission_Masters_MasterClassCategoryMapping_BGHS Test===========");
+			log.info(
+					"============= Finished tcNavigateToAdmission_Masters_MasterClassCategoryMapping_BGHS Test===========");
 			getScreenShot("tcNavigateToAdmission_Masters_MasterClassCategoryMapping_BGHS");
 		} catch (Exception e) {
 			getScreenShot("tcNavigateToAdmission_Masters_MasterClassCategoryMapping_BGHS");
@@ -154,8 +156,6 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	
-
 	@Test(priority = 7)
 	public void tcClearMasterClassCategoryMappingInfoData() {
 
@@ -170,6 +170,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcClearMasterClassCategoryMappingInfoData");
 		}
 	}
+
 	@Test(priority = 8)
 	public void tcMinimizeMasterClassCategory() {
 
@@ -184,6 +185,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcMinimizeMasterClassCategory");
 		}
 	}
+
 	@Test(priority = 9)
 	public void tcSortByClassCategoryName() {
 
@@ -215,8 +217,6 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-
-	
 	@Test(priority = 11)
 	public void tcMinimizeMasterClassCategoryList() {
 
@@ -246,9 +246,10 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcMaximizeMasterClassCategoryList");
 		}
 	}
-	
+
 	@Test(priority = 13, dataProvider = "MastersMasterClassCategoryData")
-	public void tcEnterMasterClassCategoryMappingFormData_AfterClear(String academicYear, String category, String runMode) {
+	public void tcEnterMasterClassCategoryMappingFormData_AfterClear(String academicYear, String category,
+			String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -279,6 +280,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcSubmitFilledMasterClassCategoryMapForm");
 		}
 	}
+
 	@Test(priority = 15)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
@@ -293,6 +295,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
+
 	@Test(priority = 16)
 	public void tcClickOnOkSuccessButton() {
 
@@ -307,9 +310,9 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton");
 		}
 	}
-	
+
 	@Test(priority = 17, dataProvider = "MasterClassCategorySearchData")
-	public void tcSearchWithClassCategoryNameInTheGrid(String categoryName,String selectFilter, String runMode) {
+	public void tcSearchWithClassCategoryNameInTheGrid(String categoryName, String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -327,7 +330,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 	}
 
 	@Test(priority = 18, dataProvider = "MasterClassCategorySearchData")
-	public void tcVerifyClassCategoryNameInTheGrid(String categoryName,String selectFilter, String runMode) {
+	public void tcVerifyClassCategoryNameInTheGrid(String categoryName, String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -343,8 +346,9 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcVerifyClassCategoryNameInTheGrid");
 		}
 	}
+
 	@Test(priority = 19, dataProvider = "MasterClassCategorySearchData")
-	public void tcEditMasterClassCategory(String categoryName,String selectFilter, String runMode) {
+	public void tcEditMasterClassCategory(String categoryName, String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -374,6 +378,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcSubmitFilledMasterClassCategoryMapForm_Edit");
 		}
 	}
+
 	@Test(priority = 21)
 	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
@@ -388,6 +393,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
 		}
 	}
+
 	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
@@ -402,9 +408,10 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_Edit");
 		}
 	}
-	
+
 	@Test(priority = 23, dataProvider = "MasterClassCategorySearchData")
-	public void tcSearchWithClassCategoryNameInTheGrid_ForDeactivate(String categoryName,String selectFilter, String runMode) {
+	public void tcSearchWithClassCategoryNameInTheGrid_ForDeactivate(String categoryName, String selectFilter,
+			String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -422,7 +429,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 	}
 
 	@Test(priority = 24, dataProvider = "MasterClassCategorySearchData")
-	public void tcDeactivateMasterClassCategory(String categoryName, String selectFilter,String runMode) {
+	public void tcDeactivateMasterClassCategory(String categoryName, String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -453,8 +460,21 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcClickOnCancelButton_deactivate");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopWindowMessage_DeactivateCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeactivateCancel_Validation Test===========");
+
+			masterclasscategory.popWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -469,26 +489,29 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "MasterClassCategorySearchData")
-	public void tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel(String categoryName,String selectFilter, String runMode) {
+	@Test(priority = 28, dataProvider = "MasterClassCategorySearchData")
+	public void tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel(String categoryName,
+			String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel Test===========");
+			log.info(
+					"============= Strting tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel Test===========");
 
 			masterclasscategory.searchWithClassCategoryNameInTheGrid(categoryName, selectFilter);
 
-			log.info("============= Finished tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel Test===========");
+			log.info(
+					"============= Finished tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel Test===========");
 			getScreenShot("tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel");
 		} catch (Exception e) {
 			getScreenShot("tcSearchWithClassCategoryNameInTheGrid_ForDeactivate_AfterCancel");
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MasterClassCategorySearchData")
-	public void tcDeactivateMasterClassCategory_AfterCancel(String categoryName,String selectFilter, String runMode) {
+	@Test(priority = 29, dataProvider = "MasterClassCategorySearchData")
+	public void tcDeactivateMasterClassCategory_AfterCancel(String categoryName, String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -505,7 +528,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -519,7 +542,8 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
-	@Test(priority = 30)
+
+	@Test(priority = 31)
 	public void tcPopWindowMessage_DeactivatedSuccessfully_Validation() {
 
 		try {
@@ -534,7 +558,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -548,9 +572,10 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_deactivate");
 		}
 	}
-	
-	@Test(priority = 32, dataProvider = "MasterClassCategorySearchData")
-	public void tcSearchWithClassCategoryNameInTheGrid_ForActivate(String categoryName,String selectFilter,String runMode) {
+
+	@Test(priority = 33, dataProvider = "MasterClassCategorySearchData")
+	public void tcSearchWithClassCategoryNameInTheGrid_ForActivate(String categoryName, String selectFilter,
+			String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -567,8 +592,8 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "MasterClassCategorySearchData")
-	public void tcActivateMasterClassCategory(String categoryName,String selectFilter, String runMode) {
+	@Test(priority = 34, dataProvider = "MasterClassCategorySearchData")
+	public void tcActivateMasterClassCategory(String categoryName, String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -585,7 +610,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 34)
+	@Test(priority = 35)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -599,8 +624,21 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcClickOnCancelButton_activate");
 		}
 	}
+	@Test(priority = 36)
+	public void tcPopWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 35)
+		try {
+			log.info("============= Strting tcPopWindowMessage_ActivateCancel_Validation Test===========");
+
+			masterclasscategory.popWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -615,26 +653,29 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 36, dataProvider = "MasterClassCategorySearchData")
-	public void tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel(String categoryName,String selectFilter, String runMode) {
+	@Test(priority = 38, dataProvider = "MasterClassCategorySearchData")
+	public void tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel(String categoryName, String selectFilter,
+			String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
-			log.info("============= Strting tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel Test===========");
+			log.info(
+					"============= Strting tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel Test===========");
 
 			masterclasscategory.searchWithClassCategoryNameInTheGrid(categoryName, selectFilter);
 
-			log.info("============= Finished tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel Test===========");
+			log.info(
+					"============= Finished tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel Test===========");
 			getScreenShot("tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel");
 		} catch (Exception e) {
 			getScreenShot("tcSearchWithClassCategoryNameInTheGrid_ForActivate_AfterCancel");
 		}
 	}
 
-	@Test(priority = 37, dataProvider = "MasterClassCategorySearchData")
-	public void tcActivateMasterClassCategory_AfterCancel(String categoryName,String selectFilter, String runMode) {
+	@Test(priority = 39, dataProvider = "MasterClassCategorySearchData")
+	public void tcActivateMasterClassCategory_AfterCancel(String categoryName, String selectFilter, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -650,7 +691,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 38)
+	@Test(priority = 40)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -664,7 +705,8 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
-	@Test(priority = 39)
+
+	@Test(priority = 41)
 	public void tcPopWindowMessage_ActivatedSuccessfully_Validation() {
 
 		try {
@@ -679,7 +721,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {
@@ -693,6 +735,7 @@ public class TC_Masters_Master_ClassCategoryMapping extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_activate");
 		}
 	}
+
 	@AfterClass
 	public void tearDown() {
 		try {

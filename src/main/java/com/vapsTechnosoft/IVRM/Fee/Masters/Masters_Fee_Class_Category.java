@@ -81,6 +81,18 @@ public class Masters_Fee_Class_Category extends TestBase {
 	@FindBy(xpath = "//h2")
 	WebElement validate_PopUpText;
 
+	@FindBy(xpath = "//table/thead/tr/th[2]/a[text()='Category Name']")
+	WebElement sort_CategoryName;
+
+	@FindBy(xpath = "(//table/tbody)[1]/tr/td[2]")
+	List<WebElement> list_CategoryName;
+
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[1]")
+	WebElement btnMin_MaxClassCategory;
+
+	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
+	WebElement btnMin_MaxFeeClassCategoryGridView;
+
 	public Masters_Fee_Class_Category(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -147,6 +159,13 @@ public class Masters_Fee_Class_Category extends TestBase {
 
 		clickOnButton(btnSave);
 		log("clicked on save button and object is:-" + btnSave.toString());
+		Thread.sleep(1000);
+	}
+
+	public void clickOnCancelButton_ToClearFilledData() throws Exception {
+
+		clickOnButton(btnCancel);
+		log("clicked on Cancel button to clear filled data and object is:-" + btnCancel.toString());
 		Thread.sleep(1000);
 	}
 
@@ -427,6 +446,32 @@ public class Masters_Fee_Class_Category extends TestBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void sortByFeeClassCategory() throws Exception {
+
+		clickOnButton(sort_CategoryName);
+		SortData_InColumn_AscendingOrder(list_CategoryName);
+		log("Sorted the record with Category name in Ascending order and object is:-" + sort_CategoryName.toString());
+
+	}
+
+	public void minimizeAndMaximize_FeeClassCategory() throws Exception {
+
+		clickOnButton(btnMin_MaxClassCategory);
+		log("clicked on Fee Class Category minimize and maximize button and object is:-"
+				+ btnMin_MaxClassCategory.toString());
+		Thread.sleep(1000);
+
+	}
+
+	public void minimizeAndMaximize_FeeClassCategoryGridView() throws Exception {
+
+		clickOnButton(btnMin_MaxFeeClassCategoryGridView);
+		log("Fee Class Category grid table data minimize and maximize and object is:-"
+				+ btnMin_MaxFeeClassCategoryGridView.toString());
+		Thread.sleep(1000);
+
 	}
 
 }

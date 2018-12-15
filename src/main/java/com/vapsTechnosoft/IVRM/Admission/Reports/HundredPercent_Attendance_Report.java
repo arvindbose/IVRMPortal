@@ -101,7 +101,7 @@ public class HundredPercent_Attendance_Report extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {

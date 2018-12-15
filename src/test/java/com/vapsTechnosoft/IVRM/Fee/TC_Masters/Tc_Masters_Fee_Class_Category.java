@@ -152,6 +152,8 @@ public class Tc_Masters_Fee_Class_Category extends TestBase {
 		}
 	}
 
+	
+	
 	@Test(priority = 7)
 	public void tcClickOnSaveButton_ToSubmitFilledForm() {
 

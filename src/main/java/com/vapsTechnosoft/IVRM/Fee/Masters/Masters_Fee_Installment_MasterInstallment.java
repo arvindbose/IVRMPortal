@@ -108,6 +108,9 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[2]/thead/tr/th[2]/a")
 	WebElement btnSortByInstallmentName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	List<WebElement> list_InstallmentName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/h2")
 	WebElement successfulMessage;
@@ -453,7 +456,8 @@ public class Masters_Fee_Installment_MasterInstallment extends TestBase {
 	public void sortByMasterInstallmentName() throws Exception {
 
 		clickOnButton(btnSortByInstallmentName);
-		log("Sorted the record with Fee Installment name and object is:-" + btnSortByInstallmentName.toString());
+		SortData_InColumn_AscendingOrder(list_InstallmentName);
+		log("Sorted the record with Fee Installment name in Ascending order and object is:-" + btnSortByInstallmentName.toString());
 
 	}
 

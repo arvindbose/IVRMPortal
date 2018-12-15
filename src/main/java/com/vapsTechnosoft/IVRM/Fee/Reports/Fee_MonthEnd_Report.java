@@ -13,8 +13,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
@@ -226,7 +224,7 @@ public class Fee_MonthEnd_Report extends TestBase {
 			if (driver.getTitle().toLowerCase().contains("Print")) {
 				Thread.sleep(1000);
 				Actions action = new Actions(driver);
-				action.sendKeys(Keys.TAB).sendKeys(Keys.ENTER);
+				action.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();;
 				Thread.sleep(2000);
 
 				break;

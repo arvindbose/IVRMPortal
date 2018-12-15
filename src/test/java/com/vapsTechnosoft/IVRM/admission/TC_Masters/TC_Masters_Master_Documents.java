@@ -454,8 +454,21 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcClickOnCancelButton");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopWindowMessage_DeleteCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeleteCancel_Validation Test===========");
+
+			masterdocuments.popWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -471,7 +484,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 	}
 	
 
-	@Test(priority = 27, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 28, dataProvider = "MasterDocumentSearchData")
 	public void tcSearchWithDocumentNameInTheGrid_AfterDeleteCancel(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -489,7 +502,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MasterDocumentSearchData")
+	@Test(priority = 29, dataProvider = "MasterDocumentSearchData")
 	public void tcDeleteMasterDocument_AfterCancel(String documentName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -507,7 +520,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -521,7 +534,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
-	@Test(priority = 30)
+	@Test(priority = 31)
 	public void tcPopWindowMessage_DeletedSuccessfully_Validation() {
 
 		try {
@@ -535,7 +548,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcPopWindowMessage_DeletedSuccessfully_Validation");
 		}
 	}
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -549,7 +562,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_delete");
 		}
 	}
-	@Test(priority = 32, dataProvider = "MastersMasterDocumentData")
+	@Test(priority = 33, dataProvider = "MastersMasterDocumentData")
 	public void tcEnterMasterDocumentData_AfterDelete(String documentName, String documentDescription, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -567,7 +580,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 	
-	@Test(priority = 33)
+	@Test(priority = 34)
 	public void tcSaveDocumentInfoData_AfterDelete() {
 
 		try {
@@ -581,7 +594,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 			getScreenShot("tcSaveDocumentInfoData_AfterDelete");
 		}
 	}
-	@Test(priority = 34)
+	@Test(priority = 35)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
 		try {
@@ -596,7 +609,7 @@ public class TC_Masters_Master_Documents extends TestBase{
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 36)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

@@ -157,8 +157,23 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 			getScreenShot("tcClickOnReport_TogetRecords");
 		}
 	}
-
+	
 	@Test(priority = 7)
+	public void tcValidateGrid_ColumnHeader_WithExcelValue() {
+
+		try {
+			log.info("============= Strting tcValidateGrid_ColumnHeader_WithExcelValue Test===========");
+
+			categorywise_attendancereport.validateGrid_ColumnHeader();
+
+			log.info("============= Finished tcValidateGrid_ColumnHeader_WithExcelValue Test===========");
+			getScreenShot("tcValidateGrid_ColumnHeader_WithExcelValue");
+		} catch (Exception e) {
+			getScreenShot("tcValidateGrid_ColumnHeader_WithExcelValue");
+		}
+	}
+
+	@Test(priority = 8)
 	public void tcExportReport_ToDownloadExcelReport_WithoutSelectingRecords() {
 
 		try {
@@ -175,7 +190,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 9)
 	public void tcClickOnOkSuccessButton_ToDownloadExcelReportPopUp_WithoutSelectingRecords() {
 
 		try {
@@ -192,7 +207,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void tcClickOnPrint_ToPrintPreviewReport_WithoutSelectingRecords() {
 
 		try {
@@ -209,7 +224,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 11)
 	public void tcClickOnOkSuccessButton_ToPrintPreviewReportErrorPopUp() {
 
 		try {
@@ -224,7 +239,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void tcMinimize_CategoryWise_AttendanceReport() {
 
 		try {
@@ -238,7 +253,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void tcMinimize_CategoryWise_AttendanceReportCategoryList() {
 
 		try {
@@ -252,7 +267,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 14)
 	public void tcMaximize_CategoryWise_AttendanceReportCategoryList() {
 
 		try {
@@ -266,7 +281,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 15)
 	public void tcMaximize_CategoryWise_AttendanceReport() {
 
 		try {
@@ -280,7 +295,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 15, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
+	@Test(priority = 16, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
 	public void tcSearchCategoryToGenerateReport_FromCategoryWiseAttendanceReportGrid(String categoryName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -301,7 +316,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 16, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
+	@Test(priority = 17, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
 	public void tcVerifyCategory_ForCategoryWiseAttendanceReportInGrid(String categoryName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -318,7 +333,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
+	@Test(priority = 18, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
 	public void tcSelectCategoryFor_CategoryWiseAttendanceReport(String categoryName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -335,7 +350,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void tcClickOn_CancelButton_ToClearFilledData() {
 
 		try {
@@ -349,7 +364,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "Reports_CategoryWise_AttendanceReport")
+	@Test(priority = 20, dataProvider = "Reports_CategoryWise_AttendanceReport")
 	public void tcFill_CategoryWise_AttendanceReportForm_AfterCancel(String academicYear, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -366,7 +381,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcClickOnReport_TogetRecords_AfterCancel() {
 
 		try {
@@ -381,7 +396,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 21, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
+	@Test(priority = 22, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
 	public void tcSearchCategoryToGenerateReport_FromCategoryWiseAttendanceReportGrid_AfterCancel(String categoryName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -402,7 +417,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
+	@Test(priority = 23, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
 	public void tcVerifyCategory_ForCategoryWiseAttendanceReportInGrid_AfterCancel(String categoryName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -422,7 +437,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 23, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
+	@Test(priority = 24, dataProvider = "Search_CategoryWise_AttendanceReport_Records")
 	public void tcSelectCategoryFor_CategoryWiseAttendanceReport_AfterCancel(String categoryName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -441,7 +456,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 	
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void tcValidateTotalStudentInACategory() {
 
 		try {
@@ -457,7 +472,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 	}
 
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void tcExportReport_ToDownloadExcelReport() {
 
 		try {
@@ -472,7 +487,7 @@ public class TC_CategoryWise_Attendance_Report extends TestBase {
 		}
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void tcClickOnPrint_CategoryWiseReport() {
 
 		try {

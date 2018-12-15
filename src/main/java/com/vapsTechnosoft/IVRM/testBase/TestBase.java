@@ -1,6 +1,5 @@
 package com.vapsTechnosoft.IVRM.testBase;
 
-
 import static org.testng.Assert.assertTrue;
 
 import java.awt.Robot;
@@ -65,7 +64,7 @@ public class TestBase {
 
 	public static final Logger log = Logger.getLogger(TestBase.class.getName());
 
-	public WebDriver driver; 
+	public WebDriver driver;
 	Excel_Reader excel;
 	private Select select;
 	private WebElement option;
@@ -113,35 +112,36 @@ public class TestBase {
 		System.out.println(System.getProperty("os.name"));
 		if (System.getProperty("os.name").contains("Window")) {
 			if (browser.equals("chrome")) {
-				
+
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "/drivers/chromedriver.exe");
 				//
-				
-			//	String downloadFilepath = "c:\\download";
-			
-				String downloadFilepath = System.getProperty("user.dir") + "\\src\\main\\java\\com\\vapsTechnosoft\\IVRM\\downloadFile\\";
+
+				// String downloadFilepath = "c:\\download";
+
+				String downloadFilepath = System.getProperty("user.dir")
+						+ "\\src\\main\\java\\com\\vapsTechnosoft\\IVRM\\downloadFile\\";
 
 				// Setting new download directory path
 				Map<String, Object> prefs = new HashMap<String, Object>();
-				
-				prefs.put("download.default_directory",downloadFilepath);
+
+				prefs.put("download.default_directory", downloadFilepath);
 				prefs.put("download.prompt_for_download", false);
 				ChromeOptions options = new ChromeOptions();
 				options.setExperimentalOption("prefs", prefs);
-				
+
 				// Printing set download directory
 				System.out.println(options.getExperimentalOption("prefs"));
-				
 				driver = new ChromeDriver(options);
-				//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-				
-				} 
-			else if (browser.equals("firefox")) {
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+			} else if (browser.equals("firefox")) {
 				System.out.println(System.getProperty("user.dir"));
 				System.setProperty("webdriver.gecko.driver",
 						System.getProperty("user.dir") + "/drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
+				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				// driver = new EventFiringWebDriver(dr);
 				eventListener = new WebEventListener();
@@ -185,8 +185,6 @@ public class TestBase {
 		log.info("navigating to :-" + url);
 
 		driver.get(url);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 	}
 
@@ -196,8 +194,6 @@ public class TestBase {
 		String[][] data = excel.getDataFromSheet(sheetName, excelName);
 		return data;
 	}
-	
-	
 
 	/**
 	 * wait for visibility of elements
@@ -560,118 +556,122 @@ public class TestBase {
 	}
 
 	public void inputTextIntoInputField(WebElement element, String value) {
-		try{
-		isDisplayed(element);
-		element.clear();
-		element.sendKeys(value);
-		log("Entered value to input Field is " + value + " and object is:- " + element.toString());
-		Thread.sleep(1000);
-		} 
-		catch(Exception e){
-			e.printStackTrace();			
+		try {
+			isDisplayed(element);
+			element.clear();
+			element.sendKeys(value);
+			log("Entered value to input Field is " + value + " and object is:- " + element.toString());
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		}
+	}
 
-	public  void isDisplayed(WebElement element) {
+	public void isDisplayed(WebElement element) {
 		try {
 			element.isDisplayed();
-			log("Element is present...and object is: "+element.toString());
+			log("Element is present...and object is: " + element.toString());
 			assertTrue(true);
-		} 
-		catch(Exception e){
-			e.printStackTrace();			
-		log("Element is not present...and object is: "+element.toString());
-	
+		} catch (Exception e) {
+			e.printStackTrace();
+			log("Element is not present...and object is: " + element.toString());
+
 		}
 	}
-	public void selectedDropdownItemValidation(WebElement element, String value){
-		try{
-			isDisplayed(element);
-		select = new Select(element);
-		log("Selected Value from drop down for validation " + value + " and object is:- " + element.toString());
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), value);
-		log("Selected item from drop down list is verified and selected item is: "+option.getText().trim());
-		Thread.sleep(1000);
-	} 
-	catch(Exception e){
-		e.printStackTrace();			
-	log("Element is not present...and object is: "+element.toString());
 
-	}
+	public void selectedDropdownItemValidation(WebElement element, String value) {
+		try {
+			isDisplayed(element);
+			select = new Select(element);
+			log("Selected Value from drop down for validation " + value + " and object is:- " + element.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), value);
+			log("Selected item from drop down list is verified and selected item is: " + option.getText().trim());
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+			log("Element is not present...and object is: " + element.toString());
+
+		}
 	}
 
 	public void selectElementFromDropDown(WebElement element, String value) {
-		try{
+		try {
 			isDisplayed(element);
-		select = new Select(element);
-		select.selectByVisibleText(value);
-		log("Selected Value from drop down " + value + " and object is:- " + element.toString());
-		option = select.getFirstSelectedOption();
-		Assert.assertEquals(option.getText().trim(), value);
-		log("Selected item from drop down list is verified and selected item is: "+option.getText().trim());
-		Thread.sleep(1000);
-	} 
-	catch(Exception e){
-		e.printStackTrace();			
-	log("Element is not present...and object is: "+element.toString());
+			select = new Select(element);
+			select.selectByVisibleText(value);
+			log("Selected Value from drop down " + value + " and object is:- " + element.toString());
+			option = select.getFirstSelectedOption();
+			Assert.assertEquals(option.getText().trim(), value);
+			log("Selected item from drop down list is verified and selected item is: " + option.getText().trim());
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+			log("Element is not present...and object is: " + element.toString());
 
-	}
-	}
-
-	public void clickOnButton(WebElement element){
-		try{
-			isDisplayed(element);
-		element.click();
-		log("Clicked on button for specific action and object is:- "+element.toString());
-		Thread.sleep(1000);
-	} 
-	catch(Exception e){
-		e.printStackTrace();			
-	log("Element is not present...and object is: "+element.toString());
-	}
 		}
-	
-	public void SortData_InColumn_DescendingOrder(List<WebElement> elementList){
-		try{
-		sort= new Sort();
-		sort.Sort_ColumnData_DescendingOrder(elementList);
-		//log("Sorted element in descending order and object is:- "+elementList.toString());
-		}catch(Exception e){
+	}
+
+	public void clickOnButton(WebElement element) {
+		try {
+			isDisplayed(element);
+			element.click();
+//			log("Clicked on button for specific action and object is:- " + element.toString());
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+			log("Element is not present...and object is: " + element.toString());
+		}
+	}
+
+	public void SortData_InColumn_DescendingOrder(List<WebElement> elementList) {
+		try {
+			sort = new Sort();
+			sort.Sort_ColumnData_DescendingOrder(elementList);
+			// log("Sorted element in descending order and object is:-
+			// "+elementList.toString());
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	public void SortData_InColumn_AscendingOrder(List<WebElement> elementList){
-		try{
-		sort= new Sort();
-		sort.Sort_ColumnData_AscendingOrder(elementList);
-		//log("Sorted element in descending order and object is:- "+elementList.toString());
-		}catch(Exception e){
+
+	public void SortData_InColumn_AscendingOrder(List<WebElement> elementList) {
+		try {
+			sort = new Sort();
+			sort.Sort_ColumnData_AscendingOrder(elementList);
+			// log("Sorted element in descending order and object is:-
+			// "+elementList.toString());
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	public void verifyColumnHeaderWithExcelData(List<WebElement> xpath, String filePath,String columnName,String sheetName) throws Exception{
+
+	public void verifyColumnHeaderWithExcelData(List<WebElement> xpath, String filePath, String columnName,
+			String sheetName) throws Exception {
 		ArrayList<String> listArray = Column_Header.getColumns(xpath);
-		log("Grid Column Header:- "+listArray);
-		System.out.println(listArray);
-		
+		log("Grid Column Header from web Page:- " + listArray);
+		//System.out.println(listArray);
+
 		ArrayList<String> nameList = Excel_Reader.getXLData(filePath, columnName, sheetName);
-		System.out.println(nameList);
+		System.out.println("Grid Column Header From Excel: "+nameList);
+		log("Grid Column Header From Excel: "+nameList);
 		compareExcelValues(nameList, listArray);
-		//assertEquals(nameList, nameList);
-		
+		// assertEquals(nameList, nameList);
+
 	}
-	
-	public void verifyRowValuesWithExcelData(List<WebElement> xpath, String filePath,String columnName,String sheetName) throws Exception{
+
+	public void verifyRowValuesWithExcelData(List<WebElement> xpath, String filePath, String columnName,
+			String sheetName) throws Exception {
 		ArrayList<String> listArray = Column_Header.getColumns(xpath);
-		log("Grid Row Values:- "+listArray);
+		log("Grid Row Values:- " + listArray);
 		System.out.println(listArray);
-		
+
 		ArrayList<String> nameList = Excel_Reader.getXLData(filePath, columnName, sheetName);
 		System.out.println(nameList);
 		compareExcelValues_WithRowValues(nameList, listArray);
-		//assertEquals(listArray, nameList);
+		// assertEquals(listArray, nameList);
 	}
+
 	/**
 	 * Compare data of two array
 	 * 
@@ -706,6 +706,7 @@ public class TestBase {
 			log("failed");
 		}
 	}
+
 	/**
 	 * Compare data of two array
 	 * 
@@ -722,16 +723,19 @@ public class TestBase {
 				for (int actualList = 0; actualList < actualArrayList.size(); actualList++) {
 					if (expectedArrayList.get(expectedList).trim().equals(actualArrayList.get(actualList).trim())) {
 
-//						log("Row values matched with Excel data, Expected value: '"
-//								+ expectedArrayList.get(expectedList).toString() + "'== Actual Value : '"
-//								+ actualArrayList.get(actualList).toString() + "'");
-System.out.println("Pass");
+						// log("Row values matched with Excel data, Expected
+						// value: '"
+						// + expectedArrayList.get(expectedList).toString() +
+						// "'== Actual Value : '"
+						// + actualArrayList.get(actualList).toString() + "'");
+						System.out.println("Pass");
 						continue main;
 					}
 				}
 				System.out.println("Fail");
-//				log("Row values not matched with Excel data ,Item '" + expectedArrayList.get(expectedList)
-//						+ "' does not exists.");
+				// log("Row values not matched with Excel data ,Item '" +
+				// expectedArrayList.get(expectedList)
+				// + "' does not exists.");
 
 			}
 
@@ -740,45 +744,48 @@ System.out.println("Pass");
 			log("failed");
 		}
 	}
-	
-	public void verifyRowValuesWithExcelData_Download_Header(List<WebElement> xpath, String filePath,String sheetName) throws Exception{
+
+	public void verifyRowValuesWithExcelData_Download_Header(List<WebElement> xpath, String filePath, String sheetName)
+			throws Exception {
 		ArrayList<String> listArray = Column_Header.getColumns(xpath);
-		log("Grid Row Values:- "+listArray);
-		System.out.println("WebPage list: "+listArray);
-		
+		log("Grid Row Values:- " + listArray);
+		System.out.println("WebPage list: " + listArray);
+
 		ArrayList<String> headerList = Excel_Reader.getXLDataRowWise(filePath, sheetName);
-	//	ArrayList headerList1=  new ArrayList();
-		//headerList1={headerList1.add(headerList.get(0))};
-		//headerList1.add(headerList.get(0));
-		System.out.println("Excel data list: "+headerList);
-		///compareExcelValues_WithRowValues(headerList.get(0), listArray);
+		// ArrayList headerList1= new ArrayList();
+		// headerList1={headerList1.add(headerList.get(0))};
+		// headerList1.add(headerList.get(0));
+		System.out.println("Excel data list: " + headerList);
+		/// compareExcelValues_WithRowValues(headerList.get(0), listArray);
 		compareExcelValues_WithRowValues(headerList, listArray);
-		//assertEquals(listArray, nameList);
+		// assertEquals(listArray, nameList);
 	}
-	
-	public void verifyRowValuesWithExcelData_Download_1stRowValues(List<WebElement> xpath, String filePath,String sheetName) throws Exception{
+
+	public void verifyRowValuesWithExcelData_Download_1stRowValues(List<WebElement> xpath, String filePath,
+			String sheetName) throws Exception {
 		ArrayList<String> listArray = Column_Header.getColumns(xpath);
-		log("Grid Row Values:- "+listArray);
+		log("Grid Row Values:- " + listArray);
 		System.out.println(listArray);
-		
+
 		ArrayList<String> headerList = Excel_Reader.getXLDataRowWise(filePath, sheetName);
-		ArrayList<String> headerList1=  new ArrayList<String>();
+		ArrayList<String> headerList1 = new ArrayList<String>();
 		headerList1.add(headerList.get(1));
 		System.out.println(headerList);
-		///compareExcelValues_WithRowValues(headerList.get(0), listArray);
+		/// compareExcelValues_WithRowValues(headerList.get(0), listArray);
 		compareExcelValues_WithRowValues(headerList1, listArray);
-		//assertEquals(listArray, nameList);
+		// assertEquals(listArray, nameList);
 	}
-	
-	/*public static void main(String[] args) {
-		
-		TestBase  tb = new TestBase();
-		//Excel_Reader er= new Excel_Reader();
-		ArrayList listdata = Excel_Reader.getXLDataRowWise("AdmissionReports.xlsx", "Search_TotalStrength");
-		//ArrayList<String> listdata1=  new ArrayList<String>();
-		//listdata1.add(listdata.get(0));
-		//String[][] list = tb.getXlData("AdmissionReports.xlsx", "Search_TotalStrength");
-	System.out.println(listdata.size());
-	System.out.println(listdata.get(0));
-	}*/
+
+	/*
+	 * public static void main(String[] args) {
+	 * 
+	 * TestBase tb = new TestBase(); //Excel_Reader er= new Excel_Reader();
+	 * ArrayList listdata =
+	 * Excel_Reader.getXLDataRowWise("AdmissionReports.xlsx",
+	 * "Search_TotalStrength"); //ArrayList<String> listdata1= new
+	 * ArrayList<String>(); //listdata1.add(listdata.get(0)); //String[][] list
+	 * = tb.getXlData("AdmissionReports.xlsx", "Search_TotalStrength");
+	 * System.out.println(listdata.size()); System.out.println(listdata.get(0));
+	 * }
+	 */
 }

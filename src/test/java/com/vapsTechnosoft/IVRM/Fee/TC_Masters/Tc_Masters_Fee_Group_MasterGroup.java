@@ -36,13 +36,13 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 
 	@DataProvider(name = "FeeGroup_MasterGroup_FormData")
 	public String[][] getTestDataMasterGroup() {
-		String[][] testRecordsMasterGroup = getData("FeeModueData.xlsx", "MasterFeeGroupData");
+		String[][] testRecordsMasterGroup = getData("FeeModueData.xlsx", "MasterGroupInputData");
 		return testRecordsMasterGroup;
 	}
 
 	@DataProvider(name = "Search_FeeGroup_MasterGroup")
 	public String[][] getTestDataFeeGroupMaster() {
-		String[][] testRecordsFeegroupMaster = getData("FeeModueData.xlsx", "Search_FeeGroupMasterGroup");
+		String[][] testRecordsFeegroupMaster = getData("FeeModueData.xlsx", "Search_FeeMastergroup");
 		return testRecordsFeegroupMaster;
 	}
 
@@ -276,6 +276,19 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 	}
 
 	@Test(priority = 15)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			feemastergroup.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 16)
 	public void tcClickOnSuccessOkBtn() {
 		feemastergroup = new Masters_Fee_Group_MasterGroup(driver);
 
@@ -291,7 +304,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 16, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 17, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcSearchBy_FeeGroup_MasterFeeGrNameInGrid(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -309,7 +322,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 17, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 18, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcVerifyMasterFeeGroup_UpdatedInGrid(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -327,7 +340,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 19, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcEdit_MasterFeeGroup(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -344,7 +357,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void tcClickOnSaveButton_MasterGroupForm_Edit() {
 
 		try {
@@ -358,8 +371,20 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 			getScreenShot("tcClickOnSaveButton_MasterGroupForm_Edit");
 		}
 	}
+	@Test(priority = 21)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
 
-	@Test(priority = 20)
+			feemastergroup.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 22)
 	public void tcClickOnOkSuccessButton_Edit() {
 
 		try {
@@ -376,7 +401,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 
 	//
 
-	@Test(priority = 21, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 23, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_ForDeactivate(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -394,7 +419,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 22, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 24, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcDeactivationOfCreated_MasterFeeGroup(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -412,7 +437,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 25)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -426,8 +451,20 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 			getScreenShot("tcClickOnCancelButton_deactivate");
 		}
 	}
+	@Test(priority = 26)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
 
-	@Test(priority = 24)
+			feemastergroup.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -442,7 +479,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 25, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 28, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_ForDeactivate_AfterCancel(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -462,7 +499,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 29, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcDeactivationOfCreated_MasterFeeGroup_AfterCancel(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -480,7 +517,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -494,8 +531,20 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 31)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
 
-	@Test(priority = 28)
+			feemastergroup.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -510,7 +559,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 29, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 33, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_ForActivate(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -528,7 +577,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 34, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcActivationOfCreatedFeeGroup_MasterGroup(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -546,7 +595,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 35)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -560,8 +609,20 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 			getScreenShot("tcClickOnCancelButton_activate");
 		}
 	}
+	@Test(priority = 36)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
 
-	@Test(priority = 32)
+			feemastergroup.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 37)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -576,7 +637,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 33, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 38, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcSearchBy_FeeGroup_MasterFeeGrNameInGrid_AfterCancel(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -594,7 +655,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "Search_FeeGroup_MasterGroup")
+	@Test(priority = 39, dataProvider = "Search_FeeGroup_MasterGroup")
 	public void tcActivationOfCreatedFeeGroup_MasterGroup_AfterCancel(String feeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -611,7 +672,7 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 35)
+	@Test(priority = 40)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -625,8 +686,20 @@ public class Tc_Masters_Fee_Group_MasterGroup extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 41)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
 
-	@Test(priority = 36)
+			feemastergroup.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {

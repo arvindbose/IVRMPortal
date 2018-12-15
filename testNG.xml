@@ -8,8 +8,7 @@
         <methods>
         <include name="loginToappWithrequiredCredentials" />
         <include name="tcNavigateToAdmission_Masters_CasteCategory_BGHS" />
-         <include name="tcSearchWithCasteCategoryNameInTheGrid" />
-        <include name="tcVerifyCasteCategoryNameInTheGrid" />       
+         <include name="tcSortByCasteCategoryName" />      
         <include name="tearDown" />
       </methods>
        </class>

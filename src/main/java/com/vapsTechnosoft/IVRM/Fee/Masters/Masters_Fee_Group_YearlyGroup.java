@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -56,7 +58,7 @@ public class Masters_Fee_Group_YearlyGroup extends TestBase {
 	@FindBy(xpath = "(//body[@id='style-4']//div/input)[4]")
 	WebElement input_GroupsSearchBox;
 
-	@FindBy(xpath = "//span[contains(text(),'Susdiny annual Fee Group')]/preceding-sibling::input")
+	@FindBy(xpath = "(//input[@name='roleGroup'])[1]")
 	WebElement chk_GroupSelection;
 
 	@FindBy(xpath = "(//span[contains(text(),'Save')]/parent::button)[2]")
@@ -88,6 +90,12 @@ public class Masters_Fee_Group_YearlyGroup extends TestBase {
 
 	@FindBy(xpath = "(//div[@class='box-body']/table)[2]/thead/tr/th[3]/a")
 	WebElement btnSortByFeeGroupName_YearlyGr;
+	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[3]")
+	List<WebElement> list_GroupNameYrlyGroup;
 
 	public Masters_Fee_Group_YearlyGroup(WebDriver driver) {
 		this.driver = driver;
@@ -371,8 +379,80 @@ public class Masters_Fee_Group_YearlyGroup extends TestBase {
 	public void sortBy_YearlyFeeGroupName() throws Exception {
 
 		clickOnButton(btnSortByFeeGroupName_YearlyGr);
-		// SortData_InColumn_DescendingOrder(elementList);
-		log("Sorted the record with Fee Group name and object is:-" + btnSortByFeeGroupName_YearlyGr.toString());
+		SortData_InColumn_AscendingOrder(list_GroupNameYrlyGroup);
+		log("Sorted the record with Fee Group name in ascending order and object is:-" + btnSortByFeeGroupName_YearlyGr.toString());
 
+	}
+	
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated for edit.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Deactivated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

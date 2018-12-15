@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -92,16 +93,16 @@ public class Admission_Register_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Registration No')]")
 	WebElement chk_RegNumber;
 
-	@FindBy(xpath = "(//div[@class='text-center'])[2]/button[1]")
+	@FindBy(xpath = "//button[@id='save-btn']")
 	WebElement btn_Reports;
 
-	@FindBy(xpath = "(//div[@class='text-center'])[2]/button[2]")
+	@FindBy(xpath = "//div[@id='gridlst']/div[1]/a[1]")
 	WebElement btn_ExportToExcel;
 
-	@FindBy(xpath = "(//div[@class='text-center'])[2]/button[3]")
+	@FindBy(xpath = "//div[@id='gridlst']/div[1]/a[2]")
 	WebElement btn_Print;
 
-	@FindBy(xpath = "(//div[@class='text-center'])[2]/button[4]")
+	@FindBy(xpath = "//span[contains(text(),'Cancel')]/parent::button")
 	WebElement btn_Cancel;
 
 	@FindBy(xpath = "//div[@class='box-body']/div/table/tbody/tr")
@@ -393,6 +394,7 @@ public class Admission_Register_Report extends TestBase {
 
 		clickOnButton(btn_Reports);
 		log("Report button is clicked to generate report and object is:-" + btn_Reports.toString());
+		Thread.sleep(2000L);
 	}
 
 	public void clickOnExportToExcel() throws Exception {
@@ -445,14 +447,18 @@ public class Admission_Register_Report extends TestBase {
 	}
 
 	public void minimizeAdmissionRegisterReport() throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_AdmissionRegisterReportMsgDispaly);
+		Thread.sleep(1000);
 		clickOnButton(btnMin_MaxAdmissionRegisterReport);
 		log("Admission Register Report page minimized and object is:-" + btnMin_MaxAdmissionRegisterReport.toString());
 
 	}
 
 	public void maximizeAdmissionRegisterReport() throws Exception {
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_AdmissionRegisterReportMsgDispaly);
+		Thread.sleep(1000);
 		clickOnButton(btnMin_MaxAdmissionRegisterReport);
 		log("Admission Register Report page maximized and object is:-" + btnMin_MaxAdmissionRegisterReport.toString());
 

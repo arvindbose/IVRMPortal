@@ -80,6 +80,10 @@ public class Masters_Master_Section extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortBySectionName;
+	
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_SectionName;
 
 	@FindBy(xpath = "//span[contains(text(),'Submit')]/parent::button")
 	WebElement btnSubmit;
@@ -254,6 +258,7 @@ public class Masters_Master_Section extends TestBase {
 	public void sortBySectionName() throws Exception {
 
 		clickOnButton(btnSortBySectionName);
+		SortData_InColumn_DescendingOrder(list_SectionName);
 		log("Sorted the record with section name and object is:-" + btnSortBySectionName.toString());
 		Thread.sleep(1000);
 	}
@@ -463,6 +468,19 @@ public class Masters_Master_Section extends TestBase {
 			e.printStackTrace();
 		}
 	}
+	public void popWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record deactivation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
 
 	public void popWindowMessage_DeactivatedSuccessfully() throws Exception {
 		try {
@@ -475,7 +493,17 @@ public class Masters_Master_Section extends TestBase {
 			e.printStackTrace();
 		}
 	}
-
+	public void popWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Activation Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void popWindowMessage_ActivatedSuccessfully() throws Exception {
 		try {
 			validate_PopUpText.isDisplayed();

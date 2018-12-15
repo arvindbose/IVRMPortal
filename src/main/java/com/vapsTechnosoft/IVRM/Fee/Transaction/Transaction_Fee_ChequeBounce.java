@@ -3,6 +3,8 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Transaction;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -106,6 +108,9 @@ public class Transaction_Fee_ChequeBounce extends TestBase {
 
 	@FindBy(xpath = "(//button[@class='btn btn-box-tool'])[2]")
 	private WebElement btnMin_MaxFeeChequeBounceGridView;
+	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
 	
 
 	public Transaction_Fee_ChequeBounce(WebDriver driver) {
@@ -390,5 +395,39 @@ public class Transaction_Fee_ChequeBounce extends TestBase {
 					+ btnMin_MaxFeeChequeBounceGridView.toString());
 			
 	}
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+	public void popUpWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deletion Cancelled");
+			log("Record Deletion Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeleteSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deleted Successfully");
+			log("Record Deleted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

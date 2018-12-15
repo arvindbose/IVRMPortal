@@ -48,10 +48,7 @@ public class IvrmPortalLogin extends TestBase {
 	@FindBy(xpath = "//table/thead/tr/th")
 	private List<WebElement> header;
 
-	public IvrmPortalLogin() {
-
-	}
-
+	
 	public IvrmPortalLogin(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -82,7 +79,7 @@ public class IvrmPortalLogin extends TestBase {
 	public void logOutFromApplication() throws Exception {
 		clickOnButton(logoutButton);
 		log("Clicked on Logout button and object is:-"+logoutButton.toString());
-		Thread.sleep(1000);
+		
 	}
 
 	public void sortingOfElement() {

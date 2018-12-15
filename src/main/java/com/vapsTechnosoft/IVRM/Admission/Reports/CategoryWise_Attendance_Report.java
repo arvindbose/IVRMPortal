@@ -63,7 +63,7 @@ public class CategoryWise_Attendance_Report extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Jun 2018')]/following::td[3]/span")
 	WebElement btn_Date;
 	
-	@FindBy(xpath = "//span[contains(text(),'Jul 2018')]")
+	@FindBy(xpath = "//span[contains(text(),'Aug 2018')]")
 	WebElement btn_MonthYear2;
 
 	@FindBy(xpath = "//span[contains(text(),'Report')]/parent::button")
@@ -101,6 +101,10 @@ public class CategoryWise_Attendance_Report extends TestBase {
 
 	@FindBy(xpath = "//table[@id='table1']/tbody/tr[1]/td[6]")
 	WebElement total_Student;
+	
+	@FindBy(xpath = "//table/thead/tr/th")
+	List<WebElement> CategoryWiseAttndRepGrid_ColumnHeader;
+	
 
 	public CategoryWise_Attendance_Report(WebDriver driver) {
 		this.driver = driver;
@@ -362,5 +366,9 @@ public class CategoryWise_Attendance_Report extends TestBase {
 		log("Sum of Boys and Girls in a category is equal to number of students in that category.");
 		Thread.sleep(2000);
 
+	}
+	public void validateGrid_ColumnHeader() throws Exception {
+		verifyColumnHeaderWithExcelData(CategoryWiseAttndRepGrid_ColumnHeader, "AdmissionMasterGridHeader.xlsx", "CategoryWise Attendance Report",
+				"AdmissionReport_ClmnHeader");
 	}
 }

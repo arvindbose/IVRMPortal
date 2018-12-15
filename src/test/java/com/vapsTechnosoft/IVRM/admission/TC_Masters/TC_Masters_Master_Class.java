@@ -522,22 +522,9 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 	
+	
+
 	@Test(priority = 29)
-	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
-
-		try {
-			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
-
-			masterclass.popWindowMessage_SubmitSuccessfully_Edit();
-
-			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
-			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
-		} catch (Exception e) {
-			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
-		}
-	}
-
-	@Test(priority = 30)
 	public void tcClickOnSaveButton_edit() {
 
 		try {
@@ -551,7 +538,20 @@ public class TC_Masters_Master_Class extends TestBase {
 			getScreenShot("tcClickOnSaveButton_edit");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
+		try {
+			log.info("============= Strting tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			masterclass.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
 	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_edit() {
 
@@ -645,8 +645,21 @@ public class TC_Masters_Master_Class extends TestBase {
 			getScreenShot("tcClickOnCancelButton_deactivate");
 		}
 	}
-
 	@Test(priority = 37)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			masterclass.popWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+	@Test(priority = 38)
 	public void tcClickOnOkSuccessButton_deactivateCancel() {
 
 		try {
@@ -661,7 +674,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "MasterClassSearchData")
+	@Test(priority = 39, dataProvider = "MasterClassSearchData")
 	public void tcDeactivateMasterClass_AfterCancel(String className, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -679,7 +692,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 
-	@Test(priority = 39)
+	@Test(priority = 40)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -693,8 +706,21 @@ public class TC_Masters_Master_Class extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 41)
+	public void tcPopUpWindowMessage_DeactivateSuccess_Validation() {
 
-	@Test(priority = 40)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSuccess_Validation Test===========");
+
+			masterclass.popWindowMessage_DeactivateSuccess_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSuccess_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSuccess_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSuccess_Validation");
+		}
+	}
+	@Test(priority = 42)
 	public void tcClickOnOkSuccessButton_deactivate() {
 
 		try {
@@ -709,7 +735,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 
-	@Test(priority = 41, dataProvider = "MasterClassSearchData")
+	@Test(priority = 43, dataProvider = "MasterClassSearchData")
 	public void tcSearchWithClassName_ForActivate(String className, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -726,7 +752,7 @@ public class TC_Masters_Master_Class extends TestBase {
 			getScreenShot("tcSearchWithClassName_ForActivate");
 		}
 	}
-	@Test(priority = 42)
+	@Test(priority = 44)
 	public void tcPopUpWindowMessage_SearchedSuccessfully_Validation_Activate() {
 
 		try {
@@ -740,7 +766,8 @@ public class TC_Masters_Master_Class extends TestBase {
 			getScreenShot("tcPopUpWindowMessage_SearchedSuccessfully_Validation_Activate");
 		}
 	}
-	@Test(priority = 43)
+	
+	@Test(priority = 45)
 	public void tcClickOnOkSuccessButton_SearchActivate() {
 
 		try {
@@ -755,7 +782,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	} //
 
-	@Test(priority = 44, dataProvider = "MasterClassSearchData")
+	@Test(priority = 46, dataProvider = "MasterClassSearchData")
 	public void tcActivateMasterClass(String className, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -773,7 +800,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 
-	@Test(priority = 45)
+	@Test(priority = 47)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -787,8 +814,21 @@ public class TC_Masters_Master_Class extends TestBase {
 			getScreenShot("tcClickOnCancelButton_activate");
 		}
 	}
+	@Test(priority = 48)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 46)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			masterclass.popWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 49)
 	public void tcClickOnOkSuccessButton_activateCancel() {
 
 		try {
@@ -803,7 +843,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 
-	@Test(priority = 47, dataProvider = "MasterClassSearchData")
+	@Test(priority = 50, dataProvider = "MasterClassSearchData")
 	public void tcActivateMasterClass_AfterCancel(String className, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -820,7 +860,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 
-	@Test(priority = 48)
+	@Test(priority = 51)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -834,8 +874,22 @@ public class TC_Masters_Master_Class extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 52)
+	public void tcPopUpWindowMessage_ActivateSuccess_Validation() {
 
-	@Test(priority = 49)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSuccess_Validation Test===========");
+
+			masterclass.popWindowMessage_ActivateSuccess_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSuccess_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSuccess_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSuccess_Validation");
+		}
+	}
+
+	@Test(priority = 53)
 	public void tcClickOnOkSuccessButton_activate() {
 
 		try {
@@ -850,7 +904,7 @@ public class TC_Masters_Master_Class extends TestBase {
 		}
 	}
 
-//	@Test(priority = 50)
+//	@Test(priority = 54)
 //	public void tcClickOnSetOrder() {
 //
 //		try {
@@ -865,7 +919,7 @@ public class TC_Masters_Master_Class extends TestBase {
 //		}
 //	}
 //
-//	@Test(priority = 51)
+//	@Test(priority = 55)
 //	public void tcSetClassOrder() {
 //
 //		try {
@@ -881,7 +935,7 @@ public class TC_Masters_Master_Class extends TestBase {
 //	}
 //
 //	
-//	@Test(priority = 52)
+//	@Test(priority = 56)
 //	public void tcCloseSetClassOrderPopUpWindow() {
 //
 //		try {
@@ -896,7 +950,7 @@ public class TC_Masters_Master_Class extends TestBase {
 //		}
 //	}
 //
-//	@Test(priority = 53)
+//	@Test(priority = 57)
 //	public void tcClickOnSetOrder_AfterClose() {
 //
 //		try {
@@ -911,7 +965,7 @@ public class TC_Masters_Master_Class extends TestBase {
 //		}
 //	}
 //
-//	@Test(priority = 54)
+//	@Test(priority = 58)
 //	public void tcSetClassOrder_AfterClose() {
 //
 //		try {
@@ -926,7 +980,7 @@ public class TC_Masters_Master_Class extends TestBase {
 //		}
 //	}
 //
-//	@Test(priority = 55)
+//	@Test(priority = 59)
 //	public void tcSaveSetClassOrderPopUpWindow() {
 //
 //		try {

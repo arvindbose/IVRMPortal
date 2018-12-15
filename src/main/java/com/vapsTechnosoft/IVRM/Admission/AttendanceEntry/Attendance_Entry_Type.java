@@ -172,8 +172,8 @@ public class Attendance_Entry_Type extends TestBase {
 					+ input_Search_Class.toString());
 		
 		try{
-		int no_Of_CustomGroup = chk_Class.size();
-		for (int i = 0; i < no_Of_CustomGroup; i++) {
+		int no_Of_ClassChkBox = chk_Class.size();
+		for (int i = 0; i < no_Of_ClassChkBox; i++) {
 			if (!chk_Class.get(i).isSelected()) {
 				chk_Class.get(i).click();
 				log(i + " Class check box is checked for attendance entry type and object is:-" + chk_Class.toString());
@@ -187,16 +187,7 @@ public class Attendance_Entry_Type extends TestBase {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		//
-		// if(!chk_Class.isSelected()) {
-		// chk_Class.click();
-		// log("Class is selected for attendance entry type and object is:-" +
-		// chk_Class.toString());
-		// Thread.sleep(1000);
-		// } else {
-		// log("Class is already selected for attendance entry type.");
-		// Thread.sleep(500);
-		// }
+		
 	}
 
 	public void select_DailyOnce_RadioButton() throws Exception {

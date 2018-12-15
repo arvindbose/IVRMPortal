@@ -1,221 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="4" failed="0" ignored="0" total="13" passed="9">
+<testng-results skipped="10" failed="3" ignored="0" total="29" passed="16">
   <reporter-output>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png' height='100' width='100'/> </a>]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]]]>
     </line>
     <line>
-      <![CDATA[Entered value to input Field is Rakesh and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
+      <![CDATA[Entered value to input Field is Radha and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]]]>
     </line>
     <line>
-      <![CDATA[UserName entered Rakesh and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
+      <![CDATA[UserName entered Radha and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]]]>
     </line>
     <line>
-      <![CDATA[Entered value to input Field is Password@123 and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
+      <![CDATA[Entered value to input Field is Password@123 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]]]>
     </line>
     <line>
-      <![CDATA[Password entered Password@123 and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
+      <![CDATA[Password entered Password@123 and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
     </line>
     <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
+      <![CDATA[Clicked on Login button and redirected to Home page, Object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
     </line>
     <line>
-      <![CDATA[Clicked on Login button and redirected to Home page, Object is:-Proxy element for: DefaultElementLocator 'By.xpath: //b[text()='Sign in ']/parent::button']]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
     </line>
     <line>
-      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_05_12_2018_06_36_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_05_12_2018_06_36_52.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
     </line>
     <line>
-      <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_05_12_2018_06_36_53.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_05_12_2018_06_36_53.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+      <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
     </line>
     <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
     </line>
     <line>
-      <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+      <![CDATA[Clicked on Transaction Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
     </line>
     <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+      <![CDATA[Clicked on Fee Transaction Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
     </line>
     <line>
-      <![CDATA[Clicked on Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_05_12_2018_06_36_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_05_12_2018_06_36_57.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
+      <![CDATA[Fee Transaction page is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/ui-view/div[1]/div/section/ol/li]]]>
     </line>
     <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyFeeTransactionPage_05_12_2018_06_36_59.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyFeeTransactionPage_05_12_2018_06_36_59.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[Clicked on Fee Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Regular')]]]]>
     </line>
     <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png' height='100' width='100'/> </a>]]>
+      <![CDATA[Regular radio button selected and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Regular')]]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcSelectRegularButton_05_12_2018_06_37_01.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcSelectRegularButton_05_12_2018_06_37_01.png' height='100' width='100'/> </a>]]>
     </line>
     <line>
-      <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
+      <![CDATA[Academic year is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[1]]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyAcademicYear_05_12_2018_06_37_03.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyAcademicYear_05_12_2018_06_37_03.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[0 Group check box is checked.]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcEnterStudentNameAndSeelctFeeGrCheck_05_12_2018_06_37_07.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcEnterStudentNameAndSeelctFeeGrCheck_05_12_2018_06_37_07.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_08.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_08.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_12.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_12.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]]]>
+    </line>
+    <line>
+      <![CDATA[Entered value to input Field is Thank you for opting online payments.  and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]]]>
+    </line>
+    <line>
+      <![CDATA[Entered narration asThank you for opting online payments. and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Bank')]]]]>
+    </line>
+    <line>
+      <![CDATA[Selected bank radio button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Bank')]]]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //md-datepicker[@id='chequedddate']/div/input]]]>
+    </line>
+    <line>
+      <![CDATA[Entered value to input Field is 12-12-2017 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //md-datepicker[@id='chequedddate']/div/input]]]>
+    </line>
+    <line>
+      <![CDATA[Entered cheque date:12-12-2017and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+    </line>
+    <line>
+      <![CDATA[Entered value to input Field is 789456 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+    </line>
+    <line>
+      <![CDATA[Entered cheque number is:789456and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]]]>
+    </line>
+    <line>
+      <![CDATA[Entered value to input Field is ABC Bank pvt Ltd and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]]]>
+    </line>
+    <line>
+      <![CDATA[Entered bank name:ABC Bank pvt Ltdand object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcBankDetailsAndNarration_05_12_2018_06_37_19.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcBankDetailsAndNarration_05_12_2018_06_37_19.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+    </line>
+    <line>
+      <![CDATA[clicked on save button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_22.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_22.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]]]>
+    </line>
+    <line>
+      <![CDATA[Element is not present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on record Save cancel button and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingCancel_05_12_2018_06_37_24.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingCancel_05_12_2018_06_37_24.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[clicked on OK button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_26.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_26.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+    </line>
+    <line>
+      <![CDATA[clicked on save button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_28.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_28.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on record Yes Save it button and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingYesSaveit_05_12_2018_06_37_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingYesSaveit_05_12_2018_06_37_31.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Record saved successfully message is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/h2]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifySuccessfulPopUp_05_12_2018_06_37_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifySuccessfulPopUp_05_12_2018_06_37_37.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[Element is not present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[clicked on OK button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+    </line>
+    <line>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_37.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]]]>
+    </line>
+    <line>
+      <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
       <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
     </line>
     <line>
-      <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
+      <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+      <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+      <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
     </line>
     <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
     </line>
     <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+      <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
     </line>
     <line>
-      <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-    </line>
-    <line>
-      <![CDATA[Created record is added into the output gridSanjana Tamada]]>
-    </line>
-    <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png' height='100' width='100'/> </a>]]>
-    </line>
-    <line>
-      <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on print receipt and receipt is open]]>
-    </line>
-    <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png' height='100' width='100'/> </a>]]>
-    </line>
-    <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on Fee receipt screen close button]]>
-    </line>
-    <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png' height='100' width='100'/> </a>]]>
-    </line>
-    <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on Search cancel button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
-    </line>
-    <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png' height='100' width='100'/> </a>]]>
-    </line>
-    <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
-    </line>
-    <line>
-      <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
-    </line>
-    <line>
-      <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
-    </line>
-    <line>
-      <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
-    </line>
-    <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
-    </line>
-    <line>
-      <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
-    </line>
-    <line>
-      <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
-    </line>
-    <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-    </line>
-    <line>
-      <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-    </line>
-    <line>
-      <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on print receipt and receipt is open]]>
-    </line>
-    <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png' height='100' width='100'/> </a>]]>
-    </line>
-    <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
-    </line>
-    <line>
-      <![CDATA[Print button is clicked to generate report and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
-    </line>
-    <line>
-      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png' height='100' width='100'/> </a>]]>
-    </line>
-    <line>
-      <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on Logout button and object is:-Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Logout')]/preceding-sibling::button']]>
+      <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_05_12_2018_06_38_03.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_05_12_2018_06_38_03.png' height='100' width='100'/> </a>]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="126729" started-at="2018-11-02T10:58:25Z" finished-at="2018-11-02T11:00:31Z">
+  <suite name="Default suite" duration-ms="93669" started-at="2018-12-05T13:06:32Z" finished-at="2018-12-05T13:08:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="126729" started-at="2018-11-02T10:58:25Z" finished-at="2018-11-02T11:00:31Z">
+    <test name="Default test" duration-ms="93669" started-at="2018-12-05T13:06:32Z" finished-at="2018-12-05T13:08:06Z">
       <class name="com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="setUp" is-config="true" duration-ms="10257" started-at="2018-11-02T16:28:25Z" finished-at="2018-11-02T16:28:35Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="setUp" is-config="true" duration-ms="11126" started-at="2018-12-05T18:36:32Z" finished-at="2018-12-05T18:36:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="3" started-at="2018-11-02T16:28:35Z" finished-at="2018-11-02T16:28:35Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="3" started-at="2018-12-05T18:36:44Z" finished-at="2018-12-05T18:36:44Z">
           <params>
             <param index="0">
               <value>
@@ -226,7 +259,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="34213" started-at="2018-11-02T16:28:35Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="6" started-at="2018-12-05T18:36:44Z" data-provider="vapsloginData" finished-at="2018-12-05T18:36:44Z">
           <params>
             <param index="0">
               <value>
@@ -236,77 +269,6 @@
             <param index="1">
               <value>
                 <![CDATA[Password@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Y]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png' height='100' width='100'/> </a>]]>
-            </line>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
-            </line>
-            <line>
-              <![CDATA[Entered value to input Field is Rakesh and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
-            </line>
-            <line>
-              <![CDATA[UserName entered Rakesh and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-username']]]]>
-            </line>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
-            </line>
-            <line>
-              <![CDATA[Entered value to input Field is Password@123 and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
-            </line>
-            <line>
-              <![CDATA[Password entered Password@123 and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //input[@id='login-password']]]]>
-            </line>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Login button and redirected to Home page, Object is:-Proxy element for: DefaultElementLocator 'By.xpath: //b[text()='Sign in ']/parent::button']]>
-            </line>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
-            </line>
-            <line>
-              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_02_11_2018_04_29_09.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SUCCESS method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_02_11_2018_04_28_35.png' height='100' width='100'/> </a>]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Radha]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Radha@123]]>
               </value>
             </param>
             <param index="2">
@@ -353,7 +315,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:36:44Z" finished-at="2018-12-05T18:36:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:36:44Z" finished-at="2018-12-05T18:36:44Z">
           <params>
             <param index="0">
               <value>
@@ -364,7 +337,75 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="3" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="8572" started-at="2018-12-05T18:36:44Z" data-provider="vapsloginData" finished-at="2018-12-05T18:36:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Radha]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png' height='100' width='100'/> </a>]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is Radha and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]]]>
+            </line>
+            <line>
+              <![CDATA[UserName entered Radha and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is Password@123 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]]]>
+            </line>
+            <line>
+              <![CDATA[Password entered Password@123 and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Login button and redirected to Home page, Object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //b[text()='Sign in ']/parent::button]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+            </line>
+            <line>
+              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_05_12_2018_06_36_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_05_12_2018_06_36_52.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginToappWithrequiredCredentials -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SUCCESS method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png' height='100' width='100'/> </a>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="2" started-at="2018-12-05T18:36:52Z" data-provider="vapsloginData" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -420,7 +461,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -431,18 +472,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginToappWithrequiredCredentials status=SKIP method=Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="3" started-at="2018-12-05T18:36:52Z" data-provider="vapsloginData" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -498,7 +528,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -509,7 +539,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -520,7 +550,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-11-02T16:29:10Z" data-provider="vapsloginData" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="SKIP" signature="loginToappWithrequiredCredentials(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="loginToappWithrequiredCredentials" duration-ms="1" started-at="2018-12-05T18:36:52Z" data-provider="vapsloginData" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -576,7 +606,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToappWithrequiredCredentials -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -587,7 +617,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -598,7 +628,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -609,7 +639,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:10Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:52Z">
           <params>
             <param index="0">
               <value>
@@ -620,51 +650,53 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcHomeButtonValidation()[pri:2, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcHomeButtonValidation" duration-ms="1307" started-at="2018-11-02T16:29:10Z" finished-at="2018-11-02T16:29:11Z">
+        <test-method status="PASS" signature="tcHomeButtonValidation()[pri:2, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcHomeButtonValidation" duration-ms="1380" started-at="2018-12-05T18:36:52Z" finished-at="2018-12-05T18:36:54Z">
           <reporter-output>
             <line>
-              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
+              <![CDATA[Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]>
             </line>
             <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_02_11_2018_04_29_11.png' height='100' width='100'/> </a>]]>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_05_12_2018_06_36_53.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_05_12_2018_06_36_53.png' height='100' width='100'/> </a>]]>
             </line>
           </reporter-output>
         </test-method> <!-- tcHomeButtonValidation -->
-        <test-method status="PASS" signature="tcNevigateTo_FeeTransaction()[pri:3, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcNevigateTo_FeeTransaction" duration-ms="4467" started-at="2018-11-02T16:29:11Z" finished-at="2018-11-02T16:29:15Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:54Z" finished-at="2018-12-05T18:36:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcHomeButtonValidation status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcHomeButtonValidation()[pri:2, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcNevigateTo_FeeTransaction()[pri:3, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcNevigateTo_FeeTransaction" duration-ms="4150" started-at="2018-12-05T18:36:54Z" finished-at="2018-12-05T18:36:58Z">
           <reporter-output>
             <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
             </line>
             <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+              <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
             </line>
             <line>
-              <![CDATA[Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
             </line>
             <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+              <![CDATA[Clicked on Transaction Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
             </line>
             <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
             </line>
             <line>
-              <![CDATA[Clicked on Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]]]>
+              <![CDATA[Clicked on Fee Transaction Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
             </line>
             <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Fee Transaction Button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //a[@href='#/app/FeeTransaction/89']]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_02_11_2018_04_29_15.png' height='100' width='100'/> </a>]]>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_05_12_2018_06_36_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_05_12_2018_06_36_57.png' height='100' width='100'/> </a>]]>
             </line>
           </reporter-output>
         </test-method> <!-- tcNevigateTo_FeeTransaction -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:11Z" finished-at="2018-11-02T16:29:11Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:54Z" finished-at="2018-12-05T18:36:54Z">
           <params>
             <param index="0">
               <value>
@@ -675,29 +707,899 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:11Z" finished-at="2018-11-02T16:29:11Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:58Z" finished-at="2018-12-05T18:36:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcHomeButtonValidation status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcHomeButtonValidation()[pri:2, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]]]]>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcVerifyFeeTransactionPage()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:58Z" finished-at="2018-12-05T18:36:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcNevigateTo_FeeTransaction status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcNevigateTo_FeeTransaction()[pri:3, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:15Z" finished-at="2018-11-02T16:29:15Z">
+        <test-method status="PASS" signature="tcVerifyFeeTransactionPage()[pri:4, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcVerifyFeeTransactionPage" duration-ms="1342" started-at="2018-12-05T18:36:58Z" finished-at="2018-12-05T18:36:59Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Fee Transaction page is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/ui-view/div[1]/div/section/ol/li]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyFeeTransactionPage_05_12_2018_06_36_59.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyFeeTransactionPage_05_12_2018_06_36_59.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcVerifyFeeTransactionPage -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:59Z" finished-at="2018-12-05T18:36:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcNevigateTo_FeeTransaction status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcNevigateTo_FeeTransaction()[pri:3, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]]]]>
+                <![CDATA[[TestResult name=tcVerifyFeeTransactionPage status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcVerifyFeeTransactionPage()[pri:4, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Fee Transaction page is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/ui-view/div[1]/div/section/ol/li]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcValidationOfDataInOutputTableGrid(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcValidationOfDataInOutputTableGrid" duration-ms="10039" started-at="2018-11-02T16:29:15Z" data-provider="searchOutputGridTestData" finished-at="2018-11-02T16:29:25Z">
+        <test-method status="PASS" signature="tcSelectRegularButton()[pri:5, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcSelectRegularButton" duration-ms="2433" started-at="2018-12-05T18:36:59Z" finished-at="2018-12-05T18:37:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Regular')]]]]>
+            </line>
+            <line>
+              <![CDATA[Regular radio button selected and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Regular')]]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcSelectRegularButton_05_12_2018_06_37_01.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcSelectRegularButton_05_12_2018_06_37_01.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcSelectRegularButton -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:36:59Z" finished-at="2018-12-05T18:36:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcSelectRegularButton()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:01Z" finished-at="2018-12-05T18:37:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcVerifyAcademicYear()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:01Z" finished-at="2018-12-05T18:37:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcSelectRegularButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcSelectRegularButton()[pri:5, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Regular')]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcVerifyAcademicYear()[pri:6, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcVerifyAcademicYear" duration-ms="1361" started-at="2018-12-05T18:37:01Z" finished-at="2018-12-05T18:37:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Academic year is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[1]]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyAcademicYear_05_12_2018_06_37_03.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyAcademicYear_05_12_2018_06_37_03.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcVerifyAcademicYear -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:03Z" finished-at="2018-12-05T18:37:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcVerifyAcademicYear status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcVerifyAcademicYear()[pri:6, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Academic year is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[1]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2018-12-05T18:37:03Z" finished-at="2018-12-05T18:37:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="tcEnterStudentNameAndSeelctFeeGrCheck(java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcEnterStudentNameAndSeelctFeeGrCheck" duration-ms="3" started-at="2018-12-05T18:37:03Z" data-provider="FeeTransTestData" finished-at="2018-12-05T18:37:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Srujana]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Susdiny Jio]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[user marked this record as no run]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck(Tc_Transaction_Fee_Transaction.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tcEnterStudentNameAndSeelctFeeGrCheck -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:03Z" finished-at="2018-12-05T18:37:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcEnterStudentNameAndSeelctFeeGrCheck status=SKIP method=Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck(java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:03Z" finished-at="2018-12-05T18:37:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcEnterStudentNameAndSeelctFeeGrCheck(java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcEnterStudentNameAndSeelctFeeGrCheck" duration-ms="4793" started-at="2018-12-05T18:37:03Z" data-provider="FeeTransTestData" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[KAVANA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Baldwin Girls School Fee]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[0 Group check box is checked.]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcEnterStudentNameAndSeelctFeeGrCheck_05_12_2018_06_37_07.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcEnterStudentNameAndSeelctFeeGrCheck_05_12_2018_06_37_07.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcEnterStudentNameAndSeelctFeeGrCheck -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:08Z" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcEnterStudentNameAndSeelctFeeGrCheck status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck(java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=0 Group check box is checked.]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:08Z" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="tcValidateStudentInformationData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:8, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcValidateStudentInformationData" duration-ms="2" started-at="2018-12-05T18:37:08Z" data-provider="StudentInfoTestData" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[: SURESH lkg lkg lkg]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[: 2017-2018/8/2017-2018]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[: 57]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[: 9844098440]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[: LKG]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[:]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[: 01-05-2014]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[user marked this record as no run]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(Tc_Transaction_Fee_Transaction.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tcValidateStudentInformationData -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:08Z" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcValidateStudentInformationData status=SKIP method=Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:8, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:08Z" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="tcValidateStudentInformationData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:8, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcValidateStudentInformationData" duration-ms="37" started-at="2018-12-05T18:37:08Z" data-provider="StudentInfoTestData" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[: Srujana Tamada]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[: 1267]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[: 4]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[: 9491851964]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[: PN/A]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[:]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[: 14-04-2016]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[: BCS1114]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [: Srujana Tamada] but found [: KAVANA D GOWDA]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [: Srujana Tamada] but found [: KAVANA D GOWDA]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Fee.Transaction.Transaction_Fee_Transaction.validateStudentInformationData(Transaction_Fee_Transaction.java:279)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(Tc_Transaction_Fee_Transaction.java:211)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tcValidateStudentInformationData -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="280" started-at="2018-12-05T18:37:08Z" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcValidateStudentInformationData status=FAILURE method=Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:8, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_08.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_08.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:08Z" finished-at="2018-12-05T18:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcTableEnterPayableAmount(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="tcTableEnterPayableAmount(java.lang.String, java.lang.String)[pri:9, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcTableEnterPayableAmount" duration-ms="4079" started-at="2018-12-05T18:37:08Z" data-provider="HeadAmountTestData" finished-at="2018-12-05T18:37:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Fine]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Fine] but found [Computer Fees]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Fine] but found [Computer Fees]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Fee.Transaction.Transaction_Fee_Transaction.tableEnterPayableAmount(Transaction_Fee_Transaction.java:371)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcTableEnterPayableAmount(Tc_Transaction_Fee_Transaction.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tcTableEnterPayableAmount -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="284" started-at="2018-12-05T18:37:12Z" finished-at="2018-12-05T18:37:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcTableEnterPayableAmount status=FAILURE method=Tc_Transaction_Fee_Transaction.tcTableEnterPayableAmount(java.lang.String, java.lang.String)[pri:9, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_12.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\blank_05_12_2018_06_37_12.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:13Z" finished-at="2018-12-05T18:37:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcBankDetailsAndNarration(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcBankDetailsAndNarration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcBankDetailsAndNarration" duration-ms="6915" started-at="2018-12-05T18:37:13Z" data-provider="bankDetailsTestData" finished-at="2018-12-05T18:37:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Thank you for opting online payments. ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[789456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ABC Bank pvt Ltd]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12-12-2017]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is Thank you for opting online payments.  and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]]]>
+            </line>
+            <line>
+              <![CDATA[Entered narration asThank you for opting online payments. and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Bank')]]]]>
+            </line>
+            <line>
+              <![CDATA[Selected bank radio button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Bank')]]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //md-datepicker[@id='chequedddate']/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is 12-12-2017 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //md-datepicker[@id='chequedddate']/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered cheque date:12-12-2017and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is 789456 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+            </line>
+            <line>
+              <![CDATA[Entered cheque number is:789456and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]]]>
+            </line>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered value to input Field is ABC Bank pvt Ltd and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[Entered bank name:ABC Bank pvt Ltdand object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcBankDetailsAndNarration_05_12_2018_06_37_19.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcBankDetailsAndNarration_05_12_2018_06_37_19.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcBankDetailsAndNarration -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:20Z" finished-at="2018-12-05T18:37:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcBankDetailsAndNarration status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcBankDetailsAndNarration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:20Z" finished-at="2018-12-05T18:37:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSaveButton()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcClickOnSaveButton()[pri:11, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnSaveButton" duration-ms="2438" started-at="2018-12-05T18:37:20Z" finished-at="2018-12-05T18:37:22Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+            </line>
+            <line>
+              <![CDATA[clicked on save button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_22.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_22.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcClickOnSaveButton -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:22Z" finished-at="2018-12-05T18:37:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcClickOnSaveButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnSaveButton()[pri:11, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:22Z" finished-at="2018-12-05T18:37:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcAfterSavePupUpHandlingCancel()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcAfterSavePupUpHandlingCancel()[pri:12, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcAfterSavePupUpHandlingCancel" duration-ms="2387" started-at="2018-12-05T18:37:22Z" finished-at="2018-12-05T18:37:25Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]]]>
+            </line>
+            <line>
+              <![CDATA[Element is not present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on record Save cancel button and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingCancel_05_12_2018_06_37_24.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingCancel_05_12_2018_06_37_24.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcAfterSavePupUpHandlingCancel -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:25Z" finished-at="2018-12-05T18:37:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcAfterSavePupUpHandlingCancel status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcAfterSavePupUpHandlingCancel()[pri:12, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:25Z" finished-at="2018-12-05T18:37:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnFailedOkBtn()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcClickOnFailedOkBtn()[pri:13, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnFailedOkBtn" duration-ms="1465" started-at="2018-12-05T18:37:25Z" finished-at="2018-12-05T18:37:26Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[clicked on OK button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_26.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_26.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcClickOnFailedOkBtn -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:26Z" finished-at="2018-12-05T18:37:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSaveButtonAfterConfirmCancel()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:26Z" finished-at="2018-12-05T18:37:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcClickOnFailedOkBtn status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnFailedOkBtn()[pri:13, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcClickOnSaveButtonAfterConfirmCancel()[pri:14, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnSaveButtonAfterConfirmCancel" duration-ms="2406" started-at="2018-12-05T18:37:26Z" finished-at="2018-12-05T18:37:28Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+            </line>
+            <line>
+              <![CDATA[clicked on save button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_28.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_28.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcClickOnSaveButtonAfterConfirmCancel -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:28Z" finished-at="2018-12-05T18:37:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcClickOnSaveButtonAfterConfirmCancel status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnSaveButtonAfterConfirmCancel()[pri:14, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:28Z" finished-at="2018-12-05T18:37:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcAfterSavePupUpHandlingYesSaveit()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tcAfterSavePupUpHandlingYesSaveit()[pri:15, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcAfterSavePupUpHandlingYesSaveit" duration-ms="3381" started-at="2018-12-05T18:37:28Z" finished-at="2018-12-05T18:37:32Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on record Yes Save it button and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingYesSaveit_05_12_2018_06_37_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingYesSaveit_05_12_2018_06_37_31.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcAfterSavePupUpHandlingYesSaveit -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:32Z" finished-at="2018-12-05T18:37:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcVerifySuccessfulPopUp()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:32Z" finished-at="2018-12-05T18:37:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcAfterSavePupUpHandlingYesSaveit status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcAfterSavePupUpHandlingYesSaveit()[pri:15, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcVerifySuccessfulPopUp()[pri:16, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcVerifySuccessfulPopUp" duration-ms="5348" started-at="2018-12-05T18:37:32Z" finished-at="2018-12-05T18:37:37Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Record saved successfully message is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/h2]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifySuccessfulPopUp_05_12_2018_06_37_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifySuccessfulPopUp_05_12_2018_06_37_37.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcVerifySuccessfulPopUp -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:37:37Z" finished-at="2018-12-05T18:37:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSuccessOkBtn()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:37Z" finished-at="2018-12-05T18:37:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcVerifySuccessfulPopUp status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcVerifySuccessfulPopUp()[pri:16, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Record saved successfully message is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/h2]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcClickOnSuccessOkBtn()[pri:17, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnSuccessOkBtn" duration-ms="347" started-at="2018-12-05T18:37:37Z" finished-at="2018-12-05T18:37:37Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[Element is not present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[clicked on OK button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]>
+            </line>
+            <line>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_37.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tcClickOnSuccessOkBtn -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:37Z" finished-at="2018-12-05T18:37:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tcClickOnSuccessOkBtn status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnSuccessOkBtn()[pri:17, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tcValidationOfDataInOutputTableGrid(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcValidationOfDataInOutputTableGrid" duration-ms="26074" started-at="2018-12-05T18:37:38Z" data-provider="searchOutputGridTestData" finished-at="2018-12-05T18:38:04Z">
           <params>
             <param index="0">
               <value>
@@ -717,44 +1619,38 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
+              <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
               <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
             </line>
             <line>
-              <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
+              <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]]]>
             </line>
             <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
             </line>
             <line>
-              <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+              <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
             </line>
             <line>
-              <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
+              <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
             </line>
             <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
             </line>
             <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
+              <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
             </line>
             <line>
-              <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-            </line>
-            <line>
-              <![CDATA[Created record is added into the output gridSanjana Tamada]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_02_11_2018_04_29_25.png' height='100' width='100'/> </a>]]>
+              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_05_12_2018_06_38_03.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_05_12_2018_06_38_03.png' height='100' width='100'/> </a>]]>
             </line>
           </reporter-output>
         </test-method> <!-- tcValidationOfDataInOutputTableGrid -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:15Z" finished-at="2018-11-02T16:29:15Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:37:38Z" finished-at="2018-12-05T18:37:38Z">
           <params>
             <param index="0">
               <value>
@@ -765,18 +1661,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:25Z" finished-at="2018-11-02T16:29:25Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:04Z" finished-at="2018-12-05T18:38:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcValidationOfDataInOutputTableGrid status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcValidationOfDataInOutputTableGrid(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]]>
+                <![CDATA[[TestResult name=tcValidationOfDataInOutputTableGrid status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcValidationOfDataInOutputTableGrid(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:26Z" finished-at="2018-11-02T16:29:26Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T18:38:04Z" finished-at="2018-12-05T18:38:04Z">
           <params>
             <param index="0">
               <value>
@@ -787,7 +1683,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcPrintReceiptValidation(java.lang.String, java.lang.String)[pri:19, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcPrintReceiptValidation" duration-ms="9494" started-at="2018-11-02T16:29:26Z" data-provider="PrintReceipt_StudentNameData" finished-at="2018-11-02T16:29:35Z">
+        <test-method status="FAIL" signature="tcPrintReceiptValidation(java.lang.String, java.lang.String)[pri:19, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcPrintReceiptValidation" duration-ms="1302" started-at="2018-12-05T18:38:04Z" data-provider="PrintReceipt_StudentNameData" finished-at="2018-12-05T18:38:05Z">
           <params>
             <param index="0">
               <value>
@@ -800,117 +1696,303 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getScreenShot(TestBase.java:215)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(Tc_Transaction_Fee_Transaction.java:401)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
-            <line>
-              <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on print receipt and receipt is open]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintReceiptValidation_02_11_2018_04_29_35.png' height='100' width='100'/> </a>]]>
-            </line>
           </reporter-output>
         </test-method> <!-- tcPrintReceiptValidation -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:35Z" finished-at="2018-11-02T16:29:35Z">
+        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcPrintReceiptValidation status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(java.lang.String, java.lang.String)[pri:19, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Creted record is added into the output gridSanjana Tamada]]]>
+                <![CDATA[[TestResult name=tcPrintReceiptValidation status=FAILURE method=Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(java.lang.String, java.lang.String)[pri:19, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcClickOnFeeReceiptCloseButton()[pri:20, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnFeeReceiptCloseButton" duration-ms="1429" started-at="2018-11-02T16:29:35Z" finished-at="2018-11-02T16:29:37Z">
+        <test-method status="SKIP" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <reporter-output>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Fee receipt screen close button]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnFeeReceiptCloseButton_02_11_2018_04_29_36.png' height='100' width='100'/> </a>]]>
-            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="tcClickOnFeeReceiptCloseButton()[pri:20, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnFeeReceiptCloseButton" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
           </reporter-output>
         </test-method> <!-- tcClickOnFeeReceiptCloseButton -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:35Z" finished-at="2018-11-02T16:29:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnFeeReceiptCloseButton()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:37Z" finished-at="2018-11-02T16:29:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSearch_CancelButton()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:37Z" finished-at="2018-11-02T16:29:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickOnFeeReceiptCloseButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnFeeReceiptCloseButton()[pri:20, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]/following-sibling::Button]]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcClickOnSearch_CancelButton()[pri:21, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnSearch_CancelButton" duration-ms="1665" started-at="2018-11-02T16:29:37Z" finished-at="2018-11-02T16:29:38Z">
+        <test-method status="SKIP" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <reporter-output>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Search cancel button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSearch_CancelButton_02_11_2018_04_29_38.png' height='100' width='100'/> </a>]]>
-            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="tcClickOnSearch_CancelButton()[pri:21, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnSearch_CancelButton" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
           </reporter-output>
         </test-method> <!-- tcClickOnSearch_CancelButton -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:38Z" finished-at="2018-11-02T16:29:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickOnSearch_CancelButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnSearch_CancelButton()[pri:21, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[@class='btn btn-warning']]]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-02T16:29:38Z" finished-at="2018-11-02T16:29:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnPrintReceiptButton(java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tcClickOnPrintReceiptButton(java.lang.String, java.lang.String, java.lang.String)[pri:22, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnPrintReceiptButton" duration-ms="13088" started-at="2018-11-02T16:29:38Z" data-provider="searchOutputGridTestData" finished-at="2018-11-02T16:29:51Z">
+        <test-method status="SKIP" signature="tcClickOnPrintReceiptButton(java.lang.String, java.lang.String, java.lang.String)[pri:22, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcClickOnPrintReceiptButton" duration-ms="1" started-at="2018-12-05T18:38:05Z" data-provider="searchOutputGridTestData" finished-at="2018-12-05T18:38:05Z">
           <params>
             <param index="0">
               <value>
@@ -928,111 +2010,164 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
-            </line>
-            <line>
-              <![CDATA[Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
-            </line>
-            <line>
-              <![CDATA[Selected item from drop down list is verified and selected item is: Student Name]]>
-            </line>
-            <line>
-              <![CDATA[selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]>
-            </line>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
-            </line>
-            <line>
-              <![CDATA[Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
-            </line>
-            <line>
-              <![CDATA[Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]]]>
-            </line>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-            </line>
-            <line>
-              <![CDATA[clicked on search button and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]]]>
-            </line>
-            <line>
-              <![CDATA[Creted record is added into the output gridSanjana Tamada]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on print receipt and receipt is open]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnPrintReceiptButton_02_11_2018_04_29_51.png' height='100' width='100'/> </a>]]>
-            </line>
           </reporter-output>
         </test-method> <!-- tcClickOnPrintReceiptButton -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:51Z" finished-at="2018-11-02T16:29:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcClickOnPrintReceiptButton status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcClickOnPrintReceiptButton(java.lang.String, java.lang.String, java.lang.String)[pri:22, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: (//select[@id='sel1'])[3]]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tcPrintOfFeereceipt()[pri:23, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcPrintOfFeereceipt" duration-ms="6198" started-at="2018-11-02T16:29:51Z" finished-at="2018-11-02T16:29:58Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
-            </line>
-            <line>
-              <![CDATA[Print button is clicked to generate report and object is:-[[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]>
-            </line>
-            <line>
-              <![CDATA[<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcPrintOfFeereceipt_02_11_2018_04_29_57.png' height='100' width='100'/> </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tcPrintOfFeereceipt -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:51Z" finished-at="2018-11-02T16:29:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintOfFeereceipt()]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-11-02T16:29:58Z" finished-at="2018-11-02T16:29:58Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tcPrintOfFeereceipt status=SUCCESS method=Tc_Transaction_Fee_Transaction.tcPrintOfFeereceipt()[pri:23, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output=Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //button[contains(text(),'Print')]]]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tearDown" is-config="true" duration-ms="33592" started-at="2018-11-02T16:29:58Z" finished-at="2018-11-02T16:30:31Z">
+        <test-method status="SKIP" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
           <reporter-output>
-            <line>
-              <![CDATA[Element is present...and object is: [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on button for specific action and object is:- [[ChromeDriver: chrome on XP (501c07c5b3f3a3dc4a6646d0fc7d412c)] -> xpath: //span[contains(text(),'Logout')]/preceding-sibling::button]]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Logout button and object is:-Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Logout')]/preceding-sibling::button']]>
-            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="tcPrintOfFeereceipt()[pri:23, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tcPrintOfFeereceipt" duration-ms="1" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'Arvind-Susdiny', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tcPrintOfFeereceipt -->
+        <test-method status="SKIP" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:05Z">
+          <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="endTest" is-config="true" duration-ms="174" started-at="2018-11-02T16:30:31Z" finished-at="2018-11-02T16:30:31Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384]" name="endTest" is-config="true" duration-ms="387" started-at="2018-12-05T18:38:05Z" finished-at="2018-12-05T18:38:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->

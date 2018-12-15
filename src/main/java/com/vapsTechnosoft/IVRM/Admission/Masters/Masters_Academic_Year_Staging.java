@@ -12,6 +12,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -407,9 +408,10 @@ public class Masters_Academic_Year_Staging extends TestBase {
 
 		inputTextIntoInputField(input_FromYear, FromAcademicYr);
 		Thread.sleep(1000);
-		robot = new Robot();
-		robot.keyPress(KeyEvent.VK_TAB);
-		robot.keyRelease(KeyEvent.VK_TAB);
+		input_FromYear.sendKeys(Keys.TAB);
+//		robot = new Robot();
+//		robot.keyPress(KeyEvent.VK_TAB);
+//		robot.keyRelease(KeyEvent.VK_TAB);
 		log("Entered Academic from year " + FromAcademicYr + " and object is:-" + input_FromYear.toString());
 		Thread.sleep(1000);
 		try {
@@ -428,8 +430,10 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			oAction = new Actions(driver);
 			oAction.moveToElement(inputAcad_StartDate);
 			oAction.contextClick(inputAcad_StartDate).build().perform();
-			// Thread.sleep(1000);
+			//Thread.sleep(1000);
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
 			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
@@ -439,7 +443,7 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			Thread.sleep(1000);
 			log("Entered start date for academic year " + startdate + " and object is:-"
 					+ inputAcad_StartDate.toString());
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -455,8 +459,10 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			oAction = new Actions(driver);
 			oAction.moveToElement(inputAcad_EndDate);
 			oAction.contextClick(inputAcad_EndDate).build().perform();
-			// Thread.sleep(1000);
+			//Thread.sleep(1000);
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
 			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
@@ -464,7 +470,7 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			log("Entered end date for academic year " + end_date + " and object is:-" + inputAcad_EndDate.toString());
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -475,8 +481,10 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			oAction = new Actions(driver);
 			oAction.moveToElement(inputPreAdm_StartDate);
 			oAction.contextClick(inputPreAdm_StartDate).build().perform();
-			// Thread.sleep(1000);
+			//Thread.sleep(1000);
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
 			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
@@ -485,7 +493,7 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			log("Entered start date for preadmission " + preAdmStartDate + " and object is:-"
 					+ inputPreAdm_StartDate.toString());
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -496,8 +504,10 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			oAction = new Actions(driver);
 			oAction.moveToElement(inputPreAdm_EndDate);
 			oAction.contextClick(inputPreAdm_EndDate).build().perform();
-			// Thread.sleep(1000);
+			//Thread.sleep(1000);
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
 			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
@@ -506,7 +516,7 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			log("Entered end date for preadmission " + preAdmEndDate + " and object is:-"
 					+ inputPreAdm_EndDate.toString());
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -518,8 +528,10 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			oAction = new Actions(driver);
 			oAction.moveToElement(inputPreAdm_CutOffDate);
 			oAction.contextClick(inputPreAdm_CutOffDate).build().perform();
-			// Thread.sleep(1000);
+			//Thread.sleep(1000);
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
 			robot.keyRelease(KeyEvent.VK_DOWN);
 			robot.keyPress(KeyEvent.VK_DOWN);
@@ -528,7 +540,7 @@ public class Masters_Academic_Year_Staging extends TestBase {
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			log("Entered cut off date for preadmission " + cutoffDate + " and object is:-"
 					+ inputPreAdm_CutOffDate.toString());
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -69,7 +69,7 @@ public class Student_Attendance_Entry extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]")
 	WebElement btn_MonthYear;
 
-	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[20]/span")
+	@FindBy(xpath = "//span[contains(text(),'Sep 2018')]/following::td[17]/span")
 	WebElement btn_Date;
 
 	@FindBy(xpath = "//span[@class='input-group-addon']/following-sibling::input")
@@ -113,7 +113,7 @@ public class Student_Attendance_Entry extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			return true;
 
 		} catch (Exception e) {
@@ -408,7 +408,7 @@ public class Student_Attendance_Entry extends TestBase {
 
 	public void validation_MessageForMarksEntry() throws Exception {
 		try {
-			validate_PopUpText.isDisplayed();
+			msg_Validation_FilledForm.isDisplayed();
 			String validation = msg_Validation_FilledForm.getText().trim();
 			assertEquals(validation, "Attendance Entry Type Is Absent");
 			log("Validation message not present on attendance entry page and object is:-"

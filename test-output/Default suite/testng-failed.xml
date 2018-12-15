@@ -5,12 +5,19 @@
     <classes>
       <class name="com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction">
         <methods>
-          <include name="loginToappWithrequiredCredentials" invocation-numbers="1 2 3 4"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="afterMethod"/>
+          <include name="tcClickOnSearch_CancelButton"/>
+          <include name="tcTableEnterPayableAmount" invocation-numbers="0"/>
+          <include name="loginToappWithrequiredCredentials" invocation-numbers="0 2 3 4"/>
+          <include name="tcPrintOfFeereceipt"/>
+          <include name="tcPrintReceiptValidation" invocation-numbers="0"/>
+          <include name="tcClickOnPrintReceiptButton" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="endTest"/>
+          <include name="setUp"/>
+          <include name="tcValidateStudentInformationData" invocation-numbers="0 1"/>
+          <include name="afterMethod"/>
+          <include name="tcClickOnFeeReceiptCloseButton"/>
+          <include name="tcEnterStudentNameAndSeelctFeeGrCheck" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction -->
     </classes>

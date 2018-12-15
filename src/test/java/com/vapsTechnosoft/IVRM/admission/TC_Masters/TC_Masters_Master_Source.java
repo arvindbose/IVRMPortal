@@ -463,8 +463,21 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcClickOnCancelButton");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopWindowMessage_DeleteCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeleteCancel_Validation Test===========");
+
+			mastersource.popWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -478,8 +491,25 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcClickOnOkSuccessButton_cancel");
 		}
 	}
+//
+	@Test(priority = 28, dataProvider = "MasterSourceSearchData")
+	public void tcSearchWithSourceNameInTheGrid_delete_AfterCancel(String sourceName, String runMode) {
 
-	@Test(priority = 27, dataProvider = "MasterSourceSearchData")
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSearchWithSourceNameInTheGrid_delete_AfterCancel Test===========");
+
+			mastersource.searchWithSourceNameInTheGrid(sourceName);
+
+			log.info("============= Finished tcSearchWithSourceNameInTheGrid_delete_AfterCancel Test===========");
+			getScreenShot("tcSearchWithSourceNameInTheGrid_delete_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcSearchWithSourceNameInTheGrid_delete_AfterCancel");
+		}
+	}
+	@Test(priority = 29, dataProvider = "MasterSourceSearchData")
 	public void tcDeleteMasterSource_AfterCancel(String sourceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -497,7 +527,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -511,7 +541,7 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
-	@Test(priority = 29)
+	@Test(priority = 31)
 	public void tcPopWindowMessage_DeletedSuccessfully_Validation() {
 
 		try {
@@ -526,7 +556,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -541,7 +571,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 31, dataProvider = "MastersMasterSourceData")
+	@Test(priority = 33, dataProvider = "MastersMasterSourceData")
 	public void tcEnterMasterSourceDetailsData_AfterDelete(String sourceName, String sourceDiscription,
 			String runMode) {
 
@@ -560,7 +590,7 @@ public class TC_Masters_Master_Source extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 34)
 	public void tcSaveSourceInfoData_AfterDelete() {
 
 		try {
@@ -574,7 +604,7 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcSaveSourceInfoData_AfterDelete");
 		}
 	}
-	@Test(priority = 33)
+	@Test(priority = 35)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
 		try {
@@ -588,7 +618,7 @@ public class TC_Masters_Master_Source extends TestBase {
 			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
 		}
 	}
-	@Test(priority = 34)
+	@Test(priority = 36)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

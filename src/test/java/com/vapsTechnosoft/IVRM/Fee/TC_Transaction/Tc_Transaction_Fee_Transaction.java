@@ -181,7 +181,7 @@ public class Tc_Transaction_Fee_Transaction extends TestBase {
 	}
 
 	@Test(priority = 7, dataProvider = "FeeTransTestData")
-	public void tcEnterStudentNameAndSeelctFeeGrCheck(String studentName, String runMode) {
+	public void tcEnterStudentNameAndSeelctFeeGrCheck(String studentName,String groupName, String runMode) {
 		feeTransaction = new Transaction_Fee_Transaction(driver);
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -189,7 +189,7 @@ public class Tc_Transaction_Fee_Transaction extends TestBase {
 		try {
 			log.info("============= Strting tcEnterStudentNameAndSeelctFeeGrCheck Test===========");
 
-			feeTransaction.enterStudentNameAndSeelctFeeGrCheck(studentName);
+			feeTransaction.enterStudentNameAndSeelctFeeGrCheck(studentName, groupName);
 
 			log.info("============= Finished tcEnterStudentNameAndSeelctFeeGrCheck Test===========");
 			getScreenShot("tcEnterStudentNameAndSeelctFeeGrCheck");

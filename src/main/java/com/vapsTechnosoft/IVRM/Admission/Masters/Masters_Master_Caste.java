@@ -72,6 +72,9 @@ public class Masters_Master_Caste extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByCasteName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_CasteName;
 
 	@FindBy(xpath = "//select[@name='cat' and @data-ng-model='imcC_Id']")
 	WebElement sel_Castecategory;
@@ -228,7 +231,8 @@ public class Masters_Master_Caste extends TestBase {
 	public void sortByCasteName() throws Exception {
 
 		clickOnButton(btnSortByCasteName);
-		log("Sorted the record with Caste name and object is:-" + btnSortByCasteName.toString());
+		SortData_InColumn_DescendingOrder(list_CasteName);
+		log("Sorted the record with Caste name in Descending order and object is:-" + btnSortByCasteName.toString());
 
 	}
 
@@ -350,6 +354,30 @@ public class Masters_Master_Caste extends TestBase {
 			String text = validate_PopUpText.getText().trim();
 			assertEquals(text, "Record Updated Successfully");
 			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Caste Deletion Cancelled");
+			log("Record Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	public void popWindowMessage_DeletedSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Caste Deleted Successfully");
+			log("Caste Deleted Successfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();

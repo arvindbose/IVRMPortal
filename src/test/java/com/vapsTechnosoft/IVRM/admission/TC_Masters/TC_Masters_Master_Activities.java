@@ -458,8 +458,21 @@ public class TC_Masters_Master_Activities extends TestBase{
 			getScreenShot("tcClickOnCancelButton");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopUpWindowMessage_DeleteCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+
+			masteractivities.popWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -474,7 +487,7 @@ public class TC_Masters_Master_Activities extends TestBase{
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "MasterActivitiesSearchData")
+	@Test(priority = 28, dataProvider = "MasterActivitiesSearchData")
 	public void tcDeleteMasterActivities_AfterCancel(String activityName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -492,7 +505,7 @@ public class TC_Masters_Master_Activities extends TestBase{
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 29)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -506,8 +519,22 @@ public class TC_Masters_Master_Activities extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 30)
+	public void tcPopUpWindowMessage_DeleteSuccess_Validation() {
 
-	@Test(priority = 29)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteSuccess_Validation Test===========");
+
+			masteractivities.popWindowMessage_DeleteSuccess_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteSuccess_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteSuccess_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteSuccess_Validation");
+		}
+	}
+
+	@Test(priority = 31)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -522,7 +549,7 @@ public class TC_Masters_Master_Activities extends TestBase{
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "MasterActivitiesData")
+	@Test(priority = 32, dataProvider = "MasterActivitiesData")
 	public void tcEnterMasterActivitiesDetailsData_AfterDelete(String activityName,
 			String activityDescription, String runMode) {
 
@@ -541,7 +568,7 @@ public class TC_Masters_Master_Activities extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 33)
 	public void tcSaveMasterActivitiesInfoData_AfterDelete() {
 
 		try {
@@ -556,7 +583,7 @@ public class TC_Masters_Master_Activities extends TestBase{
 		}
 	}
 	
-	@Test(priority = 32)
+	@Test(priority = 34)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
 		try {
@@ -571,7 +598,7 @@ public class TC_Masters_Master_Activities extends TestBase{
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 35)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

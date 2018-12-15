@@ -76,6 +76,9 @@ public class Masters_Master_Documents extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByDocumentName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_DocumentName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -228,7 +231,8 @@ public class Masters_Master_Documents extends TestBase {
 	public void sortByDocumentName() throws Exception {
 
 		clickOnButton(btnSortByDocumentName);
-		log("Sorted the record with Document name and object is:-" + btnSortByDocumentName.toString());
+		SortData_InColumn_DescendingOrder(list_DocumentName);
+		log("Sorted the record with Document name in descending order and object is:-" + btnSortByDocumentName.toString());
 
 	}
 
@@ -244,22 +248,25 @@ public class Masters_Master_Documents extends TestBase {
 		int rows = tblRows.size();
 		System.out.println(rows);
 		// Thread.sleep(2000);
+		try {
 		for (int i = 1; i <= rows; i++) {
 
-			try {
+		
 				String documentname = driver
 						.findElement(By.xpath("//div[@class='box-body']/table/tbody/tr[" + i + "]/td[2]")).getText();
 				System.out.println("Document Name: " + documentname);
-				// Thread.sleep(2000);
-
 				Thread.sleep(1000);
+				if(documentname.equals(documentName)){
 				Assert.assertEquals(documentname, documentName);
 				log("Document name created is updated in the record grid.");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
+				break;
+				}
+			
 		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	public void editMasterDocument(String documentName) {
@@ -363,7 +370,17 @@ public class Masters_Master_Documents extends TestBase {
 			e.printStackTrace();
 		}
 	}
-
+	public void popWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Delete Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void popWindowMessage_DeletedSuccessfully() throws Exception {
 		try {
 			validate_PopUpText.isDisplayed();

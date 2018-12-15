@@ -292,8 +292,21 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 			getScreenShot("tcClickOnSaveButton_YearlyGroup");
 		}
 	}
-
 	@Test(priority = 16)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+
+			feeGroupYearlyGroup.popWindowMessage_SubmitSuccessfully();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
+		}
+	}
+	@Test(priority = 17)
 	public void tcClickOnSuccessOkBtn_YearlyGroup() {
 		feeGroupYearlyGroup = new Masters_Fee_Group_YearlyGroup(driver);
 
@@ -308,7 +321,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 			getScreenShot("tcClickOnSuccessOkBtn_YearlyGroup");
 		}
 	}
-	@Test(priority = 17, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 18, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -326,7 +339,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 18, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 19, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcVerifyYearlyFeeGroup_UpdatedInGrid(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -344,7 +357,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 19, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 20, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcEdit_YearlyFeeGroup(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -361,7 +374,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void tcClickOnSaveButton_YearlyGroupForm_Edit() {
 
 		try {
@@ -375,8 +388,21 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 			getScreenShot("tcClickOnSaveButton_YearlyGroupForm_Edit");
 		}
 	}
+	@Test(priority = 22)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation() {
 
-	@Test(priority = 21)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+
+			feeGroupYearlyGroup.popWindowMessage_SubmitSuccessfully_Edit();
+
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Edit_Validation");
+		}
+	}
+	@Test(priority = 23)
 	public void tcClickOnSuccessOkBtn_YearlyGroup_Edit() {
 
 		try {
@@ -393,7 +419,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 
 	//
 
-	@Test(priority = 22, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 24, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_ForDeactivate(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -411,7 +437,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 23, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 25, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcDeactivationOfCreated_YearlyFeeGroup(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -429,7 +455,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 26)
 	public void tcClickOnCancelButton_deactivate() {
 
 		try {
@@ -443,8 +469,23 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 			getScreenShot("tcClickOnCancelButton_deactivate");
 		}
 	}
+	
+	@Test(priority = 27)
+	public void tcPopUpWindowMessage_DeactivateCancel_Validation() {
 
-	@Test(priority = 25)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+
+			feeGroupYearlyGroup.popUpWindowMessage_DeactivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateCancel_Validation");
+		}
+	}
+
+	@Test(priority = 28)
 	public void tcClickOnSuccessOkBtn_YearlyGroup_deactivateCancel() {
 
 		try {
@@ -459,7 +500,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 26, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 29, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_ForDeactivate_AfterCancel(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -479,7 +520,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 27, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 30, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcDeactivationOfCreated_YearlyFeeGroup_AfterCancel(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -497,7 +538,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 28)
+	@Test(priority = 31)
 	public void tcYesDeleteOrDeactivateOrActivateIt_deactivate() {
 
 		try {
@@ -511,8 +552,21 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
+	@Test(priority = 32)
+	public void tcPopUpWindowMessage_DeactivateSucessfully_Validation() {
 
-	@Test(priority = 29)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+
+			feeGroupYearlyGroup.popUpWindowMessage_DeactivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeactivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeactivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 33)
 	public void tcClickOnSuccessOkBtn_YearlyGroup_deactivate() {
 
 		try {
@@ -527,7 +581,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 30, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 34, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_ForActivate(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -545,7 +599,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 31, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 35, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcActivationOfCreatedFeeGroup_YearlyGroup(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -563,7 +617,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 32)
+	@Test(priority = 36)
 	public void tcClickOnCancelButton_activate() {
 
 		try {
@@ -577,8 +631,21 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 			getScreenShot("tcClickOnCancelButton_activate");
 		}
 	}
+	@Test(priority = 37)
+	public void tcPopUpWindowMessage_ActivateCancel_Validation() {
 
-	@Test(priority = 33)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+
+			feeGroupYearlyGroup.popUpWindowMessage_ActivateCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateCancel_Validation");
+		}
+	}
+	@Test(priority = 38)
 	public void tcClickOnSuccessOkBtn_YearlyGroup_activateCancel() {
 
 		try {
@@ -593,7 +660,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 34, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 39, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcSearchBy_FeeGroup_YearlyFeeGrNameInGrid_AfterCancel(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -611,7 +678,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 35, dataProvider = "Search_FeeGroupYearlyTestData")
+	@Test(priority = 40, dataProvider = "Search_FeeGroupYearlyTestData")
 	public void tcActivationOfCreatedFeeGroup_YearlyGroup_AfterCancel(String yearlyFeeGroup, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -628,7 +695,7 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 		}
 	}
 
-	@Test(priority = 36)
+	@Test(priority = 41)
 	public void tcYesDeleteOrDeactivateOrActivateIt_Activate() {
 
 		try {
@@ -642,8 +709,21 @@ public class Tc_Masters_Fee_Group_YearlyGroup extends TestBase {
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt_Activate");
 		}
 	}
+	@Test(priority = 42)
+	public void tcPopUpWindowMessage_ActivateSucessfully_Validation() {
 
-	@Test(priority = 37)
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+
+			feeGroupYearlyGroup.popUpWindowMessage_ActivateSucessfully_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_ActivateSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_ActivateSucessfully_Validation");
+		}
+	}
+	@Test(priority = 43)
 	public void tcClickOnSuccessOkBtn_YearlyGroup_activate() {
 
 		try {

@@ -3,13 +3,14 @@
  */
 package com.vapsTechnosoft.IVRM.Fee.Masters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -18,7 +19,7 @@ import org.testng.Assert;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
 
 /**
- * @author vaps
+ * @author Arvind
  *
  */
 public class Masters_Fee_Head extends TestBase {
@@ -48,7 +49,7 @@ public class Masters_Fee_Head extends TestBase {
 	@FindBy(xpath = "//body[@id='style-4']/ui-view/div[1]/div/section/ol/li")
 	WebElement txtFeeHeadDispaly;
 
-	@FindBy(xpath = "//label[contains(text(),'Fee Head:')]/following-sibling::div/input")
+	@FindBy(xpath = "//input[@name='name']")
 	WebElement Input_FeeHeadName;
 
 	@FindBy(xpath = "//label[contains(text(),'Fee Head Type:')]/following-sibling::div/select")
@@ -63,7 +64,7 @@ public class Masters_Fee_Head extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Refundable')]/preceding-sibling::input")
 	WebElement chk_Refundable;
 
-	@FindBy(xpath = "//span[contains(text(),'Save')]/parent::button")
+	@FindBy(xpath = "//button[@id='save-btn']")
 	WebElement btn_Save;
 
 	@FindBy(xpath = "//span[contains(text(),'Cancel')]/parent::button")
@@ -101,6 +102,12 @@ public class Masters_Fee_Head extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByFeeHead;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_FeeHeadName;
+	
+	@FindBy(xpath = "//h2")
+	WebElement validate_PopUpText;
 
 	public Masters_Fee_Head(WebDriver driver) {
 		this.driver = driver;
@@ -193,23 +200,11 @@ public class Masters_Fee_Head extends TestBase {
 	}
 
 	public void clickOnSaveButton_FeeHead() throws Exception {
-		try {
-			if (btn_Save.isDisplayed()) {
-				// btn_Save.click();
-				// JavascriptExecutor executor = (JavascriptExecutor)driver;
-				// executor.executeScript("arguments[0].click();", btn_Save);
-				Actions builder = new Actions(driver);
-				builder.moveToElement(btn_Save).click(btn_Save);
-				builder.perform();
-
+		
+				clickOnButton(btn_Save);
 				log("clicked on save button and object is:-" + btn_Save.toString());
-				Thread.sleep(5000);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			log("Save Button element not present.");
-			Thread.sleep(500);
-		}
+				Thread.sleep(1000);
+			
 	}
 
 	public void clickOnCancelButton_FeeHead() throws Exception {
@@ -370,26 +365,20 @@ public class Masters_Fee_Head extends TestBase {
 	 */
 
 	public void yesDeleteOrDeactivateOrActivateIt() throws Exception {
-		if (btnYesDeleteOrDeactIt.isDisplayed()) {
-			btnYesDeleteOrDeactIt.click();
+	
+			clickOnButton(btnYesDeleteOrDeactIt);
 			log("Clicked on yes deactivate or activate or delete it button and object is:-"
 					+ btnYesDeleteOrDeactIt.toString());
-			Thread.sleep(10000);
-		} else {
-			log("Yes Activate/Deactivate button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	public void clickOnCancelButton_PopUp() throws Exception {
-		if (btnPopUpCancel.isDisplayed()) {
-			btnPopUpCancel.click();
+		
+			clickOnButton(btnPopUpCancel);
 			log("Clicked on cancel button and object is:-" + btnPopUpCancel.toString());
-			Thread.sleep(3000);
-		} else {
-			log("Cancel button element not present.");
-			Thread.sleep(500);
-		}
+			Thread.sleep(1000);
+		
 	}
 
 	/**
@@ -427,36 +416,99 @@ public class Masters_Fee_Head extends TestBase {
 	}
 
 	public void minimizeAndMaximize_FeeHead() throws Exception {
-		if (btnMin_MaxFeeHead.isDisplayed()) {
-			btnMin_MaxFeeHead.click();
+	
+			clickOnButton(btnMin_MaxFeeHead);
 			log("clicked on Fee Head minimize and maximize button and object is:-" + btnMin_MaxFeeHead.toString());
 			Thread.sleep(1000);
-		} else {
-			log("MinMax Fee Head button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void minimizeAndMaximize_FeeMasterHeadGridView() throws Exception {
-		if (btnMin_MaxFeeMasterHeadGridView.isDisplayed()) {
-			btnMin_MaxFeeMasterHeadGridView.click();
+
+			clickOnButton(btnMin_MaxFeeMasterHeadGridView);
 			log("Fee Master Head grid table data minimize and maximize and object is:-"
 					+ btnMin_MaxFeeMasterHeadGridView.toString());
 			Thread.sleep(1000);
-		} else {
-			log("MinMax Fee Master Head grid button element not present.");
-			Thread.sleep(500);
-		}
+		
 	}
 
 	public void sortByFeeHeadName() throws Exception {
-		if (btnSortByFeeHead.isDisplayed()) {
-			btnSortByFeeHead.click();
-			log("Sorted the record with Fee Head name and object is:-" + btnSortByFeeHead.toString());
-			Thread.sleep(2000);
-		} else {
-			log("Sort element not present.");
-			Thread.sleep(500);
+
+			clickOnButton(btnSortByFeeHead);
+			SortData_InColumn_DescendingOrder(list_FeeHeadName);
+			log("Sorted the record with Fee Head name in descending order and object is:-" + btnSortByFeeHead.toString());
+			
+	}
+	
+	public void popWindowMessage_SubmitSuccessfully() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Saved Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popWindowMessage_SubmitSuccessfully_Edit() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Updated Successfully");
+			log("Record submitted sucessfully message validated for edit.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_DeactivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactivated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activate Cancelled");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void popUpWindowMessage_ActivateSucessfully_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Activated Successfully");
+			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

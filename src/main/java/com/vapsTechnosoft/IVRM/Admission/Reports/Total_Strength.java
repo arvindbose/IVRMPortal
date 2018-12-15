@@ -6,6 +6,7 @@ package com.vapsTechnosoft.IVRM.Admission.Reports;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -652,7 +653,7 @@ public class Total_Strength extends TestBase {
 		
 			clickOnButton(btn_Report);
 			log("Total Strength Report is generated and object is:-" + btn_Report.toString());
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 
 	}
 
@@ -672,7 +673,8 @@ public class Total_Strength extends TestBase {
 	}
 
 	public void min_Max_TotalStrenghtReport_Form() throws Exception {
-	
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+				txtReports_TotalStrengthReportMsgDispaly);
 			clickOnButton(btnMin_MaxTotalStrengthReportForm);
 			log("Total Strength Report page minimized or maximized and object is:-"
 					+ btnMin_MaxTotalStrengthReportForm.toString());

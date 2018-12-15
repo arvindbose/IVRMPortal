@@ -455,8 +455,21 @@ public class TC_Masters_Master_Reference extends TestBase{
 			getScreenShot("tcClickOnCancelButton");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopWindowMessage_DeleteCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopWindowMessage_DeleteCancel_Validation Test===========");
+
+			masterreference.popWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -472,7 +485,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 	}
 	
 
-	@Test(priority = 27, dataProvider = "MasterReferenceSearchData")
+	@Test(priority = 28, dataProvider = "MasterReferenceSearchData")
 	public void tcSearchWithReferenceNameInTheGrid_AfterDeleteCancel(String referenceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -490,7 +503,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MasterReferenceSearchData")
+	@Test(priority = 29, dataProvider = "MasterReferenceSearchData")
 	public void tcDeleteMasterReference_AfterCancel(String referenceName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -508,7 +521,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 		}
 	}
 
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -522,7 +535,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
-	@Test(priority = 30)
+	@Test(priority = 31)
 	public void tcPopWindowMessage_DeletedSuccessfully_Validation() {
 
 		try {
@@ -537,7 +550,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -552,7 +565,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 		}
 	}
 	
-	@Test(priority = 32, dataProvider = "MastersMasterReferenceData")
+	@Test(priority = 33, dataProvider = "MastersMasterReferenceData")
 	public void tcEnterMasterReferenceDetailsData_AfterDelete(String referenceName, String referenceDescription,
 			String runMode) {
 
@@ -571,7 +584,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 		}
 	}
 
-	@Test(priority = 33)
+	@Test(priority = 34)
 	public void tcSaveReferenceInfoData_AfterDelete() {
 
 		try {
@@ -585,7 +598,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 			getScreenShot("tcSaveReferenceInfoData_AfterDelete");
 		}
 	}
-	@Test(priority = 34)
+	@Test(priority = 35)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
 		try {
@@ -599,7 +612,7 @@ public class TC_Masters_Master_Reference extends TestBase{
 			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
 		}
 	}
-	@Test(priority = 35)
+	@Test(priority = 36)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

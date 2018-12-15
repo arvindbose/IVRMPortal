@@ -520,6 +520,9 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcVerifyStudentAdmissionNumberInTheGrid");
 		}
 	}
+	/**
+	 * Delete Section
+	 */
 
 	@Test(priority = 27)
 	public void tcNevigateToDeleteSection() {
@@ -820,6 +823,9 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcVerifyStudentIn_DeleteSectionAllotedGrid");
 		}
 	}
+	/**
+	 * New Section
+	 */
 
 	@Test(priority = 45)
 	public void tcNevigateToNewSection() {
@@ -951,7 +957,9 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcClickOnOkSuccessButton_NewSection_AfterDelete");
 		}
 	}
-
+/**
+ * Change Section
+ */
 	@Test(priority = 53)
 	public void tcNevigateToChangeSection() {
 
@@ -1243,6 +1251,9 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcVerifyStudentIn_ChangeSectionAllotedGrid");
 		}
 	}
+	/**
+	 * Promote Section
+	 */
 
 	@Test(priority = 70)
 	public void tcNevigateToPromotionSection() {
@@ -1555,7 +1566,9 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcVerifyStudentIn_PromotedStudentGrid");
 		}
 	}
-
+/**
+ * Loss Section
+ */
 	@Test(priority = 88)
 	public void tcNevigateToYearLossSection() {
 
@@ -1862,6 +1875,9 @@ public class TC_Masters_Section_Allotment extends TestBase {
 			getScreenShot("tcVerifyUpdatedYearLossStudentInGrid");
 		}
 	}
+	/**
+	 * Update roll number
+	 */
 
 	@Test(priority = 106)
 	public void tcNavigateToUpdateRollNumber() {

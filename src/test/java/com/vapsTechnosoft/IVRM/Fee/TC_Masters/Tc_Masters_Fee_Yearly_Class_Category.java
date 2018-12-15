@@ -12,7 +12,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.vapsTechnosoft.IVRM.Fee.Masters.Masters_Fee_Yearly_Class_Category;
 import com.vapsTechnosoft.IVRM.LoginLogOut.IvrmPortalLogin;
 import com.vapsTechnosoft.IVRM.testBase.TestBase;
@@ -134,8 +133,21 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 			getScreenShot("tcClickOnYearly_ClassCategoryTab");
 		}
 	}
+	@Test(priority = 6)
+	public void tcClickOnSaveButton_ToSubmitBlankForm() {
+		try {
+			log.info("============= Strting tcClickOnSaveButton_ToSubmitBlankForm Test===========");
 
-	@Test(priority = 6, dataProvider = "YrlyClassCtgTestData")
+			yearlyClassgroup.clickOnSaveButton_ToSubmitBlankForm();
+
+			log.info("============= Finished tcClickOnSaveButton_ToSubmitBlankForm Test===========");
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnSaveButton_ToSubmitBlankForm");
+		}
+	}
+
+	@Test(priority = 7, dataProvider = "YrlyClassCtgTestData")
 	public void tcSelectAcademicYearClassCategoryAndClass(String academicYr, String classCategory, String className,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -152,8 +164,116 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 			getScreenShot("tcSelectAcademicYearClassCategoryAndClass");
 		}
 	}
+	
+	@Test(priority = 8)
+	public void tcMinimize_YearlyClassCategory() {
+		
+		try {
+			log.info("============= Strting tcMinimize_YearlyClassCategory Test===========");
 
-	@Test(priority = 7)
+			yearlyClassgroup.minimizeAndMaximize_YearlyClassCategory();
+
+			log.info("============= Finished tcMinimize_YearlyClassCategory Test===========");
+			getScreenShot("tcMinimize_YearlyClassCategory");
+		} catch (Exception e) {
+			getScreenShot("tcMinimize_YearlyClassCategory");
+		}
+	}
+
+	@Test(priority = 9)
+	public void tcSortByClassCategory_Yrly() {
+	
+		try {
+			log.info("============= Strting tcSortByClassCategory_Yrly Test===========");
+
+			yearlyClassgroup.sortByClassCategory_Yrly();
+
+			log.info("============= Finished tcSortByClassCategory_Yrly Test===========");
+			getScreenShot("tcSortByClassCategory_Yrly");
+		} catch (Exception e) {
+			getScreenShot("tcSortByClassCategory_Yrly");
+		}
+	}
+
+	@Test(priority = 10)
+	public void tcMinimize_YearlyClassCategoryGridView() {
+	
+		try {
+			log.info("============= Strting tcMinimize_YearlyClassCategoryGridView Test===========");
+
+			yearlyClassgroup.minimizeAndMaximize_YearlyClassCategoryGridView();
+
+			log.info("============= Finished tcMinimize_YearlyClassCategoryGridView Test===========");
+			getScreenShot("tcMinimize_YearlyClassCategoryGridView");
+		} catch (Exception e) {
+			getScreenShot("tcMinimize_YearlyClassCategoryGridView");
+		}
+	}
+
+	@Test(priority = 11)
+	public void tcMaximize_YearlyClassCategoryGridView() {
+	
+		try {
+			log.info("============= Strting tcMaximize_YearlyClassCategoryGridView Test===========");
+
+			yearlyClassgroup.minimizeAndMaximize_YearlyClassCategoryGridView();
+
+			log.info("============= Finished tcMaximize_YearlyClassCategoryGridView Test===========");
+			getScreenShot("tcMaximize_YearlyClassCategoryGridView");
+		} catch (Exception e) {
+			getScreenShot("tcMaximize_YearlyClassCategoryGridView");
+		}
+	}
+
+	@Test(priority = 12)
+	public void tcMaximize_YearlyClassCategory() {
+		
+		try {
+			log.info("============= Strting tcMaximize_YearlyClassCategory Test===========");
+
+			yearlyClassgroup.minimizeAndMaximize_YearlyClassCategory();
+
+			log.info("============= Finished tcMaximize_YearlyClassCategory Test===========");
+			getScreenShot("tcMaximize_YearlyClassCategory");
+		} catch (Exception e) {
+			getScreenShot("tcMaximize_YearlyClassCategory");
+		}
+	}
+
+	@Test(priority = 13)
+	public void tcClickOnCancelButton_ToClearFilledData() {
+	
+		try {
+			log.info("============= Strting tcClickOnCancelButton_ToClearFilledData Test===========");
+
+			yearlyClassgroup.clickOnCancelButton_ToClearFilledData();
+
+			log.info("============= Finished tcClickOnCancelButton_ToClearFilledData Test===========");
+			getScreenShot("tcClickOnCancelButton_ToClearFilledData");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnCancelButton_ToClearFilledData");
+		}
+	}
+
+	@Test(priority = 14, dataProvider = "YrlyClassCtgTestData")
+	public void tcSelectAcademicYearClassCategoryAndClass_AfterCancel(String academicYr, String classCategory, String className,
+			String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcSelectAcademicYearClassCategoryAndClass_AfterCancel Test===========");
+
+			yearlyClassgroup.selectAcademicYearClassCategoryAndClass(academicYr, classCategory, className);
+
+			log.info("============= Finished tcSelectAcademicYearClassCategoryAndClass_AfterCancel Test===========");
+			getScreenShot("tcSelectAcademicYearClassCategoryAndClass_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcSelectAcademicYearClassCategoryAndClass_AfterCancel");
+		}
+	}
+
+	@Test(priority = 15)
 	public void tcClickOnSaveButton() {
 		try {
 			log.info("============= Strting tcClickOnSaveButton Test===========");
@@ -167,23 +287,22 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 8)
-	public void tcVerifySuccessfulPopUp() {
+	@Test(priority = 16)
+	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation() {
 
 		try {
-			log.info("============= Strting tcVerifySuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
 
-			boolean status = yearlyClassgroup.verifySuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			yearlyClassgroup.popWindowMessage_SubmitSuccessfully();
 
-			log.info("============= Finished tcVerifySuccessfulPopUp Test===========");
-			getScreenShot("tcVerifySuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_SubmitSuccessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifySuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation");
 		}
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 17)
 	public void tcClickOnSuccessOkBtn() {
 
 		try {
@@ -205,7 +324,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 	 * @param classCategory
 	 * @param runMode
 	 */
-	@Test(priority = 10)
+	@Test(priority = 18)
 	public void tcClickOnYearly_ClassCategoryTabAgain() {
 
 		try {
@@ -220,7 +339,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 11, dataProvider = "FeeClasscategorySearchTestData")
+	@Test(priority = 19, dataProvider = "FeeClasscategorySearchTestData")
 	public void tcSearchByClassCategoryInGrid(String classCategory, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -237,7 +356,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 12, dataProvider = "FeeClasscategorySearchTestData")
+	@Test(priority = 20, dataProvider = "FeeClasscategorySearchTestData")
 	public void tcVerifyClassCategoryUpdatedInGrid(String classCategory, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -254,7 +373,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 13, dataProvider = "FeeClasscategorySearchTestData")
+	@Test(priority = 21, dataProvider = "FeeClasscategorySearchTestData")
 	public void tcDelete_Yearly_ClassCategoryFromGrid(String classCategory, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -270,8 +389,69 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 			getScreenShot("tcDelete_Yearly_ClassCategoryFromGrid");
 		}
 	}
+	@Test(priority = 22)
+	public void tcClickOnCancelButton_PopUp() {
 
-	@Test(priority = 14)
+		try {
+			log.info("============= Strting tcClickOnCancelButton_PopUp Test===========");
+
+			yearlyClassgroup.clickOnCancelButton_PopUp();
+
+			log.info("============= Finished tcClickOnCancelButton_PopUp Test===========");
+			getScreenShot("tcClickOnCancelButton_PopUp");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnCancelButton_PopUp");
+		}
+	}
+
+	@Test(priority = 23)
+	public void tcPopUpWindowMessage_DeleteCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+
+			yearlyClassgroup.popUpWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		}
+	}
+	
+	@Test(priority = 24)
+	public void tcClickOnDeletionOkBtn_Cancel() {
+
+		try {
+			log.info("============= Strting tcClickOnDeletionOkBtn_Cancel Test===========");
+
+			yearlyClassgroup.clickOnDeletionFinalOkBtn();
+
+			log.info("============= Finished tcClickOnDeletionOkBtn_Cancel Test===========");
+			getScreenShot("tcClickOnDeletionOkBtn_Cancel");
+		} catch (Exception e) {
+			getScreenShot("tcClickOnDeletionOkBtn_Cancel");
+		}
+	}
+	
+	@Test(priority = 25, dataProvider = "FeeClasscategorySearchTestData")
+	public void tcDelete_Yearly_ClassCategoryFromGrid_AfterCancel(String classCategory, String runMode) {
+		if (runMode.equalsIgnoreCase("n")) {
+			throw new SkipException("user marked this record as no run");
+		}
+		try {
+			log.info("============= Strting tcDelete_Yearly_ClassCategoryFromGrid_AfterCancel Test===========");
+
+			yearlyClassgroup.delete_Yearly_ClassCategoryFromGrid(classCategory);
+
+			log.info("============= Finished tcDelete_Yearly_ClassCategoryFromGrid_AfterCancel Test===========");
+			getScreenShot("tcDelete_Yearly_ClassCategoryFromGrid_AfterCancel");
+		} catch (Exception e) {
+			getScreenShot("tcDelete_Yearly_ClassCategoryFromGrid_AfterCancel");
+		}
+	}
+	
+	@Test(priority = 26)
 	public void tcConfirmationForDeletion() {
 
 		try {
@@ -286,23 +466,22 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 15)
-	public void tcVerifyDeletionSuccessfulPopUp() {
+	@Test(priority = 27)
+	public void tcPopUpWindowMessage_DeleteSucessfully_Validation() {
 
 		try {
-			log.info("============= Strting tcVerifyDeletionSuccessfulPopUp Test===========");
+			log.info("============= Strting tcPopUpWindowMessage_DeleteSucessfully_Validation Test===========");
 
-			boolean status = yearlyClassgroup.verifyDeletionSuccessfulPopUp();
-			Assert.assertEquals(status, true);
+			yearlyClassgroup.popUpWindowMessage_DeleteSucessfully_Validation();
 
-			log.info("============= Finished tcVerifyDeletionSuccessfulPopUp Test===========");
-			getScreenShot("tcVerifyDeletionSuccessfulPopUp");
+			log.info("============= Finished tcPopUpWindowMessage_DeleteSucessfully_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteSucessfully_Validation");
 		} catch (Exception e) {
-			getScreenShot("tcVerifyDeletionSuccessfulPopUp");
+			getScreenShot("tcPopUpWindowMessage_DeleteSucessfully_Validation");
 		}
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 28)
 	public void tcClickOnDeletionFinalOkBtn() {
 
 		try {
@@ -326,7 +505,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 	 * @param className
 	 * @param runMode
 	 */
-	@Test(priority = 17, dataProvider = "YrlyClassCtgTestData")
+	@Test(priority = 29, dataProvider = "YrlyClassCtgTestData")
 	public void tcSelectAcademicYearClassCategoryAndClass_AfterDeletionOfPreviouslyCreatedYCC(String academicYr,
 			String classCategory, String className, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
@@ -346,7 +525,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 30)
 	public void tcClickOnSaveButton_AfterDeletionOfPreviouslyCreatedYCC() {
 
 		try {
@@ -361,7 +540,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 31)
 	public void tcVerifySuccessfulPopUp_AfterDeletionOfPreviouslyCreatedYCC() {
 
 		try {
@@ -379,7 +558,7 @@ public class Tc_Masters_Fee_Yearly_Class_Category extends TestBase {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 32)
 	public void tcClickOnSuccessOkBtn_AfterDeletionOfPreviouslyCreatedYCC() {
 
 		try {

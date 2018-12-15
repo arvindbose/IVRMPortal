@@ -211,14 +211,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 7, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_All")
-	public void tcMapStudentWithGroup_rdBtnAll(String bystudentName, String studentName, String runMode) {
+	public void tcMapStudentWithGroup_rdBtnAll(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnAll Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnAll Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnAll");
@@ -369,14 +369,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 17, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_All")
-	public void tcMapStudentWithGroup_rdBtnAll_AfterCancel(String bystudentName, String studentName, String runMode) {
+	public void tcMapStudentWithGroup_rdBtnAll_AfterCancel(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnAll_AfterCancel Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnAll_AfterCancel Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnAll_AfterCancel");
@@ -451,14 +451,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 22, dataProvider = "Search_StudentFeeGroupData_WithClassWise_All")
-	public void tcMapStudentWithGroup_rdBtnAll_ClassWise(String bystudentName, String studentName, String runMode) {
+	public void tcMapStudentWithGroup_rdBtnAll_ClassWise(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnAll_ClassWise Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, bystudentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnAll_ClassWise Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnAll_ClassWise");
@@ -533,14 +533,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 27, dataProvider = "Search_StudentFeeGroupData_FeeClassCategory")
-	public void tcMapStudentWithGroup_rdBtnFeeClassCategory(String bystudentName, String studentName, String runMode) {
+	public void tcMapStudentWithGroup_rdBtnFeeClassCategory(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnFeeClassCategory Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnFeeClassCategory Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnFeeClassCategory");
@@ -615,14 +615,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 32, dataProvider = "Search_StudentFeeGroupData_AdmissionCategory")
-	public void tcMapStudentWithGroup_rdBtnAdmissionCategory(String bystudentName, String studentName, String runMode) {
+	public void tcMapStudentWithGroup_rdBtnAdmissionCategory(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnAdmissionCategory Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnAdmissionCategory Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnAdmissionCategory");
@@ -698,15 +698,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 37, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_RegStudent")
-	public void tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise(String bystudentName, String studentName,
-			String runMode) {
+	public void tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName, admNumber, groupName);
 
 			log.info(
 					"============= Finished tcMapStudentWithGroup_rdBtnRegularStudent_WithoutClassWise Test===========");
@@ -787,15 +786,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 42, dataProvider = "Search_StudentFeeGroupData_WithClassWise_RegStudent")
-	public void tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise(String bystudentName, String studentName,
-			String runMode) {
+	public void tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, bystudentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnRegularStudent_WithClassWise");
@@ -870,15 +868,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 47, dataProvider = "Search_StudentFeeGroupData_WithoutClassWise_NewStudent")
-	public void tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise(String bystudentName, String studentName,
-			String runMode) {
+	public void tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnNewStudent_WithoutClassWise");
@@ -955,15 +952,14 @@ public class Tc_Masters_Student_Fee_GroupMap extends TestBase {
 	}
 
 	@Test(priority = 52, dataProvider = "Search_StudentFeeGroupData_WithClassWise_NewStudent")
-	public void tcMapStudentWithGroup_rdBtnNewStudent_WithClassWise(String bystudentName, String studentName,
-			String runMode) {
+	public void tcMapStudentWithGroup_rdBtnNewStudent_WithClassWise(String bystudentName, String studentName,String admNumber,String groupName, String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
 		}
 		try {
 			log.info("============= Strting tcMapStudentWithGroup_rdBtnNewStudent_WithClassWise Test===========");
 
-			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName);
+			studentFeegroupMap.mapStudentWithGroup(bystudentName, studentName, admNumber, groupName);
 
 			log.info("============= Finished tcMapStudentWithGroup_rdBtnNewStudent_WithClassWise Test===========");
 			getScreenShot("tcMapStudentWithGroup_rdBtnNewStudent_WithClassWise");

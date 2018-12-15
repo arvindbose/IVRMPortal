@@ -73,6 +73,9 @@ public class Masters_Master_Board extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByBoardName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_BoardName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -215,7 +218,8 @@ public class Masters_Master_Board extends TestBase {
 	public void sortByBoardName() throws Exception {
 
 		clickOnButton(btnSortByBoardName);
-		log("Sorted the record with Board name and object is:-" + btnSortByBoardName.toString());
+		SortData_InColumn_DescendingOrder(list_BoardName);
+		log("Sorted the record with Board name in Descending Order and object is:-" + btnSortByBoardName.toString());
 
 	}
 
@@ -348,13 +352,26 @@ public class Masters_Master_Board extends TestBase {
 			e.printStackTrace();
 		}
 	}
+	
+	public void popWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Delete Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 
 	public void popWindowMessage_DeletedSuccessfully() throws Exception {
 		try {
 			validate_PopUpText.isDisplayed();
 			String text = validate_PopUpText.getText().trim();
 			assertEquals(text, "Record Deleted Successfully");
-			log("Record submitted sucessfully message validated.");
+			log("Record delete submitted sucessfully message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();

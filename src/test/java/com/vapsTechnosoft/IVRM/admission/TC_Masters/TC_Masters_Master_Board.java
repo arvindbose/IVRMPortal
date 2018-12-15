@@ -455,8 +455,22 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcClickOnCancelButton");
 		}
 	}
-
 	@Test(priority = 26)
+	public void tcPopUpWindowMessage_DeleteCancel_Validation() {
+
+		try {
+			log.info("============= Strting tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+
+			masterboard.popWindowMessage_DeleteCancel_Validation();
+
+			log.info("============= Finished tcPopUpWindowMessage_DeleteCancel_Validation Test===========");
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		} catch (Exception e) {
+			getScreenShot("tcPopUpWindowMessage_DeleteCancel_Validation");
+		}
+	}
+
+	@Test(priority = 27)
 	public void tcClickOnOkSuccessButton_cancel() {
 
 		try {
@@ -472,7 +486,7 @@ public class TC_Masters_Master_Board extends TestBase{
 	}
 	
 
-	@Test(priority = 27, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 28, dataProvider = "MasterBoardSearchData")
 	public void tcSearchWithBoardNameInTheGrid_AfterDeleteCancel(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -490,7 +504,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 28, dataProvider = "MasterBoardSearchData")
+	@Test(priority = 29, dataProvider = "MasterBoardSearchData")
 	public void tcDeleteMasterBoard_AfterCancel(String boardName, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -508,7 +522,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 	
-	@Test(priority = 29)
+	@Test(priority = 30)
 	public void tcYesDeleteOrDeactivateOrActivateIt() {
 
 		try {
@@ -522,7 +536,7 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcYesDeleteOrDeactivateOrActivateIt");
 		}
 	}
-	@Test(priority = 30)
+	@Test(priority = 31)
 	public void tcPopWindowMessage_DeletedSuccessfully_Validation() {
 
 		try {
@@ -537,7 +551,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 
-	@Test(priority = 31)
+	@Test(priority = 32)
 	public void tcClickOnOkSuccessButton_delete() {
 
 		try {
@@ -551,7 +565,7 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcClickOnOkSuccessButton_delete");
 		}
 	}
-	@Test(priority = 32, dataProvider = "MastersMasterBoardData")
+	@Test(priority = 33, dataProvider = "MastersMasterBoardData")
 	public void tcEnterMasterBoardData_AfterDelete(String boardName, String boardDescription, String runMode) {
 
 		if (runMode.equalsIgnoreCase("n")) {
@@ -569,7 +583,7 @@ public class TC_Masters_Master_Board extends TestBase{
 		}
 	}
 	
-	@Test(priority = 33)
+	@Test(priority = 34)
 	public void tcSaveBoardInfoData_AfterDelete() {
 
 		try {
@@ -583,7 +597,7 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcSaveBoardInfoData_AfterDelete");
 		}
 	}
-	@Test(priority = 34)
+	@Test(priority = 35)
 	public void tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete() {
 
 		try {
@@ -597,7 +611,7 @@ public class TC_Masters_Master_Board extends TestBase{
 			getScreenShot("tcPopUpWindowMessage_SubmitSuccessfully_Validation_AfterDelete");
 		}
 	}
-	@Test(priority = 35)
+	@Test(priority = 36)
 	public void tcClickOnOkSuccessButton_AfterDelete() {
 
 		try {

@@ -93,6 +93,9 @@ public class Masters_Class_Teacher_Mapping extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[5]/a")
 	WebElement btnSortByStaffName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[5]")
+	private List<WebElement> list_StaffName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnYesDeleteOrDeactIt;
@@ -118,7 +121,7 @@ public class Masters_Class_Teacher_Mapping extends TestBase {
 		try {
 			btnHome.isDisplayed();
 			log("Home button is dispalyed and object is:-" + btnHome.toString());
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			return true;
 
 		} catch (Exception e) {
@@ -284,7 +287,8 @@ public class Masters_Class_Teacher_Mapping extends TestBase {
 	public void sortByStaffName() throws Exception {
 
 		clickOnButton(btnSortByStaffName);
-		log("Sorted the record with Staff name and object is:-" + btnSortByStaffName.toString());
+		SortData_InColumn_DescendingOrder(list_StaffName);
+		log("Sorted the record with Staff name in descending order and object is:-" + btnSortByStaffName.toString());
 
 	}
 
@@ -416,5 +420,49 @@ public class Masters_Class_Teacher_Mapping extends TestBase {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void popWindowMessage_DeactivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deactive Cancelled");
+			log("Record Deactive Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_DectivateSuccess_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Deactivated Successfully");
+			log("Record Deactivated Successfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_ActivateCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Active Cancelled");
+			log("Record Active Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_ActivateSuccess_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Activated Successfully");
+			log("Record Activated Successfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -72,6 +72,9 @@ public class Masters_Master_Source extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortBySourceName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_SourceName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -216,12 +219,14 @@ public class Masters_Master_Source extends TestBase {
 
 		clickOnButton(btnOKSuccess);
 		log("Clciked on Ok button for final submission and object is:-" + btnOKSuccess.toString());
-
+		Thread.sleep(2000L);
 	}
 
 	public void sortBySourceName() throws Exception {
-		btnSortBySourceName.click();
-		log("Sorted the record with Source name and object is:-" + btnSortBySourceName.toString());
+	
+		clickOnButton(btnSortBySourceName);
+		SortData_InColumn_DescendingOrder(list_SourceName);
+		log("Sorted the record with Source name in descending order and object is:-" + btnSortBySourceName.toString());
 		Thread.sleep(1000);
 	}
 
@@ -350,7 +355,17 @@ public class Masters_Master_Source extends TestBase {
 			e.printStackTrace();
 		}
 	}
-
+	public void popWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Cancelled");
+			log("Record Delete Cancelled message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void popWindowMessage_DeletedSuccessfully() throws Exception {
 		try {
 			validate_PopUpText.isDisplayed();

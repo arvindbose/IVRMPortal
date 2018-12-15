@@ -140,7 +140,7 @@ public class TC_Transaction_Fee_Master_Concession extends TestBase {
 	}
 
 	@Test(priority = 5, dataProvider = "FeeMasterConcessionData_ClassWise")
-	public void tcFill_FeeMasterConcessionForm_rdBtnClassWise(String academicYr, String class_ClassWise,
+	public void tcFill_FeeMasterConcessionForm_rdBtnClassWise(String academicYr, String class_ClassWise,String groupName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -148,7 +148,7 @@ public class TC_Transaction_Fee_Master_Concession extends TestBase {
 		try {
 			log.info("============= Strting tcFill_FeeMasterConcessionForm_rdBtnClassWise Test===========");
 
-			feeMasterConcession.fill_FeeMasterConcessionForm_rdBtnClassWise(academicYr, class_ClassWise);
+			feeMasterConcession.fill_FeeMasterConcessionForm_rdBtnClassWise(academicYr, class_ClassWise, groupName);
 			log.info("============= Finished tcFill_FeeMasterConcessionForm_rdBtnClassWise Test===========");
 			getScreenShot("tcFill_FeeMasterConcessionForm_rdBtnClassWise");
 		} catch (Exception e) {
@@ -389,7 +389,7 @@ public class TC_Transaction_Fee_Master_Concession extends TestBase {
 	}
 
 	@Test(priority = 21, dataProvider = "FeeMasterConcessionData_ClassWise")
-	public void tcFill_FeeMasterConcessionForm_rdBtnClassWise_AfterCancel(String academicYr, String class_ClassWise,
+	public void tcFill_FeeMasterConcessionForm_rdBtnClassWise_AfterCancel(String academicYr, String class_ClassWise,String groupName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -397,7 +397,7 @@ public class TC_Transaction_Fee_Master_Concession extends TestBase {
 		try {
 			log.info("============= Strting tcFill_FeeMasterConcessionForm_rdBtnClassWise_AfterCancel Test===========");
 
-			feeMasterConcession.fill_FeeMasterConcessionForm_rdBtnClassWise(academicYr, class_ClassWise);
+			feeMasterConcession.fill_FeeMasterConcessionForm_rdBtnClassWise(academicYr, class_ClassWise, groupName);
 			log.info(
 					"============= Finished tcFill_FeeMasterConcessionForm_rdBtnClassWise_AfterCancel Test===========");
 			getScreenShot("tcFill_FeeMasterConcessionForm_rdBtnClassWise_AfterCancel");
@@ -538,7 +538,7 @@ public class TC_Transaction_Fee_Master_Concession extends TestBase {
 	 * Fee Concession Category Wise
 	 */
 	@Test(priority = 30, dataProvider = "FeeMasterConcessionData_CategoryWise")
-	public void tcFill_FeeMasterConcessionForm_rdBtnCategoryWise(String category, String academicYr,
+	public void tcFill_FeeMasterConcessionForm_rdBtnCategoryWise(String category, String academicYr,String groupName,
 			String runMode) {
 		if (runMode.equalsIgnoreCase("n")) {
 			throw new SkipException("user marked this record as no run");
@@ -546,7 +546,7 @@ public class TC_Transaction_Fee_Master_Concession extends TestBase {
 		try {
 			log.info("============= Strting tcFill_FeeMasterConcessionForm_rdBtnCategoryWise Test===========");
 
-			feeMasterConcession.fill_FeeMasterConcessionForm_rdBtnCategoryWise(category, academicYr);
+			feeMasterConcession.fill_FeeMasterConcessionForm_rdBtnCategoryWise(category, academicYr,groupName);
 			log.info("============= Finished tcFill_FeeMasterConcessionForm_rdBtnCategoryWise Test===========");
 			getScreenShot("tcFill_FeeMasterConcessionForm_rdBtnCategoryWise");
 		} catch (Exception e) {

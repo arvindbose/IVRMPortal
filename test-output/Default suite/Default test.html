@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>27/2/4</td>
+<td>Tests passed/Failed/Skipped:</td><td>16/3/10</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Aug 17 18:42:08 IST 2018</td>
+<td>Started on:</td><td>Wed Dec 05 18:36:32 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>89 seconds (89682 ms)</td>
+<tr><td>Total time:</td><td>93 seconds (93669 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,6 +68,169 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.afterMethod()'><b>afterMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: [TestResult name=tcPrintReceiptValidation status=FAILURE method=Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(java.lang.String, java.lang.String)[pri:19, instance:com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384] output={null}]</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace74885833", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace74885833'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.beforeMethod()'><b>beforeMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.beforeMethod()'><b>beforeMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.beforeMethod()'><b>beforeMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.beforeMethod()'><b>beforeMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.afterMethod()'><b>afterMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.afterMethod()'><b>afterMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.afterMethod()'><b>afterMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.afterMethod()'><b>afterMethod</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tearDown()'><b>tearDown</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -75,16 +238,28 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow()'><b>tcActivateRecords_ViewWindow</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping</td>
-<td><div><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1189)
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation()'><b>tcPrintReceiptValidation</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Sanjana Tamada, Y</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getScreenShot(TestBase.java:215)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(Tc_Transaction_Fee_Transaction.java:401)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -110,16 +285,28 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1847431070", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1847431070'><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1189)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1410367298", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1410367298'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getScreenShot(TestBase.java:215)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintReceiptValidation(Tc_Transaction_Fee_Transaction.java:401)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -146,19 +333,19 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
-<td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow_AfterCancel()'><b>tcActivateRecords_ViewWindow_AfterCancel</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping</td>
-<td><div><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcTableEnterPayableAmount()'><b>tcTableEnterPayableAmount</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Fine, 5</td>
+<td><div><pre>java.lang.AssertionError: expected [Fine] but found [Computer Fees]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
 	at org.testng.Assert.assertEquals(Assert.java:116)
 	at org.testng.Assert.assertEquals(Assert.java:190)
 	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow_AfterCancel(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1234)
+	at com.vapsTechnosoft.IVRM.Fee.Transaction.Transaction_Fee_Transaction.tableEnterPayableAmount(Transaction_Fee_Transaction.java:371)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcTableEnterPayableAmount(Tc_Transaction_Fee_Transaction.java:228)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -184,16 +371,90 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace842331982", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace842331982'><pre>java.lang.AssertionError: expected [Activate Now] but found [Deactivate Now]
+</pre></div><a href='#' onClick='toggleBox("stack-trace1434015813", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1434015813'><pre>java.lang.AssertionError: expected [Fine] but found [Computer Fees]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
 	at org.testng.Assert.assertEquals(Assert.java:116)
 	at org.testng.Assert.assertEquals(Assert.java:190)
 	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.vapsTechnosoft.IVRM.Exam.Masters.Exam_MasterCategoryAndCategoryClassMapping.activateRecords_ViewWindow(Exam_MasterCategoryAndCategoryClassMapping.java:801)
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcActivateRecords_ViewWindow_AfterCancel(TC_Exam_MasterCategoryAndCategoryClassMapping.java:1234)
+	at com.vapsTechnosoft.IVRM.Fee.Transaction.Transaction_Fee_Transaction.tableEnterPayableAmount(Transaction_Fee_Transaction.java:371)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcTableEnterPayableAmount(Tc_Transaction_Fee_Transaction.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>4</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData()'><b>tcValidateStudentInformationData</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: : Srujana Tamada, : 1267, : 4, : 9491851964, : PN/A, :, : 14-04-2016, : BCS1114, Y</td>
+<td><div><pre>java.lang.AssertionError: expected [: Srujana Tamada] but found [: KAVANA D GOWDA]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Fee.Transaction.Transaction_Fee_Transaction.validateStudentInformationData(Transaction_Fee_Transaction.java:279)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(Tc_Transaction_Fee_Transaction.java:211)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1662912171", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1662912171'><pre>java.lang.AssertionError: expected [: Srujana Tamada] but found [: KAVANA D GOWDA]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.vapsTechnosoft.IVRM.Fee.Transaction.Transaction_Fee_Transaction.validateStudentInformationData(Transaction_Fee_Transaction.java:279)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(Tc_Transaction_Fee_Transaction.java:211)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -221,7 +482,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -231,362 +492,258 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: Rakesh, Password@123, Y<br/>
-<a href="#Output-314364096" onClick='toggleBox("Output-314364096", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Radha, Password@123, Y<br/>
+<a href="#Output-948675904" onClick='toggleBox("Output-948675904", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-314364096" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-314364096">
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_17_08_2018_06_42_18.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_17_08_2018_06_42_18.png' height='100' width='100'/> </a><br/>
-entered user name:-Rakesh and object is [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //input[@id='login-username']]<br/>
-entered password:-Password@123 and object is [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //input[@id='login-password']]<br/>
-cliked on login button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[@ng-show='prereg']]<br/>
-Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_17_08_2018_06_42_38.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_17_08_2018_06_42_38.png' height='100' width='100'/> </a><br/>
+<a href="#Output-948675904" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-948675904">
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\Login Page_05_12_2018_06_36_44.png' height='100' width='100'/> </a><br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]<br/>
+Entered value to input Field is Radha and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]<br/>
+UserName entered Radha and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-username']]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]<br/>
+Entered value to input Field is Password@123 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]<br/>
+Password entered Password@123 and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='login-password']]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //b[text()='Sign in ']/parent::button]<br/>
+Clicked on Login button and redirected to Home page, Object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //b[text()='Sign in ']/parent::button]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]<br/>
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //*[@id='style-4']/section/ul/li[1]/a/span]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_05_12_2018_06_36_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\loginToappWithrequiredCredentials_05_12_2018_06_36_52.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>20</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>8</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcCancel_ActivatePopUp_viewWindow()'><b>tcCancel_ActivatePopUp_viewWindow</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1824322115" onClick='toggleBox("Output-1824322115", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcAfterSavePupUpHandlingCancel()'><b>tcAfterSavePupUpHandlingCancel</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1623060829" onClick='toggleBox("Output-1623060829", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1824322115" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1824322115">
-Cancel button is not present in Activation and deactivation pop up.<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_ActivatePopUp_viewWindow_17_08_2018_06_43_20.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_ActivatePopUp_viewWindow_17_08_2018_06_43_20.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1623060829" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1623060829">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]<br/>
+Element is not present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]<br/>
+Clicked on record Save cancel button and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/button]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingCancel_05_12_2018_06_37_24.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingCancel_05_12_2018_06_37_24.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcAfterSavePupUpHandlingYesSaveit()'><b>tcAfterSavePupUpHandlingYesSaveit</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1088239991" onClick='toggleBox("Output-1088239991", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1088239991" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1088239991">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]<br/>
+Clicked on record Yes Save it button and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingYesSaveit_05_12_2018_06_37_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcAfterSavePupUpHandlingYesSaveit_05_12_2018_06_37_31.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcBankDetailsAndNarration()'><b>tcBankDetailsAndNarration</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Thank you for opting online payments. , 789456, ABC Bank pvt Ltd, 12-12-2017, Y<br/>
+<a href="#Output-503595296" onClick='toggleBox("Output-503595296", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-503595296" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-503595296">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]<br/>
+Entered value to input Field is Thank you for opting online payments.  and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]<br/>
+Entered narration asThank you for opting online payments. and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //textarea[@id='Narration']]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Bank')]]<br/>
+Selected bank radio button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Bank')]]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //md-datepicker[@id='chequedddate']/div/input]<br/>
+Entered value to input Field is 12-12-2017 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //md-datepicker[@id='chequedddate']/div/input]<br/>
+Entered cheque date:12-12-2017and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]<br/>
+Entered value to input Field is 789456 and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]<br/>
+Entered cheque number is:789456and object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //input[@id='chequeno']]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]<br/>
+Entered value to input Field is ABC Bank pvt Ltd and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]<br/>
+Entered bank name:ABC Bank pvt Ltdand object is:[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[4]/div[3]/div/input]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcBankDetailsAndNarration_05_12_2018_06_37_19.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcBankDetailsAndNarration_05_12_2018_06_37_19.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnFailedOkBtn()'><b>tcClickOnFailedOkBtn</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1134202713" onClick='toggleBox("Output-1134202713", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1134202713" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1134202713">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]<br/>
+clicked on OK button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_26.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_26.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSaveButton()'><b>tcClickOnSaveButton</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-73688220" onClick='toggleBox("Output-73688220", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-73688220" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-73688220">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]<br/>
+clicked on save button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_22.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_22.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSaveButtonAfterConfirmCancel()'><b>tcClickOnSaveButtonAfterConfirmCancel</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-633131207" onClick='toggleBox("Output-633131207", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-633131207" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-633131207">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]<br/>
+clicked on save button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //button[@id='save-btn']]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_28.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveButton_05_12_2018_06_37_28.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSuccessOkBtn()'><b>tcClickOnSuccessOkBtn</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1495161082" onClick='toggleBox("Output-1495161082", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1495161082" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1495161082">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]<br/>
+Element is not present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]<br/>
+clicked on OK button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/div[7]/div/button]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_05_12_2018_06_37_37.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcCancel_DeactivatePopUp()'><b>tcCancel_DeactivatePopUp</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1527007086" onClick='toggleBox("Output-1527007086", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck()'><b>tcEnterStudentNameAndSeelctFeeGrCheck</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: KAVANA, Baldwin Girls School Fee, Y<br/>
+<a href="#Output-929706284" onClick='toggleBox("Output-929706284", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1527007086" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1527007086">
-Clicked on Cancel button for Cancelation of Activation or Deactivation of record and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[@class='cancel' and text()='Cancel']]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_DeactivatePopUp_17_08_2018_06_43_08.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCancel_DeactivatePopUp_17_08_2018_06_43_08.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>2</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClearFilledDataForFilter_AcademicYear()'><b>tcClearFilledDataForFilter_AcademicYear</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1028145537" onClick='toggleBox("Output-1028145537", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1028145537" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1028145537">
-Cleared filter data in Grid View.<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_AcademicYear_17_08_2018_06_42_52.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_AcademicYear_17_08_2018_06_42_52.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClearFilledDataForFilter_ClassName()'><b>tcClearFilledDataForFilter_ClassName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-821405322" onClick='toggleBox("Output-821405322", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-821405322" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-821405322">
-Cleared filter data in Grid View.<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_ClassName_17_08_2018_06_42_59.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_ClassName_17_08_2018_06_42_59.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClearFilledDataForFilter_EmployeeName()'><b>tcClearFilledDataForFilter_EmployeeName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1699578227" onClick='toggleBox("Output-1699578227", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1699578227" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1699578227">
-Cleared filter data in Grid View.<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_EmployeeName_17_08_2018_06_42_56.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClearFilledDataForFilter_EmployeeName_17_08_2018_06_42_56.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnEditIcon_ToUpdateCategoryClassMapping()'><b>tcClickOnEditIcon_ToUpdateCategoryClassMapping</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-2029754983" onClick='toggleBox("Output-2029754983", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-2029754983" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2029754983">
-Clicked on Edit Icon to update Category Class Mapping and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Actions'])[2]//following::div[15]/a[2]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnEditIcon_ToUpdateCategoryClassMapping_17_08_2018_06_43_25.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnEditIcon_ToUpdateCategoryClassMapping_17_08_2018_06_43_25.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit()'><b>tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-194415222" onClick='toggleBox("Output-194415222", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-194415222" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-194415222">
-Save Category Class Mapping form and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//button[@id='save-btn'])[2]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit_17_08_2018_06_43_31.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSaveToSubmit_CategoryClassMappingForm_Edit_17_08_2018_06_43_31.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_Activate()'><b>tcClickOnSuccessOkBtn_Activate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-2117642238" onClick='toggleBox("Output-2117642238", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-2117642238" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2117642238">
-OK button Element not present<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Activate_17_08_2018_06_43_22.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Activate_17_08_2018_06_43_22.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_CancelActivate()'><b>tcClickOnSuccessOkBtn_CancelActivate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-865858182" onClick='toggleBox("Output-865858182", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-865858182" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-865858182">
-OK button Element not present<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelActivate_17_08_2018_06_43_20.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelActivate_17_08_2018_06_43_20.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_CancelDeactivate()'><b>tcClickOnSuccessOkBtn_CancelDeactivate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1977618945" onClick='toggleBox("Output-1977618945", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1977618945" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1977618945">
-clicked on OK button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[text()='OK']]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelDeactivate_17_08_2018_06_43_11.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_CancelDeactivate_17_08_2018_06_43_11.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>3</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_Deactivate()'><b>tcClickOnSuccessOkBtn_Deactivate</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-36531985" onClick='toggleBox("Output-36531985", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-36531985" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-36531985">
-clicked on OK button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[text()='OK']]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Deactivate_17_08_2018_06_43_18.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_Deactivate_17_08_2018_06_43_18.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>3</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid()'><b>tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1800967368" onClick='toggleBox("Output-1800967368", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1800967368" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1800967368">
-clicked on OK button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //button[text()='OK']]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid_17_08_2018_06_43_34.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnSuccessOkBtn_ForConfirmation_Edit_CCMappingGrid_17_08_2018_06_43_34.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>3</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation()'><b>tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1398260359" onClick='toggleBox("Output-1398260359", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1398260359" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1398260359">
-Clicked on View Icon to launch pop up windows to see created Category Class Mapping and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Actions'])[2]//following::div[15]/a[1]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation_17_08_2018_06_43_04.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcClickOnViewIcon_ToSeeCategoryClassMappingDetailsAndActivationOrDeactivation_17_08_2018_06_43_04.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>2</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcCloseViewWindow_CategoryClassMapping()'><b>tcCloseViewWindow_CategoryClassMapping</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-837246227" onClick='toggleBox("Output-837246227", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-837246227" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-837246227">
-View window close button is clicked and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//button[text()='Close'])[1]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCloseViewWindow_CategoryClassMapping_17_08_2018_06_43_24.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcCloseViewWindow_CategoryClassMapping_17_08_2018_06_43_24.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcDeactivateRecords_ViewWindow()'><b>tcDeactivateRecords_ViewWindow</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-628392976" onClick='toggleBox("Output-628392976", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-628392976" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-628392976">
-Clicked on Deacivate Icon to Deactivate Category Class Mapping view popup window and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div[@class='modal-body']/table/tbody/tr[1]/td[4]/div/a]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_17_08_2018_06_43_06.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_17_08_2018_06_43_06.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcDeactivateRecords_ViewWindow_AfterCancel()'><b>tcDeactivateRecords_ViewWindow_AfterCancel</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1244880808" onClick='toggleBox("Output-1244880808", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1244880808" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1244880808">
-Clicked on Deacivate Icon to Deactivate Category Class Mapping view popup window and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div[@class='modal-body']/table/tbody/tr[1]/td[4]/div/a]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_AfterCancel_17_08_2018_06_43_13.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcDeactivateRecords_ViewWindow_AfterCancel_17_08_2018_06_43_13.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_AcademicYear()'><b>tcFilterRecordsBasedOn_AcademicYear</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
-<a href="#Output-785271142" onClick='toggleBox("Output-785271142", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-785271142" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-785271142">
-Entered academic year 2018-2019 to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Academic Year')]/following::div[2]/div/input]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_AcademicYear_17_08_2018_06_42_51.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_AcademicYear_17_08_2018_06_42_51.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_CategoryName()'><b>tcFilterRecordsBasedOn_CategoryName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
-<a href="#Output-1275009283" onClick='toggleBox("Output-1275009283", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1275009283" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1275009283">
-Entered Category Name New Pre Nursery-1 to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Category Name'])[2]/following::div[2]/div/input]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_EmployeeName_17_08_2018_06_42_55.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_EmployeeName_17_08_2018_06_42_55.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>2</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_CategoryName_ViewRecords()'><b>tcFilterRecordsBasedOn_CategoryName_ViewRecords</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
-<a href="#Output-979550238" onClick='toggleBox("Output-979550238", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-979550238" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-979550238">
-Entered Category Name New Pre Nursery-1 to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: (//span[text()='Category Name'])[2]/following::div[2]/div/input]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_CategoryName_ViewRecords_17_08_2018_06_43_02.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_CategoryName_ViewRecords_17_08_2018_06_43_02.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>2</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcFilterRecordsBasedOn_ClassName()'><b>tcFilterRecordsBasedOn_ClassName</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: 2018-2019, New Pre Nursery-1, LKG, Y<br/>
-<a href="#Output-1535026957" onClick='toggleBox("Output-1535026957", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1535026957" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1535026957">
-Entered Class Name LKG to filter records and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Class Name')]/following::div[2]/div/input]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_ClassName_17_08_2018_06_42_58.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcFilterRecordsBasedOn_ClassName_17_08_2018_06_42_58.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcHomeButtonValidation()'><b>tcHomeButtonValidation</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-24039137" onClick='toggleBox("Output-24039137", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-24039137" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-24039137">
-Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_17_08_2018_06_42_41.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_17_08_2018_06_42_41.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>3</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcNavigateToCategoryClassMapping()'><b>tcNavigateToCategoryClassMapping</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-95685867" onClick='toggleBox("Output-95685867", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-95685867" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-95685867">
-Page Swich from Master Category to Category Class mapping and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Category Class Mapping')]//parent::md-tab-item]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToCategoryClassMapping_17_08_2018_06_42_49.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToCategoryClassMapping_17_08_2018_06_42_49.png' height='100' width='100'/> </a><br/>
-</div>
-</td>
-<td></td>
-<td>2</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
-<tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcNavigateToExamMasters_ExamMasterCategory()'><b>tcNavigateToExamMasters_ExamMasterCategory</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1244867001" onClick='toggleBox("Output-1244867001", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1244867001" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1244867001">
-Clicked on Exam Button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Exam')]/preceding-sibling::button]<br/>
-Clicked on Exam Masters Button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]]<br/>
-Clicked on Exam Master Category Button and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //span[contains(text(),'Exam')]/preceding-sibling::button/following::span[contains(text(),'Master')][1]/following::li[3]]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToExamMasters_ExamMasterCategory_17_08_2018_06_42_45.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNavigateToExamMasters_ExamMasterCategory_17_08_2018_06_42_45.png' height='100' width='100'/> </a><br/>
+<a href="#Output-929706284" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-929706284">
+0 Group check box is checked.<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcEnterStudentNameAndSeelctFeeGrCheck_05_12_2018_06_37_07.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcEnterStudentNameAndSeelctFeeGrCheck_05_12_2018_06_37_07.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>4</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcVerifyExamMasterCategory_Page()'><b>tcVerifyExamMasterCategory_Page</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1057307776" onClick='toggleBox("Output-1057307776", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcHomeButtonValidation()'><b>tcHomeButtonValidation</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1943750504" onClick='toggleBox("Output-1943750504", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1057307776" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1057307776">
-Exam Master Category  page is dispalyed and object is:-[[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div//section//ol//li]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyExamMasterCategory_Page_17_08_2018_06_42_47.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyExamMasterCategory_Page_17_08_2018_06_42_47.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1943750504" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1943750504">
+Home button is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //aside[@id='style-4']/section/ul/li[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_05_12_2018_06_36_53.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcHomeButtonValidation_05_12_2018_06_36_53.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>1</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcYesActivateCategoryClassMappingRecord()'><b>tcYesActivateCategoryClassMappingRecord</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1088491512" onClick='toggleBox("Output-1088491512", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcNevigateTo_FeeTransaction()'><b>tcNevigateTo_FeeTransaction</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-2056234595" onClick='toggleBox("Output-2056234595", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1088491512" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1088491512">
-Yes Deactivate or Activate it button is not present.<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesActivateCategoryClassMappingRecord_17_08_2018_06_43_21.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesActivateCategoryClassMappingRecord_17_08_2018_06_43_21.png' height='100' width='100'/> </a><br/>
+<a href="#Output-2056234595" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2056234595">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]<br/>
+Clicked on Fee Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]<br/>
+Clicked on Transaction Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Fees')]/preceding-sibling::button/following::span[contains(text(),'Transaction')][1]]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //a[@href='#/app/FeeTransaction/89']]<br/>
+Clicked on Fee Transaction Button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //a[@href='#/app/FeeTransaction/89']]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_05_12_2018_06_36_57.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcNevigateTo_FeeTransaction_05_12_2018_06_36_57.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
-<td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>4</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.tcYesDeactivateCategoryClassMappingRecord()'><b>tcYesDeactivateCategoryClassMappingRecord</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br/>
-<a href="#Output-1269773610" onClick='toggleBox("Output-1269773610", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcSelectRegularButton()'><b>tcSelectRegularButton</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1213871206" onClick='toggleBox("Output-1213871206", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1269773610" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1269773610">
-Clicked on Yes Deactivate Or Activate button for deactivation or Activation of record and object is:- [[ChromeDriver: chrome on XP (1bc6fe221a2ab8a7a266f1602e92c530)] -> xpath: //div[@class='sa-confirm-button-container']/button]<br/>
-<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesDeactivateCategoryClassMappingRecord_17_08_2018_06_43_15.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcYesDeactivateCategoryClassMappingRecord_17_08_2018_06_43_15.png' height='100' width='100'/> </a><br/>
+<a href="#Output-1213871206" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1213871206">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Regular')]]<br/>
+Regular radio button selected and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //span[contains(text(),'Regular')]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcSelectRegularButton_05_12_2018_06_37_01.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcSelectRegularButton_05_12_2018_06_37_01.png' height='100' width='100'/> </a><br/>
 </div>
 </td>
 <td></td>
 <td>2</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidationOfDataInOutputTableGrid()'><b>tcValidationOfDataInOutputTableGrid</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Student Name, Sanjana Tamada, Y<br/>
+<a href="#Output-1682733268" onClick='toggleBox("Output-1682733268", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1682733268" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1682733268">
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]<br/>
+Selected Value from drop down Student Name and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]<br/>
+Selected item from drop down list is verified and selected item is: Student Name<br/>
+selected Student name for search:-Student Name and object is [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[3]]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]<br/>
+Entered value to input Field is Sanjana Tamada and object is:- [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]<br/>
+Entered student name for search:Sanjana Tamadaand object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[2]/div[1]/div/input]<br/>
+Element is present...and object is: [[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]<br/>
+clicked on search button and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']//div/div[2]/div[2]/div[3]/div/button[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_05_12_2018_06_38_03.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcValidationOfDataInOutputTableGrid_05_12_2018_06_38_03.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>26</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcVerifyAcademicYear()'><b>tcVerifyAcademicYear</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1113895488" onClick='toggleBox("Output-1113895488", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1113895488" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1113895488">
+Academic year is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: (//select[@id='sel1'])[1]]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyAcademicYear_05_12_2018_06_37_03.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyAcademicYear_05_12_2018_06_37_03.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcVerifyFeeTransactionPage()'><b>tcVerifyFeeTransactionPage</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1398260359" onClick='toggleBox("Output-1398260359", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1398260359" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1398260359">
+Fee Transaction page is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/ui-view/div[1]/div/section/ol/li]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyFeeTransactionPage_05_12_2018_06_36_59.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifyFeeTransactionPage_05_12_2018_06_36_59.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcVerifySuccessfulPopUp()'><b>tcVerifySuccessfulPopUp</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br/>
+<a href="#Output-1264941544" onClick='toggleBox("Output-1264941544", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1264941544" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1264941544">
+Record saved successfully message is dispalyed and object is:-[[ChromeDriver: chrome on XP (cd343627ba56dd0ef042a1fe80b12ecc)] -> xpath: //body[@id='style-4']/div[5]/h2]<br/>
+<a href='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifySuccessfulPopUp_05_12_2018_06_37_37.png'> <img src='C:\Users\vaps\Desktop\IVRMPORTAL\src\main\java\com\vapsTechnosoft\IVRM\screenshot\tcVerifySuccessfulPopUp_05_12_2018_06_37_37.png' height='100' width='100'/> </a><br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -596,9 +753,9 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: Radha, Radha@123, N</td>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Rakesh, Password@123, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -624,9 +781,9 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1338368149", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1338368149'><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+</pre></div><a href='#' onClick='toggleBox("stack-trace24039137", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace24039137'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -654,11 +811,11 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: arvind, VapsTech@121, N</td>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: arvind, VapsTech@121, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -684,9 +841,9 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2044337856", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2044337856'><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+</pre></div><a href='#' onClick='toggleBox("stack-trace515273883", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace515273883'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -714,11 +871,11 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: Rakesh, Rakesh@321, N</td>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Rakesh, Rakesh@321, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -744,9 +901,9 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1273958371", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1273958371'><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+</pre></div><a href='#' onClick='toggleBox("stack-trace737104370", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace737104370'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -774,11 +931,11 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 <tr>
-<td title='com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping<br>Parameters: RR, Password@123, N</td>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials()'><b>loginToappWithrequiredCredentials</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: RR, Password@123, N</td>
 <td><div><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -804,9 +961,9 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1433208870", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1433208870'><pre>org.testng.SkipException: user marked this record as no run
-	at com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping.loginToappWithrequiredCredentials(TC_Exam_MasterCategoryAndCategoryClassMapping.java:65)
+</pre></div><a href='#' onClick='toggleBox("stack-trace505231702", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace505231702'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.loginToappWithrequiredCredentials(Tc_Transaction_Fee_Transaction.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -834,7 +991,535 @@ Clicked on Yes Deactivate Or Activate button for deactivation or Activation of r
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
 <td>0</td>
-<td>com.vapsTechnosoft.IVRM.Exam.TC_Masters.TC_Exam_MasterCategoryAndCategoryClassMapping@c8e4bb0</td></tr>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnFeeReceiptCloseButton()'><b>tcClickOnFeeReceiptCloseButton</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1004009692", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1004009692'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnPrintReceiptButton()'><b>tcClickOnPrintReceiptButton</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Student Name, Sanjana Tamada, Y</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1637876401", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1637876401'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcClickOnSearch_CancelButton()'><b>tcClickOnSearch_CancelButton</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace569138567", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace569138567'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck()'><b>tcEnterStudentNameAndSeelctFeeGrCheck</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: Srujana, Susdiny Jio, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck(Tc_Transaction_Fee_Transaction.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1831141281", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1831141281'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcEnterStudentNameAndSeelctFeeGrCheck(Tc_Transaction_Fee_Transaction.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcPrintOfFeereceipt()'><b>tcPrintOfFeereceipt</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace237297104", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace237297104'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;Arvind-Susdiny&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562718 (9a2698cba08cf5a471a29d30c8b3e12becabb0e9), userDataDir=C:\Users\vaps\AppData\Local\Temp\scoped_dir9052_25145}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=70.0.3538.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: cd343627ba56dd0ef042a1fe80b12ecc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:340)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.captureScreen(TestBase.java:300)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.getresult(TestBase.java:331)
+	at com.vapsTechnosoft.IVRM.testBase.TestBase.afterMethod(TestBase.java:340)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
+<tr>
+<td title='com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData()'><b>tcValidateStudentInformationData</b><br>Test class: com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction<br>Parameters: : SURESH lkg lkg lkg, : 2017-2018/8/2017-2018, : 57, : 9844098440, : LKG, :, : 01-05-2014, false, N</td>
+<td><div><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(Tc_Transaction_Fee_Transaction.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1256405521", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1256405521'><pre>org.testng.SkipException: user marked this record as no run
+	at com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction.tcValidateStudentInformationData(Tc_Transaction_Fee_Transaction.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.vapsTechnosoft.IVRM.Fee.TC_Transaction.Tc_Transaction_Fee_Transaction@2b546384</td></tr>
 </table><p>
 </body>
 </html>

@@ -73,6 +73,9 @@ public class Masters_Master_Reference extends TestBase {
 
 	@FindBy(xpath = "//div[@class='box-body']/table/thead/tr/th[2]/a")
 	WebElement btnSortByReferenceName;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[2]")
+	private List<WebElement> list_ReferenceName;
 
 	@FindBy(xpath = "//body[@id='style-4']/div[5]/div[7]/div/button")
 	WebElement btnOKSuccess;
@@ -216,8 +219,9 @@ public class Masters_Master_Reference extends TestBase {
 	}
 
 	public void sortByReferenceName() throws Exception {
-		btnSortByReferenceName.click();
+		
 		clickOnButton(btnSortByReferenceName);
+		SortData_InColumn_DescendingOrder(list_ReferenceName);
 		log("Sorted the record with Reference name and object is:-" + btnSortByReferenceName.toString());
 
 	}
@@ -343,6 +347,17 @@ public class Masters_Master_Reference extends TestBase {
 			String text = validate_PopUpText.getText().trim();
 			assertEquals(text, "Record Updated Successfully");
 			log("Record submitted sucessfully message validated.");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void popWindowMessage_DeleteCancel_Validation() throws Exception {
+		try {
+			validate_PopUpText.isDisplayed();
+			String text = validate_PopUpText.getText().trim();
+			assertEquals(text, "Record Deletion Cancelled");
+			log("Record Delete Cancelled message validated.");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();
